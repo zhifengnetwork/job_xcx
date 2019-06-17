@@ -1,0 +1,21 @@
+<view>
+  <view class="log_ear">
+    <image src="../../images/login/xiaolian.png" class="xiaolian"></image>
+  </view>
+  <view>
+    <text class="welecom_title">欢迎来到智丰招聘</text>
+  </view>
+</view>
+<view class="login_ear">
+  <text class="qianzui">+86</text>
+  <input placeholder="请输入手机号登录" class="phone_num" type='text' name="phone_num"></input>
+  <image src="../../images/login/delete.png" class="delete_pic"></image>
+</view>
+<view class="mima_ear">
+  <input placeholder="请输入登录密码" class="phone_password" password name="pass"></input>
+</view>
+<view>
+  <button class="denglu">登录</button>
+  <text class="resigt">注册</text>
+  <text class="forget">忘记密码</text>
+</view>

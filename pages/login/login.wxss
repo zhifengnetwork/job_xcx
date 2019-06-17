@@ -1,0 +1,84 @@
+.log_ear {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.xiaolian {
+  width: 85rpx;
+  height: 85rpx;
+}
+
+.welecom_title {
+  font-size: 37rpx;
+  font-weight: bolder;
+  display: inline-block;
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.login_ear {
+  position: relative;
+  margin: 100rpx 50rpx 0rpx 50rpx;
+  font-size: 36rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 1px solid rgb(54, 193, 186);
+}
+
+.qianzui {
+  color: rgb(54, 193, 186);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.phone_num {
+  display: inline-block;
+  font-size: 30rpx;
+  vertical-align: top;
+  margin-left: 20px;
+  width: 450rpx;
+}
+
+.delete_pic {
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  right: 0;
+  bottom: 6rpx;
+}
+
+.mima_ear {
+  margin: 50rpx 50rpx 0rpx 50rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid rgb(54, 193, 186);
+}
+
+.denglu {
+  border-radius: 60rpx;
+  background: #ccc;
+  color: white;
+  margin: 50rpx 50rpx 0rpx 50rpx;
+}
+
+.resigt {
+  margin-left: 80rpx;
+  font-size: 28rpx;
+  color: rgb(54, 193, 186);
+  padding-top: 10rpx;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+.forget {
+  margin-right: 80rpx;
+  font-size: 28rpx;
+  color: rgb(54, 193, 186);
+  padding-top: 10rpx;
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  cursor: pointer;
+}
