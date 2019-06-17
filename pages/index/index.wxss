@@ -1,5 +1,5 @@
 /**index.wxss**/
-.userinfo {
+/* .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +18,82 @@
 
 .usermotto {
   margin-top: 200px;
+} */
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.overH{
+  overflow: hidden;
+}
+.t-right{
+  text-align: right;
+}
+#wrap{
+  width:100%;
+  height:100%;
+  background:#f8f8f8;
+  font-size:28rpx;
+  
+}
+.inner{
+  margin: 0 24px;
+}
+.header{
+   position:relative;
+   /* font-size:14px; */
+  
+}
+.search{
+   width: 80%;
+   border:1px solid #6fd1cb;
+   border-radius: 36px;
+   height:40px;
+   padding-left:45px;
+   box-sizing: border-box;
+   display: inline-block;
+   /* overflow: hidden; */
+}
+.search_icon{
+  width:20px;
+  height:20px;
+   position:absolute;
+   left:24px;
+   top:50%;
+   margin-top:-10px;
+}
+.login_tab{
+  float: right;
+  font-size:30rpx;
+  line-height: 40px;
+  text-align: right;
+  color:#151515;
+}
+
+/* subtitle start */
+.subtitle{
+  width: 80%;
+  margin:12px 0 21px;
+  color:#151515;
+}
+.subtitle text{
+   width:50%;
+}
+
+/* banner start */
+.banner .slide-image{
+  width:100%;
+  height: 100%;
+}
+
+
+/* content start */
+.c-title{
+  width:100%;
+}
+.c-flame{
+   width:26px;
+   height:26px;
 }

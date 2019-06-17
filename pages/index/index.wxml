@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -10,4 +10,40 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+</view> -->
+<view id="wrap">
+  <view class='inner'>
+      <view class='header'>
+        
+        <input type='text' class='search'  placeholder="输入所要查找的内容" />
+        <image class="search_icon" src='images/search_icon.png'></image>
+        <text class='login_tab'>登录</text>
+      </view>
+      <view class='subtitle overH'>
+        <text class='fl'>选择地点</text>
+        <text class='fl t-right'>人才选择</text>
+      </view>
+      <!-- banner start -->
+      <view class='banner'>
+          <swiper indicator-dots="{{indicatorDots}}" 
+                  autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true"> 
+                <block wx:for="{{arr}}"> 
+                  <swiper-item> 
+                      <image src="images/banner.jpg" class="slide-image"/> 
+                  </swiper-item> 
+                </block> 
+          </swiper>
+      </view>
+      <view class='container'>
+          <view class='content-list'>
+               <view class='c-title'>
+                  <image src='images/flame_icon.png' class='c-flame'/>
+                  <text>当前热招</text>
+               </view>
+          
+          </view>
+      </view>
+  </view>
+
+
 </view>
