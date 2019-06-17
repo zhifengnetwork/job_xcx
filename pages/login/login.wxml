@@ -3,7 +3,7 @@
     <image src="../../images/login/xiaolian.png" class="xiaolian"></image>
   </view>
   <view>
-    <text class="welecom_title">欢迎来到智丰招聘5555</text>
+    <text class="welecom_title">欢迎来到智丰招聘</text>
   </view>
 </view>
 <view class="login_ear">
