@@ -1,0 +1,94 @@
+<view class='name_ear'>
+  <text class="name_text">姓名:</text>
+  <input placeholder='请输入名字' class='name_input'></input>
+</view>
+<view class='name_ear'>
+  <text class="name_text">手机号:</text>
+  <input placeholder='输入手机号' class='name_input'></input>
+</view>
+<view class='name_ear'>
+  <text class="name_text">性别:</text>
+  <view class='man'>
+    <text class="man_xuan"></text>
+  </view>
+  <text class="mail">女</text>
+  <view class='man'>
+    <text class="man_xuan"></text>
+  </view>
+  <text class="femail">男</text>
+</view>
+<!-- 日期选择 -->
+<view class='name_ear'>
+  <text class="name_text chusheng">出生日期:</text>
+  <view class='shijian'>
+    <!-- <view>{{year}}年{{month}}月{{day}}日</view>  选择的年月日的值-->
+    <picker-view indicator-style="height: 50px;" class='dd' value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
+
+<view class='name_ear'>
+  <text class="name_text">毕业学校:</text>
+  <input placeholder='输入毕业院校' class='name_input'></input>
+</view>
+
+<view class='name_ear'>
+  <text class="name_text">学校类型:</text>
+  <view class="page__bd">
+    <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <input placeholder='输入学校类型' class='name_input'></input>
+    </picker> -->
+    <view class="free-btns" style="background:none;">
+      <input class="free-btn name_input" bindtap="toggleDialog" value='{{value1}}' placeholder='请选择学校类型' disabled="true">
+      </input>
+    </view>
+    <view class="free-dialog {{ showDialog ? 'free-dialog--show' : '' }}">
+      <view class="free-dialog__mask" bindtap="toggleDialog" />
+      <view class="free-dialog__container">
+        <view>
+          <form bindsubmit='submit' bindreset="reset">
+            <view bindtap='freetoBack' class="free-button free-dialog-reset">取消</view>
+            <view bindtap='freetoBack' class="free-button free-dialog-submit">确定</view>
+            <radio-group class='free-radios' bindchange="radioChange">
+              <label class="free-radio" bindtap="click" wx:for="{{items}}" wx:key="{{items}}" data-id="{{index}}" style="{{index==id?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}">
+                <radio value="{{item.name}}" name="{{item.value}}"></radio>
+                <label class="free-text">{{item.value}}</label>
+              </label>
+            </radio-group>
+          </form>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='name_ear'>
+  <text class="name_text">选择职业:</text>
+  <input placeholder='输入职业名称' class='name_input'></input>
+</view>
+
+<!-- 上传身份证正面 -->
+<view class='idPic'>
+  <view class='id-card-top'>
+    <image src='{{positiveImg}}'></image>
+    <image class='addPic' bindtap='addPosPic' src='../../images/login/addPic.png'></image>
+    <text>点击上传身份证正面照</text>
+  </view>
+  <view class='id-card-bottom'>
+  <image src='{{oppositeImg}}'></image>
+      <image class='addPic' bindtap='addOppPic' src='../../images/login/addPic.png'></image>
+    <text>点击上传身份证反面照</text>
+  </view>
+</view>
+
+<text bindtap="formSubmit" class="text-save">确认保存</text>

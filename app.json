@@ -1,9 +1,8 @@
 {
   "pages": [
-        "pages/index/index",
+    "pages/index/index",
     "pages/userInfo/userCenter",
     "pages/userInfo/help",
-
     "pages/userInfo/infomation",
     "pages/userInfo/setting",
     "pages/auditInfo/audit",
@@ -12,7 +11,15 @@
     "pages/company/postionDetail",
     "pages/company/company",
     "pages/third_party/third_party",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/forgetpassword/forgetpassword",
+    "pages/personalMessage/personalMessage",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/recommend/recommend",
+    "pages/infomation/infomation",
+    "pages/myHome/myHome",
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
