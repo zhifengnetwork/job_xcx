@@ -12,8 +12,6 @@
   </view>
 </view> -->
 <!-- TABBAR START -->
-<import src="../template/tabbar.wxml" />
-<template is="tabBar" data="{{ tabBar}}" />
 <view id="wrap">
   <view class='inner'>
       <view class='header'>
@@ -135,4 +133,7 @@
       </view>
   </view>
 </view>
-
+<!-- FOOTER START -->
+<view class='footer-height'></view>
+<import src="../template/tabbar.wxml" />
+<template is="tabBar" data="{{ tabBar}}" />

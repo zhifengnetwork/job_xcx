@@ -156,3 +156,41 @@
   bottom:40rpx;
   font-size: 30rpx;
 }
+
+/* GLOBAL INFORMATION START */
+.t-info-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: 700;
+  color:#151515;
+  margin-bottom: 15rpx;
+}
+.t-info-nav .t-i-raduis{
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background:red;
+  vertical-align:middle;
+  margin-left: 24rpx;
+}
+/* CONTENT STAT */
+.t-info-list{
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  padding:20rpx;
+  display: flex;
+  background:#fff;
+  margin-bottom: 15rpx;
+}
+.t-info-img{
+  width:100rpx;
+  height: 100rpx; 
+  margin-right: 25rpx;
+}
+.t-info-msg{
+  display: block;
+  color: #151515;
+  width: 475rpx;
+}

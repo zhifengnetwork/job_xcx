@@ -1,0 +1,91 @@
+/* Gold Deposits START */
+.g-deposits-a{
+  width: 702rpx;
+  padding:45rpx 0;
+  text-align: center;
+  position: relative;
+  background:#25bbb3;
+  color: #fff;
+  border:2rpx solid #22bfb7;
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  font-weight:600;
+}
+.g-deposits-a .d-gold-icon{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 190rpx;
+  height: 190rpx;
+}
+.g-deposits-money{
+  margin-top: 18rpx;
+  font-size: 36rpx;
+  font-weight:600;
+}
+/* BUTTON START */
+.g-deposits-btn1{
+  overflow: hidden;
+  margin-top: 24rpx;
+  padding: 0 30rpx;
+}
+.g-deposits-btn1 button{
+  border-radius: 40rpx;
+  border:1px solid #25bbb3;
+  width:200rpx;
+  height: 66rpx;
+  line-height: 67rpx;
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+}
+.g-deposits-btn1 .g-d-btn1{
+  float: left;
+
+}
+.g-deposits-btn1 .g-d-btn2{
+  color:#25bbb3;
+  float: right;
+}
+
+.g-deposits-b .d-gold-icon{
+   width: 118rpx;
+   height: 108rpx;
+}
+.g-d-active{
+  color: #fff;
+  background:#25bbb3;
+}
+.g-deposits-btn1 button:hover{
+  color: #fff;
+  background:#25bbb3;
+}
+.g-deposits-btn2{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24rpx;
+}
+.g-deposits-btn2 button{
+  width:122rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  border-radius: 40rpx;
+  background:#fff;
+  border:1px solid #25bbb3;
+  color: #25bbb3;
+  font-size:30rpx;
+}
+
+/* public */
+.set-option{
+  width: 670rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  color:#fff;
+  background: #25bbb3;
+  position: fixed;
+  left: 24rpx;
+  bottom:40rpx;
+  font-size: 30rpx;
+  text-align: center
+}

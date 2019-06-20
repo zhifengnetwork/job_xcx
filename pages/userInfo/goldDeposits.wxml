@@ -1,0 +1,30 @@
+<view class="inner">
+  <view class='gold-search'><input type='text' placeholder='请输入充值金币' /></view>
+  <view class='gold-content'>
+      <view class='gold-list'>
+        <view class='gold-num'>10金币</view>
+        <view>10元</view>
+        <image class="gold-active-img" src='../../static/images/public/yes_green.png'/>
+      </view>
+      <view class='gold-list'>
+        <view class='gold-num'>30金币</view>
+        <view>30元</view>
+        <image class="gold-active-img" src='../../static/images/public/yes_green.png'/>
+      </view>
+        <view class='gold-list'>
+          <view class='gold-num'>40金币</view>
+          <view>40元</view>
+          <image class="gold-active-img" src='../../static/images/public/yes_green.png'/>
+        </view>
+        <view class='gold-list'>
+          <view class='gold-num'>50金币</view>
+          <view>50元</view>
+          <image class="gold-active-img" src='../../static/images/public/yes_green.png'/>
+        </view>
+    </view>
+    <view class='foot-info'>
+        <text>￥10元</text>
+        <view class='set-option'>确定付款</view>
+    </view>
+    
+</view>

@@ -1,0 +1,32 @@
+<!--pages/userInfo/editInfo.wxml-->
+<view class='inner'>
+  <view class='edit-info'>
+    <view class='edit-cont'>
+      <view class='e-info-'>
+        <text class='e-info-msg'>姓名：</text>
+        <input type='text' class='e-info-inp' placeholder='输入姓名'/>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>姓名：</text>
+        <view class='e-info-radio'>
+          <radio-group class="radio-group"bindchange="radioChange">
+              <label class="radio" wx:for="{{items}}">
+                <radio style="zoom:.6" color="#25bbb3" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+              </label>
+          </radio-group>
+        </view>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>年龄：</text>
+        <input type='text' class='e-info-inp' placeholder='输入年龄'/>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>民族：</text>
+        <input type='text' class='e-info-inp' placeholder='输入民族'/>
+      </view>    
+      
+    </view>
+
+  </view>
+  <image class='edit-msg-' src='../../static/images/public/big_portrait.png'/>
+</view>

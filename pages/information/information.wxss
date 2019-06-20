@@ -1,0 +1,6 @@
+/* pages/information/infomation.wxss */
+@import "../template/common";
+inner{
+  background:#f8f8f8;
+  padding: 40rpx 24rpx;
+}

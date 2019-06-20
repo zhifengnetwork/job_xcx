@@ -1,19 +1,21 @@
-// pages/userInfo/userCenter.js
-const app =getApp();
+// pages/userInfo/editInfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    items: [
+      { name: 'wuman', value: '女', checked: 'true'  },
+      { name: 'man', value: '男' }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.editTabBar();
+
   },
 
   /**

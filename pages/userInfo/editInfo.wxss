@@ -1,0 +1,48 @@
+/* pages/userInfo/editInfo.wxss */
+.inner{
+  padding: 17rpx 24rpx;
+}
+.edit-info{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.edit-cont{
+   flex: 1;
+}
+.e-info-{
+  width:70%;
+ 
+  margin-bottom: 20rpx;
+}
+.e-info-msg{
+  font-size: 28rpx;
+  color: #151515;
+}
+.e-info-inp{
+  font-size: 24rpx;
+  color:#a2a2a2;
+  width: 60%;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+.e-info-radio{
+  display: inline-block;
+}
+.e-info-radio .radio{
+  font-size: 28rpx;
+  color:#151515;
+  margin-right: 90rpx;
+}
+.e-info-radio radio{
+  margin-right: 30rpx;
+}
+.edit-msg-{
+  width:170rpx;
+  height: 160rpx;
+}
+/* .e-info-radio radio{
+  width: 28rpx;
+  height: 28rpx;
+} */

@@ -22,18 +22,18 @@
             <text>我的证书</text>
             <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
           </view>
-          <view class='u-o-list m-b50'>
+          <navigator url="privacySettings" class='u-o-list m-b50'>
             <text>隐私设置</text>
             <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
-          </view>
-          <view class='u-o-list m-b50'>
+          </navigator>
+          <navigator url="setting" class='u-o-list m-b50'>
             <text>设置</text>
             <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
-          </view>
-          <view class='u-o-list m-b50'>
+          </navigator>
+          <navigator url="myPurse" class='u-o-list m-b50'>
             <text>我的钱包</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
-          </view>
+          </navigator>
           <view class='u-o-list m-b50'>
             <text>实名认证</text>
             <text class='u-o-text'>已认证</text>
@@ -50,3 +50,7 @@
     </view>
   </view>
 </view>
+<!-- FOOTER START -->
+<view class='footer-height'></view>
+<import src="../template/tabbar.wxml" />
+<template is="tabBar" data="{{ tabBar}}" />

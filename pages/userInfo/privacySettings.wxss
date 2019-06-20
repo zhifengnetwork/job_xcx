@@ -11,14 +11,3 @@
   color: 151515rpx;
   margin-bottom: 40rpx;
 }
-.-view-edit{
-  width:26rpx;
-  height: 26rpx;
-}
-.-view-inp{
-  text-align: right;
-}
-.-view-msg,.-view-inp{
-  color: #808080;
-  font-size:30rpx;
-}

@@ -1,0 +1,37 @@
+
+<template name="tInformation">
+  <view class='t-info-nav'>
+    <view>
+      <text>聊天信息</text>
+      <icon class='t-i-raduis'></icon>
+    </view>
+    <view>
+      <text>系统信息</text>
+      <icon class='t-i-raduis'></icon>
+    </view>
+  </view>
+  <view class='t-info-list'>
+     <image src='../../static/images/public/big_portrait.png' class='t-info-img'/>
+     <view class='t-info-msg'>
+        <view class='f-bold m-b20'>江南皮革厂王主管</view>
+        <view class=''>江南皮革厂倒闭了黄说好的</view>
+     </view>
+     <text>11:25</text>
+  </view>
+  <view class='t-info-list'>
+     <image src='../../static/images/public/big_portrait.png' class='t-info-img'/>
+     <view class='t-info-msg'>
+        <view class='f-bold m-b20'>江南皮革厂王主管</view>
+        <view class=''>江南皮革厂倒闭了黄说好的</view>
+     </view>
+     <text>11:25</text>
+  </view>
+  <view class='t-info-list'>
+     <image src='../../static/images/public/big_portrait.png' class='t-info-img'/>
+     <view class='t-info-msg'>
+        <view class='f-bold m-b20'>江南皮革厂王主管</view>
+        <view class=''>江南皮革厂倒闭了黄说好的</view>
+     </view>
+     <text>11:25</text>
+  </view>
+</template>

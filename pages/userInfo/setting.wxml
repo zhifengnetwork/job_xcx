@@ -1,22 +1,18 @@
 <!--pages/userInfo/setting.wxml-->
 <view class='inner'>
   <view class='setting-list'>
-    <text>允许预定</text>
+    <text>修改手机号</text>
+    <input class="body-view -view-inp " value="188 0000 2222" type='text'/>
+  </view>
+  <view class='setting-list'>
+    <text>设置密码</text>
     <view class="body-view">
-      <switch checked bindchange="switch1Change" style="zoom:.6" color="#25bbb3" width="66rpx"/>
+      <image class='-view-edit' src='../../static/images/public/edit_gray.png'/>
     </view>
   </view>
   <view class='setting-list'>
-    <text>上架简历</text>
-    <view class="body-view">
-      <switch checked bindchange="switch1Change" style="zoom:.6" color="#25bbb3" width="66rpx"/>
-    </view>
+    <text>微信绑定</text>
+    <text class="body-view -view-msg">已绑定</text>
   </view>
-  <view class='setting-list'>
-    <text>是否推送我的简历</text>
-    <view class="body-view">
-      <switch bindchange="switch1Change" style="zoom:.6" color="#25bbb3" width="66rpx"/>
-    </view>
-  </view>
-  <button class='set-option'>保存</button>
+  <button class='set-option'>退出登录</button>
 </view>

@@ -102,38 +102,31 @@ App({
       "borderStyle": "#d6d6d6",
       "list": [
         {
-          "pagePath": "pages/index/index",
+          "pagePath": "/pages/index/index",
           "text": "首页",
-          "iconPath": "../../static/images/bar_icon/home_green.png",
-          "selectedIconPath": "../../static/images/bar_icon/company_green.png",
+          "iconPath": "../../static/images/bar_icon/home_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/home_green.png",
           "clas": "menu-item",
           "selectedColor": "#4EDF80",
           active: true
         },
         {
-          "pagePath": "pages/recommend/recommend",
-          "text": "推荐",
-          "iconPath": "../../static/images/bar_icon/recomend_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/recomend_green.png",
-          "selectedColor": "#4EDF80",
-          "clas": "menu-item",
-          active: false
-        },
-        {
-          "pagePath": "/pages/test/test",
+          "pagePath": "/pages/information/information",
           "text": "信息",
           "iconPath": "../../static/images/bar_icon/info_gray.png",
-          "selectedColor": "../../static/images/bar_icon/info_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/info_green.png",
           "clas": "menu-item",
-          active: false
+          "selectedColor": "#4EDF80",
+          active: true
         },
         {
-          "pagePath": "pages/userInfo/infomation",
+          "pagePath": "/pages/userInfo/userCenter",
           "text": "我的",
           "iconPath": "../../static/images/bar_icon/user_gray.png",
-          "selectedColor": "../../static/images/bar_icon/user_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/user_green.png",
           "clas": "menu-item",
-          active: false
+          "selectedColor": "#4EDF80",
+          active: true
         }
       ],
       "position": "bottom"
@@ -147,19 +140,18 @@ App({
         {
           "pagePath": "/pages/index/index",
           "text": "首页",
-          "iconPath": "/img/home.png",
-          "selectedIconPath": "/img/home.png",
-          "clas": "menu-item2",
+          "iconPath": "../../static/images/bar_icon/home_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/home_green.png",
+          "clas": "menu-item",
           "selectedColor": "#4EDF80",
           active: true
         },
         {
-          "pagePath": "/pages/logs/logs",
-          "text": "日志",
-          "iconPath": "/img/note.png",
-          "selectedIconPath": "/img/note.png",
-          "selectedColor": "#4EDF80",
-          "clas": "menu-item2",
+          "pagePath": "/pages/information/information",
+          "text": "信息",
+          "iconPath": "../../static/images/bar_icon/info_gray.png",
+          "selectedColor": "../../static/images/bar_icon/info_green.png",
+          "clas": "menu-item",
           active: false
         },
         {

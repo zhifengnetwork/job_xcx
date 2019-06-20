@@ -1,0 +1,19 @@
+/* pages/userInfo/collect.wxss */
+@import "../template/common";
+.inner{
+  padding: 40rpx 24rpx;
+  background:#f8f8f8;
+}
+.c-l-info .c-logo{
+  width: 100rpx;
+  height: 100rpx;
+}
+.c-info-msg{
+  margin-top: 0;
+}
+.company-info text{
+  font-size:24rpx;
+}
+.c-l-info{
+  margin-bottom: 15rpx;
+}

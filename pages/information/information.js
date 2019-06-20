@@ -1,4 +1,4 @@
-// pages/userInfo/userCenter.js
+// pages/information/infomation.js
 const app =getApp();
 Page({
 
