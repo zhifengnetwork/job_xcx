@@ -5,6 +5,9 @@
     "pages/personalMessage/personalMessage",
     "pages/register/register",
     "pages/index/index",
+    "pages/recommend/recommend",
+    "pages/infomation/infomation",
+    "pages/myHome/myHome",
     "pages/logs/logs"
   ],
   "window": {
@@ -13,5 +16,34 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+ "tabBar": {
+  "list": [
+    {
+      "pagePath": "pages/index/index",
+      "iconPath": "iconPath",
+      "text": "首页"
+    },
+    {
+      "pagePath": "pages/recommend/recommend",
+      "text": "推荐"
+    },
+    {
+      "pagePath": "pages/infomation/infomation",
+      "text": "信息"
+    },
+    {
+      "pagePath": "pages/myHome/myHome",
+      "text": "我的"
+    }
+  ]
+},
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+    "debug": true,
+    "navigateToMiniProgramAppIdList": [
+      "wxe5f52902cf4de896"
+    ]
+
 }
