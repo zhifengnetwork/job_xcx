@@ -43,16 +43,20 @@
   align-items:center;
   font-size: 30rpx;
   color:#656565;
+  margin-bottom:45rpx;
 }
 .u-o-icon1{
   width:25rpx;
   height: 25rpx;
 }
 .u-o-icon2{
-  width: 17rpx;
-  height: 25rpx;
+  width: 12rpx;
+  height: 24rpx;
 }
 .u-o-text{
   color:#25bbb3;
+  font-size:24rpx;
+}
+.c-msg{
   font-size:24rpx;
 }

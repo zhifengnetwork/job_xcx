@@ -1,0 +1,11 @@
+<view class='inner'>
+  <view class='content'>
+    <image class="audit-img" src='../../static/images/public/load-icon.png'/>
+    <view class='audit-c'>
+      <text class='m-r35'>资料已经提交</text>
+      <text class='m-r35'>请等待审核</text>
+      <text>审核时间1个工作日</text>
+    </view>
+    <button class='set-option'>完成</button>
+  </view>
+</view>

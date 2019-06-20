@@ -1,0 +1,20 @@
+/* pages/auditInfo/audit.wxss */
+@import '../template/common';
+.inner{
+  margin: 0 24rpx;
+  min-height: 100%;
+  display: flex;
+}
+.content{
+  text-align: center
+}
+.content .audit-img{
+  width: 155rpx;
+  height: 135rpx;
+  margin-top: 265rpx;
+}
+.audit-c{
+   margin: 70rpx 195rpx 0;
+   font-size: 28rpx;
+   color:#151515;
+}

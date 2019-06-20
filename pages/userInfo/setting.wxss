@@ -1,0 +1,13 @@
+/* pages/userInfo/setting.wxss */
+@import '../template/common';
+.inner{
+  margin:40rpx 24rpx 0;
+}
+.setting-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: 151515rpx;
+  margin-bottom: 40rpx;
+}

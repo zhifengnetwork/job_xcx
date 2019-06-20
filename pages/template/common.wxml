@@ -1,0 +1,15 @@
+<!-- SEARCH-1 START -->
+<template name="search-1">
+    <view class='search-1-wrap'>
+      <view class='search-cont'>
+        <input type='text' class='search'  placeholder="输入所要查找的内容" />
+        <image class="search-icon" src='../../static/images/public/search_icon.png'></image>
+        <view class='subtitle overH'>
+          <text class='fl'>选择地点</text>
+          <text class='fr'>人才选择</text>
+        </view>
+      </view>
+      <text class='search-r-text'>{{text}}</text>
+    </view>
+</template>
+<!-- SEARCH-1 START -->

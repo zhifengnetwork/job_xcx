@@ -1,0 +1,158 @@
+
+.search-1-wrap{
+   position:relative;
+   display: flex;
+   padding-top: 10rpx;
+   border-bottom: 2rpx solid #fff;
+}
+.search-cont{
+  flex: 0 0 1;
+  width:88%;
+
+  padding-right:65rpx; 
+  box-sizing: border-box
+}
+.search{
+   width:600rpx;
+   border:1px solid #6fd1cb;
+   border-radius: 36px;
+   height:60rpx;
+   padding-left:45rpx;
+   box-sizing: border-box;
+   display: inline-block;
+   font-size: 20rpx;
+   
+}
+.search-icon{
+  width:20rpx;
+  height:20rpx;
+  position:absolute;
+  left:24rpx;
+  top:26rpx;
+}
+.search-r-text{
+  font-size:24rpx;
+  line-height:48rpx;
+  color:#151515;
+  font-weight:700;
+  margin-left: auto;
+  flex: 0 0 1;
+}
+/* subtitle start */
+.subtitle{
+  margin:12rpx 0 21rpx;
+  color:#151515;
+}
+.subtitle text{
+  font-size:28rpx;
+  font-weight:700;
+}
+
+ /* LIST STYLE START */
+ .c-title{
+  width:100%;
+  margin:20rpx 0 30rpx 0;
+}
+.c-flame{
+   width:26rpx;
+   height:26rpx;
+   margin-right:14rpx;
+   margin-top:6rpx;
+   vertical-align: top;
+}
+.c-title text{
+  font-size:28rpx;
+  font-weight: 700;
+}
+
+.c-l-info{
+  display: flex;
+  flex-flow: wrap;
+  padding:25rpx; 
+  margin-bottom: 10rpx;
+  border-radius: 5px;
+  background:#fff;
+  align-items:center;
+
+}
+.c-l-info .c-logo{
+  width:90rpx;
+  height:90rpx;
+  flex:0 0 1;
+}
+.c-info-text{
+  margin-left:21rpx;
+  flex: 0 0 1;
+}
+.c-info-title{
+  font-weight: 700;
+  font-size: 28rpx;
+  
+}
+.c-info-msg{
+  margin-top:25rpx;
+}
+.c-info-msg text{
+  font-size:24rpx;
+  color:#5d5d5d;
+}
+.c-info-msg .c-msg{
+  padding-right: 30rpx;
+}
+.c-msg3{
+ font-size: 24rpx;
+ color: #5d5d5d;
+ margin: 17rpx 0 13rpx;
+}
+/* company info start */
+.company-info{
+  flex: 0 0 1;
+  margin-left: auto;
+  text-align: right;
+}
+
+.company-status{
+   width: 100rpx;
+   text-align: center;
+   font-size: 20rpx;
+   background:#25bbb3;
+   padding: 6rpx 0;
+   border-radius: 2px;
+   color:#fff;
+   margin-top: 20rpx;
+}
+/* Latest job search start */
+.search-job-list{
+  width: 100%;
+  /* display: flex; */
+}
+.s-portrait{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15rpx;
+  color:#5d5d5d;
+  font-size: 24rpx;
+}
+.s-portrait .portrait-icon{
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: middle;
+  margin-right: 18rpx;
+}
+.c-info-msg .company-status{
+  margin-top:0;
+}
+
+/* SETTING BTN START */
+.set-option{
+  width: 670rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  color:#fff;
+  background: #25bbb3;
+  position: fixed;
+  left: 24rpx;
+  bottom:40rpx;
+  font-size: 30rpx;
+}

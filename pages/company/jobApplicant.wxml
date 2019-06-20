@@ -1,0 +1,70 @@
+
+<view id="wrap">
+  <view class='inner'>
+    <!-- HEADER START -->
+    <import src="../template/common.wxml"/>
+    <template is="search-1" data="{{text: '我的'}}"/>
+    <!-- HEADER END -->
+    <view class='c-l-info'>
+      <view class='search-job-list'>
+        <view class='c-info-title'>专业偷税会计/会计</view>
+        <view class='c-info-msg overH'>
+          <text class='c-msg fl'>广州市白云区</text>
+          <text class='c-msg2 fl'>3年</text>
+          <view class='company-status fr'>有证书</view>
+        </view>
+        <view class='s-portrait'>
+          <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+          <text>周先生</text>
+        </view>
+        <view class='overH'></view>
+      </view>
+    </view>
+    <view class='c-l-info'>
+      <view class='search-job-list'>
+        <view class='c-info-title'>专业偷税会计/会计</view>
+        <view class='c-info-msg overH'>
+          <text class='c-msg fl'>广州市白云区</text>
+          <text class='c-msg2 fl'>3年</text>
+          <view class='company-status fr'>有证书</view>
+        </view>
+        <view class='s-portrait'>
+          <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+          <text>周先生</text>
+        </view>
+        <view class='overH'></view>
+      </view>
+    </view>
+    <view class='c-l-info'>
+      <view class='search-job-list'>
+        <view class='c-info-title'>专业偷税会计/会计</view>
+        <view class='c-info-msg overH'>
+          <text class='c-msg fl'>广州市白云区</text>
+          <text class='c-msg2 fl'>3年</text>
+          <view class='company-status fr'>有证书</view>
+        </view>
+        <view class='s-portrait'>
+          <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+          <text>周先生</text>
+        </view>
+        <view class='overH'></view>
+      </view>
+    </view>
+    <view class='c-l-info'>
+      <view class='search-job-list'>
+        <view class='c-info-title'>专业偷税会计/会计</view>
+        <view class='c-info-msg overH'>
+          <text class='c-msg fl'>广州市白云区</text>
+          <text class='c-msg2 fl'>3年</text>
+          <view class='company-status fr'>有证书</view>
+        </view>
+        <view class='s-portrait'>
+          <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+          <text>周先生</text>
+        </view>
+        <view class='overH'></view>
+      </view>
+    </view>
+    <view class='more-recommond'>更多推荐</view>
+  </view>
+</view>

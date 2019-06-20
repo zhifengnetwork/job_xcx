@@ -1,45 +1,31 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/recommend/recommend",
-    "pages/infomation/infomation",
-    "pages/myHome/myHome",
-    "pages/logs/logs"
+        "pages/index/index",
+    "pages/userInfo/userCenter",
+    "pages/userInfo/help",
+
+    "pages/userInfo/infomation",
+    "pages/userInfo/setting",
+    "pages/auditInfo/audit",
+    "pages/company/publish",
+    "pages/company/jobApplicant",
+    "pages/company/postionDetail",
+    "pages/company/company",
+    "pages/third_party/third_party",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
- "tabBar": {
-  "list": [
-    {
-      "pagePath": "pages/index/index",
-      "iconPath": "iconPath",
-      "text": "首页"
-    },
-    {
-      "pagePath": "pages/recommend/recommend",
-      "text": "推荐"
-    },
-    {
-      "pagePath": "pages/infomation/infomation",
-      "text": "信息"
-    },
-    {
-      "pagePath": "pages/myHome/myHome",
-      "text": "我的"
-    }
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
   ]
-},
-    "networkTimeout": {
-      "request": 10000,
-      "downloadFile": 10000
-    },
-    "debug": true,
-    "navigateToMiniProgramAppIdList": [
-      "wxe5f52902cf4de896"
-    ]
 
 }

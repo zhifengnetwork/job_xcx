@@ -49,8 +49,8 @@
   height: 25rpx;
 }
 .u-o-icon2{
-  width: 17rpx;
-  height: 25rpx;
+  width: 12rpx;
+  height: 24rpx;
 }
 .u-o-text{
   color:#25bbb3;

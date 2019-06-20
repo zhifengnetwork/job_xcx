@@ -1,10 +1,9 @@
-// pages/infomation/infomation.js
+// pages/userInfo/help.js
 Page({
 
   /**
    * 页面的初始数据
    */
-
   data: {
 
   },

@@ -1,0 +1,18 @@
+/* pages/userInfo/help.wxss */
+@import '../template/common';
+.h-list{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  font-size: 30rpx;
+  color:#656565;
+  margin-bottom: 44rpx;
+}
+.h-icon2{
+  width: 12rpx;
+  height: 24rpx;
+}
+.h-text{
+  color:#25bbb3;
+  font-size:24rpx;
+}

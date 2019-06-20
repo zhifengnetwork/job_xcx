@@ -1,10 +1,9 @@
-// pages/infomation/infomation.js
+// pages/company/postionDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
-
   data: {
 
   },

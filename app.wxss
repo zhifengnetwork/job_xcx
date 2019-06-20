@@ -1,10 +1,85 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.overH{
+  overflow: hidden;
+}
+.t-right{
+  text-align: right;
+}
+.m-r35{
+  margin-right: 35rpx;
+}
+.m-b10{
+  margin-bottom: 10rpx;
+}
+.m-b50{
+  margin-bottom: 50rpx;
+}
+.inner{
+  padding: 0 24rpx;
+}
+/* TABBAR START */
+.menu-item{  
+  width: 32%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 8px;  
+}  
+.menu-item1{  
+  width: 24%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 8px;  
+}  
+.tab-bar .img{ 
+  width: 41rpx;  
+  height:37rpx;  
+  display: block;  
+  margin:auto;
+  margin-bottom: 11rpx;  
+}  
+.clear{  
+  clear: both;  
+}  
+.tab-bar{  
+  position:fixed;
+  width:100%;
+  padding:14rpx 2%;
+  background:#fff;
+  z-index:100;
+  font-size:24rpx;
+  color:#7a7a7a;
   box-sizing: border-box;
-} 
+  display:flex;
+
+}  
+ 
+.button{
+  margin: 130px;
+}
+
+/* TOP STAT */
+
+.custom{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 45px;
+  background: #2C5CFF;
+  z-index: 999;
+}
+.custom text{
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  max-width: 280rpx;
+}
+.empty_custom{
+  height: 45px;
+  width: 100%;
+}
