@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/login/login",
-    
+    "pages/forgetpassword/forgetpassword",
+    "pages/personalMessage/personalMessage",
+    "pages/register/register",
     "pages/index/index",
     "pages/logs/logs"
   ],

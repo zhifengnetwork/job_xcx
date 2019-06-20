@@ -1,0 +1,30 @@
+<view>
+  <view class="log_ear">
+    <image src="../../images/login/xiaolian.png" class="xiaolian"></image>
+  </view>
+  <view>
+    <text class="welecom_title">智丰招聘账号注册</text>
+  </view>
+</view>
+<view class="login_ear">
+  <text class="qianzui">+86</text>
+  <input placeholder="请输入手机号登录" class="phone_num" type='text' name="phone_num" value='{{inputValue}}' bindinput='getVale'></input>
+  <image src="../../images/login/delete.png" class="delete_pic" bindtap='deletetext' wx:if="{{status}}"></image>
+</view>
+<view class="mima_ear">
+  <input placeholder="请输入验证码" class="phone_password" type='text' name="pass" bindinput='getVale2'></input>
+  <text class="fasong" bindtap='fasongma'>{{fasongtext}}</text>
+</view>
+<!-- 下拉框 -->
+<view class='select_box'>
+  <view class='select' catchtap='selectTap'>
+    <text class='select_text'>{{selectData[index]}}</text>
+    <image src='../../images/forgetpassword/xiala.png' class='xiala_pic'></image>
+  </view>
+  <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+    <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+  </view>
+</view>
+<view>
+  <button class="denglu" bindtap='complete' style="background:{{color}}" bindtap='personal'>下一步</button>
+</view>
