@@ -17,6 +17,7 @@
 }
 .-view-inp{
   text-align: right;
+  width: 60%;
 }
 .-view-msg,.-view-inp{
   color: #808080;

@@ -1,0 +1,65 @@
+<!--pages/userInfo/editInfo.wxml-->
+<view class='inner'>
+  <view class='edit-info'>
+    <view class='edit-cont'>
+      <view class='e-info-'>
+        <text class='e-info-msg'>公司名称：</text>
+        <input type='text' class='e-info-inp' placeholder='输入公司名称'/>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>公司类型：</text>
+        <input type='text' class='e-info-inp' placeholder='输入公司类型'/>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>成立时间：</text>
+
+<view>
+  <view>{{year}}年{{month}}月{{day}}日</view>
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+        <input type='text' class='e-info-inp' placeholder='输入年龄'/>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>公司规模：</text>
+        <input type='text' class='e-info-inp -inp-2' placeholder='输入公司规模'/> 人
+      </view>    
+      
+    </view>
+    <image class='edit-img-' src='../../static/images/public/c_logo.jpg'/>
+  </view>
+  <!-- --->
+  <view class='user-option'>
+      <view class='u-o-list'>
+        <text>热招职位</text>
+        <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+      </view>
+      <view class='u-o-list'>
+        <text>平均薪资</text>
+        <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+      </view>
+      <navigator url="" class='u-o-list'>
+        <text>公司成就</text>
+        <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+      </navigator>
+      <navigator url="" class='u-o-list'>
+        <text>名人介绍</text>
+        <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+      </navigator>
+  </view>
+  <!-- -->
+  <textarea placeholder='公司介绍说明'></textarea>
+  <!--footer -->
+  <view class='line-heig'></view>
+  <view class='set-option-1'><button class='s-1-option'>保存</button></view>
+</view>

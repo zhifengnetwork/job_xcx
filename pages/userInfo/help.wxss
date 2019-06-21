@@ -6,7 +6,8 @@
   align-items:center;
   font-size: 30rpx;
   color:#656565;
-  margin-bottom: 44rpx;
+  padding:22rpx 0;
+
 }
 .h-icon2{
   width: 12rpx;

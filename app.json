@@ -1,6 +1,10 @@
 {
   "pages": [
+    "pages/company/editInfo",
     "pages/userInfo/editInfo",
+    "pages/userInfo/help",
+    "pages/userInfo/userCenter",
+    "pages/index/index",
     "pages/company/uCollect",
     "pages/userInfo/setting",
     "pages/userInfo/privacySettings",
@@ -9,9 +13,6 @@
     "pages/userInfo/goldDeposits",
     "pages/information/information",
     "pages/userInfo/collect",
-    "pages/index/index",
-    "pages/userInfo/userCenter",
-    "pages/userInfo/help",
     "pages/auditInfo/audit",
     "pages/company/cUserInfo",
     "pages/company/publish",

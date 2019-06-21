@@ -1,9 +1,9 @@
 <view class="inner">
   <view class='help'>
-    <view class='h-list'>
+    <navigator url='../auditInfo/audit' class='h-list'>
       <text>审核流程</text>
       <image class='h-icon2' src='../../static/images/public/right_arrow_gray.png'/>
-    </view>
+    </navigator>
     <view class='h-list'>
       <text>违规申明</text>
       <image class='h-icon2' src='../../static/images/public/right_arrow_gray.png'/>

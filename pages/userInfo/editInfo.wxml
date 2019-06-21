@@ -7,7 +7,7 @@
         <input type='text' class='e-info-inp' placeholder='输入姓名'/>
       </view>
       <view class='e-info-'>
-        <text class='e-info-msg'>姓名：</text>
+        <text class='e-info-msg'>性别：</text>
         <view class='e-info-radio'>
           <radio-group class="radio-group"bindchange="radioChange">
               <label class="radio" wx:for="{{items}}">
@@ -26,7 +26,34 @@
       </view>    
       
     </view>
-
+    <image class='edit-img-' src='../../static/images/public/big_portrait.png'/>
   </view>
-  <image class='edit-msg-' src='../../static/images/public/big_portrait.png'/>
+  <!-- --->
+  <view class='user-option'>
+      <view class='u-o-list'>
+        <text>求职类型</text>
+        <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+      </view>
+      <view class='u-o-list'>
+        <text>到岗时间</text>
+        <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+      </view>
+      <view class='u-o-list'>
+        <text>平均薪资</text>
+        <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+      </view>
+      <navigator url="" class='u-o-list'>
+        <text>工作经历</text>
+        <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+      </navigator>
+      <navigator url="" class='u-o-list'>
+        <text>教育经历</text>
+        <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+      </navigator>
+  </view>
+  <!-- -->
+  <textarea placeholder='个人说明'></textarea>
+  <!--footer -->
+  <view class='line-heig'></view>
+  <view class='set-option-1'><button class='s-1-option'>保存</button></view>
 </view>

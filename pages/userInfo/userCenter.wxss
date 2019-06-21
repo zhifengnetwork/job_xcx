@@ -43,7 +43,8 @@
   align-items:center;
   font-size: 30rpx;
   color:#656565;
-  margin-bottom:45rpx;
+  padding:22rpx 0;
+
 }
 .u-o-icon1{
   width:25rpx;

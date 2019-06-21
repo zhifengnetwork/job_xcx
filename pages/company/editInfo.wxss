@@ -4,6 +4,7 @@
   padding: 17rpx 24rpx;
   font-size: 28rpx;
   color:#151515;
+  /* background: red */
 }
 .edit-info{
   display: flex;
@@ -14,8 +15,7 @@
    flex: 1;
 }
 .e-info-{
-  width:70%;
- 
+  width:495rpx;
   margin-bottom: 20rpx;
 }
 .e-info-msg{
@@ -24,9 +24,10 @@
 .e-info-inp{
   font-size: 24rpx;
   color:#a2a2a2;
-  width: 60%;
+  width: 300rpx;
   display: inline-block;
   vertical-align: middle;
+  height:50rpx;
 
 }
 .e-info-radio{
@@ -46,6 +47,11 @@
 .edit-img-{
   width:170rpx;
   height: 160rpx;
+}
+.pick-timer{
+  width:346rpx;
+ display:inline-block;
+
 }
 /* */
 .u-o-list{
@@ -73,4 +79,8 @@ textarea{
   border:2rpx solid #fff; 
   border-radius: 6rpx;
 
+}
+.intro {
+  margin: 30px;
+  text-align: center;
 }

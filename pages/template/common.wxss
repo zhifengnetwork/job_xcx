@@ -124,7 +124,6 @@
 /* Latest job search start */
 .search-job-list{
   width: 100%;
-  /* display: flex; */
 }
 .s-portrait{
   width: 100%;
@@ -154,6 +153,28 @@
   position: fixed;
   left: 24rpx;
   bottom:40rpx;
+  font-size: 30rpx;
+  z-index: 11;
+}
+/**/
+.set-option-1{
+  position:fixed;
+  z-index:11;
+  left:0;
+  bottom:40rpx;
+  width:100%;
+  box-sizing:border-box;
+  padding:18rpx 24rpx 0;
+  margin-top:25rpx;
+
+}
+.line-heig{
+  height:132rpx;
+}
+.s-1-option{
+  border-radius: 45rpx;
+  color:#fff;
+  background: #25bbb3;
   font-size: 30rpx;
 }
 
