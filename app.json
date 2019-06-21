@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/company/editInfo",
     "pages/userInfo/editInfo",
     "pages/userInfo/help",
     "pages/userInfo/userCenter",
-    "pages/index/index",
     "pages/company/uCollect",
     "pages/userInfo/setting",
     "pages/userInfo/privacySettings",
@@ -25,6 +25,7 @@
     "pages/personalMessage/personalMessage",
     "pages/register/register",
     "pages/recommend/recommend",
+    "pages/register/fillInInformation/fillInInformation",
     "pages/logs/logs"
   ],
   "window": {
@@ -38,6 +39,6 @@
   },
   "debug": true,
   "navigateToMiniProgramAppIdList": [
-    "wxe5f52902cf4de896"
+    "wxb698aa4c746f925b"
   ]
 }
