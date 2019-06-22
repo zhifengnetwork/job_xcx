@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/userInfo/goldDeposits",
+    "pages/index/index",
+    "pages/company/postJobPostings",
     "pages/userInfo/withdrawal",
     "pages/userInfo/myPurse",
     "pages/userInfo/editInfo",
@@ -15,6 +16,7 @@
     "pages/register/register",
     "pages/userInfo/myCertificate",
     "pages/company/editInfo",
+    "pages/userInfo/editInfo",
     "pages/userInfo/help",
     "pages/company/uCollect",
     "pages/userInfo/setting",

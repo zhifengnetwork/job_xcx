@@ -1,9 +1,10 @@
 
 <view id="wrap">
+  <!-- HEADER START -->
+  <import src="../template/common.wxml"/>
+  <template is="search-1" data="{{text: '我的'}}"/>
+  
   <view class='inner'>
-    <!-- HEADER START -->
-    <import src="../template/common.wxml"/>
-    <template is="search-1" data="{{text: '我的'}}"/>
     <!-- HEADER END -->
     <view class='c-l-info'>
       <view class='search-job-list'>

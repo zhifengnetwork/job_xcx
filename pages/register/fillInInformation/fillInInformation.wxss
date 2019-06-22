@@ -55,21 +55,99 @@
   font-size: 28rpx;
   color: #a2a2a2;
 }
-.license_name {
+/*点击上传身份证部分 s*/
+.idPic{
+  width: 100%;
+  height: auto;
+  font-size:28rpx;
   color: #151515;
-  font-size: 28rpx;
-  line-height: 36rpx;
+}
+.-pic-subtitle{
+  margin: 20rpx 0 28rpx;
   text-align: center;
 }
-.license_name text {
-  font-size: 36rpx;
-  color: #25bbb3;
-  vertical-align: middle;
+.-pic-stat{
+  width: 17rpx;
+  height: 21rpx;
 }
-.fg {
-  margin: 0 auto;
+.id-card-top,.id-card-bottom{
+  width:500rpx;
+  height: 260rpx;
+  margin: 30rpx auto;
+  position: relative;
+  background:#dadada;
+}
+.id-card-top image:first-child,
+.id-card-bottom image:first-child{
+    width:500rpx;
+    height: 260rpx;
+    position: absolute;
+
+}
+.addPic{
+  width:68rpx;
+  height: 68rpx;
+  position: relative;
+  top: 50rpx;
+  left: 50%;
+  margin-left:-34rpx;
+}
+.pic {
+  width:68rpx;
+  height: 68rpx;
+  position: relative;
+  top: 100rpx;
+  left: 50%;
+  margin-left:-34rpx;
+}
+.id-card-top text,.id-card-bottom text{
+  text-align: center;
+  display: block;
+  position: relative;
+  top: 70rpx;
+}
+
+.area_select {
+	width: 100%;
+	display: block;
+}
+.a-more-pic{
+  text-align: center;
+  font-size:28rpx;
+  color: #151515;
+  margin:20rpx 0 39rpx;
+}
+/*点击上传身份证部分 e*/
+.file-inner{
+  position: relative;
+}
+.file-btn{
   width: 500rpx;
-	height: 260rpx;
-	background-color: #dadada;
-	border-radius: 6px;
+  height: 66rpx;
+  border-radius: 10rpx;
+  background:#dadada;
+
+}
+.f-plus-{
+  width: 33rpx;
+  height: 33rpx;
+  vertical-align: middle;
+  position: absolute;
+  top:18rpx;
+  bottom: 0;
+  left: 50%;
+  margin-left: -11.5rpx;
+}
+.option {
+  margin: 20rpx auto 65rpx;
+  width: 670rpx;
+  height: 88rpx;
+  background: #25bbb3;
+  color: #fff;
+  letter-spacing: 2px;
+  border-radius: 45px;
+  line-height: 88rpx;
+}
+button {
+  padding: 0;
 }

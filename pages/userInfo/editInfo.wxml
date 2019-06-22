@@ -36,10 +36,22 @@
       </view>
       <view class='u-o-list'>
         <text>到岗时间</text>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+
         <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
       </view>
       <view class='u-o-list'>
         <text>平均薪资</text>
+        <picker mode="time" value="{{time}}" start="6k-8k" end="0k-0k" bindchange="bindTimeChange">
+          <view class="picker">
+            {{time}}
+          </view>
+        </picker>
+
         <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
       </view>
       <navigator url="" class='u-o-list'>

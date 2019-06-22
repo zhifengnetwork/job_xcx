@@ -52,13 +52,31 @@
       <text class='text'>公司介绍:</text>
       <textarea class='in_tar' placeholder=' 至少10字介绍公司'></textarea>
     </view>
-    <view class='license_name'>
-      <text>*</text>上传营业执照（必填）
+     <!-- 上传营业执照 -->
+    <view class='idPic'>
+      <view class='-pic-subtitle'>
+        <image class='-pic-stat' src='../../../static/images/public/star.png'></image>
+        <text>上传营业执照(必填)</text>
+      </view>
+      <view class='id-card-top'>
+        <image src='{{positiveImg}}'></image>
+        <image class='addPic' bindtap='addPosPic' src='../../../static/images/public/plus.png'></image>
+        <text>营业执照</text>
+      </view>
     </view>
-    
-    <view class='fg'>
-
+    <!-- 上传其他资料 -->
+    <view class='idPic'>
+      <view class='-pic-subtitle'>其他资料(选填)</view>
+      <view class='id-card-top'>
+        <image src='{{positiveimg}}'></image>
+        <image class='pic' bindtap='pic' src='../../../static/images/public/plus.png'></image>
+      </view>
+      <view class='file-inner'>
+        <button class='file-btn'></button> 
+        <image class='f-plus-' src='../../../static/images/public/plus.png'/>
+      </view>
     </view>
+    <view class='a-more-pic'>添加一张</view>
   </view>
-  <!-- <view class='set-option'>提交</view> -->
+  <button class='option'>提交</button>
 </view>

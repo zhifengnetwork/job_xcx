@@ -25,6 +25,7 @@
    margin: 0 24rpx;
 }
 .search-inner{
+  margin: 25rpx 0 10rpx;
   display: flex;
   line-height: 48rpx;
 }
@@ -39,17 +40,17 @@
   height: 25rpx; 
 }
 .search-cont{
+  margin: 0 24rpx 0 24rpx;
   flex: 0 0 1;
   width:80%;
   box-sizing: border-box;
   position: relative;
-  margin: 13rpx auto 20rpx;
 }
 .search{
    width:100%;
    border:1px solid #25bbb3;
    border-radius: 28px;
-   height:50rpx;
+   height:60rpx;
    padding-left:80rpx;
    box-sizing: border-box;
    display: inline-block;
@@ -60,15 +61,16 @@
   width:20rpx;
   height:20rpx;
   position:absolute;
-  left:60rpx;
+  left:45rpx;
   top:19rpx;
 }
 .collect_tab{
+  display: inline-block;
+  vertical-align: middle;
   font-size:24rpx;
   color:#151515;
   font-weight:700;
   flex: 0 0 1; 
-  margin-top: 15rpx;
 }
 /* CONTENT STAT */
 .d-content{
@@ -77,12 +79,14 @@
 }
 .d-c-list{
   overflow: hidden;
-  height:295rpx;
   border-radius: 8rpx;
   background:#fff;
   padding: 20rpx 15rpx;
   display: flex;
   margin-bottom: 26rpx;
+}
+.line {
+  margin: 0 0 25rpx;
 }
 .c-list-portrait{
    width: 150rpx;

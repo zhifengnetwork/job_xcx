@@ -94,13 +94,12 @@
   display: inline-block;
   vertical-align: top;
   float: right;
-  cursor: pointer;
 }
 .eye_pic{
-  width: 30rpx;
-  height: 20rpx;
+  width: 40rpx;
+  height: 25rpx;
   position: absolute;
   right: 0;
-  bottom: 23rpx;
+  bottom: 30rpx;
 
 }

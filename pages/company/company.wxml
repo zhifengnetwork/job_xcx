@@ -1,8 +1,9 @@
 
+<!-- HEADER START -->
+<import src="../template/common.wxml"/>
+<template is="search-1" data="{{text: '我的'}}"/>
 <view class='inner'>
-    <!-- HEADER START -->
-    <import src="../template/common.wxml"/>
-    <template is="search-1" data="{{text: '我的'}}"/>
+    
       <!-- HEADER END -->
       <view class='container c-body'>
           <view class='subtitle overH'>

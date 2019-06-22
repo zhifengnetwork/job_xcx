@@ -9,7 +9,7 @@ Page({
     arr: [],
     indicatorDots: true,
     autoplay: true,
-    interval: 2000,
+    interval: 3000,
     duration: 1000,
   },
   onShow:function(){

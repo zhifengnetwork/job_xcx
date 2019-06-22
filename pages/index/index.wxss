@@ -14,10 +14,13 @@
   border-radius:10rpx;
   overflow:hidden;
 }
-
+swiper {
+  height: 360rpx;
+}
 .login_tab{
+  display: block;
   font-size:24rpx;
-  line-height:48rpx;
+  line-height:40px;
   color:#151515;
   font-weight:700;
 }
