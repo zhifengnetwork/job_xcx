@@ -11,15 +11,15 @@
    z-index: 10;
    width: 100%;
    display: flex;
-   padding-top: 10rpx;
-   margin-bottom:10rpx; 
-  background:#fff;
+   padding: 10rpx 0; 
+   background:#fff;
 }
 .search-cont{
+  padding: 10rpx 0 0;
   flex: 0 0 1;
   width:581rpx;
-  margin-right:65rpx; 
-  box-sizing: border-box
+  margin: 0 60rpx 0 24rpx; 
+  box-sizing: border-box;
 }
 .search{
    width:100%;
@@ -36,8 +36,8 @@
   width:21rpx;
   height:21rpx;
   position:absolute;
-  left:24rpx;
-  top:31rpx;
+  left:40rpx;
+  top:38rpx;
 }
 .search-r-text{
   font-size:24rpx;
@@ -49,15 +49,17 @@
 }
 /* subtitle start */
 .subtitle{
-  margin:12rpx 0 21rpx;
+  margin:31rpx 0 21rpx;
   color:#151515;
-  width: 581rpx;
+  width: 100%;
+  line-height: 55rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .subtitle text{
-  /* width:50%; */
+  width:50%;
+  text-align: center;
   font-size:28rpx;
   font-weight:700;
 }

@@ -13,6 +13,30 @@ Page({
       region: e.detail.value
     })
   },
+  //  上传营业执照
+  addPosPic: function () {
+    var that = this;
+    wx.chooseImage({
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths
+        that.setData({
+          positiveImg: tempFilePaths
+        })
+      }
+    })
+  },
+  //  上传其他资料
+  pic: function () {
+    var that = this;
+    wx.chooseImage({
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths
+        that.setData({
+          positiveimg: tempFilePaths
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

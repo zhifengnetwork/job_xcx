@@ -1,13 +1,13 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/company/postJobPostings",
     "pages/userInfo/withdrawal",
     "pages/register/register",
     "pages/userInfo/myCertificate",
     "pages/personalMessage/personalMessage",
-    "pages/index/index",
+    
     "pages/company/editInfo",
-    "pages/index/index",
     "pages/userInfo/editInfo",
     "pages/userInfo/help",
     "pages/userInfo/userCenter",
