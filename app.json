@@ -5,6 +5,7 @@
     "pages/register/register",
     "pages/userInfo/myCertificate",
     "pages/personalMessage/personalMessage",
+    "pages/index/index",
     "pages/company/editInfo",
     "pages/index/index",
     "pages/userInfo/editInfo",
@@ -29,6 +30,7 @@
     "pages/forgetpassword/forgetpassword",
 
     "pages/recommend/recommend",
+    "pages/register/fillInInformation/fillInInformation",
     "pages/logs/logs"
   ],
   "window": {
@@ -42,6 +44,6 @@
   },
   "debug": true,
   "navigateToMiniProgramAppIdList": [
-    "wxe5f52902cf4de896"
+    "wxb698aa4c746f925b"
   ]
 }

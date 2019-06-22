@@ -1,0 +1,75 @@
+/* pages/register/fillInInformation/fillInInformation.wxss */
+@import "../../template/common";
+.content {
+  padding: 0 15px;
+  margin: 36rpx 24rpx;
+  background: #fff;
+}
+.name_wrap {
+  padding: 10px 0;
+}
+.name_wrap .text,.inp {
+  display: inline-block;
+  vertical-align: top;
+}
+.text {
+  width: 20%;
+  font-size: 28rpx;
+  color: #151515;
+  line-height: 48rpx;
+  text-align: right;
+}
+.inp {
+  padding: 0 0 10rpx;
+  width: 80%;
+  border-bottom: 1px solid #eee; 
+}
+.inp input {
+  padding-left: 20rpx;
+  height: 48rpx;
+  font-size: 28rpx;
+  line-height: 48rpx;
+}
+.section {
+  padding-left: 20rpx;
+  display: inline-block;
+  vertical-align: top;
+  width: 75%;
+  font-size: 26rpx;
+  color: #151515;
+  line-height: 48rpx;
+}
+.u-o-icon2{
+  margin-top: 15rpx;
+  width: 12rpx;
+  height: 24rpx;
+  vertical-align: top;
+}
+.in_tar {
+  padding: 14rpx 0 0 17rpx;
+  display: inline-block;
+  width: 75%;
+  height: 209rpx;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  font-size: 28rpx;
+  color: #a2a2a2;
+}
+.license_name {
+  color: #151515;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+.license_name text {
+  font-size: 36rpx;
+  color: #25bbb3;
+  vertical-align: middle;
+}
+.fg {
+  margin: 0 auto;
+  width: 500rpx;
+	height: 260rpx;
+	background-color: #dadada;
+	border-radius: 6px;
+}
