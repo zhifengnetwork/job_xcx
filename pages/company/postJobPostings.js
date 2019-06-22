@@ -1,51 +1,60 @@
-// pages/company/postJobPostings.js
-const date = new Date()
-const years = []
-const months = []
-const days = []
 
-for (let i = 1990; i <= date.getFullYear(); i++) {
-  years.push(i)
+const years =[];
+for(let i =1; i<12;i++){
+  years.push(i);
 }
-
-for (let i = 1; i <= 12; i++) {
-  months.push(i)
+const pays =[]
+for (let i = 1; i < 12000; i++) {
+  i=i+1000-1;
+  pays.push(i);
 }
-
-for (let i = 1; i <= 31; i++) {
-  days.push(i)
-}
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    years: years,
-    year: date.getFullYear(),
-    months: months,
-    month: 2,
-    days: days,
-    day: 2,
-    value: [9999, 1, 1],
+    array: years,
+    payArray:pays,
+    index: 0,
+    index1:0,
+    paysIndex:0,
+    paysIndex1:0,
+    items: [
+      { name: 'noNeed', value: '无需证书', checked: 'true' },
+      { name: 'need', value: '需要证书' }
+    ]
   },
-  bindChange: function (e) {
-    const val = e.detail.value
+  yearsChange: function (e) {
     this.setData({
-      year: this.data.years[val[0]],
-      month: this.data.months[val[1]],
-      day: this.data.days[val[2]]
+      index: e.detail.value
     })
   },
-
+  yearsChange1: function (e) {
+    this.setData({
+      index1: e.detail.value
+    })
+  },
+  paysChange: function (e) {
+    this.setData({
+      paysIndex: e.detail.value
+    })
+  },
+  paysChange1: function (e) {
+    this.setData({
+      paysIndex1: e.detail.value
+    })
+  },
+  saveInfo:function(){
+    wx.redirectTo({
+      url: 'company'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

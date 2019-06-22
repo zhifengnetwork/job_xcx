@@ -9,10 +9,10 @@
       <text class='withdrawal-subtitle'>提现方式</text>
       <view class='withdrawal-cont'>
         <view class='w-icon-wrap'>
-          <image class='w-icon' src='../../static/images/public/wchat.png'/>
+          <image bindtap="changWithdrawal" class='w-icon' s-status="0" src='../../static/images/public/wchat.png'/>
         </view>
         <view class='w-icon-wrap'>
-          <image class='w-icon' src='../../static/images/public/alipay.png'/>
+          <image bindtap="changWithdrawal" class='w-icon' s-status="0"  src='../../static/images/public/alipay.png'/>
         </view>
         <view class='w-user-info'>
             <text>周鹏</text>
@@ -39,5 +39,5 @@
       </view>
   </view>
   <view class='height'></view>
-  <view class='set-option'>确定付款</view>
+  <navigator url="myPurse" class='set-option'>确定付款</navigator>
 </view>

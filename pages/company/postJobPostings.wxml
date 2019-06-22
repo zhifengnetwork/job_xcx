@@ -9,38 +9,62 @@
       <text class='-list-msg1'>会计</text>
       <image class="-list-icon" src='../../static/images/public/right_arrow_gray.png'/>
    </view>
+   <!-- WORKING YEAR START -->
    <view class='post-list'>
       <text class='-list-msg'>工龄:</text>
       <view class='selcet-time'>
-          <view class='e-info-pick'>
-            <picker-view indicator-style="height: 50px;" class='-timer-' value="{{value}}" bindchange="bindChange">
-              <picker-view-column>
-                <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
-              </picker-view-column>
-              <picker-view-column>
-                <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
-              </picker-view-column>
-              <picker-view-column>
-                <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
-              </picker-view-column>
-            </picker-view>
-          </view>
-          <!-- -->
-          ——
-          <!-- -->
-          <view class='e-info-pick'>
-            <picker-view indicator-style="height: 50px;" class='-timer-' value="{{value}}" bindchange="bindChange">
-              <picker-view-column>
-                <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
-              </picker-view-column>
-              <picker-view-column>
-                <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
-              </picker-view-column>
-              <picker-view-column>
-                <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
-              </picker-view-column>
-            </picker-view>
-          </view>
+        <view class='e-info-picker'>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">
+                {{array[index]}} 年 <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+        —
+        <view class='e-info-picker'>
+            <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array}}">
+              <view class="picker">
+                {{array[index1]}} 年 <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
       </view>
    </view>
+   <!-- PAY START -->
+   <view class='post-list'>
+      <text class='-list-msg'>薪资:</text>
+      <view class='selcet-time'>
+        <view class='e-info-picker'>
+            <picker bindchange="paysChange" value="{{paysIndex}}" range="{{payArray}}">
+              <view class="picker">
+                {{payArray[paysIndex]}} <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+        —
+        <view class='e-info-picker'>
+            <picker bindchange="paysChange1" value="{{paysIndex1}}" range="{{payArray}}">
+              <view class="picker">
+                {{payArray[paysIndex1]}} <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+      </view>
+
+   </view>
+   <!-- -->
+   <view class='post-list'>
+      <text class='-list-msg'>证书要求:</text>
+      <view class='e-info-radio'>
+        <radio-group class="radio-group"bindchange="radioChange">
+            <label class="radio" wx:for="{{items}}">
+              <radio style="zoom:.6" color="#25bbb3" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </radio-group>
+      </view>
+   </view>
+  <navigator url='postionDetail'><text class='-list-msg'>职位详情:</text></navigator>
+  <textarea placeholder=''></textarea>
+  <view class='line-heig'></view>
+  <view class='set-option' bindtap='saveInfo'>保存</view>
 </view>

@@ -1,0 +1,16 @@
+.e-msg{
+  font-size: 28rpx;
+  color:#151515;
+  font-weight: 600;
+}
+
+.e-content{
+  padding:30rpx 24rpx;
+  color:#3c3c3c;
+  font-size:26rpx;
+  line-height:48rpx;
+  text-indent:26rpx;
+}
+.e-c-list{
+  margin-bottom:20rpx;
+}

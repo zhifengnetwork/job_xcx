@@ -106,17 +106,33 @@
  margin-bottom:20px;
 }
 radio-group{
- margin:10rpx 0rpx;
+ /* margin:10rpx 0rpx; */
+ display: flex;
+ /* justify-content: space-around; */
+ flex-wrap: wrap;
 }
-radio-group>label{
- width:22.5%;
+.free-dialog__container radio-group>label{
+ width:20%;
  display: inline-block;
  border:1px solid #ddd;
- padding:10px 0px;
- margin:0px 2px 2px;
+ padding:16rpx 0px;
+ margin:0 0 2% 2%;
+ box-sizing: border-box;
 }
-
-radio-group label radio{
+.e-info-radio {
+  /* display: flex; */
+  width: 70%;
+  padding-left:20rpx;
+}
+.e-info-radio .radio{
+  width: 40%;
+  font-size: 26rpx;
+}
+.e-info-radio .radio radio{
+  vertical-align: top;
+  margin-right: 6rpx;
+}
+.free-dialog__container radio-group label radio{
  width:100%;
  z-index: 3;
  display: none;
@@ -125,10 +141,11 @@ radio-group label radio{
  background:#48c23d;
  color:#fff;
 }
-radio-group label .free-text{
+.free-dialog__container radio-group label .free-text{
  width:100%;
  text-align: center;
  display: inline-block;
+ font-size: 28rpx;
 }
 .free-dialog-submit{
   float: right;
@@ -163,12 +180,21 @@ radio-group label .free-text{
   position: relative;
   background:#dadada;
 }
-.id-card-top image:first-child,
+/* .id-card-top image:first-child,
 .id-card-bottom image:first-child{
     width:500rpx;
     height: 260rpx;
     position: absolute;
 
+} */
+.big-pic{
+    width:500rpx;
+    height: 260rpx;
+    position: absolute;
+}
+.id-card-top:hover .-add-img-,.id-card-bottom:hover .-add-img-{
+    /* display: none; */
+    opacity: 0;
 }
 .addPic{
   width:68rpx;
@@ -215,4 +241,21 @@ radio-group label .free-text{
   bottom: 0;
   left: 50%;
   margin-left: -11.5rpx;
+}
+.picker-wrap {
+  width:70%;
+  display:flex;
+  align-items:center;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+
+.down-arrow{
+  width:12rpx;
+  height:20rpx;
+  transform:rotate(90deg);
+  vertical-align:middle;
+  margin-left:10rpx;
+  padding-bottom:2rpx;
+
 }

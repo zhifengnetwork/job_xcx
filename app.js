@@ -56,7 +56,7 @@ App({
       tabBar: tabBar
     });
   },
-  editTabBar2: function () {
+  editTabBar1: function () {
     var _curPageArr = getCurrentPages();
     var _curPage = _curPageArr[_curPageArr.length - 1];
     var _pagePath = _curPage.__route__;
@@ -73,6 +73,12 @@ App({
     _curPage.setData({
       tabBar: tabBar
     });
+  },
+  editTabBar2:function(){
+    wx.commonBar()
+  },
+  commonBar:function(){
+    console.log('dfdfdsfsdf')
   },
   // getUserInfo: function (cb) {
   //   var that = this
@@ -131,11 +137,11 @@ App({
       ],
       "position": "bottom"
     },
-    tabBar2: {
+    tabBar1: {
       "color": "#9E9E9E",
-      "selectedColor": "#f00",
+      "selectedColor": "#25bbb3",
       "backgroundColor": "#fff",
-      "borderStyle": "#ccc",
+      "borderStyle": "#d6d6d6",
       "list": [
         {
           "pagePath": "/pages/index/index",
@@ -148,31 +154,24 @@ App({
         },
         {
           "pagePath": "/pages/information/information",
-          "text": "信息",
+          "text": "个人",
           "iconPath": "../../static/images/bar_icon/info_gray.png",
-          "selectedColor": "../../static/images/bar_icon/info_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/info_green.png",
           "clas": "menu-item",
-          active: false
+          "selectedColor": "#4EDF80",
+          active: true
         },
         {
-          "pagePath": "/pages/cont/index",
-          "text": "指南",
-          "iconPath": "/img/note.png",
-          "selectedIconPath": "/img/home.png",
+          "pagePath": "/pages/userInfo/userCenter",
+          "text": "我的",
+          "iconPath": "../../static/images/bar_icon/user_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/user_green.png",
+          "clas": "menu-item",
           "selectedColor": "#4EDF80",
-          "clas": "menu-item2",
-          active: false
-        },
-        {
-          "pagePath": "/pages/detail/index",
-          "text": "内容",
-          "iconPath": "/img/safari.png",
-          "selectedColor": "#4EDF80",
-          "clas": "menu-item2",
-          active: false
+          active: true
         }
       ],
       "position": "bottom"
-    }
+    },
   }
 })

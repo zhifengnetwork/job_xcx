@@ -10,31 +10,34 @@
   </view>
   <view class='name_ear'>
     <text class="name_text">性别:</text>
-    <view class='man'>
+      <view class='e-info-radio'>
+        <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{radioItems}}">
+              <radio style="zoom:.6" color="#25bbb3" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </radio-group>
+      </view>
+
+    <!-- <view class='man'>
       <text class="man_xuan"></text>
     </view>
     <text class="mail">女</text>
     <view class='man'>
       <text class="man_xuan"></text>
     </view>
-    <text class="femail">男</text>
+    <text class="femail">男</text> -->
   </view>
   <!-- 日期选择 -->
   <view class='name_ear'>
     <text class="name_text chusheng">出生日期:</text>
-    <view class='shijian'>
-      <!-- <view>{{year}}年{{month}}月{{day}}日</view>  选择的年月日的值-->
-      <picker-view indicator-style="height: 50px;" class='dd' value="{{value}}" bindchange="bindChange">
-        <picker-view-column>
-          <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
-        </picker-view-column>
-      </picker-view>
+    <view class='picker-wrap'>
+      <view class="section">
+        <picker mode="date" value="{{date}}" start="" 
+         bindchange="picketchang">
+          <view class="picker">{{date}}</view>
+        </picker>
+      </view>
+      <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
     </view>
   </view>
   <view class='name_ear'>
@@ -44,9 +47,9 @@
   <!-- 毕业时间 -->
   <view class='name_ear'>
     <text class="name_text chusheng">毕业时间:</text>
-    <view class='shijian'>
+    <view class='picker-wrap'>
       <!-- <view>{{year}}年{{month}}月{{day}}日</view>  选择的年月日的值-->
-      <picker-view indicator-style="height: 50px;" class='dd' value="{{value}}" bindchange="bindChange">
+      <!-- <picker-view indicator-style="height: 50px;" class='dd' value="{{value}}" bindchange="bindChange">
         <picker-view-column>
           <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
         </picker-view-column>
@@ -56,16 +59,19 @@
         <picker-view-column>
           <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
         </picker-view-column>
-      </picker-view>
+      </picker-view> -->
+      <view class="section">
+        <picker mode="date" value="{{date1}}" start="2015-09-01" end="{{date1}}" bindchange="picketChange1">
+          <view class="picker">{{date1}}</view>
+        </picker>
+      </view>
+      <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
     </view>
   </view>
 
   <view class='name_ear'>
     <text class="name_text">学校类型:</text>
     <view class="page__bd">
-      <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-        <input placeholder='输入学校类型' class='name_input'></input>
-      </picker> -->
       <view class="free-btns" style="background:none;">
         <input class="free-btn name_input" bindtap="toggleDialog" value='{{value1}}' placeholder='请选择学校类型' disabled="true">
         </input>
@@ -101,29 +107,37 @@
       <text>上传身份证(必填)</text>
     </view>
     <view class='id-card-top'>
-      <image src='{{positiveImg}}'></image>
-      <image class='addPic' bindtap='addPosPic' src='../../static/images/public/plus.png'></image>
-      <text>点击上传身份证正面照</text>
+      <image class="big-pic" src='{{positiveImg}}'></image>
+      <view class='-add-img-'>
+        <image class='addPic' bindtap='addPosPic' src='../../static/images/public/plus.png'></image>
+        <text>点击上传身份证正面照</text>
+      </view>
     </view>
     <view class='id-card-bottom'>
-    <image src='{{oppositeImg}}'></image>
-        <image class='addPic' bindtap='addOppPic' src='../../static/images/public/plus.png'></image>
-      <text>点击上传身份证反面照</text>
+      <image class="big-pic" src='{{oppositeImg}}'></image>
+      <view class='-add-img-'>
+          <image class='addPic' bindtap='addOppPic' src='../../static/images/public/plus.png'></image>
+          <text>点击上传身份证反面照</text>
+      </view>
     </view>
   </view>
   <!-- 上传证书 -->
   <view class='idPic'>
     <view class='-pic-subtitle'>职业证书(选填)</view>
-    <view class='id-card-top'>
-      <image src='{{positiveImg}}'></image>
-      <image class='addPic' bindtap='addPosPic' src='../../static/images/public/plus.png'></image>
-      <text>点击上传证照</text>
+    <!-- -->
+    <view wx:for="{{addImgs}}" class='id-card-top'>
+      <image class="big-pic" src='{{certificateImg}}'></image>
+      <view class='-add-img-'>
+        <image class='addPic' bindtap='addCertificatePic' src='../../static/images/public/plus.png'></image>
+        <text>点击上传证照</text>
+      </view>
     </view>
+    <!-- -->
     <view class='file-inner'>
-      <button class='file-btn'></button> 
+      <button bindtap='addNewPic' class='file-btn'></button> 
       <image class='f-plus-' src='../../static/images/public/plus.png'/>
     </view>
   </view>
-  <view class='a-more-pic'>添加一张</view>
-  <button class='s-1-option'>确认保存</button>
+  <view class='a-more-pic' >添加一张</view>
+  <button class='s-1-option' bindtap="saveInfo">确认保存</button>
 </view>

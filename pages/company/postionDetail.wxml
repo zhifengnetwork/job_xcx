@@ -36,10 +36,9 @@
           <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/>
         </view>
     </view>
-
     <view class='footer'>
-        <button class='f-btn-1'>马上预订</button>
-        <button class='f-btn-2'>联系客服</button>
+        <button class='f-btn-1' bindtap="callWithHim">马上预订</button>
+        <button class='f-btn-2' bindtap="callWithHim">联系客服</button>
     </view>
   </view>
 </view>

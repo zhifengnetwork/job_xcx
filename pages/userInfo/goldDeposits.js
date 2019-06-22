@@ -5,9 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+     arr: [
+       { 
+        "isShow": true,
+         },
+       {
+         "isShow": false,
+       },
+       {
+         "isShow": false,
+       },
+       {
+         "isShow": false,
+       }
+    ],
   },
-
+  selectGoldNumber:function(e){
+    let query = e.currentTarget.dataset['index'];
+    var arrLength = this.data.arr.length
+    for (var i = 0; i<arrLength;i++){
+      this.data.arr[i].isShow=false;
+    }
+    this.data.arr[query].isShow=true
+    this.setData({ arr: this.data.arr})
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */

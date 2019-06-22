@@ -14,8 +14,8 @@
       </view>
       <!-- USER OPTION START -->
       <view class='user-option'>
-          <navigator class='u-o-list'>
-            <text>编辑公司信息</text>
+          <navigator url="editInfo" class='u-o-list'>
+            <text>编辑个人信息</text>
             <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
           </navigator>
           <navigator url="myCertificate" class='u-o-list'>
@@ -42,7 +42,7 @@
             <text>帮助与反馈</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>
-          <navigator url="help" class='u-o-list'>
+          <navigator url="collect" class='u-o-list'>
             <text>我的收藏</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>

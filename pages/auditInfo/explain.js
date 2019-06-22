@@ -1,21 +1,13 @@
-// pages/userInfo/editInfo.js
-
+// pages/auditInfo/explain.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    items: [
-      { name: 'wuman', value: '女', checked: 'true'  },
-      { name: 'man', value: '男' }
-    ]
+
   },
-  paysChange: function (e) {
-    this.setData({
-      paysIndex: e.detail.value
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,5 +1,5 @@
 /* pages/userInfo/gold.wxss */
-@import '../template/common'
+@import '../template/common';
 .inner{
   padding: 40rpx 24rpx;
   font-size: 26rpx;
@@ -42,17 +42,19 @@
   bottom: 0;
   width:41rpx;
   height: 31rpx;
-  display: none
+  /* display: none */
 }
 .-show-{display: block;}
-.gold-list:hover .gold-active-img{
+/* .gold-list:hover .gold-active-img{
   display: block;
-}
+} */
+.-hide{display: none}
 .foot-info{
   position: fixed;
   bottom: 35rpx;
   left:24rpx;
-  text-align: center
+  text-align: center;
+  width:702rpx;
 }
 .foot-info text{
   font-size: 36rpx;

@@ -187,6 +187,7 @@
 }
 .line-heig{
   height:132rpx;
+  width: 100%;
 }
 .s-1-option{
   border-radius: 45rpx;

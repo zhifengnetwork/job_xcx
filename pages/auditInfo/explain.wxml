@@ -1,0 +1,20 @@
+<!--pages/auditInfo/explain.wxml-->
+<view class='inner'>
+  <text class='e-msg'>时间：2019-6-20</text>
+  <view class='e-content'>
+    <view class='e-c-list'>
+      微信小程序的蓝牙API支持链接低功耗蓝牙吗
+      苹果手机小程序无法和BLE（低功耗蓝牙）建立链接
+      部分Android机（魅族Note5）手写输入法（搜狗，自带等）出现BUG
+      低功耗蓝牙wx.getBLEDeviceServices接口问题
+      Android 小程序 低功耗蓝牙接口 创建设备链接失败
+    </view>
+    <view class='e-c-list'>
+      微信小程序的蓝牙API支持链接低功耗蓝牙吗
+      苹果手机小程序无法和BLE（低功耗蓝牙）建立链接
+      部分Android机（魅族Note5）手写输入法（搜狗，自带等）出现BUG
+      低功耗蓝牙wx.getBLEDeviceServices接口问题
+      Android 小程序 低功耗蓝牙接口 创建设备链接失败
+    </view>
+  </view>
+</view>

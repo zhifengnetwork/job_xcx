@@ -1,51 +1,46 @@
-const date = new Date()
-const years = []
-const months = []
-const days = []
-
-for (let i = 1990; i <= date.getFullYear(); i++) {
-  years.push(i)
-}
-
-for (let i = 1; i <= 12; i++) {
-  months.push(i)
-}
-
-for (let i = 1; i <= 31; i++) {
-  days.push(i)
-}
-
-
+const date = new Date();
+console.log(date);
+// const date1 = new Date();
+const years=date.getFullYear();
+const mouths =date.getMonth()+1;
+const das=date.getDate();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    index: 0,
-    date: '',
     array: ['硕士', '博士', '本科' ,'大专', '高技','高中以下'],
-    showDialog: false,
     items: [
       { name: '硕士', value: '硕士' },
       { name: '博士', value: '博士' },
       { name: '本科', value: '本科' },
       { name: '大专', value: '大专' },
       { name: '高中以下', value: '高中以下' }],
-    years: years,
-    year: date.getFullYear(),
-    months: months,
-    month: 2,
-    days: days,
-    day: 2,
-    value: [9999, 1, 1],
-    value1:"",
+    radioItems: [
+      { name: 'wuman', value: '女', checked: 'true' },
+      { name: 'man', value: '男' }
+    ],
+    addImgs:1,
+    index: 0,
+    showDialog: false,
+    date: years + '-' + mouths + '-' + das,
+    date1: years + '-' + mouths + '-' + das,
+    // value: [9999, 1, 1],
+    // value1:"",
     positiveImg: '',
-    oppositeImg: ''
-    
-   
+    oppositeImg: '',
+    certificateImg: ''
   },
-
+  picketchang: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  picketChange1: function (e) {
+    this.setData({
+      date1: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -55,7 +50,9 @@ Page({
       value: 'show'
     })
   },
-
+  saveInfo:function(){
+    // navigator
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -104,15 +101,6 @@ Page({
   onShareAppMessage: function () {
     
   },
-  // 日期选择器
-  bindChange: function (e) {
-    const val = e.detail.value
-    this.setData({
-      year: this.data.years[val[0]],
-      month: this.data.months[val[1]],
-      day: this.data.days[val[2]]
-    })
-  },
 
   /*点击选择学历,弹框消失 s*/
   click: function (e) {
@@ -123,7 +111,7 @@ Page({
     });
   },
   radioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value1)
+    // console.log('radio发生change事件，携带value值为：', e.detail.value1)
     var that = this
     that.setData({
       value1: e.detail.value
@@ -165,6 +153,28 @@ Page({
       }
     })
   },
+  addCertificatePic: function () {
+    var that = this;
+    wx.chooseImage({
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths
+        that.setData({
+          certificateImg: tempFilePaths
+        })
+      }
+    })
+  },
+  addNewPic:function(e){
+    // 点击添加一张图片
+    var num = this.data.addImgs;
+    num = num+1;
+    this.setData({addImgs: num})
+  },
+  saveInfo:function(){
+    wx.navigateTo({
+      url: '../auditInfo/audit'
+    })
+  }
   // formSubmit: function (e) {
   //   // user 
   //   var that = this;

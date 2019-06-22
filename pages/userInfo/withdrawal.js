@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isShow:false
   },
 
+  changWithdrawal:function(e){
+    console.log(e)
+    var t = e.currentTarget.sstatus;
+    console.log(t)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
