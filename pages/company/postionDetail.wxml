@@ -1,13 +1,13 @@
 <view id="wrap">
   <!-- SEARCH INFO START -->
-  <view class='inner'>
-    <view class='search-inner'>
-      <view class='search-cont'>
-        <input type='text' class='search'  placeholder="输入所要查找的内容" />
-        <image class="search_icon" src='../../static/images/public/search_icon.png'></image>
-      </view>
-      <navigator url='uCollect'><text class='collect_tab'>收藏</text></navigator>
+  <view class='search-inner'>
+    <view class='search-cont'>
+      <input type='text' class='search'  placeholder="输入所要查找的内容" />
+      <image class="search_icon" src='../../static/images/public/search_icon.png'></image>
     </view>
+    <navigator url='uCollect'><text class='collect_tab'>收藏</text></navigator>
+  </view>
+  <view class='inner'>
     <!-- CONTENT START -->
     <view class='d-content'>
         <view class="d-c-list">
@@ -31,7 +31,7 @@
             <view class='m-b22'>包午餐</view>
             <view class='m-b45'>3公里之内包送上下班</view>
             <view class='w-bold m-b22'>工作经验</view>
-            <view>负责包装我厂生产的男女箱包打包，工作简</view>
+            <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view>
           </view>
           <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/>
         </view>

@@ -40,8 +40,9 @@
   top:38rpx;
 }
 .search-r-text{
+  display: block;
   font-size:24rpx;
-  line-height:48rpx;
+  line-height:40px;
   color:#151515;
   font-weight:700;
   /* margin-left: auto; */

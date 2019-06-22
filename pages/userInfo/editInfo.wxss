@@ -74,3 +74,6 @@ textarea{
   border-radius: 6rpx;
 
 }
+picker {
+  margin: 0 0 0 365rpx;
+}

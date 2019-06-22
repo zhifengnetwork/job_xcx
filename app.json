@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/userInfo/editInfo",
     "pages/index/index",
     "pages/company/postJobPostings",
     "pages/userInfo/withdrawal",
@@ -8,7 +9,7 @@
     "pages/personalMessage/personalMessage",
     
     "pages/company/editInfo",
-    "pages/userInfo/editInfo",
+    
     "pages/userInfo/help",
     "pages/userInfo/userCenter",
     "pages/company/uCollect",
