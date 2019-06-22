@@ -8,64 +8,23 @@
 .inner{
   padding: 0 24rpx 24rpx;
 }
-.header{
-   position:fixed;
-   top: 0;
-   z-index: 10;
-   width: 100%;
-   display: flex;
-   padding-top: 10rpx;
-   /* border-bottom: 2rpx solid #fff; */
-   margin-bottom:10rpx; 
-  background:#fff;
+.banner{
+  height:360rpx;
+  width:706rpx;
+  border-radius:10rpx;
+  overflow:hidden;
 }
-.t-height{
-  height: 100rpx;
-}
-.search-cont{
-  flex: 0 0 1;
-  width: 90%;
-  padding-right:65rpx; 
-  box-sizing: border-box
-}
-.search{
-   width:100%;
-   /* width: 80%; */
-   border:1px solid #6fd1cb;
-   border-radius: 36px;
-   height:60rpx;
-   padding-left:45rpx;
-   box-sizing: border-box;
-   display: inline-block;
-   font-size: 20rpx;
-   
-}
-.search_icon{
-  width:20rpx;
-  height:20rpx;
-  position:absolute;
-  left:24rpx;
-  top:26rpx;
-}
+
 .login_tab{
   font-size:24rpx;
   line-height:48rpx;
   color:#151515;
   font-weight:700;
-  margin-left: auto;
-  flex: 0 0 1;
+}
+.header .navigator-hover{
+  height: 70rpx;
 }
 
-/* subtitle start */
-.subtitle{
-  margin:12rpx 0 21rpx;
-  color:#151515;
-}
-.subtitle text{
-   width:50%;
-   font-size:28rpx;
-    font-weight:700;
-}
 
 /* banner start */
 .banner .slide-image{

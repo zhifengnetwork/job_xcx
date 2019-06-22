@@ -1,0 +1,17 @@
+/* pages/company/postJobPostings.wxss */
+@import "../template/common";
+.inner{
+  background: red;
+}
+.post-list{
+  display: flex;
+  align-items: center;
+}
+.-list-msg{
+  font-size: 28rpx;
+  color:#151515;
+}
+.-list-inp{
+  font-size: 24rpx;
+  color: #a2a2a2;
+}

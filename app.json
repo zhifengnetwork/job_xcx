@@ -1,14 +1,19 @@
 {
   "pages": [
+    "pages/company/postJobPostings",
+    "pages/userInfo/withdrawal",
+    "pages/register/register",
+    "pages/userInfo/myCertificate",
+    "pages/personalMessage/personalMessage",
     "pages/company/editInfo",
+    "pages/index/index",
     "pages/userInfo/editInfo",
     "pages/userInfo/help",
     "pages/userInfo/userCenter",
-    "pages/index/index",
     "pages/company/uCollect",
     "pages/userInfo/setting",
     "pages/userInfo/privacySettings",
-    "pages/userInfo/withdrawal",
+
     "pages/userInfo/myPurse",
     "pages/userInfo/goldDeposits",
     "pages/information/information",
@@ -22,8 +27,7 @@
     "pages/third_party/third_party",
     "pages/login/login",
     "pages/forgetpassword/forgetpassword",
-    "pages/personalMessage/personalMessage",
-    "pages/register/register",
+
     "pages/recommend/recommend",
     "pages/logs/logs"
   ],

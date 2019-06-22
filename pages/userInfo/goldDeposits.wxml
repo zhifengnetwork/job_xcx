@@ -4,7 +4,7 @@
       <view class='gold-list'>
         <view class='gold-num'>10金币</view>
         <view>10元</view>
-        <image class="gold-active-img" src='../../static/images/public/yes_green.png'/>
+        <image class="gold-active-img -show-" src='../../static/images/public/yes_green.png'/>
       </view>
       <view class='gold-list'>
         <view class='gold-num'>30金币</view>

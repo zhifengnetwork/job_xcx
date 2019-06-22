@@ -49,11 +49,11 @@
    width:100%;
    border:1px solid #25bbb3;
    border-radius: 28px;
-   height:48rpx;
+   height:50rpx;
    padding-left:80rpx;
    box-sizing: border-box;
    display: inline-block;
-   font-size: 20rpx;
+   font-size: 24rpx;
    position: relative
 }
 .search_icon{

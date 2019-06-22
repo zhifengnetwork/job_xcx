@@ -17,9 +17,15 @@
 .e-info-{
   width:495rpx;
   margin-bottom: 20rpx;
+  /* overflow: hidden; */
+  display: flex;
+  align-items: center;
 }
 .e-info-msg{
   margin-right:6rpx;
+}
+.e-info-pick{
+  width: 345rpx;
 }
 .e-info-inp{
   font-size: 24rpx;
@@ -51,7 +57,17 @@
 .pick-timer{
   width:346rpx;
  display:inline-block;
-
+}
+.-timer-{
+  width:100%;
+  height:125rpx;
+  margin-left:40rpx;
+  color:#151515;
+  background:#f8f8f8;
+  padding:0;
+}
+.-inp-2{
+  width: 180rpx;
 }
 /* */
 .u-o-list{

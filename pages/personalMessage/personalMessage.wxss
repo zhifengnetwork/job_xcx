@@ -1,32 +1,32 @@
+@import "../template/common";
 .name_ear{
-  margin-top: 40rpx
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
 }
 .name_text{
   display: inline-block;
   vertical-align: top;
-  margin-left: 30rpx;
-  width: 160rpx;
+  width: 130rpx;
   text-align: right;
-  font-weight: bolder;
-  font-size: 36rpx
+  font-weight: bold;
+  font-size:28rpx;
 }
 .name_input{
   width: 480rpx;
   margin-left: 20rpx;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 36rpx;
+  font-size:24rpx;
   border-bottom: 1rpx solid #f5f5f5
 }
 .man{
-position: relative;
-top: 4rpx;
-left: 50rpx;
-display: inline-block;
-width: 30rpx;
-height: 30rpx;
-border: 1px solid gray;
-border-radius: 50%;
+  position: relative;
+  top: 4rpx;
+  left: 50rpx;
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  border: 1px solid gray;
+  border-radius: 50%;
 
 }
 .man_xuan{
@@ -55,15 +55,12 @@ border-radius: 50%;
   width: 460rpx; 
   height: 125rpx;
   margin-left: 40rpx;
-  color: rgb(54, 193, 186)
+  color: rgb(54, 193, 186);
+  font-size:26rpx;
 }
 .shijian{
   vertical-align: top;
   display: inline-block;
-}
-.chusheng{
-
-  padding-top: 40rpx
 }
 .free-radio{
   display: block;
@@ -148,34 +145,40 @@ radio-group label .free-text{
 .idPic{
   width: 100%;
   height: auto;
+  font-size:28rpx;
+  color: #151515;
+}
+.-pic-subtitle{
+  margin: 20rpx 0 28rpx;
+  text-align: center;
+}
+.-pic-stat{
+  width: 17rpx;
+  height: 21rpx;
 }
 .id-card-top,.id-card-bottom{
-  width: 650rpx;
-  height: 312rpx;
-  margin:30rpx 50rpx 30rpx 50rpx;
-  background: #f4f4f4;
+  width:500rpx;
+  height: 260rpx;
+  margin: 30rpx auto;
   position: relative;
+  background:#dadada;
 }
 .id-card-top image:first-child,
 .id-card-bottom image:first-child{
-    width: 650rpx;
-    height: 312rpx;
+    width:500rpx;
+    height: 260rpx;
     position: absolute;
 
 }
 .addPic{
-  width: 130rpx;
-  height: 130rpx;
-  border-radius: 50%;
-  border: 3rpx solid #e5e5e5;
-  background-color: #f4f4f4;
+  width:68rpx;
+  height: 68rpx;
   position: relative;
   top: 50rpx;
-  left: 40%;
+  left: 50%;
+  margin-left:-34rpx;
 }
 .id-card-top text,.id-card-bottom text{
-  color: #888;
-  font-size: 30rpx;
   text-align: center;
   display: block;
   position: relative;
@@ -186,4 +189,30 @@ radio-group label .free-text{
 	width: 100%;
 	display: block;
 }
+.a-more-pic{
+  text-align: center;
+  font-size:28rpx;
+  color: #151515;
+  margin:20rpx 0 39rpx;
+}
 /*点击上传身份证部分 e*/
+.file-inner{
+  position: relative;
+}
+.file-btn{
+  width: 500rpx;
+  height: 66rpx;
+  border-radius: 10rpx;
+  background:#dadada;
+
+}
+.f-plus-{
+  width: 33rpx;
+  height: 33rpx;
+  vertical-align: middle;
+  position: absolute;
+  top:18rpx;
+  bottom: 0;
+  left: 50%;
+  margin-left: -11.5rpx;
+}

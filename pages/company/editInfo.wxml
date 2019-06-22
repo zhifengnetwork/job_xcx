@@ -10,25 +10,22 @@
         <text class='e-info-msg'>公司类型：</text>
         <input type='text' class='e-info-inp' placeholder='输入公司类型'/>
       </view>
+
       <view class='e-info-'>
         <text class='e-info-msg'>成立时间：</text>
-
-<view>
-  <view>{{year}}年{{month}}月{{day}}日</view>
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
-    <picker-view-column>
-      <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
-    </picker-view-column>
-  </picker-view>
-</view>
-
-        <input type='text' class='e-info-inp' placeholder='输入年龄'/>
+        <view class='e-info-pick'>
+          <picker-view indicator-style="height: 50px;" class='-timer-' value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+              <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
+            </picker-view-column>
+          </picker-view>
+        </view>
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>公司规模：</text>

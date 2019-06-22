@@ -32,7 +32,7 @@ page{
   margin-bottom: 50rpx;
 }
 .inner{
-  padding: 0 24rpx;
+  padding: 40rpx 24rpx;
 }
 /* TABBAR START */
 .menu-item{  

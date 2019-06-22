@@ -1,4 +1,5 @@
 /* pages/userInfo/gold.wxss */
+@import '../template/common'
 .inner{
   padding: 40rpx 24rpx;
   font-size: 26rpx;
@@ -43,6 +44,7 @@
   height: 31rpx;
   display: none
 }
+.-show-{display: block;}
 .gold-list:hover .gold-active-img{
   display: block;
 }
@@ -55,14 +57,4 @@
 .foot-info text{
   font-size: 36rpx;
 
-}
-.foot-info .set-option{
-  margin-top: 40rpx;
-  width: 670rpx;
-  height: 90rpx;
-  line-height: 90rpx;
-  border-radius: 45rpx;
-  color:#fff;
-  background: #25bbb3;
-  font-size: 30rpx;
 }

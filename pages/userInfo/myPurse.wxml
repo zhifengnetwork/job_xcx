@@ -8,7 +8,7 @@
       </view>
       <view class='g-deposits-btn1'>
         <navigator url='goldDeposits'><button class='g-d-btn1 g-d-active'>充值</button></navigator>
-        <navigator url='goldDeposits'><button class='g-d-btn2'>提现</button></navigator>
+        <navigator url='withdrawal'><button class='g-d-btn2'>提现</button></navigator>
       </view>
   </view>
   <view class='g-deposits-list'>

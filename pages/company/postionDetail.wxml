@@ -6,7 +6,7 @@
         <input type='text' class='search'  placeholder="输入所要查找的内容" />
         <image class="search_icon" src='../../static/images/public/search_icon.png'></image>
       </view>
-      <text class='collect_tab'>收藏</text>
+      <navigator url='uCollect'><text class='collect_tab'>收藏</text></navigator>
     </view>
     <!-- CONTENT START -->
     <view class='d-content'>

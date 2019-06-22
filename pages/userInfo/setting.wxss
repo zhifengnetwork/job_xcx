@@ -1,8 +1,5 @@
 /* pages/userInfo/setting.wxss */
 @import '../template/common';
-.inner{
-  margin:40rpx 24rpx 0;
-}
 .setting-list{
   display: flex;
   align-items: center;

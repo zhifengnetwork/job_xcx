@@ -1,0 +1,46 @@
+<!--pages/company/postJobPostings.wxml-->
+<view class='inner'>
+   <view class='post-list'>
+      <text class='-list-msg'>标题:</text>
+      <input value="" class='-list-inp' placeholder='请输入标题'/>
+   </view>
+   <view class='post-list'>
+      <text class='-list-msg'>工种:</text>
+      <text class='-list-msg1'>会计</text>
+      <image class="-list-icon" src='../../static/images/public/right_arrow_gray.png'/>
+   </view>
+   <view class='post-list'>
+      <text class='-list-msg'>工龄:</text>
+      <view class='selcet-time'>
+          <view class='e-info-pick'>
+            <picker-view indicator-style="height: 50px;" class='-timer-' value="{{value}}" bindchange="bindChange">
+              <picker-view-column>
+                <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
+              </picker-view-column>
+              <picker-view-column>
+                <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
+              </picker-view-column>
+              <picker-view-column>
+                <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
+              </picker-view-column>
+            </picker-view>
+          </view>
+          <!-- -->
+          ——
+          <!-- -->
+          <view class='e-info-pick'>
+            <picker-view indicator-style="height: 50px;" class='-timer-' value="{{value}}" bindchange="bindChange">
+              <picker-view-column>
+                <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
+              </picker-view-column>
+              <picker-view-column>
+                <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
+              </picker-view-column>
+              <picker-view-column>
+                <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
+              </picker-view-column>
+            </picker-view>
+          </view>
+      </view>
+   </view>
+</view>
