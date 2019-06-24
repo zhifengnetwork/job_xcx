@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/register/register",
         "pages/company/jobApplicant",
     "pages/company/company",
     "pages/userInfo/goldDeposits",
@@ -12,7 +13,7 @@
     "pages/login/login",
     "pages/personalMessage/personalMessage",
     "pages/auditInfo/explain",
-    "pages/register/register",
+    
     "pages/userInfo/myCertificate",
     "pages/company/editInfo",
     "pages/userInfo/help",
