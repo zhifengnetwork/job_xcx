@@ -70,7 +70,7 @@ textarea{
   width: 702rpx;
   height:480rpx;
   box-sizing: border-box;
-  border:2rpx solid #fff; 
+  border:2rpx solid #eee; 
   border-radius: 6rpx;
 
 }

@@ -62,15 +62,25 @@ Page({
     this.setData({ password: val })
   },
   toLogin:function(){
-     if(this.data.password=='123456'){
-       wx.navigateTo({
-         url: '../index/index'
-       })
-     }else{
-        wx.navigateTo({
-          url: '../company/company'
-        })
-     }
+    var status = "";
+    if(this.data.password=='123456'){
+       status =0;
+    }else if(this.data.password=="abcdef"){
+       status = 1;
+    }else{
+       status = 2;
+    }
+    wx.redirectTo({
+      url: '../index/index'
+    })
+    wx.setStorageSync('savePostion', status)
+  },
+  toVisitor:function(){
+    wx.setStorageSync('savePostion', 0)
+    wx.redirectTo({
+      url: '../index/index'
+    })
+
   },
   /**
    * 生命周期函数--监听页面加载

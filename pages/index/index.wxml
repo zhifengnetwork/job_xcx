@@ -97,13 +97,13 @@
                     <image src='../../static/images/public/info.png' class='c-flame'/>
                     <text>最新找活</text>
                 </view>
-                <view class='c-l-info'>
+                <navigator url="../userInfo/postionDetail" class='c-l-info'>
                     <view class='search-job-list'>
                       <view class='c-info-title'>专业偷税会计/会计</view>
                       <view class='c-info-msg overH'>
                         <text class='c-msg fl'>广州市白云区</text>
                         <text class='c-msg2 fl'>3年</text>
-                        <view class='company-status fr'>有证书</view>
+                        
                       </view>
                       <view class='c-msg3'>会计证书</view>
                       <view class='s-portrait'>
@@ -112,22 +112,25 @@
                       </view>
                       <view class='overH'></view>
                     </view>
-                </view>
-                <view class='c-l-info'>
+                    <view class='company-status fr'>有证书</view>
+                </navigator>
+                <navigator url="../userInfo/postionDetail" class='c-l-info'>
                     <view class='search-job-list'>
                       <view class='c-info-title'>专业偷税会计/会计</view>
                       <view class='c-info-msg overH'>
                         <text class='c-msg fl'>广州市白云区</text>
                         <text class='c-msg2 fl'>3年</text>
-                        <view class='company-status fr'>有证书</view>
+                        
                       </view>
+                      <view class='c-msg3'>会计证书</view>
                       <view class='s-portrait'>
                         <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
                         <text>周先生</text>
                       </view>
                       <view class='overH'></view>
                     </view>
-                </view>
+                    <view class='company-status fr'>有证书</view>
+                </navigator>
             </view>
         </view>
       </view>

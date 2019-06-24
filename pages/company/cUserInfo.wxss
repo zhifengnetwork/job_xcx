@@ -24,6 +24,9 @@
   height:164rpx;
   border-radius: 4rpx;
 }
+.company-status {
+  float: right;
+}
 .edit-info{
   width: 320rpx;
   border-radius:45rpx;
@@ -35,7 +38,10 @@
   margin:26rpx 0 47rpx;
   font-size:30rpx;
 }
-
+.c-info-text{
+  margin-left:21rpx;
+  width: 70%;
+}
 /* USER OPTION START */
 .u-o-list{
   display: flex;

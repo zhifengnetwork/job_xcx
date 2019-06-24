@@ -1,13 +1,23 @@
 @import "../template/common";
 
-#wrap{
+/* #wrap{
   width: 100%;
   min-height: 100%;
   background:#f8f8f8;
-}
-/* .inner{
-  padding: 0 24px 24px;
 } */
+/* .inner{
+  background:red;
+} */
+subtitle {
+margin:0 0 21rpx;
+color:#151515;
+width:100%;
+line-height:55rpx;
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+}
 
 /* CONTENT START */
 .c-l-info{

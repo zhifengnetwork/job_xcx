@@ -53,8 +53,8 @@ page{
 
 
 .tab-bar .img{ 
-  width: 41rpx;  
-  height:37rpx;  
+  width: 40rpx;  
+  height:40rpx;  
   margin-bottom:9rpx;
 }  
 .clear{  

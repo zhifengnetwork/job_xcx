@@ -126,7 +126,7 @@ Page({
   // 倒计时函数
   countDown: function () {
     var that = this;
-    var countDownNum = '60'; //倒计时初始值
+    var countDownNum = '10'; //倒计时初始值
     //如果将定时器设置在外面，那么用户就看不到countDownNum的数值动态变化，所以要把定时器存进data里面
     that.setData({
       timer: setInterval(function () { //这里把setInterval赋值给变量名为timer的变量

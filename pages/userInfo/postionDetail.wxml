@@ -12,19 +12,16 @@
     <view class='d-content'>
         <view class="d-c-list">
           <view class='c-list-info'>
-            <view class='w-bold m-b22'>皮具厂皮具包装人员</view>
-            <view class='m-b22'>
-                <text class='m-r20'>月薪 2000元</text>
-                <text class='m-r10'>10:30 - 12:30</text>
+            <view class='w-bold m-b22'>帅哥哥</view>
+            <view class='w-bold m-b22'>
+                <text class='m-r20'>手机号码：</text>
+                <text class='m-r10'>159</text>
+                <text class='m-r10'>3000</text>
+                <text class='m-r10'>5159</text>
             </view>
-            <view class='m-b22'>公司招聘</view>
-            <view class='m-b22'>
-                <text class='m-r20'>无需经验</text>
-                <text class='m-r10'>男</text>
-                <text class='m-r10'>18-50岁</text>
-            </view>
-            <view class='m-b22'>包装二级证书</view>
-            <view>花都区/狮岭镇XXXXX皮具有限公司</view>
+            <view class='m-b22'>大专</view>
+            <view class='m-b22'>无证书</view>
+            <view>期望职位：电焊工人</view>
           </view>
           <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/>
         </view>
@@ -36,11 +33,11 @@
             <view class='w-bold m-b22'>工作经验</view>
             <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view>
           </view>
-          <!-- <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/> -->
+          <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/>
         </view>
     </view>
     <view class='footer'>
-        <!-- <button class='f-btn-1' bindtap="callWithHim">马上预订</button> -->
+        <button class='f-btn-1' bindtap="callWithHim">马上预订</button>
         <button class='f-btn-2' bindtap="callWithHim">联系客服</button>
     </view>
   </view>

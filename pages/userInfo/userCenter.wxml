@@ -38,7 +38,7 @@
             <text>实名认证</text>
             <text class='u-o-text'>已认证</text>
           </view>
-          <navigator url="help" class='u-o-list'>
+          <navigator url="../auditInfo/help" class='u-o-list'>
             <text>帮助与反馈</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>

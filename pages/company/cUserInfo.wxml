@@ -7,16 +7,19 @@
           <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
           <view class='c-info-text'>
             <text class='c-info-title'>智丰网络</text>
-            <view class='c-msg m-b10'>VIP到期时间：2017-5-10</view>
+            <view class='c-msg m-b10'>
+              <text>VIP到期时间：2017-5-10</text>
+              <view class='company-status'>月费VIP</view>
+            </view>
             <view class='c-msg m-b10'>企业用户：</view>
             <view class='c-msg m-b10'>企业编号：007</view>
           </view>
           <!-- company info start -->
-          <view class='company-info'>
+          <!-- <view class='company-info'>
               <view class='company-status'>月费VIP</view>
-          </view>
+          </view> -->
       </view>
-      <button class='edit-info'>编辑发布内容</button>
+      <button class='edit-info' bindtap='toEdit'>编辑发布内容</button>
       <!-- USER OPTION START -->
       <view class='user-option'>
           <navigator url="editInfo" class='u-o-list m-b50'>
@@ -50,4 +53,8 @@
       </view>
     </view>
   </view>
+  <!-- FOOTER START -->
+  <view class='footer-height'></view>
+  <import src="../template/tabbar.wxml" />
+  <template is="tabBar" data="{{ tabBar}}" />
 </view>

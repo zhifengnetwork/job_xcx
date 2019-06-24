@@ -32,12 +32,12 @@
 }
 .g-deposits-btn1 button{
   border-radius: 40rpx;
-  border:1px solid #25bbb3;
   width:200rpx;
   height: 66rpx;
   line-height: 67rpx;
   font-size: 30rpx;
   margin-bottom: 40rpx;
+  box-sizing: border-box;
 }
 .g-deposits-btn1 .g-d-btn1{
   float: left;
@@ -46,13 +46,14 @@
 .g-deposits-btn1 .g-d-btn2{
   color:#25bbb3;
   float: right;
+  border:2rpx solid #25bbb3;
 }
 
 .g-deposits-b .d-gold-icon{
    width: 118rpx;
    height: 108rpx;
 }
-.g-d-active{
+.g-deposits-btn1 .g-d-active,.g-deposits-btn2 .g-d-active{
   color: #fff;
   background:#25bbb3;
 }
@@ -74,6 +75,7 @@
   border:1px solid #25bbb3;
   color: #25bbb3;
   font-size:30rpx;
+  box-sizing: border-box;
 }
 
 /* public */

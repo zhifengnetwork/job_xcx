@@ -13,6 +13,7 @@
    display: flex;
    padding: 10rpx 0; 
    background:#fff;
+   align-items:center;
 }
 .search-cont{
   padding: 10rpx 0 0;
@@ -42,7 +43,7 @@
 .search-r-text{
   display: block;
   font-size:24rpx;
-  line-height:40px;
+  line-height:40rpx;
   color:#151515;
   font-weight:700;
   /* margin-left: auto; */
@@ -71,6 +72,8 @@
  .c-title{
   width:100%;
   margin:20rpx 0 30rpx 0;
+  display:flex;
+
 }
 .c-flame{
    width:26rpx;
@@ -84,16 +87,27 @@
   font-weight: 700;
 }
 
-.c-l-info{
+/* .c-l-info{
   display: flex;
   flex-flow: wrap;
-  padding:25rpx; 
+  padding:25rpx 0 25rpx;
   margin-bottom: 10rpx;
   border-radius: 5px;
   background:#fff;
   align-items:center;
+} */
+.c-l-info {
+  /* flex-flow:wrap; */
+  padding:25rpx 0 25rpx;
+  margin-bottom:10rpx;
+  border-radius:5px;
+  background:#fff;
+  align-items:center;
+  display:flex;
 
 }
+
+
 .c-l-info .c-logo{
   width:90rpx;
   height:90rpx;
@@ -101,7 +115,7 @@
 }
 .c-info-text{
   margin-left:21rpx;
-  flex: 0 0 1;
+  /* flex: 0 0 1; */
 }
 .c-info-title{
   font-weight: 700;
@@ -109,7 +123,8 @@
   
 }
 .c-info-msg{
-  margin-top:25rpx;
+  /* margin-top:25rpx; */
+  margin-top: 18rpx;
 }
 .c-info-msg text{
   font-size:24rpx;
@@ -121,13 +136,18 @@
 .c-msg3{
  font-size: 24rpx;
  color: #5d5d5d;
- margin: 17rpx 0 13rpx;
+ /* margin: 17rpx 0 13rpx; */
+ /* margin:18rpx 0; */
+ margin-top:14rpx;
+
+
 }
 /* company info start */
 .company-info{
-  flex: 0 0 1;
+  /* flex: 0 0 1; */
   margin-left: auto;
   text-align: right;
+  font-size:28rpx;
 }
 
 .company-status{
@@ -138,8 +158,30 @@
    padding: 6rpx 0;
    border-radius: 2px;
    color:#fff;
-   margin-top: 20rpx;
+   margin-top:18rpx;
+
+   /* float:right; */
+
+   /* margin-top: 20rpx; */
 }
+
+/* .company-status{
+   width: 100rpx;
+   text-align: center;
+   font-size: 20rpx;
+   background:#25bbb3;
+   padding: 6rpx 0;
+   border-radius: 2px;
+   color:#fff;
+   margin-top: 20rpx;
+} */
+.more-recommond{
+   text-align: center;
+   margin: 11rpx 0;
+   color: #5d5d5d;
+   font-size: 20rpx;
+}
+
 /* Latest job search start */
 .search-job-list{
   width: 100%;
@@ -147,7 +189,7 @@
 .s-portrait{
   width: 100%;
   overflow: hidden;
-  margin-top: 15rpx;
+  margin-top: 18rpx;
   color:#5d5d5d;
   font-size: 24rpx;
 }
@@ -189,7 +231,7 @@
 
 }
 .header-heigh{
-  padding-top: 50rpx;
+  padding-top: 20rpx;
   width: 100%;
 }
 .line-heig{
@@ -218,8 +260,8 @@
   margin-bottom: 15rpx;
 }
 .t-info-nav .t-i-raduis{
-  width: 8rpx;
-  height: 8rpx;
+  width: 16rpx;
+  height: 16rpx;
   border-radius: 50%;
   background:red;
   vertical-align:middle;

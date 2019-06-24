@@ -1,22 +1,31 @@
-// pages/userInfo/myPurse.js
+// pages/company/company.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var postion = wx.getStorageSync('savePostion');
+    if (postion == 0) {
+      app.editTabBar();
+    } else if (postion == 1) {
+      app.editTabBar1();
+    } else if (postion == 2) {
+      app.editTabBar2();
+    } else {
+      app.editTabBar3();
+    }
+    console.log(postion)
   },
-  changSelect:function(){
 
-  }
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

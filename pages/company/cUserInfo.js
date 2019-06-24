@@ -1,4 +1,5 @@
 // pages/infomation/infomation.js
+var app =getApp();
 Page({
 
   /**
@@ -13,9 +14,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // var postion = wx.getStorage('savePostion');
+    var postion = wx.getStorageSync('savePostion');
+    if (postion == 0) {
+      app.editTabBar();
+    } else if (postion == 1) {
+      app.editTabBar1();
+    } else if (postion == 2) {
+      app.editTabBar2();
+    }else{
+      app.editTabBar3();
+    }
+    // console.log(postion)
+  },
+  toEdit:function(){
+    wx.navigateTo({
+      url: 'postJobPostings',
+    })
 
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
