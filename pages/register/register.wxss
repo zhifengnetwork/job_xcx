@@ -212,3 +212,25 @@ page{
   width: 20rpx;
   height: 20rpx
 }
+.emailCode{
+ width: 236rpx;
+ height: 56rpx;
+ align-items: center;
+ justify-content: center;
+ display: flex;
+ flex-direction: row;
+ color:rgb(54, 193, 186);
+ font-size: 30rpx;
+ background-color: #fff;
+}
+.emailCodeSend{
+ width: 236rpx;
+ height: 56rpx;
+ align-items: center;
+ justify-content: center;
+ display: flex;
+ flex-direction: row;
+ color:white;
+ font-size: 30rpx;
+ background-color: #B9DAF7;
+}

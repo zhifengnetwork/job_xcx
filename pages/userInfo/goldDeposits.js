@@ -24,7 +24,7 @@ Page({
        }
     ],
     saveStatus:0,
-    saveMoney:0
+    saveMoney: 10
   },
   changMoney:function(e){
     var val = e.detail.value;
