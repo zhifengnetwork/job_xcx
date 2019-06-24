@@ -3,115 +3,119 @@
 <import src="../template/common.wxml"/>
 <template is="search-1" data="{{text: '我的'}}"/>
 <view class='inner'>
-    
-      <!-- HEADER END -->
-      <view class='container c-body'>
-          <view class='subtitle overH'>
-            <text class='fl'>选择地点</text>
-            <text class='fr'>人才选择</text>
-          </view>
-          <view class='content-list'>
-            <navigator url="postionDetail">
-                <view class='c-title'>
-                  <image src='../../static/images/public/flame_icon.png' class='c-flame'/>
-                  <text>热门推荐</text>
+    <!-- HEADER END -->
+    <view class='container c-body'>
+        <view class='subtitle overH'>
+          <text class='fl'>选择地点</text>
+          <text class='fr'>人才选择</text>
+        </view>
+        <view class='content-list'>
+          <navigator url="postionDetail">
+              <view class='c-title'>
+                <image src='../../static/images/public/flame_icon.png' class='c-flame'/>
+                <text>热门推荐</text>
+              </view>
+          </navigator>
+          <navigator url="postionDetail">
+            <view class='c-l-info'>
+              <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+              <view class='c-info-text'>
+                <text class='c-info-title'>皮革厂包装人</text>
+                <view class='c-info-msg'>
+                  <text class='c-msg'>月薪1500元</text>
+                  <text class='c-msg2'>1年以上</text>
                 </view>
-            </navigator>
+              </view>
+              <!-- company info start -->
+              <view class='company-info'>
+                  <text>公司</text>
+                  <view class='company-status'>无需证书</view>
+              </view>
+            </view>
+          </navigator>
+          <navigator url="postionDetail">
+            <view class='c-l-info'>
+              <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+              <view class='c-info-text'>
+                <text class='c-info-title'>皮革厂包装人</text>
+                <view class='c-info-msg'>
+                  <text class='c-msg'>月薪1500元</text>
+                  <text class='c-msg2'>1年以上</text>
+                </view>
+              </view>
+              <!-- company info start -->
+              <view class='company-info'>
+                  <text>公司</text>
+                  <view class='company-status'>无需证书</view>
+              </view>
+            </view>
+          </navigator>
+          <view class='more-recommond'>更多推荐</view>
+        </view>
+        <view class='content-list'>
+              <view class='c-title'>
+                <image src='../../static/images/public/money.png' class='c-flame'/>
+                <text>待遇更好</text>
+              </view>
             <navigator url="postionDetail">
               <view class='c-l-info'>
-                <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
-                <view class='c-info-text'>
-                  <text class='c-info-title'>皮革厂包装人</text>
-                  <view class='c-info-msg'>
-                    <text class='c-msg'>月薪1500元</text>
-                    <text class='c-msg2'>1年以上</text>
+                  <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+                  <view class='c-info-text'>
+                    <text class='c-info-title'>皮革厂包装人</text>
+                    <view class='c-info-msg'>
+                      <text class='c-msg'>月薪1500元</text>
+                      <text class='c-msg2'>1年以上</text>
+                    </view>
                   </view>
-                </view>
-                <!-- company info start -->
-                <view class='company-info'>
-                    <text>公司</text>
-                    <view class='company-status'>无需证书</view>
-                </view>
+                  <!-- company info start -->
+                  <view class='company-info'>
+                      <text>公司</text>
+                      <view class='company-status'>无需证书</view>
+                  </view>
               </view>
             </navigator>
             <navigator url="postionDetail">
               <view class='c-l-info'>
-                <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
-                <view class='c-info-text'>
-                  <text class='c-info-title'>皮革厂包装人</text>
-                  <view class='c-info-msg'>
-                    <text class='c-msg'>月薪1500元</text>
-                    <text class='c-msg2'>1年以上</text>
+                  <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+                  <view class='c-info-text'>
+                    <text class='c-info-title'>皮革厂包装人</text>
+                    <view class='c-info-msg'>
+                      <text class='c-msg'>月薪1500元</text>
+                      <text class='c-msg2'>1年以上</text>
+                    </view>
                   </view>
-                </view>
-                <!-- company info start -->
-                <view class='company-info'>
-                    <text>公司</text>
-                    <view class='company-status'>无需证书</view>
-                </view>
+                  <!-- company info start -->
+                  <view class='company-info'>
+                      <text>公司</text>
+                      <view class='company-status'>无需证书</view>
+                  </view>
+              </view>
+            </navigator>
+            <navigator url="postionDetail">
+              <view class='c-l-info'>
+                  <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+                  <view class='c-info-text'>
+                    <text class='c-info-title'>皮革厂包装人</text>
+                    <view class='c-info-msg'>
+                      <text class='c-msg'>月薪1500元</text>
+                      <text class='c-msg2'>1年以上</text>
+                    
+                    </view>
+                  </view>
+                  <!-- company info start -->
+                  <view class='company-info'>
+                      <text>公司</text>
+                      <view class='company-status'>无需证书</view>
+                  </view>
               </view>
             </navigator>
             <view class='more-recommond'>更多推荐</view>
-          </view>
-          <view class='content-list'>
-                <view class='c-title'>
-                  <image src='../../static/images/public/money.png' class='c-flame'/>
-                  <text>待遇更好</text>
-                </view>
-              <navigator url="postionDetail">
-                <view class='c-l-info'>
-                    <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>皮革厂包装人</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪1500元</text>
-                        <text class='c-msg2'>1年以上</text>
-                      </view>
-                    </view>
-                    <!-- company info start -->
-                    <view class='company-info'>
-                        <text>公司</text>
-                        <view class='company-status'>无需证书</view>
-                    </view>
-                </view>
-              </navigator>
-              <navigator url="postionDetail">
-                <view class='c-l-info'>
-                    <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>皮革厂包装人</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪1500元</text>
-                        <text class='c-msg2'>1年以上</text>
-                      </view>
-                    </view>
-                    <!-- company info start -->
-                    <view class='company-info'>
-                        <text>公司</text>
-                        <view class='company-status'>无需证书</view>
-                    </view>
-                </view>
-              </navigator>
-              <navigator url="postionDetail">
-                <view class='c-l-info'>
-                    <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>皮革厂包装人</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪1500元</text>
-                        <text class='c-msg2'>1年以上</text>
-                      
-                      </view>
-                    </view>
-                    <!-- company info start -->
-                    <view class='company-info'>
-                        <text>公司</text>
-                        <view class='company-status'>无需证书</view>
-                    </view>
-                </view>
-              </navigator>
-              <view class='more-recommond'>更多推荐</view>
-          </view>
-      </view>
+        </view>
+    </view>
 </view>
+
+<!-- FOOTER TARBAR START -->
+<view class='footer-height'></view>
+<import src="../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />
 

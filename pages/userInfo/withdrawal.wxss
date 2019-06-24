@@ -54,7 +54,7 @@
   width:62rpx;
   height: 57rpx;
 }
-.w-icon:hover{
+.ic-active{
   width:72rpx;
   height:72rpx;
 }

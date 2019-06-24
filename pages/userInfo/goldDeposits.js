@@ -1,33 +1,42 @@
 // pages/userInfo/goldDeposits.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
      arr: [
        { 
         "isShow": true,
+         "money":10,
+         "id": 0
          },
        {
          "isShow": false,
+         "money": 20,
+         "id": 1
        },
        {
          "isShow": false,
+         "money": 50,
+         "id": 2
        },
        {
          "isShow": false,
+         "money": 100,
+         "id": 3
        }
     ],
+    saveStatus:0,
+    saveMoney:0
+  },
+  changMoney:function(e){
+    var val = e.detail.value;
+    this.setData({saveMoney:val})
   },
   selectGoldNumber:function(e){
     let query = e.currentTarget.dataset['index'];
-    var arrLength = this.data.arr.length
-    for (var i = 0; i<arrLength;i++){
-      this.data.arr[i].isShow=false;
-    }
-    this.data.arr[query].isShow=true
-    this.setData({ arr: this.data.arr})
+    var that = this.data
+    this.setData({
+      saveStatus:query,
+      saveMoney: e.currentTarget.dataset.money
+    })
   },
   
   /**

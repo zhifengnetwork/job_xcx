@@ -9,12 +9,12 @@
       <text class='withdrawal-subtitle'>提现方式</text>
       <view class='withdrawal-cont'>
         <view class='w-icon-wrap'>
-          <image bindtap="changWithdrawal" class='w-icon' s-status="0" src='../../static/images/public/wchat.png'/>
+          <image bindtap="changWithdrawal" class='w-icon {{saveStatus==0 ? "ic-active":""}}' data-status="0" src='../../static/images/public/wchat.png'/>
         </view>
         <view class='w-icon-wrap'>
-          <image bindtap="changWithdrawal" class='w-icon' s-status="0"  src='../../static/images/public/alipay.png'/>
+          <image bindtap="changWithdrawal" class='w-icon {{saveStatus==1 ? "ic-active":""}}' data-status="1"  src='../../static/images/public/alipay.png'/>
         </view>
-        <view class='w-user-info'>
+        <view wx:if="{{saveStatus==1}}" class='w-user-info'>
             <text>周鹏</text>
             <text>180 2222 6666</text>
             <image class="w-user-icon" src='../../static/images/public/edit_gray.png'/>

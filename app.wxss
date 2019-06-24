@@ -37,10 +37,12 @@ page{
 /* TABBAR START */
 .menu-item{  
   text-align:center;
-  float:left;
-  width:32%;
+  /* float:left; */
+  /* width:32%; */
   padding:14rpx 0;
   color: #7a7a7a;
+  flex:1;
+
 }  
 /* .menu-item1{  
   width: 24%;  
@@ -66,6 +68,7 @@ page{
   left:0;
   background:#fff;
   font-size:24rpx;
+  display: flex;
 }  
  
 .button{

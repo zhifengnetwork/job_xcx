@@ -74,7 +74,6 @@ textarea{
   border-radius: 6rpx;
 
 }
-<<<<<<< HEAD
 .-lis-selec-{
   display:flex;
   justify-content:flex-end;
@@ -82,8 +81,7 @@ textarea{
 }
 .-lis-selec- .e-info-picker{
   margin-right: 20rpx;
-=======
-picker {
+}
+.picker {
   margin: 0 0 0 365rpx;
->>>>>>> 21dc97bcdd1a08705745444d2deb293f1e19e44b
 }

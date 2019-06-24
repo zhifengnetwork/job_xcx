@@ -188,6 +188,10 @@
   margin-top:25rpx;
 
 }
+.header-heigh{
+  padding-top: 50rpx;
+  width: 100%;
+}
 .line-heig{
   height:132rpx;
   width: 100%;

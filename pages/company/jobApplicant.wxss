@@ -5,9 +5,9 @@
   min-height: 100%;
   background:#f8f8f8;
 }
-.inner{
+/* .inner{
   padding: 0 24px 24px;
-}
+} */
 
 /* CONTENT START */
 .c-l-info{

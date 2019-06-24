@@ -1,11 +1,14 @@
 
-<view id="wrap">
   <!-- HEADER START -->
   <import src="../template/common.wxml"/>
   <template is="search-1" data="{{text: '我的'}}"/>
-  
+  <view class='header-heigh'></view>
+  <!-- HEADER END -->
   <view class='inner'>
-    <!-- HEADER END -->
+    <view class='subtitle overH'>
+      <text class='fl'>选择地点</text>
+      <text class='fr'>人才选择</text>
+    </view>
     <view class='c-l-info'>
       <view class='search-job-list'>
         <view class='c-info-title'>专业偷税会计/会计</view>
@@ -68,4 +71,3 @@
     </view>
     <view class='more-recommond'>更多推荐</view>
   </view>
-</view>

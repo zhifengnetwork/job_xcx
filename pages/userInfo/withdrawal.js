@@ -5,13 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isShow:false
+    saveStatus:0,
+    num:0
   },
 
   changWithdrawal:function(e){
-    console.log(e)
-    var t = e.currentTarget.sstatus;
-    console.log(t)
+    var status = e.currentTarget.dataset.status;
+    this.setData({ 
+      saveStatus: status,
+      num: status
+    })
+
+
+    // let id = e.currentTarget.dataset.id,
+    //   index = parseInt(e.currentTarget.dataset.index),
+    //   num = parseInt(e.currentTarget.dataset.index)
+    // this.curIndex = parseInt(e.currentTarget.dataset.index)
+    // console.log(e)
+    // var that = this
+    // this.setData({
+    //   curNavId: id,
+    //   curIndex: index,
+    //   num: index
+    // })
+
   },
   /**
    * 生命周期函数--监听页面加载

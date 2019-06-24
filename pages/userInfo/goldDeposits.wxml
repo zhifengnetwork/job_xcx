@@ -1,30 +1,14 @@
 <view class="inner">
-  <view class='gold-search'><input type='text' placeholder='请输入充值金币' /></view>
+  <view class='gold-search'><input type='text' placeholder='请输入充值金币' bindinput='changMoney'/></view>
   <view class='gold-content'>
-      <view class='gold-list' bindtap="selectGoldNumber" wx:for="{{arr}}"  wx:for-index="index" data-index="{{index}}" wx:key>
-        <view class='gold-num'>10金币</view>
-        <view>10元</view>
-        <image wx:if="{{item.isShow}}" class="gold-active-img " src='../../static/images/public/yes_green.png'/>
-        {{item.isShow}}
+      <view class='gold-list' bindtap="selectGoldNumber" wx:for="{{arr}}"  wx:for-index="index" data-index="{{index}}"  data-money="{{item.money}}" wx:key>
+        <view class='gold-num'>{{item.money}}金币</view>
+        <view>{{item.money}}元</view>
+        <image class="gold-active-img {{saveStatus==index ? '-show-' :'-hide'}}" src='../../static/images/public/yes_green.png'/>
       </view>
-      <!-- <view class='gold-list' bindtap="selectGoldNumber">
-        <view class='gold-num'>30金币</view>
-        <view>30元</view>
-        <image class="gold-active-img" src='../../static/images/public/yes_green.png'/>
-      </view>
-        <view class='gold-list' bindtap="selectGoldNumber">
-          <view class='gold-num'>40金币</view>
-          <view>40元</view>
-          <image class="gold-active-img" src='../../static/images/public/yes_green.png'/>
-        </view>
-        <view class='gold-list' bindtap="selectGoldNumber">
-          <view class='gold-num'>50金币</view>
-          <view>50元</view>
-          <image class="gold-active-img" src='../../static/images/public/yes_green.png'/>
-        </view> -->
     </view>
     <view class='foot-info'>
-        <text>￥10元</text>
+        <text>￥{{saveMoney}}元</text>
         <view class='line-heig'></view>
         <view class='set-option'>确定付款</view>
     </view>

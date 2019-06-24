@@ -1,4 +1,5 @@
 //app.js
+
 App({
   onLaunch: function () {
     var logs = wx.getStorageSync('logs') || []
@@ -56,30 +57,66 @@ App({
       tabBar: tabBar
     });
   },
+
   editTabBar1: function () {
-    var _curPageArr = getCurrentPages();
-    var _curPage = _curPageArr[_curPageArr.length - 1];
-    var _pagePath = _curPage.__route__;
-    if (_pagePath.indexOf('/') != 0) {
-      _pagePath = '/' + _pagePath;
+    var curPageArr = getCurrentPages();
+    var curPage = curPageArr[curPageArr.length - 1];
+    var pagePath = curPage.route;
+    if (pagePath.indexOf('/') != 0) {
+      pagePath = '/' + pagePath;
     }
-    var tabBar = this.globalData.tabBar2;
+    var tabBar = this.globalData.tabBar1;
     for (var i = 0; i < tabBar.list.length; i++) {
       tabBar.list[i].active = false;
-      if (tabBar.list[i].pagePath == _pagePath) {
-        tabBar.list[i].active = true;//根据页面地址设置当前页面状态  
+      if (tabBar.list[i].pagePath == pagePath) {
+        tabBar.list[i].active = true;
       }
     }
-    _curPage.setData({
+    curPage.setData({
       tabBar: tabBar
     });
   },
-  editTabBar2:function(){
-    wx.commonBar()
-  },
-  commonBar:function(){
-    console.log('dfdfdsfsdf')
-  },
+//  /* editTabBar1: function () {
+//     var _curPageArr = getCurrentPages();
+//     var _curPage = _curPageArr[_curPageArr.length - 1];
+//     var _pagePath = _curPage.__route__;
+//     if (_pagePath.indexOf('/') != 0) {
+//       _pagePath = '/' + _pagePath;
+//     }
+//     var tabBar = this.globalData.tabBar2;
+//     for (var i = 0; i < tabBar.list.length; i++) {
+//       tabBar.list[i].active = false;
+//       if (tabBar.list[i].pagePath == _pagePath) {
+//         tabBar.list[i].active = true;//根据页面地址设置当前页面状态  
+//       }
+//     }
+//     _curPage.setData({
+//       tabBar: tabBar
+//     });
+//   },
+//   */
+  // editTabBar1:function(){
+  //   this.commonBar()
+  //   console.log('wewe')
+  // },
+  // commonBar:function(){
+  //   var _curPageArr = getCurrentPages();
+  //   var _curPage = _curPageArr[_curPageArr.length - 1];
+  //   var _pagePath = _curPage.__route__;
+  //   if (_pagePath.indexOf('/') != 0) {
+  //     _pagePath = '/' + _pagePath;
+  //   }
+  //   var tabBar = this.globalData.tabBar1;
+  //   for (var i = 0; i < tabBar.list.length; i++) {
+  //     tabBar.list[i].active = false;
+  //     if (tabBar.list[i].pagePath == _pagePath) {
+  //       tabBar.list[i].active = true;//根据页面地址设置当前页面状态  
+  //     }
+  //   }
+  //   _curPage.setData({
+  //     tabBar: tabBar
+  //   });
+  // },
   // getUserInfo: function (cb) {
   //   var that = this
   //   if (this.globalData.userInfo) {
@@ -144,7 +181,7 @@ App({
       "borderStyle": "#d6d6d6",
       "list": [
         {
-          "pagePath": "/pages/index/index",
+          "pagePath": "/pages/company/company",
           "text": "首页",
           "iconPath": "../../static/images/bar_icon/home_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/home_green.png",
@@ -153,8 +190,36 @@ App({
           active: true
         },
         {
+          "pagePath": "/pages/company/jobApplicant",
+          "text": "招人",
+          "iconPath": "../../static/images/bar_icon/user2_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/user2_green.png",
+          "clas": "menu-item",
+          "selectedColor": "#4EDF80",
+          active: true
+        },
+        // {
+        //   "pagePath": "/pages/company/company",
+        //   "text": "第三方",
+        //   "iconPath": "../../static/images/bar_icon/circle_gray.png",
+        //   "selectedIconPath": "../../static/images/bar_icon/circle_green.png",
+        //   "clas": "menu-item",
+        //   "selectedColor": "#4EDF80",
+        //   active: true
+        // },
+        {
+          "pagePath": "/pages/company/jobApplicant",
+          "text": "第三方",
+          "iconPath": "../../static/images/bar_icon/circle_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/circle_green.png",
+          "clas": "menu-item",
+          "selectedColor": "#4EDF80",
+          active: true
+        },
+
+        {
           "pagePath": "/pages/information/information",
-          "text": "个人",
+          "text": "消息",
           "iconPath": "../../static/images/bar_icon/info_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/info_green.png",
           "clas": "menu-item",
@@ -162,7 +227,7 @@ App({
           active: true
         },
         {
-          "pagePath": "/pages/userInfo/userCenter",
+          "pagePath": "/pages/company/cUserInfo",
           "text": "我的",
           "iconPath": "../../static/images/bar_icon/user_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/user_green.png",

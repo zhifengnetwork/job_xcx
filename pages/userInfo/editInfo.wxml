@@ -46,9 +46,9 @@
       </view>
       <view class='u-o-list'>
         <text>平均薪资</text>
-        <picker mode="time" value="{{time}}" start="6k-8k" end="0k-0k" bindchange="bindTimeChange">
+        <picker value="{{paysIndex}}" range="{{payArray}}" bindchange="paysChange">
           <view class="picker">
-            {{time}}
+            {{payArray[paysIndex]}} K
           </view>
         </picker>
 
