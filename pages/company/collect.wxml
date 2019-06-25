@@ -1,0 +1,25 @@
+<view class="inner">
+  <!-- 上传身份证正面 -->
+  <view class='idPic'>
+    <view class='-pic-subtitle'>上传职业证书</view>
+    <view wx:for="{{pics}}">
+      <view class='id-card-top'>
+        <image src='{{item}}' data-src="{{item}}"></image>
+        <!-- <image class='addPic' src='../../static/images/public/plus.png'></image> -->
+      </view>
+      <input class="addTextBox" placeholder='请输入职业证书名称'/>
+      <!-- <text>点击上传证照</text> -->
+    </view>
+    <view class='file-inner' bindtap='chooseImage'>
+      <button class='file-btn'></button> 
+      <image class='f-plus-' src='../../static/images/public/plus.png'/>
+    </view>
+  </view>
+  <view class='a-more-pic'>添加一张</view>
+  <view class='height'></view>
+  <button class='set-option' bindtap="formSubmit">提交</button>
+</view>
+<imgupload      
+     id = "imgupload1"      
+     hint = "上传1"    >    
+     </imgupload> 

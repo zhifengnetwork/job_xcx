@@ -32,7 +32,7 @@
     "pages/company/publish",
     "pages/forgetpassword/forgetpassword",
     "pages/recommend/recommend",
-    "pages/register/fillInInformation/fillInInformation",
+    
     "pages/logs/logs"
   ],
   "window": {
