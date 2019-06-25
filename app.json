@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/personalMessage/personalMessage",
+    "pages/register/fillInInformation/fillInInformation",
     "pages/userInfo/myPurse",
     "pages/login/login",
     "pages/index/index",
@@ -8,12 +10,9 @@
     "pages/userInfo/postionDetail",
     "pages/information/information",
     "pages/company/cUserInfo",
-    "pages/company/uCollect",
+    "pages/company/collect",
     "pages/company/editInfo",
     "pages/thirdParty/thirdParty",
-    "pages/register/register",
-    "pages/company/jobApplicant",
-    "pages/company/company",
     "pages/userInfo/goldDeposits",
     "pages/company/company",
     "pages/company/jobApplicant",
@@ -21,7 +20,7 @@
     "pages/userInfo/editInfo",
     "pages/company/postJobPostings",
     "pages/userInfo/userCenter",
-    "pages/personalMessage/personalMessage",
+    
     "pages/auditInfo/explain",
     "pages/userInfo/myCertificate",
     "pages/userInfo/setting",
@@ -33,7 +32,7 @@
     "pages/third_party/third_party",
     "pages/forgetpassword/forgetpassword",
     "pages/recommend/recommend",
-    "pages/register/fillInInformation/fillInInformation",
+    
     "pages/logs/logs"
   ],
   "window": {
