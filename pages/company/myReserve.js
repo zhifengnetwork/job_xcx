@@ -1,4 +1,4 @@
-// pages/company/collect.js
+// pages/company/myReserve.js
 Page({
 
   /**

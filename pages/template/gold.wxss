@@ -72,7 +72,7 @@
   line-height: 55rpx;
   border-radius: 40rpx;
   background:#fff;
-  border:1px solid #25bbb3;
+  border:2rpx solid #25bbb3;
   color: #25bbb3;
   font-size:30rpx;
   box-sizing: border-box;

@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const util = require('../../utils/util.js');  //通用方法
 Page({
   data: {
     mode: "scaleToFill",
@@ -13,35 +13,16 @@ Page({
     duration: 1000,
   },
   onShow:function(){
-      // var pos
-      // app.editTabBar();
-    var postion = wx.getStorageSync('savePostion');
-    if (postion == 0) {
-      app.editTabBar();
-    } else if (postion == 1) {
-      app.editTabBar1();
-    } else if (postion == 2) {
-      app.editTabBar2();
-    } else {
-      app.editTabBar3();
-    }
-    console.log(postion)
+    
   },
-  tologs: function () {     //按钮的绑定事件，点击跳转至logs
-    wx.redirectTo({
-      url: '../userInfo/myInfo',
-    })
-  },
+  // tologs: function () {     //按钮的绑定事件，点击跳转至logs
+  //   wx.redirectTo({
+  //     url: '../userInfo/myInfo',
+  //   })
+  // },
   onLoad: function () {
-    // app.editTabBar();
-    var postion = wx.getStorageSync('savePostion');
-    if (postion == 0) {
-      app.editTabBar();
-    } else if (postion == 1) {
-      app.editTabBar1();
-    } else {
-      app.editTabBar2();
-    }
+    util.getStorageItem('savePostion', app);   //获取底部导航
+    //轮播图数据
     var array = this.data.arr
     for (let i = 0; i < 3; i++) {
       array.push("img/" + i + ".jpg")
@@ -49,7 +30,6 @@ Page({
     this.setData({ arr: array })
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

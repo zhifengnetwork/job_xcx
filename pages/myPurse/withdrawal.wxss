@@ -66,7 +66,6 @@
   color: #151515;
   border-bottom: 2rpx solid #fff;
   overflow: hidden;
-  
 }
 .w-user-icon{
   width: 25rpx;
@@ -96,8 +95,6 @@
 }
 .v-money-inp{
   width: 566rpx;
-  font-size:22rpx;
-  color: #a2a2a2; 
 }
 .w-money-msg1{
   font-size:26rpx;

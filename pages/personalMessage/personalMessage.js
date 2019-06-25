@@ -172,7 +172,7 @@ Page({
   },
   saveInfo:function(){
     wx.navigateTo({
-      url: '../auditInfo/audit'
+      url: '../public/audit'
     })
   }
   // formSubmit: function (e) {

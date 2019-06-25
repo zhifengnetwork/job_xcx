@@ -11,13 +11,10 @@ Page({
     input1text: '',
     input2text: '',
     color: '#ccc',
-    // mobile:"",
     password:""
 
   },
   getMobile:function(e){
-    // var val =e.detail.value;
-    // this.setData({ mobile:val})\
     this.data.input1text = ''
     if (e.detail.value != '') {
       this.setData({
@@ -61,21 +58,38 @@ Page({
     var val = e.detail.value;
     this.setData({ password: val })
   },
-  toLogin:function(){
+  toLogin:function(){     //保存用户身份用
     var status = "";
-    if(this.data.password=='123456'){
-       status =0;
-    }else if(this.data.password=="abcdef"){
-       status = 1;
-    }else{
-       status = 2;
+    var password = this.data.password;
+    switch (password){
+      case password = '000':
+        status = 0;
+        break;
+      case password = '111':
+        status = 1;
+        break;
+      case password = '222':
+        status = 2;
+        break;
+      case password = '333':
+        status = 3;
+        break;
     }
+    // if(this.data.password=='123456'){
+    //    status =0;
+    // }else if(this.data.password=="abcdef"){
+    //    status = 1;
+    // } else if (this.data.password == "abcdef"){
+    //    status = 2;
+    // }else{
+
+    // }
     wx.redirectTo({
       url: '../index/index'
     })
     wx.setStorageSync('savePostion', status)
   },
-  toVisitor:function(){
+  toVisitor:function(){   //游客入口
     wx.setStorageSync('savePostion', 0)
     wx.redirectTo({
       url: '../index/index'

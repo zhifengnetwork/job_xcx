@@ -23,7 +23,7 @@
           <view class="v-money-tit">提现金额(单次最大500)</view>
           <view class='v-money-'>
               <text class='w-money-msg'>￥</text>
-              <input class="v-money-inp" type='text' placeholder='请输入提现金额'/>
+              <input class="v-money-inp" type='text' placeholder-class="phcolor" placeholder='请输入提现金额'/>
               <text class='w-money-msg1'>全部提现</text>
           </view>
           <view class='v-money-2'>

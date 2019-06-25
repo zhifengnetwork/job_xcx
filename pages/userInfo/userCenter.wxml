@@ -26,11 +26,11 @@
             <text>隐私设置</text>
             <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
           </navigator>
-          <navigator url="setting" class='u-o-list'>
+          <navigator url="../public/setting" class='u-o-list'>
             <text>设置</text>
             <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
           </navigator>
-          <navigator url="myPurse" class='u-o-list'>
+          <navigator url="../myPurse/myPurse" class='u-o-list'>
             <text>我的钱包</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>
@@ -38,7 +38,7 @@
             <text>实名认证</text>
             <text class='u-o-text'>已认证</text>
           </view>
-          <navigator url="../auditInfo/help" class='u-o-list'>
+          <navigator url="../public/help" class='u-o-list'>
             <text>帮助与反馈</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>

@@ -1,29 +1,15 @@
 // pages/company/company.js
 const app =getApp();
+const util = require('../../utils/util.js');  //通用方法
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var postion = wx.getStorageSync('savePostion');
-    if (postion == 0) {
-      app.editTabBar();
-    } else if (postion == 1) {
-      app.editTabBar1();
-    } else if (postion == 2) {
-      app.editTabBar2();
-    } else {
-      app.editTabBar3();
-    }
-    console.log(postion)
+    util.getStorageItem('savePostion', app);   //获取底部导航
   },
 
   /**

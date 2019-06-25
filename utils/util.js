@@ -17,3 +17,23 @@ const formatNumber = n => {
 module.exports = {
   formatTime: formatTime
 }
+
+
+function getStorageItem(key,app) {
+  var postion = wx.getStorageSync(key);
+  if (postion == 0) {
+    app.editTabBar();
+  } else if (postion == 1) {
+    app.editTabBar1();
+  } else if (postion == 2) {
+    app.editTabBar2();
+  } else {
+    app.editTabBar3();
+  }
+  console.log(postion)
+}
+
+
+module.exports = {
+  getStorageItem: getStorageItem,
+}

@@ -6,8 +6,15 @@
    </view>
    <view class='post-list'>
       <text class='-list-msg'>工种:</text>
-      <text class='-list-msg1'>会计</text>
-      <image class="-list-icon" src='../../static/images/public/right_arrow_gray.png'/>
+         <view class='e-info-picker'>
+            <picker bindchange="bindPickerChange1" value="{{jobIndex}}" range="{{jobCategory}}">
+              <view class="picker">
+                {{jobCategory[jobIndex]}} 
+                <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+      <!-- <image class="-list-icon" src='../../static/images/public/right_arrow_gray.png'/> -->
    </view>
    <!-- WORKING YEAR START -->
    <view class='post-list'>

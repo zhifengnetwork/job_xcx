@@ -1,6 +1,7 @@
 //app.js
 
 App({
+  // golbalJs:'public',
   onLaunch: function () {
     var logs = wx.getStorageSync('logs') || []
 
@@ -55,6 +56,11 @@ App({
     this.getTabBarInfo(tabBar)
     wx.setStorageSync('savePostion', 2)
   },
+  editTabBar3: function () {
+    var tabBar = this.globalData.tabBar3;
+    this.getTabBarInfo(tabBar)
+    wx.setStorageSync('savePostion', 3)
+  },
   getTabBarInfo:function(obj){
     var curPageArr = getCurrentPages();
     var curPage = curPageArr[curPageArr.length - 1];
@@ -77,7 +83,7 @@ App({
     savePostion:0,
     userInfo: null,
     statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
-    tabBar: {
+    tabBar: {     //未登录显示导航
       "color": "#9E9E9E",
       "selectedColor": "#25bbb3",
       "backgroundColor": "#fff",
@@ -89,7 +95,6 @@ App({
           "iconPath": "../../static/images/bar_icon/home_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/home_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         },
         {
@@ -98,7 +103,6 @@ App({
           "iconPath": "../../static/images/bar_icon/info_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/info_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         },
         {
@@ -107,13 +111,12 @@ App({
           "iconPath": "../../static/images/bar_icon/user_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/user_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         }
       ],
       "position": "bottom"
     },
-    tabBar1: {
+    tabBar1: {     //以公司名义进去看到的底部导航
       "color": "#9E9E9E",
       "selectedColor": "#25bbb3",
       "backgroundColor": "#fff",
@@ -125,7 +128,6 @@ App({
           "iconPath": "../../static/images/bar_icon/home_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/home_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         },
         {
@@ -134,16 +136,14 @@ App({
           "iconPath": "../../static/images/bar_icon/user2_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/user2_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         },
         {
-          "pagePath": "/pages/thirdParty/thirdParty ",
+          "pagePath": "/pages/thirdParty/thirdParty",
           "text": "第三方",
           "iconPath": "../../static/images/bar_icon/circle_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/circle_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         },
         {
@@ -152,7 +152,6 @@ App({
           "iconPath": "../../static/images/bar_icon/info_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/info_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         },
         {
@@ -161,13 +160,12 @@ App({
           "iconPath": "../../static/images/bar_icon/user_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/user_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         }
       ],
       "position": "bottom"
     },
-    tabBar2: {
+    tabBar2: {   //以第三方名义登陆进去看到的底部导航
       "color": "#9E9E9E",
       "selectedColor": "#25bbb3",
       "backgroundColor": "#fff",
@@ -179,7 +177,14 @@ App({
           "iconPath": "../../static/images/bar_icon/home_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/home_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
+          active: true
+        },
+        {
+          "pagePath": "/pages/company/jobApplicant",
+          "text": "招人",
+          "iconPath": "../../static/images/bar_icon/user2_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/user2_green.png",
+          "clas": "menu-item",
           active: true
         },
         {
@@ -188,7 +193,47 @@ App({
           "iconPath": "../../static/images/bar_icon/company_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/company_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
+          active: true
+        },
+        {
+          "pagePath": "/pages/information/information",
+          "text": "消息",
+          "iconPath": "../../static/images/bar_icon/info_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/info_green.png",
+          "clas": "menu-item",
+          active: true
+        },
+        {
+          "pagePath": "/pages/company/cUserInfo",
+          "text": "我的",
+          "iconPath": "../../static/images/bar_icon/user_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/user_green.png",
+          "clas": "menu-item",
+          active: true
+        }
+      ],
+      "position": "bottom"
+    },
+    tabBar3: {   //以第三方名义登陆进去看到的底部导航
+      "color": "#9E9E9E",
+      "selectedColor": "#25bbb3",
+      "backgroundColor": "#fff",
+      "borderStyle": "#d6d6d6",
+      "list": [
+        {
+          "pagePath": "/pages/index/index",
+          "text": "首页",
+          "iconPath": "../../static/images/bar_icon/home_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/home_green.png",
+          "clas": "menu-item",
+          active: true
+        },
+        {
+          "pagePath": "/pages/company/company",
+          "text": "公司",
+          "iconPath": "../../static/images/bar_icon/company_gray.png",
+          "selectedIconPath": "../../static/images/bar_icon/company_green.png",
+          "clas": "menu-item",
           active: true
         },
         {
@@ -197,7 +242,6 @@ App({
           "iconPath": "../../static/images/bar_icon/circle_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/circle_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         },
 
@@ -211,12 +255,11 @@ App({
           active: true
         },
         {
-          "pagePath": "/pages/company/cUserInfo",
+          "pagePath": "/pages/userInfo/userCenter",
           "text": "我的",
           "iconPath": "../../static/images/bar_icon/user_gray.png",
           "selectedIconPath": "../../static/images/bar_icon/user_green.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         }
       ],

@@ -17,9 +17,9 @@
           <image class="d-gold-icon" src='../../static/images/public/vip.png'/>
       </view>
       <view class='g-deposits-btn2'>
-        <button class='g-d-btn1 g-d-active' bindtap='changSelect' data-status="0">月费</button>
-        <button class='g-d-btn2' bindtap='changSelect' data-status="1">季费</button>
-        <button class='g-d-btn2' bindtap='changSelect' data-status="2">年费</button>
+        <button class='g-d-btn1 {{savaStatus==1 ? "g-d-active" : ""}}' bindtap='changSelect' data-status="1">月费</button>
+        <button class='g-d-btn2 {{savaStatus==2 ? "g-d-active" : ""}}' bindtap='changSelect' data-status="2">季费</button>
+        <button class='g-d-btn2 {{savaStatus==3 ? "g-d-active" : ""}}' bindtap='changSelect' data-status="3">年费</button>
       </view>
   </view>
   <view class='set-option'>立即开通</view>

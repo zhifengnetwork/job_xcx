@@ -1,35 +1,41 @@
 // pages/company/editInfo.js
-    const date = new Date()
-    const years = []
-    const months = []
-    const days = []
+const date = new Date()
+const years = []
+const months = []
+const days = []
+const payArray = [];
+for (let i = 1; i <= 20; i++) {
+  payArray.push(i);
+}
+for (let i = 1990; i <= date.getFullYear(); i++) {
+  years.push(i)
+}
 
-    for (let i = 1990; i <= date.getFullYear(); i++) {
-      years.push(i)
-    }
+for (let i = 1; i <= 12; i++) {
+  months.push(i)
+}
 
-    for (let i = 1; i <= 12; i++) {
-      months.push(i)
-    }
+for (let i = 1; i <= 31; i++) {
+  days.push(i)
+}
 
-    for (let i = 1; i <= 31; i++) {
-      days.push(i)
-    }
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     years: years,
-    year: date.getFullYear(),
+    // year: date.getFullYear(),
     months: months,
-    month: 2,
     days: days,
-    day: 2,
     value: [9999, 1, 1],
+    payArray: payArray,
+    paysIndex: 0,
+    jobArray: ['会计', 'WEB前端开发', '业务员'],
+    jobIndex:0,
+    achievement:false,
+    person:false,
+    achiInfo:"",
+    personInfo:""
   },
-  bindChange: function (e) {
+  yearsChang: function (e) {
     const val = e.detail.value
     this.setData({
       year: this.data.years[val[0]],
@@ -37,7 +43,50 @@ Page({
       day: this.data.days[val[2]]
     })
   },
-
+  paysChange: function (e) {
+    console.log(e)
+    this.setData({
+      paysIndex: e.detail.value
+    })
+  },
+  jobChange: function (e) {
+    this.setData({
+      jobIndex: e.detail.value
+    })
+  },
+  saveAchievement:function(e){    //保存公司成就输入框的信息
+    this.setData({achiInfo: e.detail.value})
+  },
+  savePerson:function(e){
+    this.setData({ personInfo: e.detail.value })  //保存名人介绍输入框的信息
+  },
+  addAchievementBox: function (e) {  
+    // 编辑公司成就框显示与隐藏
+    var status = this.data.achievement;
+    this.setData({
+      achievement: !status,
+      person: false,
+    })
+  },
+  addFamousPersonBox: function (e) {
+    //编辑名人介绍框显示与隐藏
+    var status = this.data.person;
+    this.setData({
+      person: !status,
+      achievement: false
+    })
+  },
+  saveInfo: function () {
+    this.setData({
+      person: false,
+      achievement: false
+    })
+  },
+  saveEditInfo:function(){
+    wx.redirectTo({
+      url: 'cUserInfo'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

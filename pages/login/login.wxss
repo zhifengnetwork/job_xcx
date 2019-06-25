@@ -105,17 +105,23 @@
 }
 .order{
   margin-top:300rpx;
-text-align:center;
-font-size:26rpx;
-display:flex;
-width:100%;
-justify-content:center;
-align-items:center;
-
-
+  text-align:center;
+  font-size:26rpx;
+  display:flex;
+  width:100%;
+  justify-content:center;
+  align-items:center;
 }
 .footPrint-ico{
   width:27rpx;
-  height:29rpx;
+  height:27rpx;
   vertical-align: middle;
+  margin-right: 16rpx;
+}
+
+.footPrint-ico2{
+  width: 13rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-left: 16rpx;
 }

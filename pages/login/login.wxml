@@ -26,6 +26,7 @@
   <view class='order' bindtap='toVisitor'>
       <image class="footPrint-ico" src='../../static/images/public/footPrint.png'/>
       <text>游客入口</text>
+      <image class="footPrint-ico2" src='../../static/images/public/right_arrow_gray.png'/>
   </view>
 </view>
 

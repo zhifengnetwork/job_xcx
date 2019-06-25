@@ -16,6 +16,8 @@ Page({
   data: {
     array: years,
     payArray:pays,
+    jobCategory:["会计","行政"],
+    jobIndex:0,
     index: 0,
     index1:0,
     paysIndex:0,
@@ -24,6 +26,11 @@ Page({
       { name: 'noNeed', value: '无需证书', checked: 'true' },
       { name: 'need', value: '需要证书' }
     ]
+  },
+  jobCategory:function(e){
+    this.setData({
+      jobIndex: e.detail.value
+    })
   },
   yearsChange: function (e) {
     this.setData({
@@ -47,7 +54,7 @@ Page({
   },
   saveInfo:function(){
     wx.redirectTo({
-      url: 'company'
+      url: 'cUserInfo'
     })
   },
   /**

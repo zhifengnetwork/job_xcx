@@ -6,10 +6,6 @@
 <!-- HEADER END -->
 <view class='inner'>
     <view class='container'>
-        <view class='subtitle overH'>
-          <text class='fl'>选择地点</text>
-          <text class='fr'>人才选择</text>
-        </view>
         <view class='content-list'>
           <navigator url="postionDetail">
               <view class='c-title'>

@@ -10,11 +10,15 @@
    top: 0;
    z-index: 10;
    width: 100%;
-   display: flex;
    padding: 10rpx 0; 
    background:#fff;
+
+}
+.-header-cont{
+   display: flex;
    align-items:center;
 }
+
 .search-cont{
   padding: 10rpx 0 0;
   flex: 0 0 1;
@@ -37,8 +41,9 @@
   width:21rpx;
   height:21rpx;
   position:absolute;
-  left:40rpx;
-  top:38rpx;
+  left:45rpx;
+  top:42rpx;
+
 }
 .search-r-text{
   display: block;
@@ -51,22 +56,29 @@
 }
 /* subtitle start */
 .subtitle{
-  margin:31rpx 0 21rpx;
+  /* margin:31rpx 0 21rpx; */
   color:#151515;
-  width: 100%;
+  width: 581rpx;
+  margin:0 60rpx 0 24rpx;
   line-height: 55rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.subtitle text{
+/* .subtitle text{
   width:50%;
   text-align: center;
   font-size:28rpx;
   font-weight:700;
+} */
+.subtitle text {
+  text-align:center;
+  font-size:28rpx;
+  font-weight:700;
 }
 .c-body{
-  padding-top:80rpx;
+  /* padding-top:80rpx; */
+  padding-top:175rpx;
 }
  /* LIST STYLE START */
  .c-title{
@@ -98,12 +110,14 @@
 } */
 .c-l-info {
   /* flex-flow:wrap; */
-  padding:25rpx 0 25rpx;
+  /* padding:25rpx 0 25rpx; */
   margin-bottom:10rpx;
   border-radius:5px;
   background:#fff;
   align-items:center;
   display:flex;
+  padding:25rpx 10rpx 25rpx;
+
 
 }
 
@@ -231,7 +245,10 @@
 
 }
 .header-heigh{
-  padding-top: 20rpx;
+  /* padding-top: 20rpx; */
+  padding-top:130rpx;
+
+
   width: 100%;
 }
 .line-heig{
@@ -285,4 +302,35 @@
   display: block;
   color: #151515;
   width: 475rpx;
+}
+
+/* EIDIT INFO TEXTAREA STYLE START */
+textarea{
+  border:2rpx solid #eee; 
+  border-radius: 6rpx;
+  padding: 6rpx;
+  box-sizing: border-box;
+}
+.texa{
+  width: 702rpx;
+  height:300rpx;
+  padding-bottom:45rpx;
+}
+.tex-wrap{
+  position: relative;
+}
+.tex-btn{
+  width:100%;
+  height:54rpx;
+  line-height:54rpx;
+  font-size: 26rpx;
+  position: absolute;
+  left:0rpx;
+  bottom:6rpx;
+}
+.texa1{
+  padding:15rpx;
+  width: 702rpx;
+  height:480rpx;
+  box-sizing: border-box;
 }

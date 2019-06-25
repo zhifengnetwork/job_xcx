@@ -9,15 +9,11 @@
             <text class='c-info-title'>智丰网络</text>
             <view class='c-msg m-b10'>
               <text>VIP到期时间：2017-5-10</text>
-              <view class='company-status'>月费VIP</view>
+              <view class='company-status m-0'>月费VIP</view>
             </view>
             <view class='c-msg m-b10'>企业用户：</view>
             <view class='c-msg m-b10'>企业编号：007</view>
           </view>
-          <!-- company info start -->
-          <!-- <view class='company-info'>
-              <view class='company-status'>月费VIP</view>
-          </view> -->
       </view>
       <button class='edit-info' bindtap='toEdit'>编辑发布内容</button>
       <!-- USER OPTION START -->
@@ -26,19 +22,19 @@
             <text>编辑公司信息</text>
             <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
           </navigator>
-          <navigator url="collect" class='u-o-list m-b50'>
+          <navigator url="uCollect" class='u-o-list m-b50'>
             <text>我的收藏</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>
-          <view class='u-o-list m-b50'>
+          <navigator url="myReserve" class='u-o-list m-b50'>
             <text>我的预订</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
-          </view>
-          <view class='u-o-list m-b50'>
+          </navigator>
+          <navigator url='myPurse' class='u-o-list m-b50'>
             <text>我的钱包</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
-          </view>
-          <navigator url="setting" class='u-o-list m-b50'>
+          </navigator>
+          <navigator url="../public/setting" class='u-o-list m-b50'>
             <text>设置</text>
             <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
           </navigator>
@@ -46,7 +42,7 @@
             <text>实名认证</text>
             <text class='u-o-text'>审核中</text>
           </view>
-          <navigator url="help" class='u-o-list m-b50'>
+          <navigator url="../public/help" class='u-o-list m-b50'>
             <text>帮助与反馈</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>

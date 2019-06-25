@@ -1,18 +1,18 @@
 <view class="inner">
   <view class='help'>
-    <navigator url='../auditInfo/explain' class='h-list'>
+    <navigator url='../public/explain' class='h-list'>
       <text>审核流程</text>
       <image class='h-icon2' src='../../static/images/public/right_arrow_gray.png'/>
     </navigator>
-    <navigator url='../auditInfo/explain' class='h-list'>
+    <navigator url='../public/explain' class='h-list'>
       <text>违规申明</text>
       <image class='h-icon2' src='../../static/images/public/right_arrow_gray.png'/>
     </navigator>
-    <navigator url='../auditInfo/explain' class='h-list'>
+    <navigator url='../public/explain' class='h-list'>
       <text>隐私申明</text>
       <image class='h-icon2' src='../../static/images/public/right_arrow_gray.png'/>
     </navigator>
-    <navigator url='../auditInfo/explain' class='h-list'>
+    <navigator url='../public/explain' class='h-list'>
       <text>其他介绍</text>
       <image class='h-icon2' src='../../static/images/public/right_arrow_gray.png'/>
     </navigator>

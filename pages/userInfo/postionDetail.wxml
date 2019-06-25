@@ -37,7 +37,7 @@
         </view>
     </view>
     <view class='footer'>
-        <button class='f-btn-1' bindtap="callWithHim">马上预订</button>
+        <button class='f-btn-1' bindtap="toReservation">马上预订</button>
         <button class='f-btn-2' bindtap="callWithHim">联系客服</button>
     </view>
   </view>

@@ -1,5 +1,5 @@
 <view class="inner">
-  <view class='gold-search'><input type='text' placeholder='请输入充值金币' bindinput='changMoney'/></view>
+  <view class='gold-search'><input type='text' placeholder-class="phcolor" placeholder='请输入充值金币' bindinput='changMoney'/></view>
   <view class='gold-content'>
       <view class='gold-list' bindtap="selectGoldNumber" wx:for="{{arr}}"  wx:for-index="index" data-index="{{index}}"  data-money="{{item.money}}" wx:key>
         <view class='gold-num'>{{item.money}}金币</view>

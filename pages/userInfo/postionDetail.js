@@ -12,6 +12,14 @@ Page({
       phoneNumber: '18365478951' // 仅为示例，并非真实的电话号码
     })
   },
+  toReservation:function(){
+    wx.showToast({
+      title: '预订成功',
+      icon: 'success',
+      duration: 2000
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

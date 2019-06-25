@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    savaStatus:0
   },
 
   /**
@@ -14,9 +14,10 @@ Page({
   onLoad: function (options) {
 
   },
-  changSelect:function(){
-
-  }
+  changSelect:function(e){
+    var status =e.currentTarget.dataset.status;
+    this.setData({savaStatus:status});
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

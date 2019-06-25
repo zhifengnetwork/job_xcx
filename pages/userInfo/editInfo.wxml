@@ -32,40 +32,64 @@
   <view class='user-option'>
       <view class='u-o-list'>
         <text>求职类型</text>
-        <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+        <!-- <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/> -->
+        <view class='-list-pays' value="{{jobIndex}}">
+          <picker value="{{jobIndex}}" range="{{jobArray}}" bindchange="jobChange">
+            <view class="picker">
+              {{jobArray[jobIndex]}} 
+              <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+            </view>
+          </picker>
+        </view>
       </view>
       <view class='u-o-list'>
         <text>到岗时间</text>
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
           <view class="picker">
             {{array[index]}}
+            <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
           </view>
         </picker>
-
-        <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
       </view>
       <view class='u-o-list'>
         <text>平均薪资</text>
         <picker value="{{paysIndex}}" range="{{payArray}}" bindchange="paysChange">
           <view class="picker">
             {{payArray[paysIndex]}} K
+            <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
           </view>
         </picker>
-
-        <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
       </view>
-      <navigator url="" class='u-o-list'>
-        <text>工作经历</text>
-        <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
-      </navigator>
-      <navigator url="" class='u-o-list'>
-        <text>教育经历</text>
-        <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
-      </navigator>
+      <view>
+          <view class='u-o-list' bindtap='addWorkExperience'>
+            <text>工作经历</text>
+            <view>
+              <text class='u-o-msg'>{{workInfo}}</text>
+              <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+            </view>
+          </view>
+          <view class='tex-wrap' wx:if="{{work}}">
+             <textarea class="texa" placeholder='请输入工作经历' bindinput="saveWork"></textarea>
+             <button class='tex-btn' bindtap='saveInfo'>保存</button>
+          </view>
+      </view>
+      <view>
+          <view class='u-o-list' bindtap='addEducationalExperience'>
+            <text>教育经历</text>
+            <view>
+              <text class='u-o-msg'>{{aducationalInfo}}</text>
+              <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+            </view>
+          </view>
+          <view class='tex-wrap' wx:if="{{aducational}}">
+             <textarea class="texa" placeholder='请输入工作经历'  bindinput="saveAducational"></textarea>
+             <button class='tex-btn' bindtap='saveInfo'>保存</button>
+          </view>
+      </view>
   </view>
   <!-- -->
-  <textarea placeholder='个人说明'></textarea>
+  <textarea class="texa1" placeholder='个人说明'></textarea>
   <!--footer -->
   <view class='line-heig'></view>
-  <view class='set-option-1'><button class='s-1-option'>保存</button></view>
+  <view class='set-option-1'><button class='s-1-option' bindtap='saveEditInfo'>保存</button></view>
 </view>

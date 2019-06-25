@@ -12,6 +12,7 @@
 }
 .-list-msg{
   margin-right:25rpx;
+  width:122rpx;
 }
 .-list-inp{
   font-size: 24rpx;
