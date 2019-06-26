@@ -2,9 +2,12 @@
 <view class='inner'>
   <view class='setting-list'>
     <text>修改手机号</text>
-    <input class="body-view -view-inp " value="188 0000 2222" type='text'/>
+    <view bindtap='save'>
+      <text class="body-view -view-inp ">188 0000 2222</text>
+      <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+    </view>
   </view>
-  <view class='setting-list'>
+  <view class='setting-list' bindtap='password'>
     <text>设置密码</text>
     <view class="body-view">
       <image class='-view-edit' src='../../static/images/public/edit_gray.png'/>

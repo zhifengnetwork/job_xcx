@@ -1,11 +1,10 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/forgetpassword/forgetpassword",
     "pages/index/index",
-    "pages/register/register",
     "pages/personalMessage/personalMessage",
-    "pages/information/information",
+    "pages/public/password",
+    "pages/register/register",
     "pages/userInfo/postionDetail",
     "pages/userInfo/editInfo",
     "pages/userInfo/userCenter",
