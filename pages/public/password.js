@@ -1,4 +1,4 @@
-// pages/userInfo/setting.js
+// pages/public/password.js
 Page({
 
   /**
@@ -7,14 +7,9 @@ Page({
   data: {
 
   },
-  save: function () {
+  saveInfo: function () {
     wx.navigateTo({
-      url: '../public/editMobile'
-    })
-  },
-  password: function () {
-    wx.navigateTo({
-      url: '../public/password'
+      url: '../register/register'
     })
   },
 

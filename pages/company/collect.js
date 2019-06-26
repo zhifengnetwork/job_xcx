@@ -1,4 +1,4 @@
-// pages/userInfo/setting.js
+// pages/company/collect.js
 Page({
 
   /**
@@ -6,16 +6,6 @@ Page({
    */
   data: {
 
-  },
-  save: function () {
-    wx.navigateTo({
-      url: '../public/editMobile'
-    })
-  },
-  password: function () {
-    wx.navigateTo({
-      url: '../public/password'
-    })
   },
 
   /**

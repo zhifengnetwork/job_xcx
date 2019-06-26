@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    codeIsCanClick: false,
+    codeIsCanClick: true,
     //fasongtext: '发送验证码',
     input1text: '',
     input2text: '',
@@ -74,33 +74,35 @@ Page({
     })
   },
   /**
- * 点击验证码按钮
- */
+* 点击验证码按钮
+*/
   clickCode: function () {
     var that = this;
-    var countDownNum = '10'; //倒计时初始值
-    that.setData({
-      codeIsCanClick:true,
-      timer: setInterval(function () {
-        countDownNum--;
-        // that.setData({
-        //   countDownNum: countDownNum
-        // })
-        that.setData({
-          fasongtext: countDownNum + 's'
-        })
-        if (countDownNum == 0) {
-          clearInterval(that.data.timer);
-          that.setData({
-            fasongtext: '发送验证码'
-          })
-        }
-      }, 1000)
-    })
+    settime(that)
   },
- saveInfo: function () {
+  saveInfo: function () {
     wx.navigateTo({
       url: '../public/setting'
     })
   },
 })
+// 倒计时事件 单位s
+var countdown = 60;
+var settime = function (that) {
+  if (countdown == 0) {
+    that.setData({
+      codeIsCanClick: true
+    })
+    countdown = 60;
+    return;
+  } else {
+    that.setData({
+      codeIsCanClick: false,
+      last_time: countdown
+    })
+    countdown--;
+  }
+  setTimeout(function () {
+    settime(that)
+  }, 1000)
+}

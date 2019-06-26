@@ -13,10 +13,15 @@
   height: 26rpx;
 }
 .-view-inp{
+  margin-right: 20rpx;
   text-align: right;
   width: 60%;
 }
 .-view-msg,.-view-inp{
   color: #808080;
   font-size:30rpx;
+}
+.u-o-icon2{
+  width: 12rpx;
+  height: 24rpx;
 }

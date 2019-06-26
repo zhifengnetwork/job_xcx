@@ -1,12 +1,13 @@
 {
   "pages": [
-      "pages/public/editMobile",
+    "pages/index/index",
+    "pages/public/setting",
+    "pages/public/editMobile",
     "pages/personalMessage/personalMessage",
-  
+    "pages/public/password",
     "pages/register/register",
     "pages/login/login",
-    "pages/public/setting",
-    "pages/index/index",
+    
     "pages/userInfo/postionDetail",
     "pages/company/postionDetail",
     "pages/userInfo/editInfo",
