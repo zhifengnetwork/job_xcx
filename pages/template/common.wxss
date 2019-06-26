@@ -98,29 +98,14 @@
   font-size:28rpx;
   font-weight: 700;
 }
-
-/* .c-l-info{
-  display: flex;
-  flex-flow: wrap;
-  padding:25rpx 0 25rpx;
-  margin-bottom: 10rpx;
-  border-radius: 5px;
-  background:#fff;
-  align-items:center;
-} */
 .c-l-info {
-  /* flex-flow:wrap; */
-  /* padding:25rpx 0 25rpx; */
   margin-bottom:10rpx;
   border-radius:5px;
   background:#fff;
   align-items:center;
   display:flex;
   padding:25rpx 10rpx 25rpx;
-
-
 }
-
 
 .c-l-info .c-logo{
   width:90rpx;
@@ -129,7 +114,6 @@
 }
 .c-info-text{
   margin-left:21rpx;
-  /* flex: 0 0 1; */
 }
 .c-info-title{
   font-weight: 700;
@@ -137,7 +121,6 @@
   
 }
 .c-info-msg{
-  /* margin-top:25rpx; */
   margin-top: 18rpx;
 }
 .c-info-msg text{
@@ -150,8 +133,6 @@
 .c-msg3{
  font-size: 24rpx;
  color: #5d5d5d;
- /* margin: 17rpx 0 13rpx; */
- /* margin:18rpx 0; */
  margin-top:14rpx;
 
 
@@ -173,22 +154,8 @@
    border-radius: 2px;
    color:#fff;
    margin-top:18rpx;
-
-   /* float:right; */
-
-   /* margin-top: 20rpx; */
 }
 
-/* .company-status{
-   width: 100rpx;
-   text-align: center;
-   font-size: 20rpx;
-   background:#25bbb3;
-   padding: 6rpx 0;
-   border-radius: 2px;
-   color:#fff;
-   margin-top: 20rpx;
-} */
 .more-recommond{
    text-align: center;
    margin: 11rpx 0;
@@ -247,8 +214,6 @@
 .header-heigh{
   /* padding-top: 20rpx; */
   padding-top:130rpx;
-
-
   width: 100%;
 }
 .line-heig{
@@ -269,20 +234,28 @@
 /* GLOBAL INFORMATION START */
 .t-info-nav{
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
   align-items: center;
   font-size: 28rpx;
   font-weight: 700;
   color:#151515;
   margin-bottom: 15rpx;
 }
-.t-info-nav .t-i-raduis{
+.-info-msg-exp{
+  width: 100%;
+  height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  white-space: nowrap
+}
+.t-i-raduis{
   width: 16rpx;
   height: 16rpx;
   border-radius: 50%;
   background:red;
   vertical-align:middle;
-  margin-left: 24rpx;
+  margin-left: 2rpx;
 }
 /* CONTENT STAT */
 .t-info-list{

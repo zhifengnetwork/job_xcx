@@ -30,7 +30,7 @@
             <text>我的预订</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>
-          <navigator url='myPurse' class='u-o-list m-b50'>
+          <navigator url='../myPurse/myPurse' class='u-o-list m-b50'>
             <text>我的钱包</text>
             <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
           </navigator>

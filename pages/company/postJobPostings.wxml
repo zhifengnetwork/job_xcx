@@ -2,12 +2,12 @@
 <view class='inner'>
    <view class='post-list'>
       <text class='-list-msg'>标题:</text>
-      <input value="" class='-list-inp' placeholder='请输入标题'/>
+      <input value="" class='-list-inp'placeholder-class="phcolor" placeholder='请输入标题'/>
    </view>
    <view class='post-list'>
       <text class='-list-msg'>工种:</text>
          <view class='e-info-picker'>
-            <picker bindchange="bindPickerChange1" value="{{jobIndex}}" range="{{jobCategory}}">
+            <picker bindchange="jobCategory" value="{{jobIndex}}" range="{{jobCategory}}">
               <view class="picker">
                 {{jobCategory[jobIndex]}} 
                 <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
@@ -21,7 +21,7 @@
       <text class='-list-msg'>工龄:</text>
       <view class='selcet-time'>
         <view class='e-info-picker'>
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <picker bindchange="yearsChange" value="{{index}}" range="{{array}}">
               <view class="picker">
                 {{array[index]}} 年 <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
               </view>
@@ -29,7 +29,7 @@
         </view>
         —
         <view class='e-info-picker'>
-            <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array}}">
+            <picker bindchange="yearsChange1" value="{{index1}}" range="{{array}}">
               <view class="picker">
                 {{array[index1]}} 年 <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
               </view>

@@ -84,5 +84,5 @@
     </view>
     <view class='a-more-pic'>添加一张</view>
   </view>
-  <button class='option'>提交</button>
+  <button class='option' bindtap='saveInfo'>提交</button>
 </view>

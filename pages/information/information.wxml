@@ -1,8 +1,41 @@
 <!--pages/information/infomation.wxml-->
 <view class='inner'>
-  <import src="../template/tInformation"/>
-  <template is="tInformation" />
-
+  <view class='t-info-nav'>
+    <view class='m-r35' bindtap='changStatus' data-status="0">
+      <text>聊天信息</text>
+      <icon class='t-i-raduis'></icon>
+    </view>
+    <view bindtap='changStatus' data-status="1">
+      <text>系统信息</text>
+      <icon class='t-i-raduis'></icon>
+    </view>
+  </view>
+  <view class='-info-cont' wx:if="{{cStatus==0}}">
+    <view wx:for="{{array}}" class='t-info-list' bindtap='changNew' wx:key="{{index}}" data-index="{{index}}">
+      <image src='../../static/images/public/big_portrait.png' class='t-info-img'/>
+      <view class='t-info-msg'>
+          <view class='f-bold m-b20'>{{item.title}}</view>
+          <view class='-info-msg-exp'>{{item.msg}}</view>
+      </view>
+      <view class='t-right'>
+        <text>{{item.time}}</text>
+        <view wx:if="{{item.isChang}}"><icon class='t-i-raduis'></icon></view>
+      </view>
+    </view>
+  </view>
+  <view class='-info-cont' wx:if="{{cStatus==1}}">
+    <view wx:for="{{array2}}" class='t-info-list' bindtap='changNew2' wx:key="{{index}}" data-index="{{index}}">
+      <image src='../../static/images/public/big_portrait.png' class='t-info-img'/>
+      <view class='t-info-msg'>
+          <view class='f-bold m-b20'>{{item.title}}</view>
+          <view class='-info-msg-exp'>{{item.msg}}</view>
+      </view>
+      <view class='t-right'>
+        <text>{{item.time}}</text>
+        <view wx:if="{{item.isChang}}"><icon class='t-i-raduis'></icon></view>
+      </view>
+    </view>
+  </view>
   <!-- FOOTER START -->
   <view class='footer-height'></view>
   <import src="../template/tabbar.wxml" />

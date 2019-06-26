@@ -76,29 +76,6 @@
   -webkit-line-clamp: 1;
   white-space: nowrap
 }
-/* .texa{
-  width: 702rpx;
-  height:300rpx;
-  padding-bottom:45rpx;
-}
-.tex-wrap{
-  position: relative;
-}
-.tex-btn{
-  width:100%;
-  height:54rpx;
-  line-height:54rpx;
-  font-size: 26rpx;
-  position: absolute;
-  left:0rpx;
-  bottom:6rpx;
-}
-.texa1{
-  padding:15rpx;
-  width: 702rpx;
-  height:480rpx;
-  box-sizing: border-box;
-} */
 .-lis-selec-{
   display:flex;
   justify-content:flex-end;

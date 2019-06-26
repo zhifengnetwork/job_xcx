@@ -1,15 +1,10 @@
 const date = new Date();
-console.log(date);
-// const date1 = new Date();
 const years=date.getFullYear();
 const mouths =date.getMonth()+1;
 const das=date.getDate();
 //获取应用实例
 const app = getApp();
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
     array: ['硕士', '博士', '本科' ,'大专', '高技','高中以下'],
     items: [
@@ -22,18 +17,15 @@ Page({
       { me: 'wuman', value: '女', checked: 'true' },
       { me: 'man', value: '男' }
     ],
+    icCardPic:[
+      { msg: '点击上传身份证正面照', src: '', hiddenName:true},
+      { msg: '点击上传身份证反面照', src: '', hiddenName: true}
+    ],
     addImgs:1,
     index: 0,
     showDialog: false,
     date: years + '-' + mouths + '-' + das,
     date1: years + '-' + mouths + '-' + das,
-    // value: [9999, 1, 1],
-    // value1:"",
-    //positiveImg: '',
-    //oppositeImg: '',
-    //certificateImg: '',
-    tempFilePaths: [],
-    hiddenName: false,
     //添加一张
     pics: [],
     count: [1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -58,75 +50,33 @@ Page({
       value: 'show'
     })
   },
-  saveInfo:function(){
-    // navigator
+  addIdCardPic:function(e){   //身份证上传
+    var _this = this
+    var id = e.currentTarget.dataset.id
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success:function(res){
+        var imgSrc = res.tempFilePaths[0];
+        var data = _this.data.icCardPic[id]
+        data.src = imgSrc;
+        data.hiddenName=false;
+        _this.setData({
+          icCardPic: _this.data.icCardPic
+        })
+      }
+      //
+    })
   },
-  upload: function (e) {
-    var that = this;
-    var no = e.currentTarget.id;
-    if (no == "1") {
-      wx.chooseImage({
-        count: 1, // 默认1
-        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-        success: res => {
-          wx.showToast({
-            title: '正在上传...',
-            icon: 'loading',
-            mask: true,
-            duration: 1000
-          })
-
-          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-          var tempFilePaths = res.tempFilePaths;
-
-          that.setData({
-            tempFilePaths: tempFilePaths,
-            hiddenName: true
-          })
-          console.log(that.data.tempFilePaths)
-        }
-
-      })
-    } else if (no == "2") {
-      wx.chooseImage({
-        count: 1, // 默认1
-        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-        success: res => {
-          wx.showToast({
-            title: '正在上传...',
-            icon: 'loading',
-            mask: true,
-            duration: 1000
-          })
-
-          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-          var tempFilePaths = res.tempFilePaths;
-
-          that.setData({
-            tempFilePaths: tempFilePaths,
-            hiddenName: true
-          })
-          console.log(that.data.tempFilePaths)
-        }
-
-      })
-    }  
-  },
-  
-
   //添加一张
   chooseImage: function (e) {
     var _this = this,
       pics = this.data.pics;
-    console.log(pics)
     wx.chooseImage({
       count: 9 - pics.length, // 最多可以选择的图片张数，默认9
       sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
       sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
       success: function (res) {
-        // success
         var imgSrc = res.tempFilePaths;
         pics = pics.concat(imgSrc);
         // 控制触发添加图片的最多时隐藏
@@ -215,13 +165,14 @@ Page({
       showDialog: !that.data.showDialog
     });
   },
+  changSex:function(e){
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
   radioChange: function (e) {
-    // console.log('radio发生change事件，携带value值为：', e.detail.value1)
     var that = this
     that.setData({
       value1: e.detail.value
     })
-    console.log(this.data.value1)
   },
   toggleDialog() {
     this.setData({
@@ -235,7 +186,6 @@ Page({
   },
  /*点击选择学历,弹框消失 e*/
 
-  //  上传身份证正反面  s
   
   saveInfo:function(){
     wx.navigateTo({

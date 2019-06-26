@@ -18,19 +18,18 @@ module.exports = {
   formatTime: formatTime
 }
 
-
+//获取用户状态
 function getStorageItem(key,app) {
   var postion = wx.getStorageSync(key);
   if (postion == 0) {
-    app.editTabBar();
+    return app.editTabBar()
   } else if (postion == 1) {
-    app.editTabBar1();
+    return app.editTabBar1()
   } else if (postion == 2) {
-    app.editTabBar2();
+    return app.editTabBar2()
   } else {
-    app.editTabBar3();
+    return app.editTabBar3()
   }
-  console.log(postion)
 }
 
 

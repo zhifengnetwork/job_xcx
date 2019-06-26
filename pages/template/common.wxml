@@ -7,7 +7,7 @@
             <image class="search-icon" src='../../static/images/public/search_icon.png'></image>
           </view>
           <!-- <text class='search-r-text'>{{text}}</text> -->
-          <navigator url='../login/login'><text class='search-r-text'>{{text}}</text></navigator>
+          <navigator url='../company/cUserInfo'><text class='search-r-text'>{{text}}</text></navigator>
         
         </view>
         <view class='subtitle overH'>

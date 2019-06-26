@@ -20,11 +20,11 @@
 <!-- 下拉框 -->
 <view class='select_box'>
   <view class='select' catchtap='selectTap'>
-    <text class='select_text'>{{selectData[index]}}</text>
+    <text class='select_text'>{{selectData[index].name}}</text>
     <image src='../../images/forgetpassword/xiala.png' class='xiala_pic'></image>
   </view>
-  <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
-    <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+  <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*112):0}}rpx;'>
+    <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item.name}}</text>
   </view>
 </view>
 <view>

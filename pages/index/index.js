@@ -15,19 +15,16 @@ Page({
   onShow:function(){
     
   },
-  // tologs: function () {     //按钮的绑定事件，点击跳转至logs
-  //   wx.redirectTo({
-  //     url: '../userInfo/myInfo',
-  //   })
-  // },
   onLoad: function () {
-    util.getStorageItem('savePostion', app);   //获取底部导航
+    util.getStorageItem('savePostion', app)   //获取底部导航
     //轮播图数据
     var array = this.data.arr
     for (let i = 0; i < 3; i++) {
       array.push("img/" + i + ".jpg")
     }
-    this.setData({ arr: array })
+    this.setData({ 
+      arr: array 
+    })
   },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo

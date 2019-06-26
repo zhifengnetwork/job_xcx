@@ -6,15 +6,16 @@ Page({
   data: {
     inputValue: null,
     status: false,
-    eyekai: true,
-    leixing: 'password',
+    eyekai: 0,
+    is_pwd:'password',
     input1text: '',
     input2text: '',
     color: '#ccc',
-    password:""
-
+    password:"",
+    mobile:''
   },
   getMobile:function(e){
+    var color= '#ccc';
     this.data.input1text = ''
     if (e.detail.value != '') {
       this.setData({
@@ -25,76 +26,62 @@ Page({
       this.setData({
         status: false
       })
-
+      return
     }
-    if (e.detail.value != '' && this.data.input2text != '') {
-      this.setData({
-        color: 'rgb(54, 193, 186)'
-      })
+    if (!(this.data.input2text == '' || this.data.input1text == '')){
+      color= 'rgb(54, 193, 186)';
     }
-    if (e.detail.value == '' || this.data.input1text == '') {
-      this.setData({
-        color: '#ccc'
-      })
-    }
+    this.setData({
+      color: color,
+      mobile: e.detail.value
+    })
   },
   getPassword: function (e) {
+    var color = '#ccc';
     this.data.input2text = ''
     if (e.detail.value != '') {
       this.setData({
         input2text: e.detail.value
       })
     }
-    if (this.data.input1text != '' && e.detail.value != '') {
-      this.setData({
-        color: 'rgb(54, 193, 186)'
-      })
-    }
-    if (e.detail.value == '' || this.data.input1text == '') {
-      this.setData({
-        color: '#ccc'
-      })
+    if (!(this.data.input2text == '' || this.data.input1text == '')) {
+      color = 'rgb(54, 193, 186)';
     }
     var val = e.detail.value;
-    this.setData({ password: val })
+    this.setData({ 
+      password: val,
+      color: color
+    })
   },
   toLogin:function(){     //保存用户身份用
     var status = "";
     var password = this.data.password;
-    switch (password){
-      case password = '000':
-        status = 0;
-        break;
-      case password = '111':
-        status = 1;
-        break;
-      case password = '222':
-        status = 2;
-        break;
-      case password = '333':
-        status = 3;
-        break;
+    var mobile = this.data.mobile;
+    if (password ==0){
+       status =0;
+    } 
+    if (password == 1) {
+      status = 1;
+    } 
+    if (password == 2) {
+      status = 2;
+    } 
+    if (password == 3) {
+      status = 3;
+    } 
+    if (!(mobile == "" || password=="")){
+      //跳转至首页
+      wx.redirectTo({
+        url: '../index/index'
+      })
+      wx.setStorageSync('savePostion', status)
     }
-    // if(this.data.password=='123456'){
-    //    status =0;
-    // }else if(this.data.password=="abcdef"){
-    //    status = 1;
-    // } else if (this.data.password == "abcdef"){
-    //    status = 2;
-    // }else{
-
-    // }
-    wx.redirectTo({
-      url: '../index/index'
-    })
-    wx.setStorageSync('savePostion', status)
   },
   toVisitor:function(){   //游客入口
     wx.setStorageSync('savePostion', 0)
     wx.redirectTo({
       url: '../index/index'
     })
-
   },
   /**
    * 生命周期函数--监听页面加载
@@ -151,18 +138,19 @@ Page({
   onShareAppMessage: function() {
 
   },
-  qie: function() {
-    if (this.data.eyekai == false) {
-      this.setData({
-        eyekai: true,
-        leixing: 'password'
-      })
-    } else {
-      this.setData({
-        eyekai: false,
-        leixing: 'text'
-      })
+  showPassword: function(e){
+    var newid=0;
+    var that = this;
+    var id = e.currentTarget.dataset.id;
+    if(id==0){
+      newid =1
     }
+    var is_pwd = !that.data.is_pwd
+
+    this.setData({
+      is_pwd: is_pwd,
+      eyekai: newid,
+    })
   },
   deletetext: function(e) {
 

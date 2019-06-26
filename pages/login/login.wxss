@@ -48,9 +48,7 @@
   left:40rpx
 }
 .phone_password{
-
- width: 600rpx;
- 
+  width:520rpx;
 }
 
 .delete_pic {
@@ -73,7 +71,6 @@
   border-radius: 60rpx;
   color: white;
   margin: 50rpx 50rpx 0rpx 50rpx;
- 
 }
 
 .resigt {
@@ -85,24 +82,25 @@
   vertical-align: top;
   cursor: pointer;
 }
-
+.eye_pic{
+  width:40rpx;
+  height:25rpx;
+  position:absolute;
+  right:0;
+  bottom:10rpx;
+  padding:20rpx;
+  z-index:1;
+}
 .forget {
   margin-right: 80rpx;
   font-size: 28rpx;
   color: rgb(54, 193, 186);
-  padding-top: 10rpx;
+  padding-top: 20rpx;
   display: inline-block;
   vertical-align: top;
   float:right;
 }
-.eye_pic{
-  width: 40rpx;
-  height: 25rpx;
-  position: absolute;
-  right: 0;
-  bottom: 30rpx;
 
-}
 .order{
   margin-top:300rpx;
   text-align:center;

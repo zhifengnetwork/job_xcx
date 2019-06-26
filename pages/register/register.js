@@ -9,7 +9,11 @@ Page({
     input2text: '',
     color: '#ccc',
     show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
-    selectData: ['个人', '企业'],//下拉列表的数据
+    selectData: [
+      {name:'个人',id:0}, 
+      {name:'企业',id:1},
+      {name: '第三方',id:2} 
+    ],//下拉列表的数据
     index: 0 //选择的下拉列表下标
     
   },
@@ -139,12 +143,18 @@ Page({
       show: !this.data.show
     });
   },
-  personal:function(){
-
-    wx.navigateTo({
-      url:'../personalMessage/personalMessage'
-    })
-
+  personal:function(e){
+    var index =this.data.index;
+    var id = this.data.selectData[index].id
+    if(id==0){
+      wx.navigateTo({
+        url: '../personalMessage/personalMessage'
+      })
+    }else{
+      wx.navigateTo({
+        url: 'fillInInformation/fillInInformation'
+      })
+    }
   }
 })
 // 倒计时事件 单位s

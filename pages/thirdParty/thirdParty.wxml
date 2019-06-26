@@ -13,7 +13,7 @@
                 <text>热门推荐</text>
               </view>
           </navigator>
-          <navigator url="postionDetail">
+          <navigator url="../company/postionDetail">
             <view class='c-l-info'>
               <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
               <view class='c-info-text'>
@@ -30,7 +30,7 @@
               </view>
             </view>
           </navigator>
-          <navigator url="postionDetail">
+          <navigator url="../company/postionDetail">
             <view class='c-l-info'>
               <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
               <view class='c-info-text'>
@@ -54,7 +54,7 @@
                 <image src='../../static/images/public/money.png' class='c-flame'/>
                 <text>待遇更好</text>
               </view>
-            <navigator url="postionDetail">
+            <navigator url="../company/postionDetail">
               <view class='c-l-info'>
                   <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
                   <view class='c-info-text'>
@@ -71,7 +71,7 @@
                   </view>
               </view>
             </navigator>
-            <navigator url="postionDetail">
+            <navigator url="../company/postionDetail">
               <view class='c-l-info'>
                   <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
                   <view class='c-info-text'>
@@ -88,7 +88,7 @@
                   </view>
               </view>
             </navigator>
-            <navigator url="postionDetail">
+            <navigator url="../company/postionDetail">
               <view class='c-l-info'>
                   <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
                   <view class='c-info-text'>
@@ -96,7 +96,6 @@
                     <view class='c-info-msg'>
                       <text class='c-msg'>月薪1500元</text>
                       <text class='c-msg2'>1年以上</text>
-                    
                     </view>
                   </view>
                   <!-- company info start -->

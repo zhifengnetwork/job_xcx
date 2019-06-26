@@ -173,20 +173,21 @@ radio-group{
   width: 17rpx;
   height: 21rpx;
 }
-.id-card-top,.id-card-bottom{
+.id-card-top{
   width:500rpx;
   height: 260rpx;
+  padding:20rpx 10rpx;
   margin: 30rpx auto;
   position: relative;
   background:#dadada;
 }
-/* .id-card-top image:first-child,
-.id-card-bottom image:first-child{
-    width:500rpx;
-    height: 260rpx;
-    position: absolute;
-
-} */
+.-add-img-{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .big-pic{
     width:500rpx;
     height: 260rpx;

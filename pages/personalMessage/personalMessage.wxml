@@ -11,21 +11,12 @@
   <view class='name_ear'>
     <text class="name_text">性别:</text>
       <view class='e-info-radio'>
-        <radio-group class="radio-group" bindchange="radioChange">
+        <radio-group class="radio-group" bindchange="changSex">
             <label class="radio" wx:for="{{radioItems}}">
               <radio style="zoom:.6" color="#25bbb3" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
             </label>
         </radio-group>
       </view>
-
-    <!-- <view class='man'>
-      <text class="man_xuan"></text>
-    </view>
-    <text class="mail">女</text>
-    <view class='man'>
-      <text class="man_xuan"></text>
-    </view>
-    <text class="femail">男</text> -->
   </view>
   <!-- 日期选择 -->
   <view class='name_ear'>
@@ -48,18 +39,6 @@
   <view class='name_ear'>
     <text class="name_text chusheng">毕业时间:</text>
     <view class='picker-wrap'>
-      <!-- <view>{{year}}年{{month}}月{{day}}日</view>  选择的年月日的值-->
-      <!-- <picker-view indicator-style="height: 50px;" class='dd' value="{{value}}" bindchange="bindChange">
-        <picker-view-column>
-          <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
-        </picker-view-column>
-      </picker-view> -->
       <view class="section">
         <picker mode="date" value="{{date1}}" start="2015-09-01" end="{{date1}}" bindchange="picketChange1">
           <view class="picker">{{date1}}</view>
@@ -68,7 +47,6 @@
       <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
     </view>
   </view>
-
   <view class='name_ear'>
     <text class="name_text">学校类型:</text>
     <view class="page__bd">
@@ -90,7 +68,6 @@
                 </label>
               </radio-group>
             </form>
-
           </view>
         </view>
       </view>
@@ -106,26 +83,17 @@
       <image class='-pic-stat' src='../../static/images/public/star.png'></image>
       <text>上传身份证(必填)</text>
     </view>
-    <view class='id-card-top'>
-      <!-- <image class="big-pic" src='{{positiveImg}}'></image> -->
-      <block wx:for="{{tempFilePaths}}" wx:key="{{index}}">
-        <image class='card-top' mode='aspectFit' src="{{item }}" data-index="{{index}}"/>
+    <!-- -->
+    <view  wx:for="{{icCardPic}}" wx:key="{{index}}" data-id="{{index}}" class='id-card-top' bindtap='addIdCardPic'>
+      <block>
+        <image class='card-top' mode='aspectFit' src="{{item.src}}" data-index="{{index}}"/>
       </block>
-      <view class='-add-img-' id="1" bindtap='upload' mode='' hidden="{{hiddenName}}">
+      <view class='-add-img-' wx:if="{{item.hiddenName}}">
         <image class='addPic' bindtap='addPosPic' src='../../static/images/public/plus.png'></image>
-        <text>点击上传身份证正面照</text>
+        <text>{{item.msg}}</text>
       </view>
     </view>
-    <view class='id-card-bottom'>
-      <!-- <image class="big-pic" src='{{siteImg}}'></image> -->
-      <block wx:for="{{tempFilePaths}}">
-        <image class='card-top' mode='aspectFit' src="{{item }}" data-index="{{index==1}}"/>
-      </block>
-      <view class='-add-img-' id="2" bindtap='upload' hidden="{{hiddenName}}">
-          <image class='addPic' bindtap='addOpp' src='../../static/images/public/plus.png'></image>
-          <text>点击上传身份证反面照</text>
-      </view>
-    </view>
+    <!-- -->
   </view>
   <!-- 上传证书 -->
   <view class='idPic'>

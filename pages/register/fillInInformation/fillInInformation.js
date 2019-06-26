@@ -41,7 +41,6 @@ Page({
 
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         let tempFilePaths = res.tempFilePaths;
-
         that.setData({
           tempFilePaths: tempFilePaths,
           hiddenName: true
@@ -124,7 +123,11 @@ Page({
       urls: this.data.pics
     })
   },
-
+  saveInfo: function () {
+    wx.navigateTo({
+      url: '../../public/audit'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

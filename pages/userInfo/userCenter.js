@@ -1,5 +1,6 @@
 // pages/userInfo/userCenter.js
-const app =getApp();
+const app = getApp();
+const util = require('../../utils/util.js');  //通用方法
 Page({
 
   /**
@@ -13,7 +14,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.editTabBar();
+    // util.getStorageItem('savePostion', app);   //获取底部导航
+    util.getStorageItem('savePostion', app)
   },
 
   /**

@@ -14,11 +14,11 @@
         <view class='w-icon-wrap'>
           <image bindtap="changWithdrawal" class='w-icon {{saveStatus==1 ? "ic-active":""}}' data-status="1"  src='../../static/images/public/alipay.png'/>
         </view>
-        <view wx:if="{{saveStatus==1}}" class='w-user-info'>
+        <navigator url="../public/setting" wx:if="{{saveStatus==1}}" class='w-user-info'>
             <text>周鹏</text>
             <text>180 2222 6666</text>
             <image class="w-user-icon" src='../../static/images/public/edit_gray.png'/>
-        </view>
+        </navigator>
         <view class='v-money-info'>
           <view class="v-money-tit">提现金额(单次最大500)</view>
           <view class='v-money-'>
