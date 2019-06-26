@@ -201,6 +201,24 @@ radio-group{
   left: 50%;
   margin-left:-34rpx;
 }
+.addPic2{
+  position:absolute;
+  top: 50%;
+  left:50%;
+  margin:-34rpx 0 0 -34rpx;
+  width:68rpx;
+  height: 68rpx;
+}
+.addTextBox{
+  width: 496rpx;
+  height: 50rpx;
+	border-radius: 6rpx;
+  border: solid 2rpx #dadada;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 12rpx;
+  font-size: 26rpx;
+}
 .id-card-top text,.id-card-bottom text{
   text-align: center;
   display: block;
@@ -211,6 +229,7 @@ radio-group{
   display: block;
   max-width: 100%;
   max-height: 100%;
+  object-fit: contain;
 }
 .card-top {
   width:500rpx;

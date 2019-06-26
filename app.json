@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/information/information",
     "pages/index/index",
     "pages/personalMessage/personalMessage",
     "pages/public/password",

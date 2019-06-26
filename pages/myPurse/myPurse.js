@@ -18,6 +18,15 @@ Page({
     var status =e.currentTarget.dataset.status;
     this.setData({savaStatus:status});
   },
+  toPays:function(e){
+    wx.showLoading({
+      title: '跳转中...',
+    })
+
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

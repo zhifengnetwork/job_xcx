@@ -51,12 +51,10 @@
   line-height:40rpx;
   color:#151515;
   font-weight:700;
-  /* margin-left: auto; */
   flex: 0 0 1;
 }
 /* subtitle start */
 .subtitle{
-  /* margin:31rpx 0 21rpx; */
   color:#151515;
   width: 581rpx;
   margin:0 60rpx 0 24rpx;
@@ -65,19 +63,13 @@
   align-items: center;
   justify-content: space-between;
 }
-/* .subtitle text{
-  width:50%;
-  text-align: center;
-  font-size:28rpx;
-  font-weight:700;
-} */
+
 .subtitle text {
   text-align:center;
   font-size:28rpx;
   font-weight:700;
 }
 .c-body{
-  /* padding-top:80rpx; */
   padding-top:175rpx;
 }
  /* LIST STYLE START */
@@ -212,7 +204,6 @@
 
 }
 .header-heigh{
-  /* padding-top: 20rpx; */
   padding-top:130rpx;
   width: 100%;
 }
@@ -239,7 +230,7 @@
   font-size: 28rpx;
   font-weight: 700;
   color:#151515;
-  margin-bottom: 15rpx;
+  margin-bottom:30rpx;
 }
 .-info-msg-exp{
   width: 100%;

@@ -14,21 +14,25 @@
   width: 17rpx;
   height: 21rpx;
 }
-.id-card-top,.id-card-bottom{
+.id-card-top{
   width:500rpx;
   height: 260rpx;
   margin: 30rpx auto;
   position: relative;
   background:#dadada;
   border-radius: 10rpx; 
+  padding: 20rpx;
+  box-sizing: border-box;
 }
-.id-card-top image:first-child,
-.id-card-bottom image:first-child{
+.id-card-top image:first-child{
     width:500rpx;
     height: 260rpx;
     position: absolute;
-    background-color: #dadada;
     border-radius: 10px; 
+}
+.id-card-top image{
+  max-width: 90%;
+  max-height:90%;
 }
 .addPic{
   width:68rpx;
@@ -52,8 +56,7 @@
   margin: auto;
   text-align: center;
   margin-bottom: 12rpx;
-  font-size: 24rpx;
-  color: #a2a2a2;
+  font-size: 26rpx;
 }
 .area_select {
 	width: 100%;
@@ -85,4 +88,8 @@
   bottom: 0;
   left: 50%;
   margin-left: -11.5rpx;
+}
+.height{
+  width: 100%;
+  height:130rpx;
 }

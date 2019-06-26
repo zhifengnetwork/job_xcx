@@ -9,7 +9,7 @@ Page({
   },
   saveInfo: function () {
     wx.navigateTo({
-      url: '../register/register'
+      url: '../login/login'
     })
   },
 

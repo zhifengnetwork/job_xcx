@@ -2,15 +2,16 @@
   <!-- 上传身份证正面 -->
   <view class='idPic'>
     <view class='-pic-subtitle'>上传职业证书</view>
-    <view>
+    <view  wx:for="{{pics}}" wx:key="{{index}}" data-id="{{index}}"  bindtap='addIdCardPic'>
       <view class='id-card-top'>
-        <image src='{{positiveImg}}'></image>
-        <image class='addPic' bindtap='addPosPic' src='../../static/images/public/plus.png'></image>
+        <block>
+          <image class='card-top' mode='aspectFit' src="{{item.src}}" data-index="{{index}}"/>
+        </block>
+        <image wx:if="{{item.hiddenName}}" class='addPic' src='../../static/images/public/plus.png'></image>
       </view>
       <input class="addTextBox" placeholder='请输入职业证书名称'/>
-      <!-- <text>点击上传证照</text> -->
     </view>
-    <view class='file-inner'>
+    <view class='file-inner' bindtap='addImgBox'>
       <button class='file-btn'></button> 
       <image class='f-plus-' src='../../static/images/public/plus.png'/>
     </view>
