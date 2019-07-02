@@ -57,6 +57,7 @@ Page({
     var status = "";
     var password = this.data.password;
     var mobile = this.data.mobile;
+    var reg = /^1[3|4|5|7|8]\d{9}$/;
     if (password ==0){
        status =0;
     } 
@@ -69,12 +70,24 @@ Page({
     if (password == 3) {
       status = 3;
     } 
+
     if (!(mobile == "" || password=="")){
-      //跳转至首页
-      wx.redirectTo({
+      if(!reg.test(mobile)){
+        return wx.showToast({
+          title: '手机号格式不正确哦!',
+          icon: 'none'
+          // duration: 1000
+        })
+      }
+      wx.redirectTo({         //跳转至首页
         url: '../index/index'
       })
       wx.setStorageSync('savePostion', status)
+    }else{
+        return wx.showToast({
+          title: '请输入完整信息',
+          icon: 'none'
+        })
     }
   },
   toVisitor:function(){   //游客入口
