@@ -5,9 +5,9 @@
   padding:45rpx 0;
   text-align: center;
   position: relative;
-  background:#25bbb3;
+  background:#ff54b5;
   color: #fff;
-  border:2rpx solid #22bfb7;
+  border:2rpx solid #ff54b5;
   border-radius: 6rpx;
   font-size: 26rpx;
   font-weight:600;
@@ -44,9 +44,9 @@
 
 }
 .g-deposits-btn1 .g-d-btn2{
-  color:#25bbb3;
+  color:#ff54b5;
   float: right;
-  border:2rpx solid #25bbb3;
+  border:2rpx solid #ff54b5;
 }
 
 .g-deposits-b .d-gold-icon{
@@ -55,7 +55,7 @@
 }
 .g-deposits-btn1 .g-d-active,.g-deposits-btn2 .g-d-active{
   color: #fff;
-  background:#25bbb3;
+  background:#ff54b5;
 }
 /* .g-deposits-btn1 button:hover{
   color: #fff;
@@ -72,8 +72,8 @@
   line-height: 55rpx;
   border-radius: 40rpx;
   background:#fff;
-  border:2rpx solid #25bbb3;
-  color: #25bbb3;
+  border:2rpx solid #ff54b5;
+  color: #ff54b5;
   font-size:30rpx;
   box-sizing: border-box;
 }

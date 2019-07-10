@@ -20,7 +20,7 @@
   flex: 0 0 30.7%;
   text-align: center;
   padding: 15rpx 0;
-  border:2rpx solid #25bbb3;
+  border:2rpx solid #ff54b5;
   border-radius:6rpx;
   position: relative;
 }
@@ -28,7 +28,7 @@
   margin-right: 0;
 }
 .gold-num{
-  color:#25bbb3;
+  color:#ff54b5;
   font-weight: bold;
   font-size:30rpx;
   margin-bottom: 13rpx;

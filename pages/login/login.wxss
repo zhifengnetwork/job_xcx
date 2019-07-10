@@ -24,11 +24,11 @@
   font-size: 36rpx;
   height: 50rpx;
   line-height: 50rpx;
-  border-bottom: 1px solid rgb(54, 193, 186);
+  border-bottom: 1px solid #ff54b5;
 }
 
 .qianzui {
-  color: rgb(54, 193, 186);
+  color: #ff54b5;
   display: inline-block;
   vertical-align: top;
   position: absolute;
@@ -62,7 +62,7 @@
   position: relative;
   margin: 50rpx 50rpx 0rpx 50rpx;
   font-size: 30rpx;
-  border-bottom: 1px solid rgb(54, 193, 186);
+  border-bottom: 1px solid #ff54b5;
   padding-bottom: 17rpx
 }
 
@@ -75,7 +75,7 @@
 .resigt {
   margin-left: 80rpx;
   font-size: 28rpx;
-  color: rgb(54, 193, 186);
+  color: #ff54b5;
   padding-top: 20rpx;
   display: inline-block;
   vertical-align: top;
@@ -93,7 +93,7 @@
 .forget {
   margin-right: 80rpx;
   font-size: 28rpx;
-  color: rgb(54, 193, 186);
+  color: #ff54b5;
   padding-top: 20rpx;
   display: inline-block;
   vertical-align: top;

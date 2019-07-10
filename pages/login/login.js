@@ -45,7 +45,7 @@ Page({
       })
     }
     if (!(this.data.input2text == '' || this.data.input1text == '')) {
-      color = 'rgb(54, 193, 186)';
+      color = '#ff54b5';
     }
     var val = e.detail.value;
     this.setData({ 

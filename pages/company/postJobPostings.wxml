@@ -65,7 +65,7 @@
       <view class='e-info-radio'>
         <radio-group class="radio-group"bindchange="radioChange">
             <label class="radio" wx:for="{{items}}">
-              <radio style="zoom:.6" color="#25bbb3" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+              <radio style="zoom:.6" color="#ff54b5" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
             </label>
         </radio-group>
       </view>

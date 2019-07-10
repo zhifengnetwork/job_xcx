@@ -85,7 +85,7 @@ App({
     statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
     tabBar: {     //未登录显示导航
       "color": "#9E9E9E",
-      "selectedColor": "#25bbb3",
+      "selectedColor": "#ff54b5",
       "backgroundColor": "#fff",
       "borderStyle": "#d6d6d6",
       "list": [
@@ -117,8 +117,8 @@ App({
       "position": "bottom"
     },
     tabBar1: {     //以公司名义进去看到的底部导航
-      "color": "#9E9E9E",
-      "selectedColor": "#25bbb3",
+      "color": "#ff54b5",
+      "selectedColor": "#ff54b5",
       "backgroundColor": "#fff",
       "borderStyle": "#d6d6d6",
       "list": [
@@ -167,7 +167,7 @@ App({
     },
     tabBar2: {   //以第三方名义登陆进去看到的底部导航
       "color": "#9E9E9E",
-      "selectedColor": "#25bbb3",
+      "selectedColor": "#ff54b5",
       "backgroundColor": "#fff",
       "borderStyle": "#d6d6d6",
       "list": [
@@ -216,7 +216,7 @@ App({
     },
     tabBar3: {   //以第三方名义登陆进去看到的底部导航
       "color": "#9E9E9E",
-      "selectedColor": "#25bbb3",
+      "selectedColor": "#ff54b5",
       "backgroundColor": "#fff",
       "borderStyle": "#d6d6d6",
       "list": [
