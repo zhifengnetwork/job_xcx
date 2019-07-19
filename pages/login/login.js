@@ -71,6 +71,7 @@ Page({
     }
     ServerData.toLogin(_opt).then((res) => {          //请求数据
       if (res.data.status == 1) {
+          wx.setStorageSync('token', res.data.data.token);
           var type = wx.getStorageSync('savePostion');
           console.log(type)
           console.log(res)
