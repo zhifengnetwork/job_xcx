@@ -15,7 +15,7 @@
    width: 100rpx;
    text-align: center;
    font-size: 20rpx;
-   background:#ff54b5
+   background:#ff54b5;
    padding: 6rpx 0;
    border-radius: 2px;
    color:#fff;

@@ -1,7 +1,8 @@
-
+/* @import 'template/font/iconfont.css'; */
 .phcolor{
   font-size:24rpx;
-  color:#ff54b5;
+  /* color:#ff54b5; */
+  color: #7a7a7a;
 
 }
 page{
@@ -19,11 +20,24 @@ page{
 .f-bold{
   font-weight: 700;
 }
+.w-bold{
+  font-weight: bold;
+}
 .t-right{
   text-align: right;
 }
+.m-r10{
+  margin-right: 10rpx;
+}
+.m-r20{
+  margin-right: 20rpx;
+}
+
 .m-r35{
   margin-right: 35rpx;
+}
+.m-r80{
+  margin-right: 80rpx;
 }
 .m-b10{
   margin-bottom: 10rpx;
@@ -33,6 +47,13 @@ page{
 }
 .m-b20{
   margin-bottom: 20rpx;
+}
+.m-b22{
+  margin-bottom: 22rpx;
+}
+
+.m-b45{
+  margin-bottom: 45rpx;
 }
 .m-0{
   margin: 0 !important;

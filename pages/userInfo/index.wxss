@@ -1,0 +1,39 @@
+/**index.wxss**/
+#wrap{
+  width:100%;
+  height:100%;
+  background:#f8f8f8;
+  font-size:28rpx;
+}
+.inner{
+  padding: 0 24rpx 24rpx;
+}
+.banner{
+  height:360rpx;
+  width:706rpx;
+  border-radius:10rpx;
+  overflow:hidden;
+}
+swiper {
+  height: 360rpx;
+}
+.login_tab{
+  display: block;
+  font-size:24rpx;
+  line-height:40px;
+  color:#151515;
+  font-weight:700;
+}
+.header .navigator-hover{
+  height: 70rpx;
+}
+
+
+/* banner start */
+.banner .slide-image{
+  width:100%;
+  height: 100%;
+}
+
+/* content start */
+@import "../template/common"

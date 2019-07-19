@@ -1,0 +1,77 @@
+
+  <!-- HEADER START -->
+  <import src="../template/common.wxml"/>
+  <template is="search-1" data="{{tInfo}}"/>
+  <view class='header-heigh'></view>
+  <!-- HEADER END -->
+  <view class='inner'>
+    <navigator url="uPDetail" class='c-l-info'>
+        <view class='search-job-list'>
+          <view class='c-info-title'>专业偷税会计/会计</view>
+          <view class='c-info-msg overH'>
+            <text class='c-msg fl'>广州市白云区</text>
+            <text class='c-msg2 fl'>3年</text>
+          </view>
+          <view class='c-msg3'>会计证书</view>
+          <view class='s-portrait'>
+            <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+            <text>周先生</text>
+          </view>
+          <view class='overH'></view>
+        </view>
+        <view class='company-status third-bg- fr'>有证书</view>
+    </navigator>
+    <navigator url="uPDetail" class='c-l-info'>
+        <view class='search-job-list'>
+          <view class='c-info-title'>专业偷税会计/会计</view>
+          <view class='c-info-msg overH'>
+            <text class='c-msg fl'>广州市白云区</text>
+            <text class='c-msg2 fl'>3年</text>
+          </view>
+          <view class='c-msg3'>会计证书</view>
+          <view class='s-portrait'>
+            <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+            <text>周先生</text>
+          </view>
+          <view class='overH'></view>
+        </view>
+        <view class='company-status third-bg- fr'>有证书</view>
+    </navigator>
+    <navigator url="uPDetail" class='c-l-info'>
+        <view class='search-job-list'>
+          <view class='c-info-title'>专业偷税会计/会计</view>
+          <view class='c-info-msg overH'>
+            <text class='c-msg fl'>广州市白云区</text>
+            <text class='c-msg2 fl'>3年</text>
+          </view>
+          <view class='c-msg3'>会计证书</view>
+          <view class='s-portrait'>
+            <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+            <text>周先生</text>
+          </view>
+          <view class='overH'></view>
+        </view>
+        <view class='company-status third-bg- fr'>有证书</view>
+    </navigator>
+    <navigator url="uPDetail" class='c-l-info'>
+        <view class='search-job-list'>
+          <view class='c-info-title'>专业偷税会计/会计</view>
+          <view class='c-info-msg overH'>
+            <text class='c-msg fl'>广州市白云区</text>
+            <text class='c-msg2 fl'>3年</text>
+          </view>
+          <view class='c-msg3'>会计证书</view>
+          <view class='s-portrait'>
+            <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+            <text>周先生</text>
+          </view>
+          <view class='overH'></view>
+        </view>
+        <view class='company-status third-bg- fr'>有证书</view>
+    </navigator>
+    <view class='more-recommond'>更多推荐</view>
+  </view>
+  <!-- FOOTER TARBAR START -->
+  <view class='footer-height'></view>
+  <import src="../template/tabbar.wxml" />
+  <template is="tabBar" data="{{tabBar}}" />

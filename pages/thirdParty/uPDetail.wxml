@@ -1,0 +1,44 @@
+<view id="wrap">
+  <!-- SEARCH INFO START -->
+  <view class='search-inner'>
+    <view class='search-cont'>
+      <input type='text' class='search third-bColor-1'  placeholder="输入所要查找的内容" />
+      <image class="search_icon" src='../../static/images/public/search_icon.png'></image>
+    </view>
+    <navigator url='uCollect'><text class='collect_tab'>收藏</text></navigator>
+  </view>
+  <view class='inner'>
+    <!-- CONTENT START -->
+    <view class='d-content'>
+        <view class="d-c-list">
+          <view class='c-list-info'>
+            <view class='w-bold m-b22'>帅哥哥</view>
+            <view class='w-bold m-b22'>
+                <text class='m-r20'>手机号码：</text>
+                <text class='m-r10'>159</text>
+                <text class='m-r10'>3000</text>
+                <text class='m-r10'>5159</text>
+            </view>
+            <view class='m-b22'>大专</view>
+            <view class='m-b22'>无证书</view>
+            <view>期望职位：电焊工人</view>
+          </view>
+          <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/>
+        </view>
+        <view class="d-c-list">
+          <view class='c-list-info'>
+            <view class='w-bold m-b22'>个人介绍</view>
+            <view class='m-b22'>包午餐</view>
+            <view class='m-b45'>3公里之内包送上下班</view>
+            <view class='w-bold m-b22'>工作经验</view>
+            <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view>
+          </view>
+          <!-- <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/> -->
+        </view>
+    </view>
+    <view class='footer'>
+        <button class='f-btn-1 third-bg-' bindtap="toReservation">马上预订</button>
+        <button class='f-btn-2 third-bColor- third-color-' bindtap="callWithHim">联系客服</button>
+    </view>
+  </view>
+</view>

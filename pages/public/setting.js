@@ -1,11 +1,12 @@
 // pages/userInfo/setting.js
+const util = require('../../utils/util.js');  //通用方法
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pBgC:'',
   },
   save: function () {
     wx.navigateTo({
@@ -26,7 +27,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      pBgC: util.loginIdentity().pBgC
+    })
   },
 
   /**

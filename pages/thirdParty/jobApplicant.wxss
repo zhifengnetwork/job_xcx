@@ -1,0 +1,8 @@
+@import "../template/common";
+
+.more-recommond{
+   text-align: center;
+   margin: 11rpx 0;
+   color: #5d5d5d;
+   font-size: 20rpx;
+}

@@ -1,7 +1,7 @@
 <!--pages/information/infomation.wxml-->
 <view class='inner'>
   <view class='t-info-nav'>
-    <view class='m-r35' bindtap='changStatus' data-status="0">
+    <view class='m-r80' bindtap='changStatus' data-status="0">
       <text>聊天信息</text>
       <icon class='t-i-raduis'></icon>
     </view>

@@ -1,5 +1,6 @@
-Page({
+const util = require('../../utils/util.js');  //通用方法
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -9,16 +10,23 @@ Page({
     input1text: '',
     input2text: '',
     color: '#ccc',
-    show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
-    selectData: ['个人', '企业'],//下拉列表的数据
-    index: 0 //选择的下拉列表下标
-
+    show: false,                         //控制下拉列表的显示隐藏，false隐藏、true显示
+    selectData: ['个人', '企业'],        //下拉列表的数据
+    index: 0 ,                           //选择的下拉列表下标
+    pColor: '',                          //动态获取字体颜色
+    pBgC: '',                            //动态获背景颜色                 
+    pBC1: ''                             //动态获边框颜色   
+   
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      pBgC: util.loginIdentity().pBgC,
+      pColor: util.loginIdentity().pColor,
+      pBC1: util.loginIdentity().pBC1
+    })
   },
   getVale: function (e) {
     this.data.input1text = ''

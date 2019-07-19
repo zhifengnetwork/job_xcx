@@ -89,5 +89,5 @@
   <textarea class="texa m-t20" placeholder='公司介绍说明'></textarea>
   <!--footer -->
   <view class='line-heig'></view>
-  <view class='set-option-1' bindtap='saveEditInfo'><button class='s-1-option'>保存</button></view>
+  <view class='set-option-1' bindtap='saveEditInfo'><button class='s-1-option company-bg-'>保存</button></view>
 </view>

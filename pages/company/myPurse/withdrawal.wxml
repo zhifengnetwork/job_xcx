@@ -1,0 +1,43 @@
+<!--pages/userInfo/withdrawal.wxml-->
+<view class='inner'>
+  <view class='g-withdrawal-list'>
+      <view class='g-withdrawal-a company-bg-'>
+          <view class='g-withdrawal-money'>￥10014</view>
+          <text>可提现金额</text>
+          <image class="d-gold-icon" src='../../../static/images/public/gold_icon.png'/>
+      </view>
+      <text class='withdrawal-subtitle'>提现方式</text>
+      <view class='withdrawal-cont'>
+        <view class='w-icon-wrap'>
+          <image bindtap="changWithdrawal" class='w-icon {{saveStatus==0 ? "ic-active":""}}' data-status="0" src='../../../static/images/public/wchat.png'/>
+        </view>
+        <view class='w-icon-wrap'>
+          <image bindtap="changWithdrawal" class='w-icon {{saveStatus==1 ? "ic-active":""}}' data-status="1"  src='../../../static/images/public/alipay.png'/>
+        </view>
+        <navigator url="../public/setting" wx:if="{{saveStatus==1}}" class='w-user-info'>
+            <text>周鹏</text>
+            <text>180 2222 6666</text>
+            <image class="w-user-icon" src='../../../static/images/public/edit_gray.png'/>
+        </navigator>
+        <view class='v-money-info'>
+          <view class="v-money-tit">提现金额(单次最大500)</view>
+          <view class='v-money-'>
+              <text class='w-money-msg'>￥</text>
+              <input class="v-money-inp" type='text' placeholder-class="phcolor" placeholder='请输入提现金额'/>
+              <text class='w-money-msg1'>全部提现</text>
+          </view>
+          <view class='v-money-2'>
+              <text class='w-money-msg'>手续费：1</text>
+              <text class='w-money-msg1'>元</text>
+          </view>
+          <view>
+            <text class='w-tip'>温馨提示</text>
+            <view class='w-tip-msg m-t20'>1.提现手续费5%</view>
+            <view class='w-tip-msg'>2.提现到账时间为1-3个工作日</view>
+          </view>
+        </view>
+      </view>
+  </view>
+  <view class='height'></view>
+  <navigator url="myPurse" class='set-option company-bg-'>确定付款</navigator>
+</view>

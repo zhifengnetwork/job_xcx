@@ -1,3 +1,4 @@
+import ServerData from '../../utils/serverData.js';
 Page({
 
   /**
@@ -5,16 +6,19 @@ Page({
    */
   data: {
     codeIsCanClick: true,
-    input1text: '',
-    input2text: '',
+    mobile: '',
+    mCode: '',
+    password:'',
+    comPasd:'',
     color: '#ccc',
-    show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
+    show: false,              //控制下拉列表的显示隐藏，false隐藏、true显示
     selectData: [
       {name:'个人',id:0}, 
       {name:'企业',id:1},
       {name: '第三方',id:2} 
-    ],//下拉列表的数据
-    index: 0 //选择的下拉列表下标
+    ],                        //下拉列表的数据
+    index: 0,                  //选择的下拉列表下标
+    // nIndex:3,
     
   },
   /**
@@ -24,60 +28,92 @@ Page({
     
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
+  clickCode: function () {     //发送验证码
+    var that = this,
+        mobile = that.data.mobile,
+        reg = /^1[3456789]\d{9}$/
+    if (!reg.test(mobile) || mobile == "") {
+      return ServerData._wxTost('请正确输入手机号!')
+    }
+    var _opt = { 'mobile': mobile}
+    ServerData.verifyCode(_opt).then((res) => {
+      if(res.data.status==1){
+        settime(that)
+      }
+      console.log(res)
+    });
+  },
+  saveRegister() {        //注册账号
+    var that =this,
+      type =0;        
+    if (!that.verifyUserInfo()){return}
+    that.data.index == 0 ? type = 3 : type = that.data.index
+    console.log(type)
+    var _opt = {
+      'type': type,
+      'mobile': that.data.mobile,
+      'code': that.data.mCode,
+      'pwd': that.data.password,
+      'pwd2': that.data.comPasd
+      }
+    ServerData._register(_opt).then((res) => {       //保存注册信息
+      wx.removeStorageSync('token')
+      if (res.data.status == 1) {
+        // settime(that)
+        wx.setStorageSync('token', res.data.data.token);
+        //跳转 3 跳转到个人信息录入 ，不是3就跳转到企业信息录入
+        if(type==3){
+          wx.redirectTo({
+            url: '../personalMessage/personalMessage'
+          })
+            // wx.navigateTo({
+            //   url: '../personalMessage/personalMessage'
+            // })
+        } else {
+          wx.redirectTo({
+            url: '../personalMessage/personalMessage'
+          })
+        }
+        //跳转
+      }
+      // console.log(res.data.data.token)
+    });
+  },
+  verifyUserInfo(){             //验证输入信息
+    var mobile = this.data.mobile
+    var mCode =this.data.mCode
+    var password = this.data.password
+    var comPasd = this.data.comPasd
+    var reg = /^1[3456789]\d{9}$/
+    if (!reg.test(mobile) || mobile==""){
+      ServerData._wxTost('请正确输入手机号!')
+      return false
+    }
+    if (isNaN(mCode) || mCode == "" || mCode.length!=6){
+      ServerData._wxTost('请正确输入验证码')
+      return false
+    }
+    if (password==""){
+      ServerData._wxTost('请输入密码')
+      return false
+    }
+    if(comPasd == "") {
+      ServerData._wxTost('请输确认密码')
+      return false
+    }
+    if(comPasd!= password) {
+      ServerData._wxTost('两次密码不相符')
+      return false
+    }
+    return true
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    //clearInterval(this.data.timer);//页面销毁时清理定时器 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  },
   getVale: function (e) {
-    this.data.input1text = ''
+    this.data.mobile = ''
     if (e.detail.value != '') {
       this.setData({
         status: true,
-        input1text: e.detail.value
+        mobile: e.detail.value
       })
     } else {
       this.setData({
@@ -85,12 +121,12 @@ Page({
       })
 
     }
-    if (e.detail.value != '' && this.data.input2text != '') {
+    if (e.detail.value != '' && this.data.mCode != '') {
       this.setData({
-        color: 'rgb(54, 193, 186)'
+        color: '#ff54b5'
       })
     }
-    if (e.detail.value == '' || this.data.input1text == '') {
+    if (e.detail.value == '' || this.data.mobile == '') {
       this.setData({
         color: '#ccc'
       })
@@ -98,23 +134,34 @@ Page({
 
   },
   getVale2: function (e) {
-    this.data.input2text = ''
+    this.data.mCode = ''
     if (e.detail.value != '') {
       this.setData({
-        input2text: e.detail.value
+        mCode: e.detail.value
       })
     }
-    if (this.data.input1text != '' && e.detail.value != '') {
+    if (this.data.mobile != '' && e.detail.value != '') {
       this.setData({
         color: '#ff54b5'
       })
     }
-    if (e.detail.value == '' || this.data.input1text == '') {
+    if (e.detail.value == '' || this.data.mobile == '') {
       this.setData({
         color: '#ccc'
       })
     }
 
+  },
+  getPassword(e){
+    this.setData({
+      password: e.detail.value
+    })
+  },
+
+  comfirnPasd(e){
+    this.setData({
+      comPasd: e.detail.value
+    })
   },
   deletetext: function (e) {
     this.setData({
@@ -122,13 +169,7 @@ Page({
       status: false
     })
   },
-  /**
-* 点击验证码按钮
-*/
-  clickCode: function () {
-    var that = this;
-    settime(that)
-  },
+
   // 点击下拉显示框
   selectTap() {
     this.setData({
@@ -137,9 +178,10 @@ Page({
   },
   // 点击下拉列表
   optionTap(e) {
-    let Index = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
+    let index = 
     this.setData({
-      index: Index,
+      index: e.currentTarget.dataset.index,         //获取点击的下拉列表的下标
+      nIndex: e.currentTarget.dataset.index, 
       show: !this.data.show
     });
   },
@@ -158,7 +200,7 @@ Page({
   }
 })
 // 倒计时事件 单位s
-var countdown = 60;
+var countdown = 10;
 var settime = function (that) {
   if (countdown == 0) {
     that.setData({

@@ -17,6 +17,13 @@
   <button class="emailCode" hidden='{{!codeIsCanClick}}' size="mini" bindtap='clickCode'>获取验证码</button>
   <button class="emailCodeSend" hidden='{{codeIsCanClick}}' size="mini">{{last_time}}秒可重发</button>
 </view>
+
+<view class="mima_ear">
+  <input placeholder="请输入密码" class="phone_password" type='password' name="pass" bindinput='getPassword'></input>
+</view>
+<view class="mima_ear">
+  <input placeholder="再次确认密码" class="phone_password" type='password' name="pass" bindinput='comfirnPasd'></input>
+</view>
 <!-- 下拉框 -->
 <view class='select_box'>
   <view class='select' catchtap='selectTap'>
@@ -24,9 +31,9 @@
     <image src='../../images/forgetpassword/xiala.png' class='xiala_pic'></image>
   </view>
   <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*112):0}}rpx;'>
-    <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item.name}}</text>
+    <text class='option' style='{{index==selectData.length-1 && "border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item.name}}</text>
   </view>
 </view>
 <view>
-  <button class="denglu" bindtap='complete' style="background:{{color}}" bindtap='personal'>下一步</button>
+  <button class="denglu" bindtap='saveRegister' style="background:{{color}}">下一步</button>
 </view>

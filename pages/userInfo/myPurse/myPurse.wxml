@@ -1,0 +1,25 @@
+<view class='inner'>
+  <view class='g-deposits-list'>
+      <view class='g-deposits-a user-bg-'>
+          <view>我的金币</view>
+          <view class='g-deposits-money'>3660</view>
+          <image class="d-gold-icon" src='../../../static/images/public/gold_icon.png'/>
+      </view>
+      <view class='g-deposits-btn1'>
+        <navigator url='goldDeposits'><button class='g-d-btn1 g-d-active'>充值</button></navigator>
+        <navigator url='withdrawal'><button class='g-d-btn2'>提现</button></navigator>
+      </view>
+  </view>
+  <view class='g-deposits-list'>
+      <view class='g-deposits-a g-deposits-b'>
+          <view>超级VIP</view>
+          <image class="d-gold-icon" src='../../../static/images/public/vip.png'/>
+      </view>
+      <view class='g-deposits-btn2'>
+        <button class='g-d-btn1 {{savaStatus==1 ? "g-d-active" : ""}}' bindtap='changSelect' data-status="1">月费</button>
+        <button class='g-d-btn2 {{savaStatus==2 ? "g-d-active" : ""}}' bindtap='changSelect' data-status="2">季费</button>
+        <button class='g-d-btn2 {{savaStatus==3 ? "g-d-active" : ""}}' bindtap='changSelect' data-status="3">年费</button>
+      </view>
+  </view>
+  <view class='set-option user-bg-' bindtap="toPays">立即开通</view>
+</view>

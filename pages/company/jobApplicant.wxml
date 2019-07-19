@@ -1,11 +1,11 @@
 
   <!-- HEADER START -->
   <import src="../template/common.wxml"/>
-  <template is="search-1" data="{{text: '我的'}}"/>
+  <template is="search-1" data="{{tInfo}}"/>
   <view class='header-heigh'></view>
   <!-- HEADER END -->
   <view class='inner'>
-    <navigator url="../userInfo/postionDetail" class='c-l-info'>
+    <navigator url="uPosition" class='c-l-info'>
         <view class='search-job-list'>
           <view class='c-info-title'>专业偷税会计/会计</view>
           <view class='c-info-msg overH'>
@@ -19,9 +19,9 @@
           </view>
           <view class='overH'></view>
         </view>
-        <view class='company-status fr'>有证书</view>
+        <view class='company-status company-bg- fr'>有证书</view>
     </navigator>
-    <navigator url="../userInfo/postionDetail" class='c-l-info'>
+    <navigator url="uPosition" class='c-l-info'>
         <view class='search-job-list'>
           <view class='c-info-title'>专业偷税会计/会计</view>
           <view class='c-info-msg overH'>
@@ -35,9 +35,9 @@
           </view>
           <view class='overH'></view>
         </view>
-        <view class='company-status fr'>有证书</view>
+        <view class='company-status company-bg- fr'>有证书</view>
     </navigator>
-    <navigator url="../userInfo/postionDetail" class='c-l-info'>
+    <navigator url="uPosition" class='c-l-info'>
         <view class='search-job-list'>
           <view class='c-info-title'>专业偷税会计/会计</view>
           <view class='c-info-msg overH'>
@@ -51,9 +51,9 @@
           </view>
           <view class='overH'></view>
         </view>
-        <view class='company-status fr'>有证书</view>
+        <view class='company-status company-bg- fr'>有证书</view>
     </navigator>
-    <navigator url="../userInfo/postionDetail" class='c-l-info'>
+    <navigator url="uPosition" class='c-l-info'>
         <view class='search-job-list'>
           <view class='c-info-title'>专业偷税会计/会计</view>
           <view class='c-info-msg overH'>
@@ -67,7 +67,7 @@
           </view>
           <view class='overH'></view>
         </view>
-        <view class='company-status fr'>有证书</view>
+        <view class='company-status company-bg- fr'>有证书</view>
     </navigator>
     <view class='more-recommond'>更多推荐</view>
   </view>
