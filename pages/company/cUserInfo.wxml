@@ -9,42 +9,47 @@
             <text class='c-info-title'>智丰网络</text>
             <view class='c-msg m-b10'>
               <text>VIP到期时间：2017-5-10</text>
-              <view class='company-status m-0'>月费VIP</view>
+              <view class='company-status m-0 company-bg-'>月费VIP</view>
             </view>
             <view class='c-msg m-b10'>企业用户：</view>
             <view class='c-msg m-b10'>企业编号：007</view>
           </view>
       </view>
-      <button class='edit-info' bindtap='toEdit'>编辑发布内容</button>
+      <button class='edit-info company-bg-' bindtap='toEdit'>编辑发布内容</button>
       <!-- USER OPTION START -->
       <view class='user-option'>
-          <navigator url="editInfo" class='u-o-list m-b50'>
+          <navigator url="editInfo" class='u-o-list m-b10'>
             <text>编辑公司信息</text>
-            <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
+            <icon class='iconfont icon-youjiantou2 company-color-'></icon>
+            <!-- <image class='u-o-icon1' src='../../static/images/public/edit.png'/> -->
           </navigator>
-          <navigator url="uCollect" class='u-o-list m-b50'>
+          <navigator url="uCollect" class='u-o-list m-b10'>
             <text>我的收藏</text>
-            <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
+            <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
-          <navigator url="myReserve" class='u-o-list m-b50'>
+          <navigator url="uCollect" class='u-o-list m-b10'>
+            <text>招工信息</text>
+            <icon class='iconfont icon-youjiantou2 company-color-'></icon>
+          </navigator>
+          <navigator url="myReserve" class='u-o-list m-b10'>
             <text>我的预订</text>
-            <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
+            <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
-          <navigator url='../myPurse/myPurse' class='u-o-list m-b50'>
+          <navigator url='myPurse/myPurse' class='u-o-list m-b10'>
             <text>我的钱包</text>
-            <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
+            <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
-          <navigator url="../public/setting" class='u-o-list m-b50'>
+          <navigator url="../public/setting" class='u-o-list m-b10'>
             <text>设置</text>
-            <image class='u-o-icon1' src='../../static/images/public/edit.png'/>
+            <icon class='iconfont icon-bianji company-color-'></icon>
           </navigator>
-          <view class='u-o-list m-b50'>
+          <view class='u-o-list m-b10'>
             <text>实名认证</text>
-            <text class='u-o-text'>审核中</text>
+            <text class='u-o-text company-color-'>审核中</text>
           </view>
-          <navigator url="../public/help" class='u-o-list m-b50'>
+          <navigator url="../public/help" class='u-o-list m-b10'>
             <text>帮助与反馈</text>
-            <image class='u-o-icon2' src='../../static/images/public/right_arrow.png'/>
+            <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
       </view>
     </view>

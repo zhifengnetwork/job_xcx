@@ -55,7 +55,8 @@
   height: 24rpx;
 }
 .u-o-text{
-  color:#25bbb3;
+  /* color:#25bbb3; */
+  color: #ff54b5;
   font-size:24rpx;
 }
 .c-msg{

@@ -1,0 +1,93 @@
+<!--pages/userInfo/editInfo.wxml-->
+<view class='inner'>
+  <view class='edit-info'>
+    <view class='edit-cont'>
+      <view class='e-info-'>
+        <text class='e-info-msg'>公司名称：</text>
+        <input type='text' class='e-info-inp' placeholder-class="phcolor" placeholder='输入公司名称'/>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>公司类型：</text>
+        <input type='text' class='e-info-inp' placeholder-class="phcolor" placeholder='输入公司类型'/>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>成立时间：</text>
+        <view class='e-info-pick'>
+          <picker-view indicator-style="height: 50px;" class='-timer-' value="{{value}}" bindchange="yearsChange">
+            <picker-view-column>
+              <view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
+            </picker-view-column>
+          </picker-view>
+        </view>
+      </view>
+      <view class='e-info-'>
+        <text class='e-info-msg'>公司规模：</text>
+        <input type='text' class='e-info-inp -inp-2' placeholder-class="phcolor" placeholder='输入公司规模'/> 人
+      </view>    
+      
+    </view>
+    <image class='edit-img-' src='../../static/images/public/c_logo.jpg'/>
+  </view>
+  <!-- --->
+  <view class='user-option'>
+      <view class='u-o-list'>
+        <text>热招职位</text>
+        <view class='-list-pays' value="{{jobIndex}}">
+          <picker value="{{jobIndex}}" range="{{jobArray}}" bindchange="jobChange">
+            <view class="picker">
+              {{jobArray[jobIndex]}} 
+              <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='u-o-list'>
+        <text>平均薪资</text>
+        <view class='-list-pays'>
+          <picker value="{{paysIndex}}" range="{{payArray}}" bindchange="paysChange">
+            <view class="picker">
+              {{payArray[paysIndex]}} K
+              <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view>
+          <view class='u-o-list' bindtap='addAchievementBox'>
+            <text>公司成就</text>
+            <view>
+              <text class='u-o-msg'>{{achiInfo}}</text>
+              <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+            </view>
+          </view>
+          <view class='tex-wrap' wx:if="{{achievement}}">
+             <textarea class="texa" placeholder='请输入公司成就' bindinput="saveAchievement"></textarea>
+             <button class='tex-btn' bindtap='saveInfo'>保存</button>
+          </view>
+      </view>
+      <view>
+          <view class='u-o-list' bindtap='addFamousPersonBox'>
+            <text>名人介绍</text>
+            <view>
+              <text class='u-o-msg'>{{personInfo}}</text>
+              <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+            </view>
+          </view>
+          <view class='tex-wrap' wx:if="{{person}}">
+             <textarea class="texa" placeholder='请输入名人介绍' bindinput="savePerson"></textarea>
+             <button class='tex-btn' bindtap='saveInfo'>保存</button>
+          </view>
+      </view>
+  </view>
+  <!-- -->
+  <textarea class="texa m-t20" placeholder='公司介绍说明'></textarea>
+  <!--footer -->
+  <view class='line-heig'></view>
+  <view class='set-option-1' bindtap='saveEditInfo'><button class='s-1-option third-bg-'>保存</button></view>
+</view>

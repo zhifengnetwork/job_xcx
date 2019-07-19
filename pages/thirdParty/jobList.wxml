@@ -1,0 +1,47 @@
+<!--pages/company/jobList.wxml-->
+<view id='jobWrap' class='jobWrap'>
+  <view class='inner'>
+    <view class='delect-btn'>删除</view>
+    <view class='t-height'></view>
+    <view class='c-l-info'>
+        <view class="group" wx:if="{{isDel}}">
+          <block wx:for="{{iconSize}}">
+            <icon wx:if="{{isCheck}}"  data-check="{{isCheck}}" type="success" bindtap="changItemStatus" color="#be4cff" size="{{item}}"/>
+            <icon  wx:else="{{ !isCheck}}" data-check="{{!isCheck}}" bindtap="changItemStatus" type="circle" color="#be4cff" size="{{item}}"/>
+          </block>
+        </view>
+        <navigator url="postJobPostings" class='c-info-text'>
+          <text class='c-info-title'>皮革厂包装人员</text>
+          <view class='c-info-msg'>
+            <text class='c-msg'>月薪1500元</text>
+            <text class='c-msg2'>1年以上</text>
+          </view>
+        </navigator>
+        <!-- company info start -->
+        <navigator url="postJobPostings" class='company-info third-color-'>
+            <text class=''>审核中</text>
+            <icon class='iconfont icon-bianji'></icon>
+        </navigator>
+    </view>
+    <view class='c-l-info'>
+        <view class="group" wx:if="{{isDel}}">
+          <block wx:for="{{iconSize}}">
+            <icon wx:if="{{isCheck}}"  data-check="{{isCheck}}" type="success" bindtap="changItemStatus" color="#be4cff" size="{{item}}"/>
+            <icon  wx:else="{{ !isCheck}}" data-check="{{!isCheck}}" bindtap="changItemStatus" type="circle" color="#be4cff" size="{{item}}"/>
+          </block>
+        </view>
+        <navigator url="postJobPostings" class='c-info-text'>
+          <text class='c-info-title'>皮革厂包装人员</text>
+          <view class='c-info-msg'>
+            <text class='c-msg'>月薪1500元</text>
+            <text class='c-msg2'>1年以上</text>
+          </view>
+        </navigator>
+        <!-- company info start -->
+        <navigator url="postJobPostings" class='company-info third-color-'>
+            <text class=''>审核中</text>
+            <icon class='iconfont icon-bianji'></icon>
+        </navigator>
+    </view>
+  </view>
+</view>

@@ -2,12 +2,12 @@
 <view class='inner'>
   <view class='name_ear'>
     <text class="name_text">姓名:</text>
-    <input placeholder='请输入名字' class='name_input'></input>
+    <input placeholder='请输入名字' class='name_input' bindinput='getName'></input>
   </view>
-  <view class='name_ear'>
+  <!-- <view class='name_ear'>
     <text class="name_text">手机号:</text>
     <input placeholder='输入手机号' class='name_input'></input>
-  </view>
+  </view> -->
   <view class='name_ear'>
     <text class="name_text">性别:</text>
       <view class='e-info-radio'>
@@ -23,7 +23,7 @@
     <text class="name_text chusheng">出生日期:</text>
     <view class='picker-wrap'>
       <view class="section">
-        <picker mode="date" value="{{date}}" start="" 
+        <picker mode="date" value="{{date}}" start="" end="{{date}}"
          bindchange="picketchang">
           <view class="picker">{{date}}</view>
         </picker>
@@ -33,14 +33,14 @@
   </view>
   <view class='name_ear'>
     <text class="name_text">毕业学校:</text>
-    <input placeholder='输入毕业院校' class='name_input'></input>
+    <input placeholder='输入毕业院校' class='name_input' bindinput='getScholl'></input>
   </view>
   <!-- 毕业时间 -->
   <view class='name_ear'>
     <text class="name_text chusheng">毕业时间:</text>
     <view class='picker-wrap'>
       <view class="section">
-        <picker mode="date" value="{{date1}}" start="2015-09-01" end="{{date1}}" bindchange="picketChange1">
+        <picker mode="date" value="{{date1}}" end="{{date1}}" bindchange="picketChange1">
           <view class="picker">{{date1}}</view>
         </picker>
       </view>
@@ -75,7 +75,7 @@
   </view>
   <view class='name_ear'>
     <text class="name_text">选择职业:</text>
-    <input placeholder='输入职业名称' class='name_input'></input>
+    <input placeholder='输入职业名称' class='name_input' bindinput='getProfession'></input>
   </view>
   <!-- 上传身份证正面 -->
   <view class='idPic'>
@@ -105,7 +105,7 @@
           <image class='card-top' mode='aspectFit' src="{{item.src}}" data-index="{{index}}"/>
         </block>
         <view class='-add-img-' wx:if="{{item.hiddenName}}">
-          <image class='addPic2' bindtap='addPosPic' src='../../static/images/public/plus.png'></image>
+          <image class='addPic2' src='../../static/images/public/plus.png'></image>
         </view>
       </view>
       <input class="addTextBox" placeholder='请输入职业证书名称'/>

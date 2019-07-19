@@ -1,11 +1,14 @@
 // pages/public/password.js
+const util = require('../../utils/util.js');  //通用方法
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pColor: '',                          //动态获取字体颜色
+    pBgC: '',                            //动态获背景颜色                 
+    pBC1: ''                             //动态获边框颜色   
   },
   saveInfo: function () {
     wx.navigateTo({
@@ -17,7 +20,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      pBgC: util.loginIdentity().pBgC,
+      pBC1: util.loginIdentity().pBC1
+    })
   },
 
   /**

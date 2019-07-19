@@ -1,0 +1,27 @@
+/* pages/userInfo/setting.wxss */
+@import '../template/common';
+.setting-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: 151515rpx;
+  margin-bottom: 40rpx;
+}
+.-view-edit{
+  width:26rpx;
+  height: 26rpx;
+}
+.-view-inp{
+  margin-right: 20rpx;
+  text-align: right;
+  width: 60%;
+}
+.-view-msg,.-view-inp{
+  color: #808080;
+  font-size:30rpx;
+}
+.u-o-icon2{
+  width: 12rpx;
+  height: 24rpx;
+}

@@ -1,16 +1,16 @@
 
-<view class="login_ear">
-  <text class="qianzui">+86</text>
+<view class="login_ear {{pBC1}}">
+  <text class="qianzui {{pColor}}">+86</text>
   <input placeholder="请输入手机号登录" class="phone_num" type='text' name="phone_num" value='{{inputValue}}' bindinput='getVale'></input>
   <image src="../../images/login/delete.png" class="delete_pic" bindtap='deletetext' wx:if="{{status}}"></image>
 </view>
-<view class="mima_ear">
+<view class="mima_ear {{pBC1}}">
   <input placeholder="请输入验证码" class="phone_password" type='text' name="pass" bindinput='getVale2'></input>
   <!-- <text class="fasong" bindtap='fasongma'>{{fasongtext}}</text> -->
-  <button class="emailCode" hidden='{{!codeIsCanClick}}' size="mini" bindtap='clickCode'>获取验证码</button>
+  <button class="emailCode {{pColor}}" hidden='{{!codeIsCanClick}}' size="mini" bindtap='clickCode'>获取验证码</button>
   <button class="emailCodeSend" hidden='{{codeIsCanClick}}' size="mini">{{last_time}}秒可重发</button>
 </view>
 <!-- 下拉框 -->
 <view>
-  <button class="set-option" bindtap='complete' style="background:{{color}}" bindtap='saveInfo'>保存</button>
+  <button class="set-option {{pBgC}}" bindtap='complete' style="background:{{color}}" bindtap='saveInfo'>保存</button>
 </view>

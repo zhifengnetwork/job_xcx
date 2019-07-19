@@ -1,0 +1,3 @@
+/* pages/userInfo/setting.wxss */
+@import '../../template/common';
+@import '../../template/option';

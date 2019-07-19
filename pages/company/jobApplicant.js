@@ -7,7 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tInfo: {
+      clas: 'company-bColor-1',
+      text: "我的"
+    }
   },
 
   /**

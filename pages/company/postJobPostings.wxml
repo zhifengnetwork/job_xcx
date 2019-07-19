@@ -65,7 +65,7 @@
       <view class='e-info-radio'>
         <radio-group class="radio-group"bindchange="radioChange">
             <label class="radio" wx:for="{{items}}">
-              <radio style="zoom:.6" color="#ff54b5" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+              <radio style="zoom:.6" color="#be4cff" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
             </label>
         </radio-group>
       </view>
@@ -73,5 +73,5 @@
   <navigator url='postionDetail'><text class='-list-msg'>职位详情:</text></navigator>
   <textarea placeholder=''></textarea>
   <view class='line-heig'></view>
-  <view class='set-option' bindtap='saveInfo'>保存</view>
+  <view class='set-option company-bg-' bindtap='saveInfo'>保存</view>
 </view>

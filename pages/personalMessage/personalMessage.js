@@ -6,37 +6,49 @@ const das=date.getDate();
 const app = getApp();
 Page({
   data: {
-    array: ['硕士', '博士', '本科' ,'大专', '高技','高中以下'],
-    items: [
+    // array: ['硕士', '博士', '本科' ,'大专', '高技','高中以下'],
+    name: '',                                               // 姓名
+    school: '',                                             // 毕业学校
+    profession: '',                                         // 职业
+    items: [                                                // 学校类型
       { name: '硕士', value: '硕士' },
       { name: '博士', value: '博士' },
       { name: '本科', value: '本科' },
       { name: '大专', value: '大专' },
       { name: '高中以下', value: '高中以下' }],
-    radioItems: [
+    radioItems: [                                          // 性别
       { me: 'wuman', value: '女', checked: 'true' },
       { me: 'man', value: '男' }
     ],
-    icCardPic:[
+    icCardPic: [                                           // 身份证
       { msg: '点击上传身份证正面照', src: '', hiddenName:true},
       { msg: '点击上传身份证反面照', src: '', hiddenName: true}
     ],
-    addImgs:1,
-    index: 0,
-    showDialog: false,
-    date: years + '-' + mouths + '-' + das,
-    date1: years + '-' + mouths + '-' + das,
-    //添加一张
-    pics: [
+    // addImgs:1,                                            
+    //index: 0,                                             //
+    showDialog: false,                                      //学历弹框
+    date: years + '-' + mouths + '-' + das,                 //出生年月
+    date1: years + '-' + mouths + '-' + das,                //毕业时间
+    pics: [                                                 //添加一张 职业证书
       { src: '', hiddenName: true }
     ]
   },
-  picketchang: function (e) {
+  getName(e) {                                          // 姓名
+    this.setData({ name: e.detail.value})
+  },
+  getScholl(e) {                                       // 毕业学校
+    this.setData({ school: e.detail.value })
+  },
+  getProfession(e){
+    this.setData({ profession: e.detail.value })        // 职业名称
+  },
+  picketchang: function (e) {                           // 出生日期
+    console.log(e.detail.value)
     this.setData({
       date: e.detail.value
     })
   },
-  picketChange1: function (e) {
+  picketChange1: function (e) {                         //  毕业时间
     this.setData({
       date1: e.detail.value
     })
@@ -45,10 +57,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    that.setData({
-      value: 'show'
-    })
+    // var that = this
+    // that.setData({
+    //   value: 'show'
+    // })
   },
   addIdCardPic:function(e){   //身份证上传
     var _this = this
@@ -67,6 +79,8 @@ Page({
       }
       //
     })
+
+    console.log(this.data.icCardPic)
   },
 
 addWordPic:function(e){
@@ -86,6 +100,7 @@ addWordPic:function(e){
     }
     //
   })
+  console.log(_this.data.pics)
 },
 addImgBox: function (e) {
     var json = { src: '', hiddenName: true };

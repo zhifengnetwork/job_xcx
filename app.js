@@ -118,15 +118,15 @@ App({
     },
     tabBar1: {     //以公司名义进去看到的底部导航
       "color": "#ff54b5",
-      "selectedColor": "#ff54b5",
+      "selectedColor": "#be4cff",
       "backgroundColor": "#fff",
       "borderStyle": "#d6d6d6",
       "list": [
         {
-          "pagePath": "/pages/index/index",
+          "pagePath": "/pages/company/index",
           "text": "首页",
           "iconPath": "../../static/images/bar_icon/home_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/home_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/company/h_pop.png",
           "clas": "menu-item",
           active: true
         },
@@ -134,15 +134,15 @@ App({
           "pagePath": "/pages/company/jobApplicant",
           "text": "招人",
           "iconPath": "../../static/images/bar_icon/user2_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user2_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/company/user2_pop.png",
           "clas": "menu-item",
           active: true
         },
         {
-          "pagePath": "/pages/thirdParty/thirdParty",
+          "pagePath": "/pages/company/thirdParty",
           "text": "第三方",
           "iconPath": "../../static/images/bar_icon/circle_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/circle_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/company/circle_pink.png",
           "clas": "menu-item",
           active: true
         },
@@ -150,7 +150,7 @@ App({
           "pagePath": "/pages/information/information",
           "text": "消息",
           "iconPath": "../../static/images/bar_icon/info_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/info_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/company/info_pop.png",
           "clas": "menu-item",
           active: true
         },
@@ -158,7 +158,7 @@ App({
           "pagePath": "/pages/company/cUserInfo",
           "text": "我的",
           "iconPath": "../../static/images/bar_icon/user_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/company/u_pop.png",
           "clas": "menu-item",
           active: true
         }
@@ -167,31 +167,31 @@ App({
     },
     tabBar2: {   //以第三方名义登陆进去看到的底部导航
       "color": "#9E9E9E",
-      "selectedColor": "#ff54b5",
+      "selectedColor": "#54b9ff",
       "backgroundColor": "#fff",
       "borderStyle": "#d6d6d6",
       "list": [
         {
-          "pagePath": "/pages/index/index",
+          "pagePath": "/pages/thirdParty/index",
           "text": "首页",
           "iconPath": "../../static/images/bar_icon/home_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/home_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/third/h_blue.png",
           "clas": "menu-item",
           active: true
         },
         {
-          "pagePath": "/pages/company/jobApplicant",
+          "pagePath": "/pages/thirdParty/jobApplicant",
           "text": "招人",
           "iconPath": "../../static/images/bar_icon/user2_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user2_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/third/user2_blue.png",
           "clas": "menu-item",
           active: true
         },
         {
-          "pagePath": "/pages/company/company",
+          "pagePath": "/pages/thirdParty/company",
           "text": "公司",
           "iconPath": "../../static/images/bar_icon/company_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/company_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/third/company_blue.png",
           "clas": "menu-item",
           active: true
         },
@@ -199,32 +199,32 @@ App({
           "pagePath": "/pages/information/information",
           "text": "消息",
           "iconPath": "../../static/images/bar_icon/info_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/info_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/third/info_blue.png",
           "clas": "menu-item",
           active: true
         },
         {
-          "pagePath": "/pages/company/cUserInfo",
+          "pagePath": "/pages/thirdParty/thirdInfo",
           "text": "我的",
           "iconPath": "../../static/images/bar_icon/user_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/third/user_blue.png",
           "clas": "menu-item",
           active: true
         }
       ],
       "position": "bottom"
     },
-    tabBar3: {   //以第三方名义登陆进去看到的底部导航
+    tabBar3: {   //以个人名义登陆进去看到的底部导航
       "color": "#9E9E9E",
       "selectedColor": "#ff54b5",
       "backgroundColor": "#fff",
       "borderStyle": "#d6d6d6",
       "list": [
         {
-          "pagePath": "/pages/index/index",
+          "pagePath": "/pages/userInfo/index",
           "text": "首页",
           "iconPath": "../../static/images/bar_icon/home_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/home_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/user/home_pick.png",
           "clas": "menu-item",
           active: true
         },
@@ -232,7 +232,7 @@ App({
           "pagePath": "/pages/company/company",
           "text": "公司",
           "iconPath": "../../static/images/bar_icon/company_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/company_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/user/company_pink.png",
           "clas": "menu-item",
           active: true
         },
@@ -240,7 +240,7 @@ App({
           "pagePath": "/pages/thirdParty/thirdParty",
           "text": "第三方",
           "iconPath": "../../static/images/bar_icon/circle_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/circle_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/user/circle_pink.png",
           "clas": "menu-item",
           active: true
         },
@@ -249,16 +249,15 @@ App({
           "pagePath": "/pages/information/information",
           "text": "消息",
           "iconPath": "../../static/images/bar_icon/info_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/info_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/user/info_pink.png",
           "clas": "menu-item",
-          "selectedColor": "#25bbb3",
           active: true
         },
         {
           "pagePath": "/pages/userInfo/userCenter",
           "text": "我的",
           "iconPath": "../../static/images/bar_icon/user_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user_green.png",
+          "selectedIconPath": "../../static/images/bar_icon/user/user_pink.png",
           "clas": "menu-item",
           active: true
         }

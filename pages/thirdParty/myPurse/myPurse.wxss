@@ -1,0 +1,9 @@
+@import "../../template/gold";
+.th-btn-active{
+  background:#54b9ff !important;
+  color: #fff !important;
+}
+.g-deposits-btn2 button,.g-deposits-btn1 .g-d-btn2{
+    border: 1px solid #54b9ff;
+    color:#54b9ff;
+}

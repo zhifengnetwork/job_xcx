@@ -32,7 +32,39 @@ function getStorageItem(key,app) {
   }
 }
 
+function loginIdentity(){
+  var postion = wx.getStorageSync('savePostion');
+  console.log(postion)
+  if (postion == 0 || postion == 3 || 'undefined'==typeof(postion) || postion == '' ) {
+    var info = {
+      pColor: 'user-color-',
+      pBgC: 'user-bg-',
+      pBC: 'user-bColor',
+      pBC1: 'user-bColor-1ss'
+    }
+    return info
+  } 
+  if (postion == 1){
+    var info ={
+      pColor:'company-color-',
+      pBgC:'company-bg-',
+      pBC:'company-bColor-',
+      pBC1:'company-bColor-1ss'
+    }
+    return info
+  } 
+  if (postion == 2) {
+    var info = {
+      pColor: 'third-color-',
+      pBgC: 'third-bg-',
+      pBCC: 'third-bColor-',
+      pBC1:'third-bColor-1ss'
+    }
+    return info
+  } 
+}
 
 module.exports = {
   getStorageItem: getStorageItem,
+  loginIdentity: loginIdentity
 }

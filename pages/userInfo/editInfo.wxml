@@ -24,7 +24,10 @@
         <text class='e-info-msg'>民族：</text>
         <input type='text' class='e-info-inp' placeholder='输入民族'/>
       </view>    
-      
+      <view class='e-info-'>
+        <text class='e-info-msg'>工龄：</text>
+        <input type='text' class='e-info-inp' placeholder='输入工龄'/>
+      </view>    
     </view>
     <image class='edit-img-' src='../../static/images/public/big_portrait.png'/>
   </view>
