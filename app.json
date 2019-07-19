@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/company/uCollect",
     "pages/login/login",
     "pages/information/information",
     "pages/index/index",
@@ -19,7 +20,7 @@
     "pages/company/myReserve",
     "pages/company/postJobPostings",
     "pages/company/company",
-    "pages/company/uCollect",
+    
     "pages/company/publish",
     "pages/myPurse/myPurse",
     "pages/myPurse/withdrawal",
