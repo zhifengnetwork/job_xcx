@@ -4,21 +4,21 @@
     <view class='name_wrap'>
       <text class='text'>联系人:</text>
       <view class='inp'>
-        <input placeholder='输入名字'></input>
+        <input placeholder='输入名字' bindinput='getContacts'></input>
       </view>
     </view>
     <!-- 手机号 -->
     <view class='name_wrap'>
       <text class='text'>手机号:</text>
       <view class='inp'>
-        <input placeholder='输入手机号'></input>
+        <input placeholder='输入手机号' bindinput='getMobiel'></input>
       </view>
     </view>
     <!-- 固定电话 -->
     <view class='name_wrap'>
       <text class='text'>固定电话:</text>
       <view class='inp'>
-        <input placeholder='输入固定电话号码'></input>
+        <input placeholder='输入固定电话号码' bindinput='getTel'></input>
       </view>
     </view>
     <!-- 选择公司地区 -->
@@ -37,20 +37,20 @@
     <view class='name_wrap'>
       <text class='text'>公司名称:</text>
       <view class='inp'>
-        <input placeholder='输入公司名称'></input>
+        <input placeholder='输入公司名称' bindinput='getCName'></input>
       </view>
     </view>
     <!-- 公司类型 -->
     <view class='name_wrap'>
       <text class='text'>公司类型:</text>
       <view class='inp'>
-        <input placeholder='例如：国企'></input>
+        <input placeholder='例如：国企' bindinput='getCType'></input>
       </view>
     </view>
     <!-- 公司介绍 -->
     <view class='name_wrap'>
       <text class='text'>公司介绍:</text>
-      <textarea class='in_tar' placeholder=' 至少10字介绍公司'></textarea>
+      <textarea class='in_tar' placeholder=' 至少10字介绍公司' bindinput='getCExp'></textarea>
     </view>
      <!-- 上传营业执照 -->
     <view class='idPic'>
@@ -84,5 +84,5 @@
     </view>
     <view class='a-more-pic'>添加一张</view>
   </view>
-  <button class='option' bindtap='saveInfo'>提交</button>
+  <button class='option user-bg-' bindtap='saveInfo'>提交</button>
 </view>

@@ -14,7 +14,44 @@ Page({
     //添加一张
     pics: [],
     count: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    isShow: true
+    isShow: true,
+    contacts:'',
+    mobiel:'',
+    tel:'',
+    cName:'',
+    cType:'',
+    cExp:''
+  },
+
+  getContacts(e){
+    this.setData({
+       contacts: e.detail.value
+    })
+  },
+  getMobiel(e) {
+    this.setData({
+      mobiel: e.detail.value
+    })
+  },
+  getTel(e){
+    this.setData({
+      tel: e.detail.value
+    })
+  },
+  getCName(e){
+    this.setData({
+      cName: e.detail.value
+    })
+  },
+  getCType(e){
+    this.setData({
+      cType: e.detail.value
+    })
+  },
+  getCExp(e){
+    this.setData({
+      cExp: e.detail.value
+    })
   },
   bindRegionChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)

@@ -1,9 +1,9 @@
 <view>
   <view class="log_ear">
-    <image src="../../images/login/xiaolian.png" class="xiaolian"></image>
+    <image src="../../images/login/zcyc_logo.jpg" class="xiaolian"></image>
   </view>
   <view>
-    <text class="welecom_title">智丰招聘账号注册</text>
+    <text class="welecom_title">筑城优才注册</text>
   </view>
 </view>
 <view class="login_ear">

@@ -154,7 +154,6 @@
   margin: 20rpx auto 65rpx;
   width: 670rpx;
   height: 88rpx;
-  background: #25bbb3;
   color: #fff;
   letter-spacing: 2px;
   border-radius: 45px;

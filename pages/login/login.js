@@ -1,5 +1,6 @@
-Page({
 
+import ServerData from '../../utils/serverData.js';
+Page({
   /**
    * 页面的初始数据
    */
@@ -29,7 +30,7 @@ Page({
       return
     }
     if (!(this.data.input2text == '' || this.data.input1text == '')){
-      color= 'rgb(54, 193, 186)';
+      color = '#ff54b5';
     }
     this.setData({
       color: color,
@@ -54,63 +55,54 @@ Page({
     })
   },
   toLogin:function(){     //保存用户身份用
-    var status = "";
-    var password = this.data.password;
-    var mobile = this.data.mobile;
-    var reg = /^1[3|4|5|7|8]\d{9}$/;
-    if (!(mobile == "" || password=="")){
-      // if(!reg.test(mobile)){
-      //   return wx.showToast({
-      //     title: '手机号格式不正确哦!',
-      //     icon: 'none'
-      //     // duration: 1000
-      //   })
-      // }
-
-      if (password == 0) {
-        status = 0;
-        wx.redirectTo({         //跳转至首页
-          url: '../index/index'
-        })
-      }
-      if (password == 1) {
-        status = 1;
-        wx.redirectTo({         //跳转至首页
-          url: '../company/index'
-        })
-      }
-      if (password == 2) {
-        status = 2;
-        wx.redirectTo({         //跳转至首页
-          url: '../thirdParty/index'
-        })
-      }
-      if (password == 3) {
-        status = 3;
-        wx.redirectTo({         //跳转至首页
-          url: '../userInfo/index'
-        })
-      } 
-
-
-      // wx.redirectTo({         //跳转至首页
-      //   url: '../index/index'
-      // })
-      wx.setStorageSync('savePostion', status)
-
-    }else{
-        return wx.showToast({
-          title: '请输入完整信息',
-          icon: 'none'
-        })
+    var that =this,
+        password = that.data.password,
+        mobile = that.data.mobile,
+        reg = /^1[3|4|5|7|8|9]\d{9}$/;
+    if(mobile == "" || !reg.test(mobile)){
+       return ServerData._wxTost('手机号格式不正确哦!')
     }
+    if (password==""){
+       return ServerData._wxTost('请输入密码')
+    }
+    var _opt={
+      'mobile': mobile,
+      'password': password
+    }
+    ServerData.toLogin(_opt).then((res) => {          //请求数据
+      if (res.data.status == 1) {
+          var type = wx.getStorageSync('savePostion');
+          console.log(type)
+          console.log(res)
+          if (type == 3) {
+            wx.redirectTo({         //跳转至首页
+              url: '../userInfo/index'
+            })
+          }
+          else if (type == 1) {
+            wx.redirectTo({         //跳转至首页
+              url: '../company/index'
+            })
+          }
+          else if (type == 2) {
+            wx.redirectTo({         //跳转至首页
+              url: '../thirdParty/index'
+            })
+          }
+          else {
+            wx.redirectTo({         //跳转至首页
+              url: '../index/index'
+            })
+          }
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+    });
+
+
+      
   },
-  toVisitor:function(){   //游客入口
-    wx.setStorageSync('savePostion', 0)
-    wx.redirectTo({
-      url: '../index/index'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -118,54 +110,6 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  },
   showPassword: function(e){
     var newid=0;
     var that = this;
@@ -181,7 +125,6 @@ Page({
     })
   },
   deletetext: function(e) {
-
     this.setData({
       inputValue: '',
       status: false

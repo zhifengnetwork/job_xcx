@@ -99,8 +99,8 @@
   <view class='idPic'>
     <view class='-pic-subtitle'>职业证书(选填)</view>
     <!-- -->
-    <view  wx:for="{{pics}}" wx:key="{{index}}" data-id="{{index}}"  bindtap='addWordPic'>
-      <view class='id-card-top'>
+    <view  wx:for="{{pics}}" wx:key="{{index}}">
+      <view class='id-card-top' bindtap='addWordPic' data-id="{{index}}">
         <block>
           <image class='card-top' mode='aspectFit' src="{{item.src}}" data-index="{{index}}"/>
         </block>
@@ -108,7 +108,7 @@
           <image class='addPic2' src='../../static/images/public/plus.png'></image>
         </view>
       </view>
-      <input class="addTextBox" placeholder='请输入职业证书名称'/>
+      <input class="addTextBox" bindblur='getPicName' data-iname='input{{index}}' placeholder='请输入职业证书名称'/>
     </view>
     <!-- -->
     <view class='file-inner' bindtap='addImgBox'>

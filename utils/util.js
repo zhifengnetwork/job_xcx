@@ -21,14 +21,15 @@ module.exports = {
 //获取用户状态
 function getStorageItem(key,app) {
   var postion = wx.getStorageSync(key);
-  if (postion == 0) {
-    return app.editTabBar()
+  if(postion == 3) {
+    return app.editTabBar3()
   } else if (postion == 1) {
     return app.editTabBar1()
   } else if (postion == 2) {
     return app.editTabBar2()
   } else {
-    return app.editTabBar3()
+    console.log(11)
+    return app.editTabBar()
   }
 }
 

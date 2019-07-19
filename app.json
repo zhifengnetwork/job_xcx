@@ -1,6 +1,11 @@
 {
   "pages": [
+    "pages/register/fillInInformation/fillInInformation",
     "pages/personalMessage/personalMessage",
+    "pages/userInfo/userCenter",
+
+    "pages/forgetpassword/forgetpassword",  
+    "pages/login/login",
     "pages/register/register",
     "pages/userInfo/editInfo",
     "pages/thirdParty/jobList",
@@ -8,7 +13,6 @@
     "pages/company/cUserInfo",
     "pages/public/password",
     "pages/public/editMobile",
-    "pages/login/login",
     "pages/public/setting",
     "pages/userInfo/setting",
     "pages/company/jobApplicant",
@@ -34,7 +38,6 @@
     "pages/thirdParty/company",
     "pages/thirdParty/postionDetail",
     "pages/thirdParty/index",
-    "pages/userInfo/userCenter",
     "pages/company/option/help",
     "pages/company/option/setting",
     "pages/company/thirdParty",
