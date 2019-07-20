@@ -10,8 +10,13 @@ const userAPI = {
   uploadFile: `${proxys}/user/upload_file`,     //上传文件
 }
 
+const indexAPI = {
+  reqIndex:`${proxys}/user/visit`,
+}
+
 
 module.exports = {
   proxys: proxys,
-  userAPI: userAPI
+  userAPI: userAPI,
+  indexAPI:indexAPI
 };
