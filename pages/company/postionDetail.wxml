@@ -14,21 +14,21 @@
     <view class='d-content'>
         <view class="d-c-list">
           <view class='c-list-info'>
-            <view class='w-bold m-b22'>皮具厂皮具包装人员</view>
+            <view class='w-bold m-b22'>{{theDetails.title}}</view>
             <view class='m-b22'>
-                <text class='m-r20'>月薪 2000元</text>
+                <text class='m-r20'>月薪{{theDetails.salary}}元</text>
                 <text class='m-r10'>10:30 - 12:30</text>
             </view>
             <view class='m-b22'>公司招聘</view>
             <view class='m-b22'>
-                <text class='m-r20'>无需经验</text>
+                <text class='m-r20'>{{theDetails.work_age}}</text>
                 <text class='m-r10'>男</text>
                 <text class='m-r10'>18-50岁</text>
             </view>
             <view class='m-b22'>包装二级证书</view>
-            <view>花都区/狮岭镇XXXXX皮具有限公司</view>
+            <view>{{theDetails.province}}{{theDetails.city}}{{theDetails.district}}{{theDetails.company_name}}</view>
           </view>
-          <image src='../../static/images/public/c_logo.jpg' class='c-list-portrait'/>
+          <image src='{{theDetails.logo}}' class='c-list-portrait'/>
         </view>
         <view class="d-c-list">
           <view class='c-list-info'>

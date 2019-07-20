@@ -111,6 +111,15 @@ class ServerData {
     return this._uploadFile_(_data, api.userAPI.uploadFile, complete);
   } 
 
+  collection(_data, complete) {                      // 收藏/取消收藏
+    return this._promise_post(_data, api.userAPI.collection, complete);
+  } 
+
+  theDetails(_data, complete) {                      // 公司职位详情
+    return this._promise_post(_data, api.userAPI.theDetails, complete);
+  }
+
+  // 轻提示
   _wxTost(msg) {
     wx.showToast({
       title: msg,

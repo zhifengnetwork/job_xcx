@@ -1,13 +1,13 @@
 {
-  "pages": [
-        "pages/login/login",
+  "pages": [ 
+    "pages/company/postionDetail",
+    "pages/login/login",
     "pages/register/fillInInformation/fillInInformation",
 
     "pages/company/uCollect",
     "pages/personalMessage/personalMessage",
     "pages/userInfo/userCenter",
-    "pages/forgetpassword/forgetpassword",  
-    "pages/login/login",
+    "pages/forgetpassword/forgetpassword",
     "pages/register/register",
     "pages/userInfo/editInfo",
     "pages/thirdParty/jobList",
@@ -42,7 +42,6 @@
     "pages/company/option/help",
     "pages/company/option/setting",
     "pages/company/thirdParty",
-    "pages/company/postionDetail",
     "pages/company/editInfo",
     "pages/company/myReserve",
     "pages/company/postJobPostings",
