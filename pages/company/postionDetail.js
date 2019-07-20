@@ -17,13 +17,13 @@ Page({
   // 收藏/取消收藏
   Oncollection:function() {
     var that = this,
-    toId = that.data.toId;
+    Id = that.data.Id;
     wx.request({
       url:app.globalData.baseUrl+'/collection/collection',
       data:{
         token:wx.getStorageSync('token'),
         type:wx.getStorageSync('savePostion'),
-        to_id:toId
+        to_id:Id
       },
       method:'post',
       success:(res)=>{
