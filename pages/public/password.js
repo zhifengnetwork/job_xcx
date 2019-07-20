@@ -1,4 +1,5 @@
 // pages/public/password.js
+import ServerData from '../../utils/serverData.js';
 const util = require('../../utils/util.js');  //通用方法
 Page({
 
@@ -23,7 +24,7 @@ Page({
               url: '../login/login'
             })
         } else {
-          ServerData._wxTost(res.data.msg)
+          // ServerData._wxTost(res.data.msg)
         }
     });
   },

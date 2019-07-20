@@ -102,6 +102,9 @@ class ServerData {
   fsCode(_data, complete) {                         //发送验证码
     return this._promise_get(_data, api.userAPI.fsCode, complete);
   } 
+  reqIndex(_data, complete) {                      //首页
+    return this._promise_get(_data, api.indexAPI.reqIndex, complete);
+  } 
 
   forgetPawd(_data, complete) {                      //找回密码
     return this._promise_post(_data, api.userAPI.forgetPawd, complete);
@@ -110,7 +113,6 @@ class ServerData {
   uploadFile(_data, complete) {                      //上传文件
     return this._uploadFile_(_data, api.userAPI.uploadFile, complete);
   } 
-
   helpExp(_data, complete) {                      //帮助与反馈
     return this._promise_post(_data, api.userAPI.helpExp, complete);
   } 
@@ -127,8 +129,17 @@ class ServerData {
     return this._promise_post(_data, api.userAPI.editMobile, complete);
   } 
   editPassword(_data, complete) {                      //修改手机号
-    return this._promise_post(_data, api.userAPI.editPassword, complete);
+    return this._promise_post(_data, api.userAPI.password, complete);
   } 
+  collection(_data, complete) {                      // 收藏/取消收藏
+    return this._promise_post(_data, api.userAPI.collection, complete);
+  } 
+
+  theDetails(_data, complete) {                      // 公司职位详情
+    return this._promise_post(_data, api.userAPI.theDetails, complete);
+  }
+
+  // 轻提示
   _wxTost(msg) {
     wx.showToast({
       title: msg,
