@@ -1,14 +1,14 @@
 import api from "api.js";
-import Promise from "promise.js";
+// import Promise from "promise.js";
 class ServerData {
 
   // 私有函数
   _promise_get(_data, url, complete) {
-    if (wx.getStorageSync('loginData').token) {
-      _data.token = wx.getStorageSync('loginData').token
+    if (wx.getStorageSync('token')) {
+      _data.token = wx.getStorageSync('token')
     }
-    console.log('_promise_get url: ' + JSON.stringify(url));
-    console.log('_promise_get _data: ' + JSON.stringify(_data));
+    // console.log('_promise_get url: ' + JSON.stringify(url));
+    // console.log('_promise_get _data: ' + JSON.stringify(_data));
 
     let promise = new Promise((resolve, reject) => {
       wx.request({
@@ -33,18 +33,19 @@ class ServerData {
 
   // 私有函数
   _promise_post(_data, url, complete) {
-    if (wx.getStorageSync('loginData').token) {
-      _data.token = wx.getStorageSync('loginData').token
+    if (wx.getStorageSync('token')) {
+      _data.token = wx.getStorageSync('token')
     }
-    console.log('_promise_post url: ' + JSON.stringify(url));
-    console.log('_promise_post _data: ' + JSON.stringify(_data));
+    // console.log(_data.token)
+    // console.log('_promise_post url: ' + JSON.stringify(url));
+    // console.log('_promise_post _data: ' + JSON.stringify(_data));
     let promise = new Promise((resolve, reject) => {
       wx.request({
         url: url,
         method: 'POST',
         data: _data,
         // header: {
-        //   'content-type': 'application/x-www-form-urlencoded' //
+        //   'content-type': 'application/json; charset=utf-8' //
         // },
         success: function (res) {
           resolve(res);
@@ -62,15 +63,53 @@ class ServerData {
     return promise;
   }
   // 
-
-  verifyCode(_data, complete) {
-    console.log(api)
-    return this._promise_get(_data, api.userAPI.verifyCode, complete);
+  _uploadFile_(_data, url, complete) {                          //文件上传
+      let promise = new Promise((resolve, reject) => {
+        wx.uploadFile({
+          url: url,
+          method: 'POST',
+          name: 'file',
+          filePath: _data,
+          success: function (res) {
+            resolve(res);
+          },
+          fail: function (err) {
+            reject(err);
+            wx.hideLoading()
+          },
+          //无论成功失败都会调用
+          complete: function () {
+            complete && complete();
+          }
+        })
+      })
+      return promise
   }
-  _register(_data, complete) {
-    console.log(api)
+
+
+  verifyCode(_data, complete) {                   //注册验证码
+    return this._promise_get(_data, api.userAPI.verifyCode, complete);
+  } 
+  _register(_data, complete) {                    //注册
     return this._promise_post(_data, api.userAPI.register, complete);
   }
+  _registerUserInfo(_data, complete) {            //个人信息注册
+    return this._promise_post(_data, api.userAPI.registerUserInfo, complete);
+  }
+  toLogin(_data, complete) {                      //登陆
+    return this._promise_get(_data, api.userAPI.login, complete);
+  } 
+  fsCode(_data, complete) {                      //发送验证码
+    return this._promise_get(_data, api.userAPI.fsCode, complete);
+  } 
+
+  forgetPawd(_data, complete) {                      //找回密码
+    return this._promise_post(_data, api.userAPI.forgetPawd, complete);
+  } 
+
+  uploadFile(_data, complete) {                      //上传文件
+    return this._uploadFile_(_data, api.userAPI.uploadFile, complete);
+  } 
 
   _wxTost(msg) {
     wx.showToast({

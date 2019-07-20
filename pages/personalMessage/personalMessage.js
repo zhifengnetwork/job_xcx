@@ -1,12 +1,12 @@
+import ServerData from '../../utils/serverData.js';
 const date = new Date();
 const years=date.getFullYear();
 const mouths =date.getMonth()+1;
 const das=date.getDate();
-//获取应用实例
-const app = getApp();
+
+const app = getApp();                                      //获取应用实例
 Page({
   data: {
-    // array: ['硕士', '博士', '本科' ,'大专', '高技','高中以下'],
     name: '',                                               // 姓名
     school: '',                                             // 毕业学校
     profession: '',                                         // 职业
@@ -17,21 +17,22 @@ Page({
       { name: '大专', value: '大专' },
       { name: '高中以下', value: '高中以下' }],
     radioItems: [                                          // 性别
-      { me: 'wuman', value: '女', checked: 'true' },
-      { me: 'man', value: '男' }
+      { id: '2', value: '女', checked: 'true' },
+      { id: '1', value: '男' }
     ],
+    sex:2,
     icCardPic: [                                           // 身份证
-      { msg: '点击上传身份证正面照', src: '', hiddenName:true},
-      { msg: '点击上传身份证反面照', src: '', hiddenName: true}
+      { msg: '点击上传身份证正面照', src: '', hiddenName:true, newSrc:''},
+      { msg: '点击上传身份证反面照', src: '', hiddenName: true, newSrc: ''}
     ],
-    // addImgs:1,                                            
-    //index: 0,                                             //
     showDialog: false,                                      //学历弹框
     date: years + '-' + mouths + '-' + das,                 //出生年月
     date1: years + '-' + mouths + '-' + das,                //毕业时间
     pics: [                                                 //添加一张 职业证书
-      { src: '', hiddenName: true }
-    ]
+      { src: '', hiddenName: true, newSrc: ''}
+    ],
+    all: {},                                                //所有证书名
+    picArray: []                                            //所有img
   },
   getName(e) {                                          // 姓名
     this.setData({ name: e.detail.value})
@@ -43,7 +44,6 @@ Page({
     this.setData({ profession: e.detail.value })        // 职业名称
   },
   picketchang: function (e) {                           // 出生日期
-    console.log(e.detail.value)
     this.setData({
       date: e.detail.value
     })
@@ -53,14 +53,83 @@ Page({
       date1: e.detail.value
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  saveInfo(){
+    var that =this,
+        birth_year="",
+        birth_month="",
+        birth_day="",
+        bityhDate = this.data.date.split('-'),
+        graduate = this.data.date1.split('-'),
+        title = Object.values(that.data.all)
+    var _opt = { 
+      'name': that.data.name,
+      'gender': that.data.sex,
+      'birth_year': bityhDate[0],
+      'birth_month': bityhDate[1],
+      'birth_day': bityhDate[2],
+      'school': that.data.school,
+      'school_type': that.data.value1,
+      'graduate_year': graduate[0],
+      'graduate_month': graduate[1],
+      'graduate_day': graduate[2],
+      'careers': that.data.profession,
+      'idcard_front': that.data.icCardPic[0].newSrc,
+      'idcard_back': that.data.icCardPic[1].newSrc,
+      'image': that._getPicSrc(),
+      'title': title
+    }
+
+    ServerData._registerUserInfo(_opt).then((res) => {
+        if (res.data.status == 1) {
+            wx.navigateTo({
+              url: '../public/audit'
+            })
+        }else{
+            ServerData._wxTost(res.data.msg)
+        }
+    });
+    //
+  },
+  _verifyInfo(){
+    var that =this;
+    if (that.data.name==""){
+      ServerData._wxTost('请输入名字')
+      return false
+    }
+    if (that.data.school==""){
+      ServerData._wxTost('请输入毕业学校')
+      return false
+    }
+    if (that.data.profession == "") {
+      ServerData._wxTost('请输入职业名称')
+      return false
+    }
+    if (that.icCardPic[0].src == "" || that.icCardPic[1].src == ""){
+      ServerData._wxTost('请输入上传身份证')
+      return false
+    }
+    return true
+  },
+  _getPicSrc(){                                   //获取证书的图片路径
+     var srcArry =[],
+         that =this,
+         pics = that.data.pics
+    for (var i in pics){
+      if(pics[i].src !=""){
+        srcArry.push(pics[i].newSrc)
+      }
+    }
+    return srcArry
+  },
+  getPicName(e){                                   //获取证书的证书名
+    var all = this.data.all;
+    var iname = e.target.dataset.iname;
+    all[iname] = e.detail.value;
+    this.setData({
+      all: all
+    });
+  },
   onLoad: function (options) {
-    // var that = this
-    // that.setData({
-    //   value: 'show'
-    // })
   },
   addIdCardPic:function(e){   //身份证上传
     var _this = this
@@ -73,14 +142,19 @@ Page({
         var data = _this.data.icCardPic[id]
         data.src = imgSrc;
         data.hiddenName=false;
-        _this.setData({
-          icCardPic: _this.data.icCardPic
+        ServerData.uploadFile(imgSrc).then((res)=>{
+          var dat =JSON.parse(res.data)
+          if (dat.status==1){
+              data.newSrc = dat.data
+            console.log(data.newSrc)
+              _this.setData({
+                 icCardPic: _this.data.icCardPic
+              })
+          }
         })
       }
       //
     })
-
-    console.log(this.data.icCardPic)
   },
 
 addWordPic:function(e){
@@ -94,18 +168,26 @@ addWordPic:function(e){
       var data = _this.data.pics[id]
       data.src = imgSrc;
       data.hiddenName = false;
+      ServerData.uploadFile(imgSrc).then((res) => {
+        var dat = JSON.parse(res.data)
+        if (dat.status == 1) {
+          data.newSrc = dat.data
+          console.log(data.newSrc)
+          _this.setData({
+              pics: _this.data.pics
+          })
+        }
+      })
       _this.setData({
         pics: _this.data.pics
       })
     }
     //
   })
-  console.log(_this.data.pics)
 },
 addImgBox: function (e) {
     var json = { src: '', hiddenName: true };
     this.data.pics.push(json)
-    console.log(this.data.pics)
     this.setData({
       pics: this.data.pics
     })
@@ -125,8 +207,10 @@ addImgBox: function (e) {
       showDialog: !that.data.showDialog
     });
   },
-  changSex:function(e){
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
+  changSex:function(e){       //性别
+    this.setData({
+      sex: e.detail.value
+    })
   },
   radioChange: function (e) {
     var that = this
@@ -134,7 +218,7 @@ addImgBox: function (e) {
       value1: e.detail.value
     })
   },
-  toggleDialog() {
+  toggleDialog(e) {
     this.setData({
       showDialog: !this.data.showDialog
     });
@@ -147,11 +231,11 @@ addImgBox: function (e) {
  /*点击选择学历,弹框消失 e*/
 
   
-  saveInfo:function(){
-    wx.navigateTo({
-      url: '../public/audit'
-    })
-  }
+  // saveInfo:function(){
+  //   wx.navigateTo({
+  //     url: '../public/audit'
+  //   })
+  // }
   // formSubmit: function (e) {
   //   // user 
   //   var that = this;

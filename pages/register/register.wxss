@@ -1,15 +1,16 @@
 page{
   height:100%;
+  background: #fff;
   }
-.log_ear {
+/* .log_ear {
   display: flex;
   justify-content: center;
   padding-top: 40px;
 }
 
 .xiaolian {
-  width: 85rpx;
-  height: 85rpx;
+  width: 150rpx;
+  height: 150rpx;
 }
 
 .welecom_title {
@@ -17,9 +18,9 @@ page{
   font-weight: bolder;
   display: inline-block;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
-}
+} */
 
 .login_ear {
   position: relative;
@@ -68,7 +69,7 @@ page{
 
 .mima_ear {
   position: relative;
-  margin: 50rpx 50rpx 0rpx 50rpx;
+  margin: 20rpx 50rpx 0rpx 50rpx;
   font-size: 30rpx;
   border-bottom: 1px solid #ff54b5;
   padding-bottom: 17rpx;

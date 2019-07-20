@@ -39,6 +39,8 @@ Page({
     ServerData.verifyCode(_opt).then((res) => {
       if(res.data.status==1){
         settime(that)
+      }else{
+        ServerData._wxTost(res.data.msg)
       }
       console.log(res)
     });
@@ -58,11 +60,11 @@ Page({
       }
     ServerData._register(_opt).then((res) => {       //保存注册信息
       wx.removeStorageSync('token')
+      wx.removeStorageSync('savePostion')
       if (res.data.status == 1) {
-        // settime(that)
         wx.setStorageSync('token', res.data.data.token);
-        //跳转 3 跳转到个人信息录入 ，不是3就跳转到企业信息录入
-        if(type==3){
+        wx.setStorageSync('savePostion', type);
+        if (type == 3) {                               //跳转 3 跳转到个人信息录入 ，不是3就跳转到企业信息录入
           wx.redirectTo({
             url: '../personalMessage/personalMessage'
           })
@@ -75,6 +77,8 @@ Page({
           })
         }
         //跳转
+      }else{
+        ServerData._wxTost(res.data.msg)
       }
       // console.log(res.data.data.token)
     });

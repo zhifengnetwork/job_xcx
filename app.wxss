@@ -139,7 +139,7 @@ page{
  justify-content: center;
  display: flex;
  flex-direction: row;
- color:rgb(54, 193, 186);
+ color:#ff54b5;
  font-size: 30rpx;
  background-color: #fff;
 }
@@ -151,3 +151,52 @@ background-color:#B9DAF7;
 line-height:48rpx;
 box-sizing: border-box;
 }
+
+
+/* login style */
+.log_ear {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.xiaolian {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.welecom_title {
+  font-size: 32rpx;
+  font-weight: bolder;
+  display: inline-block;
+  width: 100%;
+  padding-top: 20rpx;
+  text-align: center;
+  letter-spacing: 4rpx
+}
+.mima_ear {
+  margin:20rpx 50rpx 0rpx 50rpx;
+  font-size:30rpx;
+  border-bottom:1px solid #ff54b5;
+  padding-bottom:17rpx;
+  display:flex;
+
+}
+
+/* .login_ear {
+  position: relative;
+  margin: 100rpx 50rpx 0rpx 50rpx;
+  font-size: 36rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 1px solid #ff54b5;
+} */
+
+/* .qianzui {
+  color: #ff54b5;
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  padding-bottom: 15rpx;
+  bottom: 0rpx;
+} */
