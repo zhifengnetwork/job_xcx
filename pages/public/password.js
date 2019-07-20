@@ -8,11 +8,34 @@ Page({
   data: {
     pColor: '',                          //动态获取字体颜色
     pBgC: '',                            //动态获背景颜色                 
-    pBC1: ''                             //动态获边框颜色   
+    pBC1: '',                             //动态获边框颜色   
+    pswd:'',
+    pswd2:''
   },
   saveInfo: function () {
-    wx.navigateTo({
-      url: '../login/login'
+    var _opt={
+      'password1': this.data.pswd,
+      'password2': this.data.pswd2
+    }
+    ServerData.editPassword(_opt).then((res) => {
+        if (res.data.status == 1) {
+            wx.navigateTo({
+              url: '../login/login'
+            })
+        } else {
+          ServerData._wxTost(res.data.msg)
+        }
+    });
+  },
+  getPassword(e){
+    this.setData({
+        pswd: e.detail.value,
+    })
+  },
+  getPassword2(e) {
+    this.setData({
+      pswd2: e.detail.value,
+
     })
   },
 
