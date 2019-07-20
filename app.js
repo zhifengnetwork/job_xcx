@@ -80,6 +80,7 @@ App({
     });
   },
   globalData: {
+    baseUrl:'https://zhaopin.zhifengwangluo.cn/api',
     savePostion:0,
     userInfo: null,
     statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
