@@ -58,31 +58,41 @@
         <image class='-pic-stat' src='../../../static/images/public/star.png'></image>
         <text>上传营业执照(必填)</text>
       </view>
-      <view class='card-top'>
-        <block wx:for="{{tempFilePaths}}" wx:key="{{index}}">
-          <image class='card-top' src="{{item }}" data-index="{{index}}"/>
+      <!-- -->
+      <view class='id-card-top' bindtap='addIdCardPic'>
+        <block>
+          <image class='card-top' mode='aspectFit' src="{{icCardPic.src}}" data-index="{{index}}"/>
         </block>
-        <view class='addpic_wrap' bindtap="upload" hidden="{{hiddenName}}">
+        <view class='-add-img-' wx:if="{{icCardPic.hiddenName}}">
           <image class='addPic' bindtap='addPosPic' src='../../../static/images/public/plus.png'></image>
           <text>营业执照</text>
         </view>
       </view>
-
+      <!-- -->
     </view>
+
     <!-- 上传其他资料 -->
     <view class='idPic'>
       <view class='-pic-subtitle'>其他资料(选填)</view>
-      <view wx:for="{{pics}}">
-        <view class='id-card-top'>
-          <image src='{{item}}' data-src="{{item}}"></image>
+      <!-- -->
+      <view  wx:for="{{pics}}" wx:key="{{index}}">
+        <view class='id-card-top' bindtap='addWordPic' data-id="{{index}}">
+          <block>
+            <image class='card-top' mode='aspectFit' src="{{item.src}}" data-index="{{index}}"/>
+          </block>
+          <view class='-add-img-' wx:if="{{item.hiddenName}}">
+            <image class='addPic2' src='../../../static/images/public/plus.png'></image>
+          </view>
         </view>
       </view>
-      <view class='file-inner' bindtap='chooseImage'>
+      <!-- -->
+      <view class='file-inner' bindtap='addImgBox'>
         <button class='file-btn'></button> 
         <image class='f-plus-' src='../../../static/images/public/plus.png'/>
       </view>
     </view>
     <view class='a-more-pic'>添加一张</view>
+    <!-- 上传其他资料结束 -->
   </view>
   <button class='option user-bg-' bindtap='saveInfo'>提交</button>
 </view>

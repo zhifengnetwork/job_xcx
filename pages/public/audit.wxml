@@ -6,6 +6,6 @@
       <text class='m-r35'>请等待审核</text>
       <text>审核时间1个工作日</text>
     </view>
-    <navigator url='../login/login'><button class='set-option user-bg'>完成</button></navigator>
+    <navigator url='../login/login'><button class='set-option user-bg-'>完成</button></navigator>
   </view>
 </view>

@@ -63,7 +63,7 @@ Page({
       wx.removeStorageSync('savePostion')
       if (res.data.status == 1) {
         wx.setStorageSync('token', res.data.data.token);
-        wx.setStorageSync('savePostion', type);
+
         if (type == 3) {                               //跳转 3 跳转到个人信息录入 ，不是3就跳转到企业信息录入
           wx.redirectTo({
             url: '../personalMessage/personalMessage'

@@ -16,7 +16,6 @@ Page({
     mobile:''
   },
   getMobile:function(e){
-    console.log(1)
     var color= '#ccc';
     this.data.input1text = ''
     if (e.detail.value != '') {
@@ -71,9 +70,12 @@ Page({
       'password': password
     }
     ServerData.toLogin(_opt).then((res) => {          //请求数据
+      wx.removeStorageSync('token')
+      wx.removeStorageSync('savePostion')
       if (res.data.status == 1) {
+          var type = res.data.data.regtype
           wx.setStorageSync('token', res.data.data.token);
-          var type = wx.getStorageSync('savePostion');
+          wx.setStorageSync('savePostion', type);
           console.log(type)
           console.log(res)
           if (type == 3) {
@@ -99,11 +101,15 @@ Page({
       } else {
         ServerData._wxTost(res.data.msg)
       }
-    });
-
-
-      
+    });  
   },
+  visitorLogin(){
+    wx.redirectTo({         //跳转至首页
+        url: '../index/index'
+    })
+    wx.setStorageSync('savePostion', 0);
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

@@ -129,6 +129,7 @@ Page({
       all: all
     });
   },
+  
   onLoad: function (options) {
   },
   addIdCardPic:function(e){   //身份证上传

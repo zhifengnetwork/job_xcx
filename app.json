@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/thirdParty/uCollect",
+        "pages/login/login",
     "pages/register/fillInInformation/fillInInformation",
+
     "pages/company/uCollect",
     "pages/personalMessage/personalMessage",
     "pages/userInfo/userCenter",

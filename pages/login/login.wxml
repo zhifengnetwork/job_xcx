@@ -20,13 +20,13 @@
   </view>
   <view>
     <button class="denglu" style="background:{{color}}" bindtap="toLogin">登录</button>
-    <navigator url='../register/register' class="resigt" bindtap='resister'>注册</navigator>
-    <navigator url='../forgetpassword/forgetpassword' class="forget" bindtap='forget'>忘记密码</navigator>
+    <view class="resigt" bindtap='resister'>注册</view>
+    <view class="forget" bindtap='forget'>忘记密码</view>
   </view>
-  <navigator class='order' url='../index/index'>
+  <view class='order' bindtap='visitorLogin'>
       <image class="footPrint-ico" src='../../static/images/public/footPrint.png'/>
       <text>游客入口</text>
       <image class="footPrint-ico2" src='../../static/images/public/right_arrow_gray.png'/>
-  </navigator>
+  </view>
 </view>
 
