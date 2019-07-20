@@ -16,6 +16,7 @@ Page({
     mobile:''
   },
   getMobile:function(e){
+    console.log(1)
     var color= '#ccc';
     this.data.input1text = ''
     if (e.detail.value != '') {
