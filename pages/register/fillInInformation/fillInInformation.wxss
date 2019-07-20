@@ -70,6 +70,95 @@
   width: 17rpx;
   height: 21rpx;
 }
+.id-card-top{
+  width:500rpx;
+  height: 260rpx;
+  padding:20rpx 10rpx;
+  margin: 30rpx auto;
+  position: relative;
+  background:#dadada;
+}
+.-add-img-{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.big-pic{
+    width:500rpx;
+    height: 260rpx;
+    position: absolute;
+}
+.addPic{
+  width:68rpx;
+  height: 68rpx;
+  position: relative;
+  top: 50rpx;
+  left: 50%;
+  margin-left:-34rpx;
+}
+.addPic2{
+  position:absolute;
+  top: 50%;
+  left:50%;
+  margin:-34rpx 0 0 -34rpx;
+  width:68rpx;
+  height: 68rpx;
+}
+.addTextBox{
+  width: 496rpx;
+  height: 50rpx;
+	border-radius: 6rpx;
+  border: solid 2rpx #dadada;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 12rpx;
+  font-size: 26rpx;
+}
+.id-card-top text,.id-card-bottom text{
+  text-align: center;
+  display: block;
+  position: relative;
+  top: 70rpx;
+}
+.id-card-top image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.card-top {
+  width:500rpx;
+  height: 260rpx;
+  background:#dadada;
+}
+
+.area_select {
+	width: 100%;
+	display: block;
+}
+.a-more-pic{
+  text-align: center;
+  font-size:28rpx;
+  color: #151515;
+  margin:20rpx 0 39rpx;
+}
+
+/* .idPic{
+  width: 100%;
+  height: auto;
+  font-size:28rpx;
+  color: #151515;
+}
+.-pic-subtitle{
+  margin: 20rpx 0 28rpx;
+  text-align: center;
+}
+.-pic-stat{
+  width: 17rpx;
+  height: 21rpx;
+}
 
 .id-card-top,.id-card-bottom{
   width:500rpx;
@@ -128,7 +217,7 @@
   font-size:28rpx;
   color: #151515;
   margin:20rpx 0 39rpx;
-}
+} */
 /*点击上传身份证部分 e*/
 .file-inner{
   position: relative;
