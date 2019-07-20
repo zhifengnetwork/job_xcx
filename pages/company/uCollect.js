@@ -14,9 +14,15 @@ Page({
   onLoad: function (options) {
       var that = this;
       wx.request({
+        method: 'POST',
         url: 'collection/collection_list',
         data:{
-
+          // wx.getStorageSync('token');
+          x: '',
+          y: ''
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
         },
         success: function (res) {
           console.log(res)

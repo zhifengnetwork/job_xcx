@@ -1,12 +1,6 @@
 {
   "pages": [
-<<<<<<< HEAD
     "pages/company/uCollect",
-    "pages/login/login",
-    "pages/information/information",
-    "pages/index/index",
-=======
->>>>>>> 5480b75cd1b14e0bd2994a9a81825db6d5f0148f
     "pages/personalMessage/personalMessage",
     "pages/register/register",
     "pages/userInfo/editInfo",
@@ -49,12 +43,7 @@
     "pages/company/editInfo",
     "pages/company/myReserve",
     "pages/company/postJobPostings",
-<<<<<<< HEAD
-    "pages/company/company",
     
-=======
-    "pages/company/uCollect",
->>>>>>> 5480b75cd1b14e0bd2994a9a81825db6d5f0148f
     "pages/company/publish",
     "pages/userInfo/myPurse/goldDeposits",
     "pages/userInfo/myPurse/withdrawal",
