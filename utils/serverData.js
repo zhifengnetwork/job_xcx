@@ -121,6 +121,9 @@ class ServerData {
   theDetails(_data, complete) {                      // 公司职位详情
     return this._promise_post(_data, api.userAPI.theDetails, complete);
   }
+  Ucollect(_data, complete) {                      // 收藏列表
+    return this._promise_post(_data, api.userAPI.Ucollect, complete);
+  }
 
   // 轻提示
   _wxTost(msg) {
