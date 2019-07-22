@@ -154,7 +154,7 @@ class ServerData {
 	Ucollect(_data, complete) {
 		return this._promise_post(_data, api.userAPI.Ucollect, complete);
 	}
-	// 取消收藏
+	// 收藏/取消收藏
 	collection(_data, complete) {
 		return this._promise_post(_data, api.userAPI.collection, complete);
 	}
