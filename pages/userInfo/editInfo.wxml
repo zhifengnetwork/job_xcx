@@ -4,12 +4,12 @@
     <view class='edit-cont'>
       <view class='e-info-'>
         <text class='e-info-msg'>姓名：</text>
-        <input type='text' class='e-info-inp' placeholder='输入姓名'/>
+        <input type='text' class='e-info-inp' bindinput='getName' placeholder='输入姓名'/>
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>性别：</text>
         <view class='e-info-radio'>
-          <radio-group class="radio-group"bindchange="radioChange">
+          <radio-group class="radio-group" bindchange="radioChange">
               <label class="radio" wx:for="{{items}}">
                 <radio style="zoom:.6" color="#ff54b5" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
               </label>
@@ -18,15 +18,15 @@
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>年龄：</text>
-        <input type='text' class='e-info-inp' placeholder='输入年龄'/>
+        <input type='text' class='e-info-inp' bindinput='getOld'  placeholder='输入年龄'/>
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>民族：</text>
-        <input type='text' class='e-info-inp' placeholder='输入民族'/>
+        <input type='text' class='e-info-inp' bindinput='getMZ' placeholder='输入民族'/>
       </view>    
       <view class='e-info-'>
         <text class='e-info-msg'>工龄：</text>
-        <input type='text' class='e-info-inp' placeholder='输入工龄'/>
+        <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder='输入工龄'/>
       </view>    
     </view>
     <image class='edit-img-' src='../../static/images/public/big_portrait.png'/>
@@ -37,9 +37,10 @@
         <text>求职类型</text>
         <!-- <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/> -->
         <view class='-list-pays' value="{{jobIndex}}">
-          <picker value="{{jobIndex}}" range="{{jobArray}}" bindchange="jobChange">
+          <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name">
+          {{jobArray.cat_name}}
             <view class="picker">
-              {{jobArray[jobIndex]}} 
+              {{jobArray[jobIndex].cat_name}} 
               <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
             </view>
           </picker>
@@ -73,7 +74,7 @@
           </view>
           <view class='tex-wrap' wx:if="{{work}}">
              <textarea class="texa" placeholder='请输入工作经历' bindinput="saveWork"></textarea>
-             <button class='tex-btn' bindtap='saveInfo'>保存</button>
+             <!-- <button class='tex-btn' bindtap='saveInfo'>保存</button> -->
           </view>
       </view>
       <view>
@@ -86,12 +87,12 @@
           </view>
           <view class='tex-wrap' wx:if="{{aducational}}">
              <textarea class="texa" placeholder='请输入工作经历'  bindinput="saveAducational"></textarea>
-             <button class='tex-btn' bindtap='saveInfo'>保存</button>
+             <!-- <button class='tex-btn' bindtap='saveInfo'>保存</button> -->
           </view>
       </view>
   </view>
   <!-- -->
-  <textarea class="texa1" placeholder='个人说明'></textarea>
+  <textarea class="texa1" placeholder='个人说明' bindinput='getExplain'></textarea>
   <!--footer -->
   <view class='line-heig'></view>
   <view class='set-option-1'><button class='s-1-option' bindtap='saveEditInfo'>保存</button></view>

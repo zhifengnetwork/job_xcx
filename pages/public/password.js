@@ -19,19 +19,17 @@ Page({
       'password2': this.data.pswd2
     }
     ServerData.editPassword(_opt).then((res) => {
-        if (res.data.status == 1) {
-            wx.navigateTo({
-              url: '../login/login'
-            })
-        } else {
-          // ServerData._wxTost(res.data.msg)
-        }
+      if (res.data.status == 1 || res.data.status == -1) {
+        console.log(res)
+        wx.navigateTo({
+          url: '../login/login'
+        })
+      } 
+      ServerData._wxTost(res.data.msg)
     });
   },
   getPassword(e){
-    this.setData({
-        pswd: e.detail.value,
-    })
+    this.setData({pswd: e.detail.value,})
   },
   getPassword2(e) {
     this.setData({

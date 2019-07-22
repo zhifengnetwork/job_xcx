@@ -1,13 +1,18 @@
 // pages/userInfo/withdrawal.js
+import ServerData from '../../../utils/serverData.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    saveStatus: 0,
-    num: 0
+    saveStatus: 2,                      //支付类型 2 微信、4支付宝
+    info: {},
+    sxf:0,                              // 手续费   
+    txmoney:'',                         // 提现金额
+    num: 2                              // 支付宝账户框
   },
+
 
   changWithdrawal: function (e) {
     var status = e.currentTarget.dataset.status;
@@ -34,7 +39,66 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getWithdrawal()
+  },
+  getMoney(e){
+    // console.log(e)
+    var t = e.detail.value
+    var sxf = new Number(this.data.info.percent/100) * new Number(e.detail.value).toFixed(2)
+    console.log(this.data.info.percent)
+    this.setData({ txmoney: e.detail.value, sxf: sxf })
+  },
+  getWithdrawal(){
+      var that =this
+      ServerData.goWithdrawal({}).then((res) => {
+        if(res.data.status==1){
+          that.setData({
+             info: res.data.data
+          })
+        } else if (res.data.status == -1){
+            wx.redirectTo({
+              url: '../login/login'
+            })
+        }else{
+          ServerData._wxTost(res.data.msg)
+        }
+        
+        console.log(res)
+      })
+  },
 
+  setInfo(){
+    var that = this
+    if (that.data.txmoney > that.data.info.max_money) {
+      return ServerData._wxTost('单笔提现金额不能大于' + that.data.info.max_money)
+    }
+    if (that.data.txmoney == "") { return ServerData._wxTost('请输入提现金额')}
+    var _opt ={
+      'pay_tpye': that.data.saveStatus,
+      'money': that.data.txmoney,
+      'alipay': that.data.info.alipay,
+      'alipay_name': that.data.info.alipay_name,
+
+    }
+    ServerData.withdrawal(_opt).then((res) => {
+      if (res.data.status == 1) {
+        // that.setData({
+        //   info: res.data.data
+        // })
+          ServerData._wxShowLoading(res.data.msg)
+      
+
+
+      } else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+
+      console.log(res)
+    })
   },
 
   /**
