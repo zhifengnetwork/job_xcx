@@ -102,6 +102,9 @@ class ServerData {
   fsCode(_data, complete) {                      //发送验证码
     return this._promise_get(_data, api.userAPI.fsCode, complete);
   } 
+  reqIndex(_data, complete) {                      //首页
+    return this._promise_get(_data, api.indexAPI.reqIndex, complete);
+  } 
 
   forgetPawd(_data, complete) {                      //找回密码
     return this._promise_post(_data, api.userAPI.forgetPawd, complete);
@@ -117,6 +120,9 @@ class ServerData {
 
   theDetails(_data, complete) {                      // 公司职位详情
     return this._promise_post(_data, api.userAPI.theDetails, complete);
+  }
+  Ucollect(_data, complete) {                      // 收藏列表
+    return this._promise_post(_data, api.userAPI.Ucollect, complete);
   }
 
   // 轻提示

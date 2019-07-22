@@ -1,33 +1,32 @@
 // pages/company/uCollect.js
+import ServerData from '../../utils/serverData.js';
+const app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    UcData:[]
+  },
+  Ucollect:function() {
+    var that = this
+    ServerData.Ucollect({}).then((res) => {
+      console.log(res)
+      var page = this;
+      if(res.data.status == 1){
+        page.setData({
+          UcData: res.data.data
+        });
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      var that = this;
-      wx.request({
-        method: 'POST',
-        url: 'collection/collection_list',
-        data:{
-          // wx.getStorageSync('token');
-          x: '',
-          y: ''
-        },
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
-        success: function (res) {
-          console.log(res)
-        }
-      })
+      
   },
 
   /**
@@ -41,7 +40,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.Ucollect();
   },
 
   /**

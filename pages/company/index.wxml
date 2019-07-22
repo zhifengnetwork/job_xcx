@@ -47,7 +47,7 @@
                         <view class='company-status company-bg-'>无需证书</view>
                     </view>
                 </navigator>
-                <navigator url="../company/postionDetail" class='c-l-info'>
+                <navigator url="../company/postionDetail?id={{1}}" class='c-l-info'>
                     <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
                     <view class='c-info-text'>
                       <text class='c-info-title'>皮革厂包装人员</text>
