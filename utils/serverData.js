@@ -87,19 +87,19 @@ class ServerData {
   }
 
 
-  verifyCode(_data, complete) {                   //注册验证码
+  verifyCode(_data, complete) {                     //注册验证码
     return this._promise_get(_data, api.userAPI.verifyCode, complete);
   } 
-  _register(_data, complete) {                    //注册
+  _register(_data, complete) {                      //注册
     return this._promise_post(_data, api.userAPI.register, complete);
   }
-  _registerUserInfo(_data, complete) {            //个人信息注册
+  _registerUserInfo(_data, complete) {              //个人信息注册
     return this._promise_post(_data, api.userAPI.registerUserInfo, complete);
   }
-  toLogin(_data, complete) {                      //登陆
+  toLogin(_data, complete) {                        //登陆
     return this._promise_get(_data, api.userAPI.login, complete);
   } 
-  fsCode(_data, complete) {                      //发送验证码
+  fsCode(_data, complete) {                         //发送验证码
     return this._promise_get(_data, api.userAPI.fsCode, complete);
   } 
   reqIndex(_data, complete) {                      //首页
@@ -113,7 +113,24 @@ class ServerData {
   uploadFile(_data, complete) {                      //上传文件
     return this._uploadFile_(_data, api.userAPI.uploadFile, complete);
   } 
+  helpExp(_data, complete) {                      //帮助与反馈
+    return this._promise_post(_data, api.userAPI.helpExp, complete);
+  } 
 
+  privacySetting(_data, complete) {                      //隐私设置
+    return this._promise_post(_data, api.userAPI.privacySetting, complete);
+  } 
+
+  changPSetting(_data, complete) {                      //隐私设置操作
+    return this._promise_post(_data, api.userAPI.changPSetting, complete);
+  } 
+
+  editMobile(_data, complete) {                      //修改手机号
+    return this._promise_post(_data, api.userAPI.editMobile, complete);
+  } 
+  editPassword(_data, complete) {                      //修改手机号
+    return this._promise_post(_data, api.userAPI.password, complete);
+  } 
   collection(_data, complete) {                      // 收藏/取消收藏
     return this._promise_post(_data, api.userAPI.collection, complete);
   } 
@@ -133,5 +150,14 @@ class ServerData {
       duration: 1000
     })
   }
+  _zzVerifyMobile(obj) {                        //11位电话号码
+    var reg = /^1[3|4|5|7|8|9][0-9]{9}$/;
+    return reg.test(obj);
+  }
+  _zzVerifyPhone(obj) {                         //固话
+    var reg = /^0\d{2,3}-?\d{7,8}$/;
+    return reg.test(obj);
+  }
+
 }
 export default new ServerData();

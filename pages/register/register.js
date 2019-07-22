@@ -62,22 +62,23 @@ Page({
       wx.removeStorageSync('token')
       wx.removeStorageSync('savePostion')
       if (res.data.status == 1) {
-        wx.setStorageSync('token', res.data.data.token);
-
-        if (type == 3) {                               //跳转 3 跳转到个人信息录入 ，不是3就跳转到企业信息录入
+          wx.setStorageSync('token', res.data.data.token);
+          if (type == 3) {                               //跳转 3 跳转到个人信息录入 ，不是3就跳转到企业信息录入
+              wx.redirectTo({
+                url: '../personalMessage/personalMessage'
+              })
+          } else {
+              wx.redirectTo({
+                url: '../register/fillInInformation/fillInInformation'
+              })
+          }
+      }
+      else if (res.data.status == -1) {             //注册过/token 过期
           wx.redirectTo({
-            url: '../personalMessage/personalMessage'
+            url: '../login/login'
           })
-            // wx.navigateTo({
-            //   url: '../personalMessage/personalMessage'
-            // })
-        } else {
-          wx.redirectTo({
-            url: '../personalMessage/personalMessage'
-          })
-        }
-        //跳转
-      }else{
+      }
+      else{
         ServerData._wxTost(res.data.msg)
       }
       // console.log(res.data.data.token)

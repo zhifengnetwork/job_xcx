@@ -3,20 +3,20 @@
   <view class='setting-list'>
     <text>允许预定</text>
     <view class="body-view">
-      <switch checked bindchange="switch1Change" style="zoom:.6" color="#ff54b5" width="66rpx"/>
+      <switch checked="{{item.reserve==1}}" bindchange="switch1Change" style="zoom:.6" data-index="1" color="#ff54b5" width="66rpx"/>
     </view>
   </view>
   <view class='setting-list'>
     <text>上架简历</text>
     <view class="body-view">
-      <switch checked bindchange="switch1Change" style="zoom:.6" color="#ff54b5" width="66rpx"/>
+      <switch checked="{{item.shelf==1}}" bindchange="switch1Change" style="zoom:.6" data-index="2" color="#ff54b5" width="66rpx"/>
     </view>
   </view>
   <view class='setting-list'>
     <text>是否推送我的简历</text>
     <view class="body-view">
-      <switch bindchange="switch1Change" style="zoom:.6" color="#ff54b5" width="66rpx"/>
+      <switch checked="{{item.pull==1}}" bindchange="switch1Change" style="zoom:.6" data-index="3" color="#ff54b5" width="66rpx"/>
     </view>
   </view>
-  <button class='set-option'>保存</button>
+  <!-- <button class='set-option'>保存</button> -->
 </view>
