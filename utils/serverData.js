@@ -124,7 +124,10 @@ class ServerData {
   Ucollect(_data, complete) {                      // 收藏列表
     return this._promise_post(_data, api.userAPI.Ucollect, complete);
   }
-
+  // 个人查看公司发布的职位详情
+  personalDetails(_data, complete) {                      
+    return this._promise_post(_data, api.userAPI.personalDetails, complete);
+  }
   // 轻提示
   _wxTost(msg) {
     wx.showToast({

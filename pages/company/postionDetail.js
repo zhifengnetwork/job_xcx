@@ -18,11 +18,11 @@ Page({
   // 收藏/取消收藏
   Oncollection:function() {
     var that = this,  
-    type = wx.getStorageSync('savePostion'), 
+    // type = wx.getStorageSync('savePostion'), 
     Id = that.data.Id;
     // 要传给后台的参数
     var _opt = { 
-      'type':type,
+      'type':2,
       'to_id':Id
     }
     ServerData.collection(_opt).then((res) => {

@@ -9,13 +9,13 @@ Page({
   data: {
     UcData:[]
   },
+  // 收藏列表数据接口
   Ucollect:function() {
     var that = this
     ServerData.Ucollect({}).then((res) => {
       console.log(res)
-      var page = this;
       if(res.data.status == 1){
-        page.setData({
+        this.setData({
           UcData: res.data.data
         });
       }
