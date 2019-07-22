@@ -4,11 +4,16 @@
     <!-- <view class='title'>个人中心</view> -->
     <view class='content-list'>
       <view class='c-l-info'>
-          <image src='../../static/images/public/big_portrait.png'class="c-logo" />
+          <navigator url='headPortrait'><image src='{{info.avatar}}'class="c-logo" /></navigator>
           <view class='c-info-text'>
-            <text class='c-info-title'>周翔</text>
-            <view class='c-msg m-b10'>个人用户</view>
-            <view class='c-msg m-b10'>企业编号：007</view>
+            <text class='c-info-title'>{{info.name}}</text>
+            <view class='c-msg m-b10'>用户ID:{{info.id}}</view>
+            <view class='c-msg m-b10'> 
+                实名认证
+                <text wx:if="{{info.status=== 0}}">未认证</text>
+                <text wx:if="{{info.status=== 1}}">认证</text>
+                <text wx:if="{{info.status=== -1}}">拒绝认证</text>
+            </view>
           </view>
           <!-- company info start -->
       </view>

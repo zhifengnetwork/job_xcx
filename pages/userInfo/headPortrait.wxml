@@ -1,0 +1,16 @@
+<!--pages/userInfo/headPortrait.wxml-->
+<view id='header-pic' class='header-pic'>
+    <view class='-pic-subtitle'>
+      <text>上传头像</text>
+    </view>
+    <!-- -->
+    <view class='id-card-top' bindtap='addIdCardPic'>
+      <block>
+        <image class='card-top' mode='aspectFit' src="{{icCardPic.src}}" data-index="{{index}}"/>
+      </block>
+      <view class='-add-img-' wx:if="{{icCardPic.hiddenName}}">
+        <image class='addPic' bindtap='addPosPic' src='../../static/images/public/plus.png'></image>
+      </view>
+    </view>
+    <button class="set-option user-bg-" bindtap='saveHeaderPic'>保存</button>
+</view>

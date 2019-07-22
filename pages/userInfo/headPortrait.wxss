@@ -1,0 +1,44 @@
+/* pages/userInfo/headPortrait.wxss */
+@import "../template/common";
+.idPic{
+  width: 100%;
+  height: auto;
+  font-size:28rpx;
+  color: #151515;
+}
+.-pic-subtitle{
+  margin: 20rpx 0 28rpx;
+  text-align: center;
+}
+.-pic-stat{
+  width: 17rpx;
+  height: 21rpx;
+}
+.id-card-top{
+  width:90%;
+  height:500rpx;
+  padding:20rpx 10rpx;
+  margin: 60rpx auto;
+  position: relative;
+  /* background:#dadada; */
+}
+.-add-img-{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.big-pic{
+    width:500rpx;
+    height: 260rpx;
+    position: absolute;
+}
+.addPic{
+  width:68rpx;
+  height: 68rpx;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin:-34rpx 0 0 -34rpx;
+}

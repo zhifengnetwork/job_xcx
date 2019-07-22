@@ -1,0 +1,15 @@
+/* pages/userInfo/search.wxss */
+@import "../template/common";
+
+search-cont {
+width:580rpx;
+/* margin:0 40rpx 0 24rpx; */
+
+}
+.inner-cont{
+  /* width: 100%; */
+  padding-top: 150rpx;
+}
+.login_tab{
+  font-size: 28rpx;
+}
