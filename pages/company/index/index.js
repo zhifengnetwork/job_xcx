@@ -1,8 +1,10 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const util = require('../../utils/util.js');  //通用方法
-import ServerData from '../../utils/serverData.js';
+
+const util = require('../../../utils/util.js');  //通用方法
+import ServerData from '../../../utils/serverData.js';
+
 Page({
 	data: {
 		mode: "scaleToFill",
