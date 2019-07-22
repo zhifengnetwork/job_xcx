@@ -1,18 +1,4 @@
-.w-bold{
-  font-weight: bold;
-}
-.m-r20{
-  margin-right: 20rpx;
-}
-.m-r10{
-  margin-right: 10rpx;
-}
-.m-b22{
-  margin-bottom: 22rpx;
-}
-.m-b45{
-  margin-bottom: 45rpx;
-}
+@import '../template/common';
 #wrap{
   background:#f8f8f8;
   font-size:26rpx;
@@ -28,6 +14,7 @@
   margin: 25rpx 0 10rpx;
   display: flex;
   line-height: 48rpx;
+  align-items: center
 }
 .s-left-arrow{
   flex: 0 0 1;
@@ -48,7 +35,6 @@
 }
 .search{
    width:100%;
-   border:1px solid #ff54b5;
    border-radius: 28px;
    height:60rpx;
    padding-left:80rpx;
@@ -62,7 +48,7 @@
   height:20rpx;
   position:absolute;
   left:45rpx;
-  top:19rpx;
+  top:30rpx;
 }
 .collect_tab{
   display: inline-block;
@@ -75,7 +61,7 @@
 /* CONTENT STAT */
 .d-content{
   width: 100%;
- 
+  position: relative;
 }
 .d-c-list{
   overflow: hidden;
@@ -91,9 +77,15 @@
 .c-list-portrait{
    width: 150rpx;
    height: 150rpx;
-   margin-left:auto;
+   border-radius: 50%;
+   overflow: hidden;
+   position: absolute;
+   right: 20rpx;
+   top: 20rpx;
 }
-
+.c-list-portrait img{
+  width: 100%;
+}
 /* FOOTER START */
 .footer{
   position: fixed;
@@ -113,12 +105,8 @@
   font-size:28rpx;
   /* border:2rpx solid #25bbb3 */
 }
-.footer .f-btn-1{
+/* .footer .f-btn-1{
   margin-right:30rpx; 
-  background:#ff54b5;
+  background:#25bbb3;
   color:#fff;
-}
-.footer .f-btn-2{
-  color: #ff54b5;
-  border:2rpx solid #ff54b5
-}
+} */
