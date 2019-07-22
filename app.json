@@ -25,6 +25,8 @@
     "pages/company/index",
     "pages/index/index",
     "pages/userInfo/index",
+
+    
     "pages/thirdParty/thirdInfo",
     "pages/thirdParty/option/setting",
     "pages/thirdParty/myPurse/goldDeposits",
