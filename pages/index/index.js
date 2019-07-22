@@ -10,7 +10,7 @@ Page({
 	data: {
 		mode: "scaleToFill",
 		statusBarHeight: app.globalData.statusBarHeight,
-		indexData:[],//首页数据
+		indexData:[],//游客首页数据
 		indicatorDots: true,
 		autoplay: true,
 		interval: 3000,

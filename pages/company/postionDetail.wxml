@@ -6,7 +6,7 @@
       <image class="search_icon" src='../../static/images/public/search_icon.png'></image>
     </view>
     <!-- <navigator> -->
-      <text bindtap="Oncollection" class='collect_tab'>收藏</text>
+      <text bindtap="onCollection" class='collect_tab'>收藏</text>
     <!-- </navigator> -->
   </view>
   <view class='inner'>
@@ -14,23 +14,26 @@
     <view class='d-content'>
         <view class="d-c-list">
           <view class='c-list-info'>
-            <view class='w-bold m-b22'>{{theDetails.title}}</view>
+            <view class='w-bold m-b22'>{{recruitDetail.title}}</view>
             <view class='m-b22'>
-                <text class='m-r20'>月薪{{theDetails.salary}}元</text>
+                <text class='m-r20'>月薪{{recruitDetail.salary}}元</text>
                 <text class='m-r10'>10:30 - 12:30</text>
             </view>
             <view class='m-b22'>公司招聘</view>
             <view class='m-b22'>
-                <text class='m-r20'>{{theDetails.work_age}}</text>
+                <text class='m-r20'>{{recruitDetail.work_age}}年经验</text>
                 <text class='m-r10'>男</text>
                 <text class='m-r10'>18-50岁</text>
             </view>
             <view class='m-b22'>包装二级证书</view>
-            <view>{{theDetails.province}}{{theDetails.city}}{{theDetails.district}}{{theDetails.company_name}}</view>
+            <view>{{recruitDetail.province}}{{recruitDetail.city}}{{recruitDetail.district}}{{recruitDetail.company_name}}</view>
           </view>
-          <image src='{{theDetails.logo}}' class='c-list-portrait'/>
-        </view>
-        <view class="d-c-list">
+          <view class='c-list-portrait'>
+			  <image src='{{recruitDetail.logo}}'/>
+		  </view>
+		</view>
+		
+        <!-- <view class="d-c-list">
           <view class='c-list-info'>
             <view class='w-bold m-b22'>个人介绍</view>
             <view class='m-b22'>包午餐</view>
@@ -38,8 +41,9 @@
             <view class='w-bold m-b22'>工作经验</view>
             <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view>
           </view>
-          <!-- <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/> -->
-        </view>
+          <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/>
+		</view> -->
+		
     </view>
     <view class='footer'>
         <!-- <button class='f-btn-1' bindtap="callWithHim">马上预订</button> -->

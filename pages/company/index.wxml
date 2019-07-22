@@ -19,7 +19,7 @@
         <view class='banner'>
             <swiper indicator-dots="{{indicatorDots}}" 
                     autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true"           indicator-active-color="#ff54b5"> 
-                  <block wx:for="{{arr}}" wx:key> 
+                  <block wx:for="{{indexData.ad}}" wx:key> 
                     <swiper-item style="border-radius: 10rpx;"> 
                         <image src="../../static/images/index/banner.jpg" class="slide-image"/> 
                     </swiper-item> 
@@ -31,9 +31,30 @@
                 <view class='c-title'>
                     <image src='../../static/images/public/h_pop.png' class='c-flame'/>
                     <text>建筑企业</text>
-                </view>
-                <navigator url="postionDetail" class='c-l-info'>
-                    <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+				</view>
+				
+				<block wx:for="{{indexData.recruit}}"  wx:key="index">
+					<navigator url='../company/postionDetail?id={{item.id}}'>
+						<view class='c-l-info'>
+						<!-- <view class='c-l-info' bindtap='jumpDetails' data-id='{{item.id}}'> -->
+							<image src='{{item.logo}}' class="c-logo" />
+							<view class='c-info-text'>
+								<text class='c-info-title'>{{item.title}}</text>
+								<view class='c-info-msg'>
+								<text class='c-msg'>月薪{{item.salary}}元</text>
+								<text class='c-msg2'>{{item.work_age}}年以上</text>
+								</view>
+							</view>
+							<view class='company-info'>
+								<text>{{item.regtype == 1 ? "公司":"第三方"}}</text>
+								<view class='company-status'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
+							</view>
+						</view>
+				  	</navigator>
+                </block>
+
+                <!-- <navigator url="postionDetail" class='c-l-info'>
+                    <image src='../../static/images/public/c_logo.jpg' class="c-logo" />
                     <view class='c-info-text'>
                       <text class='c-info-title'>皮革厂包装人员</text>
                       <view class='c-info-msg'>
@@ -41,7 +62,6 @@
                         <text class='c-msg2'>1年以上</text>
                       </view>
                     </view>
-                    <!-- company info start -->
                     <view class='company-info'>
                         <text>公司</text>
                         <view class='company-status company-bg-'>无需证书</view>
@@ -56,7 +76,6 @@
                         <text class='c-msg2'>1年以上</text>
                       </view>
                     </view>
-                    <!-- company info start -->
                     <view class='company-info'>
                         <text>公司</text>
                         <view class='company-status company-bg-'>无需证书</view>
@@ -71,20 +90,36 @@
                         <text class='c-msg2'>1年以上</text>
                       </view>
                     </view>
-                    <!-- company info start -->
                     <view class='company-info'>
                         <text>公司</text>
                         <view class='company-status company-bg-'>无需证书</view>
                     </view>
-                </navigator>
+                </navigator> -->
             </view>
             <!-- Latest job search start -->
             <view class='content-list'>
                 <view class='c-title'>
                     <image src='../../static/images/public/xi_pop.png' class='c-flame'/>
                     <text>专业人才</text>
-                </view>
-                <navigator url="../userInfo/postionDetail" class='c-l-info'>
+				</view>
+
+				<block wx:for="{{indexData.person}}" wx:key="index">
+                    <view class='c-l-info' bindtap='jumpDetails' data-id='{{item.id}}'>
+                      <view class='search-job-list'>
+                        <view class='c-info-title'>{{item.job_type}}</view>
+                        <view class='c-info-msg overH'>
+                          <text class='c-msg2 fl'>{{item.work_age}}年</text>
+                        </view>
+                        <view class='s-portrait'>
+                          <image src='{{item.avatar}}' class='portrait-icon'/>
+                          <text>{{item.name}}</text>
+                        </view>
+                        <view class='overH'></view>
+                      </view>
+                      <view class='company-status fr'>{{item.images == 0 ? "无证书":"有证书"}}</view>
+                  </view>
+                </block>
+                <!-- <navigator url="../userInfo/postionDetail" class='c-l-info'>
                     <view class='search-job-list'>
                       <view class='c-info-title'>专业偷税会计/会计</view>
                       <view class='c-info-msg overH'>
@@ -117,7 +152,7 @@
                       <view class='overH'></view>
                     </view>
                     <view class='company-status company-bg- fr'>有证书</view>
-                </navigator>
+                </navigator> -->
             </view>
         </view>
       </view>
