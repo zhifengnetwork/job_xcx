@@ -61,7 +61,7 @@
 /* CONTENT STAT */
 .d-content{
   width: 100%;
- 
+  position: relative;
 }
 .d-c-list{
   overflow: hidden;
@@ -77,9 +77,15 @@
 .c-list-portrait{
    width: 150rpx;
    height: 150rpx;
-   margin-left:auto;
+   border-radius: 50%;
+   overflow: hidden;
+   position: absolute;
+   right: 20rpx;
+   top: 20rpx;
 }
-
+.c-list-portrait img{
+  width: 100%;
+}
 /* FOOTER START */
 .footer{
   position: fixed;

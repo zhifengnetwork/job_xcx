@@ -152,6 +152,7 @@
   width:90rpx;
   height:90rpx;
   flex:0 0 1;
+  border-radius: 50%;
 }
 .c-info-text{
   margin-left:21rpx;
@@ -220,6 +221,7 @@
   height: 45rpx;
   vertical-align: middle;
   margin-right: 18rpx;
+  border-radius: 50%;
 }
 .c-info-msg .company-status{
   margin-top:0;

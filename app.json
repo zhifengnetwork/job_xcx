@@ -1,6 +1,5 @@
 {
-  "pages": [ 
-    "pages/userInfo/index",
+  "pages": [
     "pages/company/uCollect",
     "pages/company/postionDetail",
     "pages/login/login",

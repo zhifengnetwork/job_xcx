@@ -1,3 +1,4 @@
+import ServerData from '../../utils/serverData.js';
 const util = require('../../utils/util.js');  //通用方法
 
 Page({
@@ -5,14 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    codeIsCanClick: true,
-    //fasongtext: '发送验证码',
-    input1text: '',
-    input2text: '',
-    color: '#ccc',
-    show: false,                         //控制下拉列表的显示隐藏，false隐藏、true显示
-    selectData: ['个人', '企业'],        //下拉列表的数据
-    index: 0 ,                           //选择的下拉列表下标
+    codeIsCanClick: true,                //是否点击倒计时
+    mobile: '',
+    mcode: '',
     pColor: '',                          //动态获取字体颜色
     pBgC: '',                            //动态获背景颜色                 
     pBC1: ''                             //动态获边框颜色   
@@ -28,53 +24,61 @@ Page({
       pBC1: util.loginIdentity().pBC1
     })
   },
+
+  saveInfo: function () {
+      var that =this,
+          mobile =that.data.mobile,
+          code = that.data.mcode
+      if (!ServerData._zzVerifyMobile(mobile) || mobile == "") {
+          return ServerData._wxTost('请正确输入手机号')
+      }
+      if(code == "" || code.length!=6 || isNaN(code)){
+          return ServerData._wxTost('请正确输入验证码')
+      }
+      var _opt={
+          'mobile': mobile,
+          'code': code
+      }
+      ServerData.editMobile(_opt).then((res) => {
+        if (res.data.status == 1) {
+            console.log(res)
+            wx.navigateTo({
+                url: '../public/setting'
+            })
+        }
+        ServerData._wxTost(res.data.msg)
+      });
+
+      // wx.navigateTo({
+      //   url: '../public/setting'
+      // })
+  },
+
   getVale: function (e) {
-    this.data.input1text = ''
-    if (e.detail.value != '') {
-      this.setData({
-        status: true,
-        input1text: e.detail.value
-      })
-    } else {
-      this.setData({
-        status: false
-      })
-
-    }
-    if (e.detail.value != '' && this.data.input2text != '') {
-      this.setData({
-        color: 'rgb(54, 193, 186)'
-      })
-    }
-    if (e.detail.value == '' || this.data.input1text == '') {
-      this.setData({
-        color: '#ccc'
-      })
-    }
-
+    this.setData({
+      mobile: e.detail.value
+    })
   },
   getVale2: function (e) {
-    this.data.input2text = ''
-    if (e.detail.value != '') {
-      this.setData({
-        input2text: e.detail.value
-      })
-    }
-    if (this.data.input1text != '' && e.detail.value != '') {
-      this.setData({
-        color: '#ff54b5'
-      })
-    }
-    if (e.detail.value == '' || this.data.input1text == '') {
-      this.setData({
-        color: '#ccc'
-      })
-    }
+    this.setData({
+      mcode: e.detail.value
+    })
+  },
+  clickCode: function () {     //发送验证码
+    var that = this,
+        mobile = that.data.mobile
+        if (!ServerData._zzVerifyMobile(mobile) || mobile == "") {
+          return ServerData._wxTost('请正确输入手机号!')
+        }
+        var _opt = { 'mobile': mobile }
+        ServerData.fsCode(_opt).then((res) => {
+          if (res.data.status == 1) {
+            settime(that)
+          }
+          ServerData._wxTost(res.data.msg)
+        });
+  },
 
-  },
-  fasongma: function () {
-    this.countDown();
-  },
   deletetext: function (e) {
     this.setData({
       inputValue: '',
@@ -84,15 +88,7 @@ Page({
   /**
 * 点击验证码按钮
 */
-  clickCode: function () {
-    var that = this;
-    settime(that)
-  },
-  saveInfo: function () {
-    wx.navigateTo({
-      url: '../public/setting'
-    })
-  },
+
 })
 // 倒计时事件 单位s
 var countdown = 60;
