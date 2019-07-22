@@ -17,8 +17,8 @@ Page({
       { name: '大专', value: '大专' },
       { name: '高中以下', value: '高中以下' }],
     radioItems: [                                          // 性别
-      { id: '2', value: '女', checked: 'true' },
-      { id: '1', value: '男' }
+      { name: '2', value: '女', checked: 'true' },
+      { name: '1', value: '男' }
     ],
     sex:2,
     icCardPic: [                                           // 身份证
@@ -209,6 +209,7 @@ addImgBox: function (e) {
     });
   },
   changSex:function(e){       //性别
+    console.log(e.detail.value)
     this.setData({
       sex: e.detail.value
     })

@@ -17,5 +17,5 @@
     <text>微信绑定</text>
     <text class="body-view -view-msg">已绑定</text>
   </view>
-  <button class='set-option {{pBgC}}' bindtap="unLogin()">退出登录</button>
+  <button class='set-option {{pBgC}}' bindtap="unLogin">退出登录</button>
 </view>
