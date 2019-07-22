@@ -41,10 +41,13 @@ Page({
       }
       ServerData.editMobile(_opt).then((res) => {
         if (res.data.status == 1) {
-            console.log(res)
             wx.navigateTo({
                 url: '../public/setting'
             })
+        }else if(res.data.status== -1){
+          wx.navigateTo({
+            url: '../login/login'
+          })
         }
         ServerData._wxTost(res.data.msg)
       });

@@ -46,13 +46,10 @@ Page({
 	 * 收藏
 	 */
 	onCollection: function () {
-		var that = this,
-			type = wx.getStorageSync('savePostion'),
-			Id = that.data.Id;
 		// 要传给后台的参数
 		var _opt = {
-			'type': type,
-			'to_id': Id
+			'type': 2,
+			'to_id': this.data.id
 		}
 		ServerData.collection(_opt).then((res) => {
 			if (res.data.status == 1) {

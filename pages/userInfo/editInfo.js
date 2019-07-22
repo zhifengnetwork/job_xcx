@@ -1,6 +1,7 @@
+import ServerData from '../../utils/serverData.js';
 // pages/userInfo/editInfo.js
 const payArray =[];
-for(let i =1; i <= 20; i++){
+for(let i =3; i <= 20; i++){
   // i=i+1000-1;
   payArray.push(i);
 }
@@ -13,18 +14,130 @@ Page({
   data: {
     array: ['离职-随时到岗', '在职-月内到岗', '在职-考虑机会', '在职-暂不考虑'],
     payArray: payArray,
-    index: 0,
+    index: 0,                              //到岗时间
     items: [
-      { name: 'wuman', value: '女', checked: 'true' },    //性别选择
-      { name: 'man', value: '男' }
+      { name: '2', value: '女', checked: 'true' },    //性别选择
+      { name: '1', value: '男' }
     ],
-    paysIndex:0,
-    jobArray: ['会计', 'WEB前端开发', '业务员'],
+    gender: '',                            //性别
+    paysIndex:0,                           //薪资
+    jobArray: [],
+    // job_type:'',
     jobIndex: 0,
     work:false,
-    aducational: false,
-    workInfo: "",
-    aducationalInfo: ""
+    aducational: false, 
+    workInfo: "",                           //工作经验
+    aducationalInfo: "",                    //教育经历
+    name: "",                               //姓名
+    old: "",                                //年龄
+    mz: "",                                 //民族
+    wordOld: "",                            //工龄
+    explain: "",                            //说明
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+      this.getCategoryList()
+  },
+  getCategoryList(){
+      var that =this
+      ServerData.categoryList({}).then((res) => {
+          if(res.data.status==1){
+            this.setData({ jobArray: res.data.data })
+            console.log(res.data.data)
+          } else if (res.data.status == -1){
+              wx.redirectTo({
+                url: '../login/login'
+              })
+          }else{
+              ServerData._wxTost(res.data.msg)
+          }
+      })
+  },
+
+  saveEditInfo: function () {      //保存数据
+    var that =this
+    if (!that._verifyInfo()){return}
+
+    var _opt={
+      'name': that.data.name,
+      'gender': that.data.gender,
+      'age': that.data.old,
+      'nation': that.data.nation,
+      'job_type': that.data.jobIndex,
+      'work_age': that.data.wordOld,
+      'daogang_time': that.data.index,
+      'salary': that.data.paysIndex,
+      'desc': that.data.workInfo,
+      'desc': that.data.aducationalInfo,
+      'desc': that.data.explain
+    }
+
+    console.log(_opt)
+    return
+    ServerData.editUserInfo(_opt).then((res)=>{
+      console.log(res)
+    })
+
+    wx.redirectTo({
+      url: 'userCenter',
+    })
+  },
+
+  _verifyInfo(){
+      var that =this
+      if (that.data.name==""){
+          ServerData._wxTost('请输入姓名');
+          return false
+      }
+      if (that.data.old == "") {
+        ServerData._wxTost('请输入年龄');
+        return false
+      }
+      if (that.data.mz == "") {
+        ServerData._wxTost('请输入民族');
+        return false
+      }
+      if (that.data.wordOld == "") {
+        ServerData._wxTost('请输入工龄');
+        return false
+      }
+      if (that.data.workInfo == "") {
+        ServerData._wxTost('请输入工作经历');
+        return false
+      }
+      if (that.data.aducationalInfo == "") {
+        ServerData._wxTost('请输入教育经历');
+        return false
+      }
+      if (that.data.explain == "") {
+        ServerData._wxTost('请输入个人说明');
+        return false
+      } 
+      return true   
+  },
+
+
+
+  getName(e){
+    this.setData({ workInfo: e.detail.value })
+  },
+  getOld(e) {
+    this.setData({ old: e.detail.value })
+  },
+  radioChange(e){
+    console.log(e)
+    this.setData({gender: e.detail.value})
+  },
+  getMZ(e) {
+    this.setData({ mz: e.detail.value })
+  },
+  getWordOld(e) {
+    this.setData({ wordOld: e.detail.value })
+  },
+  getExplain(e) {
+    this.setData({ wordOld: e.detail.value })
   },
   saveWork: function (e) {    //保存公司成就输入框的信息
     this.setData({ workInfo: e.detail.value })
@@ -59,6 +172,7 @@ Page({
     })
   },
   jobChange: function (e) {
+    console.log(e.detail.value)
     this.setData({
       jobIndex: e.detail.value
     })
@@ -67,65 +181,5 @@ Page({
     this.setData({
       paysIndex: e.detail.value
     })
-  },
-  saveEditInfo:function(){
-    wx.redirectTo({
-      url: 'userCenter',
-    })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

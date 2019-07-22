@@ -1,22 +1,53 @@
 // pages/userInfo/myPurse.js
+import ServerData from '../../../utils/serverData.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    savaStatus: 0
+    savaStatus: 1,
+    saveMoney: 10,
+    list:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getMyPurse()
+  },
+  getMyPurse(){
+      ServerData.myPurse({}).then((res) => {
+          console.log(res)
+          var data =res.data.data
+        console.log(data)
+        this.setData({ 
+          list: data,
+          saveMoney: data.month_money
+        })
+      })
+  },
+  setInfo(){
+     
   },
   changSelect: function (e) {
-    var status = e.currentTarget.dataset.status;
-    this.setData({ savaStatus: status });
+    var that =this,
+        status = e.currentTarget.dataset.status,
+        money=""
+    if (status==1){
+      money = that.data.list.month_money
+    }
+    if (status == 2) {
+      money = that.data.list.quarter_money
+    }
+    if (status == 3) {
+      money = that.data.list.year_money
+    }
+    this.setData({ 
+      savaStatus: status,
+      saveMoney: money
+    });
   },
   toPays: function (e) {
     wx.showLoading({

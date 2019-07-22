@@ -1,6 +1,6 @@
 @import "font";
 /* USER STYLE START */
-.user-bg-{
+.user-bg-,.user-active-{
   background:#ff54b5 !important;
 }
 .user-color-{
@@ -16,7 +16,7 @@
   border-color:#ff54b5 !important;
 }
 /* COMPANY STYLE START */
-.company-bg-{
+.company-bg-,.company-active-{
   background:#be4cff !important;
 }
 .company-color-{
@@ -32,7 +32,7 @@
   border-color:#be4cff !important;
 }
 /* THIRDPARTH SRTAR */
-.third-bg-{
+.third-bg-,.third-active-{
   background:#54b9ff !important;
 }
 .third-color-{

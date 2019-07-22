@@ -126,6 +126,35 @@ class ServerData {
 	uploadFile(_data, complete) {
 		return this._uploadFile_(_data, api.userAPI.uploadFile, complete);
 	}
+
+	//用户中心
+	userInfo(_data, complete) {
+		return this._promise_post(_data, api.userAPI.userInfo, complete);
+	}
+	//上传头像
+	uploadHeadpic(_data, complete) {                    
+		return this._promise_post(_data, api.userAPI.uploadHeadpic, complete);
+	}
+	//编辑个人资料
+	editUserInfo(_data, complete) {
+		return this._promise_post(_data, api.userAPI.editUserInfo, complete);
+	}
+	//工种列表
+	categoryList(_data, complete) {
+		return this._promise_post(_data, api.userAPI.categoryList, complete);
+	}
+	//我的钱包
+	myPurse(_data, complete) {
+		return this._promise_post(_data, api.userAPI.myPurse, complete);
+	}
+	//提现
+	goWithdrawal(_data, complete) {
+		return this._promise_post(_data, api.userAPI.goWithdrawal, complete);
+	}
+	//提现保存
+	withdrawal(_data, complete) {
+		return this._promise_post(_data, api.userAPI.withdrawal, complete);
+	}
 	//帮助与反馈
 	helpExp(_data, complete) {
 		return this._promise_post(_data, api.userAPI.helpExp, complete);
@@ -156,13 +185,19 @@ class ServerData {
 		return this._promise_post(_data, api.userAPI.collection, complete);
 	}
 
-
 	// 轻提示
 	_wxTost(msg) {
 		wx.showToast({
 			title: msg,
 			icon: 'none',
 			duration: 1000
+		})
+	}
+
+	// loading
+	_wxShowLoading(msg) {
+		wx.showLoading({
+			title: msg,
 		})
 	}
 
