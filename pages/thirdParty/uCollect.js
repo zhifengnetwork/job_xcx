@@ -27,16 +27,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.request({
-      url:app.globalData.baseUrl+'/collection/collection_list',
-      data:{
-        token:wx.getStorageSync('token')
-      },
-      method:'post',
-      success:(res)=>{
-        console.log(res)
-      }
-    })
+    // wx.request({
+    //   url:app.globalData.baseUrl+'/collection/collection_list',
+    //   data:{
+    //     token:wx.getStorageSync('token')
+    //   },
+    //   method:'post',
+    //   success:(res)=>{
+    //     console.log(res)
+    //   }
+    // })
   },
 
   /**

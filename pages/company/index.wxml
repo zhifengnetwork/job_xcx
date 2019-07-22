@@ -34,7 +34,7 @@
 				</view>
 				
 				<block wx:for="{{indexData.recruit}}"  wx:key="index">
-					<navigator url='../company/postionDetail?id={{item.id}}'>
+					<navigator url='./postionDetail?id={{item.id}}'>
 						<view class='c-l-info'>
 						<!-- <view class='c-l-info' bindtap='jumpDetails' data-id='{{item.id}}'> -->
 							<image src='{{item.logo}}' class="c-logo" />
@@ -47,7 +47,7 @@
 							</view>
 							<view class='company-info'>
 								<text>{{item.regtype == 1 ? "公司":"第三方"}}</text>
-								<view class='company-status'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
+								<view class='company-status company-bg-'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
 							</view>
 						</view>
 				  	</navigator>
@@ -116,7 +116,7 @@
                         </view>
                         <view class='overH'></view>
                       </view>
-                      <view class='company-status fr'>{{item.images == 0 ? "无证书":"有证书"}}</view>
+                      <view class='company-status company-bg- fr'>{{item.images == 0 ? "无证书":"有证书"}}</view>
                   </view>
                 </block>
                 <!-- <navigator url="../userInfo/postionDetail" class='c-l-info'>
