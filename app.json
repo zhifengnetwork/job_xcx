@@ -1,9 +1,8 @@
 {
-  "pages": [ 
+  "pages": [
     "pages/company/postionDetail",
     "pages/login/login",
     "pages/register/fillInInformation/fillInInformation",
-
     "pages/company/uCollect",
     "pages/personalMessage/personalMessage",
     "pages/userInfo/userCenter",
@@ -75,5 +74,6 @@
   "debug": true,
   "navigateToMiniProgramAppIdList": [
     "wxb698aa4c746f925b"
-  ]
+  ],
+  "sitemapLocation": "sitemap.json"
 }
