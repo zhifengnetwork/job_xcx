@@ -16,7 +16,7 @@
     "pages/public/audit",
     "pages/information/information",
 
-    "pages/company/index",
+    "pages/company/index/index",
     "pages/company/company",
     "pages/company/thirdParty",
     "pages/company/jobApplicant",

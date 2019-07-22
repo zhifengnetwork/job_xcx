@@ -224,24 +224,24 @@ App({
         {
           "pagePath": "/pages/userInfo/index",
           "text": "首页",
-          "iconPath": "../../static/images/bar_icon/home_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user/home_pick.png",
+          "iconPath": "/static/images/bar_icon/home_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/user/home_pick.png",
           "clas": "menu-item",
           active: true
         },
         {
           "pagePath": "/pages/company/company",
           "text": "公司",
-          "iconPath": "../../static/images/bar_icon/company_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user/company_pink.png",
+          "iconPath": "/static/images/bar_icon/company_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/user/company_pink.png",
           "clas": "menu-item",
           active: true
         },
         {
           "pagePath": "/pages/thirdParty/thirdParty",
           "text": "第三方",
-          "iconPath": "../../static/images/bar_icon/circle_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user/circle_pink.png",
+          "iconPath": "/static/images/bar_icon/circle_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/user/circle_pink.png",
           "clas": "menu-item",
           active: true
         },
@@ -249,16 +249,16 @@ App({
         {
           "pagePath": "/pages/information/information",
           "text": "消息",
-          "iconPath": "../../static/images/bar_icon/info_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user/info_pink.png",
+          "iconPath": "/static/images/bar_icon/info_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/user/info_pink.png",
           "clas": "menu-item",
           active: true
         },
         {
           "pagePath": "/pages/userInfo/userCenter/userCenter",
           "text": "我的",
-          "iconPath": "../../../static/images/bar_icon/user_gray.png",
-          "selectedIconPath": "../../../static/images/bar_icon/user/user_pink.png",
+          "iconPath": "/static/images/bar_icon/user_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/user/user_pink.png",
           "clas": "menu-item",
           active: true
         }
