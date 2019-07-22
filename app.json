@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/company/index/index",
 
     "pages/login/login",
     "pages/register/register",
@@ -16,7 +17,7 @@
     "pages/public/audit",
     "pages/information/information",
 
-    "pages/company/index",
+    
     "pages/company/thirdParty",
     "pages/company/jobApplicant",
     "pages/company/cUserInfo",

@@ -36,4 +36,4 @@ swiper {
 }
 
 /* content start */
-@import "../template/common"
+@import "../../template/common"

@@ -85,7 +85,7 @@ Page({
           }
           else if (type == 1) {
             wx.redirectTo({         //跳转至首页
-              url: '../company/index'
+              url: '../company/index/index'
             })
           }
           else if (type == 2) {
