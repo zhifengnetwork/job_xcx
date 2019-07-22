@@ -1,0 +1,40 @@
+/* pages/userInfo/collect.wxss */
+@import "../../template/common";
+.inner{
+  padding: 40rpx 24rpx;
+  background:#f8f8f8;
+}
+.tab {
+  display: flex;
+}
+.tab-item {
+  flex: 1;
+  text-align: center;
+  line-height: 65rpx;
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.active{
+  color:#F65959;
+  /* border-bottom: 4rpx solid #F65959; */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.c-l-info .c-logo{
+  width: 100rpx;
+  height: 100rpx;
+}
+.c-info-msg{
+  margin-top: 0;
+}
+.company-info text{
+  font-size:24rpx;
+}
+.c-l-info{
+  margin-bottom: 15rpx;
+}

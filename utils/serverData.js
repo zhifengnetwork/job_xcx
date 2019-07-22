@@ -157,6 +157,14 @@ class ServerData {
 	// 收藏/取消收藏
 	collection(_data, complete) {
 		return this._promise_post(_data, api.userAPI.collection, complete);
+  }
+  // 
+	categoryList(_data, complete) {
+		return this._promise_post(_data, api.userAPI.categoryList, complete);
+  }
+  // 
+	userInfo(_data, complete) {
+		return this._promise_post(_data, api.userAPI.userInfo, complete);
 	}
 
 

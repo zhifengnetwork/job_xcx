@@ -1,5 +1,5 @@
 /* pages/userInfo/myCertificate.wxss */
-@import "../template/common";
+@import "../../template/common";
 .idPic{
   width: 100%;
   height: auto;

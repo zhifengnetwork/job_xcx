@@ -1,5 +1,5 @@
 /* pages/userInfo/editInfo.wxss */
-@import "../template/common";
+@import "../../template/common";
 .inner{
   padding: 17rpx 24rpx;
   font-size: 28rpx;

@@ -7,13 +7,13 @@
         <block>
           <image class='card-top' mode='aspectFit' src="{{item.src}}" data-index="{{index}}"/>
         </block>
-        <image wx:if="{{item.hiddenName}}" class='addPic' src='../../static/images/public/plus.png'></image>
+        <image wx:if="{{item.hiddenName}}" class='addPic' src='../../../static/images/public/plus.png'></image>
       </view>
       <input class="addTextBox" placeholder='请输入职业证书名称'/>
     </view>
     <view class='file-inner' bindtap='addImgBox'>
       <button class='file-btn'></button> 
-      <image class='f-plus-' src='../../static/images/public/plus.png'/>
+      <image class='f-plus-' src='../../../static/images/public/plus.png'/>
     </view>
   </view>
   <view class='a-more-pic'>添加一张</view>

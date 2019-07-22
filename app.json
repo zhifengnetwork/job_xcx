@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/userInfo/index",
 
     "pages/login/login",
     "pages/register/register",
@@ -17,6 +18,7 @@
     "pages/information/information",
 
     "pages/company/index",
+    "pages/company/company",
     "pages/company/thirdParty",
     "pages/company/jobApplicant",
     "pages/company/cUserInfo",
@@ -35,6 +37,7 @@
     "pages/thirdParty/index",
     "pages/thirdParty/jobList",
     "pages/thirdParty/thirdParty",
+    "pages/thirdParty/thirdInfo",
     "pages/thirdParty/myPurse/goldDeposits",
     "pages/thirdParty/myPurse/withdrawal",
     "pages/thirdParty/myPurse/myPurse",
@@ -46,21 +49,18 @@
     "pages/thirdParty/company",
     "pages/thirdParty/postionDetail",
 
-    "pages/userInfo/index",
-    "pages/company/company",
-    "pages/thirdParty/thirdInfo",
-    "pages/userInfo/userCenter",
-    "pages/userInfo/editInfo",
-    "pages/userInfo/search",
+    
+    "pages/userInfo/userCenter/userCenter",
+    "pages/userInfo/search/search",
     "pages/userInfo/myPurse/withdrawal",
     "pages/userInfo/myPurse/myPurse",
     "pages/userInfo/myPurse/goldDeposits",
-    "pages/userInfo/headPortrait",
-    "pages/userInfo/postionDetail",
-    "pages/userInfo/myCertificate",
-    "pages/userInfo/privacySettings",
-    "pages/userInfo/collect",
-
+    "pages/userInfo/headPortrait/headPortrait",
+    "pages/userInfo/postionDetail/postionDetail",
+    "pages/userInfo/myCertificate/myCertificate",
+    "pages/userInfo/privacySettings/privacySettings",
+    "pages/userInfo/collect/collect",
+    "pages/userInfo/editInfo/editInfo",
     "pages/logs/logs"
   ],
   "window": {

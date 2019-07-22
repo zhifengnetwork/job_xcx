@@ -1,5 +1,5 @@
 // pages/userInfo/privacySettings.js
-import ServerData from '../../utils/serverData.js';
+import ServerData from '../../../utils/serverData.js';
 Page({
 
   /**

@@ -29,7 +29,7 @@
         <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder='输入工龄'/>
       </view>    
     </view>
-    <image class='edit-img-' src='../../static/images/public/big_portrait.png'/>
+    <image class='edit-img-' src='../../../static/images/public/big_portrait.png'/>
   </view>
   <!-- --->
   <view class='user-option'>
@@ -41,7 +41,7 @@
           {{jobArray.cat_name}}
             <view class="picker">
               {{jobArray[jobIndex].cat_name}} 
-              <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+              <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
             </view>
           </picker>
         </view>
@@ -51,7 +51,7 @@
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
           <view class="picker">
             {{array[index]}}
-            <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+            <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
           </view>
         </picker>
       </view>
@@ -60,7 +60,7 @@
         <picker value="{{paysIndex}}" range="{{payArray}}" bindchange="paysChange">
           <view class="picker">
             {{payArray[paysIndex]}} K
-            <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+            <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
           </view>
         </picker>
       </view>
@@ -69,7 +69,7 @@
             <text>工作经历</text>
             <view>
               <text class='u-o-msg'>{{workInfo}}</text>
-              <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+              <image class='u-o-icon1' src='../../../static/images/public/edit_gray.png'/>
             </view>
           </view>
           <view class='tex-wrap' wx:if="{{work}}">
@@ -82,7 +82,7 @@
             <text>教育经历</text>
             <view>
               <text class='u-o-msg'>{{aducationalInfo}}</text>
-              <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+              <image class='u-o-icon1' src='../../../static/images/public/edit_gray.png'/>
             </view>
           </view>
           <view class='tex-wrap' wx:if="{{aducational}}">

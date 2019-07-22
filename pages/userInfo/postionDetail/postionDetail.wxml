@@ -2,8 +2,8 @@
   <!-- SEARCH INFO START -->
   <view class='search-inner'>
     <view class='search-cont'>
-      <input type='text' class='search company-bColor-'  placeholder="输入所要查找的内容" />
-      <image class="search_icon" src='../../static/images/public/search_icon.png'></image>
+      <input type='text' class='search user-bColor'  placeholder="输入所要查找的内容" />
+      <image class="search_icon" src='../../../static/images/public/search_icon.png'></image>
     </view>
     <!-- <navigator> -->
       <text bindtap="onCollection" class='collect_tab'>收藏</text>
@@ -47,7 +47,7 @@
     </view>
     <view class='footer'>
         <!-- <button class='f-btn-1' bindtap="callWithHim">马上预订</button> -->
-        <button class='f-btn-2 company-bColor- company-color-' bindtap="callWithHim">联系客服</button>
+        <button class='f-btn-2 user-bColor- user-color-' bindtap="callWithHim">联系客服</button>
     </view>
   </view>
 </view>

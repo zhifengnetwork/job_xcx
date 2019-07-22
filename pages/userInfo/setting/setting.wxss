@@ -1,5 +1,5 @@
 /* pages/userInfo/setting.wxss */
-@import '../template/common';
+@import '../../template/common';
 .setting-list{
   display: flex;
   align-items: center;

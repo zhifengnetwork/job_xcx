@@ -1,5 +1,5 @@
 /* pages/userInfo/search.wxss */
-@import "../template/common";
+@import "../../template/common";
 
 search-cont {
 width:580rpx;

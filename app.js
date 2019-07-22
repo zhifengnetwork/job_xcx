@@ -255,10 +255,10 @@ App({
           active: true
         },
         {
-          "pagePath": "/pages/userInfo/userCenter",
+          "pagePath": "/pages/userInfo/userCenter/userCenter",
           "text": "我的",
-          "iconPath": "../../static/images/bar_icon/user_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user/user_pink.png",
+          "iconPath": "../../../static/images/bar_icon/user_gray.png",
+          "selectedIconPath": "../../../static/images/bar_icon/user/user_pink.png",
           "clas": "menu-item",
           active: true
         }

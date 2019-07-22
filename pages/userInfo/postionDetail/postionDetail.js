@@ -1,5 +1,5 @@
 // pages/company/postionDetail.js
-import ServerData from '../../utils/serverData.js';
+import ServerData from '../../../utils/serverData.js';
 const app = getApp();
 Page({
 
@@ -8,7 +8,7 @@ Page({
 	 */
 	data: {
 		id: '',
-		recruitDetail: [], //个人详情
+		recruitDetail: [], // 公司详情
 	},
 
 	/**
@@ -19,7 +19,6 @@ Page({
 		this.setData({
 			id: options.id
 		});
-		this.reqDetails(); //请求数据
 	},
 
 	/**
@@ -30,7 +29,7 @@ Page({
 		var _opt = {
 			id: this.data.id
 		}
-		ServerData.recruitDetail(_opt).then((res) => {
+		ServerData.personalDetails(_opt).then((res) => {
 			// console.log(res)
 			if (res.data.status == 1) {
 				this.setData({
@@ -43,12 +42,12 @@ Page({
 	},
 
 	/**
-	 * 收藏
+	 * 收藏/取消收藏
 	 */
 	onCollection: function () {
 		// 要传给后台的参数
 		var _opt = {
-			'type': 2,
+			'type': 1,
 			'to_id': this.data.id
 		}
 		ServerData.collection(_opt).then((res) => {
@@ -80,7 +79,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		this.reqDetails(); //请求数据
 	},
 
 	/**

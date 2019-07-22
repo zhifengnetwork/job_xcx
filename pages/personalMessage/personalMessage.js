@@ -208,7 +208,8 @@ addImgBox: function (e) {
       showDialog: !that.data.showDialog
     });
   },
-  changSex:function(e){       //性别
+  changSex:function(e){
+    console.log(e.detail.value)       //性别
     this.setData({
       sex: e.detail.value
     })

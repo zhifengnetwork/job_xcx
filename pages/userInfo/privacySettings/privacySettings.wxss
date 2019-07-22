@@ -1,5 +1,5 @@
 /* pages/userInfo/setting.wxss */
-@import '../template/common';
+@import '../../template/common';
 .inner{
   margin:40rpx 24rpx 0;
 }

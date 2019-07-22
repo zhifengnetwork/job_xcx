@@ -1,40 +1,30 @@
-// pages/userInfo/userCenter.js
+// pages/userInfo/collect.js
+import ServerData from '../../../utils/serverData.js';
 const app = getApp();
-const util = require('../../utils/util.js');  //通用方法
-import ServerData from '../../utils/serverData.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      info:''
+    currentTab: 0
   },
-
-  getUserInfo(){
-    var that =this
-    ServerData.userInfo({}).then((res) => {
-      console.log(res.data.data)
-      if (res.data.status == 1) {
-          that.setData({ info: res.data.data})
-      } 
-      else if (res.data.status == -1){
-        wx.redirectTo({
-          url: '../login/login'
-        })
-      }else{
-        ServerData._wxTost(res.data.msg)
-      }
-      console.log(res)
-    });
-  },
-
+  //点击切换
+  clickTab: function (e) {
+    var that = this;
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current,
+      })
+    }
+  },  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    util.getStorageItem('savePostion', app)           //获取底部导航
-    this.getUserInfo()
+
   },
 
   /**
