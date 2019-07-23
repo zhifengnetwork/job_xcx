@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/company/index/index",
 
     "pages/login/login",
     "pages/register/register",
@@ -16,22 +15,22 @@
     "pages/public/explain",
     "pages/public/audit",
     "pages/information/information",
-
     
+    "pages/company/index/index",
     "pages/company/company",
     "pages/company/thirdParty",
     "pages/company/jobApplicant",
-    "pages/company/cUserInfo",
-    "pages/company/editInfo",
-    "pages/company/uPosition",
+    "pages/company/cUserInfo/cUserInfo",
+    "pages/company/editInfo/editInfo",
     "pages/company/myPurse/withdrawal",
     "pages/company/myPurse/goldDeposits",
     "pages/company/myPurse/myPurse",
     "pages/company/jobList",
     "pages/company/postionDetail",
+    "pages/company/personalDetail",
     "pages/company/uCollect",
     "pages/company/myReserve",
-    "pages/company/postJobPostings",
+    "pages/company/postJobPostings/postJobPostings", 
     "pages/company/publish",
 
     "pages/thirdParty/index",

@@ -156,7 +156,7 @@ App({
           active: true
         },
         {
-          "pagePath": "/pages/company/cUserInfo",
+          "pagePath": "/pages/company/cUserInfo/cUserInfo",
           "text": "我的",
           "iconPath": "/static/images/bar_icon/user_gray.png",
           "selectedIconPath": "/static/images/bar_icon/company/u_pop.png",

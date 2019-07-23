@@ -1,13 +1,15 @@
 
 const years =[];
 for(let i =1; i<12;i++){
-  years.push(i);
+  	years.push(i);
 }
+
 const pays =[]
 for (let i = 1; i < 12000; i++) {
-  i=i+1000-1;
-  pays.push(i);
+	i = i+1000-1;
+	pays.push(i);
 }
+
 Page({
 
   /**
@@ -27,11 +29,18 @@ Page({
       { name: 'need', value: '需要证书' }
     ]
   },
+
+  /**
+   * 工种
+   */
   jobCategory:function(e){
     this.setData({
       jobIndex: e.detail.value
     })
   },
+  /**
+   * 工龄
+   */
   yearsChange: function (e) {
     this.setData({
       index: e.detail.value
@@ -42,6 +51,9 @@ Page({
       index1: e.detail.value
     })
   },
+  /**
+   * 薪资
+   */
   paysChange: function (e) {
     this.setData({
       paysIndex: e.detail.value
@@ -52,16 +64,23 @@ Page({
       paysIndex1: e.detail.value
     })
   },
+
+  /**
+   * 跳转用户中心首页
+   */
   saveInfo:function(){
     wx.redirectTo({
-      url: 'cUserInfo'
+      url: '../cUserInfo/cUserInfo'
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -110,4 +129,5 @@ Page({
   onShareAppMessage: function () {
 
   }
+
 })

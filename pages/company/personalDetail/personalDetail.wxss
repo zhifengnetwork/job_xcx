@@ -1,4 +1,4 @@
-@import '../template/common';
+@import '../../template/common';
 #wrap{
   background:#f8f8f8;
   font-size:26rpx;

@@ -117,11 +117,22 @@ class ServerData {
 	recruitDetail(_data, complete) {
 		return this._promise_post(_data, api.userAPI.recruitDetail, complete);
 	}
+	// 个人简历详情
+	personalDetail(_data, complete) {
+		return this._promise_post(_data, api.userAPI.personalDetail, complete);
+	}
+
+
+	//公司账号-我的
+	userInfo(_data, complete) {
+		return this._promise_post(_data, api.userAPI.userInfo, complete);
+	}
 
 	//个人信息注册
 	_registerUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.registerUserInfo, complete);
 	}
+	
 	//上传文件
 	uploadFile(_data, complete) {
 		return this._uploadFile_(_data, api.userAPI.uploadFile, complete);
@@ -159,10 +170,7 @@ class ServerData {
 	categoryList(_data, complete) {
 		return this._promise_post(_data, api.userAPI.categoryList, complete);
   }
-  // 
-	userInfo(_data, complete) {
-		return this._promise_post(_data, api.userAPI.userInfo, complete);
-	}
+
 
 
 	// 轻提示
