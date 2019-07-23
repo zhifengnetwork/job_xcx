@@ -36,6 +36,9 @@ Page({
     all: {},                                                //所有证书名
     picArray: []                                            //所有img
   },
+  onLoad: function (options) {
+     this.getCategoryList()
+  },
   getCategoryList() {
     var that = this
     ServerData.categoryList({}).then((res) => {
@@ -96,19 +99,25 @@ Page({
       'graduate_year': graduate[0],
       'graduate_month': graduate[1],
       'graduate_day': graduate[2],
-      'careers': that.data.profession,
+      // 'careers': that.data.profession,
+      'job_type': that.data.jobArray[that.data.jobIndex].cat_id,
       'idcard_front': that.data.icCardPic[0].newSrc,
       'idcard_back': that.data.icCardPic[1].newSrc,
       'image': that._getPicSrc(),
       'title': title
     }
-
     ServerData._registerUserInfo(_opt).then((res) => {
         if (res.data.status == 1) {
             wx.navigateTo({
               url: '../public/audit'
             })
-        }else{
+        }
+        else if (res.data.status == -1){
+          wx.redirectTo({
+            url: '../login/login'
+          })
+        }
+        else{
             ServerData._wxTost(res.data.msg)
         }
     });
@@ -153,9 +162,7 @@ Page({
       all: all
     });
   },
-  
-  onLoad: function (options) {
-  },
+
   addIdCardPic:function(e){   //身份证上传
     var _this = this
     var id = e.currentTarget.dataset.id

@@ -4,7 +4,11 @@
     <!-- <view class='title'>个人中心</view> -->
     <view class='content-list'>
       <view class='c-l-info'>
+<<<<<<< HEAD
           <navigator url='headPortrait'><image src='{{info.avatar}}' class="c-logo" /></navigator>
+=======
+          <navigator url='../headPortrait/headPortrait'><image src='{{info.avatar}}'class="c-logo" /></navigator>
+>>>>>>> e4ecfca194ed268aaa7c002e72f19bde390eb3dc
           <view class='c-info-text'>
             <text class='c-info-title'>{{info.name}}</text>
             <view class='c-msg m-b10'>用户ID:{{info.id}}</view>
@@ -19,25 +23,25 @@
       </view>
       <!-- USER OPTION START -->
       <view class='user-option'>
-          <navigator url="editInfo" class='u-o-list'>
+          <navigator url="../editInfo/editInfo" class='u-o-list'>
             <text>编辑个人信息</text>
             <!-- <image class='u-o-icon1' src='../../static/images/public/edit.png'/> -->
             
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
-          <navigator url="myCertificate" class='u-o-list'>
+          <navigator url="../myCertificate/myCertificate" class='u-o-list'>
             <text>我的证书</text>
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
-          <navigator url="privacySettings" class='u-o-list'>
+          <navigator url="../privacySettings/privacySettings" class='u-o-list'>
             <text>隐私设置</text>
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
-          <navigator url="../public/setting" class='u-o-list'>
+          <navigator url="../../public/setting" class='u-o-list'>
             <text>设置</text>
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
-          <navigator url="myPurse/myPurse" class='u-o-list'>
+          <navigator url="../myPurse/myPurse" class='u-o-list'>
             <text>我的钱包</text>
             <icon class='iconfont icon-youjiantou2 user-color-'></icon>
           </navigator>
@@ -45,11 +49,11 @@
             <text>实名认证</text>
             <text class='u-o-text'>已认证</text>
           </view>
-          <navigator url="../public/help" class='u-o-list'>
+          <navigator url="../../public/help" class='u-o-list'>
             <text>帮助与反馈</text>
             <icon class='iconfont icon-youjiantou2 user-color-'></icon>
           </navigator>
-          <navigator url="collect" class='u-o-list'>
+          <navigator url="../collect/collect" class='u-o-list'>
             <text>我的收藏</text>
             <icon class='iconfont icon-youjiantou2 user-color-'></icon>
           </navigator>

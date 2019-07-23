@@ -230,7 +230,7 @@ App({
           active: true
         },
         {
-          "pagePath": "/pages/company/company",
+          "pagePath": "/pages/userInfo/company/company",
           "text": "公司",
           "iconPath": "/static/images/bar_icon/company_gray.png",
           "selectedIconPath": "/static/images/bar_icon/user/company_pink.png",
@@ -238,7 +238,7 @@ App({
           active: true
         },
         {
-          "pagePath": "/pages/thirdParty/thirdParty",
+          "pagePath": "/pages/userInfo/thirdParty/thirdParty",
           "text": "第三方",
           "iconPath": "/static/images/bar_icon/circle_gray.png",
           "selectedIconPath": "/static/images/bar_icon/user/circle_pink.png",

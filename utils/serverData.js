@@ -137,6 +137,26 @@ class ServerData {
 	uploadFile(_data, complete) {
 		return this._uploadFile_(_data, api.userAPI.uploadFile, complete);
 	}
+
+  //上传头像
+  uploadHeadpic(_data, complete) {
+    return this._promise_post(_data, api.userAPI.uploadHeadpic, complete);
+  }
+
+  //我的钱包
+  myPurse(_data, complete) {
+    return this._promise_post(_data, api.userAPI.myPurse, complete);
+  }
+  //提现
+  goWithdrawal(_data, complete) {
+    return this._promise_post(_data, api.userAPI.goWithdrawal, complete);
+  }  
+  
+  //提现保存
+  withdrawal(_data, complete) {
+    return this._promise_post(_data, api.userAPI.withdrawal, complete);
+  }
+
 	//帮助与反馈
 	helpExp(_data, complete) {
 		return this._promise_post(_data, api.userAPI.helpExp, complete);
@@ -166,10 +186,30 @@ class ServerData {
 	collection(_data, complete) {
 		return this._promise_post(_data, api.userAPI.collection, complete);
   }
-  // 
+  //工种列表
 	categoryList(_data, complete) {
 		return this._promise_post(_data, api.userAPI.categoryList, complete);
   }
+<<<<<<< HEAD
+
+=======
+  //个人-我的
+	userInfo(_data, complete) {
+		return this._promise_post(_data, api.userAPI.userInfo, complete);
+	}
+>>>>>>> e4ecfca194ed268aaa7c002e72f19bde390eb3dc
+
+  //编辑个人资料
+  editUserInfo(_data, complete) {
+    return this._promise_post(_data, api.userAPI.editUserInfo, complete);
+  }
+
+  //公司及第三方职位列表
+  recruitList(_data, complete) {
+    return this._promise_post(_data, api.userAPI.recruitList, complete);
+  }
+
+
 
 
 

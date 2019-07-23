@@ -57,7 +57,7 @@ Page({
           })
         } else if (res.data.status == -1){
             wx.redirectTo({
-              url: '../login/login'
+              url: '../../login/login'
             })
         }else{
           ServerData._wxTost(res.data.msg)
@@ -86,9 +86,6 @@ Page({
         //   info: res.data.data
         // })
           ServerData._wxShowLoading(res.data.msg)
-      
-
-
       } else if (res.data.status == -1) {
         wx.redirectTo({
           url: '../../login/login'

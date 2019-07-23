@@ -37,6 +37,8 @@ const userAPI = {
   Ucollect: `${proxys}/collection/collection_list`,   // 我的收藏列表
   
 
+  recruitList: `${proxys}/company/recruit_list`,      // 公司及第三方职位列表
+
 }
 
 module.exports = {

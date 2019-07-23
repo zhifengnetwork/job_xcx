@@ -16,6 +16,7 @@
     "pages/public/audit",
     "pages/information/information",
     
+
     "pages/company/index/index",
     "pages/company/company",
     "pages/company/thirdParty",
@@ -48,7 +49,7 @@
     "pages/thirdParty/company",
     "pages/thirdParty/postionDetail",
 
-    "pages/userInfo/index",
+    "pages/userInfo/index/index",
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/withdrawal",
