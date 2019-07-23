@@ -32,7 +32,7 @@
                     <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
                     <text>当前热招</text>
                 </view>
-                <navigator url="../company/postionDetail" class='c-l-info'>
+                <navigator url="../postionDetail/postionDetail?id=2" class='c-l-info'>
                     <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
                     <view class='c-info-text'>
                       <text class='c-info-title'>皮革厂包装人员</text>
@@ -47,7 +47,7 @@
                         <view class='company-status'>无需证书</view>
                     </view>
                 </navigator>
-                <navigator url="../company/postionDetail" class='c-l-info'>
+                <navigator url="../postionDetail/postionDetail?id=2" class='c-l-info'>
                     <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
                     <view class='c-info-text'>
                       <text class='c-info-title'>皮革厂包装人员</text>
@@ -62,7 +62,7 @@
                         <view class='company-status'>无需证书</view>
                     </view>
                 </navigator>
-                <navigator url="../company/postionDetail" class='c-l-info'>
+                <navigator url="../postionDetail/postionDetail?id=2" class='c-l-info'>
                     <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
                     <view class='c-info-text'>
                       <text class='c-info-title'>皮革厂包装人员</text>

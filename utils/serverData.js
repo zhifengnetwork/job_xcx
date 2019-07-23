@@ -194,7 +194,10 @@ class ServerData {
     return this._promise_post(_data, api.userAPI.recruitList, complete);
   }
 
-
+  //更多热门推荐
+  recruitHot(_data, complete) {
+    return this._promise_post(_data, api.userAPI.recruitHot, complete);
+  }
 
 
 

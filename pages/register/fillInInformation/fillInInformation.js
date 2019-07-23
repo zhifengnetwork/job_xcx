@@ -46,9 +46,10 @@ Page({
       'image': that._getPicSrc(),
     }
     ServerData._registerUserInfo(_opt).then((res) => {
-      if (res.status == 1) {
+      
+      if (res.data.status == 1) {
         wx.navigateTo({
-          url: '../public/audit'
+          url: '../../public/audit'
         })
       } 
       else {

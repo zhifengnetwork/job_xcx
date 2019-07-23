@@ -14,7 +14,8 @@
     "pages/public/explain",
     "pages/public/audit",
     "pages/information/information",
-
+    "pages/recruitHot/recruitHot",
+    
     "pages/company/index/index",
     "pages/company/company",
     "pages/company/thirdParty",
@@ -48,6 +49,7 @@
     "pages/thirdParty/postionDetail",
 
     "pages/userInfo/index/index",
+    "pages/userInfo/company/company",
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/withdrawal",

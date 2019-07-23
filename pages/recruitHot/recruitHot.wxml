@@ -1,0 +1,55 @@
+
+<!-- HEADER START -->
+<!-- <import src="../../template/common.wxml"/>
+<template is="search-1" data="{{text: '我的'}}"/> -->
+<!-- HEADER END -->
+<view class='hot-wrap'>
+
+    <view class='inner'>
+        <view class='container'>
+            <view class='content-list'>
+              <navigator url="postionDetail">
+                  <view class='c-title'>
+                    <image src='../../static/images/public/flame_icon.png' class='c-flame'/>
+                    <text>热门推荐</text>
+                  </view>
+              </navigator>
+              <scroll-view class="list" scroll-y="true" bindscrolltolower="searchScrollLower">
+                <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList}}">
+                  <view class='c-l-info'>
+                    <image src='{{item.logo}}'class="c-logo" />
+                    <view class='c-info-text'>
+                      <text class='c-info-title'>{{item.title}}</text>
+                      <view class='c-info-msg'>
+                        <text class='c-msg'>月薪{{item.salary}}K</text>
+                        <text class='c-msg2'>{{item.work_age}}年以上</text>
+                      </view>
+                    </view>
+                    <!-- company info start -->
+                    <view class='company-info'>
+                        <text>公司</text>
+                        <view class='company-status'>
+                            <text wx:if="{{item.require_cert==0}}">无需证书</text>
+                            <text wx:if="{{item.require_cert==1}}">需要证书</text>
+                        </view>
+                    </view>
+                  </view>
+                </navigator>
+
+              </scroll-view>
+            </view>
+        </view>
+    </view>
+    <!-- <view class="bottom" hidden="{{hideBottom}}">
+      <view>{{loadMoreData}}</view>
+      <view>{{refreshTime}}</view>
+    </view> -->
+    <!-- 更多 -->
+    <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>  
+</view>
+<!-- FOOTER TARBAR START -->
+<view class='footer-height'></view>
+<import src="../../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />
+
