@@ -4,11 +4,7 @@
     <!-- <view class='title'>个人中心</view> -->
     <view class='content-list'>
       <view class='c-l-info'>
-<<<<<<< HEAD
-          <navigator url='headPortrait'><image src='{{info.avatar}}' class="c-logo" /></navigator>
-=======
           <navigator url='../headPortrait/headPortrait'><image src='{{info.avatar}}'class="c-logo" /></navigator>
->>>>>>> e4ecfca194ed268aaa7c002e72f19bde390eb3dc
           <view class='c-info-text'>
             <text class='c-info-title'>{{info.name}}</text>
             <view class='c-msg m-b10'>用户ID:{{info.id}}</view>
