@@ -9,7 +9,9 @@ Page({
   data: {
     name: '',                                               // 姓名
     school: '',                                             // 毕业学校
-    profession: '',                                         // 职业
+    // profession: '',                                         // 职业
+    jobIndex: 0,                                            // 职业
+    jobArray: [],
     items: [                                                // 学校类型
       { name: '硕士', value: '硕士' },
       { name: '博士', value: '博士' },
@@ -33,6 +35,28 @@ Page({
     ],
     all: {},                                                //所有证书名
     picArray: []                                            //所有img
+  },
+  getCategoryList() {
+    var that = this
+    ServerData.categoryList({}).then((res) => {
+      if (res.data.status == 1) {
+        this.setData({ jobArray: res.data.data })
+        console.log(res.data.data)
+      } else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../login/login'
+        })
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+    })
+  },
+  jobChange: function (e) {
+    // console.log(e)
+    // console.log(this.data.jobArray[e.detail.value].cat_id)
+    this.setData({
+      jobIndex: e.detail.value
+    })
   },
   getName(e) {                                          // 姓名
     this.setData({ name: e.detail.value})
