@@ -1,13 +1,10 @@
 {
   "pages": [
-    "pages/company/postJobPostings/postJobPostings",
     
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
-    "pages/personalMessage/personalMessage",
     "pages/forgetpassword/forgetpassword",
-
     "pages/index/index",
     "pages/public/setting",
     "pages/public/password",
@@ -16,6 +13,7 @@
     "pages/public/explain",
     "pages/public/audit",
     "pages/information/information",
+    "pages/personalMessage/personalMessage",
 
     "pages/company/index/index",
     "pages/company/company",
@@ -76,5 +74,5 @@
   "navigateToMiniProgramAppIdList": [
     "wxb698aa4c746f925b"
   ],
-  "sitemapLocation": "sitemap56.json"
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,100 +1,38 @@
 <!--pages/userInfo/collect.wxml-->
 <view class='inner'>
   <view class="tab">
-    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">公司</view>
-    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">第三方</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">公司</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">第三方</view>
   </view>
 
-  <view class = "{{currentTab == 0 ? 'show':'hidden'}}" >
-    <navigator url="../../company/postionDetail" class='c-l-info'>
-      <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
+  <view class = "{{currentTab == 1 ? 'show':'hidden'}}" >
+    <navigator url="../company/postionDetail" class='c-l-info' wx:for="{{collData}}" wx:key="index">
+      <image src='{{item.logo}}'class="c-logo" />
       <view class='c-info-text'>
-        <text class='c-info-title'>皮革厂包装人员</text>
+        <text class='c-info-title'>{{item.cat_name}}</text>
         <view class='c-info-msg'>
-          <text class='c-msg'>月薪1500元</text>
-          <text class='c-msg2'>1年以上</text>
+          <text class='c-msg'>月薪{{item.salary}}元</text>
+          <text class='c-msg2'>{{item.work_age}}年以上</text>
         
         </view>
       </view>
       <!-- company info start -->
       <view class='company-info'>
-          <text>公司</text>
-          <view class='company-status'>无需证书</view>
-      </view>
-    </navigator>
-    <navigator url="../../company/postionDetail" class='c-l-info'>
-      <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
-      <view class='c-info-text'>
-        <text class='c-info-title'>皮革厂包装人员</text>
-        <view class='c-info-msg'>
-          <text class='c-msg'>月薪1500元</text>
-          <text class='c-msg2'>1年以上</text>
-        
-        </view>
-      </view>
-      <!-- company info start -->
-      <view class='company-info'>
-          <text>公司</text>
-          <view class='company-status'>无需证书</view>
-      </view>
-    </navigator>
-    <navigator url="../../company/postionDetail" class='c-l-info'>
-      <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
-      <view class='c-info-text'>
-        <text class='c-info-title'>皮革厂包装人员</text>
-        <view class='c-info-msg'>
-          <text class='c-msg'>月薪1500元</text>
-          <text class='c-msg2'>1年以上</text>
-        </view>
-      </view>
-      <!-- company info start -->
-      <view class='company-info'>
-          <text>公司</text>
-          <view class='company-status'>无需证书</view>
+          <text wx:if="{{regtype}}">公司</text>
+          <view class='company-status' wx:if="{{require_cert}}">无需证书</view>
       </view>
     </navigator>
   </view>  
 
-  <view class = "{{currentTab == 1 ? 'show':'hidden'}}" >
-    <navigator url="../../company/postionDetail" class='c-l-info'>
-      <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
+  <view class = "{{currentTab == 2 ? 'show':'hidden'}}" >
+    <navigator url="../company/postionDetail" class='c-l-info' class='c-l-info' wx:for="{{collData}}" wx:key="index">
+      <image src='{{item.logo}}'class="c-logo" />
       <view class='c-info-text'>
-        <text class='c-info-title'>皮革厂包装人员</text>
+        <text class='c-info-title'>{{item.cat_name}}</text>
         <view class='c-info-msg'>
-          <text class='c-msg'>月薪1500元</text>
-          <text class='c-msg2'>1年以上</text>
+          <text class='c-msg'>月薪{{item.salary}}元</text>
+          <text class='c-msg2'>{{item.work_age}}年以上</text>
         
-        </view>
-      </view>
-      <!-- company info start -->
-      <view class='company-info'>
-          <text>第三方</text>
-          <view class='company-status'>无需证书</view>
-      </view>
-    </navigator>
-    <navigator url="../company/postionDetail" class='c-l-info'>
-      <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
-      <view class='c-info-text'>
-        <text class='c-info-title'>皮革厂包装人员</text>
-        <view class='c-info-msg'>
-          <text class='c-msg'>月薪1500元</text>
-          <text class='c-msg2'>1年以上</text>
-        
-        </view>
-      </view>
-      <!-- company info start -->
-      <view class='company-info'>
-          <text>第三方</text>
-          <view class='company-status'>无需证书</view>
-      </view>
-    </navigator>
-    <navigator url="../company/postionDetail" class='c-l-info'>
-      <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
-      <view class='c-info-text'>
-        <text class='c-info-title'>皮革厂包装人员</text>
-        <view class='c-info-msg'>
-          <text class='c-msg'>月薪1500元</text>
-          <text class='c-msg2'>1年以上</text>
         </view>
       </view>
       <!-- company info start -->

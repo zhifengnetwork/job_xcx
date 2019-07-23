@@ -9,8 +9,11 @@
 }
 .tab-item {
   flex: 1;
+  font-size: 30rpx;
   text-align: center;
   line-height: 65rpx;
+  font-weight: bold;
+
 }
 .show{
   display: block;
@@ -19,9 +22,8 @@
   display: none;
 }
 .active{
-  color:#F65959;
-  /* border-bottom: 4rpx solid #F65959; */
-  font-size: 16px;
+  color:#ff54b5;
+  font-size: 30rpx;
   font-weight: bold;
 }
 

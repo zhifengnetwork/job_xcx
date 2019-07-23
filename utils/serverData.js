@@ -182,7 +182,6 @@ class ServerData {
 	editPassword(_data, complete) {
 		return this._promise_post(_data, api.userAPI.password, complete);
 	}
-
 	// 收藏列表
 	Ucollect(_data, complete) {
 		return this._promise_post(_data, api.userAPI.Ucollect, complete);
