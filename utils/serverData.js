@@ -113,7 +113,7 @@ class ServerData {
 		return this._promise_get(_data, api.userAPI.reqIndex, complete);
 	}
 
-	// 公司职位详情
+	// 职位详情
 	recruitDetail(_data, complete) {
 		return this._promise_post(_data, api.userAPI.recruitDetail, complete);
 	}
@@ -146,10 +146,7 @@ class ServerData {
 	editPassword(_data, complete) {
 		return this._promise_post(_data, api.userAPI.password, complete);
 	}
-  // 个人查看公司发布的职位详情
-  personalDetails(_data, complete) {                      
-    return this._promise_post(_data, api.userAPI.personalDetails, complete);
-  }
+
 	// 收藏列表
 	Ucollect(_data, complete) {
 		return this._promise_post(_data, api.userAPI.Ucollect, complete);
