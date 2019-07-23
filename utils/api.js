@@ -38,6 +38,8 @@ const userAPI = {
   personalDetails: `${proxys}/company/recruit_detail`,   // 个人查看公司发布的职位详情
   
 
+  recruitList: `${proxys}/company/recruit_list`,      // 公司及第三方职位列表
+
 }
 
 module.exports = {

@@ -72,33 +72,47 @@ Page({
     ServerData.toLogin(_opt).then((res) => {          //请求数据
       wx.removeStorageSync('token')
       wx.removeStorageSync('savePostion')
+      var type = res.data.data.regtype       //用户状态
       if (res.data.status == 1) {
-          var type = res.data.data.regtype
           wx.setStorageSync('token', res.data.data.token);
           wx.setStorageSync('savePostion', type);
           console.log(type)
           console.log(res)
-          if (type == 3) {
-            wx.redirectTo({         //跳转至首页
-              url: '../userInfo/index'
+          if (type == 3) {          //个人首页
+            wx.redirectTo({         
+              url: '../userInfo/index/index'
             })
           }
-          else if (type == 1) {
-            wx.redirectTo({         //跳转至首页
+          else if (type == 1) {     //企业首页
+            wx.redirectTo({         
               url: '../company/index/index'
             })
           }
-          else if (type == 2) {
-            wx.redirectTo({         //跳转至首页
+          else if (type == 2) {     //第三方首页
+            wx.redirectTo({         
               url: '../thirdParty/index'
             })
           }
           else {
-            wx.redirectTo({         //跳转至首页
+            wx.redirectTo({         //游客首页
               url: '../index/index'
             })
           }
-      } else {
+      }
+      else if (res.data.status == 3){         //注册账号但没有注册信息
+          wx.setStorageSync('token', res.data.data.token);
+          wx.setStorageSync('savePostion', type);
+          if (type==3){
+            wx.redirectTo({                   //跳转个人信息注册
+               url: '../personalMessage/personalMessage'
+            })
+          }else{
+            wx.redirectTo({                   //跳转公司信息注册
+                url: '../register/fillInInformation/fillInInformation'
+            })
+          }
+      } 
+      else {
         ServerData._wxTost(res.data.msg)
       }
     });  
@@ -148,7 +162,4 @@ Page({
       url: '../register/register',
     })
   }
-
-
-
 })

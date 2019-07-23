@@ -6,7 +6,7 @@
         <input type='text' class='search'  placeholder="输入所要查找的内容" />
         <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
       </navigator>
-      <navigator url='userCenter' redirect><text class='login_tab'>我的</text></navigator>
+      <navigator url='../userCenter/userCenter' redirect><text class='login_tab'>我的</text></navigator>
     </view>
     <view class='subtitle overH'>
         <text>选择地点</text>

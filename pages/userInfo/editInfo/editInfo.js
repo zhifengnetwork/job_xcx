@@ -48,7 +48,7 @@ Page({
             console.log(res.data.data)
           } else if (res.data.status == -1){
               wx.redirectTo({
-                url: '../login/login'
+                url: '../../login/login'
               })
           }else{
               ServerData._wxTost(res.data.msg)
@@ -77,7 +77,7 @@ Page({
       console.log(res)
       if(res.data.status==1){
           wx.redirectTo({
-            url: 'userCenter',
+            url: '../userCenter/userCenter',
           })
       }else{
          ServerData._wxTost(res.data.msg);

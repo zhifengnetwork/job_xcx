@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/userInfo/company/company",
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
@@ -47,7 +48,7 @@
     "pages/thirdParty/company",
     "pages/thirdParty/postionDetail",
 
-    "pages/userInfo/index",
+    "pages/userInfo/index/index",
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/withdrawal",
