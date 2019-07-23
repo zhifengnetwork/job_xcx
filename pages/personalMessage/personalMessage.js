@@ -9,7 +9,9 @@ Page({
   data: {
     name: '',                                               // 姓名
     school: '',                                             // 毕业学校
-    profession: '',                                         // 职业
+    // profession: '',                                         // 职业
+    jobIndex: 0,                                            // 职业
+    jobArray: [],
     items: [                                                // 学校类型
       { name: '硕士', value: '硕士' },
       { name: '博士', value: '博士' },
@@ -33,6 +35,31 @@ Page({
     ],
     all: {},                                                //所有证书名
     picArray: []                                            //所有img
+  },
+  onLoad: function (options) {
+     this.getCategoryList()
+  },
+  getCategoryList() {
+    var that = this
+    ServerData.categoryList({}).then((res) => {
+      if (res.data.status == 1) {
+        this.setData({ jobArray: res.data.data })
+        console.log(res.data.data)
+      } else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../login/login'
+        })
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+    })
+  },
+  jobChange: function (e) {
+    // console.log(e)
+    // console.log(this.data.jobArray[e.detail.value].cat_id)
+    this.setData({
+      jobIndex: e.detail.value
+    })
   },
   getName(e) {                                          // 姓名
     this.setData({ name: e.detail.value})
@@ -72,19 +99,25 @@ Page({
       'graduate_year': graduate[0],
       'graduate_month': graduate[1],
       'graduate_day': graduate[2],
-      'careers': that.data.profession,
+      // 'careers': that.data.profession,
+      'job_type': that.data.jobArray[that.data.jobIndex].cat_id,
       'idcard_front': that.data.icCardPic[0].newSrc,
       'idcard_back': that.data.icCardPic[1].newSrc,
       'image': that._getPicSrc(),
       'title': title
     }
-
     ServerData._registerUserInfo(_opt).then((res) => {
         if (res.data.status == 1) {
             wx.navigateTo({
               url: '../public/audit'
             })
-        }else{
+        }
+        else if (res.data.status == -1){
+          wx.redirectTo({
+            url: '../login/login'
+          })
+        }
+        else{
             ServerData._wxTost(res.data.msg)
         }
     });
@@ -129,9 +162,7 @@ Page({
       all: all
     });
   },
-  
-  onLoad: function (options) {
-  },
+
   addIdCardPic:function(e){   //身份证上传
     var _this = this
     var id = e.currentTarget.dataset.id

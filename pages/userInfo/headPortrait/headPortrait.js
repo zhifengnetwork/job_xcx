@@ -18,7 +18,7 @@ Page({
           ServerData._wxTost(res.data.msg)
           setTimeout(()=>{
             wx.navigateTo({
-              url: 'userCenter'
+              url: '../userCenter/userCenter'
             })
           },1000)
         }

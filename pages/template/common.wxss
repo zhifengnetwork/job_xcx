@@ -190,9 +190,9 @@
 .company-status{
    width: 100rpx;
    text-align: center;
-   font-size: 24rpx;
+   font-size: 24rpx !important;
    background:#ff54b5;
-   padding: 6rpx 0;
+   padding: 6rpx 3rpx !important;
    border-radius: 2px;
    color:#fff;
    margin-top:18rpx;

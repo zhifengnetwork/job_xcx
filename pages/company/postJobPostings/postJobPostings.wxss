@@ -1,5 +1,5 @@
 /* pages/company/postJobPostings.wxss */
-@import "../template/common";
+@import "../../template/common";
 .post-list{
   display: flex;
   align-items: center;
@@ -15,8 +15,10 @@
   width:122rpx;
 }
 .-list-inp{
+  width: 70%;
   font-size: 26rpx;
-  /* color: #a2a2a2; */
+  border: 1rpx solid #ccc;
+  padding-left: 10rpx;
 }
 .-list-icon{
   width: 12rpx;
@@ -61,9 +63,10 @@ radio{
   margin-top: 12rpx;
 
 }
-textarea{
+.texa{
   width: 702rpx;
-	height: 480rpx;
+  height: 480rpx;
+  font-size: 24rpx;
 	border-radius: 10rpx;
 	border: solid 2rpx #eeeeee;
   margin-top: 18rpx;

@@ -1,5 +1,5 @@
 /* pages/userInfo/editInfo.wxss */
-@import "../template/common";
+@import "../../template/common";
 .inner{
   padding: 17rpx 24rpx;
   font-size: 28rpx;
@@ -108,4 +108,7 @@
 }
 .-list-pays .u-o-icon2{
   margin-left:20rpx;
+}
+.texa{
+  font-size: 24rpx;
 }

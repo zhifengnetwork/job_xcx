@@ -8,7 +8,7 @@ Page({
 	 */
 	data: {
 		id: '',
-		recruitDetail: [], //个人详情
+		personalDetail: [], //个人详情
 	},
 
 	/**
@@ -19,24 +19,24 @@ Page({
 		this.setData({
 			id: options.id
 		});
-		this.reqDetails(); //请求数据
+		this.reqPersonal(); //请求数据
 	},
 
 	/**
-	 * 公司职位详情数据
+	 * 个人简历详情数据
 	 */
-	reqDetails: function () {
+	reqPersonal: function () {
+   
 		// 要传给后台的参数
 		var _opt = {
 			id: this.data.id
 		}
-		ServerData.recruitDetail(_opt).then((res) => {
-			
+		ServerData.personalDetail(_opt).then((res) => {
 			if (res.data.status == 1) {
 				this.setData({
-					recruitDetail: res.data.data
+					personalDetail: res.data.data
 				})
-				console.log(this.data.recruitDetail)
+				console.log(this.data.personalDetail)
 			} else {
 				ServerData._wxTost(res.data.msg)
 			}

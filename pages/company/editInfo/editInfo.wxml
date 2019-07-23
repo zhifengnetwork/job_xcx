@@ -32,17 +32,17 @@
       </view>    
       
     </view>
-    <image class='edit-img-' src='../../static/images/public/c_logo.jpg'/>
+    <image class='edit-img-' src='../../../static/images/public/c_logo.jpg'/>
   </view>
-  <!-- --->
-  <view class='user-option'>
+
+  <!-- <view class='user-option'>
       <view class='u-o-list'>
         <text>热招职位</text>
         <view class='-list-pays' value="{{jobIndex}}">
           <picker value="{{jobIndex}}" range="{{jobArray}}" bindchange="jobChange">
             <view class="picker">
               {{jobArray[jobIndex]}} 
-              <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+              <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
             </view>
           </picker>
         </view>
@@ -53,7 +53,7 @@
           <picker value="{{paysIndex}}" range="{{payArray}}" bindchange="paysChange">
             <view class="picker">
               {{payArray[paysIndex]}} K
-              <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+              <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
             </view>
           </picker>
         </view>
@@ -63,7 +63,7 @@
             <text>公司成就</text>
             <view>
               <text class='u-o-msg'>{{achiInfo}}</text>
-              <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+              <image class='u-o-icon1' src='../../../static/images/public/edit_gray.png'/>
             </view>
           </view>
           <view class='tex-wrap' wx:if="{{achievement}}">
@@ -76,7 +76,7 @@
             <text>名人介绍</text>
             <view>
               <text class='u-o-msg'>{{personInfo}}</text>
-              <image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+              <image class='u-o-icon1' src='../../../static/images/public/edit_gray.png'/>
             </view>
           </view>
           <view class='tex-wrap' wx:if="{{person}}">
@@ -84,8 +84,8 @@
              <button class='tex-btn' bindtap='saveInfo'>保存</button>
           </view>
       </view>
-  </view>
-  <!-- -->
+  </view> -->
+
   <textarea class="texa m-t20" placeholder='公司介绍说明'></textarea>
   <!--footer -->
   <view class='line-heig'></view>

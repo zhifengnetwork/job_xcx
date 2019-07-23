@@ -75,7 +75,23 @@
   </view>
   <view class='name_ear'>
     <text class="name_text">选择职业:</text>
-    <input placeholder='输入职业名称' class='name_input' bindinput='getProfession'></input>
+
+    <view class='picker-wrap'>
+      <view class="section">
+        <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name" range-value="cat_id">
+          <view class="picker">{{jobArray[jobIndex].cat_name}} </view>
+        </picker>
+      </view>
+      <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+    </view>
+    <!-- <input placeholder='输入职业名称' class='name_input' bindinput='getProfession'></input> -->
+        <!-- <view class='-list-pays name_input' value="{{cat_id}}">
+          <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name" range-value="cat_id">
+            <view class="picker">
+              {{jobArray[jobIndex].cat_name}} 
+            </view>
+          </picker>
+        </view> -->
   </view>
   <!-- 上传身份证正面 -->
   <view class='idPic'>

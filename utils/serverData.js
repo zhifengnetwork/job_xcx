@@ -113,19 +113,50 @@ class ServerData {
 		return this._promise_get(_data, api.userAPI.reqIndex, complete);
 	}
 
-	// 公司职位详情
+	// 职位详情
 	recruitDetail(_data, complete) {
 		return this._promise_post(_data, api.userAPI.recruitDetail, complete);
+	}
+	// 个人简历详情
+	personalDetail(_data, complete) {
+		return this._promise_post(_data, api.userAPI.personalDetail, complete);
+	}
+
+
+	//公司账号-我的
+	userInfo(_data, complete) {
+		return this._promise_post(_data, api.userAPI.userInfo, complete);
 	}
 
 	//个人信息注册
 	_registerUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.registerUserInfo, complete);
 	}
+
 	//上传文件
 	uploadFile(_data, complete) {
 		return this._uploadFile_(_data, api.userAPI.uploadFile, complete);
 	}
+
+	//上传头像
+	uploadHeadpic(_data, complete) {
+		return this._promise_post(_data, api.userAPI.uploadHeadpic, complete);
+	}
+
+	//我的钱包
+	myPurse(_data, complete) {
+		return this._promise_post(_data, api.userAPI.myPurse, complete);
+	}
+	//提现
+	goWithdrawal(_data, complete) {
+		return this._promise_post(_data, api.userAPI.goWithdrawal, complete);
+	}
+
+	//提现保存
+	withdrawal(_data, complete) {
+		return this._promise_post(_data, api.userAPI.withdrawal, complete);
+	}
+
 	//帮助与反馈
 	helpExp(_data, complete) {
 		return this._promise_post(_data, api.userAPI.helpExp, complete);
@@ -146,10 +177,6 @@ class ServerData {
 	editPassword(_data, complete) {
 		return this._promise_post(_data, api.userAPI.password, complete);
 	}
-	// 个人查看公司发布的职位详情
-	personalDetails(_data, complete) {                      
-		return this._promise_post(_data, api.userAPI.personalDetails, complete);
-	}
 	// 收藏列表
 	Ucollect(_data, complete) {
 		return this._promise_post(_data, api.userAPI.Ucollect, complete);
@@ -157,15 +184,24 @@ class ServerData {
 	// 收藏/取消收藏
 	collection(_data, complete) {
 		return this._promise_post(_data, api.userAPI.collection, complete);
-  	}
-  	// 
+	}
+	//工种列表
 	categoryList(_data, complete) {
 		return this._promise_post(_data, api.userAPI.categoryList, complete);
-  	}
-  	// 
-	userInfo(_data, complete) {
-		return this._promise_post(_data, api.userAPI.userInfo, complete);
 	}
+
+	//编辑个人资料
+	editUserInfo(_data, complete) {
+		return this._promise_post(_data, api.userAPI.editUserInfo, complete);
+	}
+
+	//公司及第三方职位列表
+	recruitList(_data, complete) {
+		return this._promise_post(_data, api.userAPI.recruitList, complete);
+	}
+
+
+
 
 
 	// 轻提示

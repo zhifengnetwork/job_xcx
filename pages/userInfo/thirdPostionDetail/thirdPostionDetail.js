@@ -29,7 +29,7 @@ Page({
 		var _opt = {
 			id: this.data.id
 		}
-		ServerData.recruitDetail(_opt).then((res) => {
+		ServerData.personalDetails(_opt).then((res) => {
 			// console.log(res)
 			if (res.data.status == 1) {
 				this.setData({
