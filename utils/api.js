@@ -35,6 +35,7 @@ const userAPI = {
 
   collection: `${proxys}/collection/collection`,      // 收藏/取消收藏
   Ucollect: `${proxys}/collection/collection_list`,   // 我的收藏列表
+  personalDetails: `${proxys}/company/recruit_detail`,   // 个人查看公司发布的职位详情
   
 
 }
