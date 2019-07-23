@@ -32,6 +32,23 @@
 			  <image src='{{recruitDetail.logo}}'/>
 		  </view>
 		</view>
+
+		<view class="d-c-list">
+          <view class='c-list-info'>
+			<view class='w-bold m-b22'>额外待遇</view>
+            <!-- <view class='m-b22'>包午餐</view>
+            <view class='m-b45'>3公里之内包送上下班</view>
+            <view class='w-bold m-b22'>工作经验</view>
+            <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view> -->
+          </view>
+		</view>
+
+		<view class="d-c-list">
+          <view class='c-list-info'>
+			<view class='w-bold m-b22'>工作详细</view>
+            <view class="details">{{recruitDetail.detail}}</view>
+          </view>
+		</view>
 		
         <!-- <view class="d-c-list">
           <view class='c-list-info'>
@@ -46,7 +63,7 @@
 		
     </view>
     <view class='footer'>
-        <button class='f-btn-1 company-bg-' bindtap="toReservation">马上预订</button>
+        <!-- <button class='f-btn-1 company-bg-' bindtap="toReservation">马上预订</button> -->
         <button class='f-btn-2 company-bColor- company-color-' bindtap="callWithHim">联系客服</button>
     </view>
   </view>

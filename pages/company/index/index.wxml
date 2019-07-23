@@ -104,7 +104,7 @@
 				</view>
 
 				<block wx:for="{{indexData.person}}" wx:key="index">
-					<navigator url='../postionDetail/postionDetail?id={{item.id}}'>
+					<navigator url='../../userInfo/postionDetail/postionDetail?id={{item.id}}'>
 						<view class='c-l-info'>
 						<!-- <view class='c-l-info' bindtap='jumpDetails' data-id='{{item.id}}'> -->
 							<view class='search-job-list'>

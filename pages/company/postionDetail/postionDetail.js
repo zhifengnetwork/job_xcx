@@ -31,11 +31,12 @@ Page({
 			id: this.data.id
 		}
 		ServerData.recruitDetail(_opt).then((res) => {
-			// console.log(res)
+			
 			if (res.data.status == 1) {
 				this.setData({
 					recruitDetail: res.data.data
 				})
+				console.log(this.data.recruitDetail)
 			} else {
 				ServerData._wxTost(res.data.msg)
 			}
