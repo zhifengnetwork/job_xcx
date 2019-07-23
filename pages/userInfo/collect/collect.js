@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 1,
+    regtype:''
   },
   //点击切换
   clickTab: function (e) {
@@ -19,12 +20,28 @@ Page({
         currentTab: e.target.dataset.current,
       })
     }
-  },  
+    that.collectionList();
+  },
+  collectionList: function (regtype) {
+    var _opt = {
+			regtype: 2
+		}
+		ServerData.Ucollect(_opt).then((res) => {
+			console.log(res)
+			if (res.data.status == 1) {
+				this.setData({
+					collData: res.data.data
+				})
+			} else {
+				ServerData._wxTost(res.data.msg)
+			}
+		})
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -38,7 +55,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.collectionList();
   },
 
   /**

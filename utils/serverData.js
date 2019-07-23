@@ -146,10 +146,10 @@ class ServerData {
 	editPassword(_data, complete) {
 		return this._promise_post(_data, api.userAPI.password, complete);
 	}
-  // 个人查看公司发布的职位详情
-  personalDetails(_data, complete) {                      
-    return this._promise_post(_data, api.userAPI.personalDetails, complete);
-  }
+	// 个人查看公司发布的职位详情
+	personalDetails(_data, complete) {                      
+		return this._promise_post(_data, api.userAPI.personalDetails, complete);
+	}
 	// 收藏列表
 	Ucollect(_data, complete) {
 		return this._promise_post(_data, api.userAPI.Ucollect, complete);
@@ -157,12 +157,12 @@ class ServerData {
 	// 收藏/取消收藏
 	collection(_data, complete) {
 		return this._promise_post(_data, api.userAPI.collection, complete);
-  }
-  // 
+  	}
+  	// 
 	categoryList(_data, complete) {
 		return this._promise_post(_data, api.userAPI.categoryList, complete);
-  }
-  // 
+  	}
+  	// 
 	userInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.userInfo, complete);
 	}
