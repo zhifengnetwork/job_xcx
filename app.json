@@ -1,11 +1,12 @@
 {
   "pages": [
-
+    "pages/company/postJobPostings/postJobPostings",
+    
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
     "pages/personalMessage/personalMessage",
-    "pages/forgetpassword/forgetpassword",  
+    "pages/forgetpassword/forgetpassword",
 
     "pages/index/index",
     "pages/public/setting",
@@ -15,7 +16,6 @@
     "pages/public/explain",
     "pages/public/audit",
     "pages/information/information",
-    
 
     "pages/company/index/index",
     "pages/company/company",
@@ -31,7 +31,7 @@
     "pages/company/personalDetail",
     "pages/company/uCollect",
     "pages/company/myReserve",
-    "pages/company/postJobPostings/postJobPostings", 
+    
     "pages/company/publish",
 
     "pages/thirdParty/index",
@@ -75,6 +75,6 @@
   "debug": true,
   "navigateToMiniProgramAppIdList": [
     "wxb698aa4c746f925b"
-  ]
-  
+  ],
+  "sitemapLocation": "sitemap56.json"
 }

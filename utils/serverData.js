@@ -128,6 +128,11 @@ class ServerData {
 		return this._promise_post(_data, api.userAPI.userInfo, complete);
 	}
 
+	// 编辑、发布职位
+	editRecruit(_data, complete) {
+		return this._promise_post(_data, api.userAPI.editRecruit, complete);
+	}
+
 	//个人信息注册
 	_registerUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.registerUserInfo, complete);

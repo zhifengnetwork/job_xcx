@@ -1,4 +1,4 @@
-
+import ServerData from '../../../utils/serverData.js';
 const years =[];
 for(let i =1; i<12;i++){
   	years.push(i);
@@ -28,6 +28,47 @@ Page({
       { name: 'noNeed', value: '无需证书', checked: 'true' },
       { name: 'need', value: '需要证书' }
     ]
+  },
+
+    /**
+	 * 生命周期函数--监听页面加载
+	 */
+	onLoad: function (options) {
+		this.saveEditRecruit();
+	},
+
+  /**
+   * 保存数据
+   */
+  saveEditRecruit:function(){
+	if ( !this.verifyData() ){
+		return false;
+	}
+	// 传参
+    var _opt={
+		// id:,
+		// type:,
+		// work_age:,
+		// salary:,
+		// title:,
+		// require_cert:,
+		// detail:,		
+	}
+	ServerData.editRecruit(_opt).then((res) => {
+		// console.log(res)
+		// if(res.data.status == 1){
+			
+		// }else{
+		// 	ServerData._wxTost(res.data.msg);
+		// }
+	})
+  },
+
+  /**
+   * 校验数据
+   */
+  verifyData:function(){
+	console.log(55)
   },
 
   /**
@@ -74,12 +115,7 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
 
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

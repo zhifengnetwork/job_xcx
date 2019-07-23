@@ -70,11 +70,11 @@
         </radio-group>
       </view>
    </view>
-   
+
   <navigator url='postionDetail'><text class='-list-msg'>职位详情:</text></navigator>
   <textarea placeholder='' class="texa"></textarea>
 
   <view class='line-heig'></view>
 
-  <view class='set-option company-bg-' bindtap='saveInfo'>保存</view>
+  <view class='set-option company-bg-' bindtap='saveEditRecruit'>保存</view>
 </view>
