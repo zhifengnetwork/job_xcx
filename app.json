@@ -48,6 +48,7 @@
     "pages/thirdParty/postionDetail",
 
     "pages/userInfo/index/index",
+    "pages/userInfo/company/company",
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/withdrawal",

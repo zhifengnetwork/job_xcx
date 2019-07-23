@@ -72,12 +72,12 @@ Page({
     ServerData.toLogin(_opt).then((res) => {          //请求数据
       wx.removeStorageSync('token')
       wx.removeStorageSync('savePostion')
-      var type = res.data.data.regtype       //用户状态
       if (res.data.status == 1) {
+          var type = res.data.data.regtype       //用户状态
           wx.setStorageSync('token', res.data.data.token);
           wx.setStorageSync('savePostion', type);
           console.log(type)
-          console.log(res)
+          
           if (type == 3) {          //个人首页
             wx.redirectTo({         
               url: '../userInfo/index/index'
@@ -100,6 +100,7 @@ Page({
           }
       }
       else if (res.data.status == 3){         //注册账号但没有注册信息
+          var type = res.data.data.regtype       //用户状态
           wx.setStorageSync('token', res.data.data.token);
           wx.setStorageSync('savePostion', type);
           if (type==3){
@@ -113,6 +114,7 @@ Page({
           }
       } 
       else {
+
         ServerData._wxTost(res.data.msg)
       }
     });  

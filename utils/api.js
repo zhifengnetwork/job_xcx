@@ -39,6 +39,7 @@ const userAPI = {
   
 
   recruitList: `${proxys}/company/recruit_list`,      // 公司及第三方职位列表
+  recruitHot: `${proxys}/company/recruit_hot`,        // 热门推荐
 
 }
 

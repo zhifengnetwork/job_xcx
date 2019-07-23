@@ -5,7 +5,6 @@ import ServerData from '../../../utils/serverData.js';
 Page({
   data: {
     recList:[],
-    recruit_hot:[]
 
   },
 
@@ -39,8 +38,7 @@ Page({
         }else{
            ServerData._wxTost(res.data.msg)
         }
-      // that.data.recruit_hot =
-      console.log(that.data.recList)
+      // console.log(that.data.recList)
       this.setData({
         recList: res.data.data
       })
