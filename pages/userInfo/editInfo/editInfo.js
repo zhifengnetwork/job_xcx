@@ -19,7 +19,7 @@ Page({
       { name: '2', value: '女', checked: 'true' },    //性别选择
       { name: '1', value: '男' }
     ],
-    gender: '',                            //性别
+    gender: 2,                            //性别
     paysIndex:0,                           //薪资
     jobArray: [],
     // job_type:'',
@@ -59,29 +59,29 @@ Page({
   saveEditInfo: function () {      //保存数据
     var that =this
     if (!that._verifyInfo()){return}
-
     var _opt={
       'name': that.data.name,
       'gender': that.data.gender,
       'age': that.data.old,
-      'nation': that.data.nation,
-      'job_type': that.data.jobIndex,
+      'nation': that.data.mz,
+      'job_type': that.data.jobArray[that.data.jobIndex].cat_id,
       'work_age': that.data.wordOld,
-      'daogang_time': that.data.index,
-      'salary': that.data.paysIndex,
-      'desc': that.data.workInfo,
-      'desc': that.data.aducationalInfo,
-      'desc': that.data.explain
+      'daogang_time': that.data.array[that.data.index],
+      'salary': that.data.payArray[that.data.paysIndex],
+      'experience': that.data.workInfo,
+      'education': that.data.aducationalInfo,
+      'person_desc': that.data.explain
     }
-
-    console.log(_opt)
-    return
+    // console.log(_opt)
     ServerData.editUserInfo(_opt).then((res)=>{
       console.log(res)
-    })
-
-    wx.redirectTo({
-      url: 'userCenter',
+      if(res.data.status==1){
+          wx.redirectTo({
+            url: 'userCenter',
+          })
+      }else{
+         ServerData._wxTost(res.data.msg);
+      }
     })
   },
 
@@ -121,7 +121,7 @@ Page({
 
 
   getName(e){
-    this.setData({ workInfo: e.detail.value })
+    this.setData({ name: e.detail.value })
   },
   getOld(e) {
     this.setData({ old: e.detail.value })
@@ -136,8 +136,11 @@ Page({
   getWordOld(e) {
     this.setData({ wordOld: e.detail.value })
   },
-  getExplain(e) {
+  getWordOld(e) {
     this.setData({ wordOld: e.detail.value })
+  },
+  getExplain(e) {
+    this.setData({ explain: e.detail.value })
   },
   saveWork: function (e) {    //保存公司成就输入框的信息
     this.setData({ workInfo: e.detail.value })
@@ -172,7 +175,8 @@ Page({
     })
   },
   jobChange: function (e) {
-    console.log(e.detail.value)
+    // console.log(e)
+    // console.log(this.data.jobArray[e.detail.value].cat_id)
     this.setData({
       jobIndex: e.detail.value
     })

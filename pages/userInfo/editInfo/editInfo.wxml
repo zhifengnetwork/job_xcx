@@ -4,7 +4,7 @@
     <view class='edit-cont'>
       <view class='e-info-'>
         <text class='e-info-msg'>姓名：</text>
-        <input type='text' class='e-info-inp' bindinput='getName' placeholder='输入姓名'/>
+        <input type='text' class='e-info-inp' bindinput='getName' placeholder-class="phcolor" placeholder='输入姓名'/>
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>性别：</text>
@@ -18,15 +18,15 @@
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>年龄：</text>
-        <input type='text' class='e-info-inp' bindinput='getOld'  placeholder='输入年龄'/>
+        <input type='text' class='e-info-inp' bindinput='getOld' placeholder-class="phcolor" placeholder='输入年龄'/>
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>民族：</text>
-        <input type='text' class='e-info-inp' bindinput='getMZ' placeholder='输入民族'/>
+        <input type='text' class='e-info-inp' bindinput='getMZ' placeholder-class="phcolor" placeholder='输入民族'/>
       </view>    
       <view class='e-info-'>
         <text class='e-info-msg'>工龄：</text>
-        <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder='输入工龄'/>
+        <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder-class="phcolor" placeholder='输入工龄'/>
       </view>    
     </view>
     <image class='edit-img-' src='../../../static/images/public/big_portrait.png'/>
@@ -36,9 +36,8 @@
       <view class='u-o-list'>
         <text>求职类型</text>
         <!-- <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/> -->
-        <view class='-list-pays' value="{{jobIndex}}">
-          <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name">
-          {{jobArray.cat_name}}
+        <view class='-list-pays' value="{{cat_id}}">
+          <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name" range-value="cat_id">
             <view class="picker">
               {{jobArray[jobIndex].cat_name}} 
               <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
@@ -67,7 +66,7 @@
       <view>
           <view class='u-o-list' bindtap='addWorkExperience'>
             <text>工作经历</text>
-            <view>
+            <view class='user-edit-text'>
               <text class='u-o-msg'>{{workInfo}}</text>
               <image class='u-o-icon1' src='../../../static/images/public/edit_gray.png'/>
             </view>
@@ -80,7 +79,7 @@
       <view>
           <view class='u-o-list' bindtap='addEducationalExperience'>
             <text>教育经历</text>
-            <view>
+            <view class='user-edit-text'>
               <text class='u-o-msg'>{{aducationalInfo}}</text>
               <image class='u-o-icon1' src='../../../static/images/public/edit_gray.png'/>
             </view>

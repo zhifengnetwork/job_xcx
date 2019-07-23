@@ -1,10 +1,11 @@
 {
   "pages": [
-
+    "pages/personalMessage/personalMessage",
+    "pages/userInfo/index",
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
-    "pages/personalMessage/personalMessage",
+
     "pages/forgetpassword/forgetpassword",  
 
     "pages/index/index",
