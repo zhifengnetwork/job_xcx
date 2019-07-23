@@ -36,6 +36,7 @@ Page({
 				this.setData({
 					recruitDetail: res.data.data
 				})
+				console.log(this.data.recruitDetail)
 			} else {
 				ServerData._wxTost(res.data.msg)
 			}
