@@ -14,10 +14,10 @@
     "pages/public/audit",
     "pages/information/information",
     "pages/personalMessage/personalMessage",
-
+    "pages/company/thirdParty/thirdParty",
     "pages/company/index/index",
     "pages/company/company",
-    "pages/company/thirdParty",
+    
     "pages/company/jobApplicant",
     "pages/company/cUserInfo/cUserInfo",
     "pages/company/editInfo/editInfo",
@@ -25,11 +25,10 @@
     "pages/company/myPurse/goldDeposits",
     "pages/company/myPurse/myPurse",
     "pages/company/jobList",
-    "pages/company/postionDetail",
-    "pages/company/personalDetail",
-    "pages/company/uCollect",
+    "pages/company/postionDetail/postionDetail",
+    "pages/company/personalDetail/personalDetail",
+    "pages/company/uCollect/uCollect",
     "pages/company/myReserve",
-    
     "pages/company/publish",
 
     "pages/thirdParty/index",
@@ -49,6 +48,7 @@
 
     "pages/userInfo/index/index",
     "pages/userInfo/company/company",
+    "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/withdrawal",

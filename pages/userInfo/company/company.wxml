@@ -29,7 +29,7 @@
                 <text>热门推荐</text>
               </view>
           </navigator>
-          <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_hot}}">
+          <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_hot}}" wx:key="index">
             <view class='c-l-info'>
               <image src='{{item.logo}}'class="c-logo" />
               <view class='c-info-text'>
@@ -56,7 +56,7 @@
               <image src='../../../static/images/public/money.png' class='c-flame'/>
               <text>待遇更好</text>
             </view>
-            <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_better}}">
+            <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_better}}" wx:key="index">
               <view class='c-l-info'>
                   <image src='{{item.logo}}'class="c-logo" />
                   <view class='c-info-text'>

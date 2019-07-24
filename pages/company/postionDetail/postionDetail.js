@@ -23,7 +23,7 @@ Page({
 	},
 
 	/**
-	 * 公司职位详情数据
+	 * 第三方职位详情数据
 	 */
 	reqDetails: function () {
 		// 要传给后台的参数
@@ -49,7 +49,7 @@ Page({
 	onCollection: function () {
 		// 要传给后台的参数
 		var _opt = {
-			'type': 2,
+			'type': 1,
 			'to_id': this.data.id
 		}
 		ServerData.collection(_opt).then((res) => {

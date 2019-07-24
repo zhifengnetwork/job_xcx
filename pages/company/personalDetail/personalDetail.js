@@ -7,8 +7,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		id: '',
-		personalDetail: [], //个人详情
+		Id: '',
 	},
 
 	/**
@@ -19,24 +18,21 @@ Page({
 		this.setData({
 			id: options.id
 		});
-		this.reqPersonal(); //请求数据
 	},
 
 	/**
 	 * 个人简历详情数据
 	 */
 	reqPersonal: function () {
-   
 		// 要传给后台的参数
 		var _opt = {
-			id: this.data.id
+			id:this.data.id
 		}
 		ServerData.personalDetail(_opt).then((res) => {
 			if (res.data.status == 1) {
 				this.setData({
-					personalDetail: res.data.data
+					personalData: res.data.data
 				})
-				console.log(this.data.personalDetail)
 			} else {
 				ServerData._wxTost(res.data.msg)
 			}
@@ -44,7 +40,7 @@ Page({
 	},
 
 	/**
-	 * 收藏
+	 * 收藏/取消收藏
 	 */
 	onCollection: function () {
 		// 要传给后台的参数
@@ -91,7 +87,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.reqPersonal(); //请求数据
   },
 
   /**

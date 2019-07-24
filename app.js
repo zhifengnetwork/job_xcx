@@ -140,7 +140,7 @@ App({
           active: true
         },
         {
-          "pagePath": "/pages/company/thirdParty",
+          "pagePath": "/pages/company/thirdParty/thirdParty",
           "text": "第三方",
           "iconPath": "/static/images/bar_icon/circle_gray.png",
           "selectedIconPath": "/static/images/bar_icon/company/circle_pink.png",

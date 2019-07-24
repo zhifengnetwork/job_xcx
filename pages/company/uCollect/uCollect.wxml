@@ -1,0 +1,43 @@
+<!--pages/company/uCollect.wxml-->
+<view class='inner'>
+    <view class="tab">
+      <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">个人</view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">第三方</view>
+    </view>
+
+  <view class='c-l-info' class = "{{currentTab == 3 ? 'show':'hidden'}}">
+      <view class='search-job-list' wx:for="{{UcData}}" wx:key="key">
+        <view class='c-info-title'>{{item.cat_name}}</view>
+        <view class='c-info-msg overH'>
+          <text class='c-msg fl'>广州市白云区</text>
+          <text class='c-msg2 fl'>{{item.work_age}}年</text>
+          <view class='company-status company-bg- fr' wx:if="{{item.images === 1}}">有证书</view>
+          <view class='company-status company-bg- fr' wx:else="{{item.images === 0}}">无证书</view>
+        </view>
+        <view class='c-msg3'>会计证书</view>
+        <view class='s-portrait'>
+          <image src='{{item.avatar}}' class='portrait-icon'/>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='overH'></view>
+      </view>
+  </view>
+  <view class='c-l-info' class = "{{currentTab == 2 ? 'show':'hidden'}}">
+      <view class='search-job-list' wx:for="{{UcData}}" wx:key="key">
+        <view class='c-info-text'>
+          <text class='c-info-title'>{{item.title}}</text>
+          <view class='c-info-msg'>
+            <text class='c-msg'>月薪{{item.salary}}元</text>
+            <text class='c-msg2'>{{item.work_age}}年以上</text>
+            <image src='{{item.logo}}'class="c-logo" />
+          </view>
+        </view>
+        <!-- company info start -->
+        <view class='portrait-icon'>
+            <text wx:if="{{item.regtype}}">第三方</text>
+            <view class='company-status' wx:if="{{item.require_cert==0}}">无需证书</view>
+            <view class='company-status' wx:if="{{item.require_cert==1}}">需要证书</view>
+        </view>
+      </view>
+  </view>
+</view>

@@ -6,7 +6,7 @@
   </view>
 
   <view class = "{{currentTab == 1 ? 'show':'hidden'}}" >
-    <navigator url="../company/postionDetail" class='c-l-info' wx:for="{{collData}}" wx:key="index">
+    <navigator  url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{collData}}" wx:key="index">
       <image src='{{item.logo}}'class="c-logo" />
       <view class='c-info-text'>
         <text class='c-info-title'>{{item.cat_name}}</text>
@@ -18,14 +18,15 @@
       </view>
       <!-- company info start -->
       <view class='company-info'>
-          <text wx:if="{{regtype}}">公司</text>
-          <view class='company-status' wx:if="{{require_cert}}">无需证书</view>
+          <text wx:if="{{item.regtype}}">公司</text>
+          <view class='company-status' wx:if="{{item.require_cert==0}}">无需证书</view>
+          <view class='company-status' wx:else="{{item.require_cert==1}}">需要证书</view>
       </view>
     </navigator>
   </view>  
 
   <view class = "{{currentTab == 2 ? 'show':'hidden'}}" >
-    <navigator url="../company/postionDetail" class='c-l-info' class='c-l-info' wx:for="{{collData}}" wx:key="index">
+    <navigator  url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' class='c-l-info' wx:for="{{collData}}" wx:key="index">
       <image src='{{item.logo}}'class="c-logo" />
       <view class='c-info-text'>
         <text class='c-info-title'>{{item.cat_name}}</text>
@@ -37,8 +38,9 @@
       </view>
       <!-- company info start -->
       <view class='company-info'>
-          <text>第三方</text>
-          <view class='company-status'>无需证书</view>
+          <text wx:if="{{item.regtype}}">第三方</text>
+          <view class='company-status' wx:if="{{item.require_cert==0}}">无需证书</view>
+          <view class='company-status' wx:if="{{item.require_cert==1}}">需要证书</view>
       </view>
     </navigator>
   </view>
