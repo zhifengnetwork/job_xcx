@@ -19,7 +19,7 @@
     "pages/company/company",
     "pages/company/thirdParty",
     "pages/company/jobApplicant",
-    "pages/company/cUserInfo/cUserInfo",
+   
     "pages/company/editInfo/editInfo",
     "pages/company/myPurse/withdrawal",
     "pages/company/myPurse/goldDeposits",
@@ -29,7 +29,8 @@
     "pages/company/personalDetail",
     "pages/company/uCollect",
     "pages/company/myReserve",
-    
+    "pages/company/cUserInfo/cUserInfo",
+    "pages/company/postJobPostings/postJobPostings",
     "pages/company/publish",
 
     "pages/thirdParty/index",
@@ -60,6 +61,7 @@
     "pages/userInfo/privacySettings/privacySettings",
     "pages/userInfo/collect/collect",
     "pages/userInfo/editInfo/editInfo",
+
     "pages/logs/logs"
   ],
   "window": {
