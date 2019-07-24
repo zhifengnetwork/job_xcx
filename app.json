@@ -14,7 +14,8 @@
     "pages/information/information",
     "pages/personalMessage/personalMessage",
     "pages/recruitHot/recruitHot",
-    
+    "pages/recruitBetter/recruitBetter",
+
     "pages/company/index/index",
     "pages/company/company",
     "pages/company/thirdParty",
@@ -50,6 +51,7 @@
 
     "pages/userInfo/index/index",
     "pages/userInfo/company/company",
+    "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/withdrawal",

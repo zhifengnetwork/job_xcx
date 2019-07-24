@@ -209,9 +209,21 @@ class ServerData {
   recruitHot(_data, complete) {
     return this._promise_post(_data, api.userAPI.recruitHot, complete);
   }
+  //更多待遇
+  recruitBetter(_data, complete) {
+    return this._promise_post(_data, api.userAPI.recruitBetter, complete);
+  }
+  //主页
+  userVisit(_data, complete) {
+    return this._promise_post(_data, api.userAPI.userVisit, complete);
+  }
 
+  //获取省市区列表
+  getAddress(_data, complete) {
+    return this._promise_post(_data, api.userAPI.getAddress, complete);
+  }
 
-
+  
 	// 轻提示
 	_wxTost(msg) {
 		wx.showToast({
@@ -220,6 +232,15 @@ class ServerData {
 			duration: 1000
 		})
 	}
+
+  _showLoading(msg){
+    wx.showToast({
+      title: msg,
+      icon: 'loading',
+      duration: 400
+    })
+  }
+
 
 	//校验手机号码
 	_zzVerifyMobile(obj) {

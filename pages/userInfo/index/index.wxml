@@ -8,10 +8,41 @@
       </navigator>
       <navigator url='../userCenter/userCenter' redirect><text class='login_tab'>我的</text></navigator>
     </view>
+
+    <!-- 地址选择 -->
     <view class='subtitle overH'>
-        <text>选择地点</text>
-        <text>选择人才</text>
-    </view>
+      <view class="newsite_box">
+        <!-- 所在地区点击按钮 -->
+        <view class="newsite_button" bindtap="selectDistrict">
+          <view class="newsite_view">选择地点</view>
+          <view class="newsite_city">{{areaInfo}}</view>
+        </view>
+        <!-- 所有城市三级联动列表 -->
+        <view class="zhezhao" style="display:{{addressMenuIsShow ? 'block':'none'}}"></view>
+        <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+          <view style="height:10% ;width:95%;margin-top:10rpx">
+            <text catchtap="cityCancel">取消</text>
+            <text style="float: right" catchtap="citySure">确定</text>
+          </view>
+          <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+            <picker-view-column>
+              <view wx:for="{{provinces}}" class="picker-item">
+                {{item.area_name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{citys}}" class="picker-item" wx:key="">
+                {{item.area_name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{areas}}" class="picker-item" wx:key="">
+                {{item.area_name}}</view>
+            </picker-view-column>
+          </picker-view>
+        </view>
+      </view>
+      <!-- 地址选择接受 -->
+    </view> 
+    <!-- 地址选择结束 -->
   </view>
   <view class='inner'>
       <view class='c-body'>
@@ -19,11 +50,11 @@
         <view class='banner'>
             <swiper indicator-dots="{{indicatorDots}}" 
                     autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="#ff54b5"> 
-                  <block wx:for="{{arr}}" wx:key> 
+                  <navigator url='{{item.url}}' wx:for="{{list.ad}}" wx:key> 
                     <swiper-item style="border-radius: 10rpx;"> 
-                        <image src="../../../static/images/index/banner.jpg" class="slide-image"/> 
+                        <image src="{{item.picture}}" class="slide-image"/> 
                     </swiper-item> 
-                  </block> 
+                  </navigator> 
             </swiper>
         </view>
         <view class='container'>
@@ -32,49 +63,23 @@
                     <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
                     <text>当前热招</text>
                 </view>
-                <navigator url="../postionDetail/postionDetail?id=2" class='c-l-info'>
-                    <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
+                <navigator wx:for="{{list.person}}" url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:key>
+                    <image src='{{item.logo}}'class="c-logo" />
                     <view class='c-info-text'>
-                      <text class='c-info-title'>皮革厂包装人员</text>
+                      <text class='c-info-title'>{{item.title}}</text>
                       <view class='c-info-msg'>
-                        <text class='c-msg'>月薪1500元</text>
-                        <text class='c-msg2'>1年以上</text>
+                        <text class='c-msg'>月薪{{item.salary}}K</text>
+                        <text class='c-msg2'>{{item.work_age}}年</text>
                       </view>
                     </view>
                     <!-- company info start -->
                     <view class='company-info'>
-                        <text>公司</text>
-                        <view class='company-status'>无需证书</view>
-                    </view>
-                </navigator>
-                <navigator url="../postionDetail/postionDetail?id=2" class='c-l-info'>
-                    <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>皮革厂包装人员</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪1500元</text>
-                        <text class='c-msg2'>1年以上</text>
-                      </view>
-                    </view>
-                    <!-- company info start -->
-                    <view class='company-info'>
-                        <text>公司</text>
-                        <view class='company-status'>无需证书</view>
-                    </view>
-                </navigator>
-                <navigator url="../postionDetail/postionDetail?id=2" class='c-l-info'>
-                    <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>皮革厂包装人员</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪1500元</text>
-                        <text class='c-msg2'>1年以上</text>
-                      </view>
-                    </view>
-                    <!-- company info start -->
-                    <view class='company-info'>
-                        <text>公司</text>
-                        <view class='company-status'>无需证书</view>
+                        <text wx:if="{{item.regtype==1}}">公司</text>
+                        <text wx:else>第三方</text>
+                        <view class='company-status'>
+                            <text wx:if="{{item.require_cert==1}}">需要证书</text>
+                            <text wx:else>无需证书</text>
+                        </view>
                     </view>
                 </navigator>
             </view>
@@ -82,41 +87,26 @@
             <view class='content-list'>
                 <view class='c-title'>
                     <image src='../../../static/images/public/info.png' class='c-flame'/>
-                    <text>最新找活</text>
+                    <text>最新招聘</text>
                 </view>
-                <navigator url="../userInfo/postionDetail" class='c-l-info'>
-                    <view class='search-job-list'>
-                      <view class='c-info-title'>专业偷税会计/会计</view>
-                      <view class='c-info-msg overH'>
-                        <text class='c-msg fl'>广州市白云区</text>
-                        <text class='c-msg2 fl'>3年</text>
-                        
+                <navigator wx:for="{{list.recruit}}" url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:key>
+                    <image src='{{item.logo}}'class="c-logo" />
+                    <view class='c-info-text'>
+                      <text class='c-info-title'>{{item.title}}</text>
+                      <view class='c-info-msg'>
+                        <text class='c-msg'>月薪{{item.salary}}K</text>
+                        <text class='c-msg2'>{{item.work_age}}年</text>
                       </view>
-                      <view class='c-msg3'>会计证书</view>
-                      <view class='s-portrait'>
-                        <image src='../../../static/images/public/portrait.png' class='portrait-icon'/>
-                        <text>周先生</text>
-                      </view>
-                      <view class='overH'></view>
                     </view>
-                    <view class='company-status fr'>有证书</view>
-                </navigator>
-                <navigator url="../userInfo/postionDetail" class='c-l-info'>
-                    <view class='search-job-list'>
-                      <view class='c-info-title'>专业偷税会计/会计</view>
-                      <view class='c-info-msg overH'>
-                        <text class='c-msg fl'>广州市白云区</text>
-                        <text class='c-msg2 fl'>3年</text>
-                        
-                      </view>
-                      <view class='c-msg3'>会计证书</view>
-                      <view class='s-portrait'>
-                        <image src='../../../static/images/public/portrait.png' class='portrait-icon'/>
-                        <text>周先生</text>
-                      </view>
-                      <view class='overH'></view>
+                    <!-- company info start -->
+                    <view class='company-info'>
+                        <text wx:if="{{item.regtype==1}}">公司</text>
+                        <text wx:else>第三方</text>
+                        <view class='company-status'>
+                            <text wx:if="{{item.require_cert==1}}">需要证书</text>
+                            <text wx:else>无需证书</text>
+                        </view>
                     </view>
-                    <view class='company-status fr'>有证书</view>
                 </navigator>
             </view>
         </view>

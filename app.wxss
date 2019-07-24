@@ -61,6 +61,9 @@ page{
 .m-b50{
   margin-bottom: 50rpx;
 }
+.bold{
+  font-weight: bold;
+}
 .inner{
   padding: 40rpx 24rpx;
 }

@@ -45,6 +45,7 @@ Page({
         });
       }
     });
+    console.log(this.data.recList)
   },
 
   scrollLower() {
@@ -66,39 +67,41 @@ Page({
         'rows':that.data.row,
         'page': that.data.pageNum
       }
-    ServerData.recruitHot(_opt).then((res) => {
-      var status = res.data.status
-      if (status == 1) {
-        if(res.data.data==""){
-          that.setData({
-              searchLoadingComplete: true,            //把“没有数据”设为true，显示  
-          }); 
-          that.data.listArry =[]
-        }else{
-            if (that.data.pageNum==1){
-                var dataList = res.data.data
-                that.setData({
-                  recList: dataList,
-                })
+    ServerData.recruitBetter(_opt).then((res) => {
+        var status = res.data.status
+        if (status == 1) {
+          if(res.data.data==""){
+            that.setData({
+                searchLoadingComplete: true,            //把“没有数据”设为true，显示  
+            }); 
+            that.data.listArry =[]
+          }else{
+              if (that.data.pageNum==1){
+                  var dataList = res.data.data
+                  that.setData({
+                    recList: dataList,
+                  })
+                  that.data.listArry = res.data.data
+              }else{
+                var recl = [...that.data.recList, ...res.data.data]
                 that.data.listArry = res.data.data
-            }else{
-              var recl = [...that.data.recList, ...res.data.data]
-              that.data.listArry = res.data.data
-              that.setData({
-                recList: recl,
-              })
-            }
+                that.setData({
+                  recList: recl,
+                })
+              }
 
-            that.data.pageNum++;
+              that.data.pageNum++;
+          }
+
+        } 
+        else if (status == -1) {
+          wx.redirectTo({
+            url: '../login/login'
+          })
+        } 
+        else {
+          ServerData._wxTost(res.data.msg)
         }
-
-      } else if (status == -1) {
-        wx.redirectTo({
-          url: '../login/login'
-        })
-      } else {
-        ServerData._wxTost(res.data.msg)
-      }
     })
   }
 })
