@@ -21,6 +21,22 @@ Page({
     util.getStorageItem('savePostion', app);   //获取底部导航
     this.getRecruitList()                      //公司及第三方职位列表
   },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    var that =this
+    wx.getSystemInfo({
+      success: function (res) {
+        console.info(res.windowHeight)
+        that.setData({
+          scrollHeight: res.windowHeight
+        })
+      }
+    });
+  },
+
   getRecruitList() {
     // ServerData.toLogin(_opt).then((res) => {          //请求数据
     var that = this,
@@ -35,7 +51,7 @@ Page({
     ServerData.recruitHot(_opt).then((res) => {
       var status = res.data.status
       if (status == 1) {
-        console.log(res.data.data.length)
+        // console.log(res.data.data.length)
         if(res.data.data.length<1){
           that.setData({
               searchLoadingComplete: true,            //把“没有数据”设为true，显示  
@@ -53,7 +69,7 @@ Page({
 
       } else if (status == -1) {
         wx.redirectTo({
-          url: '../../login/login'
+          url: '../login/login'
         })
       } else {
         ServerData._wxTost(res.data.msg)
@@ -68,15 +84,17 @@ Page({
   
   searchScrollLower: function () {                                //滚动到底部触发事件  
     let that = this;
+    
     console.log(2)
-    if (that.data.searchLoading && !that.data.searchLoadingComplete) {
+    that.getRecruitList()
+    // if (that.data.searchLoading && !that.data.searchLoadingComplete) {
 
-          that.setData({
-              searchPageNum: that.data.searchPageNum + 1,         //每次触发上拉事件，把searchPageNum+1  
-              isFromSearch: false                                 //触发到上拉事件，把isFromSearch设为为false  
-          })
-          // that.fetchSearchList();
-          that.getRecruitList()
-      }
+    //       that.setData({
+    //           searchPageNum: that.data.searchPageNum + 1,         //每次触发上拉事件，把searchPageNum+1  
+    //           isFromSearch: false                                 //触发到上拉事件，把isFromSearch设为为false  
+    //       })
+    //       // that.fetchSearchList();
+    //       that.getRecruitList()
+    //   }
   }     
 })
