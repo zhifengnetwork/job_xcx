@@ -2,7 +2,7 @@
 <view class='inner'>
    <view class='post-list'>
       <text class='-list-msg'>标题:</text>
-      <input value="" class='-list-inp'placeholder-class="phcolor" placeholder='请输入标题'/>
+      <input value="" class='-list-inp' placeholder-class="phcolor" placeholder='请输入标题' bindinput="getTitle"/>
    </view>
    <view class='post-list'>
       <text class='-list-msg'>工种:</text>

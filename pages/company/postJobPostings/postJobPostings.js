@@ -16,6 +16,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+	title:'',
     array: years,
     payArray:pays,
     jobCategory:["会计","行政"],
@@ -34,6 +35,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		id:options.id,
 		this.saveEditRecruit();
 	},
 
@@ -42,11 +44,10 @@ Page({
    */
   saveEditRecruit:function(){
 	if ( !this.verifyData() ){
-		return false;
+		return false
 	}
 	// 传参
     var _opt={
-		// id:,
 		// type:,
 		// work_age:,
 		// salary:,
@@ -64,11 +65,23 @@ Page({
 	})
   },
 
+  // 拿到标题
+  getTitle: function (e) {
+		this.setData({
+			title: e.detail.value
+		});
+  },
+
   /**
    * 校验数据
    */
   verifyData:function(){
-	console.log(55)
+	if (this.data.title == ""){
+		ServerData._wxTost('请输入标题');
+		return false
+	}else{
+		return true;
+	}
   },
 
   /**
