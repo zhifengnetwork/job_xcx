@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/thirdParty/index/index",
     
     "pages/login/login",
     "pages/register/register",
@@ -35,7 +34,7 @@
     "pages/company/postJobPostings/postJobPostings",
     "pages/company/publish",
 
-    
+    "pages/thirdParty/index/index",
     "pages/thirdParty/jobList",
     "pages/thirdParty/thirdParty",
     "pages/thirdParty/thirdInfo/thirdInfo",
