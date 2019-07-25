@@ -256,9 +256,9 @@ class ServerData {
 
   _showLoading(msg){
     wx.showToast({
-      title: msg,
-      icon: 'loading',
-      duration: 400
+		title: msg,
+		icon: 'loading',
+		duration: 400
     })
   }
 

@@ -34,7 +34,7 @@
                     <image src='../../static/images/public/flame_icon.png' class='c-flame'/>
                     <text>当前热招</text>
                 </view>
-                <block wx:for="{{indexData.recruit}}">
+                <block wx:for="{{indexData.recruit}}" wx:key="index">
                     <navigator url="../login/login" class='c-l-info'>
                       <image src='{{item.logo}}' class="c-logo" />
                       <view class='c-info-text'>
@@ -88,7 +88,7 @@
                     <image src='../../static/images/public/info.png' class='c-flame'/>
                     <text>最新找活</text>
                 </view>
-                <block wx:for="{{indexData.person}}">
+                <block wx:for="{{indexData.person}}" wx:key="index">
                     <navigator url="../login/login" class='c-l-info'>
                       <view class='search-job-list'>
                         <view class='c-info-title'>{{item.job_type}}</view>

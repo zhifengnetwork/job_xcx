@@ -1,88 +1,118 @@
-// pages/userInfo/withdrawal.js
+// pages/userInfo/myPurse.js
+import ServerData from '../../../utils/serverData.js';
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
-    saveStatus: 0,
-    num: 0
-  },
+	data: {
+		savaStatus: 1,
+		saveMoney: 10, 
+		selectMsg: '月',
+		moneyData: {}
+	},
 
-  changWithdrawal: function (e) {
-    var status = e.currentTarget.dataset.status;
-    this.setData({
-      saveStatus: status,
-      num: status
-    })
-
-
-    // let id = e.currentTarget.dataset.id,
-    //   index = parseInt(e.currentTarget.dataset.index),
-    //   num = parseInt(e.currentTarget.dataset.index)
-    // this.curIndex = parseInt(e.currentTarget.dataset.index)
-    // console.log(e)
-    // var that = this
-    // this.setData({
-    //   curNavId: id,
-    //   curIndex: index,
-    //   num: index
-    // })
-
-  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+	onLoad: function (options) {
+		this.getMyPurse()
+	},
 
-  },
+	getMyPurse() {
+		ServerData.myPurse({}).then((res) => {
+			console.log(res)
+			this.setData({
+				moneyData: res.data.data,
+				saveMoney: res.data.data.month_money
+			})
+		})
+	},
 
+	setInfo() {
+
+	},
+
+	changSelect: function (e) {
+		var that = this,
+			status = e.currentTarget.dataset.status,
+			money = "",
+			msg = ""
+		if (status == 1) {
+			money = that.data.moneyData.month_money
+			msg = "月"
+		}
+		if (status == 2) {
+			money = that.data.moneyData.quarter_money
+			msg = "季"
+		}
+		if (status == 3) {
+			money = that.data.moneyData.year_money
+			msg = "年"
+		}
+		this.setData({
+			savaStatus: status,
+			saveMoney: money,
+			selectMsg: msg
+		});
+	},
+	
+	toPays: function (e) {
+		wx.showLoading({
+			title: '跳转中...',
+		})
+
+		setTimeout(function () {
+			wx.hideLoading()
+		}, 2000)
+	},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+	onReady: function () {
 
-  },
+	},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+	onShow: function () {
 
-  },
+	},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+	onHide: function () {
 
-  },
+	},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+	onUnload: function () {
 
-  },
+	},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+	onPullDownRefresh: function () {
 
-  },
+	},
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+	onReachBottom: function () {
 
-  },
+	},
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+	onShareAppMessage: function () {
 
-  }
+	}
 })
+

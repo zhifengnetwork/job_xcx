@@ -15,7 +15,7 @@ const userAPI = {
   recruitDetail: `${proxys}/company/recruit_detail`,  // 公司发布的职位详情
   personalDetail: `${proxys}/person/detail`,          // 个人简历详情
   editRecruit: `${proxys}/company/edit_recruit`,      // 编辑、发布职位
-  editCompany: `${proxys}/company/edit`,      // 编辑公司信息
+  editCompany: `${proxys}/company/edit`,              // 编辑公司信息
 
   uploadFile: `${proxys}/user/upload_file`,           //上传文件
 
