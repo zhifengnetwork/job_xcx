@@ -3,12 +3,12 @@
     <view class='inner'>
         <view class='container'>
             <view class='content-list'>
-              <navigator url="postionDetail">
+              <!-- <navigator url="postionDetail">
                   <view class='c-title'>
                     <image src='../../static/images/public/flame_icon.png' class='c-flame'/>
                     <text>热门推荐</text>
                   </view>
-              </navigator>
+              </navigator> -->
               <scroll-view class="list" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="scrollLower">
                 <navigator url="../userInfo/postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList}}" wx:key>
                   <view class='c-l-info'>
@@ -23,7 +23,7 @@
                     <!-- company info start -->
                     <view class='company-info'>
                         <text>{{regtypeMsg}}</text>
-                        <view class='company-status'>
+                        <view class='company-status {{pBgC}}'>
                             <text wx:if="{{item.require_cert==0}}">无需证书</text>
                             <text wx:if="{{item.require_cert==1}}">需要证书</text>
                         </view>

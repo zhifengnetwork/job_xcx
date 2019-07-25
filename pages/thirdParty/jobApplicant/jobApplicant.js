@@ -1,6 +1,7 @@
 // pages/userInfo/myInfo.js
 const app = getApp();
 const util = require('../../../utils/util.js');  //通用方法
+import ServerData from '../../../utils/serverData.js';
 Page({
 
   /**
@@ -9,8 +10,12 @@ Page({
   data: {
     tInfo: {
       clas: 'third-bColor-1',
-      text: "我的"
-    }
+      text: "我的",
+    },
+    hiringData: [],
+    job_type: '',                 //选中的职位值
+    jobArray: [],                 //职位列表
+    jobIndex: 0                  //职位下标
   },
 
   /**
@@ -18,54 +23,54 @@ Page({
    */
   onLoad: function (options) {
     util.getStorageItem('savePostion', app)
+    this.hiring()
+    this.getCategoryList()         //职位列表
+    console.log(this.data.jobIndex)
   },
+  hiring: function () {
+    ServerData.hiring({ 'kw': this.data.job_type}).then((res) => {
+      console.log(res)
+      if (res.data.status == 1) {
+        this.setData({
+          hiringData: res.data.data
+        })
+      } else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      }
+      else {
+        ServerData._wxTost(res.data.msg)
+      }
+    })
+  }, 
+  getCategoryList() {
+    var that = this
+    ServerData.categoryList({}).then((res) => {
+      if (res.data.status == 1) {
+        var newArry = []
+        newArry.push({ cat_id: '', cat_name: "选择人才" })
+        var recl = [...newArry, ...res.data.data]
+        this.setData({ jobArray: recl })
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+        console.log(that.data.jobArray)
+      } else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  jobChange: function (e) {
+    // console.log(e)
+    this.setData({
+      jobIndex: e.detail.value,
+      job_type: this.data.jobArray[e.detail.value].cat_id
+    })
+    // console.log(this.data.jobArray[e.detail.value].cat_id)
+    this.hiring()             //主页信息
   }
+
 })

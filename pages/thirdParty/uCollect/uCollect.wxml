@@ -2,7 +2,7 @@
 <view class='inner'>
     <view class="tab">
       <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">个人</view>
-      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">第三方</view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">公司</view>
     </view>
 
   <view class='c-l-info' class = "{{currentTab == 3 ? 'show':'hidden'}}">
@@ -22,7 +22,7 @@
         <view class='overH'></view>
       </view>
   </view>
-  <view class='c-l-info' class = "{{currentTab == 2 ? 'show':'hidden'}}">
+  <view class='c-l-info' class = "{{currentTab == 1 ? 'show':'hidden'}}">
       <view class='search-job-list' wx:for="{{UcData}}" wx:key="key">
         <view class='c-info-text'>
           <text class='c-info-title'>{{item.title}}</text>
@@ -34,10 +34,14 @@
         </view>
         <!-- company info start -->
         <view class='portrait-icon'>
-            <text wx:if="{{item.regtype}}">第三方</text>
+            <text wx:if="{{item.regtype}}">公司</text>
             <view class='company-status' wx:if="{{item.require_cert==0}}">无需证书</view>
             <view class='company-status' wx:if="{{item.require_cert==1}}">需要证书</view>
         </view>
       </view>
+  </view>
+
+  <view wx:if="{{isShowD}}" class='wx-no-info'>
+      <view>暂无数据</view>
   </view>
 </view>

@@ -6,6 +6,7 @@ Page({
   data: {
     recList: [],
     listArry:[],
+    pBgC: '',                            //动态获背景颜色    
     row: 10,                            // 条数
     regtype: 1,                         // 1位公司，2为第三方  默认1 ，
     regtypeMsg: '公司',                       // 1位公司，2为第三方  默认1 
@@ -18,6 +19,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      pBgC: util.loginIdentity().pBgC
+    })
     this.data.regtype = options.regtype
     if (options.regtype==2){
       

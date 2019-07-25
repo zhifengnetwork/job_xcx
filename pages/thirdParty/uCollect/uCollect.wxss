@@ -22,7 +22,7 @@
     display: none;
   }
   .active{
-    color:#ff54b5;
+    color:#54b9ff !important;
     font-size: 30rpx;
     font-weight: bold;
   }
