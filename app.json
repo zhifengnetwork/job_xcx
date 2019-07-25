@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/thirdParty/jobApplicant/jobApplicant",
+    "pages/thirdParty/index/index",
+    
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
@@ -17,7 +18,6 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-    
     "pages/company/index/index",
     "pages/company/company",
     "pages/company/cUserInfo/cUserInfo", 
@@ -35,7 +35,7 @@
     "pages/company/postJobPostings/postJobPostings",
     "pages/company/publish",
 
-    "pages/thirdParty/index/index",
+    
     "pages/thirdParty/jobList",
     "pages/thirdParty/thirdParty",
     "pages/thirdParty/thirdInfo/thirdInfo",
@@ -44,13 +44,13 @@
     "pages/thirdParty/myPurse/myPurse",
     "pages/thirdParty/myReserve",
     "pages/thirdParty/uCollect/uCollect",
-    "pages/thirdParty/postJobPostings",
+    "pages/thirdParty/postJobPostings/postJobPostings",
     "pages/thirdParty/editInfo/editInfo",
-
+    "pages/thirdParty/jobApplicant/jobApplicant",
     "pages/thirdParty/uPDetail/uPDetail",
     "pages/thirdParty/company/company",
     "pages/thirdParty/postionDetail/postionDetail",
-
+    
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",
     "pages/userInfo/company/company",

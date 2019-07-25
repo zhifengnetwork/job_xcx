@@ -1,5 +1,5 @@
 /* pages/company/postJobPostings.wxss */
-@import "../template/common";
+@import "../../template/common";
 .post-list{
   display: flex;
   align-items: center;

@@ -19,7 +19,7 @@ Page({
   },
   toEdit: function () {
     wx.navigateTo({
-      url: '../postJobPostings',
+      url: '../postJobPostings/postJobPostings',
     })
   },
   /**
