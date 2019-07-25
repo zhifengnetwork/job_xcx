@@ -27,6 +27,3 @@
    color: #5d5d5d;
    font-size: 20rpx;
 }
-.header-heigh{
-  padding-top:75rpx
-}

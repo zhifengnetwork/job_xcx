@@ -1,46 +1,50 @@
-// pages/userInfo/privacySettings.js
+// pages/company/uCollect.js
 import ServerData from '../../../utils/serverData.js';
+const app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      type:'',
-      is_show:'',
-      item:{}
+    currentTab: 3,
+    regtype:''
+  },
+  //点击切换
+  clickTab: function (e) {
+    var that = this;
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current,
+      })
+    }
+    that.UcList();
   },
   
-  switch1Change(e){
-      console.log(e)
-      var that =this,
-          is_show = 0,
-          show = e.detail.value,
-          _opt=''
+  UcList: function () {
+    var _opt = {
+			regtype: this.data.currentTab
+		}
+		ServerData.Ucollect(_opt).then((res) => {
+			console.log(res)
+			if (res.data.status == 1) {
+				this.setData({
+					UcData: res.data.data
+				})
+			} else {
+				ServerData._wxTost(res.data.msg)
+			}
+		})
+  }, 
 
-      if(show){is_show = 1}  
-      _opt = {
-        'type': e.currentTarget.dataset.index,
-        'is_show': is_show
-      }
-      ServerData.changPSetting(_opt).then((res) => {      //隐私设置操作
-          console.log(res)
-          ServerData._wxTost(res.data.msg)
-      })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      var that =this
-      ServerData.privacySetting({}).then((res) => {      //获取隐私设置
-        console.log(res)
-        if (res.data.status==1){
-            that.setData({ item: res.data.data })
-        }else{
-            ServerData._wxTost(res.data.msg)
-        }
-      })
+      
   },
 
   /**
@@ -54,10 +58,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.UcList();
   },
-
-
 
   /**
    * 生命周期函数--监听页面隐藏

@@ -8,6 +8,7 @@ Page({
   data: {
     savaStatus: 1,
     saveMoney: 10,
+    selectMsg:'月',
     list:{}
   },
 
@@ -34,19 +35,24 @@ Page({
   changSelect: function (e) {
     var that =this,
         status = e.currentTarget.dataset.status,
-        money=""
+        money="",
+        msg =""
     if (status==1){
       money = that.data.list.month_money
+      msg="月"
     }
     if (status == 2) {
       money = that.data.list.quarter_money
+      msg = "季"
     }
     if (status == 3) {
       money = that.data.list.year_money
+      msg = "年"
     }
     this.setData({ 
       savaStatus: status,
-      saveMoney: money
+      saveMoney: money,
+      selectMsg:msg
     });
   },
   toPays: function (e) {

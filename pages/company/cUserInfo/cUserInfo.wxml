@@ -31,7 +31,7 @@
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
             <!-- <image class='u-o-icon1' src='../../static/images/public/edit.png'/> -->
           </navigator>
-          <navigator url="../uCollect" class='u-o-list m-b10'>
+          <navigator url="../uCollect/uCollect" class='u-o-list m-b10'>
             <text>我的收藏</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>

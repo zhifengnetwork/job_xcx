@@ -1,2 +1,2 @@
 /* pages/company/thirdParty.wxss */
-@import "../template/common";
+@import "../../template/common";

@@ -1,6 +1,7 @@
 // pages/company/company.js
 const app = getApp();
-const util = require('../../utils/util.js');  //通用方法
+const util = require('../../../utils/util.js');  //通用方法
+import ServerData from '../../../utils/serverData.js';
 Page({
 
   /**
@@ -11,6 +12,34 @@ Page({
       clas: 'company-bColor-1',
       text: "我的"
     }
+  },
+
+  getRecruitList() {
+    var that = this,
+      _opt = {
+        'regtype': 1,
+        'province': '',
+        'city': '',
+        'district': ''
+      }
+    ServerData.recruitList(_opt).then((res) => {
+      var status = res.data.status
+      if (status == 1) {
+        this.setData({
+          recList: res.data.data
+        })
+      } else if (status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+      console.log(that.data.recList)
+      this.setData({
+        recList: res.data.data
+      })
+    })
   },
 
   /**
@@ -31,7 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getRecruitList();
   },
 
   /**

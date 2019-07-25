@@ -1,4 +1,4 @@
-// pages/company/personalDetail.js
+// pages/pubilc/address.js
 Page({
 
   /**

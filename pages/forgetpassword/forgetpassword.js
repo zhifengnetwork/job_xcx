@@ -34,7 +34,6 @@ Page({
     })
   },
   getVale: function(e) {
-    // this.data.input1text = ''
     if (e.detail.value != '') {
       this.setData({
         status: true,
@@ -75,7 +74,7 @@ Page({
     ServerData.fsCode(_opt).then((res) => {
         if (res.data.status == 1) {
           settime(that)
-        } 
+        }
         ServerData._wxTost(res.data.msg)
     });
   },
@@ -119,9 +118,11 @@ Page({
                 url: '../login/login',
               })
             }, 1500)
+       }else{
+          ServerData._wxTost(res.data.msg)
        }
     })
-  },
+  },  
 })
 /***
  * 倒计时事件 单位s

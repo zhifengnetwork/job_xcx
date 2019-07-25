@@ -39,5 +39,5 @@
       </view>
   </view>
   <view class='height'></view>
-  <view class='set-option user-bg-' bindtap='setInfo'>确定付款</view>
+  <view class='set-option user-bg-' bindtap='setInfo'>确定提现</view>
 </view>

@@ -22,9 +22,10 @@ Page({
     }
     that.collectionList();
   },
-  collectionList: function (regtype) {
+  
+  collectionList: function () {
     var _opt = {
-			regtype: 2
+			regtype: this.data.currentTab
 		}
 		ServerData.Ucollect(_opt).then((res) => {
 			console.log(res)

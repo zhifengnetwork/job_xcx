@@ -1,0 +1,72 @@
+
+<!-- HEADER START -->
+<import src="../../template/common.wxml"/>
+<!-- <template is="search-1" data="{{text: '我的'}}"/> -->
+<template is="search-1" data="{{tInfo}}"/>
+<view class='header-heigh'></view>
+<!-- HEADER END -->
+<view class='inner'>
+    <view class='container'>
+        <view class='content-list'>
+          <!-- <navigator url="postionDetail"> -->
+              <view class='c-title'>
+                <image src='../../../static/images/public/h_pop.png' class='c-flame'/>
+                <text>热门推荐</text>
+              </view>
+          <!-- </navigator> -->
+          <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_hot}}" wx:key="index">
+            <view class='c-l-info'>
+              <image src='{{item.logo}}'class="c-logo" />
+              <view class='c-info-text'>
+                <text class='c-info-title'>{{item.title}}</text>
+                <view class='c-info-msg'>
+                  <text class='c-msg'>月薪{{item.salary}}k</text>
+                  <text class='c-msg2'>{{item.work_age}}年以上</text>
+                </view>
+              </view>
+              <!-- company info start -->
+              <view class='company-info'>
+                  <text>第三方</text>
+                  <view class='company-status company-bg-' wx:if="{{item.require_cert==0}}">无需证书</view>
+                  <view class='company-status company-bg-' wx:if="{{item.require_cert==1}}">需要证书</view>
+              </view>
+            </view>
+          </navigator>
+          
+          <view class='more-recommond'>更多推荐</view>
+        </view>
+        <view class='content-list'>
+              <view class='c-title'>
+                <image src='../../../static/images/public/money_pop.png' class='c-flame'/>
+                <text>待遇更好</text>
+              </view>
+            <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_better}}" wx:key="index">
+              <view class='c-l-info'>
+                  <image src='{{item.logo}}'class="c-logo" />
+                  <view class='c-info-text'>
+                    <text class='c-info-title'>{{item.title}}</text>
+                    <view class='c-info-msg'>
+                      <text class='c-msg'>月薪{{item.salary}}k</text>
+                      <text class='c-msg2'>{{item.word_age}}</text>
+                    </view>
+                  </view>
+                  <!-- company info start -->
+                  <view class='company-info'>
+                      <text>第三方</text>
+                      <view class='company-status company-bg-'>
+                          <text wx:if="{{item.require_cert==0}}">无需证书</text>
+                          <text wx:if="{{item.require_cert==1}}">需要证书</text>
+                      </view>
+                  </view>
+              </view>
+            </navigator>
+            <view class='more-recommond'>更多推荐</view>
+        </view>
+    </view>
+</view>
+
+<!-- FOOTER TARBAR START -->
+<view class='footer-height'></view>
+<import src="../../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />
+

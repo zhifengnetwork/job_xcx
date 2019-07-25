@@ -47,7 +47,12 @@
     </view>
     <view class='footer'>
         <!-- <button class='f-btn-1' bindtap="callWithHim">马上预订</button> -->
-        <button class='f-btn-2 user-bColor- user-color-' bindtap="callWithHim">联系客服</button>
+         <contact-button class='contact' size='32' session-from="weapp">
+          <button class='f-btn-2 user-bColor- user-color-'>
+            联系客服
+          </button>
+        </contact-button>        
+
     </view>
   </view>
 </view>

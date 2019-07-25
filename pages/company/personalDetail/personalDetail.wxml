@@ -13,7 +13,7 @@
     <view class='d-content'>
         <view class="d-c-list">
           <view class='c-list-info'>
-            <view class='w-bold m-b22'>帅哥哥</view>
+            <view class='w-bold m-b22'>{{personalData.name}}</view>
             <view class='w-bold m-b22'>
                 <text class='m-r20'>手机号码：</text>
                 <text class='m-r10'>159</text>
@@ -22,17 +22,17 @@
             </view>
             <view class='m-b22'>大专</view>
             <view class='m-b22'>无证书</view>
-            <view>期望职位：电焊工人</view>
+            <view>期望职位：{{personalData.job_type}}</view>
           </view>
           <image src='../../../static/images/public/big_portrait.png' class='c-list-portrait'/>
         </view>
         <view class="d-c-list">
           <view class='c-list-info'>
             <view class='w-bold m-b22'>个人介绍</view>
-            <view class='m-b22'>包午餐</view>
-            <view class='m-b45'>3公里之内包送上下班</view>
+            <view class='m-b22'>{{personalData.desc}}</view>
+            <!-- <view class='m-b45'>3公里之内包送上下班</view> -->
             <view class='w-bold m-b22'>工作经验</view>
-            <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view>
+            <view class='line'>{{personalData.experience}}</view>
           </view>
           <!-- <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/> -->
         </view>
