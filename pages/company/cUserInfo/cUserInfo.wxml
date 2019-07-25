@@ -11,7 +11,10 @@
               <text>VIP到期时间：{{userData.vip_time}}</text>
               <view class='company-status m-0 company-bg-'>普通会员</view>
             </view>
-			<view class='c-msg m-b10'> 
+            <view class="surplus-num" >
+              剩余预定次数：{{userData.number}}
+            </view>
+		  	<view class='c-msg m-b10'> 
                 实名认证：
                 <text wx:if="{{userData.status=== 0}}">未认证</text>
                 <text wx:if="{{userData.status=== 1}}">认证</text>

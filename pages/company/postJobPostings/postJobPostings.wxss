@@ -14,6 +14,9 @@
   margin-right:25rpx;
   width:122rpx;
 }
+.separator{
+  font-size: 24rpx;
+}
 .-list-inp{
   width: 70%;
   font-size: 26rpx;
@@ -34,6 +37,9 @@
   font-size: 26rpx;
   text-align:center;
 
+}
+.minimum-salary,.maximum-salary{
+  width: 110rpx;
 }
 .down-arrow{
   width:12rpx;
@@ -70,4 +76,6 @@ radio{
 	border-radius: 10rpx;
 	border: solid 2rpx #eeeeee;
   margin-top: 18rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
 }

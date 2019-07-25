@@ -133,6 +133,11 @@ class ServerData {
 		return this._promise_post(_data, api.userAPI.editRecruit, complete);
 	}
 
+	// 编辑公司信息
+	editCompany(_data, complete) {
+		return this._promise_post(_data, api.userAPI.editCompany, complete);
+	}
+
 	//个人信息注册
 	_registerUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.registerUserInfo, complete);
