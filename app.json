@@ -1,5 +1,6 @@
 {
   "pages": [
+        
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
@@ -19,8 +20,9 @@
     "pages/company/company",
     "pages/company/thirdParty",
     "pages/company/jobApplicant",
-   
-    "pages/company/editInfo/editInfo",
+  
+
+    "pages/company/cUserInfo/cUserInfo",
     "pages/company/myPurse/withdrawal",
     "pages/company/myPurse/goldDeposits",
     "pages/company/myPurse/myPurse",
@@ -29,8 +31,8 @@
     "pages/company/personalDetail",
     "pages/company/uCollect",
     "pages/company/myReserve",
-    "pages/company/cUserInfo/cUserInfo",
     "pages/company/postJobPostings/postJobPostings",
+    "pages/company/editInfo/editInfo",
     "pages/company/publish",
 
     "pages/thirdParty/index",
@@ -47,7 +49,7 @@
     "pages/thirdParty/uPDetail",
     "pages/thirdParty/company",
     "pages/thirdParty/postionDetail",
-
+    "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",
     "pages/userInfo/company/company",
     "pages/userInfo/userCenter/userCenter",
@@ -60,7 +62,7 @@
     "pages/userInfo/myCertificate/myCertificate",
     "pages/userInfo/privacySettings/privacySettings",
     "pages/userInfo/collect/collect",
-    "pages/userInfo/editInfo/editInfo",
+    
 
     "pages/logs/logs"
   ],
