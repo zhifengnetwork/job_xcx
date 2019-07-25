@@ -1,19 +1,4 @@
 @import '../../template/common';
-.w-bold{
-  font-weight: bold;
-}
-.m-r20{
-  margin-right: 20rpx;
-}
-.m-r10{
-  margin-right: 10rpx;
-}
-.m-b22{
-  margin-bottom: 22rpx;
-}
-.m-b45{
-  margin-bottom: 45rpx;
-}
 #wrap{
   background:#f8f8f8;
   font-size:26rpx;
@@ -28,7 +13,7 @@
 .search-inner{
   margin: 25rpx 0 10rpx;
   display: flex;
-  align-items: center;
+  align-items:center;
   line-height: 48rpx;
 }
 .s-left-arrow{
@@ -62,12 +47,12 @@
   width:20rpx;
   height:20rpx;
   position:absolute;
-  left:45rpx;
-  top:19rpx;
+  left:54rpx;
+  top:30rpx;
 }
 .collect_tab{
   display: inline-block;
-  /* vertical-align: middle; */
+  vertical-align: middle;
   font-size:24rpx;
   color:#151515;
   font-weight:700;
@@ -112,7 +97,6 @@
   border-radius:42rpx; 
   box-sizing:border-box;
   font-size:28rpx;
-  /* border:2rpx solid #25bbb3 */
 }
 .footer .f-btn-1{
   margin-right:30rpx; 

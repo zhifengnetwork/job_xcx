@@ -19,7 +19,7 @@
   <view class='header-heigh'></view>
   <!-- HEADER END -->
   <view class='inner'>
-    <navigator url="../uPDetail/uPDetail" class='c-l-info' wx:for="{{hiringData}}" wx:key="key">
+    <navigator url="../personalDetail/personalDetail" class='c-l-info' wx:for="{{hiringData}}" wx:key="key">
         <view class='search-job-list'>
           <view class='c-info-title'>
               <text wx:if="{{item.cat_name!=null}}">{{item.cat_name}}</text>

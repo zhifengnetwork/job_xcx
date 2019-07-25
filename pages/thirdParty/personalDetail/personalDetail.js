@@ -1,15 +1,14 @@
 // pages/company/postionDetail.js
 import ServerData from '../../../utils/serverData.js';
-const app=getApp();
+const app = getApp();
 Page({
 
   /**
 	 * 页面的初始数据
 	 */
 	data: {
-		id:4,
-		recruitDetail: [], //个人详情
-    isCollect:0
+    id:'',
+    isCollect: 0
 	},
 
 	/**
@@ -20,40 +19,39 @@ Page({
 		this.setData({
 			id: options.id
 		});
-		this.reqDetails(); //请求数据
 	},
 
 	/**
-	 * 第三方职位详情数据
+	 * 个人简历详情数据
 	 */
-	reqDetails: function () {
+	reqPersonal: function () {
 		// 要传给后台的参数
 		var _opt = {
-			id: this.data.id
+			id:this.data.id
 		}
-		ServerData.recruitDetail(_opt).then((res) => {
-			
+		ServerData.personalDetail(_opt).then((res) => {
 			if (res.data.status == 1) {
 				this.setData({
-					recruitDetail: res.data.data,
-          isCollect:res.data.data.is_collection
+          personalData: res.data.data
 				})
-				console.log(this.data.recruitDetail)
-			} else {
+      } else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      } else {
 				ServerData._wxTost(res.data.msg)
 			}
 		})
 	},
 
 	/**
-	 * 收藏
+	 * 收藏/取消收藏
 	 */
 	onCollection: function (e) {
-    // console.log(e.currentTarget.dataset.stu)
     var statuss = e.currentTarget.dataset.stu
-    if (e.currentTarget.dataset.stu==0){
-      statuss =1
-    }else{
+    if (e.currentTarget.dataset.stu == 0) {
+      statuss = 1
+    } else {
       statuss = 0
     }
     this.setData({
@@ -61,12 +59,11 @@ Page({
     })
 		// 要传给后台的参数
 		var _opt = {
-			'type': 1,
+			'type': 2,
 			'to_id': this.data.id
 		}
 		ServerData.collection(_opt).then((res) => {
 			if (res.data.status == 1) {
-				// 轻提示调用
 				ServerData._wxTost(res.data.msg)
 			} else {
 				ServerData._wxTost(res.data.msg)
@@ -85,10 +82,25 @@ Page({
 
   // 预定
   toReservation:function(){
-    wx.showToast({
-      title: '预订成功',
-      icon: 'success',
-      duration: 2000
+    var _opt = {
+      id:this.data.id
+    }
+    ServerData.booking(_opt).then((res) => {
+      console.log(res)
+      if (res.data.status == 1) {
+          wx.showToast({
+            title: '预订成功',
+            icon: 'success',
+            duration: 2000
+          })
+      } else if(res.data.status == 5){
+        ServerData._wxTost(res.data.msg)
+        // wx.redirectTo({
+        //   url: '../myReserve/myReserve'
+        // })
+      }else{
+        ServerData._wxTost(res.data.msg)
+      }
     })
   },
    
@@ -103,7 +115,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.reqPersonal(); //请求数据
   },
 
   /**
