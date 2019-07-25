@@ -1,6 +1,6 @@
 // pages/company/uCollect.js
 import ServerData from '../../../utils/serverData.js';
-const app=getApp();
+const app = getApp();
 Page({
 
   /**

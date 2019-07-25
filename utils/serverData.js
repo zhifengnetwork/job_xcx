@@ -199,6 +199,18 @@ class ServerData {
 	collection(_data, complete) {
 		return this._promise_post(_data, api.userAPI.collection, complete);
 	}
+	// 招人
+	hiring(_data, complete) {
+		return this._promise_post(_data, api.userAPI.hiring, complete);
+	}
+	// 预订列表
+	bookingList(_data, complete) {
+		return this._promise_post(_data, api.userAPI.bookingList, complete);
+	}
+	// 预订
+	booking(_data, complete) {
+		return this._promise_post(_data, api.userAPI.booking, complete);
+	}
 	//工种列表
 	categoryList(_data, complete) {
 		return this._promise_post(_data, api.userAPI.categoryList, complete);

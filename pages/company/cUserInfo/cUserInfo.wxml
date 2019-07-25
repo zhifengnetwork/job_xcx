@@ -35,11 +35,11 @@
             <text>我的收藏</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
-          <navigator url="" class='u-o-list m-b10'>
+          <navigator url="../jobList/jobList" class='u-o-list m-b10'>
             <text>招工信息</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
-          <navigator url="../myReserve" class='u-o-list m-b10'>
+          <navigator url="../myReserve/myReserve" class='u-o-list m-b10'>
             <text>我的预订</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>

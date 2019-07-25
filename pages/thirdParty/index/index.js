@@ -46,9 +46,9 @@ Page({
       if (res.data.status == 1) {
         var newArry=[]
         newArry.push({ cat_id:'', cat_name: "选择人才"})
+        var recl = [...newArry, ...res.data.data]
 
-
-        this.setData({ jobArray: res.data.data})
+        this.setData({ jobArray: recl})
         console.log(res.data.data)
       } else if (res.data.status == -1) {
         wx.redirectTo({
@@ -58,5 +58,14 @@ Page({
         ServerData._wxTost(res.data.msg)
       }
     })
+  },
+  jobChange: function (e) {
+    // console.log(e)
+      this.setData({
+        jobIndex: e.detail.value,
+        job_type: this.data.jobArray[e.detail.value].cat_id
+      })
+    // console.log(this.data.jobArray[e.detail.value].cat_id)
+      this.getUserInfo()             //主页信息
   }
 })

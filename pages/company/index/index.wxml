@@ -6,10 +6,9 @@
         <input type='text' class='search company-bColor-1'  placeholder="输入所要查找的内容" />
         <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
       </view>
-      <navigator url='../../login/login' redirect><text class='login_tab'>登录</text></navigator>
+      <navigator url='../cUserInfo/cUserInfo' redirect><text class='login_tab'>我的</text></navigator>
     </view>
     <view class='subtitle overH'>
-        <text>选择地点</text>
         <text>选择人才</text>
     </view>
   </view>

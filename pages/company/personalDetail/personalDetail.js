@@ -1,6 +1,6 @@
 // pages/company/postionDetail.js
 import ServerData from '../../../utils/serverData.js';
-const app=getApp();
+const app = getApp();
 Page({
 
   /**
@@ -69,10 +69,22 @@ Page({
 
   // 预定
   toReservation:function(){
-    wx.showToast({
-      title: '预订成功',
-      icon: 'success',
-      duration: 2000
+    var _opt = {
+      id:this.data.id
+    }
+    ServerData.booking(_opt).then((res) => {
+      console.log(res)
+      if (res.data.status == 1) {
+          wx.showToast({
+            title: '预订成功',
+            icon: 'success',
+            duration: 2000
+          })
+      } else if(res.data.status == 5){
+        wx.redirectTo({
+          url: '../myReserve/myReserve'
+        })
+      }
     })
   },
    

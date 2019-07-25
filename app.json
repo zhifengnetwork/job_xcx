@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+    "pages/thirdParty/jobApplicant/jobApplicant",
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
@@ -17,20 +17,21 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
+    
     "pages/company/index/index",
     "pages/company/company",
     "pages/company/cUserInfo/cUserInfo", 
     "pages/company/thirdParty/thirdParty",   
-    "pages/company/jobApplicant",
+    "pages/company/jobApplicant/jobApplicant",
     "pages/company/editInfo/editInfo",
     "pages/company/myPurse/myPurse",
+    "pages/company/jobList/jobList",
     "pages/company/myPurse/withdrawal/withdrawal",
     "pages/company/myPurse/goldDeposits/goldDeposits",
-    "pages/company/jobList",
     "pages/company/postionDetail/postionDetail",
     "pages/company/personalDetail/personalDetail",
     "pages/company/uCollect/uCollect",
-    "pages/company/myReserve",
+    "pages/company/myReserve/myReserve",
     "pages/company/postJobPostings/postJobPostings",
     "pages/company/publish",
 
@@ -45,12 +46,10 @@
     "pages/thirdParty/uCollect/uCollect",
     "pages/thirdParty/postJobPostings",
     "pages/thirdParty/editInfo/editInfo",
-    "pages/thirdParty/jobApplicant/jobApplicant",
+
     "pages/thirdParty/uPDetail/uPDetail",
     "pages/thirdParty/company/company",
     "pages/thirdParty/postionDetail/postionDetail",
-
-
 
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",

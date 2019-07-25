@@ -1,11 +1,28 @@
 
   <!-- HEADER START -->
-  <import src="../template/common.wxml"/>
-  <template is="search-1" data="{{tInfo}}"/>
+  <import src="../../template/common.wxml"/>
+  <template is="search-1" data="{{tInfo}}"/>0
   <view class='header-heigh'></view>
   <!-- HEADER END -->
   <view class='inner'>
-    <navigator url="uPosition" class='c-l-info'>
+    <navigator url="../personalDetail/personalDetail?id={{item.id}}" class='c-l-info' wx:for="{{hiringData}}" wx:key="key">
+        <view class='search-job-list'>
+          <view class='c-info-title'>{{item.cat_name}}</view>
+          <view class='c-info-msg overH'>
+            <!-- <text class='c-msg fl'>广州市白云区</text> -->
+            <text class='c-msg2 fl'>{{item.work_age}}年</text>
+          </view>
+          <!-- <view class='c-msg3'>会计证书</view> -->
+          <view class='s-portrait'>
+            <image src='{{item.avatar}}' class='portrait-icon'/>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='overH'></view>
+        </view>
+        <view class='company-status company-bg- fr' wx:if="{{item.images == 1}}">有证书</view>
+        <view class='company-status company-bg- fr' wx:if="{{item.images == 0}}">无证书</view>
+    </navigator>
+    <!-- <navigator url="uPosition" class='c-l-info'>
         <view class='search-job-list'>
           <view class='c-info-title'>专业偷税会计/会计</view>
           <view class='c-info-msg overH'>
@@ -14,7 +31,7 @@
           </view>
           <view class='c-msg3'>会计证书</view>
           <view class='s-portrait'>
-            <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+            <image src='../../../static/images/public/portrait.png' class='portrait-icon'/>
             <text>周先生</text>
           </view>
           <view class='overH'></view>
@@ -30,7 +47,7 @@
           </view>
           <view class='c-msg3'>会计证书</view>
           <view class='s-portrait'>
-            <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+            <image src='../../../static/images/public/portrait.png' class='portrait-icon'/>
             <text>周先生</text>
           </view>
           <view class='overH'></view>
@@ -46,32 +63,16 @@
           </view>
           <view class='c-msg3'>会计证书</view>
           <view class='s-portrait'>
-            <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+            <image src='../../../static/images/public/portrait.png' class='portrait-icon'/>
             <text>周先生</text>
           </view>
           <view class='overH'></view>
         </view>
         <view class='company-status company-bg- fr'>有证书</view>
-    </navigator>
-    <navigator url="uPosition" class='c-l-info'>
-        <view class='search-job-list'>
-          <view class='c-info-title'>专业偷税会计/会计</view>
-          <view class='c-info-msg overH'>
-            <text class='c-msg fl'>广州市白云区</text>
-            <text class='c-msg2 fl'>3年</text>
-          </view>
-          <view class='c-msg3'>会计证书</view>
-          <view class='s-portrait'>
-            <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
-            <text>周先生</text>
-          </view>
-          <view class='overH'></view>
-        </view>
-        <view class='company-status company-bg- fr'>有证书</view>
-    </navigator>
+    </navigator> -->
     <view class='more-recommond'>更多推荐</view>
   </view>
   <!-- FOOTER TARBAR START -->
   <view class='footer-height'></view>
-  <import src="../template/tabbar.wxml" />
+  <import src="../../template/tabbar.wxml" />
   <template is="tabBar" data="{{tabBar}}" />

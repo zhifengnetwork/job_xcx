@@ -12,7 +12,7 @@
         <!-- <text wx:if="{{iShowBox}}">选择人才</text> -->
         <!-- <view class='-list-pays' value="{{cat_id}}"> -->
           <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name" range-value="cat_id">
-            <view class="picker subtitle-msg">
+            <view class="picker subtitle-msg" data-id='{{jobArray[jobIndex].cat_id}}'>
               {{jobArray[jobIndex].cat_name}} 
             </view>
           </picker>

@@ -491,3 +491,11 @@ textarea{
     display: block;
     margin: auto
 }
+
+.wx-no-info{
+  text-align:center;
+  margin-top:200rpx;
+  font-size:30rpx;
+  color:#666;
+
+}
