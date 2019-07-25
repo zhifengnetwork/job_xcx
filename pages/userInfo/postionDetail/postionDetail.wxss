@@ -86,6 +86,7 @@
 .c-list-portrait img{
   width: 100%;
 }
+
 /* FOOTER START */
 .footer{
   position: fixed;
@@ -103,7 +104,6 @@
   border-radius:42rpx; 
   box-sizing:border-box;
   font-size:28rpx;
-  /* border:2rpx solid #25bbb3 */
 }
 /* .footer .f-btn-1{
   margin-right:30rpx; 
