@@ -4,29 +4,44 @@
     <!-- <view class='title'>个人中心</view> -->
     <view class='content-list'>
       <view class='c-l-info'>
-          <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
+          <image src='{{userData.logo}}' class="c-logo" />
           <view class='c-info-text'>
-            <text class='c-info-title'>智丰网络</text>
+            <text class='c-info-title'>{{userData.company_name}}</text>
             <view class='c-msg m-b10'>
-              <text>VIP到期时间：2017-5-10</text>
-              <view class='company-status m-0 third-bg-'>月费VIP</view>
+              <text>VIP到期时间：{{userData.vip_time}}</text>
+              <view class='company-status m-0 third-bg-'>
+                  <text wx:if="{{userData.is_vip=== 0}}">普通用户</text>
+                  <text wx:else>普通会员</text>
+              </view>
             </view>
-            <view class='c-msg m-b10'>企业用户：</view>
-            <view class='c-msg m-b10'>企业编号：007</view>
+            <view class="surplus-num" >
+              剩余预定次数：{{userData.number}}
+            </view>
+		  	    <!-- <view class='c-msg m-b10'> 
+                实名认证：
+                <text wx:if="{{userData.status=== 0}}">未认证</text>
+                <text wx:if="{{userData.status=== 1}}">认证</text>
+                <text wx:if="{{userData.status=== -1}}">拒绝认证</text>
+            </view> -->
+            <view class='c-msg m-b10'>企业编号：{{userData.id}}</view>
           </view>
       </view>
       <button class='edit-info third-bg-' bindtap='toEdit'>编辑发布内容</button>
       <!-- USER OPTION START -->
       <view class='user-option'>
           <navigator url="../editInfo/editInfo" class='u-o-list m-b10'>
-            <text>编辑公司信息</text>
+            <text>编辑信息</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
           <navigator url="../uCollect/uCollect" class='u-o-list m-b10'>
             <text>我的收藏</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
-          <navigator url="../myReserve" class='u-o-list m-b10'>
+          <navigator url="../jobList/jobList" class='u-o-list m-b10'>
+            <text>招工信息</text>
+            <icon class='iconfont icon-youjiantou2 third-color-'></icon>
+          </navigator>
+          <navigator url="../myReserve/myReserve" class='u-o-list m-b10'>
             <text>我的预订</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
@@ -40,7 +55,9 @@
           </navigator>
           <view class='u-o-list m-b10'>
             <text>实名认证</text>
-            <text class='u-o-text third-color-'>审核中</text>
+            <text class='u-o-text third-color-' wx:if="{{userData.status=== 0}}">未认证</text>
+            <text class='u-o-text third-color-' wx:if="{{userData.status=== 1}}">认证</text>
+            <text class='u-o-text third-color-' wx:if="{{userData.status=== -1}}">拒绝认证</text>
           </view>
           <navigator url="../../public/help" class='u-o-list m-b10'>
             <text>帮助与反馈</text>

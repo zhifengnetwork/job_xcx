@@ -9,7 +9,8 @@ Page({
 		savaStatus: 1,
 		saveMoney: 10, 
 		selectMsg: '月',
-		moneyData: {}
+    num:'',
+		moneyData:{}
 	},
 
   /**
@@ -24,36 +25,43 @@ Page({
 			console.log(res)
 			this.setData({
 				moneyData: res.data.data,
-				saveMoney: res.data.data.month_money
+				saveMoney: res.data.data.month_money,
+        num: res.data.data.month_num
 			})
 		})
 	},
 
 	setInfo() {
-
+      
 	},
 
 	changSelect: function (e) {
+    console.log(this.data.moneyData)
 		var that = this,
 			status = e.currentTarget.dataset.status,
 			money = "",
-			msg = ""
+			msg = "",
+      num = ''
 		if (status == 1) {
 			money = that.data.moneyData.month_money
-			msg = "月"
+			msg = "月",
+      num = that.data.moneyData.month_num
 		}
 		if (status == 2) {
 			money = that.data.moneyData.quarter_money
 			msg = "季"
+      num = that.data.moneyData.quarter_num
 		}
 		if (status == 3) {
 			money = that.data.moneyData.year_money
+      num = that.data.moneyData.year_num
 			msg = "年"
 		}
 		this.setData({
 			savaStatus: status,
 			saveMoney: money,
-			selectMsg: msg
+			selectMsg: msg,
+      num: num
 		});
 	},
 	

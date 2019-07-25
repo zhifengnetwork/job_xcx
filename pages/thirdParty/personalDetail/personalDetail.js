@@ -32,7 +32,8 @@ Page({
 		ServerData.personalDetail(_opt).then((res) => {
 			if (res.data.status == 1) {
 				this.setData({
-          personalData: res.data.data
+          personalData: res.data.data,
+          isCollect: res.data.data.is_collection
 				})
       } else if (res.data.status == -1) {
         wx.redirectTo({

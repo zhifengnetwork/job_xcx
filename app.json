@@ -16,7 +16,6 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-    
     "pages/company/index/index",
     "pages/company/company",
     "pages/company/cUserInfo/cUserInfo", 
@@ -35,21 +34,22 @@
     "pages/company/publish",
 
     "pages/thirdParty/index/index",
+    "pages/thirdParty/thirdInfo/thirdInfo",
     "pages/thirdParty/jobList",
     "pages/thirdParty/thirdParty",
     "pages/thirdParty/jobApplicant/jobApplicant",
-    "pages/thirdParty/thirdInfo/thirdInfo",
     "pages/thirdParty/myPurse/goldDeposits",
+    "pages/thirdParty/myReserve/myReserve",
     "pages/thirdParty/myPurse/withdrawal",
     "pages/thirdParty/myPurse/myPurse",
-    "pages/thirdParty/myReserve",
     "pages/thirdParty/uCollect/uCollect",
-    "pages/thirdParty/postJobPostings",
+    "pages/thirdParty/postJobPostings/postJobPostings",
     "pages/thirdParty/editInfo/editInfo",
     "pages/thirdParty/company/company",
     "pages/thirdParty/postionDetail/postionDetail",
     "pages/thirdParty/personalDetail/personalDetail",
-
+    "pages/thirdParty/uPDetail/uPDetail",
+    
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",
     "pages/userInfo/company/company",

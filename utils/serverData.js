@@ -113,6 +113,11 @@ class ServerData {
 		return this._promise_get(_data, api.userAPI.reqIndex, complete);
 	}
 
+  // 招工信息
+  recruit(_data, complete) {
+    return this._promise_post(_data, api.userAPI.recruit, complete);
+  }
+
 	// 职位详情
 	recruitDetail(_data, complete) {
 		return this._promise_post(_data, api.userAPI.recruitDetail, complete);
@@ -220,7 +225,11 @@ class ServerData {
 	editUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.editUserInfo, complete);
 	}
-
+  //获取公司信息
+  getCompayInfo(_data, complete) {
+    return this._promise_post(_data, api.userAPI.getCompayInfo, complete);
+  }
+  
 	//公司及第三方职位列表
 	recruitList(_data, complete) {
 		return this._promise_post(_data, api.userAPI.recruitList, complete);

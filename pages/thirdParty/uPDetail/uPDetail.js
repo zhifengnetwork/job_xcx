@@ -1,45 +1,13 @@
-// pages/company/jobList.js
-import ServerData from '../../../utils/serverData.js';
+// pages/thirdParty/uPDetail/uPDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:[],
-    page:1,
-    iconSize: [20],
-    iconType: ['success'],
-    isDel:false,
-    isCheck:true
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-      this.recruit()
-  },
-  recruit(){
-    console.log(11)
-    var that =this
-    ServerData.recruit({page:that.data.page}).then((res) => {
-        console.log(res)
-    })
 
   },
 
-
-  changItemStatus(e){
-    console.log(e.currentTarget.dataset.check)
-
-    this.setData({
-      isCheck: !e.currentTarget.dataset.check
-    })
-
-    console.log(this.data.isCheck)
- 
-  },
   /**
    * 生命周期函数--监听页面加载
    */

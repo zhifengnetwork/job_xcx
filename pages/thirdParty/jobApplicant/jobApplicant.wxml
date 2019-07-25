@@ -19,7 +19,7 @@
   <view class='header-heigh'></view>
   <!-- HEADER END -->
   <view class='inner'>
-    <navigator url="../personalDetail/personalDetail" class='c-l-info' wx:for="{{hiringData}}" wx:key="key">
+    <navigator url="../personalDetail/personalDetail?id={{item.id}}" class='c-l-info' wx:for="{{hiringData}}" wx:key="key">
         <view class='search-job-list'>
           <view class='c-info-title'>
               <text wx:if="{{item.cat_name!=null}}">{{item.cat_name}}</text>
@@ -42,7 +42,7 @@
             <text wx:else>无证书</text>
         </view>
     </navigator>
-    <view class='more-recommond'>更多推荐</view>
+    <!-- <view class='more-recommond'>更多推荐</view> -->
   </view>
   <!-- FOOTER TARBAR START -->
   <view class='footer-height'></view>

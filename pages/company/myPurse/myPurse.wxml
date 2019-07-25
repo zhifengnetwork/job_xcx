@@ -24,7 +24,7 @@
 			<button class='g-d-btn2 {{savaStatus==3 ? "th-btn-active" : ""}}' bindtap='changSelect' data-status="3">年费</button>
 		</view>
 
-		<view class='kt-jh'>开通 <text class='bold'>{{selectMsg}}</text> 会员您将会获得 次预订机会</view>
+		<view class='kt-jh'>开通 <text class='bold'>{{selectMsg}}</text> 会员您将会获得<text class='bold'>{{num}}</text>次预订机会</view>
 	</view>
 
 	<view class='set-option company-bg-' bindtap="toPays">立即开通</view>

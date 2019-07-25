@@ -176,7 +176,7 @@ Page({
 				ServerData._wxTost(res.data.msg);
 				setTimeout(() => {
 					wx.redirectTo({
-						url: '../cUserInfo/cUserInfo',
+						url: '../thirdInfo/thirdInfo',
 					})
 				},1100)
 			}else{
@@ -190,7 +190,7 @@ Page({
 	 */
 	saveInfo: function () {
 		wx.redirectTo({
-			url: '../cUserInfo/cUserInfo'
+			url: '../thirdInfo/thirdInfo'
 		})
 	},
 

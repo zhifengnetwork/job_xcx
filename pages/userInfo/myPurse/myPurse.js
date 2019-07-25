@@ -31,9 +31,7 @@ Page({
         })
       })
   },
-  setInfo(){
-     
-  },
+
   changSelect: function (e) {
     var that =this,
         status = e.currentTarget.dataset.status,

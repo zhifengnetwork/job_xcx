@@ -15,7 +15,9 @@ Page({
     hiringData: [],
     job_type: '',                 //选中的职位值
     jobArray: [],                 //职位列表
-    jobIndex: 0                  //职位下标
+    jobIndex: 0,                  //职位下标
+    row: 100,                     //默认拿一百条
+    page:1                        //默认第一页
   },
 
   /**
@@ -25,11 +27,17 @@ Page({
     util.getStorageItem('savePostion', app)
     this.hiring()
     this.getCategoryList()         //职位列表
-    console.log(this.data.jobIndex)
+    // console.log(this.data.jobIndex)
   },
   hiring: function () {
-    ServerData.hiring({ 'kw': this.data.job_type}).then((res) => {
-      console.log(res)
+    var _opt={
+      'rows': this.data.row,
+      'page':this.data.page,
+      'kw': this.data.job_type,
+
+    }
+    ServerData.hiring({ }).then((res) => {
+      // console.log(res)
       if (res.data.status == 1) {
         this.setData({
           hiringData: res.data.data
@@ -53,7 +61,7 @@ Page({
         var recl = [...newArry, ...res.data.data]
         this.setData({ jobArray: recl })
 
-        console.log(that.data.jobArray)
+        // console.log(that.data.jobArray)
       } else if (res.data.status == -1) {
         wx.redirectTo({
           url: '../../login/login'

@@ -1,0 +1,41 @@
+<!--pages/company/uCollect.wxml-->
+<view class='inner'>
+  <view class='c-l-info'>
+      <view class='search-job-list' wx:for="{{bookListData}}" wx:key="key">
+        <view class='c-info-title'>{{item.job_type}}</view>
+        <view class='c-info-msg overH'>
+          <!-- <text class='c-msg fl'>广州市白云区</text> -->
+          <text class='c-msg2 fl'>{{item.work_age}}年</text>
+          <view class='company-status company-bg- fr' wx:if="{{item.images == 0}}">无证书</view>
+          <view class='company-status company-bg- fr' wx:if="{{item.images == 1}}">有证书</view>
+        </view>
+        <!-- <view class='c-msg3'>会计证书</view> -->
+        <view class='s-portrait'>
+          <image src='{{item.avatar}}' class='portrait-icon'/>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='overH'></view>
+      </view>
+  </view>
+
+  <view class='wx-no-info'>
+      <image class='wx-no-icon' src='../../../static/images/public/none.png'></image>
+      <view>暂无数据</view>
+  </view>
+  <!-- <view class='c-l-info'>
+      <view class='search-job-list'>
+        <view class='c-info-title'>专业偷税会计/会计</view>
+        <view class='c-info-msg overH'>
+          <text class='c-msg fl'>广州市白云区</text>
+          <text class='c-msg2 fl'>3年</text>
+          <view class='company-status company-bg- fr'>有证书</view>
+        </view>
+        <view class='c-msg3'>会计证书</view>
+        <view class='s-portrait'>
+          <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
+          <text>周先生</text>
+        </view>
+        <view class='overH'></view>
+      </view>
+  </view> -->
+</view>

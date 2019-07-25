@@ -499,3 +499,8 @@ textarea{
   color:#666;
 
 }
+.wx-no-icon{
+  width: 150rpx;
+  height: 140rpx;
+  margin-bottom: 13rpx;
+}
