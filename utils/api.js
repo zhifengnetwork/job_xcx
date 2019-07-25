@@ -42,6 +42,9 @@ const userAPI = {
   recruitHot: `${proxys}/company/recruit_hot`,        // 热门推荐
   recruitBetter: `${proxys}/company/recruit_better`,  // 待遇更好
   userVisit: `${proxys}/user/user_visit`,             // 主页，公司/第三方/个人
+  hiring: `${proxys}/person/person_list`,// 公司招人信息列表
+  booking: `${proxys}/company/reserve`,// 公司点击预订
+  bookingList: `${proxys}/company/reserve_list`,// 公司预订列表
   
   getAddress: `${proxys}/person/get_address`,             // 获取省/市/区列表
 }

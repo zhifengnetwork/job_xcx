@@ -132,7 +132,7 @@ App({
           active: true
         },
         {
-          "pagePath": "/pages/company/jobApplicant",
+          "pagePath": "/pages/company/jobApplicant/jobApplicant",
           "text": "招人",
           "iconPath": "/static/images/bar_icon/user2_gray.png",
           "selectedIconPath": "/static/images/bar_icon/company/user2_pop.png",

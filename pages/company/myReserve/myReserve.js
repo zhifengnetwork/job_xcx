@@ -1,4 +1,6 @@
 // pages/company/myReserve.js
+import ServerData from '../../../utils/serverData.js';
+const app = getApp();
 Page({
 
   /**
@@ -6,8 +8,23 @@ Page({
    */
   data: {
     tempFilePaths: [],
-    hiddenName: false
+    hiddenName: false,
+    bookListData:[]
   },
+
+  bookList: function () {
+		ServerData.bookingList({}).then((res) => {
+			console.log(res)
+			if (res.data.status == 1) {
+				this.setData({
+					bookListData: res.data.data
+				})
+			} else {
+				ServerData._wxTost(res.data.msg)
+			}
+		})
+  },
+
   /**
    * 上传图片方法
    */
@@ -98,7 +115,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.bookList();
   },
 
   /**
