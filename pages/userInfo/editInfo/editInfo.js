@@ -27,12 +27,12 @@ Page({
     work:false,
     aducational: false, 
     workInfo: "",                           //工作经验
-    aducationalInfo: "",                    //教育经历
-    name: "",                               //姓名
-    old: "",                                //年龄
-    mz: "",                                 //民族
-    wordOld: "",                            //工龄
-    explain: "",                            //说明
+      aducationalInfo: "",                    //教育经历
+      name: "",                               //姓名
+      old: "",                                //年龄
+      mz: "",                                 //民族
+      wordOld: "",                            //工龄
+      explain: "",                            //说明
   },
   /**
    * 生命周期函数--监听页面加载

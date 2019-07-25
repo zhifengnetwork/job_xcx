@@ -133,6 +133,11 @@ class ServerData {
 		return this._promise_post(_data, api.userAPI.editRecruit, complete);
 	}
 
+	// 编辑公司信息
+	editCompany(_data, complete) {
+		return this._promise_post(_data, api.userAPI.editCompany, complete);
+	}
+
 	//个人信息注册
 	_registerUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.registerUserInfo, complete);
@@ -152,6 +157,10 @@ class ServerData {
 	myPurse(_data, complete) {
 		return this._promise_post(_data, api.userAPI.myPurse, complete);
 	}
+  //开通会员
+  registerVip(_data, complete) {
+    return this._promise_post(_data, api.userAPI.registerVip, complete);
+  }
 	//提现
 	goWithdrawal(_data, complete) {
 		return this._promise_post(_data, api.userAPI.goWithdrawal, complete);

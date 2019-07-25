@@ -15,6 +15,7 @@ const userAPI = {
   recruitDetail: `${proxys}/company/recruit_detail`,  // 公司发布的职位详情
   personalDetail: `${proxys}/person/detail`,          // 个人简历详情
   editRecruit: `${proxys}/company/edit_recruit`,      // 编辑、发布职位
+  editCompany: `${proxys}/company/edit`,      // 编辑公司信息
 
   uploadFile: `${proxys}/user/upload_file`,           //上传文件
 
@@ -30,6 +31,7 @@ const userAPI = {
   categoryList: `${proxys}/person/category_list`,     // 工种列表
 
   myPurse: `${proxys}/person/my_wallet`,              // 我的钱包
+  registerVip: `${proxys}/user/register`,             // 开通会员
   goWithdrawal: `${proxys}/person/go_withdrawal`,     // 提现
   withdrawal: `${proxys}/person/withdrawal`,          // 提现保存
 

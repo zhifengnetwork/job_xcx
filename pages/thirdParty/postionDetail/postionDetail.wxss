@@ -1,5 +1,5 @@
 
-@import '../template/common';
+@import '../../template/common';
 .w-bold{
   font-weight: bold;
 }

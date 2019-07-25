@@ -78,7 +78,7 @@ Page({
           wx.setStorageSync('savePostion', type);
           console.log(type)
           
-          if (type == 3) {          //个人首页
+          if (type == 3) {  //个人首页
             wx.redirectTo({         
               url: '../userInfo/index/index'
             })
@@ -90,7 +90,7 @@ Page({
           }
           else if (type == 2) {     //第三方首页
             wx.redirectTo({         
-              url: '../thirdParty/index'
+              url: '../thirdParty/index/index'
             })
           }
           else {

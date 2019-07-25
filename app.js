@@ -173,42 +173,42 @@ App({
       "borderStyle": "#d6d6d6",
       "list": [
         {
-          "pagePath": "/pages/thirdParty/index",
+          "pagePath": "/pages/thirdParty/index/index",
           "text": "首页",
-          "iconPath": "../../static/images/bar_icon/home_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/third/h_blue.png",
+          "iconPath": "/static/images/bar_icon/home_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/third/h_blue.png",
           "clas": "menu-item",
           active: true
         },
         {
-          "pagePath": "/pages/thirdParty/jobApplicant",
+          "pagePath": "/pages/thirdParty/jobApplicant/jobApplicant",
           "text": "招人",
-          "iconPath": "../../static/images/bar_icon/user2_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/third/user2_blue.png",
+          "iconPath": "/static/images/bar_icon/user2_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/third/user2_blue.png",
           "clas": "menu-item",
           active: true
         },
         {
-          "pagePath": "/pages/thirdParty/company",
+          "pagePath": "/pages/thirdParty/company/company",
           "text": "公司",
-          "iconPath": "../../static/images/bar_icon/company_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/third/company_blue.png",
+          "iconPath": "/static/images/bar_icon/company_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/third/company_blue.png",
           "clas": "menu-item",
           active: true
         },
         {
           "pagePath": "/pages/information/information",
           "text": "消息",
-          "iconPath": "../../static/images/bar_icon/info_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/third/info_blue.png",
+          "iconPath": "/static/images/bar_icon/info_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/third/info_blue.png",
           "clas": "menu-item",
           active: true
         },
         {
-          "pagePath": "/pages/thirdParty/thirdInfo",
+          "pagePath": "/pages/thirdParty/thirdInfo/thirdInfo",
           "text": "我的",
-          "iconPath": "../../static/images/bar_icon/user_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/third/user_blue.png",
+          "iconPath": "/static/images/bar_icon/user_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/third/user_blue.png",
           "clas": "menu-item",
           active: true
         }

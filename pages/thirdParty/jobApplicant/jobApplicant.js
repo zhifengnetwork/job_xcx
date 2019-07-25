@@ -1,6 +1,6 @@
 // pages/userInfo/myInfo.js
 const app = getApp();
-const util = require('../../utils/util.js');  //通用方法
+const util = require('../../../utils/util.js');  //通用方法
 Page({
 
   /**

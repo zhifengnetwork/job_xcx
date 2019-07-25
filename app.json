@@ -1,8 +1,6 @@
 {
   "pages": [
     
-    "pages/company/index/index",
-    
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
@@ -23,6 +21,7 @@
     "pages/company/company",
     "pages/company/thirdParty/thirdParty",   
     "pages/company/jobApplicant/jobApplicant",
+    "pages/company/cUserInfo/cUserInfo",
     "pages/company/editInfo/editInfo",
     "pages/company/myPurse/withdrawal",
     "pages/company/myPurse/goldDeposits",
@@ -36,21 +35,25 @@
     "pages/company/postJobPostings/postJobPostings",
     "pages/company/publish",
 
-    "pages/thirdParty/index",
+    "pages/thirdParty/index/index",
     "pages/thirdParty/jobList",
     "pages/thirdParty/thirdParty",
-    "pages/thirdParty/thirdInfo",
+    "pages/thirdParty/thirdInfo/thirdInfo",
     "pages/thirdParty/myPurse/goldDeposits",
     "pages/thirdParty/myPurse/withdrawal",
     "pages/thirdParty/myPurse/myPurse",
     "pages/thirdParty/myReserve",
+    "pages/thirdParty/uCollect/uCollect",
     "pages/thirdParty/postJobPostings",
-    "pages/thirdParty/editInfo",
-    "pages/thirdParty/jobApplicant",
-    "pages/thirdParty/uPDetail",
-    "pages/thirdParty/company",
-    "pages/thirdParty/postionDetail",
+    "pages/thirdParty/editInfo/editInfo",
+    "pages/thirdParty/jobApplicant/jobApplicant",
+    "pages/thirdParty/uPDetail/uPDetail",
+    "pages/thirdParty/company/company",
+    "pages/thirdParty/postionDetail/postionDetail",
 
+
+    "pages/company/index/index",
+    "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",
     "pages/userInfo/company/company",
     "pages/userInfo/thirdParty/thirdParty",
@@ -64,8 +67,6 @@
     "pages/userInfo/myCertificate/myCertificate",
     "pages/userInfo/privacySettings/privacySettings",
     "pages/userInfo/collect/collect",
-    "pages/userInfo/editInfo/editInfo",
-
     "pages/logs/logs"
   ],
   "window": {
