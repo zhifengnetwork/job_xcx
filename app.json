@@ -13,7 +13,9 @@
     "pages/public/audit",
     "pages/information/information",
     "pages/personalMessage/personalMessage",
-    
+    "pages/recruitHot/recruitHot",
+    "pages/recruitBetter/recruitBetter",
+
     "pages/company/index/index",
     "pages/company/company",
     "pages/company/thirdParty/thirdParty",   

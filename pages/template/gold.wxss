@@ -5,9 +5,7 @@
   padding:45rpx 0;
   text-align: center;
   position: relative;
-  /* background:#ff54b5; */
   color: #fff;
-  /* border:2rpx solid #ff54b5; */
   border-radius: 6rpx;
   font-size: 26rpx;
   font-weight:600;
@@ -56,6 +54,13 @@
 .g-deposits-btn1 .g-d-active,.g-deposits-btn2 .g-d-active{
   color: #fff;
   background:#ff54b5;
+}
+.kt-jh{
+  text-align: center;
+  margin: 60rpx 0 30rpx;
+  font-size: 30rpx;
+  color: red;
+  letter-spacing: 4rpx;
 }
 /* .g-deposits-btn1 button:hover{
   color: #fff;

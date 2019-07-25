@@ -40,7 +40,10 @@ const userAPI = {
 
   recruitList: `${proxys}/company/recruit_list`,      // 公司及第三方职位列表
   recruitHot: `${proxys}/company/recruit_hot`,        // 热门推荐
-
+  recruitBetter: `${proxys}/company/recruit_better`,  // 待遇更好
+  userVisit: `${proxys}/user/user_visit`,             // 主页，公司/第三方/个人
+  
+  getAddress: `${proxys}/person/get_address`,             // 获取省/市/区列表
 }
 
 module.exports = {

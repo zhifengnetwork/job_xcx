@@ -37,9 +37,9 @@ Page({
         console.log(res)
         if (res.data.status==1){
             that.setData({ item: res.data.data })
+        }else{
+            ServerData._wxTost(res.data.msg)
         }
-        
-        // ServerData._wxTost(res.data.msg)
       })
   },
 

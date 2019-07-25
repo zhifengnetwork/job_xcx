@@ -102,6 +102,22 @@
   font-weight:700;
   flex: 0 0 1;
 }
+
+.comp-cont{
+  padding: 10rpx 0 0;
+  width: 90%;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.comp-cont .search-icon{
+  width:21rpx;
+  height:21rpx;
+  position:absolute;
+  left:80rpx;
+  top:42rpx;
+}
+
 /* subtitle start */
 .subtitle{
   color:#151515;
@@ -119,14 +135,13 @@
   font-weight:700;
 }
 .c-body{
-  padding-top:175rpx;
+  padding-top:170rpx;
 }
  /* LIST STYLE START */
  .c-title{
   width:100%;
   margin:20rpx 0 30rpx 0;
   display:flex;
-
 }
 .c-flame{
    width:26rpx;
@@ -203,6 +218,7 @@
    margin: 11rpx 0;
    color: #5d5d5d;
    font-size: 20rpx;
+   padding:10px 0;
 }
 
 /* Latest job search start */
@@ -311,7 +327,7 @@
 }
 .t-info-img{
   width:100rpx;
-  height: 100rpx; 
+  height:60rpx; 
   margin-right: 25rpx;
 }
 .t-info-msg{
@@ -362,3 +378,78 @@ textarea{
   display: inline-block;
   vertical-align: middle;
 }
+
+
+
+/* loading start */
+.loading-complete{
+  text-align: center;
+  margin-bottom: 60rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+
+/* 地址三级联动 */
+.newsite_button{
+  height:60rpx;
+}
+.newsite_view{
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  float: left;
+  line-height:60rpx;
+  width: 120rpx;
+}
+.newsite_input{
+  float: left;
+  width: 500rpx;
+  font-size:28rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  margin-top: 22rpx;
+  margin-left: 20rpx;
+}
+.newsite_city{
+  float: right;
+  font-size:28rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:60rpx;
+}
+/* 三级联动 */
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index: 12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+.zhezhao{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  z-index: 9;
+}
+/* 所在地区 */

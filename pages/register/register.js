@@ -79,9 +79,8 @@ Page({
           })
       }
       else{
-        ServerData._wxTost(res.data.msg)
+          ServerData._wxTost(res.data.msg)
       }
-      // console.log(res.data.data.token)
     });
   },
   verifyUserInfo(){             //验证输入信息
