@@ -93,24 +93,24 @@ App({
         {
           "pagePath": "/pages/index/index",
           "text": "首页",
-          "iconPath": "../../static/images/bar_icon/home_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user/home_pick.png",
+          "iconPath": "/static/images/bar_icon/home_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/user/home_pick.png",
           "clas": "menu-item",
           active: true
         },
         {
           "pagePath": "/pages/login/login",
           "text": "信息",
-          "iconPath": "../../static/images/bar_icon/info_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user/info_pink.png",
+          "iconPath": "/static/images/bar_icon/info_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/user/info_pink.png",
           "clas": "menu-item",
           active: true
         },
         {
           "pagePath": "/pages/login/login",
           "text": "我的",
-          "iconPath": "../../static/images/bar_icon/user_gray.png",
-          "selectedIconPath": "../../static/images/bar_icon/user/user_pink.png",
+          "iconPath": "/static/images/bar_icon/user_gray.png",
+          "selectedIconPath": "/static/images/bar_icon/user/user_pink.png",
           "clas": "menu-item",
           active: true
         }

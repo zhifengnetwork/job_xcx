@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
@@ -18,13 +19,13 @@
 
     "pages/company/index/index",
     "pages/company/company",
+    "pages/company/cUserInfo/cUserInfo", 
     "pages/company/thirdParty/thirdParty",   
     "pages/company/jobApplicant",
-    "pages/company/cUserInfo/cUserInfo",
     "pages/company/editInfo/editInfo",
-    "pages/company/myPurse/withdrawal",
-    "pages/company/myPurse/goldDeposits",
     "pages/company/myPurse/myPurse",
+    "pages/company/myPurse/withdrawal/withdrawal",
+    "pages/company/myPurse/goldDeposits/goldDeposits",
     "pages/company/jobList",
     "pages/company/postionDetail/postionDetail",
     "pages/company/personalDetail/personalDetail",
