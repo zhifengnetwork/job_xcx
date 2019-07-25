@@ -79,12 +79,16 @@ Page({
       'image': that._getPicSrc(),
     }
     ServerData._registerUserInfo(_opt).then((res) => {
-      
       if (res.data.status == 1) {
         wx.navigateTo({
           url: '../../public/audit'
         })
-      } 
+      }
+      else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../login/login'
+        })
+      }  
       else {
         ServerData._wxTost(res.data.msg)
       }
@@ -132,8 +136,12 @@ Page({
       ServerData._wxTost('请正确输入手机号')
       return false
     }
-    if (that.data.tel == "" || !ServerData._zzVerifyPhone(that.data.tel)) {
-      ServerData._wxTost('请正确输入固定电话')
+    if (that.data.tel == "") {
+      ServerData._wxTost('固定电话不能为空')
+      return false
+    }
+    if (!ServerData._zzVerifyPhone(that.data.tel)){
+      ServerData._wxTost('固话格式为：区号-电话')
       return false
     }
     if (that.data.pCode == "" || that.data.cCode == "" || that.data.aCode == "") {

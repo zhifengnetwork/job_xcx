@@ -1,21 +1,32 @@
 
 <!-- HEADER START -->
-<import src="../template/common.wxml"/>
-<template is="search-1" data="{{tInfo}}"/>
+<view class='g-header-'>
+  <view class='-header-cont'>
+    <view class='comp-cont'>
+      <input type='text' class='search {{tInfo.clas}}' placeholder="输入所要查找的内容" />
+      <image class="search-icon" src='.../../../../static/images/public/search_icon.png'></image>
+    </view>
+    <!-- <navigator url='../../company/cUserInfo'><text class='search-r-text'></text></navigator> -->
+  </view>
+  <view class='subtitle overH'>
+    <text>选择人才</text>
+  </view>
+  
+</view>
 <view class='header-heigh'></view>
 <!-- HEADER END -->
 <view class='inner'>
     <view class='container'>
         <view class='content-list'>
-          <navigator url="postionDetail">
+          <navigator url="../postionDetail/postionDetail">
               <view class='c-title'>
-                <image src='../../static/images/public/h_blue.png' class='c-flame'/>
+                <image src='../../../static/images/public/h_blue.png' class='c-flame'/>
                 <text>热门推荐</text>
               </view>
           </navigator>
-          <navigator url="postionDetail">
+          <navigator url="../postionDetail/postionDetail">
             <view class='c-l-info'>
-              <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+              <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
               <view class='c-info-text'>
                 <text class='c-info-title'>皮革厂包装人</text>
                 <view class='c-info-msg'>
@@ -30,9 +41,9 @@
               </view>
             </view>
           </navigator>
-          <navigator url="postionDetail">
+          <navigator url="../postionDetail/postionDetail">
             <view class='c-l-info'>
-              <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+              <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
               <view class='c-info-text'>
                 <text class='c-info-title'>皮革厂包装人</text>
                 <view class='c-info-msg'>
@@ -51,12 +62,12 @@
         </view>
         <view class='content-list'>
               <view class='c-title'>
-                <image src='../../static/images/public/money_blue.png' class='c-flame'/>
+                <image src='../../../static/images/public/money_blue.png' class='c-flame'/>
                 <text>待遇更好</text>
               </view>
-            <navigator url="postionDetail">
+            <navigator url="../postionDetail/postionDetail">
               <view class='c-l-info'>
-                  <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+                  <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
                   <view class='c-info-text'>
                     <text class='c-info-title'>皮革厂包装人</text>
                     <view class='c-info-msg'>
@@ -71,9 +82,9 @@
                   </view>
               </view>
             </navigator>
-            <navigator url="postionDetail">
+            <navigator url="../postionDetail/postionDetail">
               <view class='c-l-info'>
-                  <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+                  <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
                   <view class='c-info-text'>
                     <text class='c-info-title'>皮革厂包装人</text>
                     <view class='c-info-msg'>
@@ -88,9 +99,9 @@
                   </view>
               </view>
             </navigator>
-            <navigator url="postionDetail">
+            <navigator url="../postionDetail/postionDetail">
               <view class='c-l-info'>
-                  <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
+                  <image src='../../../static/images/public/c_logo.jpg'class="c-logo" />
                   <view class='c-info-text'>
                     <text class='c-info-title'>皮革厂包装人</text>
                     <view class='c-info-msg'>
@@ -113,6 +124,6 @@
 
 <!-- FOOTER TARBAR START -->
 <view class='footer-height'></view>
-<import src="../template/tabbar.wxml" />
+<import src="../../template/tabbar.wxml" />
 <template is="tabBar" data="{{tabBar}}" />
 

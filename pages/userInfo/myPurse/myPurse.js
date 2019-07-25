@@ -8,6 +8,7 @@ Page({
   data: {
     savaStatus: 1,
     saveMoney: 10,
+    num:'',
     selectMsg:'月',
     list:{}
   },
@@ -25,7 +26,8 @@ Page({
         console.log(data)
         this.setData({ 
           list: data,
-          saveMoney: data.month_money
+          saveMoney: data.month_money,
+          num: data.month_num
         })
       })
   },
@@ -36,34 +38,45 @@ Page({
     var that =this,
         status = e.currentTarget.dataset.status,
         money="",
-        msg =""
+        msg ="",
+        num=''
     if (status==1){
       money = that.data.list.month_money
+      num = that.data.list.month_num
       msg="月"
     }
     if (status == 2) {
       money = that.data.list.quarter_money
+      num = that.data.list.quarter_num
       msg = "季"
     }
     if (status == 3) {
       money = that.data.list.year_money
+      num = that.data.list.year_num
       msg = "年"
     }
     this.setData({ 
       savaStatus: status,
       saveMoney: money,
+      num:num,
       selectMsg:msg
     });
   },
-  toPays: function (e) {
-    wx.showLoading({
-      title: '跳转中...',
-    })
+  // toPays: function (e) {
+  //   var _opt={
+      
+  //   }
+  //   ServerData.registerVip(_opt).then((res) => {
 
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 2000)
-  },
+  //   })
+  //   wx.showLoading({
+  //     title: '跳转中...',
+  //   })
+
+  //   setTimeout(function () {
+  //     wx.hideLoading()
+  //   }, 2000)
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

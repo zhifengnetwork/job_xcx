@@ -35,7 +35,7 @@
             <text>我的收藏</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
-          <navigator url="../uCollect" class='u-o-list m-b10'>
+          <navigator url="" class='u-o-list m-b10'>
             <text>招工信息</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>

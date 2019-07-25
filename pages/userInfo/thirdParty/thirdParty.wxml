@@ -112,6 +112,6 @@
 
 <!-- FOOTER TARBAR START -->
 <view class='footer-height'></view>
-<import src="../../../template/tabbar.wxml" />
+<import src="../../template/tabbar.wxml" />
 <template is="tabBar" data="{{tabBar}}" />
 

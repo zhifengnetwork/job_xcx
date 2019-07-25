@@ -157,6 +157,10 @@ class ServerData {
 	myPurse(_data, complete) {
 		return this._promise_post(_data, api.userAPI.myPurse, complete);
 	}
+  //开通会员
+  registerVip(_data, complete) {
+    return this._promise_post(_data, api.userAPI.registerVip, complete);
+  }
 	//提现
 	goWithdrawal(_data, complete) {
 		return this._promise_post(_data, api.userAPI.goWithdrawal, complete);

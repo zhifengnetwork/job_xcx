@@ -1,21 +1,27 @@
-// pages/company/company.js
+// pages/infomation/infomation.js
 const app = getApp();
-const util = require('../../utils/util.js');  //通用方法
+const util = require('../../../utils/util.js');  //通用方法
 Page({
+
+  /**
+   * 页面的初始数据
+   */
+
   data: {
-    tInfo: {
-      clas: 'third-bColor-1',
-      text: "我的"
-    }
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    util.getStorageItem('savePostion', app);   //获取底部导航
+    util.getStorageItem('savePostion', app)   //获取底部导航
   },
-
+  toEdit: function () {
+    wx.navigateTo({
+      url: '../postJobPostings',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

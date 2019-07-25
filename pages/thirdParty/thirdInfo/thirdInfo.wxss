@@ -1,5 +1,5 @@
-@import "../template/common";
-@import "../template/font";
+@import "../../template/common";
+@import "../../template/font";
 #wrap{
   width:100%;
   height:100%;

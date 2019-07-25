@@ -84,7 +84,7 @@ Page({
   },
   saveEditInfo: function () {
     wx.redirectTo({
-      url: 'cUserInfo'
+      url: '../cUserInfo/cUserInfo'
     })
   },
   /**

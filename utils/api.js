@@ -31,6 +31,7 @@ const userAPI = {
   categoryList: `${proxys}/person/category_list`,     // 工种列表
 
   myPurse: `${proxys}/person/my_wallet`,              // 我的钱包
+  registerVip: `${proxys}/user/register`,             // 开通会员
   goWithdrawal: `${proxys}/person/go_withdrawal`,     // 提现
   withdrawal: `${proxys}/person/withdrawal`,          // 提现保存
 
