@@ -7,7 +7,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		Id: '',
+    Id: '',
+    is_collection:false
 	},
 
 	/**
@@ -31,7 +32,7 @@ Page({
 		ServerData.personalDetail(_opt).then((res) => {
 			if (res.data.status == 1) {
 				this.setData({
-					personalData: res.data.data
+          personalData: res.data.data
 				})
 			} else {
 				ServerData._wxTost(res.data.msg)
@@ -49,8 +50,13 @@ Page({
 			'to_id': this.data.id
 		}
 		ServerData.collection(_opt).then((res) => {
+      
+      let is_collection = !this.data.is_collection
+      console.log(is_collection)
 			if (res.data.status == 1) {
-				// 轻提示调用
+        // 轻提示调用
+        is_collection
+        console.log(is_collection)
 				ServerData._wxTost(res.data.msg)
 			} else {
 				ServerData._wxTost(res.data.msg)

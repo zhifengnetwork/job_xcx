@@ -6,7 +6,8 @@
       <input type='text' class='search company-bColor-1'  placeholder="输入所要查找的内容" />
       <image class="search_icon" src='../../../static/images/public/search_icon.png'></image>
     </view>
-     <text bindtap="onCollection" class='collect_tab'>收藏</text>
+    <text bindtap="onCollection" class='collect_tab' wx:if="{{!is_collection}}">收藏</text>
+    <text bindtap="onCollection" class='collect_tab' wx:else="{{is_collection}}">取消收藏</text>
   </view>
   <view class='inner'>
     <!-- CONTENT START -->

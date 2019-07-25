@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/company/index/index",
     
     "pages/login/login",
     "pages/register/register",
@@ -17,34 +18,20 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-<<<<<<< HEAD
     
-=======
-    "pages/company/index/index",
->>>>>>> 7b90d96c4571ee40d9cfa3b73a22e348d0c732c5
     "pages/company/company",
     "pages/company/cUserInfo/cUserInfo", 
     "pages/company/thirdParty/thirdParty",   
-<<<<<<< HEAD
     "pages/company/jobApplicant/jobApplicant",
-    "pages/company/cUserInfo/cUserInfo",
-=======
-    "pages/company/jobApplicant",
->>>>>>> 7b90d96c4571ee40d9cfa3b73a22e348d0c732c5
     "pages/company/editInfo/editInfo",
     "pages/company/myPurse/myPurse",
-<<<<<<< HEAD
     "pages/company/jobList/jobList",
-=======
     "pages/company/myPurse/withdrawal/withdrawal",
     "pages/company/myPurse/goldDeposits/goldDeposits",
-    "pages/company/jobList",
->>>>>>> 7b90d96c4571ee40d9cfa3b73a22e348d0c732c5
     "pages/company/postionDetail/postionDetail",
     "pages/company/personalDetail/personalDetail",
     "pages/company/uCollect/uCollect",
     "pages/company/myReserve/myReserve",
-    "pages/company/cUserInfo/cUserInfo",
     "pages/company/postJobPostings/postJobPostings",
     "pages/company/publish",
 
@@ -64,8 +51,6 @@
     "pages/thirdParty/company/company",
     "pages/thirdParty/postionDetail/postionDetail",
 
-
-    "pages/company/index/index",
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",
     "pages/userInfo/company/company",
