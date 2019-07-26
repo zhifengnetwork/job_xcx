@@ -12,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    getUData:[],
     array: ['离职-随时到岗', '在职-月内到岗', '在职-考虑机会', '在职-暂不考虑'],
     payArray: payArray,
     index: 0,                              //到岗时间
@@ -39,7 +40,24 @@ Page({
    */
   onLoad: function (options) {
       this.getCategoryList()
+      this.setCompanyInfo()
   },
+
+  setCompanyInfo(){
+    ServerData.setCompanyInfo({}).then((res) =>{
+        if (res.data.status == 1) {
+          this.setData({ getUData: res.data.data })
+          console.log(res.data.data)
+        } else if (res.data.status == -1) {
+          wx.redirectTo({
+            url: '../../login/login'
+          })
+        } else {
+          ServerData._wxTost(res.data.msg)
+        }
+    })
+  },
+
   getCategoryList(){
       var that =this
       ServerData.categoryList({}).then((res) => {

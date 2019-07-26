@@ -1,10 +1,13 @@
 {
   "pages": [
+    
+        "pages/company/jobList/jobList",
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
+    "pages/public/pay/payWay",
     "pages/public/setting",
     "pages/public/password",
     "pages/public/editMobile",
@@ -18,13 +21,13 @@
 
     "pages/company/index/index",
     "pages/company/company",
-    "pages/company/cUserInfo/cUserInfo", 
     "pages/company/thirdParty/thirdParty",   
     "pages/company/jobApplicant/jobApplicant",
+    "pages/company/cUserInfo/cUserInfo",
     "pages/company/editInfo/editInfo",
-    "pages/company/myPurse/myPurse",
-    "pages/company/jobList/jobList",
+
     "pages/company/myPurse/withdrawal/withdrawal",
+    "pages/company/myPurse/myPurse",
     "pages/company/myPurse/goldDeposits/goldDeposits",
     "pages/company/postionDetail/postionDetail",
     "pages/company/personalDetail/personalDetail",
@@ -39,9 +42,9 @@
     "pages/thirdParty/thirdParty",
     "pages/thirdParty/jobApplicant/jobApplicant",
     "pages/thirdParty/myPurse/goldDeposits",
+    "pages/thirdParty/myPurse/myPurse",
     "pages/thirdParty/myReserve/myReserve",
     "pages/thirdParty/myPurse/withdrawal",
-    "pages/thirdParty/myPurse/myPurse",
     "pages/thirdParty/uCollect/uCollect",
     "pages/thirdParty/postJobPostings/postJobPostings",
     "pages/thirdParty/editInfo/editInfo",
@@ -50,6 +53,7 @@
     "pages/thirdParty/personalDetail/personalDetail",
     "pages/thirdParty/uPDetail/uPDetail",
     
+    "pages/userInfo/myPurse/myPurse",
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",
     "pages/userInfo/company/company",
@@ -57,7 +61,7 @@
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/withdrawal",
-    "pages/userInfo/myPurse/myPurse",
+
     "pages/userInfo/myPurse/goldDeposits",
     "pages/userInfo/headPortrait/headPortrait",
     "pages/userInfo/postionDetail/postionDetail",

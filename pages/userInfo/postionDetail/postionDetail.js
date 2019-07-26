@@ -8,6 +8,7 @@ Page({
 	 */
 	data: {
 		id: '',
+    isCollect: 0,
 		recruitDetail: [], // 公司详情
 	},
 
@@ -33,7 +34,8 @@ Page({
 			// console.log(res)
 			if (res.data.status == 1) {
 				this.setData({
-					recruitDetail: res.data.data
+					recruitDetail: res.data.data,
+          isCollect: res.data.data.is_collection
 				})
 			} else {
 				ServerData._wxTost(res.data.msg)
@@ -44,7 +46,16 @@ Page({
 	/**
 	 * 收藏/取消收藏
 	 */
-	onCollection: function () {
+	onCollection: function (e) {
+    var statuss = e.currentTarget.dataset.stu
+    if (e.currentTarget.dataset.stu == 0) {
+      statuss = 1
+    } else {
+      statuss = 0
+    }
+    this.setData({
+      isCollect: statuss
+    })
 		// 要传给后台的参数
 		var _opt = {
 			'type': 1,

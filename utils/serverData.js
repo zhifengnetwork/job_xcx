@@ -230,6 +230,11 @@ class ServerData {
     return this._promise_post(_data, api.userAPI.getCompayInfo, complete);
   }
   
+  //初始化公司信息
+  setCompanyInfo(_data, complete) {
+    return this._promise_post(_data, api.userAPI.setCompanyInfo, complete);
+  }
+  
 	//公司及第三方职位列表
 	recruitList(_data, complete) {
 		return this._promise_post(_data, api.userAPI.recruitList, complete);
@@ -283,6 +288,16 @@ class ServerData {
 		var reg = /^0\d{2,3}-?\d{7,8}$/;
 		return reg.test(obj);
 	}
+
+  _timeStampForwardAate(timestamp) {            //时间戳转日期
+    var date;
+    if (timestamp == "" || "undefined" == typeof (timestamp)) {
+      date = new Date().toLocaleDateString();
+    } else {
+      date = new Date(parseInt(timestamp) * 1000).toJSON().slice(0, 10);
+    }
+    return date;
+  }
 
 }
 

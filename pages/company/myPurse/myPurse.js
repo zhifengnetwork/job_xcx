@@ -10,7 +10,8 @@ Page({
 		saveMoney: 10, 
 		selectMsg: '月',
     num:'',
-		moneyData:{}
+		moneyData:{},
+    vip_type:1
 	},
 
   /**
@@ -41,27 +42,32 @@ Page({
 			status = e.currentTarget.dataset.status,
 			money = "",
 			msg = "",
-      num = ''
+      num = '',
+      vip_type
 		if (status == 1) {
 			money = that.data.moneyData.month_money
 			msg = "月",
       num = that.data.moneyData.month_num
+      vip_type=1
 		}
 		if (status == 2) {
 			money = that.data.moneyData.quarter_money
 			msg = "季"
       num = that.data.moneyData.quarter_num
+      vip_type=2
 		}
 		if (status == 3) {
 			money = that.data.moneyData.year_money
       num = that.data.moneyData.year_num
 			msg = "年"
+      vip_type=3
 		}
 		this.setData({
 			savaStatus: status,
 			saveMoney: money,
 			selectMsg: msg,
-      num: num
+      num: num,
+      vip_type: vip_type
 		});
 	},
 	

@@ -8,18 +8,18 @@
           <view class='c-info-text'>
             <text class='c-info-title'>{{userData.company_name}}</text>
             <view class='c-msg m-b10'>
-              <text>VIP到期时间：{{userData.vip_time}}</text>
+              <text>VIP到期时间：{{timer}}</text>
               <view class='company-status m-0 company-bg-'>普通会员</view>
             </view>
             <view class="surplus-num" >
               剩余预定次数：{{userData.number}}
             </view>
-		  	<view class='c-msg m-b10'> 
+		  	<!-- <view class='c-msg m-b10'> 
                 实名认证：
                 <text wx:if="{{userData.status=== 0}}">未认证</text>
                 <text wx:if="{{userData.status=== 1}}">认证</text>
                 <text wx:if="{{userData.status=== -1}}">拒绝认证</text>
-            </view>
+            </view> -->
             <view class='c-msg m-b10'>企业编号：{{userData.id}}</view>
           </view>
       </view>
@@ -53,7 +53,9 @@
           </navigator>
           <view class='u-o-list m-b10'>
             <text>实名认证</text>
-            <text class='u-o-text company-color-'>审核中</text>
+            <text class='u-o-text company-color-' wx:if="{{userData.status=== 0}}">未认证</text>
+            <text class='u-o-text company-color-' wx:if="{{userData.status=== 1}}">认证</text>
+            <text class='u-o-text company-color-' wx:if="{{userData.status=== -1}}">拒绝认证</text>
           </view>
           <navigator url="../../public/help" class='u-o-list m-b10'>
             <text>帮助与反馈</text>

@@ -504,3 +504,12 @@ textarea{
   height: 140rpx;
   margin-bottom: 13rpx;
 }
+
+/* 支付方式 */
+.pay-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+  font-size: 28rpx;
+}
