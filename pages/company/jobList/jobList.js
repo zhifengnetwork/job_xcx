@@ -11,24 +11,47 @@ Page({
     iconSize: [20],
     iconType: ['success'],
     isDel:false,
-    isCheck:true
+    isCheck:true,
+    recruitData:[],
+    id:''
   },
 
+  recruit: function () {
+    var _opt = {
+			'page': 1
+		}
+		ServerData.recruit(_opt).then((res) => {
+			console.log(res)
+			if (res.data.status == 1) {
+				this.setData({
+					recruitData: res.data.data.data
+				})
+			} else {
+				ServerData._wxTost(res.data.msg)
+			}
+		})
+  },
+  // 删除招工信息
+  deleteRecruit() {
+    // 要传给后台的参数
+    var _opt = { 
+      'ids':this.data.id,
+    }
+    ServerData.collection(_opt).then((res) => {
+      if(res.data.status == 1){
+        // 轻提示调用
+        ServerData._wxTost(res.data.msg)
+      }else{
+        ServerData._wxTost(res.data.msg)
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.recruit()
+      
   },
-  recruit(){
-    console.log(11)
-    var that =this
-    ServerData.recruit({page:that.data.page}).then((res) => {
-        console.log(res)
-    })
-
-  },
-
 
   changItemStatus(e){
     console.log(e.currentTarget.dataset.check)
@@ -58,7 +81,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.recruit()
   },
 
   /**

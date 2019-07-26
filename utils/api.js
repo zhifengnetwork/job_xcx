@@ -41,6 +41,7 @@ const userAPI = {
   
   getCompayInfo: `${proxys}/company/info`,            // 编辑公司信息
   recruit: `${proxys}/company/recruit`,               // 招工信息
+  deleteRecruit: `${proxys}/user/register`,           // 删除招工信息
   recruitList: `${proxys}/company/recruit_list`,      // 公司及第三方职位列表
   recruitHot: `${proxys}/company/recruit_hot`,        // 热门推荐
   recruitBetter: `${proxys}/company/recruit_better`,  // 待遇更好

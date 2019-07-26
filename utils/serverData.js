@@ -113,10 +113,14 @@ class ServerData {
 		return this._promise_get(_data, api.userAPI.reqIndex, complete);
 	}
 
-  // 招工信息
-  recruit(_data, complete) {
-    return this._promise_post(_data, api.userAPI.recruit, complete);
-  }
+	// 招工信息
+	recruit(_data, complete) {
+		return this._promise_post(_data, api.userAPI.recruit, complete);
+	}
+	// 删除招工信息
+	deleteRecruit(_data, complete) {
+		return this._promise_post(_data, api.userAPI.deleteRecruit, complete);
+	}
 
 	// 职位详情
 	recruitDetail(_data, complete) {
@@ -162,10 +166,10 @@ class ServerData {
 	myPurse(_data, complete) {
 		return this._promise_post(_data, api.userAPI.myPurse, complete);
 	}
-  //开通会员
-  registerVip(_data, complete) {
-    return this._promise_post(_data, api.userAPI.registerVip, complete);
-  }
+	//开通会员
+	registerVip(_data, complete) {
+		return this._promise_post(_data, api.userAPI.registerVip, complete);
+	}
 	//提现
 	goWithdrawal(_data, complete) {
 		return this._promise_post(_data, api.userAPI.goWithdrawal, complete);
@@ -225,10 +229,10 @@ class ServerData {
 	editUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.editUserInfo, complete);
 	}
-  //获取公司信息
-  getCompayInfo(_data, complete) {
-    return this._promise_post(_data, api.userAPI.getCompayInfo, complete);
-  }
+	//获取公司信息
+	getCompayInfo(_data, complete) {
+		return this._promise_post(_data, api.userAPI.getCompayInfo, complete);
+	}
   
 	//公司及第三方职位列表
 	recruitList(_data, complete) {

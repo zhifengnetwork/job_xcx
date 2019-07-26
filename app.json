@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/company/index/index",
+
     "pages/login/login",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
@@ -16,7 +18,7 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-    "pages/company/index/index",
+    
     "pages/company/company",
     "pages/company/cUserInfo/cUserInfo", 
     "pages/company/thirdParty/thirdParty",   
@@ -50,8 +52,8 @@
     "pages/thirdParty/personalDetail/personalDetail",
     "pages/thirdParty/uPDetail/uPDetail",
     
-    "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",
+    "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/company/company",
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/userCenter/userCenter",
