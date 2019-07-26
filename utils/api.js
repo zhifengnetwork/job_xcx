@@ -28,6 +28,7 @@ const userAPI = {
   userInfo: `${proxys}/user/index`,                   //用户中心
   uploadHeadpic: `${proxys}/user/upload_headpic`,     // 保存头像
   editUserInfo: `${proxys}/person/edit`,              // 编辑个人资料
+  enterEdit: `${proxys}/person/info`,                 // 进入编辑个人资料
   categoryList: `${proxys}/person/category_list`,     // 工种列表
 
   myPurse: `${proxys}/person/my_wallet`,              // 我的钱包

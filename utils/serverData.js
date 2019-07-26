@@ -225,9 +225,13 @@ class ServerData {
 		return this._promise_post(_data, api.userAPI.categoryList, complete);
 	}
 
-	//编辑个人资料
+	// 编辑个人资料
 	editUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.editUserInfo, complete);
+	}
+	// 进入编辑个人资料
+	enterEdit(_data, complete) {
+		return this._promise_post(_data, api.userAPI.enterEdit, complete);
 	}
 	//获取公司信息
 	getCompayInfo(_data, complete) {

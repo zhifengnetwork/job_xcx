@@ -19,7 +19,7 @@
       </view>
       <!-- USER OPTION START -->
       <view class='user-option'>
-          <navigator url="../editInfo/editInfo" class='u-o-list'>
+          <navigator url="../editInfo/editInfo?id={{info.id}}" class='u-o-list'>
             <text>编辑个人信息</text>
             <!-- <image class='u-o-icon1' src='../../static/images/public/edit.png'/> -->
             
