@@ -1,8 +1,19 @@
 {
   "pages": [
-    
-        "pages/company/jobList/jobList",
+
+    "pages/search/sThirdParty",
+    "pages/userInfo/index/index",
+    "pages/search/sCompany",
+
     "pages/login/login",
+    "pages/userInfo/search/search",
+
+    "pages/company/editInfo/editInfo",
+    "pages/company/cUserInfo/cUserInfo",
+    "pages/thirdParty/editInfo/editInfo",
+    "pages/thirdParty/thirdInfo/thirdInfo",  
+    "pages/company/jobList/jobList",
+    "pages/company/index/index",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
@@ -19,13 +30,10 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-    "pages/company/index/index",
+    
     "pages/company/company",
     "pages/company/thirdParty/thirdParty",   
     "pages/company/jobApplicant/jobApplicant",
-    "pages/company/cUserInfo/cUserInfo",
-    "pages/company/editInfo/editInfo",
-
     "pages/company/myPurse/withdrawal/withdrawal",
     "pages/company/myPurse/myPurse",
     "pages/company/myPurse/goldDeposits/goldDeposits",
@@ -37,7 +45,7 @@
     "pages/company/publish",
 
     "pages/thirdParty/index/index",
-    "pages/thirdParty/thirdInfo/thirdInfo",
+ 
     "pages/thirdParty/jobList",
     "pages/thirdParty/thirdParty",
     "pages/thirdParty/jobApplicant/jobApplicant",
@@ -47,21 +55,19 @@
     "pages/thirdParty/myPurse/withdrawal",
     "pages/thirdParty/uCollect/uCollect",
     "pages/thirdParty/postJobPostings/postJobPostings",
-    "pages/thirdParty/editInfo/editInfo",
+
     "pages/thirdParty/company/company",
     "pages/thirdParty/postionDetail/postionDetail",
     "pages/thirdParty/personalDetail/personalDetail",
     "pages/thirdParty/uPDetail/uPDetail",
     
     "pages/userInfo/myPurse/myPurse",
-    "pages/userInfo/editInfo/editInfo",
-    "pages/userInfo/index/index",
     "pages/userInfo/company/company",
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/userCenter/userCenter",
-    "pages/userInfo/search/search",
-    "pages/userInfo/myPurse/withdrawal",
+    "pages/userInfo/editInfo/editInfo",
 
+    "pages/userInfo/myPurse/withdrawal",
     "pages/userInfo/myPurse/goldDeposits",
     "pages/userInfo/headPortrait/headPortrait",
     "pages/userInfo/postionDetail/postionDetail",

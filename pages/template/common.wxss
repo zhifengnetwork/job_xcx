@@ -85,8 +85,13 @@
    box-sizing: border-box;
    display: inline-block;
    font-size: 24rpx;
-   
 }
+.search-nosearch{
+  line-height:58rpx;
+  color:#808080;
+  /* color:  */
+}
+
 .search-icon{
   width:21rpx;
   height:21rpx;
@@ -94,6 +99,9 @@
   left:22rpx;
   top:50%;
   margin-top: -8rpx;
+}
+.s-nosearch-wrap .search-icon{
+    margin-top: -4rpx !important;
 }
 .search-r-text{
   display: block;
@@ -512,4 +520,9 @@ textarea{
   align-items: center;
   margin-bottom: 30rpx;
   font-size: 28rpx;
+}
+
+.user-edit-text{
+  display: flex;
+  align-items: center;
 }

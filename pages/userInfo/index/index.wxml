@@ -2,8 +2,9 @@
 <!-- TABBAR START -->
   <view class='g-header-'>
     <view class='-header-cont'>
-      <navigator url='search' class='search-cont'>
-        <input type='text' class='search'  placeholder="输入所要查找的内容" />
+      <navigator url='../search/search' class='search-cont s-nosearch-wrap'>
+        <!-- <input type='text' class='search'  placeholder="输入所要查找的内容" readonly /> -->
+        <view class='search search-nosearch'>输入所要查找的内容</view>
         <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
       </navigator>
       <navigator url='../userCenter/userCenter' redirect><text class='login_tab'>我的</text></navigator>

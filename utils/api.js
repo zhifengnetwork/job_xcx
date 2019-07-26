@@ -18,7 +18,8 @@ const userAPI = {
   editCompany: `${proxys}/company/edit`,              // 编辑公司信息
   setCompanyInfo: `${proxys}/company/info`,              // 初始化公司信息
 
-
+  searchInfp: `${proxys}/user/search`,                //搜索
+ 
   uploadFile: `${proxys}/user/upload_file`,           //上传文件
 
   helpExp: `${proxys}/index/help`,                    //帮助与反馈
@@ -29,6 +30,7 @@ const userAPI = {
 
   userInfo: `${proxys}/user/index`,                   //用户中心
   uploadHeadpic: `${proxys}/user/upload_headpic`,     // 保存头像
+  initUserInfo: `${proxys}/person/info`,            // 初始化个人资料
   editUserInfo: `${proxys}/person/edit`,              // 编辑个人资料
   categoryList: `${proxys}/person/category_list`,     // 工种列表
 
@@ -43,6 +45,8 @@ const userAPI = {
   
   getCompayInfo: `${proxys}/company/info`,            // 编辑公司信息
   recruit: `${proxys}/company/recruit`,               // 招工信息
+  deleteRecruit: `${proxys}/company/del_recruit`,     // 删除招工信息
+  
   recruitList: `${proxys}/company/recruit_list`,      // 公司及第三方职位列表
   recruitHot: `${proxys}/company/recruit_hot`,        // 热门推荐
   recruitBetter: `${proxys}/company/recruit_better`,  // 待遇更好

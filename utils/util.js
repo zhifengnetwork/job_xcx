@@ -43,7 +43,8 @@ function loginIdentity(){
       pBC: 'user-bColor',
       pBC1: 'user-bColor-1ss',
       gActive:'user-active-',
-      styleBg:'#ff54b5'
+      styleBg:'#ff54b5',
+      resType:'userInfo',
     }
     return info
   } 
@@ -54,7 +55,8 @@ function loginIdentity(){
       pBC:'company-bColor-',
       pBC1:'company-bColor-1ss',
       gActive: 'company-active-',
-      styleBg: '#be4cff'
+      styleBg: '#be4cff',
+      resType: 'company'
     }
     return info
   } 
@@ -65,7 +67,8 @@ function loginIdentity(){
       pBCC: 'third-bColor-',
       pBC1:'third-bColor-1ss',
       gActive: 'third-active-',
-      styleBg: '#54b9ff'
+      styleBg: '#54b9ff',
+      resType: 'thirdParty'
     }
     return info
   } 

@@ -8,7 +8,7 @@
           <view class='c-info-text'>
             <text class='c-info-title'>{{userData.company_name}}</text>
             <view class='c-msg m-b10'>
-              <text>VIP到期时间：{{timer}}</text>
+              <text wx:if="{{userData.is_vip=== 1}}">VIP到期时间：{{timer}}</text>
               <view class='company-status m-0 third-bg-'>
                   <text wx:if="{{userData.is_vip=== 0}}">普通用户</text>
                   <text wx:else>普通会员</text>
@@ -17,12 +17,6 @@
             <view class="surplus-num" >
               剩余预定次数：{{userData.number}}
             </view>
-		  	    <!-- <view class='c-msg m-b10'> 
-                实名认证：
-                <text wx:if="{{userData.status=== 0}}">未认证</text>
-                <text wx:if="{{userData.status=== 1}}">认证</text>
-                <text wx:if="{{userData.status=== -1}}">拒绝认证</text>
-            </view> -->
             <view class='c-msg m-b10'>企业编号：{{userData.id}}</view>
           </view>
       </view>

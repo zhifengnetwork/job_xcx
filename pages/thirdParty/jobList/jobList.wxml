@@ -1,9 +1,31 @@
 <!--pages/company/jobList.wxml-->
 <view id='jobWrap' class='jobWrap'>
   <view class='inner'>
-    <view class='delect-btn'>删除</view>
+    <view class='delect-btn' wx:if="{{dStatus==0}}" bindtap="showDelectBox" data-aa="0">删除</view>
+    <view class='delect-btn' wx:else="" bindtap="showDelectBox" data-aa="1">完成</view>
+    
     <view class='t-height'></view>
-    <view class='c-l-info'>
+    <view class='c-l-info' wx:for="{{recruitData}}" wx:for-index="index" wx:key>
+        <view class="group" wx:if="{{dStatus==1}}">
+            <icon wx:if="{{item.selected}}" type="success" color="#be4cff" bindtap="changItemStatus" data-index="{{index}}" class="dagou" size="20"/>
+            <icon wx:else type="circle" bindtap="changItemStatus" data-index="{{index}}" color="#54b9ff" class="dagou" size="20" data-goodid="{{item.id}}"/>
+        </view>
+        <navigator url="../postJobPostings/postJobPostings" class='c-info-text'>
+          <text class='c-info-title'>{{item.title}}</text>
+          <view class='c-info-msg'>
+            <text class='c-msg'>月薪{{item.salary}}</text>
+            <text class='c-msg2'>{{item.work_age}}年</text>
+          </view>
+        </navigator>
+        <!-- company info start -->
+        <navigator url="../postJobPostings/postJobPostings" class='company-info third-color-'> 
+            <text class='' wx:if="{{item.status === 0}}">审核中</text>
+            <text class='' wx:if="{{item.status === 1}}">审核通过</text>
+            <text class='' wx:if="{{item.status === 2}}">审核失败</text>   
+            <icon class='iconfont icon-bianji'></icon>
+        </navigator>
+    </view>
+    <!-- <view class='c-l-info'>
         <view class="group" wx:if="{{isDel}}">
           <block wx:for="{{iconSize}}">
             <icon wx:if="{{isCheck}}"  data-check="{{isCheck}}" type="success" bindtap="changItemStatus" color="#be4cff" size="{{item}}"/>
@@ -16,32 +38,18 @@
             <text class='c-msg'>月薪1500元</text>
             <text class='c-msg2'>1年以上</text>
           </view>
-        </navigator>
+        </navigator> -->
         <!-- company info start -->
-        <navigator url="../postJobPostings/postJobPostings" class='company-info third-color-'>
+        <!-- <navigator url="../postJobPostings/postJobPostings" class='company-info third-color-'>
             <text class=''>审核中</text>
             <icon class='iconfont icon-bianji'></icon>
         </navigator>
-    </view>
-    <view class='c-l-info'>
-        <view class="group" wx:if="{{isDel}}">
-          <block wx:for="{{iconSize}}">
-            <icon wx:if="{{isCheck}}"  data-check="{{isCheck}}" type="success" bindtap="changItemStatus" color="#be4cff" size="{{item}}"/>
-            <icon  wx:else="{{ !isCheck}}" data-check="{{!isCheck}}" bindtap="changItemStatus" type="circle" color="#be4cff" size="{{item}}"/>
-          </block>
-        </view>
-        <navigator url="../postJobPostings/postJobPostings" class='c-info-text'>
-          <text class='c-info-title'>皮革厂包装人员</text>
-          <view class='c-info-msg'>
-            <text class='c-msg'>月薪1500元</text>
-            <text class='c-msg2'>1年以上</text>
+    </view> -->
+      <view wx:if="{{dStatus==1}}">
+          <view class='line-heig'></view>
+          <view class='set-option-1' >
+            <button class='s-1-option third-bg-' bindtap="deleteRecruit">删除</button>
           </view>
-        </navigator>
-        <!-- company info start -->
-        <navigator url="../postJobPostings/postJobPostings" class='company-info third-color-'>
-            <text class=''>审核中</text>
-            <icon class='iconfont icon-bianji'></icon>
-        </navigator>
-    </view>
+      </view>
   </view>
 </view>

@@ -5,6 +5,9 @@
   color: #7a7a7a;
 
 }
+.stss-active{
+   color: #ff54b5;
+}
 page{
   background:#f8f8f8;
 }

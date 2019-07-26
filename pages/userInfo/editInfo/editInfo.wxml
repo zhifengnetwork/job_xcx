@@ -4,7 +4,7 @@
     <view class='edit-cont'>
       <view class='e-info-'>
         <text class='e-info-msg'>姓名：</text>
-        <input type='text' class='e-info-inp' bindinput='getName' placeholder-class="phcolor" placeholder='输入姓名'/>
+        <input type='text' class='e-info-inp' bindinput='getName' placeholder-class="phcolor" value="{{name}}" placeholder='输入姓名'/>
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>性别：</text>
@@ -18,18 +18,18 @@
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>年龄：</text>
-        <input type='text' class='e-info-inp' bindinput='getOld' placeholder-class="phcolor" placeholder='输入年龄'/>
+        <input type='text' class='e-info-inp' bindinput='getOld' placeholder-class="phcolor" value="{{old}}" placeholder='输入年龄'/>
       </view>
       <view class='e-info-'>
         <text class='e-info-msg'>民族：</text>
-        <input type='text' class='e-info-inp' bindinput='getMZ' placeholder-class="phcolor" placeholder='输入民族'/>
+        <input type='text' class='e-info-inp' bindinput='getMZ' placeholder-class="phcolor" value="{{mz}}" placeholder='输入民族'/>
       </view>    
       <view class='e-info-'>
         <text class='e-info-msg'>工龄：</text>
-        <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder-class="phcolor" placeholder='输入工龄'/>
+        <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder-class="phcolor" value='{{wordOld}}' placeholder='输入工龄'/>
       </view>    
     </view>
-    <image class='edit-img-' src='../../../static/images/public/big_portrait.png'/>
+    <!-- <image class='edit-img-' src='../../../static/images/public/big_portrait.png'/> -->
   </view>
   <!-- --->
   <view class='user-option'>

@@ -1,36 +1,48 @@
 // pages/userInfo/search.js
-import ServerData from '../../../utils/serverData.js';
+import ServerData from '../../utils/serverData.js';
+const util = require('../../utils/util.js');  //通用方法
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     cStatus: 0,
-      kw:'',
-      rows:200,
-      page:1,
-      list:[]
+    kw: '',
+    rows: 200,
+    page: 1,
+    isShowInfo:false,
+    list: [],
+    pBgC: '',                            //动态获背景颜色                 
+    pBC1: '',                            //动态获边框颜色  
+    resType: ''                          //动态登陆者的标签：默认为字符串
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.setData({
+        pColor: util.loginIdentity().pColor,
+        pBC1: util.loginIdentity().pBC1,
+        pBC1: util.loginIdentity().pBC1,
+        resType: util.loginIdentity().resType,
+      })
   },
 
-  searchInfp(){
+  searchInfp() {
     var that = this,
-    _opt ={
-      kw:that.data.kw,
-      rows:that.data.rows,
-      page:that.data.page
-    }
+      _opt = {
+        kw: that.data.kw,
+        rows: that.data.rows,
+        page: that.data.page
+      }
     ServerData.searchInfp(_opt).then((res) => {
       console.log(res.data.data)
       if (res.data.status == 1) {
         that.setData({ list: res.data.data })
+        if(res.data.data.length<1){
+            that.isShowInfo =true
+        }
       }
       else if (res.data.status == -1) {
         wx.redirectTo({
@@ -42,17 +54,11 @@ Page({
       console.log(res)
     });
   },
-  changStatus: function (e) {
-    console.log(e);
-    this.setData({
-      cStatus: e.currentTarget.dataset.status
-    })
-  },
-  selecKeyWord(e){
+  selecKeyWord(e) {
     console.log(e)
-      this.setData({
-        kw: e.detail.value
-      })
+    this.setData({
+      kw: e.detail.value
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

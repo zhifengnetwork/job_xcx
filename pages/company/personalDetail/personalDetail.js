@@ -8,7 +8,7 @@ Page({
 	 */
 	data: {
     Id: '',
-    is_collection:false
+    isCollect: 0
 	},
 
 	/**
@@ -32,9 +32,14 @@ Page({
 		ServerData.personalDetail(_opt).then((res) => {
 			if (res.data.status == 1) {
 				this.setData({
-          personalData: res.data.data
+          personalData: res.data.data,
+          isCollect: res.data.data.is_collection
 				})
-			} else {
+			} else  if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+       } else {
 				ServerData._wxTost(res.data.msg)
 			}
 		})
@@ -43,20 +48,24 @@ Page({
 	/**
 	 * 收藏/取消收藏
 	 */
-	onCollection: function () {
+	onCollection: function (e) {
+    var statuss = e.currentTarget.dataset.stu
+    if (e.currentTarget.dataset.stu == 0) {
+      statuss = 1
+    } else {
+      statuss = 0
+    }
+    this.setData({
+      isCollect: statuss
+    })
 		// 要传给后台的参数
 		var _opt = {
 			'type': 2,
 			'to_id': this.data.id
 		}
 		ServerData.collection(_opt).then((res) => {
-      
-      let is_collection = !this.data.is_collection
-      console.log(is_collection)
 			if (res.data.status == 1) {
         // 轻提示调用
-        is_collection
-        console.log(is_collection)
 				ServerData._wxTost(res.data.msg)
 			} else {
 				ServerData._wxTost(res.data.msg)

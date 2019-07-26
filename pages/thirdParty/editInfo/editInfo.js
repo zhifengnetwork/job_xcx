@@ -16,12 +16,6 @@ for (let i = 1; i <= 31; i++) {
 	days.push(i)
 }
 
-const averageSalary = [];
-for (let i = 1; i <= 20; i++) {
-	averageSalary.push(i);
-}
-
-
 Page({
 	data: {
 		companyName: '', //公司名称
@@ -32,13 +26,9 @@ Page({
 		month:2,
 		days: days, // 天数组
 		day:2,
-		value: [9999, 1, 1],
+		value: [9999, 0, 0],
 		companyScale:'', //公司规模
 		companyIntroduce:'', //公司介绍
-		hotRecruitment: ['会计', 'WEB前端开发', '业务员'], //热招职位
-		jobIndex:0, //热招职位索引
-		averageSalary:averageSalary, //平均薪资
-		paysIndex: 2, //平均薪资索引
 		isAchievement:false, //是否显示成就
 		isPerson:false, //是否显示名人介绍
 		achiInfo:'', //公司成就
@@ -51,15 +41,47 @@ Page({
   onLoad: function (options) {
     this.getCompanyInfo()
   },
-
-
+  returnIndex(flag, arry, isN) {
+    for (var i in arry) {
+      if (isN) {
+        if (arry[i].cat_id == flag) {
+          return i
+        }
+      } else {
+        if (arry[i] == flag) {
+          console.log(arry[i])
+          return i
+        }
+      }
+    }
+  },
+  selectDay(arry,flag){
+      for (var i in arry) {
+        if (arry[i] == flag) {
+          return i
+        }
+      }
+  },
   getCompanyInfo(){
     var that =this
     ServerData.getCompayInfo({}).then((res) => {
         console.log(res)
       if (res.data.status==1){
+            var info = res.data.data
+            var val = that.data.value
+            val[0] = that.selectDay(years,info.open_year)
+            val[1] = that.selectDay(months, info.open_month)
+            val[2] = that.selectDay(days, info.open_day)
+          var salary = that.returnIndex(info.salary, that.data.payArray, false)
             that.setData({
-                userList:res.data.data
+                userList:res.data.data,
+                companyName: info.company_name,
+                companyType: info.type,
+                companyScale:info.contacts_scale,
+                achiInfo: info.achievement,
+                personInfo: info.introduction,
+                companyIntroduce:info.desc,
+                value:val
             })
       } else if (res.data.status == -1) {
           wx.redirectTo({
@@ -125,11 +147,11 @@ Page({
 	 * 
 	 * 平均薪资
 	 */
-	paysChange: function (e) {
-		this.setData({
-			paysIndex: e.detail.value
-		})
-	},
+	// paysChange: function (e) {
+	// 	this.setData({
+	// 		paysIndex: e.detail.value
+	// 	})
+	// },
 
 	/**
 	 * 编辑公司成就框显示与隐藏
@@ -185,6 +207,7 @@ Page({
 	 * 校验数据
 	 */
 	verifyData: function () {
+    console.log(this.data.companyScale)
 		if (this.data.companyName == "") {
 			ServerData._wxTost('公司名称不能为空');
 			return false
@@ -193,7 +216,7 @@ Page({
 			ServerData._wxTost('公司类型不能为空');
 			return false
 		}
-		else if (this.data.companyScale == "") {
+		else if (this.data.companyScale === "") {
 			ServerData._wxTost('请填写公司规模');
 			return false
 		}
@@ -238,14 +261,14 @@ Page({
 		ServerData.editCompany(_opt).then((res) => {
 			if (res.data.status == 1) {
 				ServerData._wxTost(res.data.msg);
-				setTimeout(() => {
-					wx.redirectTo({
-						url: '../cUserInfo/cUserInfo',
-					})
-				}, 1100)
 			} else {
 				ServerData._wxTost(res.data.msg);
 			}
+        setTimeout(() => {
+          wx.redirectTo({
+            url: '../thirdInfo/thirdInfo',
+          })
+        }, 1100)
 		})
 	}
 
