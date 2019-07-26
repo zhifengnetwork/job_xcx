@@ -3,7 +3,7 @@
 
 	<view class='g-deposits-list'>
 		<view class='g-deposits-a company-bg-'>
-			<view>我的金币</view>
+			<view>我的金额</view>
 			<view class='g-deposits-money'>{{moneyData.balance}}</view>
 			<image class="d-gold-icon" src='../../../static/images/public/gold_icon.png' />
 		</view>
@@ -27,11 +27,13 @@
 		<view class='kt-jh'>开通 <text class='bold'>{{selectMsg}}</text> 会员您将会获得<text class='bold'>{{num}}</text>次预订机会</view>
 	</view>
 
-	<view class='set-option company-bg-' bindtap="toPays">立即开通</view>
+	  <!-- <view class='set-option company-bg-'>立即开通</view> -->
+    <navigator url='../../public/pay/payWay?vip_type={{vip_type}}' class='set-option company-bg-'>立即开通</navigator>
 		<view class='foot-info'>
 		<text>￥{{saveMoney}}元</text>
 		<view class='line-heig'></view>
-		<view class='set-option company-bg-'>确定付款</view>
+		<!-- <view class='set-option company-bg-'>确定付款</view> -->
+    
 	</view>
 
 </view>

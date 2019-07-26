@@ -8,12 +8,12 @@
           <view class='c-info-text'>
             <text class='c-info-title'>{{info.name}}</text>
             <view class='c-msg m-b10'>用户ID:{{info.id}}</view>
-            <view class='c-msg m-b10'> 
+            <!-- <view class='c-msg m-b10'> 
                 实名认证
                 <text wx:if="{{info.status=== 0}}">未认证</text>
                 <text wx:if="{{info.status=== 1}}">认证</text>
                 <text wx:if="{{info.status=== -1}}">拒绝认证</text>
-            </view>
+            </view> -->
           </view>
           <!-- company info start -->
       </view>
@@ -43,7 +43,10 @@
           </navigator>
           <view class='u-o-list'>
             <text>实名认证</text>
-            <text class='u-o-text'>已认证</text>
+            <!-- <text class='u-o-text'>已认证</text> -->
+            <text class='u-o-text' wx:if="{{info.status=== 0}}">未认证</text>
+            <text class='u-o-text'  wx:if="{{info.status=== 1}}">认证</text>
+            <text class='u-o-text' wx:if="{{info.status=== -1}}">拒绝认证</text>
           </view>
           <navigator url="../../public/help" class='u-o-list'>
             <text>帮助与反馈</text>

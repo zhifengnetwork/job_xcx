@@ -8,7 +8,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		userData:{}
+		userData:{},
+    timer:''
 	},
 
 	/**
@@ -25,8 +26,12 @@ Page({
 	requserData:function(){
 		ServerData.userInfo({}).then((res) => {
 			if (res.data.status == 1) {
+
+        var time = ServerData._timeStampForwardAate(res.data.data.vip_time)
+        // console.log(time)
 				this.setData({
-					userData: res.data.data
+					userData: res.data.data,
+          timer: time
 				})
 				console.log(this.data.userData)
 			}  

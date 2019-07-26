@@ -24,6 +24,7 @@ for (let i = 1; i <= 20; i++) {
 
 Page({
 	data: {
+    getUData:[],
 		companyName: '', //公司名称
 		companyType: '', //公司类型
 		years: years, //年份数组
@@ -42,8 +43,32 @@ Page({
 		isAchievement:false, //是否显示成就
 		isPerson:false, //是否显示名人介绍
 		achiInfo:'', //公司成就
-    	personInfo:'' //名人介绍
+    personInfo:'' //名人介绍
 	},
+
+	/**
+	 * 生命周期函数--监听页面加载
+	 */
+  onLoad: function (options) {
+    this.setCompanyInfo()
+  },
+
+
+  setCompanyInfo() {
+    ServerData.setCompanyInfo({}).then((res) => {
+      if (res.data.status == 1) {
+        this.setData({ getUData: res.data.data })
+        console.log(res.data.data)
+      } else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+    })
+  },
+
 
 	/**
 	 * 编辑公司名称
@@ -226,11 +251,6 @@ Page({
 
 
 
-	/**
-	 * 生命周期函数--监听页面加载
-	 */
-	onLoad: function (options) {
-	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成

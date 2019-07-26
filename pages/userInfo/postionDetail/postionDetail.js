@@ -8,6 +8,7 @@ Page({
 	 */
 	data: {
 		id: '',
+    isCollect: 0,
 		recruitDetail: [], // 公司详情
 		isCollect: 0
 	},

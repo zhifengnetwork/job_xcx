@@ -18,6 +18,8 @@
 }
 .c-l-info {
   background:none;
+  justify-content:flex-start;
+
 }
 .c-l-info .c-logo{
   width:164rpx;

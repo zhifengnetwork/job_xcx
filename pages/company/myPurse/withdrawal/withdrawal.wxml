@@ -14,11 +14,19 @@
 			<view class='w-icon-wrap'>
 			<image bindtap="changWithdrawal" class='w-icon {{saveStatus==4 ? "ic-active":""}}' data-status="4"  src='../../../../static/images/public/alipay.png'/>
 			</view>
-			<navigator url="../../../public/setting" wx:if="{{saveStatus==4}}" class='w-user-info'>
-				<text>{{info.alipay_name}}</text>
-				<text wx:if="info.alipay == null">无</text> <text wx:else>{{info.alipay}}</text>
-				<image class="w-user-icon" src='../../../../static/images/public/edit_gray.png' />
-			</navigator>
+			<view wx:if="{{saveStatus==4}}">
+        <!-- <view class='w-user-info'> -->
+            <!-- <text>{{info.alipay_name}}</text> -->
+				    <!-- <text wx:if="info.alipay == null">无</text> <text wx:else>{{info.alipay}}</text> -->
+				    <!-- <image class="w-user-icon" src='../../../../static/images/public/edit_gray.png' /> -->
+        <!-- </view> -->
+        <view class='zfb-style'>
+            <input class='zfb-1' type='text' placeholder='请输入用户名' value='{{alipay_name}}' bindinput='setInpuVal' />
+            <input class='zfb-1' type='text' placeholder='请输入支付宝账号' value='{{alipay}}' bindinput='setInpuVal2' />
+        </view>
+			</view>
+
+      
 			<view class='v-money-info'>
 			<view class="v-money-tit">提现金额(单次最大{{info.max_money}})</view>
 			<view class='v-money-'>
