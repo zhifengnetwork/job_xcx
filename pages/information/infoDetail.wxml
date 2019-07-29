@@ -1,0 +1,6 @@
+<!--pages/information/infoDetail.wxml-->
+<view class='info-detail-wrap'>
+    <view class='time'>{{addTime}}</view>
+    <view class='title'>{{info.title}}</view>
+    <view class='content'>{{info.content}}</view>
+</view>

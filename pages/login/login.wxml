@@ -19,8 +19,11 @@
 	</view>
 	<view>
 		<button class="denglu" style="background:{{color}}" bindtap="toLogin">登录</button>
-		<view class="resigt" bindtap='resister'>注册</view>
-		<view class="forget" bindtap='forget'>忘记密码</view>
+    <view class='resigt-wrap-tt'>
+        <view class="resigt" bindtap='resister'>注册</view>
+        <view class="resigt" bindtap='wxLogin'>微信登陆</view>
+        <view class="forget" bindtap='forget'>忘记密码</view>
+    </view>
 	</view>
 	<view class='order' bindtap='visitorLogin'>
 		<image class="footPrint-ico" src='../../static/images/public/footPrint.png' />

@@ -15,8 +15,11 @@
     </view>
   </view>
 
-
   <view class='inner inner-cont'>
+      <view class='wx-no-info' wx:if="{{isShowInfo}}">
+            <image class="wx-no-icon" src='../../../static/images/public/none.png'/>
+            <view>暂无数据</view>
+      </view>
       <view wx:if="{{cStatus==0}}">
           <navigator url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}">
               <image src='{{item.logo}}'class="c-logo" />

@@ -1,6 +1,6 @@
 <!--pages/company/uCollect.wxml-->
 <view class='inner'>
-  <view class='c-l-info'>
+  <view class='reserve-l-info'>
       <view class='search-job-list' wx:for="{{bookListData}}" wx:key="key">
         <view class='c-info-title'>{{item.job_type}}</view>
         <view class='c-info-msg overH'>

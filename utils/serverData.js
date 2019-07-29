@@ -89,8 +89,12 @@ class ServerData {
 
 	//登陆
 	toLogin(_data, complete) {
-		return this._promise_get(_data, api.userAPI.login, complete);
+		return this._promise_post(_data, api.userAPI.login, complete);
 	}
+  //微信登陆
+  wxLogin(_data, complete) {
+    return this._promise_post(_data, api.userAPI.wxLogin, complete);
+  }
 	//注册
 	_register(_data, complete) {
 		return this._promise_post(_data, api.userAPI.register, complete);
@@ -175,11 +179,21 @@ class ServerData {
 		return this._promise_post(_data, api.userAPI.goWithdrawal, complete);
 	}
 
-	//提现保存
-	withdrawal(_data, complete) {
-		return this._promise_post(_data, api.userAPI.withdrawal, complete);
-	}
+  //提现保存
+  withdrawal(_data, complete) {
+    return this._promise_post(_data, api.userAPI.withdrawal, complete);
+  }
 
+  //消息列表
+  messageList(_data, complete) {
+    return this._promise_post(_data, api.userAPI.messageList, complete);
+  }
+
+  //消息详情
+  messageDetail(_data, complete) {
+    return this._promise_post(_data, api.userAPI.messageDetail, complete);
+  }
+  
 	//帮助与反馈
 	helpExp(_data, complete) {
 		return this._promise_post(_data, api.userAPI.helpExp, complete);
@@ -229,6 +243,18 @@ class ServerData {
 	editUserInfo(_data, complete) {
 		return this._promise_post(_data, api.userAPI.editUserInfo, complete);
 	}
+
+  //获取证书列表
+  getUserImages(_data, complete) {
+    return this._promise_post(_data, api.userAPI.getUserImages, complete);
+  }
+
+  //编辑证书列表
+  editImages(_data, complete) {
+    return this._promise_post(_data, api.userAPI.editImages, complete);
+  }
+
+
   //初始化个人资料
   initUserInfo(_data, complete) {
     return this._promise_post(_data, api.userAPI.initUserInfo, complete);

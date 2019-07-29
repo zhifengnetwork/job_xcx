@@ -3,7 +3,7 @@
   <view class='setting-list'>
     <text>修改手机号</text>
     <view bindtap='save'>
-      <text class="body-view -view-inp ">188 0000 2222</text>
+      <text class="body-view -view-inp "></text>
       <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
     </view>
   </view>

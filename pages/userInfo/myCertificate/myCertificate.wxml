@@ -2,7 +2,9 @@
   <!-- 上传身份证正面 -->
   <view class='idPic'>
     <view class='-pic-subtitle'>上传职业证书</view>
-    <view  wx:for="{{pics}}" wx:key="{{index}}" data-id="{{index}}"  bindtap='addIdCardPic'>
+
+
+    <!-- <view  wx:for="{{pics}}" wx:key="{{index}}" data-id="{{index}}"  bindtap='addIdCardPic'>
       <view class='id-card-top'>
         <block>
           <image class='card-top' mode='aspectFit' src="{{item.src}}" data-index="{{index}}"/>
@@ -10,13 +12,26 @@
         <image wx:if="{{item.hiddenName}}" class='addPic' src='../../../static/images/public/plus.png'></image>
       </view>
       <input class="addTextBox" placeholder='请输入职业证书名称'/>
+    </view> -->
+    <view  wx:for="{{pics}}" wx:key="{{index}}">
+      <view class='id-card-top' bindtap='addIdCardPic' data-id="{{index}}">
+        <block>
+          <image class='card-top' mode='aspectFit' src="{{item.path}}" data-index="{{index}}"/>
+        </block>
+        <view class='-add-img-' wx:if="{{item.hiddenName}}">
+          <image class='addPic' src='../../../static/images/public/plus.png'></image>
+        </view>
+      </view>
+      <input class="addTextBox" bindblur='getPicName' data-iname='input{{index}}' data-key="{{index}}" placeholder='请输入职业证书名称' value='{{item.title}}'/>
     </view>
+    <!-- -->
     <view class='file-inner' bindtap='addImgBox'>
       <button class='file-btn'></button> 
       <image class='f-plus-' src='../../../static/images/public/plus.png'/>
     </view>
   </view>
+
   <view class='a-more-pic'>添加一张</view>
   <view class='height'></view>
-  <button class='set-option' bindtap="formSubmit">提交</button>
+  <button class='set-option user-bg-' bindtap="formSubmit">提交</button>
 </view>

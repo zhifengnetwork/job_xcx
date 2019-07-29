@@ -1,0 +1,25 @@
+/* pages/information/infoDetail.wxss */
+.info-detail-wrap{
+  padding: 24rpx;
+}
+
+.info-detail-wrap .time{
+   margin-bottom: 15rpx;
+   font-size: 24rpx;
+   color: #888;
+}
+
+.info-detail-wrap .title{
+   margin-bottom: 15rpx;
+   font-size: 30rpx;
+   color: #151515;
+}
+
+.info-detail-wrap .content{
+   margin-bottom: 15rpx;
+   font-size: 26rpx;
+   color: #666;
+   letter-spacing: 2rpx;
+   line-height: 46rpx;
+   text-indent: 48rpx;
+}

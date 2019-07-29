@@ -1,19 +1,6 @@
 {
   "pages": [
-
-    "pages/search/sThirdParty",
-    "pages/userInfo/index/index",
-    "pages/search/sCompany",
-
     "pages/login/login",
-    "pages/userInfo/search/search",
-
-    "pages/company/editInfo/editInfo",
-    "pages/company/cUserInfo/cUserInfo",
-    "pages/thirdParty/editInfo/editInfo",
-    "pages/thirdParty/thirdInfo/thirdInfo",  
-    "pages/company/jobList/jobList",
-    "pages/company/index/index",
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
@@ -26,13 +13,22 @@
     "pages/public/explain",
     "pages/public/audit",
     "pages/information/information",
+    "pages/information/infoDetail",
+    "pages/search/sCompany",
+    "pages/search/pSearch",
+    "pages/search/sThirdParty",
+
+    
     "pages/personalMessage/personalMessage",
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-    
-    "pages/company/company",
-    "pages/company/thirdParty/thirdParty",   
+    "pages/company/index/index",
+    "pages/company/thirdParty/thirdParty",
+    "pages/company/search/search",
+    "pages/company/editInfo/editInfo",
+    "pages/company/jobList/jobList",
+    "pages/company/cUserInfo/cUserInfo",
     "pages/company/jobApplicant/jobApplicant",
     "pages/company/myPurse/withdrawal/withdrawal",
     "pages/company/myPurse/myPurse",
@@ -45,7 +41,8 @@
     "pages/company/publish",
 
     "pages/thirdParty/index/index",
- 
+    "pages/thirdParty/thirdInfo/thirdInfo",
+    "pages/thirdParty/editInfo/editInfo",
     "pages/thirdParty/jobList",
     "pages/thirdParty/thirdParty",
     "pages/thirdParty/jobApplicant/jobApplicant",
@@ -55,12 +52,13 @@
     "pages/thirdParty/myPurse/withdrawal",
     "pages/thirdParty/uCollect/uCollect",
     "pages/thirdParty/postJobPostings/postJobPostings",
-
     "pages/thirdParty/company/company",
     "pages/thirdParty/postionDetail/postionDetail",
     "pages/thirdParty/personalDetail/personalDetail",
     "pages/thirdParty/uPDetail/uPDetail",
-    
+
+    "pages/userInfo/index/index",
+    "pages/userInfo/search/search",
     "pages/userInfo/myPurse/myPurse",
     "pages/userInfo/company/company",
     "pages/userInfo/thirdParty/thirdParty",

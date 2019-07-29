@@ -4,7 +4,8 @@
     <!-- <view class='title'>个人中心</view> -->
     <view class='content-list'>
       <view class='c-l-info'>
-          <image src='{{userData.logo}}' class="c-logo" />
+          <!-- <image src='{{userData.logo}}' class="c-logo" /> -->
+          <navigator url='../../headPortrait/headPortrait'><image src='{{userData.logo}}' class="c-logo" /></navigator>
           <view class='c-info-text'>
             <text class='c-info-title'>{{userData.company_name}}</text>
             <view class='c-msg m-b10'>

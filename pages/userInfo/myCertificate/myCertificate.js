@@ -1,18 +1,97 @@
-
+import ServerData from '../../../utils/serverData.js';
 Page({
 
   data:{
-    pics: [
-      {src: '', hiddenName: true}
-    ]
+    pics: [],                                               //所有证书名
   },
   onLoad: function (options) {
-    var that = this
-    that.setData({
-      value: 'show'
+    this.getUserImages()
+
+  },
+
+  getUserImages(){
+    var that =this;
+    ServerData.getUserImages({}).then((res) => {
+      console.log(res.data.data.image)
+        if (res.data.status==1){
+              var list = res.data.data.image,
+                json,
+                newArry=[]
+            if(list.length<1){
+                json = { title: '', path:'', hiddenName: true }
+                newArry.push(json)
+                console.log(json)
+            }else{
+                for(var i in list){
+                    console.log(111)
+                    json = { title: list[i].title, path: list[i].path, hiddenName: false}
+                    newArry.push(json) 
+                }
+            }
+          that.setData({
+            pics: newArry
+          })
+        } else if (res.data.status == -1) {
+          wx.redirectTo({
+            url: '../../login/login'
+          })
+        } else {
+          ServerData._wxTost(res.data.msg)
+        }
     })
   },
-  addIdCardPic: function (e) {   //身份证上传
+
+  formSubmit(){
+    var that =this
+    var _opt ={
+      'image': that._getPicSrc().srcArry,
+      'title': that._getPicSrc().titleArry
+    }
+    ServerData.editImages(_opt).then((res) => {
+        if(res.data.status ==1){
+          ServerData._wxTost('保存成功，请耐心等待审核')
+          setTimeout(function(){
+              wx.navigateBack({
+                delta: 1
+              })
+          },1000)
+        }else{
+            ServerData._wxTost(res.data.msg)
+        }
+    })
+  },
+
+  _getPicSrc() {                                   //获取证书的图片路径
+    var srcArry = [],
+      titleArry=[],
+      that = this,
+      pics = that.data.pics
+    for (var i in pics) {
+      if (pics[i].path != "") {
+        srcArry.push(pics[i].path)
+      }
+      if(pics[i].title !=""){
+          titleArry.push(pics[i].title)
+      }
+    }
+    return {
+        titleArry: titleArry,
+        srcArry: srcArry
+    }
+  },
+
+  getPicName(e){                                   //获取证书的证书名
+    // console.log(e)
+    // var all = this.data.all,
+    // var iname = e.target.dataset.iname,
+    var key = e.target.dataset.key
+    this.data.pics[key].title = e.detail.value
+    this.setData({
+      pics: this.data.pics
+    });
+  },
+
+  addIdCardPic: function (e) {   //证书列表
     var _this = this
     var id = e.currentTarget.dataset.id
     wx.chooseImage({
@@ -21,94 +100,29 @@ Page({
       success: function (res) {
         var imgSrc = res.tempFilePaths[0];
         var data = _this.data.pics[id]
-        data.src = imgSrc;
+        // data.path = imgSrc;
         data.hiddenName = false;
-        _this.setData({
-          pics: _this.data.pics
+        ServerData.uploadFile(imgSrc).then((res) => {
+          var dat = JSON.parse(res.data)
+          if (dat.status == 1) {
+            // data.newSrc = dat.data
+            data.path = dat.data;
+            console.log(data.newSrc)
+            _this.setData({
+              pics: _this.data.pics
+            })
+          }
         })
       }
       //
     })
   },
   addImgBox: function (e) {
-    var json = { src: '', hiddenName: true};
+    var json = { title: '', path: '', hiddenName: true };
     this.data.pics.push(json)
-    console.log(this.data.pics)
     this.setData({
       pics: this.data.pics
     })
-  },
-  formSubmit:function(){
-    wx.showToast({
-      title: '提交成功',
-      icon: 'success',
-      duration: 1500
-    })
-    setTimeout(function(){
-      wx.navigateTo({
-        url: 'userCenter',
-      })
-    },2000)
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  }
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  //  上传身份证正反面  s
-  // addPosPic: function () {
-  //   var that = this;
-  //   wx.chooseImage({
-  //     success: function (res) {
-  //       var tempFilePaths = res.tempFilePaths
-  //       that.setData({
-  //         positiveImg: tempFilePaths
-  //       })
-  //     }
-  //   })
-  // }
 })

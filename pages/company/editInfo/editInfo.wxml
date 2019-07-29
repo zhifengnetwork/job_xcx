@@ -99,7 +99,7 @@
 	<!--footer -->
 	<view class='line-heig'></view>
 	<view class='set-option-1' >
-		<button class='s-1-option company-bg-' bindtap='saveEditInfo'>保存</button>
+		<button class='s-1-option company-bg-' bindtap='saveEditInfo' wx:if="{{userList.is_edit==1}}">保存</button>
 	</view>
 
 </view>

@@ -24,7 +24,7 @@ Page({
       this.setData({
         pColor: util.loginIdentity().pColor,
         pBC1: util.loginIdentity().pBC1,
-        pBC1: util.loginIdentity().pBC1,
+        pBgC: util.loginIdentity().pBgC,
         resType: util.loginIdentity().resType,
       })
   },
@@ -37,12 +37,18 @@ Page({
         page: that.data.page
       }
     ServerData.searchInfp(_opt).then((res) => {
-      console.log(res.data.data)
+      // console.log(res.data.data)
       if (res.data.status == 1) {
-        that.setData({ list: res.data.data })
-        if(res.data.data.length<1){
-            that.isShowInfo =true
+        var status =false
+        if (res.data.data.recruit.length<1){
+            // that.isShowInfo =true
+            status = true
         }
+        that.setData({ 
+          list: res.data.data,
+          isShowInfo:status 
+        })
+        console.log(that.data.isShowInfo)
       }
       else if (res.data.status == -1) {
         wx.redirectTo({

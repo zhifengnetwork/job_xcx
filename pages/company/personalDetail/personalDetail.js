@@ -88,7 +88,6 @@ Page({
       id:this.data.id
     }
     ServerData.booking(_opt).then((res) => {
-      console.log(res)
       if (res.data.status == 1) {
           wx.showToast({
             title: '预订成功',
@@ -99,6 +98,8 @@ Page({
         wx.redirectTo({
           url: '../myReserve/myReserve'
         })
+      }else{
+          ServerData._wxTost(res.data.msg)
       }
     })
   },

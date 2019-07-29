@@ -1,7 +1,8 @@
 const proxys = 'https://zhaopin.zhifengwangluo.cn/api';
 // const apiProxys ='/api/'
 const userAPI = {
-  login: `${proxys}/user/login`,                //注册
+  login: `${proxys}/user/login`,                      //登陆
+  wxLogin: `${proxys}/login/index`,                   //微信登陆
   register: `${proxys}/user/register`,                //注册
   verifyCode: `${proxys}/user/register_code`,         //注册验证码
   fsCode: `${proxys}/user/send_code`,                 //发送验证码
@@ -16,7 +17,7 @@ const userAPI = {
   personalDetail: `${proxys}/person/detail`,          // 个人简历详情
   editRecruit: `${proxys}/company/edit_recruit`,      // 编辑、发布职位
   editCompany: `${proxys}/company/edit`,              // 编辑公司信息
-  setCompanyInfo: `${proxys}/company/info`,              // 初始化公司信息
+  setCompanyInfo: `${proxys}/company/info`,           // 初始化公司信息
 
   searchInfp: `${proxys}/user/search`,                //搜索
  
@@ -30,8 +31,11 @@ const userAPI = {
 
   userInfo: `${proxys}/user/index`,                   //用户中心
   uploadHeadpic: `${proxys}/user/upload_headpic`,     // 保存头像
-  initUserInfo: `${proxys}/person/info`,            // 初始化个人资料
+  initUserInfo: `${proxys}/person/info`,              // 初始化个人资料
   editUserInfo: `${proxys}/person/edit`,              // 编辑个人资料
+  getUserImages: `${proxys}/user/get_images`,         // 我的证书
+  editImages: `${proxys}/user/edit_images`,           // 编辑证书
+  
   categoryList: `${proxys}/person/category_list`,     // 工种列表
 
   myPurse: `${proxys}/person/my_wallet`,              // 我的钱包
@@ -39,6 +43,8 @@ const userAPI = {
   goWithdrawal: `${proxys}/person/go_withdrawal`,     // 提现
   withdrawal: `${proxys}/person/withdrawal`,          // 提现保存
 
+  messageList: `${proxys}/message/message_list`,      // 消息列表
+  messageDetail: `${proxys}/message/message_detail`,      // 消息详情
 
   collection: `${proxys}/collection/collection`,      // 收藏/取消收藏
   Ucollect: `${proxys}/collection/collection_list`,   // 我的收藏列表

@@ -5,7 +5,6 @@
 <view class='g-header-'>
   <view class='-header-cont'>
     <navigator url='../../search/sCompany' class='comp-cont s-nosearch-wrap'>
-      <!-- <input type='text' class='search {{tInfo.clas}}' placeholder="输入所要查找的内容" disabled=''/> -->
       <view class='search search-nosearch'>输入所要查找的内容</view>
       <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
     </navigator>

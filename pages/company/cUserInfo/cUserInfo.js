@@ -17,9 +17,12 @@ Page({
 	 */
 	onLoad: function (options) {
 		util.getStorageItem('savePostion', app)   //获取底部导航
-		this.requserData();
+	
 	},
 
+  onShow(){
+    this.requserData();
+  },
 	/**
 	 * 获取公司信息
 	 */
@@ -57,13 +60,6 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面显示
-	 */
-	onShow: function () {
 
 	},
 

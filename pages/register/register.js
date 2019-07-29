@@ -11,21 +11,27 @@ Page({
     password:'',
     comPasd:'',
     color: '#ccc',
-    show: false,              //控制下拉列表的显示隐藏，false隐藏、true显示
+    show: false,                //控制下拉列表的显示隐藏，false隐藏、true显示
     selectData: [
       {name:'个人',id:0}, 
       {name:'企业',id:1},
       {name: '第三方',id:2} 
-    ],                        //下拉列表的数据
-    index: 0,                  //选择的下拉列表下标
-    // nIndex:3,
+    ],                          //下拉列表的数据
+    index: 0,                   //选择的下拉列表下标
+    toke: ''                    //微信登陆后台返回的toke
     
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(options)
+    if (options!=""){
+        this.setData({
+          toke: options.toke
+        })
+    }
+      
   },
 
   clickCode: function () {     //发送验证码
@@ -56,7 +62,9 @@ Page({
       'mobile': that.data.mobile,
       'code': that.data.mCode,
       'pwd': that.data.password,
-      'pwd2': that.data.comPasd
+      'pwd2': that.data.comPasd,
+      'register':1,
+      'token': that.data.token
       }
     ServerData._register(_opt).then((res) => {       //保存注册信息
       wx.removeStorageSync('token')

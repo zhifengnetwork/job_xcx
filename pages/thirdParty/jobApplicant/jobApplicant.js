@@ -28,6 +28,7 @@ Page({
     this.hiring()
     this.getCategoryList()         //职位列表
     // console.log(this.data.jobIndex)
+    
   },
   hiring: function () {
     var _opt={
@@ -36,7 +37,7 @@ Page({
       'kw': this.data.job_type,
 
     }
-    ServerData.hiring({ }).then((res) => {
+    ServerData.hiring(_opt).then((res) => {
       // console.log(res)
       if (res.data.status == 1) {
         this.setData({

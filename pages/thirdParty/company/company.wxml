@@ -1,13 +1,11 @@
 
 <!-- HEADER START -->
-<!-- <import src="../../template/common.wxml"/>
-<template is="search-1" data="{{text: '我的'}}"/> -->
 <view class='g-header-'>
   <view class='-header-cont'>
-    <view class='comp-cont'>
-      <input type='text' class='search third-bColor-1' placeholder="输入所要查找的内容" />
+    <navigator url='../../search/sCompany' class='comp-cont s-nosearch-wrap'>
+      <view class='search search-nosearch third-bColor-1'>输入所要查找的内容</view>
       <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
-    </view>
+    </navigator>
     <navigator url='../company/cUserInfo'><text class='search-r-text'></text></navigator>
   </view>
   <!-- 地址选择 -->
@@ -15,7 +13,7 @@
     <view class="newsite_box">
       <!-- 所在地区点击按钮 -->
       <view class="newsite_button" bindtap="selectDistrict">
-        <view class="newsite_view">选择地点</view>
+        <view class="newsite_view subtitle-msg">选择地点</view>
         <view class="newsite_city">{{areaInfo}}</view>
       </view>
       <!-- 所有城市三级联动列表 -->

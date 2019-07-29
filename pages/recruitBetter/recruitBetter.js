@@ -6,6 +6,7 @@ Page({
   data: {
     recList: [],
     listArry:[],
+    pBgC: '',                            //动态获背景颜色  
     row: 10,                            // 条数
     regtype: 1,                         // 1位公司，2为第三方  默认1 ，
     regtypeMsg: '公司',                       // 1位公司，2为第三方  默认1 
@@ -19,14 +20,16 @@ Page({
    */
   onLoad: function (options) {
     this.data.regtype = options.regtype
-    if (options.regtype==2){
-      
-      this.setData({
-        regtypeMsg: '第三方'
-      });
-    }else{
-      regtypeMsg: '公司'
+    var msg = ''
+    if (options.regtype == 2) {
+      msg = '第三方'
+    } else {
+      msg = '公司'
     }
+    this.setData({
+      pBgC: util.loginIdentity().pBgC,
+      regtypeMsg: msg
+    })
     util.getStorageItem('savePostion', app);   //获取底部导航
     this.getRecruitList(this)                      //公司及第三方职位列表
 

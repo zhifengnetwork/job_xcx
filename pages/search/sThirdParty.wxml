@@ -27,9 +27,9 @@
               </view>
               <!-- company info start -->
               <view class='company-info'>
-                  <text>公司</text>
+                  <text>第三方</text>
                   <view class='company-status'>
-                      <view class='company-status'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
+                      <view class='company-status {{pBgC}}'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
                   </view>
               </view>
           </navigator>

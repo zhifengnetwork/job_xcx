@@ -39,8 +39,8 @@ Page({
         wx.redirectTo({
           url: '../../login/login'
         })
-      } else {
-				ServerData._wxTost(res.data.msg)
+      } else{
+				  ServerData._wxTost(res.data.msg)
 			}
 		})
 	},
@@ -87,7 +87,7 @@ Page({
       id:this.data.id
     }
     ServerData.booking(_opt).then((res) => {
-      console.log(res)
+      console.log(res.data)
       if (res.data.status == 1) {
           wx.showToast({
             title: '预订成功',
@@ -95,12 +95,9 @@ Page({
             duration: 2000
           })
       } else if(res.data.status == 5){
-        ServerData._wxTost(res.data.msg)
-        // wx.redirectTo({
-        //   url: '../myReserve/myReserve'
-        // })
+          ServerData._wxTost(res.data.msg)
       }else{
-        ServerData._wxTost(res.data.msg)
+          ServerData._wxTost(res.data.msg)
       }
     })
   },

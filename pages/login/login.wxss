@@ -73,7 +73,7 @@
 }
 
 .resigt {
-  margin-left: 80rpx;
+  /* margin-left: 80rpx; */
   font-size: 28rpx;
   color: #ff54b5;
   padding-top: 20rpx;
@@ -90,8 +90,13 @@
   padding:20rpx;
   z-index:1;
 }
+.resigt-wrap-tt{
+  display: flex;
+  justify-content: space-between;
+  margin:20rpx 50rpx;
+}
 .forget {
-  margin-right: 80rpx;
+  /* margin-right: 80rpx; */
   font-size: 28rpx;
   color: #ff54b5;
   padding-top: 20rpx;

@@ -10,7 +10,8 @@ Page({
       kw:'',
       rows:200,
       page:1,
-      list:[]
+      list:[],
+      isShowInfo: false
   },
 
   /**
@@ -30,7 +31,14 @@ Page({
     ServerData.searchInfp(_opt).then((res) => {
       console.log(res.data.data)
       if (res.data.status == 1) {
-        that.setData({ list: res.data.data })
+        var status = false
+        if (res.data.data.recruit.length < 1 && res.data.data.person.length < 1) {
+          status = true
+        }
+        that.setData({ 
+          list: res.data.data,
+          isShowInfo: status
+        })
       }
       else if (res.data.status == -1) {
         wx.redirectTo({

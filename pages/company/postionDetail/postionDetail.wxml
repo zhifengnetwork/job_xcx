@@ -1,10 +1,6 @@
 <view id="wrap">
   <!-- SEARCH INFO START -->
-  <view class='search-inner'>
-    <view class='search-cont'>
-      <input type='text' class='search company-bColor-'  placeholder="输入所要查找的内容" />
-      <image class="search_icon" src='../../../static/images/public/search_icon.png'></image>
-    </view>
+  <view class='search2-inner'>
     <text bindtap="onCollection" class='collect_tab'  data-stu="0" wx:if="{{isCollect==0}}">收藏</text>
     <text bindtap="onCollection" class='collect_tab'  data-stu="1" wx:else>已收藏</text>
   </view>

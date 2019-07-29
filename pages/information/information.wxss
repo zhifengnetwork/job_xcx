@@ -4,3 +4,14 @@ inner{
   background:#f8f8f8;
   padding: 40rpx 24rpx;
 }
+/* .t-info-list{
+  flex-wrap: wrap;
+} */
+.create-time{
+  /* width: 100%; */
+  font-size: 24rpx;
+  color: #666;
+}
+.t-info-img{
+  height: 70rpx;
+}

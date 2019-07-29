@@ -94,5 +94,5 @@
   <textarea class="texa1" placeholder='个人说明' bindinput='getExplain'></textarea>
   <!--footer -->
   <view class='line-heig'></view>
-  <view class='set-option-1'><button class='s-1-option' bindtap='saveEditInfo'>保存</button></view>
+  <view class='set-option-1'><button class='s-1-option' bindtap='saveEditInfo' wx:if="{{info.is_edit==1}}">保存</button></view>
 </view>

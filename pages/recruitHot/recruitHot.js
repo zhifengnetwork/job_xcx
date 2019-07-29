@@ -19,18 +19,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      pBgC: util.loginIdentity().pBgC
-    })
     this.data.regtype = options.regtype
+    var msg =''
     if (options.regtype==2){
-      
-      this.setData({
-        regtypeMsg: '第三方'
-      });
+      msg = '第三方'
     }else{
-      regtypeMsg: '公司'
+      msg = '公司'
     }
+    this.setData({
+      pBgC: util.loginIdentity().pBgC,
+      regtypeMsg: msg
+    })
     util.getStorageItem('savePostion', app);   //获取底部导航
     this.getRecruitList(this)                      //公司及第三方职位列表
 

@@ -54,6 +54,49 @@ Page({
       color: color
     })
   },
+
+  wxLogin(){
+    var that =this
+        // code =''
+    wx.login({
+      success: res => {
+        console.log(res.code)
+        // code = res.code
+        ServerData.wxLogin({ 'code': res.code }).then((res) => {
+          wx.removeStorageSync('token')
+          wx.removeStorageSync('savePostion')
+          var type = res.data.data.regtype       //用户状态
+          if (res.data.status == 1) {
+              wx.setStorageSync('token', res.data.data.token);
+              wx.setStorageSync('savePostion', type);
+              that.comeIndex(type)    //进入首页
+          }
+          else if(res.data.status ==3){
+              that.comeInInfoRegist(type)
+          }
+          else if (res.data.status == 4) {
+              // wx.setStorageSync('token', res.data.data.token);
+              wx.redirectTo({                   //跳转个人信息注册
+                url: '../register/register?code=' + res.data.data.openid + '&toke=' + res.data.data.token
+              })
+          }else{
+              ServerData._wxTost(res.data.msg)
+          }
+        })
+      }
+    })
+    //  console.log(code)
+    // ServerData.wxLogin({'code': code}).then((res) =>{
+    //       wx.removeStorageSync('token')
+    //       wx.removeStorageSync('savePostion')
+    //       if(res.data.status ==1){
+    //             this.comeIndex(type)    //进入首页
+
+    //       }
+    //   })
+
+  },
+
   toLogin:function(){     //保存用户身份用
     var that =this,
         password = that.data.password,
@@ -70,54 +113,59 @@ Page({
       'password': password
     }
     ServerData.toLogin(_opt).then((res) => {          //请求数据
+      var that =this
       wx.removeStorageSync('token')
       wx.removeStorageSync('savePostion')
+      var type = res.data.data.regtype       //用户状态
       if (res.data.status == 1) {
-          var type = res.data.data.regtype       //用户状态
           wx.setStorageSync('token', res.data.data.token);
           wx.setStorageSync('savePostion', type);
           console.log(type)
-          
-          if (type == 3) {  //个人首页
-            wx.redirectTo({         
-              url: '../userInfo/index/index'
-            })
-          }
-          else if (type == 1) {     //企业首页
-            wx.redirectTo({         
-              url: '../company/index/index'
-            })
-          }
-          else if (type == 2) {     //第三方首页
-            wx.redirectTo({         
-              url: '../thirdParty/index/index'
-            })
-          }
-          else {
-            wx.redirectTo({         //游客首页
-              url: '../index/index'
-            })
-          }
+          that.comeIndex(type)    //进入首页
+
       }
       else if (res.data.status == 3){         //注册账号但没有注册信息
-          var type = res.data.data.regtype       //用户状态
           wx.setStorageSync('token', res.data.data.token);
           wx.setStorageSync('savePostion', type);
-          if (type==3){
-            wx.redirectTo({                   //跳转个人信息注册
-               url: '../personalMessage/personalMessage'
-            })
-          }else{
-            wx.redirectTo({                   //跳转公司信息注册
-                url: '../register/fillInInformation/fillInInformation'
-            })
-          }
+          that.comeInInfoRegist(type)
       } 
       else {
-
-        ServerData._wxTost(res.data.msg)
+          ServerData._wxTost(res.data.msg)
       }
     });  
+  },
+  comeInInfoRegist(type){
+      if (type == 3) {
+        wx.redirectTo({                   //跳转个人信息注册
+          url: '../personalMessage/personalMessage'
+        })
+      } else {
+        wx.redirectTo({                   //跳转公司信息注册
+          url: '../register/fillInInformation/fillInInformation'
+        })
+      }
+  },
+  comeIndex(type){      //判断进入那个首页
+      if (type == 3) {    //个人首页
+        wx.redirectTo({
+          url: '../userInfo/index/index'
+        })
+      }
+      else if (type == 1) {     //企业首页
+        wx.redirectTo({
+          url: '../company/index/index'
+        })
+      }
+      else if (type == 2) {     //第三方首页
+        wx.redirectTo({
+          url: '../thirdParty/index/index'
+        })
+      }
+      else {
+        wx.redirectTo({         //游客首页
+          url: '../index/index'
+        })
+      }
   },
   visitorLogin(){
     wx.redirectTo({         //跳转至首页
@@ -154,12 +202,12 @@ Page({
       status: false
     })
   },
-  forget:function(){
+  forget:function(){             //  忘记密码
     wx.navigateTo({
       url: '../forgetpassword/forgetpassword',
     })
-  },
-  resister:function(){
+  },  
+  resister: function () {       //  注册
     wx.navigateTo({
       url: '../register/register',
     })

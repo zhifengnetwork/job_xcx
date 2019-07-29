@@ -54,6 +54,13 @@
    padding-top: 10rpx;
    border-bottom: 2rpx solid #fff;
 }
+.search2-inner{
+  padding: 0 24rpx;
+  text-align: right;
+}
+.search2-inner .collect_tab{
+  padding: 8rpx;
+}
 .g-header-{
    position:fixed;
    top: 0;
@@ -174,8 +181,17 @@
   justify-content: space-between;
   padding:25rpx 10rpx 25rpx;
 }
-
-.c-l-info .c-logo{
+.reserve-l-info{
+  margin-bottom:10rpx;
+  border-radius:5px;
+  background:#fff;
+  align-items:center;
+}
+.reserve-l-info .search-job-list{
+   margin-bottom: 15rpx;
+  padding:25rpx 10rpx 25rpx;
+}
+.c-l-info .c-logo,c-l-info .c-logo{
   width:90rpx;
   height:90rpx;
   flex:0 0 1;
