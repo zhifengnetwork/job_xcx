@@ -16,13 +16,13 @@ Page({
   },
 
   setInpuVal(e) {
-    console.log(e)
+    // console.log(e)
     this.setData({
       alipay_name: e.detail.value
     })
   },
   setInpuVal2(e) {
-    console.log
+    // console.log
     this.setData({
       alipay: e.detail.value
     })
@@ -41,10 +41,8 @@ Page({
     this.getWithdrawal()
   },
   getMoney(e){
-    // console.log(e)
     var t = e.detail.value
     var sxf = new Number(this.data.info.percent/100) * new Number(e.detail.value).toFixed(2)
-    console.log(this.data.info.percent)
     this.setData({ txmoney: e.detail.value, sxf: sxf })
   },
   getWithdrawal(){
@@ -64,7 +62,7 @@ Page({
           ServerData._wxTost(res.data.msg)
         }
         
-        console.log(res)
+        // console.log(res)
       })
   },
 
@@ -73,7 +71,6 @@ Page({
       alipay_name = that.data.alipay_name,
       alipay = that.data.alipay
 
-    // console.log(that.data.alipay_name + 'fdf' + that.data.alipay )
     if (that.data.saveStatus == 4) {
       if (alipay_name == "" || alipay == "") {
         return ServerData._wxTost('请输入支付宝信息')

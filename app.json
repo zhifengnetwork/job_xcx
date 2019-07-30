@@ -6,8 +6,9 @@
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
     "pages/public/pay/payWay",
-    "pages/public/setting",
+
     "pages/public/password",
+    "pages/public/setting",
     "pages/public/editMobile",
     "pages/public/help",
     "pages/public/explain",
@@ -17,23 +18,23 @@
     "pages/search/sCompany",
     "pages/search/pSearch",
     "pages/search/sThirdParty",
-
+    "pages/cOrTInfo/cOrTInfo",
     
     "pages/personalMessage/personalMessage",
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
     "pages/company/index/index",
+    "pages/company/postionDetail/postionDetail",
+    "pages/company/cUserInfo/cUserInfo",
     "pages/company/thirdParty/thirdParty",
     "pages/company/search/search",
     "pages/company/editInfo/editInfo",
-    "pages/company/jobList/jobList",
-    "pages/company/cUserInfo/cUserInfo",
+
     "pages/company/jobApplicant/jobApplicant",
     "pages/company/myPurse/withdrawal/withdrawal",
     "pages/company/myPurse/myPurse",
     "pages/company/myPurse/goldDeposits/goldDeposits",
-    "pages/company/postionDetail/postionDetail",
     "pages/company/personalDetail/personalDetail",
     "pages/company/uCollect/uCollect",
     "pages/company/myReserve/myReserve",
@@ -41,6 +42,7 @@
     "pages/company/publish",
 
     "pages/thirdParty/index/index",
+    "pages/company/jobList/jobList",
     "pages/thirdParty/thirdInfo/thirdInfo",
     "pages/thirdParty/editInfo/editInfo",
     "pages/thirdParty/jobList",
@@ -58,13 +60,12 @@
     "pages/thirdParty/uPDetail/uPDetail",
 
     "pages/userInfo/index/index",
+    "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/myPurse",
     "pages/userInfo/company/company",
-    "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/editInfo/editInfo",
-
     "pages/userInfo/myPurse/withdrawal",
     "pages/userInfo/myPurse/goldDeposits",
     "pages/userInfo/headPortrait/headPortrait",

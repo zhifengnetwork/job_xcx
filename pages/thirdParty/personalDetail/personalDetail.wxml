@@ -13,9 +13,7 @@
             <view class='w-bold m-b22'>{{personalData.name}}</view>
             <view class='w-bold m-b22'>
                 <text class='m-r20'>手机号码：</text>
-                <text class='m-r10'>159</text>
-                <text class='m-r10'>3000</text>
-                <text class='m-r10'>5159</text>
+                <text class='m-r10'>{{personalData.mobile}}</text>
             </view>
             <view class='m-b22'>大专</view>
             <view class='m-b22'>无证书</view>
@@ -36,7 +34,13 @@
     </view>
     <view class='footer'>
         <button class='f-btn-1 third-bg-' bindtap="toReservation">马上预订</button>
-        <button class='f-btn-2 third-color- third-bColor-1' bindtap="callWithHim">联系客服</button>
+        <button class='f-btn-2 third-bColor- third-color-'>
+          <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+          <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+          <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button> 
+          <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+          联系客服
+        </button>
     </view>
   </view>
 </view>

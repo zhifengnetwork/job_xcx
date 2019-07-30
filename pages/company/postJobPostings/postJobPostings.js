@@ -173,12 +173,12 @@ Page({
 		}
 		ServerData.editRecruit(_opt).then((res) => {
 			if(res.data.status == 1){
-				ServerData._wxTost(res.data.msg);
+				ServerData._wxTost('保存成功,信息需管理员审核');
 				setTimeout(() => {
 					wx.redirectTo({
 						url: '../cUserInfo/cUserInfo',
 					})
-				},1100)
+				},2000)
 			}else{
 				ServerData._wxTost(res.data.msg);
 			}

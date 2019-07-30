@@ -14,7 +14,7 @@
     <view class='foot-info'>
         <text>￥{{saveMoney}}元</text>
         <view class='line-heig'></view>
-        <view class='set-option company-bg-'>确定付款</view>
+        <view class='set-option company-bg-' bindtap="toGoldDeposits">确定付款</view>
     </view>
     
 </view>

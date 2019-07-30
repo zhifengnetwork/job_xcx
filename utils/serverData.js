@@ -95,6 +95,12 @@ class ServerData {
   wxLogin(_data, complete) {
     return this._promise_post(_data, api.userAPI.wxLogin, complete);
   }
+
+  //微信绑定
+  bindWeixin(_data, complete) {
+    return this._promise_post(_data, api.userAPI.bindWeixin, complete);
+  }
+
 	//注册
 	_register(_data, complete) {
 		return this._promise_post(_data, api.userAPI.register, complete);
@@ -130,6 +136,14 @@ class ServerData {
 	recruitDetail(_data, complete) {
 		return this._promise_post(_data, api.userAPI.recruitDetail, complete);
 	}
+
+  // 查看公司详情
+   lookCompany(_data, complete) {
+    return this._promise_post(_data, api.userAPI. lookCompany, complete);
+  }
+
+
+
 	// 个人简历详情
 	personalDetail(_data, complete) {
 		return this._promise_post(_data, api.userAPI.personalDetail, complete);

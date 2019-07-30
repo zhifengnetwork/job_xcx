@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),          //获取用户信息是否在当前版本可用
     inputValue: null,
     status: false,
     eyekai: 0,
@@ -55,45 +56,37 @@ Page({
     })
   },
 
-  wxLogin(){
-    var that =this
-        // code =''
-    wx.login({
-      success: res => {
-        console.log(res.code)
-        // code = res.code
-        ServerData.wxLogin({ 'code': res.code }).then((res) => {
-          wx.removeStorageSync('token')
-          wx.removeStorageSync('savePostion')
-          var type = res.data.data.regtype       //用户状态
-          if (res.data.status == 1) {
+  wxLogin(e){
+    if (e.detail.userInfo) {//点击了“允许”按钮，
+      var that = this
+      wx.login({
+        success: res => {
+          ServerData.wxLogin({ 'code': res.code }).then((res) => {
+            wx.removeStorageSync('token')
+            wx.removeStorageSync('savePostion')
+            var type = res.data.data.regtype       //用户状态
+            if (res.data.status == 1) {
               wx.setStorageSync('token', res.data.data.token);
               wx.setStorageSync('savePostion', type);
               that.comeIndex(type)    //进入首页
-          }
-          else if(res.data.status ==3){
+            }
+            else if (res.data.status == 3) {
               that.comeInInfoRegist(type)
-          }
-          else if (res.data.status == 4) {
-              // wx.setStorageSync('token', res.data.data.token);
+            }
+            else if (res.data.status == 4) {
               wx.redirectTo({                   //跳转个人信息注册
                 url: '../register/register?code=' + res.data.data.openid + '&toke=' + res.data.data.token
               })
-          }else{
+            } else {
               ServerData._wxTost(res.data.msg)
-          }
-        })
-      }
-    })
-    //  console.log(code)
-    // ServerData.wxLogin({'code': code}).then((res) =>{
-    //       wx.removeStorageSync('token')
-    //       wx.removeStorageSync('savePostion')
-    //       if(res.data.status ==1){
-    //             this.comeIndex(type)    //进入首页
+            }
+          })
+        }
+      })
+    }
 
-    //       }
-    //   })
+
+
 
   },
 
@@ -116,15 +109,15 @@ Page({
       var that =this
       wx.removeStorageSync('token')
       wx.removeStorageSync('savePostion')
-      var type = res.data.data.regtype       //用户状态
       if (res.data.status == 1) {
+          var type = res.data.data.regtype       //用户状态
           wx.setStorageSync('token', res.data.data.token);
           wx.setStorageSync('savePostion', type);
           console.log(type)
           that.comeIndex(type)    //进入首页
-
       }
-      else if (res.data.status == 3){         //注册账号但没有注册信息
+      else if (res.data.status == 3){            //注册账号但没有注册信息
+          var type = res.data.data.regtype       //用户状态
           wx.setStorageSync('token', res.data.data.token);
           wx.setStorageSync('savePostion', type);
           that.comeInInfoRegist(type)

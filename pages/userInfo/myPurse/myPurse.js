@@ -21,9 +21,9 @@ Page({
   },
   getMyPurse(){
       ServerData.myPurse({}).then((res) => {
-          console.log(res)
+          // console.log(res)
           var data =res.data.data
-        console.log(data)
+        // console.log(data)
         this.setData({ 
           list: data,
           saveMoney: data.month_money,

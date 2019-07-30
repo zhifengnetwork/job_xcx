@@ -1,7 +1,8 @@
 <!--pages/company/uCollect.wxml-->
 <view class='inner'>
   <view class='c-l-info'>
-      <view class='search-job-list' wx:for="{{bookListData}}" wx:key="key">
+    <scroll-view class="list" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="scrollLower">
+      <navigator url="../postionDetail/postionDetail?id={{item.person_id}}" class='search-job-list' wx:for="{{bookListData}}" wx:key="key">
         <view class='c-info-title'>{{item.job_type}}</view>
         <view class='c-info-msg overH'>
           <!-- <text class='c-msg fl'>广州市白云区</text> -->
@@ -15,27 +16,12 @@
           <text>{{item.name}}</text>
         </view>
         <view class='overH'></view>
-      </view>
+      </navigator>
+    </scroll-view>  
   </view>
-
-  <view class='wx-no-info'>
+  <view class="loading-complete" hidden="{{!searchLoadingComplete}}">我有底线哦...</view> 
+  <view class='wx-no-info' wx:if="{{isShowR}}">
       <image class='wx-no-icon' src='../../../static/images/public/none.png'></image>
       <view>暂无数据</view>
   </view>
-  <!-- <view class='c-l-info'>
-      <view class='search-job-list'>
-        <view class='c-info-title'>专业偷税会计/会计</view>
-        <view class='c-info-msg overH'>
-          <text class='c-msg fl'>广州市白云区</text>
-          <text class='c-msg2 fl'>3年</text>
-          <view class='company-status company-bg- fr'>有证书</view>
-        </view>
-        <view class='c-msg3'>会计证书</view>
-        <view class='s-portrait'>
-          <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
-          <text>周先生</text>
-        </view>
-        <view class='overH'></view>
-      </view>
-  </view> -->
 </view>

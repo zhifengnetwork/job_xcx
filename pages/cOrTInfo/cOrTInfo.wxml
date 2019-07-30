@@ -1,0 +1,42 @@
+<!--pages/userInfo/editInfo.wxml-->
+<view class='inner'>
+
+  <view class='c-l-info'>
+      <navigator url='../../headPortrait/headPortrait'><image src='{{cList.logo}}' class="c-logo" /></navigator>
+      <view class='c-info-text'>
+        <text class='c-info-title'>{{cList.company_name}}</text>
+
+        <view class='c-msg m-b10'> 
+            实名认证：
+            <text wx:if="{{cList.status=== 0}}">未认证</text>
+            <text wx:if="{{cList.status=== 1}}">认证</text>
+            <text wx:if="{{cList.status=== -1}}">拒绝认证</text>
+        </view>
+        <view class='c-msg m-b10'>企业编号：{{cList.id}}</view>
+        <view class="surplus-num" >规模：{{cList.contacts_scale}}人</view>
+      </view>
+  </view>
+
+	<view class='cOrTInfo-cont'>
+			<view class='cOrTInfo-'>
+				<text class='cOrTInfo-msg'>成立时间：</text>
+        <text class='cOrTInfo-msg2'>{{cList.open_time}}</text>
+			</view>
+
+      <view class='cOrTInfo-option' bindtap='addAchievementBox'>
+        <text class='cOrTInfo-msg'>成就</text>
+        <view class='cOrTInfo-2'>{{cList.achievement}}</view>
+      </view>
+
+      <view class='cOrTInfo-option' bindtap='addAchievementBox'>
+        <text class='cOrTInfo-msg'>名人</text>
+        <view class='cOrTInfo-2'>{{cList.introduction}}</view>
+      </view>
+
+      <view class='cOrTInfo-option' bindtap='addAchievementBox'>
+        <text class='cOrTInfo-msg'>成就</text>
+        <view class='cOrTInfo-2'>{{cList.desc}}</view>
+      </view>
+
+	  </view>
+</view>

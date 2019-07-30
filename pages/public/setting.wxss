@@ -1,12 +1,13 @@
 /* pages/userInfo/setting.wxss */
 @import '../template/common';
 .setting-list{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 30rpx;
-  color: 151515rpx;
-  margin-bottom: 40rpx;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:30rpx;
+    color:151515rpx;
+    margin-bottom:26rpx;
+    line-height:60rpx;
 }
 .-view-edit{
   width:26rpx;
@@ -24,4 +25,13 @@
 .u-o-icon2{
   width: 12rpx;
   height: 24rpx;
+}
+.wx-binding{
+  margin:0;
+  width:151rpx;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:28rpx;
+  color:#fff;
+
 }

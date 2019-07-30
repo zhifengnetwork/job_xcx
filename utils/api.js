@@ -3,6 +3,8 @@ const proxys = 'https://zhaopin.zhifengwangluo.cn/api';
 const userAPI = {
   login: `${proxys}/user/login`,                      //登陆
   wxLogin: `${proxys}/login/index`,                   //微信登陆
+  bindWeixin: `${proxys}/login/bind_weixin`,          //微信绑定
+
   register: `${proxys}/user/register`,                //注册
   verifyCode: `${proxys}/user/register_code`,         //注册验证码
   fsCode: `${proxys}/user/send_code`,                 //发送验证码
@@ -14,6 +16,8 @@ const userAPI = {
   reqIndex:`${proxys}/user/visit`,                    //首页
 
   recruitDetail: `${proxys}/company/recruit_detail`,  // 公司发布的职位详情
+  lookCompany: `${proxys}/company/look_company`,      // 查看公司详情
+  
   personalDetail: `${proxys}/person/detail`,          // 个人简历详情
   editRecruit: `${proxys}/company/edit_recruit`,      // 编辑、发布职位
   editCompany: `${proxys}/company/edit`,              // 编辑公司信息

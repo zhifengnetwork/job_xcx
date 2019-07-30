@@ -15,7 +15,12 @@ Page({
     dStatus: 0,
     id: ''
   },
-
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.recruit()
+  },
   showDelectBox(e) {
 
     var status = e.currentTarget.dataset.aa,
@@ -26,17 +31,15 @@ Page({
       newS = 0
     }
     this.setData({ dStatus: newS })
-
   },
 
-
-  recruit: function () {
+  recruit() {
     var _opt = {
       'page': 1
     }
     ServerData.recruit(_opt).then((res) => {
       if (res.data.status == 1) {
-        var data = res.data.data.data
+        var data = res.data.data
         for (var i in data) {
           data[i].selected = false
         }
@@ -49,11 +52,10 @@ Page({
     })
   },
 
-
-
   // 删除招工信息
   deleteRecruit() {
     var list = this.data.recruitData,
+      that=this,
       arry = ''
     for (var i in list) {
       if (list[i].selected) {
@@ -71,17 +73,15 @@ Page({
       if (res.data.status == 1) {
         // 轻提示调用
         ServerData._wxTost(res.data.msg)
+        setTimeout(()=>{
+          that.onLoad()
+        },2000)
+        this.setData({ dStatus: 0})
       }
       else {
         ServerData._wxTost(res.data.msg)
       }
     });
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
   },
 
   changItemStatus(e) {
@@ -94,72 +94,5 @@ Page({
     this.setData({
       recruitData: list
     });
-
-    // console.log(e)
-    // console.log(e.currentTarget.dataset.check)
-
-
-
-    // this.setData({
-    //   isCheck: !e.currentTarget.dataset.check
-    // })
-
-    // console.log(this.data.isCheck)
-
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    this.recruit()
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

@@ -1,5 +1,6 @@
 // pages/userInfo/setting.js
 const util = require('../../utils/util.js');  //通用方法
+import ServerData from '../../utils/serverData.js';
 Page({
 
   /**
@@ -7,7 +8,55 @@ Page({
    */
   data: {
     pBgC:'',
+    openid:''
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var t =''
+    if ('undefined' != typeof (options.openid)){
+      t = options.openid
+      console.log(options.openid)
+    }
+    this.setData({
+      pBgC: util.loginIdentity().pBgC,
+      openid:t
+    })
+
+    console.log(this.data.openid)
+  },
+
+  binWx(){
+      var that =this
+      wx.login({
+          success: res => {
+            var _opt ={
+              code: res.code
+            }
+            ServerData.bindWeixin(_opt).then((res) =>{
+                console.log(res.data.status)
+                if (res.data.status==1){
+                    ServerData._wxTost(res.data.msg)
+                    setTimeout(()=>{
+                        wx.navigateBack({
+                            delta: 1
+                        })
+                    },1000)
+                } else if (res.data.status == -1){
+                    wx.redirectTo({
+                      url: '../login/login'
+                    })
+                }else{
+                    ServerData._wxTost(res.data.msg)
+                }
+            })
+          }
+      })
+  },
+
+
   save: function () {
     wx.navigateTo({
       url: '../public/editMobile'
@@ -19,67 +68,11 @@ Page({
     })
   },
   unLogin(){
-    console.log(1)
+    wx.removeStorageSync('token')
+    wx.removeStorageSync('savePostion')
     wx.navigateTo({
       url: '../login/login'
     })
-
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    this.setData({
-      pBgC: util.loginIdentity().pBgC
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

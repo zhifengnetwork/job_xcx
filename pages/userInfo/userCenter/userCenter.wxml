@@ -20,8 +20,6 @@
       <view class='user-option'>
           <navigator url="../editInfo/editInfo" class='u-o-list'>
             <text>编辑个人信息</text>
-            <!-- <image class='u-o-icon1' src='../../static/images/public/edit.png'/> -->
-            
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
           <navigator url="../myCertificate/myCertificate" class='u-o-list'>
@@ -32,7 +30,7 @@
             <text>隐私设置</text>
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
-          <navigator url="../../public/setting" class='u-o-list'>
+          <navigator url="../../public/setting?openid={{info.openid}}" class='u-o-list'>
             <text>设置</text>
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
@@ -42,7 +40,6 @@
           </navigator>
           <view class='u-o-list'>
             <text>实名认证</text>
-            <!-- <text class='u-o-text'>已认证</text> -->
             <text class='u-o-text' wx:if="{{info.status=== 0}}">未认证</text>
             <text class='u-o-text'  wx:if="{{info.status=== 1}}">认证</text>
             <text class='u-o-text' wx:if="{{info.status=== -1}}">拒绝认证</text>

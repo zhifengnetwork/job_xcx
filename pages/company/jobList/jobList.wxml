@@ -25,31 +25,11 @@
             <icon class='iconfont icon-bianji'></icon>
         </navigator>
     </view>
-    <!-- <view class='c-l-info'>
-        <view class="group" wx:if="{{isDel}}">
-          <block wx:for="{{iconSize}}">
-            <icon wx:if="{{isCheck}}"  data-check="{{isCheck}}" type="success" bindtap="changItemStatus" color="#be4cff" size="{{item}}"/>
-            <icon  wx:else="{{ !isCheck}}" data-check="{{!isCheck}}" bindtap="changItemStatus" type="circle" color="#be4cff" size="{{item}}"/>
-          </block>
+    <view wx:if="{{dStatus==1}}">
+        <view class='line-heig'></view>
+        <view class='set-option-1' >
+          <button class='s-1-option company-bg-' bindtap="deleteRecruit">删除</button>
         </view>
-        <navigator url="../postJobPostings/postJobPostings" class='c-info-text'>
-          <text class='c-info-title'>皮革厂包装人员</text>
-          <view class='c-info-msg'>
-            <text class='c-msg'>月薪1500元</text>
-            <text class='c-msg2'>1年以上</text>
-          </view>
-        </navigator> -->
-        <!-- company info start -->
-        <!-- <navigator url="../postJobPostings/postJobPostings" class='company-info company-color-'>
-            <text class=''>审核中</text>
-            <icon class='iconfont icon-bianji'></icon>
-        </navigator>
-    </view> -->
-      <view wx:if="{{dStatus==1}}">
-          <view class='line-heig'></view>
-          <view class='set-option-1' >
-            <button class='s-1-option company-bg-' bindtap="deleteRecruit">删除</button>
-          </view>
-      </view>
+    </view>
   </view>
 </view>

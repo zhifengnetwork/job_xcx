@@ -8,58 +8,55 @@
     <!-- CONTENT START -->
     <view class='d-content'>
         <view class="d-c-list">
-          <view class='c-list-info'>
-            <view class='w-bold m-b22'>{{recruitDetail.title}}</view>
-            <view class='m-b22'>
-                <text class='m-r20'>月薪{{recruitDetail.salary}}K</text>
-                <!-- <text class='m-r10'>10:30 - 12:30</text> -->
+            <view class='c-list-info'>
+                <view class='w-bold m-b22'>{{recruitDetail.title}}</view>
+                <view class='m-b22'>
+                    <text class='m-r20'>月薪{{recruitDetail.salary}}K</text>
+                    <!-- <text class='m-r10'>10:30 - 12:30</text> -->
+                </view>
+                <view class='m-b22'>
+                    <text class='m-r20'>{{recruitDetail.work_age}}年经验</text>
+                </view>
+                <navigator url='../../cOrTInfo/cOrTInfo?company_id={{recruitDetail.company_id}}' class='e-company-list- m-b22'> 
+                    <view>{{recruitDetail.company_name}}</view>
+                    <icon class='iconfont icon-youjiantou2'></icon>
+                </navigator>
+
+                <view class='m-b22'>
+                    <text class='m-r20'>地址 {{recruitDetail.province}}{{recruitDetail.city}}{{recruitDetail.district}}</text> 
+                </view>
             </view>
-            <!-- <view class='m-b22'>公司招聘</view> -->
-            <view class='m-b22'>
-                <text class='m-r20'>{{recruitDetail.work_age}}年经验</text>
-                <!-- <text class='m-r10'>男</text> -->
-                <!-- <text class='m-r10'>18-50岁</text> -->
-            </view>
-            <!-- <view class='m-b22'>包装二级证书</view> -->
-            <view>{{recruitDetail.province}}{{recruitDetail.city}}{{recruitDetail.district}}{{recruitDetail.company_name}}</view>
-          </view>
           <view class='c-list-portrait'>
-			  <image src='{{recruitDetail.logo}}'/>
+			        <image src='{{recruitDetail.logo}}'/>
+		      </view>
 		  </view>
-		</view>
 
-		<view class="d-c-list">
-          <view class='c-list-info'>
-			<view class='w-bold m-b22'>额外待遇</view>
-            <!-- <view class='m-b22'>包午餐</view>
-            <view class='m-b45'>3公里之内包送上下班</view>
-            <view class='w-bold m-b22'>工作经验</view>
-            <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view> -->
-          </view>
-		</view>
-
-		<view class="d-c-list">
-          <view class='c-list-info'>
-			<view class='w-bold m-b22'>工作详细</view>
-            <view class="details">{{recruitDetail.detail}}</view>
-          </view>
-		</view>
-		
-        <!-- <view class="d-c-list">
-          <view class='c-list-info'>
-            <view class='w-bold m-b22'>个人介绍</view>
-            <view class='m-b22'>包午餐</view>
-            <view class='m-b45'>3公里之内包送上下班</view>
-            <view class='w-bold m-b22'>工作经验</view>
-            <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view>
-          </view>
-          <image src='../../../static/images/public/big_portrait.png' class='c-list-portrait'/>
+		<!-- <view class="d-c-list">
+      <view class='c-list-info'>
+          <view class='w-bold m-b22'>额外待遇</view>
+        <view class='m-b22'>包午餐</view>
+        <view class='m-b45'>3公里之内包送上下班</view>
+        <view class='w-bold m-b22'>工作经验</view>
+        <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view>
+      </view>
 		</view> -->
+
+      <view class="d-c-list">
+          <view class='c-list-info'>
+              <view class='w-bold m-b22'>工作详细</view>
+              <view class="details">{{recruitDetail.detail}}</view>
+          </view>
+      </view>
 		
     </view>
     <view class='footer'>
-        <!-- <button class='f-btn-1 company-bg-' bindtap="toReservation">马上预订</button> -->
-        <button class='f-btn-2 company-bColor- company-color-' bindtap="callWithHim">联系客服</button>
+        <button class='f-btn-2 company-bColor- company-color-'>
+          <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+          <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+          <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button> 
+          <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+          联系客服
+        </button>
     </view>
   </view>
 </view>

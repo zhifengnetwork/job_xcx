@@ -9,108 +9,27 @@ Page({
   data: {
     tempFilePaths: [],
     hiddenName: false,
-    bookListData:[]
+    bookListData:[],
+    isShowR:false,                       // 没有数据是显示 
+    pageNum: 1,                         // 设置加载的第几次，默认是第一次  
+    searchLoading: false,               //"上拉加载"的变量，默认false，隐藏  
+    searchLoadingComplete: false,       //“没有数据”的变量，默认false，隐藏  
   },
-
-  bookList: function () {
-		ServerData.bookingList({}).then((res) => {
-			console.log(res)
-			if (res.data.status == 1) {
-				this.setData({
-					bookListData: res.data.data
-				})
-			} else {
-				ServerData._wxTost(res.data.msg)
-			}
-		})
-  },
-
-  /**
-   * 上传图片方法
-   */
-  upload: function () {
-    let that = this;
-    wx.chooseImage({
-      count: 1, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: res => {
-        wx.showToast({
-          title: '正在上传...',
-          icon: 'loading',
-          mask: true,
-          duration: 1000
-        })
-
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        let tempFilePaths = res.tempFilePaths;
-
-        that.setData({
-          tempFilePaths: tempFilePaths,
-          hiddenName:true
-        })
-        /**
-         * 上传完成后把文件上传到服务器
-         */
-        var count = 0;
-        for (var i = 0, h = tempFilePaths.length; i < h; i++) {
-          //上传文件
-          /*  wx.uploadFile({
-              url: HOST + '地址路径',
-              filePath: tempFilePaths[i],
-              name: 'uploadfile_ant',
-              header: {
-                "Content-Type": "multipart/form-data"
-              },
-              success: function (res) {
-                count++;
-                //如果是最后一张,则隐藏等待中  
-                if (count == tempFilePaths.length) {
-                  wx.hideToast();
-                }
-              },
-              fail: function (res) {
-                wx.hideToast();
-                wx.showModal({
-                  title: '错误提示',
-                  content: '上传图片失败',
-                  showCancel: false,
-                  success: function (res) { }
-                })
-              }
-            });*/
-        }
-
-      }
-    })
-  },
-  /**
-   * 预览图片方法
-   */
-  listenerButtonPreviewImage: function (e) {
-    let index = e.target.dataset.index;
-    let that = this;
-    wx.previewImage({
-      current: that.data.tempFilePaths[index],
-      urls: that.data.tempFilePaths,
-      //这根本就不走
-      success: function (res) {
-        //console.log(res);
-      },
-      //也根本不走
-      fail: function () {
-        //console.log('fail')
-      }
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
   },
-
+  onShow(){
+      wx.getSystemInfo({
+        success: (res) => { // 用这种方法调用，this指向Page
+          this.setData({
+            scrollHeight: res.windowHeight
+          });
+        }
+      });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -118,45 +37,37 @@ Page({
     this.bookList();
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  bookList: function () {
+    var that =this
+		ServerData.bookingList({'page': that.data.pageNum}).then((res) => {
+			// console.log(res)
+			if (res.data.status == 1) {
 
+        var sstatus =false
+        if(res.data.data.length<1 || that.data.pageNum==1){
+            sstatus =true
+        }
+				this.setData({
+          bookListData: res.data.data,
+          isShowR:sstatus
+				})
+      }else if (status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      }
+      else {
+				ServerData._wxTost(res.data.msg)
+			}
+		})
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  scrollLower() {
+    var that =this
+    if (that.data.listArry==""){
+      return
+    }
+    ServerData._showLoading('加载中')
+    that.bookList()
   }
 })

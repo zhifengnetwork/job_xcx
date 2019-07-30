@@ -2,16 +2,10 @@
 <!-- HEADER START -->
 <view class='g-header-'>
   <view class='-header-cont'>
-
     <navigator url='../../search/sThirdParty' class='comp-cont s-nosearch-wrap'>
       <view class='search search-nosearch company-bColor-1'>输入所要查找的内容</view>
       <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
     </navigator>
-
-    <!-- <view class='comp-cont'>
-      <input type='text' class='search company-bColor-1' placeholder="输入所要查找的内容" />
-      <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
-    </view> -->
     <navigator url='../company/cUserInfo'><text class='search-r-text'></text></navigator>
   </view>
   <!-- 地址选择 -->

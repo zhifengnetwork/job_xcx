@@ -26,12 +26,14 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    if (options!=""){
+    if ('undefined' != typeof(options.toke)){
+      
         this.setData({
           toke: options.toke
         })
+
+      console.log(this.data.toke)
     }
-      
   },
 
   clickCode: function () {     //发送验证码
@@ -56,7 +58,7 @@ Page({
       type =0;        
     if (!that.verifyUserInfo()){return}
     that.data.index == 0 ? type = 3 : type = that.data.index
-    console.log(type)
+    console.log(this.data.toke)
     var _opt = {
       'type': type,
       'mobile': that.data.mobile,
@@ -64,7 +66,7 @@ Page({
       'pwd': that.data.password,
       'pwd2': that.data.comPasd,
       'register':1,
-      'token': that.data.token
+      'token': that.data.toke
       }
     ServerData._register(_opt).then((res) => {       //保存注册信息
       wx.removeStorageSync('token')
@@ -212,7 +214,7 @@ Page({
   }
 })
 // 倒计时事件 单位s
-var countdown = 10;
+var countdown = 60;
 var settime = function (that) {
   if (countdown == 0) {
     that.setData({

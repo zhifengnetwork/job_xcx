@@ -1,13 +1,12 @@
 
 <!-- HEADER START -->
-<!-- <import src="../../template/common.wxml"/>
-<template is="search-1" data="{{text: '我的'}}"/> -->
 <view class='g-header-'>
   <view class='-header-cont'>
-    <view class='comp-cont'>
-      <input type='text' class='search user-bColor-1' placeholder="输入所要查找的内容" />
+    <navigator url='../../search/sThirdParty' class='comp-cont s-nosearch-wrap'>
+      <view class='search search-nosearch user-bColor-1'>输入所要查找的内容</view>
       <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
-    </view>
+    </navigator>
+
     <navigator url='../company/cUserInfo'><text class='search-r-text'></text></navigator>
   
   </view>

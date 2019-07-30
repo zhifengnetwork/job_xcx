@@ -1,21 +1,17 @@
 <view id="wrap">
   <view class='inner'>
     <!-- TITLE START -->
-    <!-- <view class='title'>个人中心</view> -->
     <view class='content-list'>
       <view class='c-l-info'>
-          <!-- <image src='{{userData.logo}}' class="c-logo" /> -->
           <navigator url='../../headPortrait/headPortrait'><image src='{{userData.logo}}' class="c-logo" /></navigator>
           <view class='c-info-text'>
             <text class='c-info-title'>{{userData.company_name}}</text>
             <view class='c-msg m-b10'>
               <text wx:if="{{userData.is_vip=== 1}}">VIP到期时间：{{timer}}</text>
-              <view class='company-status m-0 company-bg-'>
+              <!-- <view class='company-status m-0 company-bg-'>
                   <text wx:if="{{userData.is_vip=== 0}}">普通用户</text>
                   <text wx:else>普通会员</text>
-              </view>
-
-
+              </view> -->
             </view>
             <view class="surplus-num" >
               剩余预定次数：{{userData.number}}
@@ -35,7 +31,6 @@
           <navigator url="../editInfo/editInfo" class='u-o-list m-b10'>
             <text>编辑公司信息</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
-            <!-- <image class='u-o-icon1' src='../../static/images/public/edit.png'/> -->
           </navigator>
           <navigator url="../uCollect/uCollect" class='u-o-list m-b10'>
             <text>我的收藏</text>
@@ -53,7 +48,7 @@
             <text>我的钱包</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
-          <navigator url="../../public/setting" class='u-o-list m-b10'>
+          <navigator url="../../public/setting?openid={{info.openid}}" class='u-o-list m-b10'>
             <text>设置</text>
             <icon class='iconfont icon-bianji company-color-'></icon>
           </navigator>

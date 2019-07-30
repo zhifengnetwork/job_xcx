@@ -374,6 +374,13 @@
 }
 
 /* EIDIT INFO TEXTAREA STYLE START */
+
+.is-edit-inner{
+  text-align:center;
+  font-size:28rpx;
+  color:#151515;
+
+}
 textarea{
   border:2rpx solid #eee; 
   border-radius: 6rpx;
@@ -383,6 +390,7 @@ textarea{
 .texa{
   width: 702rpx;
   height:300rpx;
+  font-size: 26rpx !important; 
   padding-bottom:45rpx;
 }
 .tex-wrap{
@@ -416,7 +424,19 @@ textarea{
   vertical-align: middle;
 }
 
-
+.c-list-info{
+  width: 100%;
+}
+.edit-tips{
+  margin-bottom: 20rpx;
+  color: red;
+}
+.e-company-list-{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+}
 
 /* loading start */
 .loading-complete{

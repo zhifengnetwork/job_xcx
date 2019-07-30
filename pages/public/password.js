@@ -7,16 +7,52 @@ Page({
    * 页面的初始数据
    */
   data: {
+    codeIsCanClick: true,                //是否点击倒计时
     pColor: '',                          //动态获取字体颜色
     pBgC: '',                            //动态获背景颜色                 
     pBC1: '',                             //动态获边框颜色   
+    mobile: '',
+    mcode: '',
     pswd:'',
     pswd2:''
   },
+  /**
+ * 生命周期函数--监听页面加载
+ */
+  onLoad: function (options) {
+    this.setData({
+      pBgC: util.loginIdentity().pBgC,
+      pBC1: util.loginIdentity().pBC1,
+      pColor: util.loginIdentity().pColor
+    })
+  },
   saveInfo: function () {
+    var that =this,
+        mobile = that.data.mobile,
+        code = that.data.mcode,
+        pasw=that.data.pswd,
+        pswd2= that.data.pswd2
+
+    if (!ServerData._zzVerifyMobile(mobile) || mobile == "") {
+        return ServerData._wxTost('请正确输入手机号')
+      }
+    if (code == "" || code.length != 6 || isNaN(code)) {
+      return ServerData._wxTost('请正确输入验证码')
+    }
+
+    if (pasw == "" || pswd2 == "") {
+      return ServerData._wxTost('请输入密码 或 确认密码')
+    }
+    if (pasw != pswd2) {
+      return ServerData._wxTost('两次密码不相符')
+    }
+
+
     var _opt={
-      'password1': this.data.pswd,
-      'password2': this.data.pswd2
+      'password1': pasw,
+      'password2': pswd2,
+      'mobile': mobile,
+      'code': code
     }
     ServerData.editPassword(_opt).then((res) => {
       if (res.data.status == 1 || res.data.status == -1) {
@@ -37,63 +73,50 @@ Page({
 
     })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  getVale: function (e) {
     this.setData({
-      pBgC: util.loginIdentity().pBgC,
-      pBC1: util.loginIdentity().pBC1
+      mobile: e.detail.value
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getVale2: function (e) {
+    this.setData({
+      mcode: e.detail.value
+    })
+  },
+  clickCode: function () {     //发送验证码
+    var that = this,
+      mobile = that.data.mobile
+    if (!ServerData._zzVerifyMobile(mobile) || mobile == "") {
+      return ServerData._wxTost('请正确输入手机号!')
+    }
+    var _opt = { 'mobile': mobile }
+    ServerData.fsCode(_opt).then((res) => {
+      if (res.data.status == 1) {
+        settime(that)
+      }
+      ServerData._wxTost(res.data.msg)
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
+
+// 倒计时事件 单位s
+var countdown = 60;
+var settime = function (that) {
+  if (countdown == 0) {
+    that.setData({
+      codeIsCanClick: true
+    })
+    countdown = 60;
+    return;
+  } else {
+    that.setData({
+      codeIsCanClick: false,
+      last_time: countdown
+    })
+    countdown--;
+  }
+  setTimeout(function () {
+    settime(that)
+  }, 1000)
+}

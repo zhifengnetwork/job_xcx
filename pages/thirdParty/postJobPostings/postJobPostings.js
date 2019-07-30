@@ -52,7 +52,7 @@ Page({
 				this.setData({
 					jobArray: res.data.data
 				})
-				console.log(this.data.jobArray)
+				// console.log(this.data.jobArray)
 			} else if (res.data.status == -1) {
 				wx.redirectTo({
 					url: '../../login/login'
@@ -173,12 +173,12 @@ Page({
 		}
 		ServerData.editRecruit(_opt).then((res) => {
 			if(res.data.status == 1){
-				ServerData._wxTost(res.data.msg);
+				ServerData._wxTost('保存成功,信息需管理员审核');
 				setTimeout(() => {
 					wx.redirectTo({
 						url: '../thirdInfo/thirdInfo',
 					})
-				},1100)
+				},2000)
 			}else{
 				ServerData._wxTost(res.data.msg);
 			}

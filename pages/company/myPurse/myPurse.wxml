@@ -14,7 +14,7 @@
 	</view>
 
 	<view class='g-deposits-list'>
-		<view class='g-deposits-a g-deposits-b'>
+		<view class='g-deposits-a g-deposits-b company-bg-'>
 			<view>超级VIP</view>
 			<image class="d-gold-icon" src='../../../static/images/public/vip.png' />
 		</view>
