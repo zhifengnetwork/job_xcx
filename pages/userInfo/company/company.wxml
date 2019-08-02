@@ -25,17 +25,17 @@
           <text catchtap="cityCancel">取消</text>
           <text style="float: right" catchtap="citySure">确定</text>
         </view>
-        <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+        <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key>
           <picker-view-column>
-            <view wx:for="{{provinces}}" class="picker-item">
+            <view wx:for="{{provinces}}" class="picker-item" wx:key>
               {{item.area_name}}</view>
           </picker-view-column>
           <picker-view-column>
-            <view wx:for="{{citys}}" class="picker-item" wx:key="">
+            <view wx:for="{{citys}}" class="picker-item" wx:key>
               {{item.area_name}}</view>
           </picker-view-column>
           <picker-view-column>
-            <view wx:for="{{areas}}" class="picker-item" wx:key="">
+            <view wx:for="{{areas}}" class="picker-item" wx:key>
               {{item.area_name}}</view>
           </picker-view-column>
         </picker-view>
@@ -63,7 +63,7 @@
               <view class='c-info-text'>
                 <text class='c-info-title'>{{item.title}}</text>
                 <view class='c-info-msg'>
-                  <text class='c-msg'>月薪{{item.salary}}K</text>
+                  <text class='c-msg'>月薪{{item.salary}}</text>
                   <text class='c-msg2'>{{item.work_age}}年以上</text>
                 </view>
               </view>
@@ -90,7 +90,7 @@
                   <view class='c-info-text'>
                     <text class='c-info-title'>{{item.title}}</text>
                     <view class='c-info-msg'>
-                      <text class='c-msg'>月薪{{item.salary}}k</text>
+                      <text class='c-msg'>月薪{{item.salary}}</text>
                       <text class='c-msg2'>{{item.word_age}}</text>
                     </view>
                   </view>

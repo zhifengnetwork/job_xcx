@@ -71,6 +71,8 @@ Page({
               that.comeIndex(type)    //进入首页
             }
             else if (res.data.status == 3) {
+              wx.setStorageSync('token', res.data.data.token);
+              wx.setStorageSync('savePostion', type);
               that.comeInInfoRegist(type)
             }
             else if (res.data.status == 4) {

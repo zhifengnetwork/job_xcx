@@ -9,7 +9,7 @@ Page({
   data: {
     radioItems: [ 
       { name: '1', value: '余额支付', checked: 'true'  },
-      { name: '2', value: '微信支付' }
+      // { name: '2', value: '微信支付' }
     ],
     way:1,
     pBgC: '',                            //动态获背景颜色   
@@ -37,7 +37,9 @@ Page({
       way: e.detail.value
     })
   },
+  // changSex(e){
 
+  // },
   openVip(){
       var _opt ={
         'vip_type': this.data.vip_type,
@@ -52,7 +54,7 @@ Page({
                   })
               },1000)
           } 
-          else if (status == -1) {
+          else if (res.data.status == -1) {
               wx.redirectTo({
                 url: '../../login/login'
               })
@@ -64,55 +66,5 @@ Page({
           
           console.log(res.data)
       })
-  },
-
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

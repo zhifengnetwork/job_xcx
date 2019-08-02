@@ -40,7 +40,7 @@ Page({
       // console.log(res.data.data)
       if (res.data.status == 1) {
         var status = false
-        if (res.data.data.recruit.length < 1) {
+        if (res.data.data.person.length < 1) {
           // that.isShowInfo =true
           status = true
         }

@@ -33,7 +33,8 @@ Page({
     var _opt = {
       'rows': this.data.row,
       'page': this.data.page,
-      'kw': this.data.job_type,
+      'type': this.data.job_type,
+      'kw':''
 
     }
     ServerData.hiring(_opt).then((res) => {

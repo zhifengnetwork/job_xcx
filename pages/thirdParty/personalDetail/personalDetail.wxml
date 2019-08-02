@@ -19,7 +19,7 @@
             <view class='m-b22'>无证书</view>
             <view>期望职位：{{personalData.job_type}}</view>
           </view>
-          <image src='../../../static/images/public/big_portrait.png' class='c-list-portrait'/>
+          <image src='{{personalData.avatar}}' class='c-list-portrait'/>
         </view>
         <view class="d-c-list">
           <view class='c-list-info'>

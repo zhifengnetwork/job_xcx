@@ -6,26 +6,16 @@
         <view class='search search-nosearch third-bColor-1'>输入所要查找的内容</view>
         <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
       </navigator>
-      <!-- <view class='search-cont'>
-        <input type='text' class='search third-bColor-1'  placeholder="输入所要查找的内容" />
-        <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
-      </view> -->
       <navigator url='../thirdInfo/thirdInfo' redirect><text class='login_tab'>我的</text></navigator>
     </view>
     <view class='subtitle overH'>
-        <!-- <text wx:if="{{iShowBox}}">选择人才</text> -->
-        <!-- <view class='-list-pays' value="{{cat_id}}"> -->
           <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name" range-value="cat_id">
             <view class="picker subtitle-msg" data-id='{{jobArray[jobIndex].cat_id}}'>
               {{jobArray[jobIndex].cat_name}} 
             </view>
           </picker>
-        <!-- </view> -->
         <!-- -->
-
     </view>
-
-    
   </view>
   <view class='inner'>
       <view class='c-body'>
@@ -51,7 +41,7 @@
                     <view class='c-info-text'>
                       <text class='c-info-title'>{{item.title}}</text>
                       <view class='c-info-msg'>
-                        <text class='c-msg'>月薪 {{item.salary}}K</text>
+                        <text class='c-msg'>月薪 {{item.salary}}</text>
                         <text class='c-msg2'>{{item.work_age}}年</text>
                       </view>
                     </view>

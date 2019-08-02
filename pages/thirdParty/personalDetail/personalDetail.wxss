@@ -74,11 +74,11 @@
 .line {
   margin: 0 0 25rpx;
 }
-.c-list-portrait{
+/* .c-list-portrait{
    width: 150rpx;
    height: 150rpx;
    margin-left:auto;
-}
+} */
 
 /* FOOTER START */
 .footer{

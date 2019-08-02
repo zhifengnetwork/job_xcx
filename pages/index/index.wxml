@@ -93,7 +93,6 @@
                       <view class='search-job-list'>
                         <view class='c-info-title'>{{item.job_type}}</view>
                         <view class='c-info-msg overH'>
-                          <!-- <text class='c-msg fl'>广州市白云区</text> -->
                           <text class='c-msg2 fl'>{{item.work_age}}年</text>
                           
                         </view>

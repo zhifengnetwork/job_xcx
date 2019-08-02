@@ -28,7 +28,7 @@ Page({
   getRecruitList() {
     var that = this,
       _opt = {
-        'regtype': 1,
+        'regtype':2,
         'province': that.data.pCode,
         'city': that.data.cCode,
         'district': that.data.aCode

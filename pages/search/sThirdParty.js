@@ -41,8 +41,8 @@ Page({
       if (res.data.status == 1) {
         that.setData({ list: res.data.data })
         var status =false;
-        if (res.data.data.person.length < 1) {
-          status= true
+        if (res.data.data.recruit.length < 1) {
+          var status= true
         }
 
         that.setData({

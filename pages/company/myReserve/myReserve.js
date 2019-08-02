@@ -8,7 +8,7 @@ Page({
    */
   data: {
     tempFilePaths: [],
-    hiddenName: false,
+    // hiddenName: false,
     bookListData:[],
     isShowR:false,                       // 没有数据是显示 
     pageNum: 1,                         // 设置加载的第几次，默认是第一次  
@@ -42,14 +42,19 @@ Page({
 		ServerData.bookingList({'page': that.data.pageNum}).then((res) => {
 			// console.log(res)
 			if (res.data.status == 1) {
-
-        var sstatus =false
-        if(res.data.data.length<1 || that.data.pageNum==1){
-            sstatus =true
+        var sstatus =false,
+            nodata =false
+        if(res.data.data.length<1){
+          if (that.data.pageNum == 1){
+              sstatus = true
+          }else{
+            nodata=true
+          } 
         }
 				this.setData({
           bookListData: res.data.data,
-          isShowR:sstatus
+          isShowR:sstatus,
+          searchLoadingComplete: nodata
 				})
       }else if (status == -1) {
         wx.redirectTo({

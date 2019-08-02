@@ -3,7 +3,7 @@ import ServerData from '../../../utils/serverData.js';
 const payArray =[];
 for(let i =3; i <= 20; i++){
   // i=i+1000-1;
-  payArray.push(i);
+  payArray.push(i+'k');
 }
 
 Page({

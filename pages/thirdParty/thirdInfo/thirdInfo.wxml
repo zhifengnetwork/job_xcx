@@ -44,7 +44,7 @@
             <text>我的钱包</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
-          <navigator url="../../public/setting" class='u-o-list m-b10'>
+          <navigator url="../../public/setting?openid={{userData.openid}}" class='u-o-list m-b10'>
             <text>设置</text>
             <icon class='iconfont icon-bianji third-color-'></icon>
           </navigator>

@@ -11,7 +11,7 @@
             <view class='c-list-info'>
                 <view class='w-bold m-b22'>{{recruitDetail.title}}</view>
                 <view class='m-b22'>
-                    <text class='m-r20'>月薪{{recruitDetail.salary}}K</text>
+                    <text class='m-r20'>月薪{{recruitDetail.salary}}</text>
                     <!-- <text class='m-r10'>10:30 - 12:30</text> -->
                 </view>
                 <view class='m-b22'>

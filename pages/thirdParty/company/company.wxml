@@ -61,8 +61,8 @@
               <view class='c-info-text'>
                 <text class='c-info-title'>{{item.title}}</text>
                 <view class='c-info-msg'>
-                  <text class='c-msg'>月薪{{item.salary}}K</text>
-                  <text class='c-msg2'>{{item.work_age}}年以上</text>
+                  <text class='c-msg'>月薪{{item.salary}}</text>
+                  <text class='c-msg2'>{{item.work_age}}年</text>
                 </view>
               </view>
               <!-- company info start -->
@@ -88,8 +88,8 @@
                   <view class='c-info-text'>
                     <text class='c-info-title'>{{item.title}}</text>
                     <view class='c-info-msg'>
-                      <text class='c-msg'>月薪{{item.salary}}k</text>
-                      <text class='c-msg2'>{{item.word_age}}</text>
+                      <text class='c-msg'>月薪{{item.salary}}</text>
+                      <text class='c-msg2'>{{item.word_age}}年</text>
                     </view>
                   </view>
                   <!-- company info start -->

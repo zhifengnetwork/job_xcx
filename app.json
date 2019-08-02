@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/company/cUserInfo/cUserInfo",   
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
@@ -26,7 +27,7 @@
 
     "pages/company/index/index",
     "pages/company/postionDetail/postionDetail",
-    "pages/company/cUserInfo/cUserInfo",
+
     "pages/company/thirdParty/thirdParty",
     "pages/company/search/search",
     "pages/company/editInfo/editInfo",
