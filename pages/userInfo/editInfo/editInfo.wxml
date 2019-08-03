@@ -93,9 +93,13 @@
   <!-- -->
   <textarea class="texa1" placeholder='个人说明' bindinput='getExplain'></textarea>
   <!--footer -->
-  <view class='line-heig'></view>
+  
   <!-- <view class='set-option-1'><button class='s-1-option' bindtap='saveEditInfo' wx:if="{{info.is_edit==1}}">保存</button></view> -->
     <!-- <button class='s-1-option company-bg-' bindtap='saveEditInfo' wx:if="{{userList.is_edit==1}}">保存</button> -->
-    <button class='s-1-option' bindtap='saveEditInfo' wx:if="{{info.is_edit==1}}">保存</button>
+    <view wx:if="{{info.is_edit==1}}">
+        <view class='line-heig'></view>
+        <button class='s-1-option' bindtap='saveEditInfo'>保存</button>
+    </view>
+    
     <view wx:else="" class='edit-tips'>注意：信息审核中，不可编辑</view>
 </view>

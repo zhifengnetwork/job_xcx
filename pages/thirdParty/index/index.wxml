@@ -22,7 +22,7 @@
         <!-- banner start -->
         <view class='banner'>
             <swiper indicator-dots="{{indicatorDots}}" 
-                    autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="#ff54b5"> 
+                    autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="#54b9ff"> 
                 <navigator url='{{item.url}}' wx:for="{{list.ad}}" wx:key> 
                   <swiper-item style="border-radius: 10rpx;"> 
                       <image src="{{item.picture}}" class="slide-image"/> 

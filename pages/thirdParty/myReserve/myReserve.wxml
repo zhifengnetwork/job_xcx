@@ -7,8 +7,8 @@
         <view class='c-info-msg overH'>
           <!-- <text class='c-msg fl'>广州市白云区</text> -->
           <text class='c-msg2 fl'>{{item.work_age}}年</text>
-          <view class='company-status company-bg- fr' wx:if="{{item.images == 0}}">无证书</view>
-          <view class='company-status company-bg- fr' wx:if="{{item.images == 1}}">有证书</view>
+          <view class='company-status third-bg- fr' wx:if="{{item.images == 0}}">无证书</view>
+          <view class='company-status third-bg- fr' wx:if="{{item.images == 1}}">有证书</view>
         </view>
         <!-- <view class='c-msg3'>会计证书</view> -->
         <view class='s-portrait'>

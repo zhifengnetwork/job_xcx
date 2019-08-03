@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
       var that =this
       ServerData.helpExp({ 'name': options.name}).then((res) => { 
-          console.log(res.data)
+          // console.log(res.data)
           if(res.data.status==1){
             that.setData({ info: res.data.data})
           }else if(res.data.status== -1){

@@ -36,30 +36,6 @@
 			</view>  
 
 			<view class="user-option">
-				<!-- <view class='u-o-list'>
-					<text>热招职位</text>
-					<view class='-list-pays' value="{{jobIndex}}">
-						<picker value="{{jobIndex}}" range="{{hotRecruitment}}" bindchange="jobChange" range-key="cat_name">
-							<view class="picker">
-								{{hotRecruitment[jobIndex].cat_name}} 
-								<image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
-							</view>
-						</picker>
-					</view>
-				</view> -->
-
-				<!-- <view class='u-o-list'>
-					<text>平均薪资</text>
-					<view class='-list-pays'>
-						<picker value="{{paysIndex}}" range="{{averageSalary}}" bindchange="paysChange">
-							<view class="picker">
-								{{averageSalary[paysIndex]}} K
-								<image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
-							</view>
-						</picker>
-					</view>
-				</view> -->
-
 				<view>
 					<view class='u-o-list' bindtap='addAchievementBox'>
 						<text>公司成就</text>
@@ -97,10 +73,11 @@
 	
 
 	<!--footer -->
-	<view class='line-heig'></view>
-	<view class='set-option-1' >
-		<button class='s-1-option company-bg-' bindtap='saveEditInfo' wx:if="{{userList.is_edit==1}}">保存</button>
-    <view wx:else="" class='edit-tips'>注意：信息审核中，不可编辑</view>
-	</view>
-
+  <view wx:if="{{userList.is_edit==1}}">
+    <view class='line-heig'></view>
+    <view class='set-option-1' >
+      <button class='s-1-option company-bg-' bindtap='saveEditInfo'>保存</button>
+    </view>
+  </view>
+  <view wx:else="" class='edit-tips'>注意：信息审核中，不可编辑</view>
 </view>
