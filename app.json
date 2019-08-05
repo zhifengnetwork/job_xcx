@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/company/index/index", 
     "pages/login/login",
     "pages/company/cUserInfo/cUserInfo",   
     "pages/register/register",
@@ -8,7 +7,7 @@
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
     "pages/public/pay/payWay",
-
+    "pages/company/index/index",
     "pages/public/password",
     "pages/public/setting",
     "pages/public/editMobile",
