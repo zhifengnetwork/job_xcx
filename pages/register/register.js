@@ -18,22 +18,18 @@ Page({
       {name: '第三方',id:2} 
     ],                          //下拉列表的数据
     index: 0,                   //选择的下拉列表下标
-    toke: ''                    //微信登陆后台返回的toke
-    
+    toke: '',                //微信登陆后台返回的toke
+    register:''
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    if ('undefined' != typeof(options.toke)){
-      
-        this.setData({
-          toke: options.toke
-        })
-
-      console.log(this.data.toke)
-    }
+    this.setData({
+      toke: options.toke == undefined ? "" : options.toke,
+      register: options.register == undefined ? "" : options.register,
+    })
+    
   },
 
   clickCode: function () {     //发送验证码
@@ -65,7 +61,7 @@ Page({
       'code': that.data.mCode,
       'pwd': that.data.password,
       'pwd2': that.data.comPasd,
-      'register':1,
+      'register':that.data.register,
       'token': that.data.toke
       }
     ServerData._register(_opt).then((res) => {       //保存注册信息

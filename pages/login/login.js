@@ -77,7 +77,7 @@ Page({
             }
             else if (res.data.status == 4) {
               wx.redirectTo({                   //跳转个人信息注册
-                url: '../register/register?code=' + res.data.data.openid + '&toke=' + res.data.data.token
+                url: '../register/register?register=1&code=' + res.data.data.openid + '&toke=' + res.data.data.token
               })
             } else {
               ServerData._wxTost(res.data.msg)
@@ -204,7 +204,7 @@ Page({
   },  
   resister: function () {       //  注册
     wx.navigateTo({
-      url: '../register/register',
+      url: '../register/register?register=0',
     })
   }
 })
