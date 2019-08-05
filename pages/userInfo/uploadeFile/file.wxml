@@ -1,0 +1,16 @@
+<view class='file-wrap'>
+    <view class='file-inner'>
+          <image class="file-icon" src='../../../images/login/icon/xiaolian.png'/>
+          <button class="file-btn" type="primary" size="{{primarySize}}" bindtap="uploadeFile"> 上传文件 </button>
+          <view class='-name-wrap'>
+              文件名：<text class='file-name'>{{infoData.name}}</text>
+              <view class='file-name'>{{infoData.path}}</view>
+          </view>
+          <button class="file-btn" type="default" size="{{primarySize}}" bindtap="dowmLoadeFile"> 文件预览 </button>
+
+        
+
+
+
+    </view>
+</view>

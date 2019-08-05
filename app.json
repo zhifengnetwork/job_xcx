@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/company/index/index", 
     "pages/login/login",
     "pages/company/cUserInfo/cUserInfo",   
     "pages/register/register",
@@ -8,7 +7,8 @@
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
     "pages/public/pay/payWay",
-
+    "pages/userInfo/uploadeFile/file",
+    "pages/userInfo/index/index",
     "pages/public/password",
     "pages/public/setting",
     "pages/public/editMobile",
@@ -26,7 +26,7 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-
+    "pages/company/index/index",
     "pages/company/postionDetail/postionDetail",
     "pages/company/thirdParty/thirdParty",
     "pages/company/search/search",
@@ -56,7 +56,7 @@
     "pages/thirdParty/personalDetail/personalDetail",
     "pages/thirdParty/uPDetail/uPDetail",
 
-    "pages/userInfo/index/index",
+
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/myPurse",

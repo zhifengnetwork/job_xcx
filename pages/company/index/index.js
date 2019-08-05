@@ -67,7 +67,13 @@ Page({
 				this.setData({
 					indexData: res.data.data
 				})
-			} else {
+			}
+      else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      }
+       else {
 				ServerData._wxTost(res.data.msg)
 			}
 		}).catch((error) => {

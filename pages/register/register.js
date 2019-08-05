@@ -84,9 +84,12 @@ Page({
           }
       }
       else if (res.data.status == -1) {             //注册过/token 过期
-          wx.redirectTo({
-            url: '../login/login'
-          })
+          ServerData._wxTost(res.data.msg)
+          setTimeout(()=>{
+              wx.redirectTo({
+                url: '../login/login'
+              })
+          },1000) 
       }
       else{
           ServerData._wxTost(res.data.msg)

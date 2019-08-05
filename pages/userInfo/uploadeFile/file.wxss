@@ -1,0 +1,26 @@
+page{
+  background: #ccc;
+}
+
+.file-inner{
+  padding: 200rpx 100rpx;
+  text-align: center;
+}
+.file-icon{
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 50rpx;
+}
+.file-btn{
+  width: 60%;
+  margin-bottom: 30rpx;
+}
+.file-name{
+  font-size: 30rpx;
+ 
+}
+.-name-wrap{
+  margin-bottom:80rpx;
+  font-size: 28rpx;
+  color: #666;
+}
