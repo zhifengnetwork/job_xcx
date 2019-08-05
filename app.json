@@ -1,14 +1,12 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/company/cUserInfo/cUserInfo",   
     "pages/register/register",
     "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
     "pages/public/pay/payWay",
-    "pages/userInfo/uploadeFile/file",
-    "pages/userInfo/index/index",
+
     "pages/public/password",
     "pages/public/setting",
     "pages/public/editMobile",
@@ -27,6 +25,7 @@
     "pages/recruitBetter/recruitBetter",
 
     "pages/company/index/index",
+    "pages/company/cUserInfo/cUserInfo",
     "pages/company/postionDetail/postionDetail",
     "pages/company/thirdParty/thirdParty",
     "pages/company/search/search",
@@ -56,13 +55,13 @@
     "pages/thirdParty/personalDetail/personalDetail",
     "pages/thirdParty/uPDetail/uPDetail",
 
-
+    "pages/userInfo/index/index",
+    "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/myPurse",
     "pages/userInfo/company/company",
     "pages/userInfo/userCenter/userCenter",
-    "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/myPurse/withdrawal",
     "pages/userInfo/myPurse/goldDeposits",
     "pages/userInfo/headPortrait/headPortrait",
@@ -70,6 +69,7 @@
     "pages/userInfo/myCertificate/myCertificate",
     "pages/userInfo/privacySettings/privacySettings",
     "pages/userInfo/collect/collect",
+    "pages/userInfo/uploadeFile/file",
     "pages/logs/logs"
   ],
   "window": {

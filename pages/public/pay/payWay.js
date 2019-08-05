@@ -23,7 +23,8 @@ Page({
    */
   onLoad: function (options) {
     var viptype =""
-    if(options){
+    console.log(options)
+    if ('undefined'!=typeof(options.vip_type)){
       viptype =options.vip_type
     }
     this.setData({
@@ -37,9 +38,17 @@ Page({
       way: e.detail.value
     })
   },
-  // changSex(e){
-
-  // },
+  saveInfo(){
+    console.log(this.data.viptype)
+    if ('undefined' == typeof (this.data.vip_type)||this.data.vip_type==""){
+        this.reserveUser()
+    }else{
+        this.openVip()
+    }
+  },
+  reserveUser(){
+      ServerData._wxTost('该功能暂未开通')
+  },
   openVip(){
       var _opt ={
         'vip_type': this.data.vip_type,

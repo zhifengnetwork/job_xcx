@@ -84,6 +84,7 @@ Page({
 
   // 预定
   toReservation:function(){
+    var that =this
     var _opt = {
       id:this.data.id
     }
@@ -95,8 +96,9 @@ Page({
             duration: 2000
           })
       } else if(res.data.status == 5){
+        // ServerData._wxTost(res.data.msg)
         wx.redirectTo({
-          url: '../myReserve/myReserve'
+          url: '../../public/pay/payWay?id=' + that.data.id
         })
       }else{
           ServerData._wxTost(res.data.msg)

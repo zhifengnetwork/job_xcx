@@ -210,6 +210,9 @@ Page({
         url: 'fillInInformation/fillInInformation'
       })
     }
+  },
+  onShareAppMessage: function () {
+    return
   }
 })
 // 倒计时事件 单位s

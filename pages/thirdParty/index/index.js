@@ -67,5 +67,8 @@ Page({
       })
     // console.log(this.data.jobArray[e.detail.value].cat_id)
       this.getUserInfo()             //主页信息
+  },
+  onShareAppMessage: function () {
+    return
   }
 })

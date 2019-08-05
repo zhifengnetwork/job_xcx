@@ -3,7 +3,7 @@ import ServerData from '../../../utils/serverData.js';
 const payArray =[];
 for(let i =3; i <= 20; i++){
   // i=i+1000-1;
-  payArray.push(i+'k');
+  payArray.push(i);
 }
 
 Page({
@@ -66,8 +66,18 @@ Page({
         if (res.data.status == 1) {
           var info = res.data.data
           var job_type = this.returnIndex(info.job_type,that.data.jobArray,true)
+          // console.log(job_type)
           var salary = this.returnIndex(info.salary, that.data.payArray, false)
+          // console.log(salary)
+          if('undefined'==typeof(salary)){
+            salary=0
+          }
+          console.log(that.data.payArray)
           var daogang_time = this.returnIndex(info.daogang_time, that.data.array, false)
+          if ('undefined' == typeof (daogang_time)){
+            daogang_time=0
+          }
+          console.log(daogang_time)
           var item = that.data.items
           var t =''
           for (var i in item){
@@ -87,7 +97,7 @@ Page({
               workInfo: info.experience,
               aducationalInfo: info.education,
               explain: info.desc,
-              items: item,
+              // items: item,
               jobIndex: job_type,
               paysIndex: salary,
               index: daogang_time

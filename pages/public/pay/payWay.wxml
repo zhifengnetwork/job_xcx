@@ -8,6 +8,6 @@
             </label>
         </radio-group>
 
-        <button class="set-option {{pBgC}}" bindtap='openVip'>支付</button>
+        <button class="set-option {{pBgC}}" bindtap='saveInfo'>支付</button>
     </view>
 </view>

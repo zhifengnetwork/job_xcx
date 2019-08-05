@@ -103,5 +103,8 @@ Page({
         ServerData._wxTost(res.data.msg)
       }
     })
+  },
+  onShareAppMessage: function () {
+    return
   }
 })

@@ -188,5 +188,8 @@ Page({
         recList: res.data.data
       })
     })
+  },
+  onShareAppMessage: function () {
+    return
   }
 })

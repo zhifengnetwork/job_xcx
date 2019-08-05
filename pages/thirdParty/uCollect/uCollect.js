@@ -66,6 +66,8 @@ Page({
   onShow: function () {
     this.UcList();
   },
-
+  onShareAppMessage: function () {
+    return
+  }
 
 })

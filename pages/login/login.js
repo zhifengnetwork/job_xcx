@@ -206,5 +206,8 @@ Page({
     wx.navigateTo({
       url: '../register/register?register=0',
     })
+  },
+  onShareAppMessage: function () {
+    return
   }
 })

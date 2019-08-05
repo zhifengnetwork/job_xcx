@@ -65,7 +65,6 @@ Page({
   getCompanyInfo() {
     var that = this
     ServerData.getCompayInfo({}).then((res) => {
-      console.log(res)
       if (res.data.status == 1) {
         var info = res.data.data
         var val = that.data.value
@@ -83,6 +82,7 @@ Page({
           companyIntroduce: info.desc,
           value: val
         })
+        // console.log(that.data.userList)
       } else if (res.data.status == -1) {
         wx.redirectTo({
           url: '../../login/login'

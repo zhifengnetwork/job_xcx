@@ -58,7 +58,7 @@
         <text>平均薪资</text>
         <picker value="{{paysIndex}}" range="{{payArray}}" bindchange="paysChange">
           <view class="picker">
-            {{payArray[paysIndex]}}
+            {{payArray[paysIndex]}} k
             <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
           </view>
         </picker>
@@ -96,8 +96,8 @@
   
   <!-- <view class='set-option-1'><button class='s-1-option' bindtap='saveEditInfo' wx:if="{{info.is_edit==1}}">保存</button></view> -->
     <!-- <button class='s-1-option company-bg-' bindtap='saveEditInfo' wx:if="{{userList.is_edit==1}}">保存</button> -->
-    <view wx:if="{{info.is_edit==1}}">
-        <view class='line-heig'></view>
+    <view wx:if="{{getUData.is_edit==1}}">
+        <!-- <view class='line-heig'></view> -->
         <button class='s-1-option' bindtap='saveEditInfo'>保存</button>
     </view>
     

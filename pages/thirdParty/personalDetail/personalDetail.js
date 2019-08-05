@@ -95,7 +95,10 @@ Page({
             duration: 2000
           })
       } else if(res.data.status == 5){
-          ServerData._wxTost(res.data.msg)
+          // ServerData._wxTost(res.data.msg)
+        wx.redirectTo({
+          url: '../../public/pay/payWay?id=' + that.data.id
+        })
       }else{
           ServerData._wxTost(res.data.msg)
       }
