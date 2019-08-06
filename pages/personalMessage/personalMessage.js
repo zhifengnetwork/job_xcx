@@ -9,7 +9,6 @@ Page({
   data: {
     name: '',                                               // 姓名
     school: '',                                             // 毕业学校
-    // profession: '',                                         // 职业
     jobIndex: 0,                                            // 职业
     jobArray: [],
     items: [                                                // 学校类型
@@ -55,8 +54,6 @@ Page({
     })
   },
   jobChange: function (e) {
-    // console.log(e)
-    // console.log(this.data.jobArray[e.detail.value].cat_id)
     this.setData({
       jobIndex: e.detail.value
     })
@@ -99,7 +96,6 @@ Page({
       'graduate_year': graduate[0],
       'graduate_month': graduate[1],
       'graduate_day': graduate[2],
-      // 'careers': that.data.profession,
       'job_type': that.data.jobArray[that.data.jobIndex].cat_id,
       'idcard_front': that.data.icCardPic[0].newSrc,
       'idcard_back': that.data.icCardPic[1].newSrc,
@@ -261,73 +257,4 @@ addImgBox: function (e) {
       showDialog: !this.data.showDialog
     });
   },
- /*点击选择学历,弹框消失 e*/
-
-  
-  // saveInfo:function(){
-  //   wx.navigateTo({
-  //     url: '../public/audit'
-  //   })
-  // }
-  // formSubmit: function (e) {
-  //   // user 
-  //   var that = this;
-  //   var idnum = this.data.idNum;
-  //   var token = getApp().globalData.userInfo.token;
-  //   var consignee = this.data.consignee;
-  //   var idImg = [this.data.positiveImg, this.data.oppositeImg]
-  //   //保存并上传
-  //   this.uploadFiles(0, idImg, 'positive', idnum, consignee, token);
-  //   this.uploadFiles(1, idImg, 'opposite', idnum, consignee, token);
-
-  // },
-  // uploadFiles: function (index, idImg, name, idnum, consignee, token) {
-  //   var that = this;
-  //   wx.uploadFile({
-  //     url: 'https://www.chiccityhk.com/api/my/addidcard',
-  //     filePath: idImg[index][0],
-  //     name: name,
-  //     header: {
-  //       'content-type': 'multipart/form-data'
-  //     }, // 设置请求的 header
-  //     formData: {
-  //       consignee: consignee,
-  //       idnum: idnum,
-  //       name: name,
-  //       token: token
-  //     },
-  //     success: function (res) {
-  //       if (index == 1) {
-  //         var res = JSON.parse(res.data);
-  //         if (res.status_code == 200) {
-  //           wx.showToast({
-  //             title: '保存成功',
-  //             duration: 1000
-  //           });
-  //           if (that.data.returnTo == 1)
-  //             setTimeout(function () {
-  //               wx.navigateTo({
-  //                 url: '../../order/ordersubmit/index'
-  //               });
-  //             }, 1000);
-  //           else {
-  //             setTimeout(function () {
-  //               wx.navigateBack();
-  //             }, 2000)
-  //           }
-  //         }
-  //       }
-  //     },
-  //     fail: function (res) {
-  //       wx.showToast({
-  //         title: '保存失败',
-  //         duration: 1000
-  //       });
-  //     }
-  //   });
-  // },
-  // //  上传身份证正反面  e
-
-
- 
 })

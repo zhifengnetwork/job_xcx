@@ -36,8 +36,8 @@ Page({
         data.src = imgSrc;
         data.hiddenName = false;
         _this.setData({
-              icCardPic: data
-            })
+          icCardPic: data
+        })
         ServerData.uploadFile(imgSrc).then((res) => {
           var dat = JSON.parse(res.data)
           if (dat.status == 1) {

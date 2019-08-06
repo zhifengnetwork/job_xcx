@@ -3,16 +3,10 @@
     <!-- TITLE START -->
     <view class='content-list'>
       <view class='c-l-info'>
-          <navigator url='../headPortrait/headPortrait'><image src='{{info.avatar}}'class="c-logo" /></navigator>
+          <navigator url='../../headPortrait/headPortrait' redirect><image src='{{info.avatar}}'class="c-logo" /></navigator>
           <view class='c-info-text'>
             <text class='c-info-title'>{{info.name}}</text>
             <view class='c-msg m-b10'>用户ID:{{info.user_id}}</view>
-            <!-- <view class='c-msg m-b10'> 
-                实名认证
-                <text wx:if="{{info.status=== 0}}">未认证</text>
-                <text wx:if="{{info.status=== 1}}">认证</text>
-                <text wx:if="{{info.status=== -1}}">拒绝认证</text>
-            </view> -->
           </view>
           <!-- company info start -->
       </view>

@@ -71,8 +71,6 @@ Page({
     var that = this,
        alipay_name = that.data.alipay_name,
        alipay = that.data.alipay
-
-    // console.log(that.data.alipay_name + 'fdf' + that.data.alipay )
     if(that.data.saveStatus==4){
       if(alipay_name == "" || alipay==""){
           return ServerData._wxTost('请输入支付宝信息')
@@ -91,9 +89,6 @@ Page({
     }
     ServerData.withdrawal(_opt).then((res) => {
       if (res.data.status == 1) {
-        // that.setData({
-        //   info: res.data.data
-        // })
           ServerData._wxTost(res.data.msg)
           setTimeout(()=>{
             wx.redirectTo({

@@ -3,13 +3,11 @@
     <view class='inner'>
         <view class='container'>
             <view class='content-list'>
-              <!-- <navigator url="postionDetail">
-                  <view class='c-title'>
-                    <image src='../../static/images/public/flame_icon.png' class='c-flame'/>
-                    <text>热门推荐</text>
-                  </view>
-              </navigator> -->
-              <scroll-view class="list" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="scrollLower">
+              <view class="loading-complete m-t40" wx:if="{{isNoData}}">
+                  <image class="wx-no-icon" src='../../static/images/public/none.png'/>
+                  <view>暂无数据</view>
+              </view>  
+              <scroll-view class="list" wx:if="{{!isNoData}}" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="scrollLower">
                 <navigator url="../userInfo/postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList}}" wx:key>
                   <view class='c-l-info'>
                     <image src='{{item.logo}}'class="c-logo" />
@@ -30,12 +28,11 @@
                     </view>
                   </view>
                 </navigator>
-
               </scroll-view>
             </view>
         </view>
     </view>
-    <view class="loading-complete" hidden="{{!searchLoadingComplete}}">我有底线哦...</view>  
+    <view class="loading-complete" wx:if="{{noMoreData}}">我有底线哦...</view>  
 </view>
 <!-- FOOTER TARBAR START -->
 

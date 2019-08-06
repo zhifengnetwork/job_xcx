@@ -11,11 +11,9 @@ Page({
     interval: 3000,
     duration: 1000,
   },
-
-  onLoad: function () {
+  onShow(){
     util.getStorageItem('savePostion', app)   //获取底部导航
   },
-
   getUserInfo: function () {               //获取主页数据
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

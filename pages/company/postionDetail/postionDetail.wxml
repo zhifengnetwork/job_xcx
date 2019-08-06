@@ -12,7 +12,6 @@
                 <view class='w-bold m-b22'>{{recruitDetail.title}}</view>
                 <view class='m-b22'>
                     <text class='m-r20'>月薪{{recruitDetail.salary}}</text>
-                    <!-- <text class='m-r10'>10:30 - 12:30</text> -->
                 </view>
                 <view class='m-b22'>
                     <text class='m-r20'>{{recruitDetail.work_age}}年经验</text>
@@ -30,17 +29,6 @@
 			        <image src='{{recruitDetail.logo}}'/>
 		      </view>
 		  </view>
-
-		<!-- <view class="d-c-list">
-      <view class='c-list-info'>
-          <view class='w-bold m-b22'>额外待遇</view>
-        <view class='m-b22'>包午餐</view>
-        <view class='m-b45'>3公里之内包送上下班</view>
-        <view class='w-bold m-b22'>工作经验</view>
-        <view class='line'>负责包装我厂生产的男女箱包打包，工作简</view>
-      </view>
-		</view> -->
-
       <view class="d-c-list">
           <view class='c-list-info'>
               <view class='w-bold m-b22'>工作详细</view>

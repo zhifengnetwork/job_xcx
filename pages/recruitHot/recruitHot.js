@@ -11,8 +11,8 @@ Page({
     regtype: 1,                         // 1位公司，2为第三方  默认1 ，
     regtypeMsg: '公司',                       // 1位公司，2为第三方  默认1 
     pageNum: 1,                         // 设置加载的第几次，默认是第一次  
-    searchLoading: false,               //"上拉加载"的变量，默认false，隐藏  
-    searchLoadingComplete: false,       //“没有数据”的变量，默认false，隐藏  
+    isNoData: false,               //"上拉加载"的变量，默认false，隐藏  
+    noMoreData: false,       //“没有数据”的变量，默认false，隐藏  
   },
 
   /**
@@ -73,9 +73,15 @@ Page({
       var status = res.data.status
       if (status == 1) {
         if(res.data.data==""){
-          that.setData({
-              searchLoadingComplete: true,            //把“没有数据”设为true，显示  
-          }); 
+          if (that.data.pageNum!=1){
+            that.setData({
+              noMoreData: true,            //不是第一页并且没有数据了 则显示:"没有更多数据提示语"
+            }); 
+          }else{
+            that.setData({
+              isNoData: true,                    //当前页面为1并且没有数据，则显示:'没有数据提示文本 ' 
+            }); 
+          }
           that.data.listArry =[]
         }else{
             if (that.data.pageNum==1){

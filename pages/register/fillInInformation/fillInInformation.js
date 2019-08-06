@@ -72,9 +72,6 @@ Page({
       'province': that.data.pCode,
       'city': that.data.cCode,
       'district': that.data.aCode,
-      // 'province': that.data.regionCode[0],
-      // 'city': that.data.regionCode[1],
-      // 'district': that.data.regionCode[2],
       'c_img': that.data.icCardPic.newSrc,
       'image': that._getPicSrc(),
     }

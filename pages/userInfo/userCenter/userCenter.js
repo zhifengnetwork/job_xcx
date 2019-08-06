@@ -16,13 +16,6 @@ Page({
    */
   onLoad: function (options) {
     util.getStorageItem('savePostion', app)           //获取底部导航
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     this.getUserInfo()
   },
   getUserInfo(){

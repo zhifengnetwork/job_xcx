@@ -103,7 +103,6 @@
 .search-nosearch{
   line-height:58rpx;
   color:#808080;
-  /* color:  */
 }
 
 .search-icon{
@@ -231,7 +230,6 @@
 }
 /* company info start */
 .company-info{
-  /* flex: 0 0 1; */
   margin-left: auto;
   text-align: right;
   font-size:28rpx;
@@ -244,7 +242,6 @@
    background:#ff54b5;
    padding: 0 !important;
    height:40rpx;
-   /* width:90rpx; */
    display: block;
    line-height: 40rpx;
    border-radius: 2px;
@@ -264,11 +261,6 @@
    padding:10px 0;
 }
 
-/* Latest job search start */
-/* .search-job-list{
-  width: 100%;
- 
-} */
 .s-portrait{
   width: 100%;
   overflow: hidden;
@@ -294,7 +286,6 @@
   line-height: 90rpx;
   border-radius: 45rpx;
   color:#fff;
-  /* background: #ff54b5; */
   position: fixed;
   left: 24rpx;
   text-align: center;

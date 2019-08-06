@@ -20,19 +20,26 @@ Page({
   },
   saveHeaderPic(){
       var that =this,
-        head_pic = that.data.icCardPic.newSrc
+        head_pic = that.data.icCardPic.newSrc,
+        type = wx.getStorageSync('savePostion'),
+        src=""
       if (head_pic == "") { return ServerData._wxTost("请选择头像")}
       ServerData.uploadHeadpic({ 'head_pic': head_pic}).then((res) =>{
         if(res.data.status==1){
           ServerData._wxTost(res.data.msg)
+          if(type==1){
+            src ='../company/cUserInfo/cUserInfo'
+          }
+          if (type == 2) {
+            src = '../thirdParty/thirdInfo/thirdInfo'
+          }
+          if (type == 3) {
+            src = '../userInfo/userCenter/userCenter'
+          }
           setTimeout(()=>{
-              wx.navigateBack({
-                  delta:1
-              })
-            // that.onLoad()
-            // wx.navigateTo({
-            //   url: '../userCenter/userCenter'
-            // })
+            wx.redirectTo({                   //跳转个人信息注册
+              url: src
+            })
           },1000)
         }
         ServerData._wxTost(res.data.msg)

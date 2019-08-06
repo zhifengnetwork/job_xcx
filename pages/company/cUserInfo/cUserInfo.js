@@ -17,12 +17,9 @@ Page({
 	 */
 	onLoad: function (options) {
 		util.getStorageItem('savePostion', app)   //获取底部导航
-	
+    this.requserData();     //初始化数据
 	},
 
-  onShow(){
-    this.requserData();
-  },
 	/**
 	 * 获取公司信息
 	 */

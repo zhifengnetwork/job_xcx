@@ -5,8 +5,6 @@ const app = getApp()
 const util = require('../../../utils/util.js');  //通用方法
 Page({
   data: {
-    mode: "scaleToFill",
-    statusBarHeight: app.globalData.statusBarHeight,
     list:[],
     indicatorDots: true,
     autoplay: true,               //自动播放
@@ -28,7 +26,7 @@ Page({
     site_show: true,              //
 
   },
-  onLoad: function () {
+  onLoad(){
     util.getStorageItem('savePostion', app)   //获取底部导航
     this.getUserInfo()
 
@@ -51,7 +49,6 @@ Page({
               'district': that.data.aCode
           }
       ServerData.userVisit(_opt).then((res) => {
-        // console.log(res.data)
           if(res.data.status == 1){
               that.setData({
                   list:res.data.data
@@ -85,7 +82,6 @@ Page({
     } else {
       that.animation.translateY(40 + 'vh').step()
     }
-    // console.log(that.animation.export())
     that.setData({
       animationAddressMenu: that.animation.export(),
       addressMenuIsShow: isShow,
@@ -139,7 +135,6 @@ Page({
         value: [provinceNum, cityNum, countyNum]
       })
     }
-    // console.log(this.data)
   },
   provinces: function (code, index) {
     let that = this
