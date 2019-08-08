@@ -26,13 +26,55 @@
       </view>    
       <view class='e-info-'>
         <text class='e-info-msg'>工龄：</text>
-        <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder-class="phcolor" value='{{wordOld}}' placeholder='输入工龄'/>
+        <picker class='e-info-inp' value="{{wordIndex}}" range="{{payArray}}" bindchange="wordChange">
+          <view>{{payArray[wordIndex]}} 年</view>
+        </picker>
+        <!-- <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder-class="phcolor" value='{{wordOld}}' placeholder='输入工龄'/> -->
+      </view> 
+      <view class='e-info-'>
+        <text class='e-info-msg'>学历：</text>
+        <view class="page__bd">
+          <view class="free-btns e-info-inp " style="background:none;">
+            <input class="free-btn name_input" bindtap="toggleDialog" value='{{xLInfo}}' placeholder='学校类型' disabled="true">
+            </input>
+          </view>
+          <view class="free-dialog {{ showDialog ? 'free-dialog--show' : '' }}">
+            <view class="free-dialog__mask" bindtap="toggleDialog" />
+            <view class="free-dialog__container">
+              <view>
+                <form bindsubmit='submit' bindreset="reset">
+                  <!-- <view bindtap='freetoBack' class="free-button free-dialog-reset">取消</view>
+                  <view bindtap='freetoBack' class="free-button free-dialog-submit">确定</view> -->
+                  <radio-group class='free-radios'>
+                    <label class="free-radio" bindtap="xLChange" wx:for="{{xLItem}}" wx:key="{{items}}" data-id="{{index}}" data-name="{{item.name}}" style="{{index==id?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}">
+                      <radio value="{{item.name}}" name="{{item.value}}"></radio>
+                      <label class="free-text">{{item.value}}</label>
+                    </label>
+                  </radio-group>
+                </form>
+              </view>
+            </view>
+          </view>
+        </view>
       </view>    
     </view>
     <!-- <image class='edit-img-' src='../../../static/images/public/big_portrait.png'/> -->
   </view>
-  <!-- --->
+  <!-- -->
   <view class='user-option'>
+      <view class='u-o-list'>
+        <text>现居地址</text>
+
+        <view  class="picker" value="{{cat_id}}" bindtap="selectDistrict">
+          <text wx:if="{{showTST}}">省，市，区</text>
+          <text>{{areaInfo}}</text>
+          <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
+        </view>
+        <!-- 所有城市三级联动列表 -->
+        <include src="../../template/address"/> 
+        <!-- 地址选择接受 -->
+      </view>
+
       <view class='u-o-list'>
         <text>求职类型</text>
         <!-- <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/> -->
@@ -63,7 +105,7 @@
           </view>
         </picker>
       </view>
-      <view>
+      <view class='active-o-list'>
           <view class='u-o-list' bindtap='addWorkExperience'>
             <text>工作经历</text>
             <view class='user-edit-text'>
@@ -72,11 +114,11 @@
             </view>
           </view>
           <view class='tex-wrap' wx:if="{{work}}">
-             <textarea class="texa" placeholder='请输入工作经历' bindinput="saveWork"></textarea>
+             <textarea class="texa" placeholder-class="phcolor" placeholder='例如：1、协助项目工程质量管理体系的策划、质量管理的标准、制度、程序和作业文件的编制。2、对项目材料专业的建设方主体质量行为和实体工程质量监督检查。3、负责对承包商、监理、设备监造、独立无损检测单位质量管理文件的审查。' bindinput="saveWork" value=""></textarea>
              <!-- <button class='tex-btn' bindtap='saveInfo'>保存</button> -->
           </view>
       </view>
-      <view>
+      <view class='active-o-list'>
           <view class='u-o-list' bindtap='addEducationalExperience'>
             <text>教育经历</text>
             <view class='user-edit-text'>
@@ -85,13 +127,13 @@
             </view>
           </view>
           <view class='tex-wrap' wx:if="{{aducational}}">
-             <textarea class="texa" placeholder='请输入工作经历'  bindinput="saveAducational"></textarea>
+             <textarea class="texa" placeholder-class="phcolor" placeholder='1、在校担任的职位。2、获得的荣誉。3、所学主要课程'  bindinput="saveAducational"></textarea>
              <!-- <button class='tex-btn' bindtap='saveInfo'>保存</button> -->
           </view>
       </view>
   </view>
   <!-- -->
-  <textarea class="texa1" placeholder='个人说明' bindinput='getExplain'></textarea>
+  <textarea class="texa1" placeholder-class="phcolor" placeholder='个人说明' bindinput='getExplain'></textarea>
   <!--footer -->
   
   <!-- <view class='set-option-1'><button class='s-1-option' bindtap='saveEditInfo' wx:if="{{info.is_edit==1}}">保存</button></view> -->

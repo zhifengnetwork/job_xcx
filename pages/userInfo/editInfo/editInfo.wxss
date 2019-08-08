@@ -15,16 +15,15 @@
    flex: 1;
 }
 .e-info-{
-  width:70%;
- 
-  margin-bottom: 20rpx;
+  /* width:70%; */
+  display:flex;
+  align-items:center;
 }
 .e-info-msg{
   margin-right:6rpx;
 }
 .e-info-inp{
   font-size: 26rpx;
-  /* color:#a2a2a2; */
   width: 60%;
   display: inline-block;
   vertical-align: middle;
@@ -48,19 +47,27 @@
   width:170rpx;
   height: 160rpx;
 }
+.e-info-,.u-o-list{
+  padding:20rpx 0;
+}
+.e-info-,.u-o-list,.active-o-list{
+    border-bottom:2rpx solid #cccc;
+}
+.active-o-list .u-o-list{
+  border-bottom: 0;
+}
 /* */
 .u-o-list{
   display: flex;
   justify-content: space-between;
   align-items:center;
-  padding:18rpx 0;
-
 }
 .u-o-icon1{
-  width:25rpx;
-  height: 25rpx;
+  width:40rpx;
+  height: 40rpx;
 }
 .u-o-icon2{
+  margin-left:20rpx;
   width: 12rpx;
   height: 24rpx;
 }
@@ -85,10 +92,98 @@
   margin-right: 20rpx;
 }
 .picker {
-  margin: 0 0 0 365rpx;
+  margin: 0 0 0 auto;
 }
 
 .user-edit-text{
   display: flex;
   align-items: center;
 }
+
+/* 自定义弹出选择器---学历选择 s */
+.free-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+ }
+ .free-dialog__container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  transform: translateY(150%);
+  transition: all 0.4s ease;
+  z-index: 11;
+  padding: 60rpx 0;
+ }
+ .free-dialog--show .free-dialog__container {
+  transform: translateY(0);
+ }
+ .free-dialog--show .free-dialog__mask {
+  display: block;
+ }
+ /*模态框中的内容*/
+ .free-button{
+  display: inline-block;
+  width:50px;
+  text-align: center;
+  font-size:20px;
+  color:#707070;
+  margin-bottom:20px;
+ }
+ radio-group{
+    display: flex;
+    flex-wrap: wrap;
+ }
+ .free-dialog__container radio-group>label{
+    width:20%;
+    display: inline-block;
+    border:1px solid #ddd;
+    padding:16rpx 0px;
+    margin:0 0 2% 2%;
+    box-sizing: border-box;
+ }
+ .e-info-radio {
+   width: 70%;
+   padding-left:20rpx;
+ }
+ .e-info-radio .radio{
+   width: 40%;
+   font-size: 26rpx;
+ }
+ .e-info-radio .radio radio{
+   vertical-align: top;
+   margin-right: 6rpx;
+ }
+ .free-dialog__container radio-group label radio{
+  width:100%;
+  z-index: 3;
+  display: none;
+ }
+ .checked{
+  background:#48c23d;
+  color:#fff;
+ }
+ .free-dialog__container radio-group label .free-text{
+  width:100%;
+  text-align: center;
+  display: inline-block;
+  font-size: 28rpx;
+ }
+ .free-dialog-submit{
+   float: right;
+   color:rgb(54, 193, 186);
+   font-size: 38rpx;
+   padding:15rpx 15rpx 0 0
+ }
+ .free-dialog-reset{
+   font-size: 38rpx;
+   padding:15rpx 15rpx 0 0
+ }
+ /* 自定义弹出选择器---学历选择 e */

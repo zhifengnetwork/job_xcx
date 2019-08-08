@@ -25,11 +25,6 @@
     <view class='name_wrap'>
       <text class='text'>公司地区:</text>
       <view class="section">
-        <!-- <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-          <view class="picker">
-            {{region[0]}}，{{region[1]}}，{{region[2]}}
-          </view>
-        </picker> -->
       <view class="newsite_box">
         <!-- 所在地区点击按钮 -->
         <view class="newsite_button" bindtap="selectDistrict">

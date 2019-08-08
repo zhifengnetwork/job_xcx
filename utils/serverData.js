@@ -288,7 +288,14 @@ class ServerData {
 	recruitList(_data, complete) {
 		return this._promise_post(_data, api.userAPI.recruitList, complete);
 	}
-
+  //公司及第三方信息列表
+  companyList(_data, complete) {
+    return this._promise_post(_data, api.userAPI.companyList, complete);
+  }
+  //公司及第三方职位列表
+  getRecruitList(_data, complete) {
+    return this._promise_post(_data, api.userAPI.getRecruitList, complete);
+  }
   //更多热门推荐
   recruitHot(_data, complete) {
     return this._promise_post(_data, api.userAPI.recruitHot, complete);

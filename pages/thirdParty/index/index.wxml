@@ -36,7 +36,7 @@
                     <image src='../../../static/images/public/h_blue.png' class='c-flame'/>
                     <text>建筑企业</text>
                 </view>
-                <navigator url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}" wx:key>
+                <navigator url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}" wx:key>
                     <image src='{{item.logo}}'class="c-logo" />
                     <view class='c-info-text'>
                       <text class='c-info-title'>{{item.title}}</text>

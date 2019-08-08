@@ -19,6 +19,7 @@ Page({
 		this.setData({
 			id: options.id
 		});
+    this.reqPersonal(); //请求数据
 	},
 
 	/**
@@ -83,6 +84,7 @@ Page({
 
   // 预定
   toReservation:function(){
+    var that =this
     var _opt = {
       id:this.data.id
     }
@@ -116,7 +118,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.reqPersonal(); //请求数据
+    
   },
 
   /**

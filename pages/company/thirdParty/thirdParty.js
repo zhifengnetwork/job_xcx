@@ -3,10 +3,6 @@ const app = getApp();
 const util = require('../../../utils/util.js');  //通用方法
 import ServerData from '../../../utils/serverData.js';
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     recList: [],
     //地址三级开始
@@ -23,47 +19,19 @@ Page({
     cCode: '',                    //获取选中的市ID
     aCode: '',                    //获取选中的区ID
     site_show: true,              //
+    page: 1,
+    rows: 10,
+    isMore: true
   },
-
-  getRecruitList() {
-    var that = this,
-      _opt = {
-        'regtype':2,
-        'province': that.data.pCode,
-        'city': that.data.cCode,
-        'district': that.data.aCode
-      }
-    ServerData.recruitList(_opt).then((res) => {
-      var status = res.data.status
-      if (status == 1) {
-        this.setData({
-          recList: res.data.data
-        })
-      } else if (status == -1) {
-        wx.redirectTo({
-          url: '../../login/login'
-        })
-      } else {
-        ServerData._wxTost(res.data.msg)
-      }
-      console.log(that.data.recList)
-      this.setData({
-        recList: res.data.data
-      })
-    })
-  },
-
-
-
-
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    util.getStorageItem('savePostion', app);
-    this.getRecruitList()
-        /*********地址 */
+    util.getStorageItem('savePostion', app);   //获取底部导航
+    this.getCompanyList()                      //公司及第三方职位列表
+
+    /*********地址 */
     this.provinces(0, 0);
     var animation = wx.createAnimation({
       duration: 500,
@@ -73,6 +41,7 @@ Page({
     this.animation = animation;
     /*********地址 */
   },
+
 
   /***********地址开始**************** */
   // 点击所在地区弹出选择框
@@ -116,7 +85,7 @@ Page({
       cCode: that.data.city.code,
       aCode: that.data.area.code
     })
-    this.getRecruitList()
+    this.getCompanyList()
   },
 
   // 处理省市县联动逻辑
@@ -194,4 +163,58 @@ Page({
     })
   },
   /***********地址结束**************** */
+
+
+  lookMore() {
+    this.setData({
+      page: this.data.page + 1
+    })
+    this.getCompanyList()
+  },
+  getCompanyList() {
+    var that = this,
+      _opt = {
+        'regtype': 2,
+        'province': that.data.pCode,
+        'city': that.data.cCode,
+        'district': that.data.aCode,
+        'page': that.data.page,
+        'rows': that.data.rows
+      }
+    ServerData.companyList(_opt).then((res) => {
+      var status = res.data.status,
+        newArray = []
+      if (status == 1) {
+        if (res.data.data.length != "") {
+          if (that.data.page == 1) {
+            newArray = res.data.data
+          } else {
+            newArray = [...that.data.recList, ...res.data.data]
+          }
+          console.log(newArray)
+          this.setData({
+            recList: newArray,
+            isMore: true
+          })
+        } else {
+          this.setData({
+            isMore: false
+          })
+        }
+
+      } else if (status == -1) {
+        wx.redirectTo({
+          url: '../../login/login'
+        })
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+      // this.setData({
+      //   recList: res.data.data
+      // })
+    })
+  },
+  onShareAppMessage: function () {
+    return
+  }
 })

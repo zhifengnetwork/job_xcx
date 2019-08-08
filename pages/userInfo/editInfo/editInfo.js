@@ -1,7 +1,7 @@
 // pages/userInfo/editInfo.js
 import ServerData from '../../../utils/serverData.js';
 const payArray =[];
-for(let i =3; i <= 20; i++){
+for(let i =0; i <= 20; i++){
   // i=i+1000-1;
   payArray.push(i);
 }
@@ -21,9 +21,18 @@ Page({
       { name: '1', value: '男', checked: false}
     ],
     gender: 2,                            //性别
-    paysIndex:0,                           //薪资
+    paysIndex:5,                           //薪资
     jobArray: [],
     // job_type:'',
+    showDialog: false,                                      //学历弹框
+    xLInfo:'',
+    xLItem: [                                                // 学校类型
+      { name: '硕士', value: '硕士' },
+      { name: '博士', value: '博士' },
+      { name: '本科', value: '本科' },
+      { name: '大专', value: '大专' },
+      { name: '高中以下', value: '高中以下' }
+    ],
     jobIndex: 0,
     work:false,
     aducational: false, 
@@ -33,31 +42,66 @@ Page({
     old: "",                                //年龄
     mz: "",                                 //民族
     wordOld: "",                            //工龄
+    wordIndex:1,
     explain: "",                            //说明
+
+    //地址三级开始
+    animationAddressMenu: {},
+    addressMenuIsShow: false,
+    value: [0, 0, 0],
+    areaInfo:'',
+    provinces: [],                //获取所有省数组
+    citys: [],                    //获取所有城市数组
+    areas: [],                    //获取所有区数组
+    province: '',                 //获取选中的省
+    city: '',                     //获取选中的市
+    area: '',                     //获取选中的区
+    pCode: '',                    //获取选中的省ID
+    cCode: '',                    //获取选中的市ID
+    aCode: '',                    //获取选中的区ID
+    site_show: true, 
+    showTST:true
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
       this.getCategoryList()
-      // this.setCompanyInfo()
-    this.initUserInfo()
+      /*********地址 */
+      this.provinces(0, 0);
+      var animation = wx.createAnimation({
+        duration: 500,
+        transformOrigin: "50% 50%",
+        timingFunction: 'ease',
+      })
+      this.animation = animation;
+      /*********地址 */
   },
 
-  returnIndex(flag,arry,isN){
+  returnIndex(flag,arry,isN,ispro){
     for(var i in arry){
       if (isN){
-          if(arry[i].cat_id==flag){
-              return i
+          if(ispro){
+            if(arry[i].code==flag){
+                return arry[i].area_name
+            }
+          }else{
+              if(arry[i].cat_id==flag){
+                return i
+            }
           }
+          
       }else{
         if (arry[i] == flag) {
-          console.log(arry[i])
+          // console.log(arry[i])
           return i
         }
       }
     }
+  },
 
+  onShow(){
+    this.initUserInfo()
   },
 
   initUserInfo(){
@@ -65,19 +109,38 @@ Page({
     ServerData.initUserInfo({}).then((res) =>{
         if (res.data.status == 1) {
           var info = res.data.data
+          var isShow=false
           var job_type = this.returnIndex(info.job_type,that.data.jobArray,true)
-          // console.log(job_type)
           var salary = this.returnIndex(info.salary, that.data.payArray, false)
-          // console.log(salary)
           if('undefined'==typeof(salary)){
             salary=0
           }
-          console.log(that.data.payArray)
           var daogang_time = this.returnIndex(info.daogang_time, that.data.array, false)
           if ('undefined' == typeof (daogang_time)){
             daogang_time=0
           }
-          console.log(daogang_time)
+
+          var work_age = this.returnIndex(info.work_age, that.data.payArray, false)
+          if ('undefined' == typeof (work_age)){
+            work_age=0
+          }
+          var sheng =this.returnIndex(info.province, that.data.provinces, true,true)
+          console.log(sheng)
+          if ('undefined' == typeof (sheng)){
+            sheng=''
+          }
+          else{
+            isShow=true
+          }
+          var shi =this.returnIndex(info.city, that.data.citys, true,true)
+          if ('undefined' == typeof (shi)){
+            shi=''
+          }
+          var qu =this.returnIndex(info.district, that.data.areas, true,true)
+          if ('undefined' == typeof (qu)){
+            qu=''
+          }
+          let areaInfo =sheng + ',' + shi + ',' + qu
           var item = that.data.items
           var t =''
           for (var i in item){
@@ -86,23 +149,28 @@ Page({
                 t =i
             }
           }
+          // console.log(that.data.provinces)
           item[t].checked =true
           this.setData({ 
               getUData: info,
               name: info.name,
               gender: info.gender,
-              wordOld: info.work_age,
+              wordIndex:work_age,
               old: info.age,
               mz: info.nation,
               workInfo: info.experience,
               aducationalInfo: info.education,
               explain: info.desc,
-              // items: item,
               jobIndex: job_type,
               paysIndex: salary,
-              index: daogang_time
+              index: daogang_time,
+              xLInfo:info.school_type,
+              areaInfo:areaInfo,
+              pCode: info.province,                 //获取选中的省ID
+              cCode: info.city,                    //获取选中的市ID
+              aCode: info.district,
+              // showTST:isShow   
           })
-          // console.log(that.data.items)
         } else if (res.data.status == -1) {
           wx.redirectTo({
             url: '../../login/login'
@@ -127,7 +195,6 @@ Page({
       ServerData.categoryList({}).then((res) => {
           if(res.data.status==1){
             this.setData({ jobArray: res.data.data })
-            // console.log(res.data.data)
           } else if (res.data.status == -1){
               wx.redirectTo({
                 url: '../../login/login'
@@ -147,16 +214,18 @@ Page({
       'age': that.data.old,
       'nation': that.data.mz,
       'job_type': that.data.jobArray[that.data.jobIndex].cat_id,
-      'work_age': that.data.wordOld,
+      'work_age': that.data.payArray[that.data.wordIndex],
       'daogang_time': that.data.array[that.data.index],
       'salary': that.data.payArray[that.data.paysIndex],
       'experience': that.data.workInfo,
       'education': that.data.aducationalInfo,
-      'person_desc': that.data.explain
+      'desc': that.data.explain,
+      'province': that.data.pCode,
+      'city': that.data.cCode,
+      'district': that.data.aCode,
+      'school_type':that.data.xLInfo
     }
-    // console.log(_opt)
     ServerData.editUserInfo(_opt).then((res)=>{
-      // console.log(res)
       if(res.data.status==1){
         ServerData._wxTost(res.data.msg);
         setTimeout(function(){
@@ -184,10 +253,6 @@ Page({
         ServerData._wxTost('请输入民族');
         return false
       }
-      if (that.data.wordOld == "") {
-        ServerData._wxTost('请输入工龄');
-        return false
-      }
       if (that.data.workInfo == "") {
         ServerData._wxTost('请输入工作经历');
         return false
@@ -202,9 +267,20 @@ Page({
       } 
       return true   
   },
-
-
-
+  /*点击选择学历,弹框消失 s*/
+  xLChange: function (e) {
+    var that = this
+    that.setData({
+      showDialog: !that.data.showDialog,
+      xLInfo:e.currentTarget.dataset.name
+    });
+  },
+  toggleDialog(e) {
+    this.setData({
+      showDialog: !this.data.showDialog
+    });
+  },
+/*点击选择学历,end s*/
   getName(e){
     this.setData({ name: e.detail.value })
   },
@@ -212,17 +288,10 @@ Page({
     this.setData({ old: e.detail.value })
   },
   radioChange(e){
-    console.log(e)
     this.setData({gender: e.detail.value})
   },
   getMZ(e) {
     this.setData({ mz: e.detail.value })
-  },
-  getWordOld(e) {
-    this.setData({ wordOld: e.detail.value })
-  },
-  getWordOld(e) {
-    this.setData({ wordOld: e.detail.value })
   },
   getExplain(e) {
     this.setData({ explain: e.detail.value })
@@ -254,21 +323,150 @@ Page({
     })
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
     })
   },
   jobChange: function (e) {
-    // console.log(e)
-    // console.log(this.data.jobArray[e.detail.value].cat_id)
     this.setData({
       jobIndex: e.detail.value
+    })
+  },
+  wordChange:function (e) {
+    this.setData({
+      wordIndex: e.detail.value
     })
   },
   paysChange: function (e) {
     this.setData({
       paysIndex: e.detail.value
     })
+  },
+
+
+ /********************其他资料结束 */
+  /***********地址开始**************** */
+  // 点击所在地区弹出选择框
+  selectDistrict: function (e) {
+    var that = this
+    if (that.data.addressMenuIsShow) {
+      return
+    }
+    that.startAddressAnimation(true)
+  },
+
+  // 执行动画
+  startAddressAnimation: function (isShow) {
+    var that = this
+    if (isShow) {
+      that.animation.translateY(0 + 'vh').step()
+    } else {
+      that.animation.translateY(40 + 'vh').step()
+    }
+    that.setData({
+      animationAddressMenu: that.animation.export(),
+      addressMenuIsShow: isShow,
+    })
+  },
+
+  // 点击地区选择取消按钮
+  cityCancel: function (e) {
+    this.startAddressAnimation(false)
+  },
+
+  // 点击地区选择确定按钮
+  citySure: function (e) {
+    var that = this
+    var value = that.data.value
+    that.startAddressAnimation(false)
+    // 将选择的城市信息显示到输入框
+    let areaInfo = that.data.province.area_name + ',' + that.data.city.area_name + ',' + that.data.area.area_name
+    that.setData({
+      areaInfo: areaInfo,
+      pCode: that.data.province.code,
+      cCode: that.data.city.code,
+      aCode: that.data.area.code,
+      showTST:false
+    })
+  },
+
+  // 处理省市县联动逻辑
+  cityChange: function (e) {
+    var value = e.detail.value
+    var provinces = this.data.provinces
+    var citys = this.data.citys
+    var areas = this.data.areas
+    var provinceNum = value[0]
+    var cityNum = value[1]
+    var countyNum = value[2]
+    if (this.data.value[0] != provinceNum) {
+      this.provinces(provinceNum, 0);
+      this.setData({
+        value: [provinceNum, 0, 0]
+      })
+    } else if (this.data.value[1] != cityNum) {
+      this.provinces(provinceNum, cityNum);
+      this.setData({
+        value: [provinceNum, cityNum, 0]
+      })
+    } else {
+      this.provinces(provinceNum, cityNum);
+      this.setData({
+        value: [provinceNum, cityNum, countyNum]
+      })
+    }
+  },
+  provinces: function (code, index) {
+    let that = this
+    ServerData.getAddress({}).then((res) => {
+      if (res.data.status == 1){
+        that.setData({
+          provinces: res.data.data,
+          province: res.data.data[that.data.value[0]]
+        })
+        that.citys(res.data.data[code].code, index);
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+      
+    })
+  },
+  citys: function (code, index) {
+    let that = this
+    ServerData.getAddress({ parent_id: code }).then((res) => {
+      if (res.data.status == 1) {
+        if (res.data.data.length == 0) {
+          that.setData({
+            areas: '',
+            citys: ''
+          })
+          return
+        }
+        that.setData({
+          citys: res.data.data,
+          city: res.data.data[that.data.value[1]]
+        })
+        that.areas(res.data.data[index].code);
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+    })
+  },
+  areas: function (code) {
+    let that = this
+    ServerData.getAddress({ parent_id: code }).then((res) => {
+      if (res.data.status == 1) {
+        that.setData({
+          areas: res.data.data,
+          area: res.data.data[that.data.value[2]]
+        })
+      } else {
+        ServerData._wxTost(res.data.msg)
+      }
+    })
   }
+  /***********地址结束**************** */
+
+
+
 })

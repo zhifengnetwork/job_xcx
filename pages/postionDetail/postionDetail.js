@@ -1,5 +1,6 @@
 // pages/company/postionDetail.js
-import ServerData from '../../../utils/serverData.js';
+import ServerData from '../../utils/serverData.js';
+const util = require('../../utils/util.js');  //通用方法
 const app = getApp();
 Page({
 
@@ -8,7 +9,11 @@ Page({
 	 */
 	data: {
 		id: '',
+    isCollect: 0,
 		recruitDetail: [], // 公司详情
+		isCollect: 0,
+    pColor: '',                          //动态获取字体颜色                
+    pBC: ''                             //动态获边框颜色   
 	},
 
 	/**
@@ -17,7 +22,9 @@ Page({
 	onLoad: function (options) {
 		// 接收id
 		this.setData({
-			id: options.id
+			id: options.id,
+      pColor: util.loginIdentity().pColor,
+      pBC: util.loginIdentity().pBC
 		});
 	},
 
@@ -29,11 +36,15 @@ Page({
 		var _opt = {
 			id: this.data.id
 		}
-		ServerData.personalDetails(_opt).then((res) => {
-			// console.log(res)
+		ServerData.recruitDetail(_opt).then((res) => {
 			if (res.data.status == 1) {
 				this.setData({
-					recruitDetail: res.data.data
+					recruitDetail: res.data.data,
+					isCollect: res.data.data.is_collection
+				})
+			} else   if (res.data.status == -1) {
+				wx.redirectTo({
+				  url: '../../login/login'
 				})
 			} else {
 				ServerData._wxTost(res.data.msg)
@@ -44,7 +55,16 @@ Page({
 	/**
 	 * 收藏/取消收藏
 	 */
-	onCollection: function () {
+	onCollection: function (e) {
+		var statuss = e.currentTarget.dataset.stu
+		if (e.currentTarget.dataset.stu == 0) {
+			statuss = 1
+		} else {
+			statuss = 0
+		}
+		this.setData({
+			isCollect: statuss
+		})
 		// 要传给后台的参数
 		var _opt = {
 			'type': 1,

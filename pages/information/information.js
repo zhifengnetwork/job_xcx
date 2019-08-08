@@ -14,7 +14,6 @@ Page({
   onLoad: function (options) {
     util.getStorageItem('savePostion', app);   //获取底部导航
     this.messageList()
-
   },
 
   messageList(){
@@ -26,7 +25,6 @@ Page({
               for(var i in info){
                 info[i].create_time = ServerData._timeStampForwardAate(info[i].create_time)
               }
-
               that.setData({
                   array: info
               })
@@ -40,21 +38,5 @@ Page({
             ServerData._wxTost(res.data.msg)
           }
       })
-  },
-  // changNew:function(e){
-  //   var index =e.currentTarget.dataset.index;
-  //   this.data.array[index].isChang=false;
-  //   this.setData({ array: this.data.array})
-  // },
-  // changNew2: function (e) {
-  //   var index = e.currentTarget.dataset.index;
-  //   this.data.array2[index].isChang = false;
-  //   this.setData({ array2: this.data.array2 })
-  // },
-  // changStatus:function(e){
-  //   console.log(e);
-  //   this.setData({
-  //     cStatus:e.currentTarget.dataset.status
-  //   })
-  // }
+  }
 })

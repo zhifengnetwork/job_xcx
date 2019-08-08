@@ -48,7 +48,7 @@ const userAPI = {
   withdrawal: `${proxys}/person/withdrawal`,          // 提现保存
 
   messageList: `${proxys}/message/message_list`,      // 消息列表
-  messageDetail: `${proxys}/message/message_detail`,      // 消息详情
+  messageDetail: `${proxys}/message/message_detail`,  // 消息详情
 
   collection: `${proxys}/collection/collection`,      // 收藏/取消收藏
   Ucollect: `${proxys}/collection/collection_list`,   // 我的收藏列表
@@ -58,6 +58,9 @@ const userAPI = {
   deleteRecruit: `${proxys}/company/del_recruit`,     // 删除招工信息
   
   recruitList: `${proxys}/company/recruit_list`,      // 公司及第三方职位列表
+  companyList: `${proxys}/company/company_list`,      // 公司及第三方信息列表
+  getRecruitList: `${proxys}/company/get_recruit_list`,      // 公司及第三方职位列表
+
   recruitHot: `${proxys}/company/recruit_hot`,        // 热门推荐
   recruitBetter: `${proxys}/company/recruit_better`,  // 待遇更好
   userVisit: `${proxys}/user/user_visit`,             // 主页，公司/第三方/个人

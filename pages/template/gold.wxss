@@ -62,10 +62,7 @@
   color: red;
   letter-spacing: 4rpx;
 }
-/* .g-deposits-btn1 button:hover{
-  color: #fff;
-  background:#25bbb3;
-} */
+
 .g-deposits-btn2{
   display: flex;
   justify-content: space-between;
@@ -91,20 +88,4 @@
 }
 .foot-info text{
   font-size: 36rpx;
-
 }
-
-/* public */
-/* .set-option{
-  width: 670rpx;
-  height: 90rpx;
-  line-height: 90rpx;
-  border-radius: 45rpx;
-  color:#fff;
-  background: #25bbb3;
-  position: fixed;
-  left: 24rpx;
-  bottom:40rpx;
-  font-size: 30rpx;
-  text-align: center
-} */

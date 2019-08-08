@@ -40,7 +40,7 @@ function loginIdentity(){
     var info = {
       pColor: 'user-color-',
       pBgC: 'user-bg-',
-      pBC: 'user-bColor',
+      pBC: 'user-bColor-',
       pBC1: 'user-bColor-1ss',
       gActive:'user-active-',
       styleBg:'#ff54b5',
@@ -64,7 +64,7 @@ function loginIdentity(){
     var info = {
       pColor: 'third-color-',
       pBgC: 'third-bg-',
-      pBCC: 'third-bColor-',
+      pBC: 'third-bColor-',
       pBC1:'third-bColor-1ss',
       gActive: 'third-active-',
       styleBg: '#54b9ff',

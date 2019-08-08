@@ -7,8 +7,8 @@
     <view class='t-height'></view>
     <view class='c-l-info' wx:for="{{recruitData}}" wx:for-index="index" wx:key>
         <view class="group" wx:if="{{dStatus==1}}">
-            <icon wx:if="{{item.selected}}" type="success" color="#54b9ff" bindtap="changItemStatus" data-index="{{index}}" class="dagou" size="20"/>
-            <icon wx:else type="circle" bindtap="changItemStatus" data-index="{{index}}" color="#54b9ff" class="dagou" size="20" data-goodid="{{item.id}}"/>
+            <icon wx:if="{{item.selected}}" type="success" color="#be4cff" bindtap="changItemStatus" data-index="{{index}}" class="dagou" size="22"/>
+            <icon wx:else type="circle" bindtap="changItemStatus" data-index="{{index}}" color="#be4cff" class="dagou" size="22" data-goodid="{{item.id}}"/>
         </view>
         <navigator url="../postJobPostings/postJobPostings" class='c-info-text'>
           <text class='c-info-title'>{{item.title}}</text>
@@ -18,17 +18,18 @@
           </view>
         </navigator>
         <!-- company info start -->
-        <navigator url="../postJobPostings/postJobPostings" class='company-info third-color-'> 
+        <view class='company-info {{pColor}}'>
             <text class='' wx:if="{{item.status === 0}}">审核中</text>
             <text class='' wx:if="{{item.status === 1}}">审核通过</text>
             <text class='' wx:if="{{item.status === 2}}">审核失败</text>   
-            <icon class='iconfont icon-bianji'></icon>
-        </navigator>
+            <!-- <navigator url="../postJobPostings/postJobPostings" class='company-info company-color-'>
+                <icon class='iconfont icon-bianji'></icon> </navigator>-->
+        </view> 
     </view>
     <view wx:if="{{dStatus==1}}">
         <view class='line-heig'></view>
         <view class='set-option-1' >
-          <button class='s-1-option third-bg-' bindtap="deleteRecruit">删除</button>
+          <button class='s-1-option {{pBgC}}' bindtap="deleteRecruit">删除</button>
         </view>
     </view>
   </view>

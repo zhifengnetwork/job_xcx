@@ -1,0 +1,65 @@
+<!--pages/userInfo/editInfo.wxml-->
+<view class='inner'>
+
+  <view class='c-l-info'>
+      <navigator url='../../headPortrait/headPortrait'><image src='{{cList.logo}}' class="c-logo" /></navigator>
+      <view class='c-info-text'>
+        <text class='c-info-title'>{{cList.company_name}}</text>
+
+        <view class='c-msg m-b10'> 
+            实名认证：
+            <text wx:if="{{cList.status=== 0}}">未认证</text>
+            <text wx:if="{{cList.status=== 1}}">认证</text>
+            <text wx:if="{{cList.status=== -1}}">拒绝认证</text>
+        </view>
+        <view class='c-msg m-b10'>企业编号：{{cList.id}}</view>
+        <view class="surplus-num" >规模：{{cList.contacts_scale}}人</view>
+      </view>
+  </view>
+	<view class='cOrTInfo-cont'>
+			<view class='cOrTInfo-'>
+				<text class='cOrTInfo-msg'>成立时间：</text>
+        <text class='cOrTInfo-msg2'>{{cList.open_time}}</text>
+			</view>
+
+      <view class='cOrTInfo-option' bindtap='addAchievementBox'>
+        <text class='cOrTInfo-msg'>成就</text>
+        <view class='cOrTInfo-2'>{{cList.achievement}}</view>
+      </view>
+
+      <view class='cOrTInfo-option' bindtap='addAchievementBox'>
+        <text class='cOrTInfo-msg'>名人</text>
+        <view class='cOrTInfo-2'>{{cList.introduction}}</view>
+      </view>
+
+      <view class='cOrTInfo-option' bindtap='addAchievementBox'>
+        <text class='cOrTInfo-msg'>成就</text>
+        <view class='cOrTInfo-2'>{{cList.desc}}</view>
+      </view>
+	  </view>
+	  <view class='cOrTInfo-cont'>
+        <view class='c-title'>
+          <!-- <image src='../../static/images/public/money_blue.png' class='c-flame'/> -->
+          <text>最新招聘</text>
+        </view>
+        <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{pList}}" wx:key>
+          <view class='c-l-info'>
+              <!-- <image src='{{item.logo}}'class="c-logo" /> -->
+              <view class='c-info-text'>
+                <text class='c-info-title'>{{item.title}}</text>
+                <view class='c-info-msg'>
+                  <text class='c-msg'>月薪{{item.salary}}</text>
+                  <text class='c-msg2'>{{item.work_age}}年</text>
+                </view>
+              </view>
+              <view class='company-info'>
+                  <!-- <text>公司</text> -->
+                  <view class='company-status {{pBgC}}'>
+                      <text wx:if="{{item.require_cert==0}}">无需证书</text>
+                      <text wx:if="{{item.require_cert==1}}">需要证书</text>
+                  </view>
+              </view>
+          </view>
+        </navigator>
+    </view>
+</view>

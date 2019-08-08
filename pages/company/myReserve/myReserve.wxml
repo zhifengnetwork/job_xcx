@@ -1,7 +1,7 @@
 <!--pages/company/uCollect.wxml-->
 <view class='inner'>
     <view class='reserve-l-info'>
-        <scroll-view class="list" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="scrollLower">
+        <scroll-view class="list" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="scrollLower" wx:if="{{!isShowR}}">
             <navigator url="../personalDetail/personalDetail?id={{item.person_id}}" class='search-job-list' wx:for="{{bookListData}}" wx:key="key">
                 <view class='c-info-title'>{{item.job_type}}</view>
                 <view class='c-info-msg overH'>
@@ -19,7 +19,7 @@
             </navigator>
         </scroll-view>
     </view>
-    <view class="loading-complete" hidden="{{searchLoadingComplete}}">我有底线哦...</view> 
+    <view class="loading-complete" wx:if="{{noMoreData}}">我有底线哦...</view> 
     <view class='wx-no-info' wx:if="{{isShowR}}">
       <image class='wx-no-icon' src='../../../static/images/public/none.png'></image>
       <view>暂无数据</view>

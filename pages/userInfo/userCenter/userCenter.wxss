@@ -23,7 +23,7 @@
 }
 .c-l-info .c-logo{
   width:164rpx;
-  height:164rpx;
+  max-height:164rpx;
   border-radius: 4rpx;
 }
 .edit-info{

@@ -15,10 +15,6 @@ for (let i = 1; i < 12000; i++) {
 const salaryArray = ["面议","1k", "2k", "3k", "4k", "5k", "6k", "7k", "8k", "9k", "10k", "11k", "12k", "13k", "14k", "15k", "16k", "17k", "18k", "19k", "20k", "21k", "22k", "23k", "24k", "25k"]
 
 Page({
-
-	/**
-	 * 页面的初始数据
-	 */
 	data: {
 		title: '', //标题
 		jobArray: [], //工种
@@ -103,9 +99,7 @@ Page({
 			})
 		}
 		if(this.data.salaryIndex == this.data.salaryArray.length -1){
-			// salaryArray.push("26k")
 			this.setData({
-				// salaryArray:salaryArray,
 				salaryIndex2:this.data.salaryArray.length -1
 			})
 		}

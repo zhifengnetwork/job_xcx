@@ -16,29 +16,9 @@
         <view class="newsite_view subtitle-msg">选择地点</view>
         <view class="newsite_city">{{areaInfo}}</view>
       </view>
-      <!-- 所有城市三级联动列表 -->
-      <view class="zhezhao" style="display:{{addressMenuIsShow ? 'block':'none'}}"></view>
-      <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
-        <view style="height:10% ;width:95%;margin-top:10rpx">
-          <text catchtap="cityCancel">取消</text>
-          <text style="float: right" catchtap="citySure">确定</text>
-        </view>
-        <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
-          <picker-view-column>
-            <view wx:for="{{provinces}}" class="picker-item">
-              {{item.area_name}}</view>
-          </picker-view-column>
-          <picker-view-column>
-            <view wx:for="{{citys}}" class="picker-item" wx:key>
-              {{item.area_name}}</view>
-          </picker-view-column>
-          <picker-view-column>
-            <view wx:for="{{areas}}" class="picker-item" wx:key>
-              {{item.area_name}}</view>
-          </picker-view-column>
-        </picker-view>
-      </view>
     </view>
+    <!-- 所有城市三级联动列表 -->
+    <include src="../../template/address"/> 
     <!-- 地址选择接受 -->
   </view> 
   <!-- 地址选择结束 -->
@@ -55,54 +35,25 @@
                 <text>热门推荐</text>
               </view>
           </navigator>
-          <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_hot}}" wx:key>
-            <view class='c-l-info'>
+          <navigator url="../../cOrTInfo/cOrTInfoDetail?id={{item.id}}" wx:for="{{recList}}" wx:key>
+            <view class='c-l-info p-list-info'>
               <image src='{{item.logo}}'class="c-logo" />
               <view class='c-info-text'>
-                <text class='c-info-title'>{{item.title}}</text>
+                <text class='c-info-title'>{{item.company_name}}</text>
                 <view class='c-info-msg'>
-                  <text class='c-msg'>月薪{{item.salary}}</text>
-                  <text class='c-msg2'>{{item.work_age}}年</text>
+                  <view class='c-msg'><text>实名认证：</text>
+                    <text wx:if="{{item.status=== 0}}">未认证</text>
+                    <text wx:if="{{item.status=== 1}}">认证</text>
+                    <text wx:if="{{item.status=== -1}}">拒绝认证</text>
+                  </view>
+                  <view class='c-msg'><text>规模：{{item.contacts_scale}}</text></view>
                 </view>
+                <text class='c-info-title'></text>
               </view>
               <!-- company info start -->
-              <view class='company-info'>
-                  <text>公司</text>
-                  <view class='company-status third-bg-'>
-                      <text wx:if="{{item.require_cert==0}}">无需证书</text>
-                      <text wx:if="{{item.require_cert==1}}">需要证书</text>
-                  </view>
-              </view>
             </view>
           </navigator>
-          <navigator url="../../recruitHot/recruitHot?regtype=1" class='more-recommond'>更多推荐</navigator>
-        </view>
-        <view class='content-list'>
-            <view class='c-title'>
-              <image src='../../../static/images/public/money_blue.png' class='c-flame'/>
-              <text>待遇更好</text>
-            </view>
-            <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_better}}" wx:key>
-              <view class='c-l-info'>
-                  <image src='{{item.logo}}'class="c-logo" />
-                  <view class='c-info-text'>
-                    <text class='c-info-title'>{{item.title}}</text>
-                    <view class='c-info-msg'>
-                      <text class='c-msg'>月薪{{item.salary}}</text>
-                      <text class='c-msg2'>{{item.word_age}}年</text>
-                    </view>
-                  </view>
-                  <!-- company info start -->
-                  <view class='company-info'>
-                      <text>公司</text>
-                      <view class='company-status third-bg-'>
-                          <text wx:if="{{item.require_cert==0}}">无需证书</text>
-                          <text wx:if="{{item.require_cert==1}}">需要证书</text>
-                      </view>
-                  </view>
-              </view>
-            </navigator>
-            <navigator url="../../recruitBetter/recruitBetter?regtype=1" class='more-recommond'>更多待遇</navigator>
+          <view class='more-recommond2' wx:if="{{isMore}}" bindtap='lookMore'>点击查看更多</view>
         </view>
     </view>
 </view>

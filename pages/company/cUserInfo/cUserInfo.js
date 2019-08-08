@@ -26,9 +26,7 @@ Page({
 	requserData:function(){
 		ServerData.userInfo({}).then((res) => {
 			if (res.data.status == 1) {
-
         var time = ServerData._timeStampForwardAate(res.data.data.vip_time)
-        // console.log(time)
 				this.setData({
 					userData: res.data.data,
           timer: time
@@ -52,40 +50,6 @@ Page({
 		wx.navigateTo({
 			url: '../postJobPostings/postJobPostings',
 		})
-	},
-	/**
-	 * 生命周期函数--监听页面初次渲染完成
-	 */
-	onReady: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面隐藏
-	 */
-	onHide: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面卸载
-	 */
-	onUnload: function () {
-
-	},
-
-	/**
-	 * 页面相关事件处理函数--监听用户下拉动作
-	 */
-	onPullDownRefresh: function () {
-
-	},
-
-	/**
-	 * 页面上拉触底事件的处理函数
-	 */
-	onReachBottom: function () {
-
 	},
 
 	/**

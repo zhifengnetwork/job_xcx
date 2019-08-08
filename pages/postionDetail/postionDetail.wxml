@@ -16,7 +16,7 @@
                 <view class='m-b22'>
                     <text class='m-r20'>{{recruitDetail.work_age}}年经验</text>
                 </view>
-                <navigator url='../../cOrTInfo/cOrTInfo?company_id={{recruitDetail.company_id}}' class='e-company-list- m-b22'> 
+                <navigator url='../cOrTInfo/cOrTInfo?company_id={{recruitDetail.company_id}}' class='e-company-list- m-b22'> 
                     <view>{{recruitDetail.company_name}}</view>
                     <icon class='iconfont icon-youjiantou2'></icon>
                 </navigator>
@@ -34,7 +34,7 @@
     <view class='footer'>
         <!-- <button class='f-btn-1' bindtap="callWithHim">马上预订</button> -->
          
-          <button class='f-btn-2 user-bColor- user-color-'>
+          <button class='f-btn-2 {{pColor}} {{pBC}}'>
             <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
             <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
             <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button> 

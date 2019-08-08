@@ -19,6 +19,9 @@ Page({
     cCode: '',                    //获取选中的市ID
     aCode: '',                    //获取选中的区ID
     site_show: true,              //
+    page:1,
+    rows:10,
+    isMore:true
   },
 
   /**
@@ -26,7 +29,7 @@ Page({
    */
   onLoad: function (options) {
     util.getStorageItem('savePostion', app);   //获取底部导航
-    this.getRecruitList()                      //公司及第三方职位列表
+    this.getCompanyList()                      //公司及第三方职位列表
 
     /*********地址 */
     this.provinces(0, 0);
@@ -82,7 +85,7 @@ Page({
       cCode: that.data.city.code,
       aCode: that.data.area.code
     })
-    this.getRecruitList()
+    this.getCompanyList()
   },
 
   // 处理省市县联动逻辑
@@ -162,21 +165,43 @@ Page({
   /***********地址结束**************** */
 
 
-  getRecruitList(){
+  lookMore(){
+      this.setData({
+          page:this.data.page+1
+      })
+      this.getCompanyList()
+  },
+  getCompanyList(){
     var that =this,
         _opt ={
           'regtype':1,
           'province': that.data.pCode,
           'city': that.data.cCode,
-          'district': that.data.aCode
+          'district': that.data.aCode,
+          'page': that.data.page,
+          'rows': that.data.rows
         }
-    ServerData.recruitList(_opt).then((res) =>{
-        var status = res.data.status
+    ServerData.companyList(_opt).then((res) =>{
+        var status = res.data.status,
+            newArray=[]
         if(status==1){
-            // that.data.recList=res.data.data
-          this.setData({
-            recList: res.data.data
-          })
+          if (res.data.data.length!=""){
+              if (that.data.page == 1) {
+                newArray = res.data.data
+              } else {
+                newArray = [...that.data.recList, ...res.data.data]
+              }
+              console.log(newArray)
+              this.setData({
+                recList: newArray,
+                isMore:true
+              })
+          }else{
+              this.setData({
+                isMore: false
+              })
+          }
+ 
         }else if(status==-1){
             wx.redirectTo({
               url: '../../login/login'
@@ -184,9 +209,9 @@ Page({
         }else{
            ServerData._wxTost(res.data.msg)
         }
-      this.setData({
-        recList: res.data.data
-      })
+      // this.setData({
+      //   recList: res.data.data
+      // })
     })
   },
   onShareAppMessage: function () {

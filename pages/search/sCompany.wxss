@@ -2,14 +2,13 @@
 @import "../template/common";
 
 search-cont {
-width:580rpx;
-/* margin:0 40rpx 0 24rpx; */
-
+  width:580rpx;
 }
 .inner-cont{
-  /* width: 100%; */
   padding-top: 90rpx;
 }
 .login_tab{
   font-size: 28rpx;
+  padding:10rpx;
+
 }

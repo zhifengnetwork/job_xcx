@@ -1,0 +1,51 @@
+/* pages/userInfo/editInfo.wxss */
+@import "../template/common";
+.inner{
+  padding: 17rpx 24rpx;
+  font-size: 28rpx;
+  color:#151515;
+  /* background: red */
+}
+.c-l-info {
+  background:none;
+  margin-bottom: 30rpx;
+}
+.c-l-info .c-logo{
+  width:164rpx;
+  height:164rpx;
+  border-radius: 4rpx;
+}
+.company-status {
+  float: right;
+}
+.edit-info{
+  width: 320rpx;
+  border-radius:45rpx;
+  height:88rpx;
+  color:#fff;
+  text-align: center;
+  line-height:88rpx;
+  margin:26rpx 0 47rpx;
+  font-size:30rpx;
+}
+.c-info-text{
+  margin-left:0;
+  /* width: 70%; */
+}
+.cOrTInfo-,.cOrTInfo-option{
+  margin-bottom: 20rpx;
+  font-size:28rpx;
+  color: #151515;
+}
+.cOrTInfo-msg{
+  font-size: 26rpx; 
+  margin-bottom: 20rpx;
+}
+.cOrTInfo-2{
+  text-indent:60rpx;
+}
+.cOrTInfo-cont .c-title{
+  margin-top: 40rpx;
+  border-top: 2rpx solid #f8f8f8;
+  padding-top: 40rpx;
+}

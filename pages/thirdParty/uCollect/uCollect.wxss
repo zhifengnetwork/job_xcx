@@ -18,6 +18,9 @@
   .show{
     display: block;
   }
+  .search-job-list{
+    padding:10px
+  }
   .hidden{
     display: none;
   }

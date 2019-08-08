@@ -64,7 +64,7 @@
                     <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
                     <text>当前热招</text>
                 </view>
-                <navigator wx:for="{{list.person}}" url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:key>
+                <navigator wx:for="{{list.person}}" url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:key>
                     <image src='{{item.logo}}'class="c-logo" />
                     <view class='c-info-text'>
                       <text class='c-info-title'>{{item.title}}</text>
@@ -90,7 +90,7 @@
                     <image src='../../../static/images/public/info.png' class='c-flame'/>
                     <text>最新招聘</text>
                 </view>
-                <navigator wx:for="{{list.recruit}}" url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:key>
+                <navigator wx:for="{{list.recruit}}" url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:key>
                     <image src='{{item.logo}}'class="c-logo" />
                     <view class='c-info-text'>
                       <text class='c-info-title'>{{item.title}}</text>

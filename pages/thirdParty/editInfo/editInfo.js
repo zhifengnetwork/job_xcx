@@ -144,16 +144,6 @@ Page({
 	},
 
 	/**
-	 * 
-	 * 平均薪资
-	 */
-	// paysChange: function (e) {
-	// 	this.setData({
-	// 		paysIndex: e.detail.value
-	// 	})
-	// },
-
-	/**
 	 * 编辑公司成就框显示与隐藏
 	 */
 	addAchievementBox: function (e) {  

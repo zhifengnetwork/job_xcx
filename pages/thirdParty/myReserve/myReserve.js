@@ -13,7 +13,7 @@ Page({
     isShowR:false,                       // 没有数据是显示 
     pageNum: 1,                         // 设置加载的第几次，默认是第一次  
     searchLoading: false,               //"上拉加载"的变量，默认false，隐藏  
-    searchLoadingComplete: false,       //“没有数据”的变量，默认false，隐藏  
+    noMoreData: false,       //“没有数据”的变量，默认false，隐藏  
   },
   /**
    * 生命周期函数--监听页面加载
@@ -48,7 +48,7 @@ Page({
           this.setData({
             bookListData: res.data.data,
             isShowR:sstatus,
-            searchLoadingComplete: nodata
+            noMoreData: nodata
           })
 			}else if (status == -1) {
         wx.redirectTo({

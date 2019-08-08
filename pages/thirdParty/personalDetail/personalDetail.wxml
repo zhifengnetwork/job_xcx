@@ -25,11 +25,9 @@
           <view class='c-list-info'>
             <view class='w-bold m-b22'>个人介绍</view>
             <view class='m-b22'>{{personalData.desc}}</view>
-            <!-- <view class='m-b45'>3公里之内包送上下班</view> -->
             <view class='w-bold m-b22'>工作经验</view>
             <view class='line'>{{personalData.experience}}</view>
           </view>
-          <!-- <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/> -->
         </view>
     </view>
     <view class='footer'>

@@ -1,5 +1,5 @@
 /* pages/company/jobList.wxss */
-@import '../../template/common';
+@import '../template/common';
 .delect-btn{
   position: fixed;
   top: 0;

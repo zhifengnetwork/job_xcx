@@ -166,7 +166,6 @@ Page({
   },
 
   bindRegionChange: function (e) {
-    console.log(e)
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       region: e.detail.value,
@@ -233,7 +232,6 @@ Page({
           var dat = JSON.parse(res.data)
           if (dat.status == 1) {
             data.newSrc = dat.data
-            console.log(data.newSrc)
             _this.setData({
               pics: _this.data.pics
             })
@@ -266,7 +264,6 @@ Page({
     } else {
       that.animation.translateY(40 + 'vh').step()
     }
-    // console.log(that.animation.export())
     that.setData({
       animationAddressMenu: that.animation.export(),
       addressMenuIsShow: isShow,

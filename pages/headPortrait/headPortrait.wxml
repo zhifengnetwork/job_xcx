@@ -9,7 +9,7 @@
         <image class='card-top' mode='aspectFit' src="{{icCardPic.src}}" data-index="{{index}}"/>
       </block>
       <view class='-add-img-' wx:if="{{icCardPic.hiddenName}}">
-        <image class='addPic' bindtap='addPosPic' src='../../static/images/public/plus.png'></image>
+        <canvas canvas-id='photo_canvas' style='width:100%;height:{{canvas_h}}px' class='myCanvas'><image class='addPic' bindtap='addPosPic' src='../../static/images/public/plus.png'></image></canvas>
       </view>
     </view>
     <button class="set-option {{pBgC}}" bindtap='saveHeaderPic'>保存</button>
