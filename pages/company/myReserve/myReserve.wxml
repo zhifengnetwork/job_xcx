@@ -2,7 +2,7 @@
 <view class='inner'>
     <view class='reserve-l-info'>
         <scroll-view class="list" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="scrollLower" wx:if="{{!isShowR}}">
-            <navigator url="../personalDetail/personalDetail?id={{item.person_id}}" class='search-job-list' wx:for="{{bookListData}}" wx:key="key">
+            <navigator url="../../personalDetail/personalDetail?id={{item.person_id}}" class='search-job-list' wx:for="{{bookListData}}" wx:key="key">
                 <view class='c-info-title'>{{item.job_type}}</view>
                 <view class='c-info-msg overH'>
                   <!-- <text class='c-msg fl'>广州市白云区</text> -->

@@ -20,7 +20,7 @@ Page({
       var that =this
       ServerData.messageList({}).then((res) =>{
           if(res.data.code==1){
-              console.log(res.data.data)
+              // console.log(res.data.data)
               var info = res.data.data
               for(var i in info){
                 info[i].create_time = ServerData._timeStampForwardAate(info[i].create_time)

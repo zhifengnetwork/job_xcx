@@ -14,15 +14,23 @@
             {{jobArray[jobIndex].cat_name}} 
           </view>
         </picker>
+
+        <view class="newsite_button" bindtap="selectDistrict">
+          <view class="newsite_view subtitle-msg" wx:if="{{showTST}}">选择地点</view>
+          <view class="newsite_city">{{areaInfo}}</view>
+        </view>
         <!-- -->
     </view>
+    <!-- 所有城市三级联动列表 -->
+    <include src="../../template/address"/> 
+    <!-- 地址选择接受 -->
   </view>
   <view class='inner'>
       <view class='c-body'>
         <!-- banner start -->
         <view class='banner'>
             <swiper indicator-dots="{{indicatorDots}}" 
-                    autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true"           indicator-active-color="#be4cff"> 
+                    autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="#be4cff"> 
                   <block wx:for="{{indexData.ad}}" wx:key> 
                     <swiper-item style="border-radius: 10rpx;"> 
                         <image src="../../../static/images/index/banner.jpg" class="slide-image"/> 
@@ -37,7 +45,7 @@
                     <text>建筑企业</text>
 				        </view>
                 <block wx:for="{{indexData.recruit}}"  wx:key="index">
-                  <navigator url='../postionDetail/postionDetail?id={{item.id}}'>
+                  <navigator url='../../postionDetail/postionDetail?id={{item.id}}'>
                     <view class='c-l-info'>
                     <!-- <view class='c-l-info' bindtap='jumpDetails' data-id='{{item.id}}'> -->
                       <image src='{{item.logo}}' class="c-logo" />
@@ -49,7 +57,7 @@
                         </view>
                       </view>
                       <view class='company-info'>
-                        <text>{{item.regtype == 1 ? "公司":"第三方"}}</text>
+                        <text>{{item.regtype == 1 ? "企业":"服务商"}}</text>
                         <view class='company-status company-bg-'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
                       </view>
                     </view>
@@ -63,7 +71,7 @@
                     <text>专业人才</text>
 				        </view>
 
-                <block wx:for="{{indexData.person}}" wx:key="index">
+                <block wx:for="{{indexData.person}}" wx:key="index" wx:key>
                     <navigator url='../personalDetail/personalDetail?id={{item.id}}'>
                         <view class='c-l-info'>
                           <view class='search-job-list'>

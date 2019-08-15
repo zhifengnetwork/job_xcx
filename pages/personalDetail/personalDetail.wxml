@@ -1,0 +1,51 @@
+<!--pages/company/uPosition.wxml-->
+<view id="wrap">
+  <!-- SEARCH INFO START -->
+  <view class='search2-inner'>
+    <!-- <view class='search-cont'>
+      <input type='text' class='search company-bColor-1'  placeholder="输入所要查找的内容" />
+      <image class="search_icon" src='../../../static/images/public/search_icon.png'></image>
+    </view> -->
+    <text bindtap="onCollection" class='collect_tab'  data-stu="0" wx:if="{{isCollect==0}}">收藏</text>
+    <text bindtap="onCollection" class='collect_tab'  data-stu="1" wx:else>已收藏</text>
+  </view>
+  <view class='inner'>
+    <!-- CONTENT START -->
+    <view class='d-content'>
+        <view class="d-c-list">
+          <view class='c-list-info'>
+            <view class='w-bold m-b22'>{{personalData.name}}</view>
+            <view class='w-bold m-b22'>
+                <text class='m-r20'>手机号码：</text>
+                <text class='m-r10'>{{personalData.mobile}}</text>
+            </view>
+            <view class='m-b22'>大专</view>
+            <view class='m-b22'>无证书</view>
+            <view>期望职位：{{personalData.job_type}}</view>
+          </view>
+          <image src='{{personalData.avatar}}' class='c-list-portrait'/>
+        </view>
+        <view class="d-c-list">
+          <view class='c-list-info'>
+            <view class='w-bold m-b22'>个人介绍</view>
+            <view class='m-b22'>{{personalData.desc}}</view>
+            <!-- <view class='m-b45'>3公里之内包送上下班</view> -->
+            <view class='w-bold m-b22'>工作经验</view>
+            <view class='line'>{{personalData.experience}}</view>
+          </view>
+          <!-- <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/> -->
+        </view>
+    </view>
+    <view class='footer'>
+        <button class='f-btn-1 {{pBgC}}' bindtap="toReservation">马上预订</button>
+
+          <button class='f-btn-2 {{pBC}} {{pColor}}'>
+            <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+            <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+            <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button> 
+            <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
+            联系客服
+          </button>
+    </view>
+  </view>
+</view>

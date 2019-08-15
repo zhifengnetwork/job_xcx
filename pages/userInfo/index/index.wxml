@@ -19,29 +19,9 @@
           <view class="newsite_city">{{areaInfo}}</view>
         </view>
         <!-- 所有城市三级联动列表 -->
-        <view class="zhezhao" style="display:{{addressMenuIsShow ? 'block':'none'}}"></view>
-        <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
-          <view style="height:10% ;width:95%;margin-top:10rpx">
-            <text catchtap="cityCancel">取消</text>
-            <text style="float: right" catchtap="citySure">确定</text>
-          </view>
-          <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
-            <picker-view-column>
-              <view wx:for="{{provinces}}" class="picker-item">
-                {{item.area_name}}</view>
-            </picker-view-column>
-            <picker-view-column>
-              <view wx:for="{{citys}}" class="picker-item" wx:key="">
-                {{item.area_name}}</view>
-            </picker-view-column>
-            <picker-view-column>
-              <view wx:for="{{areas}}" class="picker-item" wx:key="">
-                {{item.area_name}}</view>
-            </picker-view-column>
-          </picker-view>
-        </view>
+        <include src="../../template/address"/> 
+        <!-- 地址选择接受 -->
       </view>
-      <!-- 地址选择接受 -->
     </view> 
     <!-- 地址选择结束 -->
   </view>
@@ -75,8 +55,8 @@
                     </view>
                     <!-- company info start -->
                     <view class='company-info'>
-                        <text wx:if="{{item.regtype==1}}">公司</text>
-                        <text wx:else>第三方</text>
+                        <text wx:if="{{item.regtype==1}}">企业</text>
+                        <text wx:else>服务商</text>
                         <view class='company-status'>
                             <text wx:if="{{item.require_cert==1}}">需要证书</text>
                             <text wx:else>无需证书</text>
@@ -101,8 +81,8 @@
                     </view>
                     <!-- company info start -->
                     <view class='company-info'>
-                        <text wx:if="{{item.regtype==1}}">公司</text>
-                        <text wx:else>第三方</text>
+                        <text wx:if="{{item.regtype==1}}">企业</text>
+                        <text wx:else>服务商</text>
                         <view class='company-status'>
                             <text wx:if="{{item.require_cert==1}}">需要证书</text>
                             <text wx:else>无需证书</text>

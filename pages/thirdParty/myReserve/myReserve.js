@@ -8,7 +8,6 @@ Page({
    */
   data: {
     tempFilePaths: [],
-    // hiddenName: false,
     bookListData:[],
     isShowR:false,                       // 没有数据是显示 
     pageNum: 1,                         // 设置加载的第几次，默认是第一次  
@@ -34,7 +33,6 @@ Page({
   bookList: function () {
     var that =this
 		ServerData.bookingList({'page': that.data.pageNum}).then((res) => {
-			// console.log(res)
 			if (res.data.status == 1) {
           var sstatus =false,
               nodata =false

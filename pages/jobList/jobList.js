@@ -62,7 +62,13 @@ Page({
             noData:that.data.noData,
             moreDataBtn: that.data.moreDataBtn
           })
-      } else {
+      } 
+      else if (res.data.status == -1) {
+        wx.redirectTo({
+          url: '../login/login'
+        })
+      } 
+      else {
         ServerData._wxTost(res.data.msg)
       }
     })

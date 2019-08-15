@@ -13,7 +13,16 @@
             {{jobArray[jobIndex].cat_name}} 
           </view>
         </picker>
+        <view class="newsite_button" bindtap="selectDistrict">
+          <view class="newsite_view subtitle-msg" wx:if="{{showTST}}">选择地点</view>
+          <view class="newsite_city">{{areaInfo}}</view>
+        </view>
     </view>
+    <!-- 所有城市三级联动列表 -->
+    <include src="../../template/address"/> 
+    <!-- 地址选择接受 -->
+
+
   </view>
   <view class='header-heigh'></view>
   <!-- HEADER END -->

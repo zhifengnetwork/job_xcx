@@ -28,7 +28,6 @@ Page({
 			regtype: this.data.currentTab
 		}
 		ServerData.Ucollect(_opt).then((res) => {
-			console.log(res)
 			if (res.data.status == 1) {
 				this.setData({
 					UcData: res.data.data
@@ -44,7 +43,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      
+    this.UcList();
   },
 
   /**
@@ -58,7 +57,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.UcList();
+    
   },
 
   /**

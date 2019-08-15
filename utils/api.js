@@ -20,6 +20,7 @@ const userAPI = {
   
   personalDetail: `${proxys}/person/detail`,          // 个人简历详情
   editRecruit: `${proxys}/company/edit_recruit`,      // 编辑、发布职位
+  goEditRecruit: `${proxys}/company/go_edit_recruit`, // 初始化职位
   editCompany: `${proxys}/company/edit`,              // 编辑公司信息
   setCompanyInfo: `${proxys}/company/info`,           // 初始化公司信息
 

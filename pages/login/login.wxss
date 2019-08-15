@@ -1,4 +1,6 @@
-
+page{
+  background:#fff;
+}
 
 /* 微信授权 */
 
@@ -56,8 +58,8 @@
 }
 
 .xiaolian {
-  width: 85rpx;
-  height: 85rpx;
+  width: 150rpx;
+  height: 150rpx;
 }
 
 .welecom_title {

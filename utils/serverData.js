@@ -142,8 +142,6 @@ class ServerData {
     return this._promise_post(_data, api.userAPI. lookCompany, complete);
   }
 
-
-
 	// 个人简历详情
 	personalDetail(_data, complete) {
 		return this._promise_post(_data, api.userAPI.personalDetail, complete);
@@ -160,6 +158,11 @@ class ServerData {
 		return this._promise_post(_data, api.userAPI.editRecruit, complete);
 	}
 
+	// 初始化职位
+	 goEditRecruit(_data, complete) {
+		return this._promise_post(_data, api.userAPI. goEditRecruit, complete);
+	}
+	
 	// 编辑公司信息
 	editCompany(_data, complete) {
 		return this._promise_post(_data, api.userAPI.editCompany, complete);
@@ -359,6 +362,30 @@ class ServerData {
     }
     return date;
   }
+  /**
+   * 在数组中查找关键词并retrun 回下标/变量 flag:对比的关键词，arry：要对比的数组，isN ：数组是否为一维数组，布尔类型 
+   * ispro:为ture 时 返回对象{key:val}
+   */
+  returnIndex(flag, arry, isN, ispro){       
+    for (var i in arry) {
+      if (isN) {
+        if (ispro) {
+          if (arry[i].code == flag) {
+            return arry[i].area_name
+          }
+        } else {
+          if (arry[i].cat_id == flag) {
+            return i
+          }
+        }
+      } else {
+        if (arry[i] == flag) {
+          return i
+        }
+      }
+    }
+  }
+  //***/
 
 }
 

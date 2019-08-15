@@ -28,12 +28,10 @@ Page({
 
   lookCompany() {         // 要传给后台的参数
     var _opt = {
-      company_id: 81
-      // company_id: this.data.companyId
+      company_id: this.data.companyId
     }
     ServerData.lookCompany(_opt).then((res) => {
       if (res.data.status == 1) {
-        console.log(res.data.data)
         this.setData({
           cList: res.data.data,
         })
@@ -48,11 +46,10 @@ Page({
   },
   getRecruitList(){         // 要传给后台的参数
     var _opt = {
-      company_id: 81
+      company_id:this.data.companyId
     }
     ServerData.getRecruitList(_opt).then((res) => {
       if (res.data.status == 1) {
-        console.log(res.data.data)
         this.setData({
           pList: res.data.data,
         })

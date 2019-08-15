@@ -1,11 +1,10 @@
 {
-  "pages": [
-     "pages/thirdParty/index/index",   
-    "pages/thirdParty/company/company",
-    "pages/postionDetail/postionDetail",
+  "pages": [ 
     "pages/login/login",
-    "pages/jobList/jobList",
     "pages/register/register",
+    "pages/postionDetail/postionDetail",
+    "pages/jobList/jobList",
+    "pages/jobList/editJobList",
     "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
@@ -23,14 +22,15 @@
     "pages/search/pSearch",
     "pages/search/sThirdParty",
     "pages/cOrTInfo/cOrTInfo",
-    
+    "pages/cOrTInfo/cOrTInfoDetail",
+    "pages/editCampanyInfo/editInfo",
+
     "pages/personalMessage/personalMessage",
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
     "pages/company/index/index",
     "pages/company/cUserInfo/cUserInfo",
-    "pages/company/postionDetail/postionDetail",
     "pages/company/thirdParty/thirdParty",
     "pages/company/search/search",
     "pages/company/editInfo/editInfo",
@@ -43,10 +43,9 @@
     "pages/company/myReserve/myReserve",
     "pages/company/postJobPostings/postJobPostings",
 
-    
-    "pages/cOrTInfo/cOrTInfoDetail",
+    "pages/thirdParty/index/index",
+    "pages/thirdParty/company/company",
     "pages/thirdParty/thirdInfo/thirdInfo",
-    "pages/thirdParty/editInfo/editInfo",
     "pages/thirdParty/jobApplicant/jobApplicant",
     "pages/thirdParty/search/search",
     "pages/thirdParty/myPurse/goldDeposits",
@@ -55,12 +54,10 @@
     "pages/thirdParty/myPurse/withdrawal",
     "pages/thirdParty/uCollect/uCollect",
     "pages/thirdParty/postJobPostings/postJobPostings",
-
-    "pages/thirdParty/postionDetail/postionDetail",
     "pages/thirdParty/personalDetail/personalDetail",
 
-    "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/index/index",
+    "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/search/search",
     "pages/userInfo/myPurse/myPurse",
@@ -68,7 +65,6 @@
     "pages/userInfo/userCenter/userCenter",
     "pages/userInfo/myPurse/withdrawal",
     "pages/userInfo/myPurse/goldDeposits",
-    "pages/userInfo/postionDetail/postionDetail",
     "pages/userInfo/myCertificate/myCertificate",
     "pages/userInfo/privacySettings/privacySettings",
     "pages/userInfo/collect/collect",

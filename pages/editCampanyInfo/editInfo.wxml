@@ -1,0 +1,94 @@
+<!--pages/userInfo/editInfo.wxml-->
+<view class='inner'>
+	<view class='edit-info'>
+		<view class='edit-cont'>
+
+			<view class='e-info-'>
+				<text class='e-info-msg'>名称：</text>
+				<input type='text' class='e-info-inp' placeholder-class="phcolor" placeholder='输入名称' bindinput="getCompanyName" value='{{companyName}}' />
+			</view>
+
+			<view class='e-info-'>
+				<text class='e-info-msg'>类型：</text>
+				<input type='text' class='e-info-inp' placeholder-class="phcolor" placeholder='输入类型' bindinput="getCompanyType" value='{{companyType}}'/>
+			</view>
+
+			<view class='e-info-'>
+				<text class='e-info-msg'>成立时间：</text>
+				<view class='e-info-pick'>
+					<picker-view indicator-style="height: 50px;" class='-timer-' value="{{value}}" bindchange="yearsChang">
+						<picker-view-column>
+							<view wx:for="{{years}}" wx:key="{{key}}" style="line-height: 50px">{{item}}年</view>
+						</picker-view-column>
+						<picker-view-column>
+							<view wx:for="{{months}}" wx:key="{{key}}" style="line-height: 50px">{{item}}月</view>
+						</picker-view-column>
+						<picker-view-column>
+							<view wx:for="{{days}}" wx:key="{{key}}" style="line-height: 50px">{{item}}日</view>
+						</picker-view-column>
+					</picker-view>
+				</view>
+			</view>
+		
+			<view class='e-info-'>
+				<text class='e-info-msg'>规模：</text>
+				<input type='number' class='e-info-inp -inp-2' placeholder-class="phcolor" placeholder='输入规模' bindinput="getcompanyScale" value='{{companyScale}}' /> 人
+			</view>  
+
+			<view class="user-option">
+				<view class='u-o-list'>
+					<text>地址</text>
+					<view  class="picker" value="{{cat_id}}" bindtap="selectDistrict">
+					<text wx:if="{{showTST}}">省，市，区</text>
+					<text>{{areaInfo}}</text>
+					<image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
+					<!-- 所有城市三级联动列表 -->
+					<include src="../template/address"/> 
+					<!-- 地址选择接受 -->
+					</view>
+				</view>
+				<view>
+					<view class='u-o-list' bindtap='addAchievementBox'>
+						<text>成就</text>
+						<view class='user-edit-text'>
+							<text class='u-o-msg'>{{achiInfo}}</text>
+							<image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+						</view>
+					</view>
+					<view class='tex-wrap' wx:if="{{isAchievement}}">
+						<textarea class="texa" placeholder='请输入成就' bindinput="saveAchievement"></textarea>
+					</view>
+				</view>
+
+				<view>
+					<view class='u-o-list' bindtap='addFamousPersonBox'>
+						<text>名人介绍</text>
+						<view class='user-edit-text'>
+							<text class='u-o-msg'>{{personInfo}}</text>
+							<image class='u-o-icon1' src='../../static/images/public/edit_gray.png'/>
+						</view>
+					</view>
+					<view class='tex-wrap' wx:if="{{isPerson}}">
+						<textarea class="texa" placeholder='请输入名人介绍' bindinput="savePerson"></textarea>
+					</view>
+				</view>
+
+			</view>
+
+		</view>
+	</view>
+
+	<view>
+		<textarea class="texa m-t20" placeholder='介绍说明' bindinput="getcompanyIntroduce" value='{{companyIntroduce}}'></textarea>		
+	</view>
+	
+
+	<!--footer -->
+  <view wx:if="{{userList.is_edit==1}}">
+    <view class='line-heig'></view>
+    <view class='set-option-1' >
+      <button class='s-1-option {{pBgC}}' bindtap='saveEditInfo'>保存</button>
+    </view>
+  </view>
+  <view wx:else="" class='edit-tips'>注意：信息审核中，不可编辑</view>
+</view>

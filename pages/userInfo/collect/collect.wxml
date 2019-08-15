@@ -1,12 +1,12 @@
 <!--pages/userInfo/collect.wxml-->
 <view class='inner'>
   <view class="tab">
-    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">公司</view>
-    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">第三方</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">企业</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">服务商</view>
   </view>
 
   <view class = "{{currentTab == 1 ? 'show':'hidden'}}" >
-    <navigator  url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{collData}}" wx:key="index">
+    <navigator  url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{collData}}" wx:key="index">
       <image src='{{item.logo}}'class="c-logo" />
       <view class='c-info-text'>
         <text class='c-info-title'>{{item.title}}</text>
@@ -18,7 +18,7 @@
       </view>
       <!-- company info start -->
       <view class='company-info'>
-          <text wx:if="{{item.regtype}}">公司</text>
+          <text wx:if="{{item.regtype}}">企业</text>
           <view class='company-status' wx:if="{{item.require_cert==0}}">无需证书</view>
           <view class='company-status' wx:else="{{item.require_cert==1}}">需要证书</view>
       </view>
@@ -26,7 +26,7 @@
   </view>  
 
   <view class = "{{currentTab == 2 ? 'show':'hidden'}}" >
-    <navigator  url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' class='c-l-info' wx:for="{{collData}}" wx:key="index">
+    <navigator  url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' class='c-l-info' wx:for="{{collData}}" wx:key="index">
       <image src='{{item.logo}}'class="c-logo" />
       <view class='c-info-text'>
         <text class='c-info-title'>{{item.title}}</text>
@@ -38,7 +38,7 @@
       </view>
       <!-- company info start -->
       <view class='company-info'>
-          <text wx:if="{{item.regtype}}">第三方</text>
+          <text wx:if="{{item.regtype}}">服务商</text>
           <view class='company-status' wx:if="{{item.require_cert==0}}">无需证书</view>
           <view class='company-status' wx:if="{{item.require_cert==1}}">需要证书</view>
       </view>

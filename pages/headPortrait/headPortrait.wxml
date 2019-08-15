@@ -1,7 +1,7 @@
 <!--pages/userInfo/headPortrait.wxml-->
 <view id='header-pic' class='header-pic'>
     <view class='-pic-subtitle'>
-      <text>11上传头像</text>
+      <text>上传头像</text>
     </view>
     <!-- -->
     <view class='id-card-top' bindtap='addIdCardPic'>

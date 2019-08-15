@@ -4,13 +4,13 @@
 		<view class='edit-cont'>
 
 			<view class='e-info-'>
-				<text class='e-info-msg'>公司名称：</text>
-				<input type='text' class='e-info-inp' placeholder-class="phcolor" placeholder='输入公司名称' bindinput="getCompanyName" value='{{companyName}}' />
+				<text class='e-info-msg'>名称：</text>
+				<input type='text' class='e-info-inp' placeholder-class="phcolor" placeholder='输入名称' bindinput="getCompanyName" value='{{companyName}}' />
 			</view>
 
 			<view class='e-info-'>
-				<text class='e-info-msg'>公司类型：</text>
-				<input type='text' class='e-info-inp' placeholder-class="phcolor" placeholder='输入公司类型' bindinput="getCompanyType" value='{{companyType}}'/>
+				<text class='e-info-msg'>类型：</text>
+				<input type='text' class='e-info-inp' placeholder-class="phcolor" placeholder='输入类型' bindinput="getCompanyType" value='{{companyType}}'/>
 			</view>
 
 			<view class='e-info-'>
@@ -31,21 +31,21 @@
 			</view>
 		
 			<view class='e-info-'>
-				<text class='e-info-msg'>公司规模：</text>
-				<input type='number' class='e-info-inp -inp-2' placeholder-class="phcolor" placeholder='输入公司规模' bindinput="getcompanyScale" value='{{companyScale}}' /> 人
+				<text class='e-info-msg'>规模：</text>
+				<input type='number' class='e-info-inp -inp-2' placeholder-class="phcolor" placeholder='输入规模' bindinput="getcompanyScale" value='{{companyScale}}' /> 人
 			</view>  
 
 			<view class="user-option">
 				<view>
 					<view class='u-o-list' bindtap='addAchievementBox'>
-						<text>公司成就</text>
+						<text>成就</text>
 						<view class='user-edit-text'>
 							<text class='u-o-msg'>{{achiInfo}}</text>
 							<image class='u-o-icon1' src='../../../static/images/public/edit_gray.png'/>
 						</view>
 					</view>
 					<view class='tex-wrap' wx:if="{{isAchievement}}">
-						<textarea class="texa" placeholder='请输入公司成就' bindinput="saveAchievement"></textarea>
+						<textarea class="texa" placeholder='请输入成就' bindinput="saveAchievement"></textarea>
 					</view>
 				</view>
 
@@ -68,7 +68,7 @@
 	</view>
 
 	<view>
-		<textarea class="texa m-t20" placeholder='公司介绍说明' bindinput="getcompanyIntroduce" value='{{companyIntroduce}}'></textarea>		
+		<textarea class="texa m-t20" placeholder='介绍说明' bindinput="getcompanyIntroduce" value='{{companyIntroduce}}'></textarea>		
 	</view>
 	
 

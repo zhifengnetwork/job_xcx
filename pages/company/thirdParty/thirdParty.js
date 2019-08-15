@@ -21,7 +21,8 @@ Page({
     site_show: true,              //
     page: 1,
     rows: 10,
-    isMore: true
+    isMore: true,
+    showTST:true
   },
 
   /**
@@ -83,7 +84,8 @@ Page({
       areaInfo: areaInfo,
       pCode: that.data.province.code,
       cCode: that.data.city.code,
-      aCode: that.data.area.code
+      aCode: that.data.area.code,
+      showTST:false
     })
     this.getCompanyList()
   },

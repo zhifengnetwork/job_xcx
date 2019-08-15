@@ -84,7 +84,7 @@ App({
       ],
       "position": "bottom"
     },
-    tabBar1: {     //以公司名义进去看到的底部导航
+    tabBar1: {     //以企业名义进去看到的底部导航
       "color": "#ff54b5",
       "selectedColor": "#be4cff",
       "backgroundColor": "#fff",
@@ -100,7 +100,7 @@ App({
         },
         {
           "pagePath": "/pages/company/jobApplicant/jobApplicant",
-          "text": "招人",
+          "text": "人才",
           "iconPath": "/static/images/bar_icon/user2_gray.png",
           "selectedIconPath": "/static/images/bar_icon/company/user2_pop.png",
           "clas": "menu-item",
@@ -108,7 +108,7 @@ App({
         },
         {
           "pagePath": "/pages/company/thirdParty/thirdParty",
-          "text": "第三方",
+          "text": "服务商",
           "iconPath": "/static/images/bar_icon/circle_gray.png",
           "selectedIconPath": "/static/images/bar_icon/company/circle_pink.png",
           "clas": "menu-item",
@@ -133,7 +133,7 @@ App({
       ],
       "position": "bottom"
     },
-    tabBar2: {   //以第三方名义登陆进去看到的底部导航
+    tabBar2: {   //以服务商名义登陆进去看到的底部导航
       "color": "#9E9E9E",
       "selectedColor": "#54b9ff",
       "backgroundColor": "#fff",
@@ -149,7 +149,7 @@ App({
         },
         {
           "pagePath": "/pages/thirdParty/jobApplicant/jobApplicant",
-          "text": "招人",
+          "text": "人才",
           "iconPath": "/static/images/bar_icon/user2_gray.png",
           "selectedIconPath": "/static/images/bar_icon/third/user2_blue.png",
           "clas": "menu-item",
@@ -157,7 +157,7 @@ App({
         },
         {
           "pagePath": "/pages/thirdParty/company/company",
-          "text": "公司",
+          "text": "企业",
           "iconPath": "/static/images/bar_icon/company_gray.png",
           "selectedIconPath": "/static/images/bar_icon/third/company_blue.png",
           "clas": "menu-item",
@@ -198,7 +198,7 @@ App({
         },
         {
           "pagePath": "/pages/userInfo/company/company",
-          "text": "公司",
+          "text": "企业",
           "iconPath": "/static/images/bar_icon/company_gray.png",
           "selectedIconPath": "/static/images/bar_icon/user/company_pink.png",
           "clas": "menu-item",
@@ -206,7 +206,7 @@ App({
         },
         {
           "pagePath": "/pages/userInfo/thirdParty/thirdParty",
-          "text": "第三方",
+          "text": "服务商",
           "iconPath": "/static/images/bar_icon/circle_gray.png",
           "selectedIconPath": "/static/images/bar_icon/user/circle_pink.png",
           "clas": "menu-item",

@@ -10,8 +10,8 @@
       <text class='login_tab' bindtap='searchInfp'>搜索</text>
     </view>
     <view class='subtitle overH'>
-        <text bindtap='changStatus' class="{{cStatus==0?'stss-active':''}}" data-status="0">个人</text>
-        <text bindtap='changStatus' class="{{cStatus==1?'stss-active':''}}" data-status="1">公司</text>
+        <text bindtap='changStatus' class="{{cStatus==0?'stss-active':''}}" data-status="0">人才</text>
+        <text bindtap='changStatus' class="{{cStatus==1?'stss-active':''}}" data-status="1">企业</text>
     </view>
   </view>
   <view class='inner inner-cont'>
@@ -23,7 +23,7 @@
 
       <view wx:if="{{cStatus==0}}">
         <block wx:for="{{list.person}}" wx:key="index">
-            <navigator url='../personalDetail/personalDetail?id={{item.id}}'>
+            <navigator url='../../personalDetail/personalDetail?id={{item.id}}'>
                 <view class='c-l-info'>
                   <view class='search-job-list'>
                     <view class='c-info-title'>{{item.job_type}}</view>
@@ -43,7 +43,7 @@
       </view>
 
       <view wx:if="{{cStatus==1}}">
-          <navigator url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}">
+          <navigator url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}">
               <image src='{{item.logo}}'class="c-logo" />
               <view class='c-info-text'>
                 <text class='c-info-title'>{{item.title}}</text>
@@ -54,7 +54,7 @@
               </view>
               <!-- company info start -->
               <view class='company-info'>
-                  <text>第三方</text>
+                  <text>企业</text>
                   <view class='company-status third-bg-'>
                       {{item.regtype == 0 ? "无需证书":"需要证书"}}
                   </view>

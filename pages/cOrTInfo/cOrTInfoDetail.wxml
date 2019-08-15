@@ -12,7 +12,7 @@
             <text wx:if="{{cList.status=== 1}}">认证</text>
             <text wx:if="{{cList.status=== -1}}">拒绝认证</text>
         </view>
-        <view class='c-msg m-b10'>企业编号：{{cList.id}}</view>
+        <view class='c-msg m-b10'>编号：{{cList.id}}</view>
         <view class="surplus-num" >规模：{{cList.contacts_scale}}人</view>
       </view>
   </view>

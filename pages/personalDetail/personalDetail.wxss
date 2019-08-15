@@ -1,4 +1,4 @@
-@import '../../template/common';
+@import '../template/common';
 #wrap{
   background:#f8f8f8;
   font-size:26rpx;
@@ -13,8 +13,8 @@
 .search-inner{
   margin: 25rpx 0 10rpx;
   display: flex;
+  align-items:center;
   line-height: 48rpx;
-  align-items: center
 }
 .s-left-arrow{
   flex: 0 0 1;
@@ -47,7 +47,7 @@
   width:20rpx;
   height:20rpx;
   position:absolute;
-  left:45rpx;
+  left:54rpx;
   top:30rpx;
 }
 .collect_tab{
@@ -61,7 +61,7 @@
 /* CONTENT STAT */
 .d-content{
   width: 100%;
-  position: relative;
+ 
 }
 .d-c-list{
   overflow: hidden;
@@ -74,18 +74,11 @@
 .line {
   margin: 0 0 25rpx;
 }
-.c-list-portrait{
+/* .c-list-portrait{
    width: 150rpx;
    height: 150rpx;
-   border-radius: 50%;
-   overflow: hidden;
-   position: absolute;
-   right: 20rpx;
-   top: 20rpx;
-}
-.c-list-portrait img{
-  width: 100%;
-}
+   margin-left:auto;
+} */
 
 /* FOOTER START */
 .footer{
@@ -105,8 +98,7 @@
   box-sizing:border-box;
   font-size:28rpx;
 }
-/* .footer .f-btn-1{
+.footer .f-btn-1{
   margin-right:30rpx; 
-  background:#25bbb3;
   color:#fff;
-} */
+}

@@ -43,7 +43,6 @@ Page({
     ServerData.categoryList({}).then((res) => {
       if (res.data.status == 1) {
         this.setData({ jobArray: res.data.data })
-        console.log(res.data.data)
       } else if (res.data.status == -1) {
         wx.redirectTo({
           url: '../login/login'
@@ -174,7 +173,6 @@ Page({
           var dat =JSON.parse(res.data)
           if (dat.status==1){
               data.newSrc = dat.data
-            console.log(data.newSrc)
               _this.setData({
                  icCardPic: _this.data.icCardPic
               })
@@ -200,7 +198,6 @@ addWordPic:function(e){
         var dat = JSON.parse(res.data)
         if (dat.status == 1) {
           data.newSrc = dat.data
-          console.log(data.newSrc)
           _this.setData({
               pics: _this.data.pics
           })
@@ -236,7 +233,6 @@ addImgBox: function (e) {
     });
   },
   changSex:function(e){       //性别
-    console.log(e.detail.value)
     this.setData({
       sex: e.detail.value
     })

@@ -9,7 +9,7 @@ Page({
 	 */
 	data: {
 		userData:{},
-    timer:''
+    	timer:''
 	},
 
 	/**
@@ -17,9 +17,11 @@ Page({
 	 */
 	onLoad: function (options) {
 		util.getStorageItem('savePostion', app)   //获取底部导航
-    this.requserData();     //初始化数据
 	},
 
+	onShow(){
+		this.requserData();     //初始化数据
+	},
 	/**
 	 * 获取公司信息
 	 */
@@ -29,9 +31,8 @@ Page({
         var time = ServerData._timeStampForwardAate(res.data.data.vip_time)
 				this.setData({
 					userData: res.data.data,
-          timer: time
+          			timer: time
 				})
-				console.log(this.data.userData)
 			}  
 			else if (res.data.status == -1){
 				wx.redirectTo({
@@ -48,7 +49,7 @@ Page({
 	 */
 	toEdit: function () {
 		wx.navigateTo({
-			url: '../postJobPostings/postJobPostings',
+			url: '../../jobList/editJobList',
 		})
 	},
 

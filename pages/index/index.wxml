@@ -19,7 +19,7 @@
         <!-- banner start -->
         <view class='banner'>
             <swiper indicator-dots="{{indicatorDots}}" 
-                    autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true"           indicator-active-color="#ff54b5"> 
+                    autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="#ff54b5"> 
                   <block wx:for="{{indexData.ad}}" wx:key> 
                     <swiper-item style="border-radius: 10rpx;"> 
                         <image src="../../static/images/index/banner.jpg" class="slide-image"/> 
@@ -46,41 +46,11 @@
                       </view>
                       <!-- company info start -->
                       <view class='company-info'>
-                          <text>{{item.regtype == 1 ? "公司":"第三方"}}</text>
+                          <text>{{item.regtype == 1 ? "企业":"服务商"}}</text>
                           <view class='company-status'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
                       </view>
                   </navigator>
                 </block>
-                <!-- <navigator url="../company/postionDetail" class='c-l-info'>
-                    <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>皮革厂包装人员</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪1500元</text>
-                        <text class='c-msg2'>1年以上</text>
-                      </view>
-                    </view>
-                    
-                    <view class='company-info'>
-                        <text>公司</text>
-                        <view class='company-status'>无需证书</view>
-                    </view>
-                </navigator>
-                <navigator url="../company/postionDetail" class='c-l-info'>
-                    <image src='../../static/images/public/c_logo.jpg'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>皮革厂包装人员</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪1500元</text>
-                        <text class='c-msg2'>1年以上</text>
-                      </view>
-                    </view>
-                    
-                    <view class='company-info'>
-                        <text>公司</text>
-                        <view class='company-status'>无需证书</view>
-                    </view>
-                </navigator> -->
             </view>
             <!-- Latest job search start -->
             <view class='content-list'>
@@ -106,40 +76,6 @@
                       <view class='company-status fr'>{{item.images == 0 ? "无证书":"有证书"}}</view>
                   </navigator>
                 </block>
-                <!-- <navigator url="../userInfo/postionDetail" class='c-l-info'>
-                    <view class='search-job-list'>
-                      <view class='c-info-title'>专业偷税会计/会计</view>
-                      <view class='c-info-msg overH'>
-                        <text class='c-msg fl'>广州市白云区</text>
-                        <text class='c-msg2 fl'>3年</text>
-                        
-                      </view>
-                      <view class='c-msg3'>会计证书</view>
-                      <view class='s-portrait'>
-                        <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
-                        <text>周先生</text>
-                      </view>
-                      <view class='overH'></view>
-                    </view>
-                    <view class='company-status fr'>有证书</view>
-                </navigator>
-                <navigator url="../userInfo/postionDetail" class='c-l-info'>
-                    <view class='search-job-list'>
-                      <view class='c-info-title'>专业偷税会计/会计</view>
-                      <view class='c-info-msg overH'>
-                        <text class='c-msg fl'>广州市白云区</text>
-                        <text class='c-msg2 fl'>3年</text>
-                        
-                      </view>
-                      <view class='c-msg3'>会计证书</view>
-                      <view class='s-portrait'>
-                        <image src='../../static/images/public/portrait.png' class='portrait-icon'/>
-                        <text>周先生</text>
-                      </view>
-                      <view class='overH'></view>
-                    </view>
-                    <view class='company-status fr'>有证书</view>
-                </navigator> -->
             </view>
         </view>
       </view>

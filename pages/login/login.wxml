@@ -40,7 +40,7 @@
     <view class='resigt-wrap-tt'>
         <view class="resigt" bindtap='resister'>注册</view>
         <view class="resigt">
-            <button class='wxshoq' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="wxLogin"> 授权登录</button>
+            <button class='wxshoq' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="wxLogin"> 微信授权登录</button>
         </view>
         <!-- <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
             授权登录

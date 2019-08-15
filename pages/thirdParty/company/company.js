@@ -191,7 +191,6 @@ Page({
               } else {
                 newArray = [...that.data.recList, ...res.data.data]
               }
-              console.log(newArray)
               this.setData({
                 recList: newArray,
                 isMore:true

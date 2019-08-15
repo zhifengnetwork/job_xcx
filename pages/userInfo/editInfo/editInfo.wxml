@@ -25,13 +25,6 @@
         <input type='text' class='e-info-inp' bindinput='getMZ' placeholder-class="phcolor" value="{{mz}}" placeholder='输入民族'/>
       </view>    
       <view class='e-info-'>
-        <text class='e-info-msg'>工龄：</text>
-        <picker class='e-info-inp' value="{{wordIndex}}" range="{{payArray}}" bindchange="wordChange">
-          <view>{{payArray[wordIndex]}} 年</view>
-        </picker>
-        <!-- <input type='text' class='e-info-inp' bindinput='getWordOld' placeholder-class="phcolor" value='{{wordOld}}' placeholder='输入工龄'/> -->
-      </view> 
-      <view class='e-info-'>
         <text class='e-info-msg'>学历：</text>
         <view class="page__bd">
           <view class="free-btns e-info-inp " style="background:none;">
@@ -43,10 +36,8 @@
             <view class="free-dialog__container">
               <view>
                 <form bindsubmit='submit' bindreset="reset">
-                  <!-- <view bindtap='freetoBack' class="free-button free-dialog-reset">取消</view>
-                  <view bindtap='freetoBack' class="free-button free-dialog-submit">确定</view> -->
                   <radio-group class='free-radios'>
-                    <label class="free-radio" bindtap="xLChange" wx:for="{{xLItem}}" wx:key="{{items}}" data-id="{{index}}" data-name="{{item.name}}" style="{{index==id?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}">
+                    <label class="free-radio" bindtap="xLChange" wx:for="{{xLItem}}" wx:key="{{items}}" data-id="{{index}}" data-name="{{item.name}}" style="{{index==id?'background:#48c23d;color:#fff;':'background:#fff;color:#000;'}}" wx:key>
                       <radio value="{{item.name}}" name="{{item.value}}"></radio>
                       <label class="free-text">{{item.value}}</label>
                     </label>
@@ -56,7 +47,13 @@
             </view>
           </view>
         </view>
-      </view>    
+      </view> 
+      <view class='e-info-'>
+        <text class='e-info-msg'>工作年限：</text>
+        <picker class='e-info-inp' value="{{wordIndex}}" range="{{payArray}}" bindchange="wordChange">
+          <view>{{payArray[wordIndex]}} 年</view>
+        </picker>
+      </view>   
     </view>
     <!-- <image class='edit-img-' src='../../../static/images/public/big_portrait.png'/> -->
   </view>
@@ -136,12 +133,10 @@
   <textarea class="texa1" placeholder-class="phcolor" placeholder='个人说明' bindinput='getExplain'></textarea>
   <!--footer -->
   
-  <!-- <view class='set-option-1'><button class='s-1-option' bindtap='saveEditInfo' wx:if="{{info.is_edit==1}}">保存</button></view> -->
-    <!-- <button class='s-1-option company-bg-' bindtap='saveEditInfo' wx:if="{{userList.is_edit==1}}">保存</button> -->
-    <view wx:if="{{getUData.is_edit==1}}">
-        <!-- <view class='line-heig'></view> -->
-        <button class='s-1-option' bindtap='saveEditInfo'>保存</button>
-    </view>
-    
-    <view wx:else="" class='edit-tips'>注意：信息审核中，不可编辑</view>
+  <view wx:if="{{getUData.is_edit==1}}">
+      <!-- <view class='line-heig'></view> -->
+      <button class='s-1-option' bindtap='saveEditInfo'>保存</button>
+  </view>
+  
+  <view wx:else="" class='edit-tips'>注意：信息审核中，不可编辑</view>
 </view>

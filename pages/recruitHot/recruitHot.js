@@ -9,7 +9,7 @@ Page({
     pBgC: '',                            //动态获背景颜色    
     row: 10,                            // 条数
     regtype: 1,                         // 1位公司，2为第三方  默认1 ，
-    regtypeMsg: '公司',                       // 1位公司，2为第三方  默认1 
+    regtypeMsg: '企业',                       // 1位公司，2为第三方  默认1 
     pageNum: 1,                         // 设置加载的第几次，默认是第一次  
     isNoData: false,               //"上拉加载"的变量，默认false，隐藏  
     noMoreData: false,       //“没有数据”的变量，默认false，隐藏  
@@ -22,9 +22,9 @@ Page({
     this.data.regtype = options.regtype
     var msg =''
     if (options.regtype==2){
-      msg = '第三方'
+      msg = '服务商'
     }else{
-      msg = '公司'
+      msg = '企业'
     }
     this.setData({
       pBgC: util.loginIdentity().pBgC,

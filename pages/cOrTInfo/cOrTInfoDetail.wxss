@@ -9,6 +9,8 @@
 .c-l-info {
   background:none;
   margin-bottom: 30rpx;
+  justify-content:flex-start;
+
 }
 .c-l-info .c-logo{
   width:164rpx;
@@ -29,7 +31,7 @@
   font-size:30rpx;
 }
 .c-info-text{
-  margin-left:0;
+  margin-left:24rpx;
   /* width: 70%; */
 }
 .cOrTInfo-,.cOrTInfo-option{

@@ -9,11 +9,11 @@ Page({
 	 */
 	data: {
 		id: '',
-    isCollect: 0,
+    	isCollect: 0,
 		recruitDetail: [], // 公司详情
 		isCollect: 0,
-    pColor: '',                          //动态获取字体颜色                
-    pBC: ''                             //动态获边框颜色   
+		pColor: '',                          //动态获取字体颜色                
+		pBC: ''                             //动态获边框颜色   
 	},
 
 	/**
@@ -23,9 +23,10 @@ Page({
 		// 接收id
 		this.setData({
 			id: options.id,
-      pColor: util.loginIdentity().pColor,
-      pBC: util.loginIdentity().pBC
+			pColor: util.loginIdentity().pColor,
+			pBC: util.loginIdentity().pBC
 		});
+		this.reqDetails()
 	},
 
 	/**
@@ -44,7 +45,7 @@ Page({
 				})
 			} else   if (res.data.status == -1) {
 				wx.redirectTo({
-				  url: '../../login/login'
+				  url: '../login/login'
 				})
 			} else {
 				ServerData._wxTost(res.data.msg)
@@ -88,47 +89,6 @@ Page({
 		})
 	},
 
-	/**
-	 * 生命周期函数--监听页面初次渲染完成
-	 */
-	onReady: function () {
-		
-	},
-
-	/**
-	 * 生命周期函数--监听页面显示
-	 */
-	onShow: function () {
-		this.reqDetails(); //请求数据
-	},
-
-	/**
-	 * 生命周期函数--监听页面隐藏
-	 */
-	onHide: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面卸载
-	 */
-	onUnload: function () {
-
-	},
-
-	/**
-	 * 页面相关事件处理函数--监听用户下拉动作
-	 */
-	onPullDownRefresh: function () {
-
-	},
-
-	/**
-	 * 页面上拉触底事件的处理函数
-	 */
-	onReachBottom: function () {
-
-	},
 
 	/**
 	 * 用户点击右上角分享

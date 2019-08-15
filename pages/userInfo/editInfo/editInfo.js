@@ -78,69 +78,55 @@ Page({
       /*********地址 */
   },
 
-  returnIndex(flag,arry,isN,ispro){
-    for(var i in arry){
-      if (isN){
-          if(ispro){
-            if(arry[i].code==flag){
-                return arry[i].area_name
-            }
-          }else{
-              if(arry[i].cat_id==flag){
-                return i
-            }
-          }
+  // returnIndex(flag,arry,isN,ispro){
+  //   for(var i in arry){
+  //     if (isN){
+  //         if(ispro){
+  //           if(arry[i].code==flag){
+  //               return arry[i].area_name
+  //           }
+  //         }else{
+  //             if(arry[i].cat_id==flag){
+  //               return i
+  //           }
+  //         }
           
-      }else{
-        if (arry[i] == flag) {
-          // console.log(arry[i])
-          return i
-        }
-      }
-    }
-  },
+  //     }else{
+  //       if (arry[i] == flag) {
+  //         // console.log(arry[i])
+  //         return i
+  //       }
+  //     }
+  //   }
+  // },
 
   onShow(){
     this.initUserInfo()
   },
 
   initUserInfo(){
-    var that =this
+    var that =this,
+        areaInfo=''
     ServerData.initUserInfo({}).then((res) =>{
         if (res.data.status == 1) {
           var info = res.data.data
           var isShow=false
-          var job_type = this.returnIndex(info.job_type,that.data.jobArray,true)
-          var salary = this.returnIndex(info.salary, that.data.payArray, false)
+          var job_type = ServerData.returnIndex(info.job_type,that.data.jobArray,true)
+          var salary = ServerData.returnIndex(info.salary, that.data.payArray, false)
           if('undefined'==typeof(salary)){
             salary=0
           }
-          var daogang_time = this.returnIndex(info.daogang_time, that.data.array, false)
+          var daogang_time = ServerData.returnIndex(info.daogang_time, that.data.array, false)
           if ('undefined' == typeof (daogang_time)){
             daogang_time=0
           }
-
-          var work_age = this.returnIndex(info.work_age, that.data.payArray, false)
+          var work_age = ServerData.returnIndex(info.work_age, that.data.payArray, false)
           if ('undefined' == typeof (work_age)){
             work_age=0
           }
-          var sheng =this.returnIndex(info.province, that.data.provinces, true,true)
-          console.log(sheng)
-          if ('undefined' == typeof (sheng)){
-            sheng=''
+          if(!(info.province_str=="" && info.city_str=="" &&  info.district_str=="")){
+              areaInfo =info.province_str+  ',' + info.city_str+  ',' +info.district_str
           }
-          else{
-            isShow=true
-          }
-          var shi =this.returnIndex(info.city, that.data.citys, true,true)
-          if ('undefined' == typeof (shi)){
-            shi=''
-          }
-          var qu =this.returnIndex(info.district, that.data.areas, true,true)
-          if ('undefined' == typeof (qu)){
-            qu=''
-          }
-          let areaInfo =sheng + ',' + shi + ',' + qu
           var item = that.data.items
           var t =''
           for (var i in item){
@@ -149,7 +135,6 @@ Page({
                 t =i
             }
           }
-          // console.log(that.data.provinces)
           item[t].checked =true
           this.setData({ 
               getUData: info,
@@ -165,11 +150,11 @@ Page({
               paysIndex: salary,
               index: daogang_time,
               xLInfo:info.school_type,
-              areaInfo:areaInfo,
-              pCode: info.province,                 //获取选中的省ID
-              cCode: info.city,                    //获取选中的市ID
-              aCode: info.district,
-              // showTST:isShow   
+              showTST:isShow,
+              areaInfo: areaInfo,
+              pCode: info.province,                   
+              cCode: info.city,                  
+              aCode: info.district,                  
           })
         } else if (res.data.status == -1) {
           wx.redirectTo({
@@ -393,6 +378,7 @@ Page({
   // 处理省市县联动逻辑
   cityChange: function (e) {
     var value = e.detail.value
+    // console.log(value)
     var provinces = this.data.provinces
     var citys = this.data.citys
     var areas = this.data.areas

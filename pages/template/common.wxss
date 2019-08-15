@@ -483,7 +483,7 @@ textarea{
   font-size:28rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
-  color:rgba(153,153,153,1);
+  /* color:rgba(153,153,153,1); */
   line-height:60rpx;
 }
 /* 三级联动 */

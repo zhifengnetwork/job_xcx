@@ -3,7 +3,7 @@
     <!-- TITLE START -->
     <view class='content-list'>
       <view class='c-l-info'>
-          <navigator url='../../headPortrait/headPortrait' redirect><image src='{{info.avatar}}'class="c-logo" /></navigator>
+          <navigator url='../../headPortrait/headPortrait'><image src='{{info.avatar}}'class="c-logo" /></navigator>
           <view class='c-info-text'>
             <text class='c-info-title'>{{info.name}}</text>
             <view class='c-msg m-b10'>用户ID:{{info.user_id}}</view>
@@ -13,7 +13,7 @@
       <!-- USER OPTION START -->
       <view class='user-option'>
           <navigator url="../editInfo/editInfo" class='u-o-list'>
-            <text>编辑个人信息</text>
+            <text>编辑信息</text>
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
           <navigator url="../myCertificate/myCertificate" class='u-o-list'>

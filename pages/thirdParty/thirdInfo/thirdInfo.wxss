@@ -22,7 +22,7 @@
 }
 .c-l-info .c-logo{
   width:164rpx;
-  height:164rpx;
+  height:140rpx;  
   border-radius: 4rpx;
 }
 .company-status {

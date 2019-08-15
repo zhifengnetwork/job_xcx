@@ -3,7 +3,7 @@
     <!-- TITLE START -->
     <view class='content-list'>
       <view class='c-l-info'>
-          <navigator url='../../headPortrait/headPortrait' redirect><image src='{{userData.logo}}'class="c-logo" /></navigator>
+          <navigator url='../../headPortrait/headPortrait'><image src='{{userData.logo}}'class="c-logo" /></navigator>
           <view class='c-info-text'>
             <text class='c-info-title'>{{userData.company_name}}</text>
             <view class='c-msg m-b10'>
@@ -22,7 +22,7 @@
       <button class='edit-info third-bg-' bindtap='toEdit'>编辑发布内容</button>
       <!-- USER OPTION START -->
       <view class='user-option'>
-          <navigator url="../editInfo/editInfo" class='u-o-list m-b10'>
+          <navigator url="../../editCampanyInfo/editInfo" class='u-o-list m-b10'>
             <text>编辑信息</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>

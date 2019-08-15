@@ -14,7 +14,7 @@
           </view>
         </picker>
         <view class="newsite_button m-left-auto" bindtap="selectDistrict">
-          <view class="newsite_view">选择地点</view>
+          <view class="newsite_view" wx:if="{{showTST}}">选择地点</view>
           <view class="newsite_city">{{areaInfo}}</view>
         </view>
 
@@ -35,10 +35,8 @@
               
           </view>
           <view class='c-info-msg overH'>
-            <!-- <text class='c-msg fl'>广州市白云区</text> -->
             <text class='c-msg2 fl'>{{item.work_age}}年</text>
           </view>
-          <!-- <view class='c-msg3'>会计证书</view> -->
           <view class='s-portrait'>
             <image src='{{item.avatar}}' class='portrait-icon'/>
             <text>{{item.name}}</text>

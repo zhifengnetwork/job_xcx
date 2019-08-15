@@ -13,33 +13,13 @@
     <view class="newsite_box">
       <!-- 所在地区点击按钮 -->
       <view class="newsite_button" bindtap="selectDistrict">
-        <view class="newsite_view">选择地点</view>
+        <view class="newsite_view" wx:if="{{showTST}}">选择地点</view>
         <view class="newsite_city">{{areaInfo}}</view>
       </view>
       <!-- 所有城市三级联动列表 -->
-      <view class="zhezhao" style="display:{{addressMenuIsShow ? 'block':'none'}}"></view>
-      <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
-        <view style="height:10% ;width:95%;margin-top:10rpx">
-          <text catchtap="cityCancel">取消</text>
-          <text style="float: right" catchtap="citySure">确定</text>
-        </view>
-        <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key>
-          <picker-view-column>
-            <view wx:for="{{provinces}}" class="picker-item" wx:key>
-              {{item.area_name}}</view>
-          </picker-view-column>
-          <picker-view-column>
-            <view wx:for="{{citys}}" class="picker-item" wx:key>
-              {{item.area_name}}</view>
-          </picker-view-column>
-          <picker-view-column>
-            <view wx:for="{{areas}}" class="picker-item" wx:key>
-              {{item.area_name}}</view>
-          </picker-view-column>
-        </picker-view>
-      </view>
+      <include src="../../template/address"/> 
+      <!-- 地址选择接受 -->
     </view>
-    <!-- 地址选择接受 -->
   </view> 
   <!-- 地址选择结束 -->
 </view>

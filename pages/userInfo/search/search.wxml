@@ -10,8 +10,8 @@
       <text class='login_tab' bindtap='searchInfp'>搜索</text>
     </view>
     <view class='subtitle overH'>
-        <text bindtap='changStatus' class="{{cStatus==0?'stss-active':''}}" data-status="0">公司</text>
-        <text bindtap='changStatus' class="{{cStatus==1?'stss-active':''}}" data-status="1">第三方</text>
+        <text bindtap='changStatus' class="{{cStatus==0?'stss-active':''}}" data-status="0">企业</text>
+        <text bindtap='changStatus' class="{{cStatus==1?'stss-active':''}}" data-status="1">服务商</text>
     </view>
   </view>
 
@@ -21,7 +21,7 @@
             <view>暂无数据</view>
       </view>
       <view wx:if="{{cStatus==0}}">
-          <navigator url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}">
+          <navigator url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}">
               <image src='{{item.logo}}'class="c-logo" />
               <view class='c-info-text'>
                 <text class='c-info-title'>{{item.title}}</text>
@@ -32,7 +32,7 @@
               </view>
               <!-- company info start -->
               <view class='company-info'>
-                  <text>公司</text>
+                  <text>企业</text>
                   <view class='company-status'>
                       <view class='company-status'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
                   </view>
@@ -41,7 +41,7 @@
       </view>
 
       <view wx:if="{{cStatus==1}}">
-          <navigator url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.person}}">
+          <navigator url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.person}}">
               <image src='{{item.logo}}'class="c-logo" />
               <view class='c-info-text'>
                 <text class='c-info-title'>{{item.title}}</text>
@@ -52,7 +52,7 @@
               </view>
               <!-- company info start -->
               <view class='company-info'>
-                  <text>第三方</text>
+                  <text>服务商</text>
                   <view class='company-status'>
                       <view class='company-status'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
                   </view>

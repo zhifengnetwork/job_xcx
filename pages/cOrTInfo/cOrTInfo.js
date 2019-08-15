@@ -27,7 +27,7 @@ Page({
     }
     ServerData.lookCompany(_opt).then((res) => {
       if (res.data.status == 1) {
-        console.log(res.data.data)
+        // console.log(res.data.data)
         this.setData({
           cList: res.data.data,
         })

@@ -18,7 +18,7 @@ for (let i = 1; i <= 31; i++) {
 
 Page({
   data: {
-    companyName: '', //公司名称
+    companyName: '', //名称
     companyType: '', //公司类型
     years: years, //年份数组
     year: date.getFullYear(),
@@ -49,7 +49,6 @@ Page({
         }
       } else {
         if (arry[i] == flag) {
-          console.log(arry[i])
           return i
         }
       }
@@ -209,19 +208,19 @@ Page({
   verifyData: function () {
     console.log(this.data.companyScale)
     if (this.data.companyName == "") {
-      ServerData._wxTost('公司名称不能为空');
+      ServerData._wxTost('名称不能为空');
       return false
     }
     else if (this.data.companyType == "") {
-      ServerData._wxTost('公司类型不能为空');
+      ServerData._wxTost('类型不能为空');
       return false
     }
     else if (this.data.companyScale === "") {
-      ServerData._wxTost('请填写公司规模');
+      ServerData._wxTost('请填写规模');
       return false
     }
     else if (this.data.achiInfo == "") {
-      ServerData._wxTost('请填写公司成就');
+      ServerData._wxTost('请填写成就');
       return false
     }
     else if (this.data.personInfo == "") {
@@ -229,7 +228,7 @@ Page({
       return false
     }
     else if (this.data.companyIntroduce == "") {
-      ServerData._wxTost('公司介绍不能空');
+      ServerData._wxTost('介绍不能空');
       return false
     }
     else {

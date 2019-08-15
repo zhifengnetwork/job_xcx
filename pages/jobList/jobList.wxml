@@ -10,7 +10,7 @@
             <icon wx:if="{{item.selected}}" type="success" color="#be4cff" bindtap="changItemStatus" data-index="{{index}}" class="dagou" size="22"/>
             <icon wx:else type="circle" bindtap="changItemStatus" data-index="{{index}}" color="#be4cff" class="dagou" size="22" data-goodid="{{item.id}}"/>
         </view>
-        <navigator url="../postJobPostings/postJobPostings" class='c-info-text'>
+        <navigator url="editJobList?id={{item.id}}" class='c-info-text'>
           <text class='c-info-title'>{{item.title}}</text>
           <view class='c-info-msg'>
             <text class='c-msg'>月薪{{item.salary}}</text>
@@ -18,13 +18,12 @@
           </view>
         </navigator>
         <!-- company info start -->
-        <view class='company-info {{pColor}}'>
+        <navigator url="editJobList?id={{item.id}}" class='company-info {{pColor}}'>
             <text class='' wx:if="{{item.status === 0}}">审核中</text>
             <text class='' wx:if="{{item.status === 1}}">审核通过</text>
             <text class='' wx:if="{{item.status === 2}}">审核失败</text>   
-            <!-- <navigator url="../postJobPostings/postJobPostings" class='company-info company-color-'>
-                <icon class='iconfont icon-bianji'></icon> </navigator>-->
-        </view> 
+            <icon class='iconfont icon-bianji'></icon>
+        </navigator> 
     </view>
     <view wx:if="{{dStatus==1}}">
         <view class='line-heig'></view>

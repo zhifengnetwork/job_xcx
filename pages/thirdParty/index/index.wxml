@@ -14,8 +14,16 @@
               {{jobArray[jobIndex].cat_name}} 
             </view>
           </picker>
+          <view class="newsite_button" bindtap="selectDistrict">
+            <view class="newsite_view subtitle-msg" wx:if="{{showTST}}" wx:key>选择地点</view>
+            <view class="newsite_city">{{areaInfo}}</view>
+          </view>
         <!-- -->
     </view>
+      <!-- 所有城市三级联动列表 -->
+      <include src="../../template/address"/> 
+      <!-- 地址选择接受 -->
+
   </view>
   <view class='inner'>
       <view class='c-body'>
@@ -47,7 +55,7 @@
                     </view>
                     <!-- company info start -->
                     <view class='company-info'>
-                        <text>公司</text>
+                        <text>企业</text>
                         <view class='company-status third-bg-'>
                             <text wx:if="{{item.require_cert==1}}">需要证书</text>
                             <text wx:else>无需证书</text>

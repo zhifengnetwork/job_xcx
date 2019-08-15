@@ -1,8 +1,8 @@
 <!--pages/company/uCollect.wxml-->
 <view class='inner'>
     <view class="tab">
-      <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">个人</view>
-      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">公司</view>
+      <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">人才</view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">企业</view>
     </view>
 
   <view class='c-l-info' class = "{{currentTab == 3 ? 'show':'hidden'}}">
@@ -24,7 +24,7 @@
 
   <view class='c-l-info' class = "{{currentTab == 1 ? 'show':'hidden'}}">
       <view class='search-job-list'>
-        <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{UcData}}" wx:key="key">
+        <navigator url="../../postionDetail/postionDetail?id={{item.id}}" wx:for="{{UcData}}" wx:key="key">
           <view class='c-l-info'>
             <image src='{{item.logo}}'class="c-logo" />
             <view class='c-info-text'>
@@ -36,7 +36,7 @@
             </view>
             <!-- company info start -->
             <view class='company-info'>
-                <text wx:if="{{item.regtype == 2}}">公司</text>
+                <text wx:if="{{item.regtype == 2}}">企业</text>
                 <view class='company-status third-bg-' wx:if="{{item.require_cert == 0}}">无需证书</view>
                 <view class='company-status third-bg-' wx:if="{{item.require_cert == 1}}">需要证书</view>
             </view>

@@ -51,13 +51,11 @@
 <view class='inner'>
     <view class='container'>
         <view class='content-list'>
-          <navigator url="postionDetail">
-              <view class='c-title'>
-                <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
-                <text>热门推荐</text>
-              </view>
-          </navigator>
-          <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_hot}}" wx:key>
+          <view class='c-title'>
+            <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
+            <text>热门推荐</text>
+          </view>
+          <navigator url="../../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_hot}}" wx:key>
             <view class='c-l-info'>
               <image src='{{item.logo}}'class="c-logo" />
               <view class='c-info-text'>
@@ -69,7 +67,7 @@
               </view>
               <!-- company info start -->
               <view class='company-info'>
-                  <text>第三方</text>
+                  <text>服务商</text>
                   <view class='company-status'>
                       <text wx:if="{{item.require_cert==0}}">无需证书</text>
                       <text wx:if="{{item.require_cert==1}}">需要证书</text>
@@ -84,7 +82,7 @@
               <image src='../../../static/images/public/money.png' class='c-flame'/>
               <text>待遇更好</text>
             </view>
-            <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_better}}" wx:key>
+            <navigator url="../../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_better}}" wx:key>
               <view class='c-l-info'>
                   <image src='{{item.logo}}'class="c-logo" />
                   <view class='c-info-text'>
@@ -96,7 +94,7 @@
                   </view>
                   <!-- company info start -->
                   <view class='company-info'>
-                      <text>第三方</text>
+                      <text>服务商</text>
                       <view class='company-status'>
                           <text wx:if="{{item.require_cert==0}}">无需证书</text>
                           <text wx:if="{{item.require_cert==1}}">需要证书</text>

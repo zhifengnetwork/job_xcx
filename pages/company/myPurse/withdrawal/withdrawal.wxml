@@ -40,7 +40,7 @@
 			</view>
 			<view>
 				<text class='w-tip'>温馨提示</text>
-				<view class='w-tip-msg m-t20'>1.提现手续费5%</view>
+				<view class='w-tip-msg m-t20'>1.提现手续费税率为：{{info.percent/100}}</view>
 				<view class='w-tip-msg'>2.提现到账时间为1-3个工作日</view>
 			</view>
 			</view>

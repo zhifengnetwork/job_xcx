@@ -16,13 +16,11 @@ Page({
   },
 
   setInpuVal(e){
-     console.log(e)
     this.setData({
       alipay_name: e.detail.value
     })
   },
   setInpuVal2(e) {
-    console.log
     this.setData({
       alipay: e.detail.value
     })
@@ -43,7 +41,6 @@ Page({
   getMoney(e){
     var t = e.detail.value
     var sxf = new Number(this.data.info.percent/100) * new Number(e.detail.value).toFixed(2)
-    console.log(this.data.info.percent)
     this.setData({ txmoney: e.detail.value, sxf: sxf })
   },
   getWithdrawal(){

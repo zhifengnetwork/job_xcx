@@ -28,14 +28,14 @@ function getStorageItem(key,app) {
   } else if (postion == 2) {
     return app.editTabBar2()
   } else {
-    console.log(11)
+    // console.log(11)
     return app.editTabBar()
   }
 }
 
 function loginIdentity(){
   var postion = wx.getStorageSync('savePostion');
-  console.log(postion)
+  // console.log(postion)
   if (postion == 0 || postion == 3 || 'undefined'==typeof(postion) || postion == '' ) {
     var info = {
       pColor: 'user-color-',

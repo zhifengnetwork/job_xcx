@@ -48,7 +48,6 @@ Page({
 				this.setData({
 					jobArray: res.data.data
 				})
-				// console.log(this.data.jobArray)
 			} else if (res.data.status == -1) {
 				wx.redirectTo({
 					url: '../../login/login'

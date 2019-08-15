@@ -1,0 +1,81 @@
+/* pages/company/postJobPostings.wxss */
+@import "../template/common";
+.post-list{
+  display: flex;
+  align-items: center;
+  line-height:40rpx;
+  padding:16rpx 0;
+  color:#151515;
+}
+.-list-msg,.-list-msg1{
+  font-size: 28rpx;
+}
+.-list-msg{
+  margin-right:25rpx;
+  width:122rpx;
+}
+.separator{
+  font-size: 24rpx;
+}
+.-list-inp{
+  width: 70%;
+  font-size: 26rpx;
+  border: 1rpx solid #ccc;
+  padding-left: 10rpx;
+}
+.-list-icon{
+  width: 12rpx;
+  height: 24rpx;
+  margin-left:auto;
+}
+.selcet-time{
+  display: flex;
+  align-items: center;
+}
+.e-info-picker{
+  width:160rpx;
+  font-size: 26rpx;
+  text-align:center;
+
+}
+.minimum-salary,.maximum-salary{
+  width: 110rpx;
+}
+.down-arrow{
+  width:12rpx;
+  height:20rpx;
+  transform:rotate(90deg);
+  vertical-align:middle;
+  margin-left:10rpx;
+  padding-bottom:2rpx;
+
+}
+.e-info-radio{
+  font-size: 26rpx;
+  width: 80%;
+  
+}
+.radio-group{
+  display: flex;
+  align-items: center;
+}
+.radio-group .radio{
+  width: 45%;
+}
+radio{
+  line-height: 40rpx;
+  height: 40rpx;
+  vertical-align:top;
+  margin-top: 12rpx;
+
+}
+.texa{
+  width: 702rpx;
+  height: 480rpx;
+  font-size: 24rpx;
+	border-radius: 10rpx;
+	border: solid 2rpx #eeeeee;
+  margin-top: 18rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}

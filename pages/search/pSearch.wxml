@@ -18,7 +18,7 @@
 
       <view>
         <block wx:for="{{list.person}}" wx:key="index">
-            <navigator url='../{{resType}}/personalDetail/personalDetail?id={{item.id}}'>
+            <navigator url='../personalDetail/personalDetail?id={{item.id}}'>
                 <view class='c-l-info'>
                   <view class='search-job-list'>
                     <view class='c-info-title'>{{item.job_type}}</view>
