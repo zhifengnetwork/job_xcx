@@ -50,7 +50,7 @@
         <view class='content-list'>
           <view class='c-title'>
             <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
-            <text>热门推荐</text>
+            <text>最新推荐</text>
           </view>
           <navigator url="../../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_hot}}" wx:key>
             <view class='c-l-info'>
@@ -74,7 +74,7 @@
           </navigator>
           <navigator url="../../recruitHot/recruitHot?regtype=1" class='more-recommond'>更多推荐</navigator>
         </view>
-        <view class='content-list'>
+        <!-- <view class='content-list'>
             <view class='c-title'>
               <image src='../../../static/images/public/money.png' class='c-flame'/>
               <text>待遇更好</text>
@@ -89,7 +89,6 @@
                       <text class='c-msg2'>{{item.word_age}}</text>
                     </view>
                   </view>
-                  <!-- company info start -->
                   <view class='company-info'>
                       <text>企业</text>
                       <view class='company-status'>
@@ -100,7 +99,7 @@
               </view>
             </navigator>
             <navigator url="../../recruitBetter/recruitBetter?regtype=1" class='more-recommond'>更多待遇</navigator>
-        </view>
+        </view> -->
     </view>
 </view>
 

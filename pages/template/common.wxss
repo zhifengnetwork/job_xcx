@@ -85,8 +85,8 @@
 .search-cont{
   padding: 10rpx 0 0;
   flex: 0 0 1;
-  width:581rpx;
-  margin: 0 60rpx 0 24rpx; 
+  width:702rpx;
+  margin: 0 24rpx; 
   box-sizing: border-box;
   position: relative;
 }
@@ -145,21 +145,26 @@
 /* subtitle start */
 .subtitle{
   color:#151515;
-  width: 581rpx;
-  margin:0 60rpx 0 24rpx;
+  /* width:100%; */
+  margin: 24rpx 0;
+  background:#fff;
   line-height: 55rpx;
   display: flex;
   align-items: center;
+  padding:0 6rpx;
   justify-content: space-between;
 }
-
+.subtitle .icon-zhcc_xiangxiajiantou{
+  font-size:25rpx;
+  color:#151515;
+}
 .subtitle text,.subtitle-msg{
   text-align:center;
   font-size:28rpx;
   font-weight:700;
 }
 .c-body{
-  padding-top:170rpx;
+  padding-top:100rpx;
 }
  /* LIST STYLE START */
  .c-title{

@@ -51,25 +51,25 @@ page{
 
 
 
-.log_ear {
+/* .log_ear {
   display: flex;
   justify-content: center;
   padding-top: 40px;
-}
+} */
 
-.xiaolian {
+/* .xiaolian {
   width: 200rpx;
   height: 200rpx;
-}
+} */
 
-.welecom_title {
+/* .welecom_title {
   font-size: 37rpx;
   font-weight: bolder;
   display: inline-block;
   width: 100%;
   padding-top: 20px;
   text-align: center;
-}
+} */
 
 .login_ear {
   position: relative;

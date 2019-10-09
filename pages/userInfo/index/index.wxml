@@ -7,7 +7,7 @@
         <view class='search search-nosearch'>输入所要查找的内容</view>
         <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
       </navigator>
-      <navigator url='../userCenter/userCenter' redirect><text class='login_tab'>我的</text></navigator>
+      <!-- <navigator url='../userCenter/userCenter' redirect><text class='login_tab'>我的</text></navigator> -->
     </view>
 
     <!-- 地址选择 -->
@@ -39,32 +39,7 @@
             </swiper>
         </view>
         <view class='container'>
-            <view class='content-list'>
-                <view class='c-title'>
-                    <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
-                    <text>当前热招</text>
-                </view>
-                <navigator wx:for="{{list.person}}" url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:key>
-                    <image src='{{item.logo}}'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>{{item.title}}</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪{{item.salary}}</text>
-                        <text class='c-msg2'>{{item.work_age}}年</text>
-                      </view>
-                    </view>
-                    <!-- company info start -->
-                    <view class='company-info'>
-                        <text wx:if="{{item.regtype==1}}">企业</text>
-                        <text wx:else>服务商</text>
-                        <view class='company-status'>
-                            <text wx:if="{{item.require_cert==1}}">需要证书</text>
-                            <text wx:else>无需证书</text>
-                        </view>
-                    </view>
-                </navigator>
-            </view>
-            <!-- Latest job search start -->
+            <!-- 服务商 -->
             <view class='content-list'>
                 <view class='c-title'>
                     <image src='../../../static/images/public/info.png' class='c-flame'/>
@@ -90,6 +65,33 @@
                     </view>
                 </navigator>
             </view>
+            <!-- 企业 -->
+            <view class='content-list'>
+                <view class='c-title'>
+                    <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
+                    <text>当前热招</text>
+                </view>
+                <navigator wx:for="{{list.person}}" url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:key>
+                    <image src='{{item.logo}}'class="c-logo" />
+                    <view class='c-info-text'>
+                      <text class='c-info-title'>{{item.title}}</text>
+                      <view class='c-info-msg'>
+                        <text class='c-msg'>月薪{{item.salary}}</text>
+                        <text class='c-msg2'>{{item.work_age}}年</text>
+                      </view>
+                    </view>
+                    <!-- company info start -->
+                    <view class='company-info'>
+                        <text wx:if="{{item.regtype==1}}">企业</text>
+                        <text wx:else>服务商</text>
+                        <view class='company-status'>
+                            <text wx:if="{{item.require_cert==1}}">需要证书</text>
+                            <text wx:else>无需证书</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <!-- end-->
         </view>
       </view>
   </view>

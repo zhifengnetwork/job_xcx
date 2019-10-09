@@ -24,13 +24,17 @@
         <text class='e-info-msg'>民族：</text>
         <input type='text' class='e-info-inp' bindinput='getMZ' placeholder-class="phcolor" value="{{mz}}" placeholder='输入民族'/>
       </view>    
-      <view class='e-info-'>
-        <text class='e-info-msg'>学历：</text>
-        <view class="page__bd">
-          <view class="free-btns e-info-inp " style="background:none;">
-            <input class="free-btn name_input" bindtap="toggleDialog" value='{{xLInfo}}' placeholder='学校类型' disabled="true">
-            </input>
+    </view>
+  </view>
+  <!-- -->
+  <view class='user-option'>
+      <view class='u-o-list'>
+          <text>学历</text>
+          <view class="picker free-btns" style="background:none;" bindtap="toggleDialog" >
+              {{xLInfo}}
+              <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
           </view>
+          <!-- 学历选择框 -->
           <view class="free-dialog {{ showDialog ? 'free-dialog--show' : '' }}">
             <view class="free-dialog__mask" bindtap="toggleDialog" />
             <view class="free-dialog__container">
@@ -46,22 +50,21 @@
               </view>
             </view>
           </view>
-        </view>
-      </view> 
-      <view class='e-info-'>
-        <text class='e-info-msg'>工作年限：</text>
-        <picker class='e-info-inp' value="{{wordIndex}}" range="{{payArray}}" bindchange="wordChange">
-          <view>{{payArray[wordIndex]}} 年</view>
+          <!-- 学历选择框 -->
+      </view>
+
+      <view class='u-o-list'>
+        <text>工作年限</text>
+        <picker class="-list-pays" value="{{wordIndex}}" range="{{payArray}}" bindchange="wordChange">
+            <view class="picker">
+                {{payArray[wordIndex]}} 年
+                <image class='u-o-icon2' src='../../../static/images/public/right_arrow_gray.png'/>
+            </view>
         </picker>
-      </view>   
-    </view>
-    <!-- <image class='edit-img-' src='../../../static/images/public/big_portrait.png'/> -->
-  </view>
-  <!-- -->
-  <view class='user-option'>
+      </view>
+
       <view class='u-o-list'>
         <text>现居地址</text>
-
         <view  class="picker" value="{{cat_id}}" bindtap="selectDistrict">
           <text wx:if="{{showTST}}">省，市，区</text>
           <text>{{areaInfo}}</text>
@@ -74,7 +77,6 @@
 
       <view class='u-o-list'>
         <text>求职类型</text>
-        <!-- <image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/> -->
         <view class='-list-pays' value="{{cat_id}}">
           <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name" range-value="cat_id">
             <view class="picker">
@@ -130,7 +132,7 @@
       </view>
   </view>
   <!-- -->
-  <textarea class="texa1" placeholder-class="phcolor" placeholder='个人说明' bindinput='getExplain'></textarea>
+  <textarea class="texa1" placeholder-class="phcolor" placeholder='个人说明' bindinput='getExplain' value="{{explain}}"></textarea>
   <!--footer -->
   
   <view wx:if="{{getUData.is_edit==1}}">

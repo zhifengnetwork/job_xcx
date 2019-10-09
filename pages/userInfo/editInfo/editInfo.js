@@ -1,7 +1,7 @@
 // pages/userInfo/editInfo.js
 import ServerData from '../../../utils/serverData.js';
 const payArray =[];
-for(let i =0; i <= 20; i++){
+for(let i =1; i <= 20; i++){
   // i=i+1000-1;
   payArray.push(i);
 }
@@ -25,7 +25,7 @@ Page({
     jobArray: [],
     // job_type:'',
     showDialog: false,                                      //学历弹框
-    xLInfo:'',
+    xLInfo:'请选择学历',
     xLItem: [                                                // 学校类型
       { name: '硕士', value: '硕士' },
       { name: '博士', value: '博士' },
@@ -78,28 +78,6 @@ Page({
       /*********地址 */
   },
 
-  // returnIndex(flag,arry,isN,ispro){
-  //   for(var i in arry){
-  //     if (isN){
-  //         if(ispro){
-  //           if(arry[i].code==flag){
-  //               return arry[i].area_name
-  //           }
-  //         }else{
-  //             if(arry[i].cat_id==flag){
-  //               return i
-  //           }
-  //         }
-          
-  //     }else{
-  //       if (arry[i] == flag) {
-  //         // console.log(arry[i])
-  //         return i
-  //       }
-  //     }
-  //   }
-  // },
-
   onShow(){
     this.initUserInfo()
   },
@@ -110,7 +88,7 @@ Page({
     ServerData.initUserInfo({}).then((res) =>{
         if (res.data.status == 1) {
           var info = res.data.data
-          var isShow=false
+          var isShow=true
           var job_type = ServerData.returnIndex(info.job_type,that.data.jobArray,true)
           var salary = ServerData.returnIndex(info.salary, that.data.payArray, false)
           if('undefined'==typeof(salary)){
@@ -126,6 +104,7 @@ Page({
           }
           if(!(info.province_str=="" && info.city_str=="" &&  info.district_str=="")){
               areaInfo =info.province_str+  ',' + info.city_str+  ',' +info.district_str
+              isShow=false
           }
           var item = that.data.items
           var t =''
@@ -204,7 +183,7 @@ Page({
       'salary': that.data.payArray[that.data.paysIndex],
       'experience': that.data.workInfo,
       'education': that.data.aducationalInfo,
-      'desc': that.data.explain,
+      'person_desc': that.data.explain,
       'province': that.data.pCode,
       'city': that.data.cCode,
       'district': that.data.aCode,

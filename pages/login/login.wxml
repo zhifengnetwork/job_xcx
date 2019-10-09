@@ -16,7 +16,7 @@
 </view> -->
 
 
-<view class='inner'>
+<view>
 	<view>
 		<view class="log_ear">
 			<image src="../../images/login/zcyc_logo.jpg" class="xiaolian"></image>

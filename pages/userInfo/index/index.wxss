@@ -1,4 +1,6 @@
 /**index.wxss**/
+@import "../../template/common";
+
 #wrap{
   width:100%;
   height:100%;
@@ -14,7 +16,7 @@
   border-radius:10rpx;
   overflow:hidden;
 }
-swiper {
+.swiper {
   height: 360rpx;
 }
 .login_tab{
@@ -27,7 +29,11 @@ swiper {
 .header .navigator-hover{
   height: 70rpx;
 }
+.search-cont{
+  width:100%;
+  margin:0 24rpx;
 
+}
 
 /* banner start */
 .banner .slide-image{
@@ -35,5 +41,3 @@ swiper {
   height: 100%;
 }
 
-/* content start */
-@import "../../template/common"
