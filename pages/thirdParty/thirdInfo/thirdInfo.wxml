@@ -31,7 +31,7 @@
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
           <navigator url="../../jobList/jobList" class='u-o-list m-b10'>
-            <text>招工信息</text>
+            <text>招聘信息</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
           <navigator url="../myReserve/myReserve" class='u-o-list m-b10'>
@@ -56,6 +56,10 @@
             <text>帮助与反馈</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
+          <view class='u-o-list m-b10' bindtap="switchUser">
+            <text>切换账号</text>
+            <icon class='iconfont icon-youjiantou2 third-color-'></icon>
+          </view>
       </view>
     </view>
   </view>

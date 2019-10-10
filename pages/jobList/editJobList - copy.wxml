@@ -1,0 +1,70 @@
+<!--pages/company/postJobPostings.wxml-->
+<view class='inner'>
+
+   <view class='post-list'>
+      <text class='-list-msg'>标题:</text>
+      <input value="" class='-list-inp' placeholder-class="phcolor" placeholder='请输入标题' value="{{title}}" bindinput="getTitle"/>
+   </view>
+
+   <view class='post-list'>
+	  <text class='-list-msg'>工种:</text>
+         <view class='e-info-picker'>
+			<picker value="{{cat_id}}" range="{{jobArray}}" range-key="cat_name" range-value="cat_id" bindchange="jobChange">
+              <view class="picker" style="text-align:left">
+                {{jobArray[jobIndex].cat_name}} 
+                <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+   </view>
+   
+   <!-- WORKING YEAR START -->
+   <view class='post-list'>
+	   	<text class='-list-msg'>工龄：</text>
+		  <input type='number' class='-list-inp' bindinput='getWorkAge' placeholder-class="phcolor" value="{{workAge}}" placeholder='输入工龄'/>
+   </view>
+
+   <!-- PAY START -->
+   <view class='post-list'>
+      <text class='-list-msg'>薪资:</text>
+      <view class='selcet-time'>
+
+        <view class='e-info-picker minimum-salary'>
+            <picker bindchange="salaryChange" value="{{salaryIndex}}" range="{{salaryArray}}">
+              <view class="picker">
+                {{salaryArray[salaryIndex]}} <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+		<!-- — -->
+		<view class="separator" wx:if="{{selectShow}}" >至</view>
+        <view class='e-info-picker maximum-salary' wx:if="{{selectShow}}">
+            <picker bindchange="salaryChange2" value="{{salaryIndex2}}" range="{{salaryArray}}">
+              <view class="picker" >
+                {{salaryArray[salaryIndex2]}} <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+      </view>
+
+   </view>
+   <!-- -->
+   <view class='post-list'>
+      <text class='-list-msg'>证书要求:</text>
+      <view class='e-info-radio'>
+        <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{certificate}}" wx:key="index">
+              <radio style="zoom:.6" color="{{styleBg}}" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </radio-group>
+      </view>
+   </view>
+
+  <text class='-list-msg'>职位详情:</text>
+  
+  <textarea placeholder='职位描述' class="texa" value="{{details}}" bindinput="getDetails"></textarea>
+
+  <view class='line-heig'></view>
+
+  <view class='set-option {{pBgC}}' bindtap='saveEditRecruit'>保存</view>
+</view>

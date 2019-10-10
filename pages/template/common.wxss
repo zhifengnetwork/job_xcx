@@ -83,7 +83,9 @@
 }
 
 .search-cont{
-  width:702rpx;
+  /* width:702rpx; */
+  flex: 1;
+  overflow: hidden;
   margin: 0 24rpx; 
   position: relative;
 }
@@ -257,6 +259,31 @@
   background:#fff;
   padding:25rpx 25rpx;
 
+}
+.global-search-cont{
+    align-items:center;
+    display:flex;
+    justify-content:space-between;
+}
+.global-search-cont .c-msg2{
+  margin-right:20rpx;
+}
+.global-info-text{
+  flex: 1;
+  margin-left: 10rpx;
+}
+.global-status-sty{
+  display: flex;
+}
+.global-info-text .company-status{
+  display: inline-block;
+  margin-left: 10rpx;
+  width: auto;
+  padding:0 10rpx !important;
+}
+
+.c-salary{
+  font-size :28rpx;
 }
 .global-search-cont{
     align-items:center;

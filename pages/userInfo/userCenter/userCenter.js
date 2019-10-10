@@ -35,5 +35,26 @@ Page({
       }
     });
   },
-
+  //切换账号
+  switchUser() {
+    wx.showModal({
+      // title: '提示',
+      content: '是否切换账号?',
+      confirmText: '是',
+      confirmColor: '#be4cff',
+      cancelText: '否',
+      cancelColor: '#666',
+      success(res) {
+        if (res.confirm) {
+          wx.removeStorageSync('token')
+          wx.removeStorageSync('savePostion')
+          wx.reLaunch({
+            url: '../../login/login'
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
 })

@@ -1,113 +1,37 @@
 /* pages/userInfo/editInfo.wxss */
 @import "../template/common";
-.inner{
-  padding: 17rpx 24rpx;
-  font-size: 28rpx;
-  color:#151515;
+.container {
+  padding: 0 20rpx;
 }
-.edit-info{
+.item{
+  height: 100rpx;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  border-bottom: 2rpx solid #999;
 }
-.edit-cont{
-   flex: 1;
-}
-.e-info-{
-  width:495rpx;
-  margin-bottom: 20rpx;
-  display: flex;
-  align-items: center;
-}
-.e-info-msg{
-  margin-right:6rpx;
-}
-.e-info-pick{
-  width: 345rpx;
-}
-.e-info-inp{
-  font-size: 26rpx;
-  width: 300rpx;
-  display: inline-block;
-  vertical-align: middle;
-  height:50rpx;
-
-}
-.e-info-radio{
-  display: inline-block;
-}
-.e-info-radio .radio{
-  font-size: 28rpx;
+.item .left {
+  margin-right: 40rpx;
+  font-size: 30rpx;
   color:#151515;
-  
 }
-.e-info-radio .radio:nth-child(1){
-  margin-right: 90rpx;
-}
-.e-info-radio radio{
-  margin-right: 30rpx;
-}
-.edit-img-{
-  width:170rpx;
-  height: 160rpx;
-}
-.pick-timer{
-  width:346rpx;
- display:inline-block;
-}
-.-timer-{
-  width:100%;
-  height:125rpx;
-  margin-left:40rpx;
-  color:#151515;
-  background:#f8f8f8;
-  padding:0;
-  text-align: center;
-}
-.-inp-2{
-  width: 180rpx;
-}
-/* */
-.u-o-list{
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
-  padding:18rpx 0;
-
-}
-.u-o-icon1{
-  width:33rpx;
-  height: 33rpx;
-  vertical-align: middle;
-}
-.u-o-icon2{
-  width: 12rpx;
-  height: 24rpx;
-}
-.u-o-msg{
-  margin-right: 20rpx;
-  width:400rpx;
-  height: 40rpx;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: right;
+.item .right{
+  flex: 1;
   overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
-  white-space: nowrap
+  font-size: 30rpx;
+  color:#151515;
 }
-.intro {
-  margin: 30px;
-  text-align: center;
+.right input{
+  padding: 10rpx;
 }
-.-list-pays{
+.right_box{
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
-.-list-pays .u-o-icon2{
-  margin-left:20rpx;
+.right_box input{
+  flex: 1;
 }
-.texa{
-  font-size: 24rpx;
+.right_box .icon{
+  width: 16rpx;
+  height: 27rpx;
+  margin: 0 10rpx;
 }
