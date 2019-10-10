@@ -16,8 +16,8 @@
         <!-- 所在地区点击按钮 -->
         
         <view class="newsite_button" bindtap="selectDistrict">
-            <view class="newsite_view">选择地点</view>
-            <view class="newsite_city {{ist? 'user-color-':'' }}">
+            <view class="newsite_view" wx:if="{{showTST}}">选择地点</view>
+            <view class="newsite_city {{showTST? '':'user-color-' }}">
                 {{areaInfo}} 
                 <icon class="iconfont icon-zhcc_xiangxiajiantou"></icon>
             </view>

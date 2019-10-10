@@ -12,6 +12,7 @@ Page({
     page: 1,
     isShowInfo:false,
     list: [],
+    pColor:'',                            //动态获z字体颜色 
     pBgC: '',                            //动态获背景颜色                 
     pBC1: '',                            //动态获边框颜色  
     resType: ''                          //动态登陆者的标签：默认为字符串
@@ -62,6 +63,7 @@ Page({
     this.setData({
       kw: e.detail.value
     })
+    this.searchInfp()
   },
 
   /**

@@ -19,7 +19,7 @@ Page({
     cCode: '',                    //获取选中的市ID
     aCode: '',                    //获取选中的区ID
     site_show: true,              //
-    showTST:false
+    showTST:true
   },
 
   /**

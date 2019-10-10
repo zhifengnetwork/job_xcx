@@ -22,7 +22,7 @@
                 <view class='search-job-list'>
                   <view class='c-info-title global-search-cont'>
                       <text>{{item.title}}</text>
-                      <text class="company-color-">{{item.salary=='面议' ? item.salary : item.salary+'/月'}}</text>
+                      <text class="{{pColor}}">{{item.salary=='面议' ? item.salary : item.salary+'/月'}}</text>
                   </view>
                   <view class='s-portrait global-search-cont'>
                       <view class="">
@@ -37,7 +37,7 @@
                           <text class='c-msg2 '>{{item.work_age}}年 </text>
                           <!-- <text class='c-msg2 '>{{item.school_type}}</text> -->
                         </view>
-                        <text class="posen-msg company-color-">服务商</text>
+                        <text class="posen-msg {{pColor}}">服务商</text>
                   </view>
                 </view>
               </view>
