@@ -32,7 +32,7 @@
           <navigator url="postionDetail">
               <view class='c-title'>
                 <image src='../../../static/images/public/h_blue.png' class='c-flame'/>
-                <text>热门推荐</text>
+                <text>最新推荐</text>
               </view>
           </navigator>
           <navigator url="../../cOrTInfo/cOrTInfoDetail?id={{item.id}}" wx:for="{{recList}}" wx:key>

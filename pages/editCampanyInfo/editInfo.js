@@ -1,6 +1,8 @@
 // pages/company/editInfo.js
 import ServerData from '../../utils/serverData.js';
 const util = require('../../utils/util.js');  //通用方法
+import Area from '../../utils/area.js';
+
 const date = new Date()
 const years = []
 const months = []
@@ -51,7 +53,16 @@ Page({
     cCode: '',                    //获取选中的市ID
     aCode: '',                    //获取选中的区ID
     site_show: true, 
-    showTST:true
+    showTST:true,
+
+    pickerDate: '',
+    endTime: '',
+    rangeList: ['10万','百万','千万'],
+    rangeText:'',
+    typeList: ['民营','私企','上市'],
+    typeText:'',
+    showArea: false,
+    areaList: Area
 	},
 	/**
 	 * 生命周期函数--监听页面加载
@@ -70,6 +81,10 @@ Page({
       timingFunction: 'ease',
     })
     this.animation = animation;
+
+    this.setData({
+      endTime: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
+    })
     /*********地址 */
   },
   // returnIndex(flag, arry, isN) {
@@ -85,6 +100,27 @@ Page({
   //     }
   //   }
   // },
+  //成立时间 选择器
+  bindDateChange: function (e) {
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      pickerDate: e.detail.value
+    })
+  },
+  //营业范围选择器
+  bindPickerRange: function (e) {
+    // console.log('picker发送选择改变，携带值为', e)
+    this.setData({
+      rangeText: this.data.rangeList[Number(e.detail.value)]
+    })
+  },
+  //公司类型选择器
+  bindPickerType: function (e) {
+    // console.log('picker发送选择改变，携带值为', e)
+    this.setData({
+      typeText: this.data.typeList[Number(e.detail.value)]
+    })
+  },
   selectDay(arry,flag){
       for (var i in arry) {
         if (arry[i] == flag) {

@@ -36,6 +36,19 @@ Page({
 		details:'', //详情
 		styleBg: '',                            //动态获背景颜色  
 		pBgC: '',                            //动态获背景颜色    
+
+    postNameList:['前端','后端','老板'], //职位名称
+    postNameText: '',
+    experienceList:['半年','1年','3-5年','10年'], //经验要求
+    experienceText:'',
+    educationList:['大专','本科','专科','硕士'],  //学历要求
+    educationText: '',
+    salaryList:['3-5k','5-8k','10k','20k以上'], //薪资要求
+    salaryText: '',
+    welfareList: ['五险一金','零食','下午茶'],   //福利待遇
+    welfareText: '',
+    describeList: ['描述1','描述2','描述3'], //职位描述
+    describeText: ''
 	},
 
     /**
@@ -93,6 +106,44 @@ Page({
 		}
 		})
 	},
+
+  //职位名称选择器
+  changePostName: function (e) {
+    // console.log('picker发送选择改变，携带值为', e)
+    this.setData({
+      postNameText: this.data.postNameList[Number(e.detail.value)]
+    })
+  },
+  //经验要求选择器
+  changeExperience: function (e) {
+    this.setData({
+      experienceText: this.data.experienceList[Number(e.detail.value)]
+    })
+  },
+  //学历要求选择器
+  changeEducation: function (e) {
+    this.setData({
+      educationText: this.data.educationList[Number(e.detail.value)]
+    })
+  },
+  //薪资范围选择器
+  changeSalary: function (e) {
+    this.setData({
+      salaryText: this.data.salaryList[Number(e.detail.value)]
+    })
+  },
+  //福利待遇选择器
+  changeWelfare: function (e) {
+    this.setData({
+      welfareText: this.data.welfareList[Number(e.detail.value)]
+    })
+  },
+  //职位描述选择器
+  changeDescribe: function(e) {
+    this.setData({
+      describeText: this.data.describeList[Number(e.detail.value)]
+    })
+  },
 	/**
 	 * 获取工种数据
 	 */
