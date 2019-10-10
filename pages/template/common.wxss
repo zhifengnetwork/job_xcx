@@ -256,7 +256,6 @@
   border-radius:5px;
   background:#fff;
   padding:25rpx 25rpx;
-<<<<<<< HEAD
 
 }
 .global-search-cont{
@@ -280,8 +279,6 @@
   width: auto;
   padding:0 10rpx !important;
 }
-=======
->>>>>>> f1c557304b5ece25fd327a39d31d084fda462b04
 
 .c-salary{
   font-size :28rpx;
