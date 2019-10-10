@@ -18,7 +18,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   searchInfp(){
@@ -34,7 +33,6 @@ Page({
         if (res.data.data.recruit.length < 1 && res.data.data.person.length < 1) {
           status = true
         }
-
         that.setData({ 
           list: res.data.data,
           isShowInfo:status
@@ -47,20 +45,18 @@ Page({
       } else {
         ServerData._wxTost(res.data.msg)
       }
-      console.log(res)
     });
   },
   changStatus: function (e) {
-    console.log(e);
     this.setData({
       cStatus: e.currentTarget.dataset.status
     })
   },
   selecKeyWord(e){
-    console.log(e)
       this.setData({
         kw: e.detail.value
       })
+      this.searchInfp()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

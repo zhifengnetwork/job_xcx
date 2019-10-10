@@ -2,7 +2,7 @@
 <view class='inner'>
   <view class='t-info-nav'>
     <view data-status="0">
-      <text>系统信息</text>
+      <!-- <text>系统信息</text> -->
       <!-- <icon class='t-i-raduis'></icon> -->
     </view>
   </view>
@@ -18,6 +18,7 @@
         <view wx:if="{{item.isChang}}"><icon class='t-i-raduis'></icon></view>
       </view>
     </navigator>
+    <view class='more-recommond2' wx:if="{{isMore}}" bindtap='lookMore'>点击查看更多</view>
   </view>
   <!-- FOOTER START -->
   <view class='footer-height'></view>

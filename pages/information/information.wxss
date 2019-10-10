@@ -8,10 +8,10 @@ inner{
   flex-wrap: wrap;
 } */
 .create-time{
-  /* width: 100%; */
+  margin-left:auto;
   font-size: 24rpx;
   color: #666;
 }
-.t-info-img{
+/* .t-info-img{
   height: 70rpx;
-}
+} */

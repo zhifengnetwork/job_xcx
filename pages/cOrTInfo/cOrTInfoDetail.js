@@ -28,7 +28,8 @@ Page({
 
   lookCompany() {         // 要传给后台的参数
     var _opt = {
-      company_id: this.data.companyId
+      // company_id: this.data.companyId
+      company_id:88
     }
     ServerData.lookCompany(_opt).then((res) => {
       if (res.data.status == 1) {

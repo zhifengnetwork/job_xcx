@@ -1,7 +1,6 @@
 // pages/company/editInfo.js
 import ServerData from '../../utils/serverData.js';
 const util = require('../../utils/util.js');  //通用方法
-import Area from '../../utils/area.js';
 
 const date = new Date()
 const years = []
@@ -61,8 +60,6 @@ Page({
     rangeText:'',
     typeList: ['民营','私企','上市'],
     typeText:'',
-    showArea: false,
-    areaList: Area
 	},
 	/**
 	 * 生命周期函数--监听页面加载

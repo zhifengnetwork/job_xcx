@@ -66,6 +66,9 @@ page{
 .m-0{
   margin: 0 !important;
 }
+.m-top-10{
+  margin-top: 10rpx !important;
+}
 .m-b50{
   margin-bottom: 50rpx;
 }
@@ -76,7 +79,7 @@ page{
   font-weight: bold;
 }
 .inner{
-  padding: 40rpx 24rpx;
+  padding: 24rpx;
 }
 /* TABBAR START */
 .menu-item{  
