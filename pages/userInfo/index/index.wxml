@@ -11,17 +11,22 @@
     </view>
 
     <!-- 地址选择 -->
-    <view class='subtitle overH'>
-      <view class="newsite_box">
+    <view class='subtitle search-subtitle'>
+      <!-- <view class="newsite_box"> -->
         <!-- 所在地区点击按钮 -->
+        
         <view class="newsite_button" bindtap="selectDistrict">
-          <view class="newsite_view">选择地点</view>
-          <view class="newsite_city">{{areaInfo}}</view>
+            <view class="newsite_view">选择地点</view>
+            <view class="newsite_city {{ist? 'user-color-':'' }}">
+                {{areaInfo}} 
+                <icon class="iconfont icon-zhcc_xiangxiajiantou"></icon>
+            </view>
+            
         </view>
         <!-- 所有城市三级联动列表 -->
         <include src="../../template/address"/> 
         <!-- 地址选择接受 -->
-      </view>
+      <!-- </view> -->
     </view> 
     <!-- 地址选择结束 -->
   </view>

@@ -24,7 +24,7 @@ Page({
     cCode: '',                    //获取选中的市ID
     aCode: '',                    //获取选中的区ID
     site_show: true,              //
-
+    isActive:false
   },
   onLoad(){
     util.getStorageItem('savePostion', app)   //获取底部导航
