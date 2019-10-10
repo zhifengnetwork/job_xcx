@@ -256,7 +256,35 @@
   border-radius:5px;
   background:#fff;
   padding:25rpx 25rpx;
+<<<<<<< HEAD
 
+}
+.global-search-cont{
+    align-items:center;
+    display:flex;
+    justify-content:space-between;
+}
+.global-search-cont .c-msg2{
+  margin-right:20rpx;
+}
+.global-info-text{
+  flex: 1;
+  margin-left: 10rpx;
+}
+.global-status-sty{
+  display: flex;
+}
+.global-info-text .company-status{
+  display: inline-block;
+  margin-left: 10rpx;
+  width: auto;
+  padding:0 10rpx !important;
+}
+=======
+>>>>>>> f1c557304b5ece25fd327a39d31d084fda462b04
+
+.c-salary{
+  font-size :28rpx;
 }
 .global-search-cont{
     align-items:center;
