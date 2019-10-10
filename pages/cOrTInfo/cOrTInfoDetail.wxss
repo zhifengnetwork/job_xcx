@@ -12,11 +12,11 @@
   justify-content:flex-start;
 
 }
-.c-l-info .c-logo{
+/* .c-l-info .c-logo{
   width:164rpx;
   height:164rpx;
   border-radius: 4rpx;
-}
+} */
 .company-status {
   float: right;
 }

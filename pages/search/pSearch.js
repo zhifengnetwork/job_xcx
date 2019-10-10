@@ -48,7 +48,7 @@ Page({
           list: res.data.data,
           isShowInfo: status
         })
-        console.log(that.data.isShowInfo)
+        // console.log(that.data.isShowInfo)
       }
       else if (res.data.status == -1) {
         wx.redirectTo({
@@ -57,7 +57,7 @@ Page({
       } else {
         ServerData._wxTost(res.data.msg)
       }
-      console.log(res)
+      // console.log(res)
     });
   },
   selecKeyWord(e) {
@@ -65,6 +65,7 @@ Page({
     this.setData({
       kw: e.detail.value
     })
+    this.searchInfp()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

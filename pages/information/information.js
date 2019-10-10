@@ -5,7 +5,10 @@ const util = require('../../utils/util.js');  //通用方法
 Page({
   data: {
     cStatus:0,
-    array:[]
+    array:[],
+    page:1,
+    rows:10,
+    isMore:false
   },
 
   /**
@@ -15,27 +18,43 @@ Page({
     util.getStorageItem('savePostion', app);   //获取底部导航
     this.messageList()
   },
-
+  lookMore(){
+      this.setData({
+          page:this.data.page+1
+      })
+      this.messageList()
+  },
   messageList(){
-      var that =this
-      ServerData.messageList({}).then((res) =>{
+      var that =this,
+          newArray=[]
+      ServerData.messageList({page:that.data.page,limit:that.data.rows}).then((res) =>{
           if(res.data.code==1){
-              // console.log(res.data.data)
-              var info = res.data.data
-              for(var i in info){
-                info[i].create_time = ServerData._timeStampForwardAate(info[i].create_time)
-              }
-              that.setData({
-                  array: info
-              })
+            var info = res.data.data
+            if(info.length>0){
+                for(var i in info){
+                  info[i].create_time = ServerData._timeStampForwardAate(info[i].create_time)
+                }
+                if(that.data.page == 1) {
+                  newArray = info
+                } else {
+                  newArray = [...that.data.array, ...info]
+                }
+                this.setData({
+                  array: newArray,
+                  isMore:true
+                })
+            }
           }
           else if (res.data.code == -1) {
-            wx.redirectTo({
-              url: '../login/login'
-            })
+              wx.redirectTo({
+                url: '../login/login'
+              })
           }
           else {
-            ServerData._wxTost(res.data.msg)
+              ServerData._wxTost(res.data.msg)
+              this.setData({
+                isMore: false
+              })
           }
       })
   }

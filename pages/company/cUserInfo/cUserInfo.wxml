@@ -27,7 +27,7 @@
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
           <navigator url="../../jobList/jobList" class='u-o-list m-b10'>
-            <text>招工信息</text>
+            <text>招聘信息</text>
             <icon class='iconfont icon-youjiantou2 company-color-'></icon>
           </navigator>
           <navigator url="../myReserve/myReserve" class='u-o-list m-b10'>

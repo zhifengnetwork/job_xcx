@@ -7,34 +7,47 @@
         <input type='text' class='search {{pBC1}}'  placeholder="输入所要查找的内容" bindinput='selecKeyWord' />
         <image class="search-icon" src='../../static/images/public/search_icon.png'></image>
       </view>
-      <text class='login_tab' bindtap='searchInfp'>搜索</text>
+      <!-- <text class='login_tab' bindtap='searchInfp'>搜索</text> -->
     </view>
   </view>
   <view class='inner inner-cont'>
       <view class='wx-no-info' wx:if="{{isShowInfo}}">
-            <image class="wx-no-icon" src='../../static/images/public/none.png'/>
+            <!-- <image class="wx-no-icon" src='../../static/images/public/none.png'/> -->
             <view>暂无数据</view>
       </view>
 
-      <view>
-        <block wx:for="{{list.person}}" wx:key="index">
-            <navigator url='../personalDetail/personalDetail?id={{item.id}}'>
-                <view class='c-l-info'>
-                  <view class='search-job-list'>
-                    <view class='c-info-title'>{{item.job_type}}</view>
-                    <view class='c-info-msg overH'>
-                          <text class='c-msg2 fl'>{{item.work_age}}年</text>
-                    </view>
-                    <view class='s-portrait'>
-                        <image src='{{item.avatar}}' class='portrait-icon'/>
-                        <text>{{item.name}}</text>
-                    </view>
-                    <view class='overH'></view>
+      <!-- <view> -->
+
+      <block wx:for="{{list.person}}" wx:key="index">
+        <navigator url='../personalDetail/personalDetail?id={{item.id}}'>
+          <view class='c-l-info'>
+          <!-- <view class='c-l-info' bindtap='jumpDetails' data-id='{{item.id}}'> -->
+            <image src='{{item.avatar}}' class="c-logo" />
+            <view class='global-info-text'>
+              <view class="global-search-cont">
+                  <text class='c-info-title'>{{item.name}}</text>
+                  <text class='c-salary'>{{item.salary}} /月</text>
+              </view>
+              <view class='global-search-cont c-info-msg'>
+                  <view >
+                      <text class='c-msg2'>{{item.work_age}}年</text>
+                      <text >{{item.school_type}}</text>
                   </view>
-                  <view class='company-status {{pBgC}} fr'>{{item.images == 0 ? "无证书":"有证书"}}</view>
-                </view>
-            </navigator>
-          </block>
-      </view>
+                  
+                  <view class="global-status-sty">
+                      <view class='company-status company-bg-' wx:if="{{item.job_type!=null}}">{{item.job_type}}</view>
+                      <view class='company-status company-bg-'>{{item.images==1 ? "有证书":"无证书"}}</view>
+                  </view>
+                  
+              </view>
+              <view class='global-search-cont c-info-msg'>
+                  <text> </text>
+                  <text>人才</text>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </block>
+      <!-- </view> -->
   </view>
 </view>

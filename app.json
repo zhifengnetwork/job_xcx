@@ -1,6 +1,5 @@
 {
   "pages": [ 
-    "pages/company/index/index",
     "pages/login/login",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
@@ -30,7 +29,7 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-    
+    "pages/company/index/index",
     "pages/company/cUserInfo/cUserInfo",
     "pages/company/thirdParty/thirdParty",
     "pages/company/search/search",
