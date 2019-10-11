@@ -655,5 +655,35 @@ textarea{
 
 /* 公司详情 */
 .global-company-list{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+.global-company-list .c-logo{
+   width:90rpx;
+   height:99rpx;
+}
 
+.global-c-body{
+  width: 100%;
+}
+
+.global-c-msg{
+  display: inline-block;
+  margin-right: 80rpx;
+  line-height: 40rpx;
+}
+
+.global-c-msg .iconfont{
+    margin-right: 40rpx;
+    vertical-align: top;
+    position: relative;
+    top:-15rpx; 
+
+} 
+.global-cOrTInfo- .iconfont{
+    font-size:30rpx;
+}
+.global-cOrTInfo- .-cOrTInfo{
+  margin-top: 30rpx;
 }

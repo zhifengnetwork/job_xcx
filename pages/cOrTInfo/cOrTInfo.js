@@ -1,5 +1,5 @@
 // pages/cOrTInfo/cOrTInfo.js
-
+const util = require('../../utils/util.js');  //通用方法
 import ServerData from '../../utils/serverData.js';
 Page({
 
@@ -8,7 +8,10 @@ Page({
    */
   data: {
       cList:[],
-      companyId:'88'
+      companyId:'88',
+      //
+      pColor:'',                            //动态获z字体颜色 
+      pBgC: '',                            //动态获背景颜色       
   },
 
   /**
@@ -19,6 +22,11 @@ Page({
       //   companyId: options.company_id
       // })
       this.lookCompany()
+      this.setData({
+          pColor: util.loginIdentity().pColor,
+          // companyId: options.company_id,
+          pBgC: util.loginIdentity().pBgC,
+      })
   },
 
   lookCompany() {         // 要传给后台的参数

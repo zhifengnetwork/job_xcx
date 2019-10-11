@@ -18,7 +18,6 @@
   margin-bottom: 20rpx;
   display: flex;
   align-items: center;
-  border-bottom: 2rpx solid #ccc;
 }
 .e-info-msg{
   margin-right:6rpx;
