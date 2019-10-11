@@ -1,0 +1,131 @@
+<!--pages/company/postJobPostings.wxml-->
+<view class='inner'>
+
+   <view class='post-list'>
+      <text class='-list-msg'>公司名称:</text>
+      <input value="" class='-list-inp' placeholder-class="phcolor" placeholder='请输入名称' value="{{title}}" bindinput="getTitle"/>
+   </view>
+   
+   <!-- -->
+   <view class='post-list'>
+      <text class='-list-msg'>证书要求:</text>
+      <view class='e-info-radio'>
+        <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{certificate}}" wx:key="index">
+              <radio style="zoom:.6" color="{{styleBg}}" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </radio-group>
+      </view>
+   </view>
+
+   <view class="data_list">
+    <view class="data_item">
+      <view class="data_left">
+        职位名称: 
+      </view>
+
+      <view class='data_right'>
+        <picker range="{{postNameList}}" bindchange="changePostName">
+          <view class="data_box">
+            <text>{{postNameText}}</text>
+            <image class="icon" src="../../images/login/leftArrow.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="data_item">
+      <view class="data_left">
+        经验要求: 
+      </view>
+
+      <view class='data_right'>
+        <picker range="{{experienceList}}" bindchange="changeExperience">
+          <view class="data_box">
+            <text>{{experienceText}}</text>
+            <image class="icon" src="../../images/login/leftArrow.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="data_item">
+      <view class="data_left">
+        学历要求: 
+      </view>
+
+      <view class='data_right'>
+        <picker range="{{educationList}}" bindchange="changeEducation">
+          <view class="data_box">
+            <text>{{educationText}}</text>
+            <image class="icon" src="../../images/login/leftArrow.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="data_item">
+      <view class="data_left">
+        薪资范围: 
+      </view>
+
+      <view class='data_right'>
+        <picker range="{{salaryList}}" bindchange="changeSalary">
+          <view class="data_box">
+            <text>{{salaryText}}</text>
+            <image class="icon" src="../../images/login/leftArrow.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="data_item">
+      <view class="data_left">
+        工作地点: 
+      </view>
+
+      <view class='data_right'>
+        <picker range="{{experienceList}}" bindchange="changeExperience">
+          <view class="data_box">
+            <text>{{experienceText}}</text>
+            <image class="icon" src="../../images/login/leftArrow.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="data_item">
+      <view class="data_left">
+        福利待遇: 
+      </view>
+
+      <view class='data_right'>
+        <picker range="{{welfareList}}" bindchange="changeWelfare">
+          <view class="data_box">
+            <text>{{welfareText}}</text>
+            <image class="icon" src="../../images/login/leftArrow.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="data_item">
+      <view class="data_left">
+        职位描述: 
+      </view>
+
+      <view class='data_right'>
+        <picker range="{{describeList}}" bindchange="changeDescribe">
+          <view class="data_box">
+            <text>{{describeText}}</text>
+            <image class="icon" src="../../images/login/leftArrow.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+   </view>
+
+  <view class='line-heig'></view>
+
+  <view class='set-option {{pBgC}}' bindtap='saveEditRecruit'>保存</view>
+</view>

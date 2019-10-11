@@ -1,0 +1,128 @@
+<view class="container">
+  <view class="item">
+    <view class="left">
+    公司名称
+    </view>
+
+    <view class="right">
+      <input placeholder="请输入公司名称" type="text"/>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    人员规模
+    </view>
+
+    <view class="right">
+      <input placeholder="请输入人员规模 /人" type="number"/>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    成立时间
+    </view>
+
+    <view class="right">
+      <picker mode="date" start="1970-01-01" end="{{endTime}}" bindchange="bindDateChange">
+        <view class="right_box">
+          <input placeholder="请选择具体时间" type="text" disabled value="{{pickerDate}}"/>
+          <image class="icon" src="../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    公司地址
+    </view>
+
+    <view class="right">
+      <!-- <picker mode="date" start="1970-01-01" end="{{endTime}}" bindchange="bindDateChange"> -->
+        <view class="right_box" bindtap="selectDistrict">
+          <input placeholder="请选择具体地址" type="text" disabled value="{{areaInfo}}"/>
+          <image class="icon" src="../../images/login/leftArrow.png"></image>
+        </view>
+      <!-- </picker> -->
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    公司资质
+    </view>
+
+    <view class="right">
+      <input placeholder="请输入公司资质" type="text"/>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    公司介绍
+    </view>
+
+    <view class="right">
+      <input placeholder="请输入公司介绍" type="number"/>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    营业范围
+    </view>
+
+    <view class="right">
+      <picker range="{{rangeList}}" bindchange="bindPickerRange">
+        <view class="right_box">
+          <input placeholder="请选择具体范围" type="text" disabled value="{{rangeText}}"/>
+          <image class="icon" src="../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    公司类型
+    </view>
+
+    <view class="right">
+      <picker range="{{typeList}}" bindchange="bindPickerType">
+        <view class="right_box">
+          <input placeholder="请选择具体范围" type="text" disabled value="{{typeText}}"/>
+          <image class="icon" src="../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    公司相册
+    </view>
+
+    <view class="right">
+      <picker range="{{typeList}}" bindchange="bindPickerType">
+        <view class="right_box">
+          <input placeholder="请选择具体内容" type="text" disabled value="{{typeText}}"/>
+          <image class="icon" src="../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<include src="../template/address"/> 
+<!-- <van-popup show="{{ showArea }}" bind:close="onClose" position="bottom">
+  <van-area area-list="{{ areaList }}" />
+</van-popup> -->
+
+<!--footer -->
+  <view wx:if="{{userList.is_edit == 1}}">
+    <view class='line-heig'></view>
+    <view class='set-option-1' >
+      <button class='s-1-option {{pBgC}}' bindtap='saveEditInfo'>保存</button>
+    </view>
+  </view>

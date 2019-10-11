@@ -1,0 +1,252 @@
+/* pages/userInfo/editInfo.wxss */
+@import "../../template/common";
+.container {
+  padding: 0 20rpx;
+}
+.item{
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #999;
+}
+.title{
+  padding-top: 20rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.title text{
+  color: #f1b80c;
+}
+.item .left {
+  margin-right: 40rpx;
+  font-size: 26rpx;
+  color:#151515;
+  width: 120rpx;
+  text-align-last: justify;
+}
+.item .right{
+  flex: 1;
+  overflow: hidden;
+  font-size: 26rpx;
+  color:#151515;
+}
+.right input{
+  padding: 10rpx;
+}
+.right_box{
+  display: flex;
+  align-items: center;
+}
+.right_box input{
+  flex: 1;
+}
+.right_box .icon{
+  width: 16rpx;
+  height: 27rpx;
+  margin: 0 10rpx;
+}
+
+/*点击上传职业证书 s*/
+.idPic{
+  width: 100%;
+  height: auto;
+  font-size:28rpx;
+  color: #151515;
+  background-color:#EEE;
+  padding: 10rpx 0;
+  margin-bottom: 20rpx;
+}
+.-pic-subtitle{
+  margin: 20rpx 0 28rpx;
+  text-align: center;
+}
+.-pic-stat{
+  width: 17rpx;
+  height: 21rpx;
+}
+.id-card-top{
+  width:500rpx;
+  height: 260rpx;
+  padding:20rpx 10rpx;
+  margin: 30rpx auto;
+  position: relative;
+  background:#dadada;
+}
+.-add-img-{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.big-pic{
+    width:500rpx;
+    height: 260rpx;
+    position: absolute;
+}
+.addPic{
+  width:68rpx;
+  height: 68rpx;
+  position: relative;
+  top: 50rpx;
+  left: 50%;
+  margin-left:-34rpx;
+}
+.addPic2{
+  position:absolute;
+  top: 50%;
+  left:50%;
+  margin:-34rpx 0 0 -34rpx;
+  width:68rpx;
+  height: 68rpx;
+}
+.addTextBox{
+  width: 496rpx;
+  height: 50rpx;
+	border-radius: 6rpx;
+  border: solid 2rpx #dadada;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 12rpx;
+  font-size: 26rpx;
+}
+.id-card-top text,.id-card-bottom text{
+  text-align: center;
+  display: block;
+  position: relative;
+  top: 70rpx;
+}
+.id-card-top image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.card-top {
+  width:500rpx;
+  height: 260rpx;
+  background:#dadada;
+}
+
+.area_select {
+	width: 100%;
+	display: block;
+}
+.a-more-pic{
+  text-align: center;
+  font-size:28rpx;
+  color: #151515;
+  margin:20rpx 0 39rpx;
+}
+.file-inner{
+  position: relative;
+}
+.file-btn{
+  width: 500rpx;
+  height: 66rpx;
+  border-radius: 10rpx;
+  background:#dadada;
+
+}
+.f-plus-{
+  width: 33rpx;
+  height: 33rpx;
+  vertical-align: middle;
+  position: absolute;
+  top:18rpx;
+  bottom: 0;
+  left: 50%;
+  margin-left: -11.5rpx;
+}
+.picker-wrap {
+  width:70%;
+  display:flex;
+  align-items:center;
+  font-size:28rpx;
+  margin-left: 20rpx;
+}
+
+.down-arrow{
+  width:12rpx;
+  height:20rpx;
+  transform:rotate(90deg);
+  vertical-align:middle;
+  margin-left:10rpx;
+  padding-bottom:2rpx;
+
+}
+
+
+
+.footer{
+  margin-bottom: 20rpx;
+}
+
+/* 
+  期望岗位弹框
+ */
+ .choosBtns{
+   border-bottom: 2rpx solid #999;
+   height: 80rpx;
+   line-height: 80rpx;
+   padding:  0 20rpx;
+ }
+ .choosBtns view{
+   height: 50rpx;
+   line-height: 50rpx;
+   padding: 0 20rpx;
+   border: 2rpx solid #ece912;
+   display: inline-block;
+   position: relative;
+   font-size: 28rpx;
+ }
+ .choosBtns view icon{
+   position: absolute;
+   top: -15rpx;
+   right: -10rpx;
+ }
+ .popup_box{
+   display: flex;
+ }
+ .popup_left{
+   height: 50vh;
+   overflow: hidden;
+   overflow-y: scroll;
+   width: 200rpx;
+ }
+ .popup_left_item{
+   height: 60rpx;
+   line-height: 60rpx;
+   font-size: 26rpx;
+   background-color: #eee;
+   padding: 0 10rpx;
+   border-bottom: 2rpx solid #d8d8d8;
+ }
+ .popup_right{
+   flex:1;
+   overflow: hidden;
+   height: 50vh;
+   box-sizing: border-box;
+   overflow-y: scroll;
+   padding: 20rpx;
+   display: flex;
+   flex-wrap: wrap;
+ }
+ .popup_right_item{
+   background-color: #eee;
+   height: 60rpx;
+   line-height: 60rpx;
+   width: 49%;
+   overflow: hidden;
+   padding: 0 10rpx;
+   border-radius: 10rpx;
+   box-sizing: border-box;
+   margin-bottom: 10rpx;
+   font-size: 26rpx;
+   text-align: center;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+ }
+ .popup_right_item:nth-child(2n+1){
+   margin-right: 2%;
+ }

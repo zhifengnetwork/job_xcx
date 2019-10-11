@@ -168,6 +168,7 @@
   font-size:26rpx;
   height:60rpx;
   line-height: 60rpx;
+  flex: 1;
   /* font-weight:700; */
 }
 .c-body{
@@ -654,5 +655,5 @@ textarea{
 
 /* 公司详情 */
 .global-company-list{
-  
+
 }

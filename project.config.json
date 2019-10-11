@@ -78,6 +78,20 @@
 					"pathName": "pages/company/personalDetail/personalDetail",
 					"query": "id=51",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人端  编辑信息",
+					"pathName": "pages/userInfo/editInfo/editInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人端  首页",
+					"pathName": "pages/userInfo/index/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

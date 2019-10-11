@@ -1,0 +1,37 @@
+/* pages/userInfo/editInfo.wxss */
+@import "../template/common";
+.container {
+  padding: 0 20rpx;
+}
+.item{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #999;
+}
+.item .left {
+  margin-right: 40rpx;
+  font-size: 30rpx;
+  color:#151515;
+}
+.item .right{
+  flex: 1;
+  overflow: hidden;
+  font-size: 30rpx;
+  color:#151515;
+}
+.right input{
+  padding: 10rpx;
+}
+.right_box{
+  display: flex;
+  align-items: center;
+}
+.right_box input{
+  flex: 1;
+}
+.right_box .icon{
+  width: 16rpx;
+  height: 27rpx;
+  margin: 0 10rpx;
+}
