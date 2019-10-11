@@ -1,37 +1,38 @@
 {
-  "pages": [ 
-
-    "pages/userInfo/index/index",
+  "pages": [
+    "pages/cOrTInfo/cOrTInfo",
+    "pages/company/index/index",
     "pages/login/login",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
     "pages/jobList/jobList",
     "pages/jobList/editJobList",
-  "pages/register/fillInInformation/fillInInformation",
+    "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
     "pages/public/pay/payWay",
     "pages/headPortrait/headPortrait",
+
     "pages/public/password",
     "pages/public/setting",
     "pages/public/editMobile",
     "pages/public/help",
     "pages/public/explain",
     "pages/public/audit",
+
     "pages/information/information",
     "pages/information/infoDetail",
     "pages/search/sCompany",
     "pages/search/pSearch",
     "pages/search/sThirdParty",
-    "pages/cOrTInfo/cOrTInfo",
+
     "pages/cOrTInfo/cOrTInfoDetail",
     "pages/editCampanyInfo/editInfo",
-
     "pages/personalMessage/personalMessage",
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-    "pages/company/index/index",
+
     "pages/company/cUserInfo/cUserInfo",
     "pages/company/thirdParty/thirdParty",
     "pages/company/search/search",
@@ -58,7 +59,7 @@
     "pages/thirdParty/postJobPostings/postJobPostings",
     "pages/thirdParty/personalDetail/personalDetail",
 
-    
+    "pages/userInfo/index/index",
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/search/search",

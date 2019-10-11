@@ -26,8 +26,12 @@ Page({
       pCode: '',                    //获取选中的省ID
       cCode: '',                    //获取选中的市ID
       aCode: '',                    //获取选中的区ID
-      site_show: true, 
-      showTST:true
+      site_show: false, 
+      showTST:true,
+
+      //
+      pColor:'',                            //动态获z字体颜色 
+      pBgC: '',                            //动态获背景颜色                 
   },
 
   /**
@@ -46,7 +50,10 @@ Page({
     })
     this.animation = animation;
     /*********地址 */
-
+    this.setData({
+        pColor: util.loginIdentity().pColor,
+        pBgC: util.loginIdentity().pBgC,
+    })
   },
   hiring: function () {
       var that =this
@@ -92,9 +99,11 @@ Page({
     })
   },
   jobChange: function (e) {
+    var t =e.detail.value ==0? false :true
     this.setData({
-      jobIndex: e.detail.value,
-      job_type: this.data.jobArray[e.detail.value].cat_id
+        jobIndex: e.detail.value,
+        job_type: this.data.jobArray[e.detail.value].cat_id,
+        site_show:t
     })
     this.hiring()             //主页信息
   },

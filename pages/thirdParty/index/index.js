@@ -28,7 +28,7 @@ Page({
     pCode: '',                    //获取选中的省ID
     cCode: '',                    //获取选中的市ID
     aCode: '',                    //获取选中的区ID
-    site_show: true, 
+    site_show: false, 
     showTST:true
 
   },
@@ -90,9 +90,11 @@ Page({
     })
   },
   jobChange: function (e) {
+      var t =e.detail.value ==0? false :true
       this.setData({
         jobIndex: e.detail.value,
-        job_type: this.data.jobArray[e.detail.value].cat_id
+        job_type: this.data.jobArray[e.detail.value].cat_id,
+        site_show:t
       })
       this.getUserInfo()             //主页信息
   },

@@ -9,12 +9,12 @@
     </view>
     <view class='subtitle search-subtitle'>
         <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name" range-value="cat_id">
-          <view class="picker subtitle-msg">
+          <view class="picker subtitle-msg {{site_show?'company-color-':''}}">
             {{jobArray[jobIndex].cat_name}} 
             <icon class="iconfont icon-zhcc_xiangxiajiantou"></icon>
           </view>
         </picker>
-        <view class="newsite_button m-left-auto" bindtap="selectDistrict">
+        <view class="newsite_button m-left-auto {{showTST?'':'company-color-'}}" bindtap="selectDistrict">
           <view class="newsite_view" wx:if="{{showTST}}">选择地点</view>
           <view class="newsite_city">{{areaInfo}} <icon class="iconfont icon-zhcc_xiangxiajiantou"></icon></view>
           
@@ -29,10 +29,15 @@
   <view class='header-heigh'></view>
   <!-- HEADER END -->
   <view class='inner'>
-      <block wx:for="{{hiringData}}"  wx:key="index">
+      <!-- personal content start -->
+      <import src ="../../template/personal.wxml"/>
+      <template is="personal" data="{{person:hiringData, pColor: pColor,pBgC:pBgC,url:'../personalDetail/personalDetail?id='}}"/>
+      <!-- personal content end -->
+
+
+      <!-- <block wx:for="{{hiringData}}"  wx:key="index">
         <navigator url="../personalDetail/personalDetail?id={{item.id}}">
           <view class='c-l-info'>
-          <!-- <view class='c-l-info' bindtap='jumpDetails' data-id='{{item.id}}'> -->
             <image src='{{item.avatar}}' class="c-logo" />
             <view class='global-info-text'>
               <view class="global-search-cont">
@@ -58,7 +63,7 @@
             </view>
           </view>
         </navigator>
-      </block>
+      </block> -->
   </view>
   <!-- FOOTER TARBAR START -->
   <view class='footer-height'></view>

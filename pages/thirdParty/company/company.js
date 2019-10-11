@@ -18,7 +18,8 @@ Page({
     pCode: '',                    //获取选中的省ID
     cCode: '',                    //获取选中的市ID
     aCode: '',                    //获取选中的区ID
-    site_show: true,              //
+    site_show: false,              //是否选择人才
+    showTST:true,                 //是否选择地址
     page:1,
     rows:10,
     isMore:true
@@ -83,7 +84,8 @@ Page({
       areaInfo: areaInfo,
       pCode: that.data.province.code,
       cCode: that.data.city.code,
-      aCode: that.data.area.code
+      aCode: that.data.area.code,
+      showTST:false
     })
     this.getCompanyList()
   },

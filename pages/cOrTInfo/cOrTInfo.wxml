@@ -1,7 +1,7 @@
 <!--pages/userInfo/editInfo.wxml-->
 <view class='inner'>
 
-  <view class='c-l-info'>
+  <view class='global-company-list'>
       <navigator url='../../headPortrait/headPortrait'><image src='{{cList.logo}}' class="c-logo" /></navigator>
       <view class='c-info-text'>
         <text class='c-info-title'>{{cList.company_name}}</text>
@@ -16,6 +16,14 @@
         <view class="surplus-num" >规模：{{cList.contacts_scale}}人</view>
       </view>
   </view>
+
+  <view class='global-company-list'>
+      <view class="global-c-msg">
+          <icon class="" />
+      </view>
+  </view>
+
+
 
 	<view class='cOrTInfo-cont'>
 			<view class='cOrTInfo-'>

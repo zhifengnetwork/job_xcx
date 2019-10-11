@@ -34,8 +34,8 @@ Page({
 		pCode: '',                    //获取选中的省ID
 		cCode: '',                    //获取选中的市ID
 		aCode: '',                    //获取选中的区ID
-		site_show: true, 
-		showTST:true
+		site_show: false,             //是否选择人才
+		showTST:true                  //是否选择地址
 
 	},
 
@@ -63,21 +63,21 @@ Page({
 	},
 
   getCategoryList() {
-    var that = this
-    ServerData.categoryList({}).then((res) => {
-      if (res.data.status == 1) {
-        var newArry = []
-        newArry.push({ cat_id: '', cat_name: "选择人才" })
-        var recl = [...newArry, ...res.data.data]
-        this.setData({ jobArray: recl })
-      } else if (res.data.status == -1) {
-        wx.redirectTo({
-          url: '../../login/login'
-        })
-      } else {
-        ServerData._wxTost(res.data.msg)
-      }
-    })
+      var that = this
+      ServerData.categoryList({}).then((res) => {
+        if (res.data.status == 1) {
+          var newArry = []
+          newArry.push({ cat_id: '', cat_name: "选择人才" })
+          var recl = [...newArry, ...res.data.data]
+          this.setData({ jobArray: recl })
+        } else if (res.data.status == -1) {
+          wx.redirectTo({
+            url: '../../login/login'
+          })
+        } else {
+          ServerData._wxTost(res.data.msg)
+        }
+      })
   },
 
 	/**
@@ -85,39 +85,40 @@ Page({
 	 */
 	reqIndex() {
     	var that = this,
-		_opt = {
-			'job_type': that.data.job_type,
-			'province': that.data.pCode,
-			'city': that.data.cCode,
-			'district': that.data.aCode,
-		}
-    	ServerData.userVisit(_opt).then((res) => {
-			if (res.data.status == 1) {
-				this.setData({
-					indexData: res.data.data
-				})
-			}
-			else if (res.data.status == -1) {
-				wx.redirectTo({
-				url: '../../login/login'
-				})
-			}
-			else {
-				ServerData._wxTost(res.data.msg)
-			}
-		}).catch((error) => {
-			ServerData._wxTost("数据请求失败!")
-		})
+          _opt = {
+            'job_type': that.data.job_type,
+            'province': that.data.pCode,
+            'city': that.data.cCode,
+            'district': that.data.aCode,
+          }
+        ServerData.userVisit(_opt).then((res) => {
+        if (res.data.status == 1) {
+            this.setData({
+              indexData: res.data.data
+            })
+        }
+        else if (res.data.status == -1) {
+          wx.redirectTo({
+          url: '../../login/login'
+          })
+        }
+        else {
+          ServerData._wxTost(res.data.msg)
+        }
+      }).catch((error) => {
+        ServerData._wxTost("数据请求失败!")
+      })
 	},
 
 	jobChange: function (e) {
-		this.setData({
-		jobIndex: e.detail.value,
-		job_type: this.data.jobArray[e.detail.value].cat_id
-		})
-		this.reqIndex()             //主页信息
+      var t =e.detail.value ==0? false :true
+      this.setData({
+          jobIndex: e.detail.value,
+          job_type: this.data.jobArray[e.detail.value].cat_id,
+          site_show:t
+      })
+      this.reqIndex()             //主页信息
 	},
-
 
 	/**
 	 * 

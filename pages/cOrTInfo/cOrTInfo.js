@@ -8,16 +8,16 @@ Page({
    */
   data: {
       cList:[],
-      companyId:''
+      companyId:'88'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.setData({
-        companyId: options.company_id
-      })
+      // this.setData({
+      //   companyId: options.company_id
+      // })
       this.lookCompany()
   },
 

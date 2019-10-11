@@ -17,50 +17,10 @@
       </view>
 
       <view>
-
-          <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{list.recruit}}">
-              <view class='global-search-wrap'>
-                <view class='search-job-list'>
-                  <view class='c-info-title global-search-cont'>
-                      <text>{{item.title}}</text>
-                      <text class="{{pColor}}">{{item.salary}} /月</text>
-                  </view>
-                  <view class='s-portrait global-search-cont'>
-                      <view class="">
-                          <image src='{{item.logo}}' class='portrait-icon'/>
-                          <text>{{item.company_name}}</text>
-                      </view>
-                      <view class='company-status {{pBgC}} fr'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
-                  </view>
-                  <view class='c-info-msg global-search-cont'>
-                        <view>
-                          <text class='c-msg2 '>{{item.city_str}}{{item.district_str}}</text>
-                          <text class='c-msg2 '>{{item.work_age}}年 </text>
-                          <!-- <text class='c-msg2 '>{{item.school_type}}</text> -->
-                        </view>
-                        <text class="posen-msg {{pColor}}">企业</text>
-                  </view>
-                </view>
-              </view>
-          </navigator>
-
-
-          <!-- <navigator url="../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}">
-              <image src='{{item.logo}}'class="c-logo" />
-              <view class='c-info-text'>
-                <text class='c-info-title'>{{item.title}}</text>
-                <view class='c-info-msg'>
-                  <text class='c-msg'>{{item.salary}}</text>
-                  <text class='c-msg2'>{{item.work_age}} 年</text>
-                </view>
-              </view>
-              <view class='company-info'>
-                  <text>企业</text>
-                  <view class='company-status {{pBgC}}'>
-                      {{item.regtype == 0 ? "无需证书":"需要证书"}}
-                  </view>
-              </view>
-          </navigator> -->
+          <!-- recruit content start -->
+          <import src ="../template/company.wxml"/>
+          <template is="company" data="{{recruit:list.recruit, pColor: pColor,pBgC:pBgC,typeMsg:'企业',url:'../postionDetail/postionDetail?id='}}"/>
+          <!-- recruit content end -->
       </view>
   </view>
 </view>

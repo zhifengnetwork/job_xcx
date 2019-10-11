@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class='inner'>
-      <view class='c-body'>
+      <view class='c-body c-top-height'>
         <!-- banner start -->
         <view class='banner'>
             <swiper indicator-dots="{{indicatorDots}}" 
@@ -25,13 +25,13 @@
 
         <view class='subtitle overH'>
             <picker value="{{cat_id}}" range="{{jobArray}}" bindchange="jobChange" range-key="cat_name" range-value="cat_id">
-              <view class="picker subtitle-msg" data-id='{{jobArray[jobIndex].cat_id}}'>
+              <view class="picker subtitle-msg {{site_show?'company-color-':''}}" data-id='{{jobArray[jobIndex].cat_id}}'>
                 {{jobArray[jobIndex].cat_name}} 
                 <icon class="iconfont icon-zhcc_xiangxiajiantou"></icon>
               </view>
             </picker>
 
-            <view class="newsite_button" bindtap="selectDistrict">
+            <view class="newsite_button {{showTST?'':'company-color-'}}" bindtap="selectDistrict">
               <view class="newsite_view subtitle-msg" wx:if="{{showTST}}">选择地点</view>
               <view class="newsite_city">{{areaInfo}}</view>
               <icon class="iconfont icon-zhcc_xiangxiajiantou"></icon>

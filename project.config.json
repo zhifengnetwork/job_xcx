@@ -67,7 +67,7 @@
 				},
 				{
 					"id": -1,
-					"name": "服务商 编辑发布招工信息",
+					"name": "服务商 编辑发布招聘信息",
 					"pathName": "pages/jobList/editJobList",
 					"query": "",
 					"scene": null

@@ -1,0 +1,27 @@
+<!--pages/template/company.wxml-->
+<template name="company">
+    <navigator url="{{url}}{{item.id}}" wx:for="{{recruit}}" wx:key="index">
+        <view class='global-search-wrap'>
+        <view class='search-job-list'>
+            <view class='c-info-title global-search-cont'>
+                <text>{{item.title}}</text>
+                <text class="{{pColor}}">{{item.salary=='面议' ? item.salary : item.salary+'/月'}}</text>
+            </view>
+            <view class='s-portrait global-search-cont'>
+                <view class="">
+                    <image src='{{item.logo}}' class='portrait-icon'/>
+                    <text>{{item.company_name}}</text>
+                </view>
+                <view class='company-status {{pBgC}} fr'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
+            </view>
+            <view class='c-info-msg global-search-cont'>
+                <view>
+                    <text class='c-msg2 '>{{item.city_str}}{{item.district_str}}</text>
+                    <text class='c-msg2 '>{{item.work_age}}年 </text>
+                </view>
+                <text class="posen-msg {{pColor}}">{{typeMsg}}</text>
+            </view>
+        </view>
+        </view>
+    </navigator>
+</template>

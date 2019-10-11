@@ -2,13 +2,10 @@
 <view class='search-wrap'>
 
   <view class='g-header- gllobal-header'>
-    <!-- <view class='-header-cont'> -->
-      <view class='search-cont'>
-        <input type='text' class='search company-bColor-1'  placeholder="输入所要查找的内容" bindblur='selecKeyWord'/>
-        <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
-      </view>
-      <!-- <text class='login_tab' bindtap='searchInfp'>搜索</text> -->
-    <!-- </view> -->
+    <view class='search-cont'>
+      <input type='text' class='search company-bColor-1'  placeholder="输入所要查找的内容" bindinput='selecKeyWord'/>
+      <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
+    </view>
     <view class='subtitle overH search-subtitle'>
         <text bindtap='changStatus' class="{{cStatus==0?'stss-active':''}}" data-status="0">人才</text>
         <text bindtap='changStatus' class="{{cStatus==1?'stss-active':''}}" data-status="1">服务商</text>
@@ -21,61 +18,18 @@
       </view>
 
       <view wx:if="{{cStatus==0}}">
-        <block wx:for="{{list.person}}" wx:key="index">
-            <navigator url='../../personalDetail/personalDetail?id={{item.id}}'>
-                <view class='global-search-wrap'>
-                  <view class='search-job-list'>
-                    <view class='c-info-title global-search-cont'>
-                        <text>{{item.job_type}}</text>
-                        <text class="company-color-">{{item.salary=='面议' ? item.salary : item.salary+'/月'}}</text>
-                    </view>
-                    <view class='s-portrait global-search-cont'>
-                        <view class="">
-                            <image src='{{item.avatar}}' class='portrait-icon'/>
-                            <text>{{item.name}}</text>
-                        </view>
-                        <view class='company-status company-bg- fr'>{{item.images == 0 ? "无证书":"有证书"}}</view>
-                    </view>
-                    <view class='c-info-msg global-search-cont'>
-                        <view class="fl">
-                            <text class='c-msg2 '>{{item.work_age}}年 </text>
-                            <text class='c-msg2 '>{{item.school_type}}</text>
-                        </view>
-                        <text class="posen-msg company-color-">人才</text>
-                    </view>
-                  </view>
-                </view>
-            </navigator>
-          </block>
+          <!-- personal content start -->
+          <import src ="../../template/personal.wxml"/>
+          <template is="personal" data="{{person:list.person, pColor: pColor,pBgC:pBgC,url:'../../personalDetail/personalDetail?id='}}"/>
+          <!-- personal content end -->
       </view>
 
       <view wx:if="{{cStatus==1}}">
-          <navigator url="../../postionDetail/postionDetail?id={{item.id}}" wx:for="{{list.recruit}}">
-              <view class='global-search-wrap'>
-                <view class='search-job-list'>
-                  <view class='c-info-title global-search-cont'>
-                      <text>{{item.title}}</text>
-                      <text class="company-color-">{{item.salary=='面议' ? item.salary : item.salary+'/月'}}</text>
-                  </view>
-                  <view class='s-portrait global-search-cont'>
-                      <view class="">
-                          <image src='{{item.logo}}' class='portrait-icon'/>
-                          <text>{{item.company_name}}</text>
-                      </view>
-                      <view class='company-status company-bg- fr'>{{item.regtype == 0 ? "无需证书":"需要证书"}}</view>
-                  </view>
-                  <view class='c-info-msg global-search-cont'>
-                        <view>
-                          <text class='c-msg2 '>{{item.city_str}}{{item.district_str}}</text>
-                          <text class='c-msg2 '>{{item.work_age}}年 </text>
-                          <!-- <text class='c-msg2 '>{{item.school_type}}</text> -->
-                        </view>
-                        <text class="posen-msg company-color-">服务商</text>
-                  </view>
-                </view>
-              </view>
-          </navigator>
-      </view>
+          <!-- recruit content start -->
+          <import src ="../../template/company.wxml"/>
+          <template is="company" data="{{recruit:list.recruit, pColor: pColor,pBgC:pBgC,typeMsg:'服务商',url:'../../postionDetail/postionDetail?id='}}"/>
+          <!-- recruit content end -->
+      </view> 
   </view>
 
 </view>

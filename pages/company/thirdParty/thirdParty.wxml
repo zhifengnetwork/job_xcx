@@ -15,7 +15,7 @@
   <view class='subtitle search-subtitle'>
     <view class="newsite_box">
       <!-- 所在地区点击按钮 -->
-      <view class="newsite_button" bindtap="selectDistrict">
+      <view class="newsite_button {{showTST?'':'company-color-'}}" bindtap="selectDistrict">
         <view class="newsite_view" wx:if="{{showTST}}">选择地点</view>
         <view class="newsite_city">
             {{areaInfo}}

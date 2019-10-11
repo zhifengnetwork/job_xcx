@@ -21,7 +21,7 @@
   background:none;
 }
 .c-l-info .c-logo{
-  width:164rpx;
+  width:140rpx;
   height:140rpx;  
   border-radius: 4rpx;
 }

@@ -16,8 +16,7 @@
             <view>暂无数据</view>
       </view>
       <view>
-
-          <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{list.recruit}}">
+          <navigator url="../postionDetail/postionDetail?id={{item.id}}" wx:for="{{list.recruit}}" wx:key="index">
               <view class='global-search-wrap'>
                 <view class='search-job-list'>
                   <view class='c-info-title global-search-cont'>
@@ -35,7 +34,6 @@
                         <view>
                           <text class='c-msg2 '>{{item.city_str}}{{item.district_str}}</text>
                           <text class='c-msg2 '>{{item.work_age}}年 </text>
-                          <!-- <text class='c-msg2 '>{{item.school_type}}</text> -->
                         </view>
                         <text class="posen-msg {{pColor}}">服务商</text>
                   </view>

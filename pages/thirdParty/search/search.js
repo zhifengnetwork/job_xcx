@@ -1,4 +1,5 @@
 // pages/userInfo/search.js
+const util = require('../../../utils/util.js');  //通用方法
 import ServerData from '../../../utils/serverData.js';
 Page({
 
@@ -12,13 +13,21 @@ Page({
       page:1,
       list:[],
       isShowInfo: false,
+      pColor:'',                            //动态获字体颜色     
+      pBgC: '',                            //动态获背景颜色                 
+      pBC1: '',                            //动态获边框颜色  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.setData({
+          pColor: util.loginIdentity().pColor,
+          pBC1: util.loginIdentity().pBC1,
+          pBgC: util.loginIdentity().pBgC,
+          // resType: util.loginIdentity().resType,
+      })
   },
 
   searchInfp(){
@@ -51,16 +60,15 @@ Page({
     });
   },
   changStatus: function (e) {
-    console.log(e);
     this.setData({
       cStatus: e.currentTarget.dataset.status
     })
   },
   selecKeyWord(e){
-    console.log(e)
       this.setData({
         kw: e.detail.value
       })
+      this.searchInfp()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

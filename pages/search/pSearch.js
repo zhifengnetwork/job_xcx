@@ -12,9 +12,9 @@ Page({
     page: 1,
     isShowInfo: false,
     list: [],
+    pColor:'',                             //动态获颜色颜色        
     pBgC: '',                            //动态获背景颜色                 
     pBC1: '',                            //动态获边框颜色  
-    resType: ''                          //动态登陆者的标签：默认为字符串
   },
 
   /**
@@ -25,7 +25,6 @@ Page({
       pColor: util.loginIdentity().pColor,
       pBC1: util.loginIdentity().pBC1,
       pBgC: util.loginIdentity().pBgC,
-      resType: util.loginIdentity().resType,
     })
   },
 

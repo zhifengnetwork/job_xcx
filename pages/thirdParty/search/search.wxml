@@ -1,66 +1,33 @@
 <!--pages/userInfo/search.wxml-->
 <view class='search-wrap'>
-
   <view class='g-header-'>
     <view class='-header-cont'>
       <view class='search-cont'>
         <input type='text' class='search third-bColor-1'  placeholder="输入所要查找的内容" bindinput='selecKeyWord' />
         <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
       </view>
-      <text class='login_tab' bindtap='searchInfp'>搜索</text>
     </view>
-    <view class='subtitle overH'>
+    <view class='subtitle overH search-subtitle'>
         <text bindtap='changStatus' class="{{cStatus==0?'stss-active':''}}" data-status="0">人才</text>
         <text bindtap='changStatus' class="{{cStatus==1?'stss-active':''}}" data-status="1">企业</text>
     </view>
   </view>
   <view class='inner inner-cont'>
-
       <view class='wx-no-info' wx:if="{{isShowInfo}}">
-            <image class="wx-no-icon" src='../../../static/images/public/none.png'/>
-            <view>暂无数据</view>
+            <!-- <image class="wx-no-icon" src='../../../static/images/public/none.png'/> -->
+          <view>暂无数据</view>
       </view>
-
       <view wx:if="{{cStatus==0}}">
-        <block wx:for="{{list.person}}" wx:key="index">
-            <navigator url='../../personalDetail/personalDetail?id={{item.id}}'>
-                <view class='c-l-info'>
-                  <view class='search-job-list'>
-                    <view class='c-info-title'>{{item.job_type}}</view>
-                    <view class='c-info-msg overH'>
-                          <text class='c-msg2 fl'>{{item.work_age}}年</text>
-                    </view>
-                    <view class='s-portrait'>
-                        <image src='{{item.avatar}}' class='portrait-icon'/>
-                        <text>{{item.name}}</text>
-                    </view>
-                    <view class='overH'></view>
-                  </view>
-                  <view class='company-status third-bg- fr'>{{item.images == 0 ? "无证书":"有证书"}}</view>
-                </view>
-            </navigator>
-          </block>
+          <!-- personal content start -->
+          <import src ="../../template/personal.wxml"/>
+          <template is="personal" data="{{person:list.person, pColor: pColor,pBgC:pBgC,url:'../../personalDetail/personalDetail?id='}}"/>
+          <!-- personal content end -->
       </view>
-
       <view wx:if="{{cStatus==1}}">
-          <navigator url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}">
-              <image src='{{item.logo}}'class="c-logo" />
-              <view class='c-info-text'>
-                <text class='c-info-title'>{{item.title}}</text>
-                <view class='c-info-msg'>
-                  <text class='c-msg'>{{item.salary}}K</text>
-                  <text class='c-msg2'>{{item.work_age}} 年</text>
-                </view>
-              </view>
-              <!-- company info start -->
-              <view class='company-info'>
-                  <text>企业</text>
-                  <view class='company-status third-bg-'>
-                      {{item.regtype == 0 ? "无需证书":"需要证书"}}
-                  </view>
-              </view>
-          </navigator>
+        <!-- recruit content start -->
+          <import src ="../../template/company.wxml"/>
+          <template is="company" data="{{recruit:list.recruit, pColor: pColor,pBgC:pBgC,typeMsg:'企业',url:'../../postionDetail/postionDetail?id='}}"/>
+          <!-- recruit content end -->
       </view>
   </view>
-
 </view>

@@ -17,37 +17,9 @@
       </view>
 
       <!-- <view> -->
-
-      <block wx:for="{{list.person}}" wx:key="index">
-        <navigator url='../personalDetail/personalDetail?id={{item.id}}'>
-          <view class='c-l-info'>
-          <!-- <view class='c-l-info' bindtap='jumpDetails' data-id='{{item.id}}'> -->
-            <image src='{{item.avatar}}' class="c-logo" />
-            <view class='global-info-text'>
-              <view class="global-search-cont">
-                  <text class='c-info-title'>{{item.name}}</text>
-                  <text class='c-salary'>{{item.salary}} /月</text>
-              </view>
-              <view class='global-search-cont c-info-msg'>
-                  <view >
-                      <text class='c-msg2'>{{item.work_age}}年</text>
-                      <text >{{item.school_type}}</text>
-                  </view>
-                  
-                  <view class="global-status-sty">
-                      <view class='company-status company-bg-' wx:if="{{item.job_type!=null}}">{{item.job_type}}</view>
-                      <view class='company-status company-bg-'>{{item.images==1 ? "有证书":"无证书"}}</view>
-                  </view>
-                  
-              </view>
-              <view class='global-search-cont c-info-msg'>
-                  <text> </text>
-                  <text>人才</text>
-              </view>
-            </view>
-          </view>
-        </navigator>
-      </block>
-      <!-- </view> -->
+       <!-- personal content start -->
+        <import src ="../template/personal.wxml"/>
+        <template is="personal" data="{{person:list.person, pColor: pColor,pBgC:pBgC,url:'../personalDetail/personalDetail?id='}}"/>
+        <!-- personal content end -->
   </view>
 </view>
