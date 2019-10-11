@@ -61,6 +61,7 @@ Page({
       this.setData({
         kw: e.detail.value
       })
+      this.searchInfp()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

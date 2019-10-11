@@ -159,7 +159,9 @@
 }
 .subtitle .icon-zhcc_xiangxiajiantou{
   font-size:25rpx;
-  color:#151515;
+  position: relative;
+  top:-11rpx;
+  /* color:#151515; */
   /* vertical-align: middle; */
   /* vertical-align:top; */
 
@@ -175,7 +177,7 @@
   /* font-weight:700; */
 }
 .c-body{
-  padding-top:90rpx;
+  padding-top:160rpx;
 }
  /* LIST STYLE START */
  .c-title{

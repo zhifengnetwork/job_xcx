@@ -1,5 +1,7 @@
 {
   "pages": [ 
+
+    "pages/userInfo/index/index",
     "pages/login/login",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
@@ -56,7 +58,7 @@
     "pages/thirdParty/postJobPostings/postJobPostings",
     "pages/thirdParty/personalDetail/personalDetail",
 
-    "pages/userInfo/index/index",
+    
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/search/search",
