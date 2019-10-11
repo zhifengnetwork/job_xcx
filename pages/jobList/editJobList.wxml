@@ -2,10 +2,52 @@
 <view class='inner'>
 
    <view class='post-list'>
-      <text class='-list-msg'>公司名称:</text>
-      <input value="" class='-list-inp' placeholder-class="phcolor" placeholder='请输入名称' value="{{title}}" bindinput="getTitle"/>
+      <text class='-list-msg'>标题:</text>
+      <input value="" class='-list-inp' placeholder-class="phcolor" placeholder='请输入标题' value="{{title}}" bindinput="getTitle"/>
+   </view>
+
+   <view class='post-list'>
+	  <text class='-list-msg'>工种:</text>
+         <view class='e-info-picker'>
+			<picker value="{{cat_id}}" range="{{jobArray}}" range-key="cat_name" range-value="cat_id" bindchange="jobChange">
+              <view class="picker" style="text-align:left">
+                {{jobArray[jobIndex].cat_name}} 
+                <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
    </view>
    
+   <!-- WORKING YEAR START -->
+   <view class='post-list'>
+	   	<text class='-list-msg'>工龄：</text>
+		  <input type='number' class='-list-inp' bindinput='getWorkAge' placeholder-class="phcolor" value="{{workAge}}" placeholder='输入工龄'/>
+   </view>
+
+   <!-- PAY START -->
+   <view class='post-list'>
+      <text class='-list-msg'>薪资:</text>
+      <view class='selcet-time'>
+
+        <view class='e-info-picker minimum-salary'>
+            <picker bindchange="salaryChange" value="{{salaryIndex}}" range="{{salaryArray}}">
+              <view class="picker">
+                {{salaryArray[salaryIndex]}} <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+		<!-- — -->
+		<view class="separator" wx:if="{{selectShow}}" >至</view>
+        <view class='e-info-picker maximum-salary' wx:if="{{selectShow}}">
+            <picker bindchange="salaryChange2" value="{{salaryIndex2}}" range="{{salaryArray}}">
+              <view class="picker" >
+                {{salaryArray[salaryIndex2]}} <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
+              </view>
+            </picker>
+        </view>
+      </view>
+
+   </view>
    <!-- -->
    <view class='post-list'>
       <text class='-list-msg'>证书要求:</text>
@@ -18,112 +60,9 @@
       </view>
    </view>
 
-   <view class="data_list">
-    <view class="data_item">
-      <view class="data_left">
-        职位名称: 
-      </view>
-
-      <view class='data_right'>
-        <picker range="{{postNameList}}" bindchange="changePostName">
-          <view class="data_box">
-            <text>{{postNameText}}</text>
-            <image class="icon" src="../../images/login/leftArrow.png"></image>
-          </view>
-        </picker>
-      </view>
-    </view>
-
-    <view class="data_item">
-      <view class="data_left">
-        经验要求: 
-      </view>
-
-      <view class='data_right'>
-        <picker range="{{experienceList}}" bindchange="changeExperience">
-          <view class="data_box">
-            <text>{{experienceText}}</text>
-            <image class="icon" src="../../images/login/leftArrow.png"></image>
-          </view>
-        </picker>
-      </view>
-    </view>
-
-    <view class="data_item">
-      <view class="data_left">
-        学历要求: 
-      </view>
-
-      <view class='data_right'>
-        <picker range="{{educationList}}" bindchange="changeEducation">
-          <view class="data_box">
-            <text>{{educationText}}</text>
-            <image class="icon" src="../../images/login/leftArrow.png"></image>
-          </view>
-        </picker>
-      </view>
-    </view>
-
-    <view class="data_item">
-      <view class="data_left">
-        薪资范围: 
-      </view>
-
-      <view class='data_right'>
-        <picker range="{{salaryList}}" bindchange="changeSalary">
-          <view class="data_box">
-            <text>{{salaryText}}</text>
-            <image class="icon" src="../../images/login/leftArrow.png"></image>
-          </view>
-        </picker>
-      </view>
-    </view>
-
-    <view class="data_item">
-      <view class="data_left">
-        工作地点: 
-      </view>
-
-      <view class='data_right'>
-        <picker range="{{experienceList}}" bindchange="changeExperience">
-          <view class="data_box">
-            <text>{{experienceText}}</text>
-            <image class="icon" src="../../images/login/leftArrow.png"></image>
-          </view>
-        </picker>
-      </view>
-    </view>
-
-    <view class="data_item">
-      <view class="data_left">
-        福利待遇: 
-      </view>
-
-      <view class='data_right'>
-        <picker range="{{welfareList}}" bindchange="changeWelfare">
-          <view class="data_box">
-            <text>{{welfareText}}</text>
-            <image class="icon" src="../../images/login/leftArrow.png"></image>
-          </view>
-        </picker>
-      </view>
-    </view>
-
-    <view class="data_item">
-      <view class="data_left">
-        职位描述: 
-      </view>
-
-      <view class='data_right'>
-        <picker range="{{describeList}}" bindchange="changeDescribe">
-          <view class="data_box">
-            <text>{{describeText}}</text>
-            <image class="icon" src="../../images/login/leftArrow.png"></image>
-          </view>
-        </picker>
-      </view>
-    </view>
-   </view>
+  <text class='-list-msg'>职位详情:</text>
+  
+  <textarea placeholder='职位描述' class="texa" value="{{details}}" bindinput="getDetails"></textarea>
 
   <view class='line-heig'></view>
 

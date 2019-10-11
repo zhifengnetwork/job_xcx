@@ -38,7 +38,7 @@ Page({
     aducational: false, 
     workInfo: "",                           //工作经验
     aducationalInfo: "",                    //教育经历
-    name: "",                               //姓名
+    
     old: "",                                //年龄
     mz: "",                                 //民族
     wordOld: "",                            //工龄
@@ -60,7 +60,29 @@ Page({
     cCode: '',                    //获取选中的市ID
     aCode: '',                    //获取选中的区ID
     site_show: true, 
-    showTST:true
+    showTST:true,
+
+    name: "",                               //姓名
+    rangeList:['男', '女'],                 //性别
+    rangeText: '',
+    endTime: '',                         //时间选择器 当前时间
+    birthDate: '',                       //出生年月
+    educationList:['初中','高中','大专','本科'],  //学历
+    educationText: '', 
+    workYearList: ['三年及以下','3-5年','5-10年','10年以上'], //工作年限
+    workYearText: '',
+    stateList: ['离职-随时到岗', '在职-月内到岗', '在职-考虑机会', '在职-暂不考虑'],  //当前状态
+    stateText:'',
+    typeList: ['土木工程','建筑工程','电气','其他'],  //求职类型
+    typeText: '',
+    isShowPost: false,     //显示期望岗位
+    postList:[],    //选中的期望岗位
+    monthlyList:['不限','3k-4k','5k-6k','8k-9k'],  //期望月薪
+    monthlyText:'',
+    phone: '',   //联系方式
+    pics: [                                                 // 职业证书
+      { src: '', hiddenName: true, newSrc: '',name: '' }
+    ],
   },
   /**
    * 生命周期函数--监听页面加载
@@ -75,9 +97,99 @@ Page({
         timingFunction: 'ease',
       })
       this.animation = animation;
+
+    this.setData({
+      endTime: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
+    })
       /*********地址 */
   },
-
+  //监听选择器
+  changPicker: function(e){
+    this.setData({
+      [e.currentTarget.dataset.text]: this.data[e.currentTarget.dataset.list][e.detail.value]
+    })
+  },
+  //出生年份 选择器
+  bindBirthDate: function (e) {
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      birthDate: e.detail.value
+    })
+  },
+  //监听联系方式输入框
+  inputPhone(e) {
+    this.setData({ phone: e.detail.value })
+  },
+  //选中期望岗位
+  choosePostList: function(e){
+    console.log(e)
+    let list = []
+    list.push(e.currentTarget.dataset.index)
+    this.setData({
+      postList: list
+    })
+  },
+  //删除期望岗位
+  closePostList: function(){
+    this.setData({
+      postList: []
+    })
+  },
+  //选择职业证书
+  addWordPic: function (e) {
+    var _this = this
+    var id = e.currentTarget.dataset.id
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        var imgSrc = res.tempFilePaths[0];
+        var data = _this.data.pics[id]
+        data.src = imgSrc;
+        data.hiddenName = false;
+        ServerData.uploadFile(imgSrc).then((res) => {
+          var dat = JSON.parse(res.data)
+          if (dat.status == 1) {
+            data.newSrc = dat.data
+            _this.setData({
+              pics: _this.data.pics
+            })
+          }
+        })
+        _this.setData({
+          pics: _this.data.pics
+        })
+      }
+      //
+    })
+  },
+  //添加证书
+  addImgBox: function (e) {
+    var json = { src: '', hiddenName: true };
+    this.data.pics.push(json)
+    this.setData({
+      pics: this.data.pics
+    })
+  },
+  //删除证书
+  deleteImgBox: function ({ currentTarget: { dataset: { index }}}){
+    console.log(index)
+    this.data.pics.splice(index,1)
+    this.setData({
+      pics: this.data.pics
+    })
+  },
+  //证书名字
+  getPicName: function(e){
+    this.data.pics[e.currentTarget.dataset.index]['name'] = e.detail.value
+    this.setData({
+      pics: this.data.pics
+    })
+  },
+  //期望岗位弹窗
+  closePost: function () {
+    this.setData({ isShowPost: !this.data.isShowPost });
+  },
   onShow(){
     this.initUserInfo()
   },

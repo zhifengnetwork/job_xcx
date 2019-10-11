@@ -1,0 +1,247 @@
+<view class="container">
+
+  <view class="title">
+    基本信息 <text>*</text>
+  </view>
+  <view class="item">
+    <view class="left">
+    姓名
+    </view>
+
+    <view class="right">
+      <input placeholder="请输入姓名" type="text" bindinput='getName' placeholder-class="phcolor" value="{{name}}" />
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    性别
+    </view>
+
+    <view class="right">
+      <picker range="{{rangeList}}" bindchange="changPicker" data-list="rangeList" data-text="rangeText">
+        <view class="right_box">
+          <input placeholder="请选择性别" type="text" disabled value="{{rangeText}}"/>
+          <image class="icon" src="../../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    出生年份
+    </view>
+
+    <view class="right">
+      <picker mode="date" end="{{endTime}}" bindchange="bindBirthDate">
+        <view class="right_box">
+          <input placeholder="请选择出生年月日" type="text" disabled value="{{birthDate}}"/>
+          <image class="icon" src="../../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    学历
+    </view>
+
+    <view class="right">
+      <picker range="{{educationList}}" bindchange="changPicker" data-list="educationList" data-text="educationText">
+        <view class="right_box">
+          <input placeholder="请选择学历" type="text" disabled value="{{educationText}}"/>
+          <image class="icon" src="../../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    工作年限
+    </view>
+
+    <view class="right">
+      <picker range="{{workYearList}}" bindchange="changPicker" data-list="workYearList" data-text="workYearText">
+        <view class="right_box">
+          <input placeholder="请选择工作年限" type="text" disabled value="{{workYearText}}"/>
+          <image class="icon" src="../../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    当前状态
+    </view>
+
+    <view class="right">
+      <picker range="{{stateList}}" bindchange="changPicker" data-list="stateList" data-text="stateText">
+        <view class="right_box">
+          <input placeholder="请选择当前状态" type="text" disabled value="{{stateText}}"/>
+          <image class="icon" src="../../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    现居地址
+    </view>
+
+    <view class="right">
+      <view class="right_box" bindtap="selectDistrict">
+        <input placeholder="请选择现居地址" type="text" disabled value="{{areaInfo}}"/>
+        <image class="icon" src="../../../images/login/leftArrow.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    联系方式
+    </view>
+
+     <view class="right">
+      <input placeholder="请输入联系方式" type="number" bindinput='inputPhone' value="{{phone}}"/>
+    </view>
+  </view>
+
+  <view class="title">
+    求职意向 <text>*</text>
+  </view>
+
+   <view class="item">
+    <view class="left">
+    求职类型
+    </view>
+
+    <view class="right">
+      <picker range="{{typeList}}" bindchange="changPicker" data-list="typeList" data-text="typeText">
+        <view class="right_box">
+          <input placeholder="请选择求职类型" type="text" disabled value="{{typeText}}"/>
+          <image class="icon" src="../../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    期望城市
+    </view>
+
+    <view class="right">
+      <view class="right_box" bindtap="selectDistrict">
+        <input placeholder="请选择期望城市" type="text" disabled value="{{areaInfo}}"/>
+        <image class="icon" src="../../../images/login/leftArrow.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    期望岗位
+    </view>
+
+    <view class="right">
+      <view class="right_box" bindtap="closePost">
+        <input placeholder="请选择期望岗位" type="text" disabled value="{{postList[0]}}"/>
+        <image class="icon" src="../../../images/login/leftArrow.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="left">
+    期望月薪
+    </view>
+
+    <view class="right">
+      <picker range="{{monthlyList}}" bindchange="changPicker" data-list="monthlyList" data-text="monthlyText">
+        <view class="right_box">
+          <input placeholder="请选择期望月薪" type="text" disabled value="{{monthlyText}}"/>
+          <image class="icon" src="../../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- <view class="item">
+    <view class="left">
+    工作经验
+    </view>
+
+    <view class="right">
+      <picker range="{{rangeList}}" bindchange="changPicker" data-list="rangeList" data-text="rangeText">
+        <view class="right_box">
+          <input placeholder="请选择工作经验" type="text" disabled value="{{rangeText}}"/>
+          <image class="icon" src="../../../images/login/leftArrow.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view> -->
+
+  <view class="item">
+    <view class="left">
+    现居地址
+    </view>
+
+    <view class="right">
+      <view class="right_box" bindtap="selectDistrict">
+        <input placeholder="请选择现居地址" type="text" disabled value="{{areaInfo}}"/>
+        <image class="icon" src="../../../images/login/leftArrow.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='idPic'>
+    <view class='-pic-subtitle'>上传职业证书(选填)</view>
+    <!-- -->
+    <view  wx:for="{{pics}}" wx:key="{{index}}">
+      <view class='id-card-top' bindtap='addWordPic' data-id="{{index}}">
+        <block>
+          <image class='card-top' mode='aspectFit' src="{{item.src}}" data-index="{{index}}"/>
+        </block>
+        <view class='-add-img-' wx:if="{{item.hiddenName}}">
+          <image class='addPic2' src='../../../static/images/public/plus.png'></image>
+        </view>
+      </view>
+      <input class="addTextBox" bindblur='getPicName' data-index="{{index}}" placeholder='请输入职业证书名称' :value="{{item.name}}"/>
+      
+      <view class="a-more-pic" wx:if="{{index}}" bindtap="deleteImgBox" data-index="{{index}}">删除</view>
+    </view>
+    <!-- -->
+    <view class='file-inner' bindtap='addImgBox'>
+      <button class='file-btn'></button> 
+      <image class='f-plus-' src='../../../static/images/public/plus.png'/>
+    </view>
+  </view>
+  <!-- <view class='a-more-pic' >添加一张</view> -->
+</view>
+<include src="../../template/address"/> 
+
+<!--footer -->
+  <view wx:if="{{getUData.is_edit!=1}}" class="footer">
+      <!-- <view class='line-heig'></view> -->
+      <button class='s-1-option' bindtap='saveEditInfo'>保存</button>
+  </view>
+
+  <van-popup show="{{ isShowPost }}" bind:close="closePost" position="bottom">
+    
+    <view class="choosBtns">
+      <view wx:for="{{postList}}" wx:key="{{index}}">{{item}} <icon  bindtap="closePostList" type="clear" size="10" color="#ece912"/></view>
+    </view>
+    <view class="popup_box">
+      <view class="popup_left">
+        <view class="popup_left_item" wx:for="{{10}}" wx:key="{{index}}">{{item}}</view>
+      </view>
+      <view class="popup_right">
+        <view class="popup_right_item"  wx:for="{{20}}" wx:key="{{index}}" bindtap="choosePostList" data-index="{{index}}">{{item}}</view>
+      </view>
+    </view>
+  </van-popup>
