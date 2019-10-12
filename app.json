@@ -1,8 +1,7 @@
 {
   "pages": [
-  
-    "pages/company/index/index",
     "pages/login/login",
+    "pages/company/index/index",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
     "pages/jobList/jobList",
