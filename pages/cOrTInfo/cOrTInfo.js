@@ -8,8 +8,7 @@ Page({
    */
   data: {
       cList:[],
-      companyId:'88',
-      //
+      companyId:'',
       pColor:'',                            //动态获z字体颜色 
       pBgC: '',                            //动态获背景颜色       
   },
@@ -18,15 +17,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      // this.setData({
-      //   companyId: options.company_id
-      // })
-      this.lookCompany()
       this.setData({
           pColor: util.loginIdentity().pColor,
-          // companyId: options.company_id,
+          companyId: options.company_id,
           pBgC: util.loginIdentity().pBgC,
       })
+      this.lookCompany()
   },
 
   lookCompany() {         // 要传给后台的参数

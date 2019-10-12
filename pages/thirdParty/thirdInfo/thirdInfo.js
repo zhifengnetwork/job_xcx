@@ -45,7 +45,8 @@ Page({
 	 */
 	toEdit: function () {
 		wx.navigateTo({
-			url: '../postJobPostings/postJobPostings',
+			// url: '../postJobPostings/postJobPostings',
+			url: '../../jobList/editJobList'
 		})
 	},
   //切换账号

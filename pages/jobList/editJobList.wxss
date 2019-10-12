@@ -12,7 +12,7 @@
 }
 .-list-msg{
   margin-right:25rpx;
-  width:122rpx;
+  width:130rpx;
 }
 .separator{
   font-size: 24rpx;
@@ -33,7 +33,7 @@
   align-items: center;
 }
 .e-info-picker{
-  width:160rpx;
+  /* width:160rpx; */
   font-size: 26rpx;
   text-align:center;
 

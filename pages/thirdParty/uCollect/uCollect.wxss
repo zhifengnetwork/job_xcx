@@ -19,7 +19,9 @@
     display: block;
   }
   .search-job-list{
-    padding:10px
+    padding:10px;
+    background:#fff;
+    margin-bottom: 15rpx;
   }
   .hidden{
     display: none;

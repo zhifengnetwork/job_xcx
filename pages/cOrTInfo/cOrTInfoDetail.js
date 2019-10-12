@@ -11,7 +11,8 @@ Page({
     cList: [],          //公司列表
     pList: [],          //公司招聘列表
     companyId:'',
-    pBgC: '',                            //动态获背景颜色  
+    pColor:'',                            //动态获z字体颜色 
+    pBgC: '',                            //动态获背景颜色       
   },
 
   /**
@@ -20,7 +21,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       companyId: options.id,
-      pBgC: util.loginIdentity().pBgC
+      pBgC: util.loginIdentity().pBgC,
+      pColor: util.loginIdentity().pColor
     })
     this.lookCompany()
     this.getRecruitList()
@@ -28,8 +30,7 @@ Page({
 
   lookCompany() {         // 要传给后台的参数
     var _opt = {
-      // company_id: this.data.companyId
-      company_id:88
+        company_id: this.data.companyId
     }
     ServerData.lookCompany(_opt).then((res) => {
       if (res.data.status == 1) {

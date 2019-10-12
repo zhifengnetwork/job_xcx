@@ -196,13 +196,13 @@
   font-weight: 700;
 }
 .c-l-info {
-  margin-bottom:10rpx;
+  margin-bottom:15rpx;
   border-radius:5px;
   background:#fff;
   align-items:center;
   display:flex;
   justify-content: space-between;
-  padding:25rpx 10rpx 25rpx;
+  padding:30rpx 10rpx;
 }
 .p-list-info{
   justify-content: flex-start;
@@ -253,7 +253,7 @@
 
 /* search style stert */
 .global-search-wrap{
-  margin-bottom:10rpx;
+  margin-bottom:15rpx;
   border-radius:5px;
   background:#fff;
   padding:25rpx 25rpx;

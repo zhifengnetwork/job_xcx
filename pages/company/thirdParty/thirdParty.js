@@ -75,19 +75,19 @@ Page({
 
   // 点击地区选择确定按钮
   citySure: function (e) {
-    var that = this
-    var value = that.data.value
-    that.startAddressAnimation(false)
-    // 将选择的城市信息显示到输入框
-    let areaInfo = that.data.province.area_name + ',' + that.data.city.area_name + ',' + that.data.area.area_name
-    that.setData({
-      areaInfo: areaInfo,
-      pCode: that.data.province.code,
-      cCode: that.data.city.code,
-      aCode: that.data.area.code,
-      showTST:false
-    })
-    this.getCompanyList()
+      var that = this
+      var value = that.data.value
+      that.startAddressAnimation(false)
+      // 将选择的城市信息显示到输入框
+      let areaInfo = that.data.province.area_name + ',' + that.data.city.area_name + ',' + that.data.area.area_name
+      that.setData({
+        areaInfo: areaInfo,
+        pCode: that.data.province.code,
+        cCode: that.data.city.code,
+        aCode: that.data.area.code,
+        showTST:false
+      })
+      this.getCompanyList()
   },
 
   // 处理省市县联动逻辑
@@ -169,7 +169,7 @@ Page({
 
   lookMore() {
     this.setData({
-      page: this.data.page + 1
+        page: this.data.page + 1
     })
     this.getCompanyList()
   },
@@ -185,38 +185,35 @@ Page({
       }
     ServerData.companyList(_opt).then((res) => {
       var status = res.data.status,
-        newArray = []
+          newArray = []
       if (status == 1) {
-        if (res.data.data.length != "") {
-          if (that.data.page == 1) {
-            newArray = res.data.data
-          } else {
-            newArray = [...that.data.recList, ...res.data.data]
-          }
-          console.log(newArray)
-          this.setData({
-            recList: newArray,
-            isMore: true
-          })
+          if (res.data.data.length != "") {
+              if (that.data.page == 1) {
+                  newArray = res.data.data
+              } else {
+                  newArray = [...that.data.recList, ...res.data.data]
+              }
+              var tt = res.data.data.length >=that.data.rows? true :false
+              this.setData({
+                  recList: newArray,
+                  isMore: tt
+              })
         } else {
-          this.setData({
-            isMore: false
-          })
+              this.setData({
+                  isMore: false
+              })
+              ServerData._wxTost('没有数据了')
         }
-
       } else if (status == -1) {
-        wx.redirectTo({
-          url: '../../login/login'
-        })
+          wx.redirectTo({
+            url: '../../login/login'
+          })
       } else {
-        ServerData._wxTost(res.data.msg)
+          ServerData._wxTost(res.data.msg)
       }
-      // this.setData({
-      //   recList: res.data.data
-      // })
     })
   },
   onShareAppMessage: function () {
-    return
+
   }
 })

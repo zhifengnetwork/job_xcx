@@ -5,15 +5,6 @@
       <navigator url='../../headPortrait/headPortrait'><image src='{{cList.logo}}' class="c-logo" /></navigator>
       <view class='c-info-text'>
         <text class='c-info-title'>{{cList.company_name}}</text>
-
-        <!-- <view class='c-msg m-b10'> 
-            实名认证：
-            <text wx:if="{{cList.status=== 0}}">未认证</text>
-            <text wx:if="{{cList.status=== 1}}">认证</text>
-            <text wx:if="{{cList.status=== -1}}">拒绝认证</text>
-        </view>
-        <view class='c-msg m-b10'>编号：{{cList.id}}</view>
-        <view class="surplus-num" >规模：{{cList.contacts_scale}}人</view> -->
       </view>
   </view>
 
@@ -39,11 +30,6 @@
 
 
 	<view class='cOrTInfo-cont global-cOrTInfo-'>
-			<!-- <view class='cOrTInfo-'>
-				<text class='cOrTInfo-msg'>成立时间：</text>
-        <text class='cOrTInfo-msg2'>{{cList.open_time}}</text>
-			</view> -->
-
       <view class='cOrTInfo-option' bindtap='addAchievementBox'>
         <icon class="iconfont icon-1 {{pColor}}" />
         <text class='cOrTInfo-msg'> 公司成就</text>

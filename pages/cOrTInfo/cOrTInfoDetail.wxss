@@ -7,7 +7,6 @@
   /* background: red */
 }
 .c-l-info {
-  background:none;
   margin-bottom: 30rpx;
   justify-content:flex-start;
 

@@ -2,12 +2,12 @@
 <view class='inner'>
 
    <view class='post-list'>
-      <text class='-list-msg'>标题:</text>
-      <input value="" class='-list-inp' placeholder-class="phcolor" placeholder='请输入标题' value="{{title}}" bindinput="getTitle"/>
+      <text class='-list-msg'>公司名称:</text>
+      <input value="" class='-list-inp' placeholder-class="phcolor" placeholder='请输入公司名称' value="{{title}}" bindinput="getTitle"/>
    </view>
 
    <view class='post-list'>
-	  <text class='-list-msg'>工种:</text>
+	  <text class='-list-msg'>职位名称:</text>
          <view class='e-info-picker'>
 			<picker value="{{cat_id}}" range="{{jobArray}}" range-key="cat_name" range-value="cat_id" bindchange="jobChange">
               <view class="picker" style="text-align:left">
@@ -20,13 +20,13 @@
    
    <!-- WORKING YEAR START -->
    <view class='post-list'>
-	   	<text class='-list-msg'>工龄：</text>
-		  <input type='number' class='-list-inp' bindinput='getWorkAge' placeholder-class="phcolor" value="{{workAge}}" placeholder='输入工龄'/>
+	   	<text class='-list-msg'>工作年限：</text>
+		  <input type='number' class='-list-inp' bindinput='getWorkAge' placeholder-class="phcolor" value="{{workAge}}" placeholder='工作年限'/>
    </view>
 
    <!-- PAY START -->
    <view class='post-list'>
-      <text class='-list-msg'>薪资:</text>
+      <text class='-list-msg'>薪资要求:</text>
       <view class='selcet-time'>
 
         <view class='e-info-picker minimum-salary'>

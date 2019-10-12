@@ -3,8 +3,11 @@
 .inner{padding: 20rpx 24rpx; background:#f8f8f8;}
 .c-info-msg{margin-top: 14rpx;}
 .c-msg3{margin: 12rpx 0 13rpx;}
+
 .search-job-list {
-  padding: 25rpx 10rpx 25rpx;
+  padding:10px;
+  background:#fff;
+  margin-bottom: 15rpx;
 }
 
 .tab {

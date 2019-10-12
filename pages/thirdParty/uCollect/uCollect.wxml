@@ -23,7 +23,7 @@
   </view>
 
   <view class='c-l-info' class = "{{currentTab == 1 ? 'show':'hidden'}}">
-      <view class='search-job-list'>
+      <view>
         <navigator url="../../postionDetail/postionDetail?id={{item.id}}" wx:for="{{UcData}}" wx:key="key">
           <view class='c-l-info'>
             <image src='{{item.logo}}'class="c-logo" />

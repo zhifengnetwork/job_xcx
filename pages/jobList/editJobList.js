@@ -233,11 +233,11 @@ Page({
 	 */
 	verifyData: function () {
 		if (!/^[\S\s]{2,50}$/.test(this.data.title)) {
-			ServerData._wxTost('标题长度2-50');
+			ServerData._wxTost('公司名称2-50');
 			return false
 		}
 		else if(this.data.workAge == "") {
-			ServerData._wxTost('请输入工龄');
+			ServerData._wxTost('请输入工作年限');
 			return false
 		}
 		else if (!/^[\S\s]{10,200}$/.test(this.data.details)) {
