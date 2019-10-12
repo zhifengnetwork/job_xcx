@@ -37,11 +37,11 @@ Page({
         rows: that.data.rows,
         page: that.data.page
       }
-    ServerData.searchInfp(_opt).then((res) => {
+      ServerData.companyList(_opt).then((res) => {
       if (res.data.status == 1) {
         that.setData({ list: res.data.data })
         var status =false;
-        if (res.data.data.recruit.length < 1) {
+        if (res.data.data.length < 1) {
           var status= true
         }
 

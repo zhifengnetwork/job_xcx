@@ -14,7 +14,7 @@
    flex: 1;
 }
 .e-info-{
-  width:495rpx;
+  /* width:495rpx; */
   margin-bottom: 20rpx;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
 }
 .e-info-inp{
   font-size: 26rpx;
-  width: 300rpx;
+  width:495rpx;
   display: inline-block;
   vertical-align: middle;
   height:50rpx;
@@ -83,6 +83,7 @@
 .u-o-icon2{
   width: 12rpx;
   height: 24rpx;
+  margin-left:10rpx;
 }
 .u-o-msg{
   margin-right: 20rpx;

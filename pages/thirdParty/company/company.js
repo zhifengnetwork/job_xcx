@@ -22,7 +22,10 @@ Page({
     showTST:true,                 //是否选择地址
     page:1,
     rows:10,
-    isMore:true
+    isMore:true,
+
+    pColor:'',                            //动态获z字体颜色 
+    pBgC: '',                            //动态获背景颜色                 
   },
 
   /**
@@ -41,6 +44,12 @@ Page({
     })
     this.animation = animation;
     /*********地址 */
+
+    this.setData({
+      pColor: util.loginIdentity().pColor,
+      pBgC: util.loginIdentity().pBgC
+    })
+
   },
 
 
@@ -87,6 +96,7 @@ Page({
       aCode: that.data.area.code,
       showTST:false
     })
+    this.data.page =1
     this.getCompanyList()
   },
 
@@ -187,11 +197,11 @@ Page({
         var status = res.data.status,
             newArray=[]
         if(status==1){
-          if (res.data.data.length!=""){
+          if (res.data.data.length>0){
               if (that.data.page == 1) {
-                newArray = res.data.data
+                  newArray = res.data.data
               } else {
-                newArray = [...that.data.recList, ...res.data.data]
+                  newArray = [...that.data.recList, ...res.data.data]
               }
               this.setData({
                 recList: newArray,
@@ -199,10 +209,16 @@ Page({
               })
           }else{
               this.setData({
-                isMore: false
+                isMore: false,
+              })
+              ServerData._wxTost('没有数据了')
+          }
+
+          if(that.data.page ==1 && res.data.data==""){
+              this.setData({
+                  recList:[],
               })
           }
- 
         }else if(status==-1){
             wx.redirectTo({
               url: '../../login/login'
@@ -210,9 +226,6 @@ Page({
         }else{
            ServerData._wxTost(res.data.msg)
         }
-      // this.setData({
-      //   recList: res.data.data
-      // })
     })
   },
   onShareAppMessage: function () {

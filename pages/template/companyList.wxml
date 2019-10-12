@@ -1,0 +1,20 @@
+<!--pages/template/company.wxml-->
+<template name="companyList">
+    <navigator url="{{url}}{{item.id}}" wx:for="{{recruit}}" wx:key>
+        <view class='c-l-info p-list-info'>
+            <image src='{{item.logo}}'class="c-logo" />
+            <view class='c-info-text'>
+            <text class='c-info-title'>{{item.company_name}}</text>
+            <view class='c-info-msg'>
+                <view class='c-msg'><text>实名认证：</text>
+                <text wx:if="{{item.status=== 0}}">未认证</text>
+                <text wx:if="{{item.status=== 1}}">认证</text>
+                <text wx:if="{{item.status=== -1}}">拒绝认证</text>
+                </view>
+                <view class='c-msg'><text>规模：{{item.contacts_scale}}</text></view>
+            </view>
+            <text class='c-info-title'></text>
+            </view>
+        </view>
+    </navigator>
+</template>

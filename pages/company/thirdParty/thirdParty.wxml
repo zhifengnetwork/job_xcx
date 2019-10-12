@@ -42,26 +42,11 @@
                 <text>最新推荐</text>
               </view>
           </navigator>
-          <navigator url="../../cOrTInfo/cOrTInfoDetail?id={{item.id}}" wx:for="{{recList}}" wx:key>
-            <view class='c-l-info p-list-info'>
-              <image src='{{item.logo}}'class="c-logo" />
-              <view class='c-info-text'>
-                <text class='c-info-title'>{{item.company_name}}</text>
-                <view class='c-info-msg'>
-                  <view class='c-msg'><text>实名认证：</text>
-                    <text wx:if="{{item.status=== 0}}">未认证</text>
-                    <text wx:if="{{item.status=== 1}}">认证</text>
-                    <text wx:if="{{item.status=== -1}}">拒绝认证</text>
-                  </view>
-                  <view class='c-msg'>
-                      <text>{{item.city_str}} {{item.district_str}}</text>
-                  </view>
-                </view>
-                <text class='c-info-title'></text>
-              </view>
-              <!-- company info start -->
-            </view>
-          </navigator>
+
+          <!-- recruit content start -->
+          <import src ="../../template/companyList.wxml"/>
+          <template is="companyList" data="{{recruit:recList,url:'../../cOrTInfo/cOrTInfoDetail?id='}}"/>
+          <!-- recruit content end -->
           <view class='more-recommond2' wx:if="{{isMore}}" bindtap='lookMore'>点击查看更多</view>
         </view>
     </view>

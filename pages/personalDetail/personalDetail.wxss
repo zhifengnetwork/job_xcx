@@ -53,9 +53,8 @@
 .collect_tab{
   display: inline-block;
   vertical-align: middle;
-  font-size:24rpx;
+  font-size:28rpx;
   color:#151515;
-  font-weight:700;
   flex: 0 0 1; 
 }
 /* CONTENT STAT */
@@ -74,31 +73,39 @@
 .line {
   margin: 0 0 25rpx;
 }
-/* .c-list-portrait{
-   width: 150rpx;
-   height: 150rpx;
-   margin-left:auto;
-} */
 
 /* FOOTER START */
+.search2-inner{
+  float: left;
+  width:20%;
+}
 .footer{
   position: fixed;
-  bottom:48rpx;
+  bottom:28rpx;
+  padding: 0 24rpx;
   left: 0;
   width: 100%;
   z-index: 1;
-  text-align: center
+  text-align: right;
+  box-sizing:border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.footer-right{
+  float: left;
+  display: flex;
+  width: 80%;
 }
 .footer button{
   display: inline-block;
-  width:320rpx;
+  /* width:300rpx; */
+  flex: 1;
   height: 88rpx;
   line-height: 88rpx;
-  border-radius:42rpx; 
+  border-radius:0; 
   box-sizing:border-box;
   font-size:28rpx;
-}
-.footer .f-btn-1{
-  margin-right:30rpx; 
+  margin-left:6rpx;
   color:#fff;
 }

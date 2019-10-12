@@ -34,7 +34,7 @@
             <text>招聘信息</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
-          <navigator url="../myReserve/myReserve" class='u-o-list m-b10'>
+          <navigator url="../../myReserve/myReserve" class='u-o-list m-b10'>
             <text>我的预订</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>

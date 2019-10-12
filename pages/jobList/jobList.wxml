@@ -21,7 +21,7 @@
         <navigator url="editJobList?id={{item.id}}" class='company-info {{pColor}}'>
             <text class='' wx:if="{{item.status === 0}}">审核中</text>
             <text class='' wx:if="{{item.status === 1}}">审核通过</text>
-            <text class='' wx:if="{{item.status === 2}}">审核失败</text>   
+            <text class='' wx:if="{{item.status === -1}}">审核失败</text>   
             <icon class='iconfont icon-bianji'></icon>
         </navigator> 
     </view>

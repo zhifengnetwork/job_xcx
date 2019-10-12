@@ -87,6 +87,7 @@ Page({
         aCode: that.data.area.code,
         showTST:false
       })
+      this.data.page =1
       this.getCompanyList()
   },
 
@@ -204,6 +205,11 @@ Page({
               })
               ServerData._wxTost('没有数据了')
         }
+        if(that.data.page ==1 && res.data.data==""){
+            this.setData({
+                recList:[],
+            })
+          }
       } else if (status == -1) {
           wx.redirectTo({
             url: '../../login/login'

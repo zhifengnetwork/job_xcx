@@ -1,9 +1,5 @@
 <view id="wrap">
   <!-- SEARCH INFO START -->
-  <view class='search2-inner'>
-    <text bindtap="onCollection" class='collect_tab'  data-stu="0" wx:if="{{isCollect==0}}">收藏</text>
-    <text bindtap="onCollection" class='collect_tab'  data-stu="1" wx:else>已收藏</text>
-  </view>
   <view class='inner'>
     <!-- CONTENT START -->
     <view class='d-content'>
@@ -26,15 +22,22 @@
                 </view>
             </view>
             <view class='c-list-portrait'>
-                <image src='{{recruitDetail.logo}}'/>
+                <image class='c-portrait-img' src='{{recruitDetail.logo}}'/>
             </view>
 		    </view>
-		
+        <view class="d-c-desc">
+            职位描述：
+            <view class="-desc-msg">{{recruitDetail.detail}}</view>
+        </view>
     </view>
+    <view class="footer-height"></view>
     <view class='footer'>
         <!-- <button class='f-btn-1' bindtap="callWithHim">马上预订</button> -->
-         
-          <button class='f-btn-2 {{pColor}} {{pBC}}'>
+          <view class='search2-inner'>
+            <text bindtap="onCollection" class='collect_tab'  data-stu="0" wx:if="{{isCollect==0}}">收藏</text>
+            <text bindtap="onCollection" class='collect_tab'  data-stu="1" wx:else>已收藏</text>
+          </view>
+          <button class='f-btn-2 {{pBgC}}'>
             <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
             <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
             <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button> 

@@ -25,7 +25,6 @@ const userAPI = {
   setCompanyInfo: `${proxys}/company/info`,           // 初始化公司信息
 
   searchInfp: `${proxys}/user/search`,                //搜索
- 
   uploadFile: `${proxys}/user/upload_file`,           //上传文件
 
   helpExp: `${proxys}/index/help`,                    //帮助与反馈

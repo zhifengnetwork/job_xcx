@@ -1,5 +1,6 @@
 // pages/company/myReserve.js
-import ServerData from '../../../utils/serverData.js';
+const util = require('../../utils/util.js');  //通用方法
+import ServerData from '../../utils/serverData.js';
 const app = getApp();
 Page({
 
@@ -8,17 +9,25 @@ Page({
    */
   data: {
     tempFilePaths: [],
-    // hiddenName: false,
     bookListData:[],
     isShowR:false,                       // 没有数据是显示 
     pageNum: 1,                         // 设置加载的第几次，默认是第一次  
+    searchLoading: false,               //"上拉加载"的变量，默认false，隐藏  
     noMoreData: false,       //“没有数据”的变量，默认false，隐藏  
+    pColor: '',                          //动态获取字体颜色
+    pBgC: '',                            //动态获背景颜色                 
+    pBC1: ''                             //动态获边框颜色   
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.bookList();
+    this.setData({
+      pBgC: util.loginIdentity().pBgC,
+      pColor: util.loginIdentity().pColor,
+      pBC1: util.loginIdentity().pBC1
+    })
   },
   onShow(){
       wx.getSystemInfo({
@@ -29,33 +38,26 @@ Page({
         }
       });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    this.bookList();
-  },
 
   bookList: function () {
     var that =this
 		ServerData.bookingList({'page': that.data.pageNum}).then((res) => {
-			// console.log(res)
 			if (res.data.status == 1) {
-        var sstatus =false,
-            nodata =false
-        if(res.data.data.length<1){
-          if (that.data.pageNum == 1){
-              sstatus = true
-          }else{
-            nodata=true
-          } 
-        }
-				this.setData({
-          bookListData: res.data.data,
-          isShowR:sstatus,
-          noMoreData: nodata
-				})
-      }else if (status == -1) {
+          var sstatus =false,
+              nodata =false
+          if(res.data.data.length<1){
+            if (that.data.pageNum == 1){
+                sstatus = true
+            }else{
+              nodata=true
+            } 
+          }
+          this.setData({
+            bookListData: res.data.data,
+            isShowR:sstatus,
+            noMoreData: nodata
+          })
+			}else if (status == -1) {
         wx.redirectTo({
           url: '../../login/login'
         })
@@ -65,7 +67,6 @@ Page({
 			}
 		})
   },
-
   scrollLower() {
     var that =this
     if (that.data.listArry==""){

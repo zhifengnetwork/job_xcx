@@ -18,8 +18,8 @@
 
       <view>
           <!-- recruit content start -->
-          <import src ="../template/company.wxml"/>
-          <template is="company" data="{{recruit:list.recruit, pColor: pColor,pBgC:pBgC,typeMsg:'企业',url:'../postionDetail/postionDetail?id='}}"/>
+          <import src ="../template/companyList.wxml"/>
+          <template is="companyList" data="{{recruit:list,url:'../cOrTInfo/cOrTInfoDetail?id='}}"/>
           <!-- recruit content end -->
       </view>
   </view>

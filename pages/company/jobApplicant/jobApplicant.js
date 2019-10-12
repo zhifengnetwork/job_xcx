@@ -9,7 +9,7 @@ Page({
       job_type: '',                 //选中的职位值
       jobArray: [],                 //职位列表
       jobIndex: 0,                  //职位下标
-      row: 200,                     //默认拿一百条
+      row: 300,                     //默认拿一百条
       page: 1,                        //默认第一页
 
       //地址三级开始
@@ -105,6 +105,7 @@ Page({
         job_type: this.data.jobArray[e.detail.value].cat_id,
         site_show:t
     })
+    this.data.page=1
     this.hiring()             //主页信息
   },
 
@@ -152,6 +153,7 @@ Page({
       aCode: that.data.area.code,
       showTST:false
     })
+    this.data.page=1
     that.hiring()
   },
 

@@ -52,10 +52,9 @@ Page({
   //切换账号
   switchUser(){
     wx.showModal({
-      // title: '提示',
       content: '是否切换账号?',
       confirmText: '是',
-      confirmColor :'#be4cff',
+      confirmColor :'#54b9ff',
       cancelText: '否',
       cancelColor:'#666',
       success(res) {

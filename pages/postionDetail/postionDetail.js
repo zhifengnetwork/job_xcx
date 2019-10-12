@@ -12,7 +12,8 @@ Page({
     	isCollect: 0,
 		recruitDetail: [], // 公司详情
 		isCollect: 0,
-		pColor: '',                          //动态获取字体颜色                
+		pColor: '',                          //动态获取字体颜色   
+		pBgC: '',                     //动态获背景颜色               
 		pBC: ''                             //动态获边框颜色   
 	},
 
@@ -24,7 +25,8 @@ Page({
 		this.setData({
 			id: options.id,
 			pColor: util.loginIdentity().pColor,
-			pBC: util.loginIdentity().pBC
+			pBC: util.loginIdentity().pBC,
+			pBgC: util.loginIdentity().pBgC
 		});
 		this.reqDetails()
 	},

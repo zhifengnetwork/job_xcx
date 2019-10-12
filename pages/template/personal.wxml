@@ -2,12 +2,12 @@
 <template name="personal">
     <view>
         <block wx:for="{{person}}" wx:key="index">
-            <navigator url='{{url}}{{item.id}}'>
+            <navigator url='{{url}}{{item.id ? item.id : item.person_id}}'>
                 <view class='global-search-wrap'>
                   <view class='search-job-list'>
                     <view class='c-info-title global-search-cont'>
                         <text>{{item.job_type? item.job_type:item.cat_name}}</text>
-                        <text class="{{pColor}}">{{item.salary=='面议' ? item.salary : item.salary+'/月'}}</text>
+                        <text class="{{pColor}}" wx:if="{{item.salary}}">{{item.salary=='面议' ? item.salary : item.salary+'/月'}}</text>
                     </view>
                     <view class='s-portrait global-search-cont'>
                         <view class="">
@@ -17,9 +17,9 @@
                         <view class='company-status {{pBgC}} fr'>{{item.images == 0 ? "无证书":"有证书"}}</view>
                     </view>
                     <view class='c-info-msg global-search-cont'>
-                        <view class="fl">
+                        <view >
                             <text class='c-msg2 '>{{item.work_age}}年 </text>
-                            <text class='c-msg2 '>{{item.school_type}}</text>
+                            <text class='c-msg2 ' wx:if="{{item.school_type}}">{{item.school_type}}</text>
                         </view>
                         <text class="posen-msg {{pColor}}">人才</text>
                     </view>

@@ -30,7 +30,7 @@
   <view class='inner'>
       <!-- personal content start -->
       <import src ="../../template/personal.wxml"/>
-      <template is="personal" data="{{person:hiringData, pColor: pColor,pBgC:pBgC,url:'../personalDetail/personalDetail?id='}}"/>
+      <template is="personal" data="{{person:hiringData, pColor: pColor,pBgC:pBgC,url:'../../personalDetail/personalDetail?id='}}"/>
       <!-- personal content end -->
     <!-- <navigator url="../personalDetail/personalDetail?id={{item.id}}" class='c-l-info' wx:for="{{hiringData}}" wx:key="key">
         <view class='search-job-list'>

@@ -1,0 +1,7 @@
+/* pages/company/uCollect.wxss */
+@import "../template/common";
+.inner{padding: 20rpx 24rpx; background:#f8f8f8;}
+.c-info-msg{margin-top: 14rpx;}
+.c-msg3{margin: 12rpx 0 13rpx;}
+.c-l-info{background :none}
+.reserve-list-c{background:#fff; margin-bottom: 15rpx; padding:15rpx;}
