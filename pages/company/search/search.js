@@ -26,8 +26,8 @@ Page({
           pColor: util.loginIdentity().pColor,
           pBC1: util.loginIdentity().pBC1,
           pBgC: util.loginIdentity().pBgC
-        // resType: util.loginIdentity().resType,
       })
+      this.searchInfp()
   },
 
   searchInfp(){
@@ -43,6 +43,10 @@ Page({
         if (res.data.data.recruit.length < 1 && res.data.data.person.length < 1) {
           status = true
         }
+        var total =new Number(res.data.data.recruit.length+res.data.data.person.length)
+        wx.setNavigationBarTitle({
+            title: '相关职位('+total+')'
+        })
         that.setData({ 
           list: res.data.data,
           isShowInfo:status

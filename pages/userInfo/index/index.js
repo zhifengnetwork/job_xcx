@@ -91,6 +91,14 @@ Page({
   // 点击地区选择取消按钮
   cityCancel: function (e) {
     this.startAddressAnimation(false)
+    this.setData({
+        areaInfo: '',
+        pCode: '',
+        cCode: '',
+        aCode: '',
+        showTST:true
+    })
+    this.getUserInfo()
   },
 
   // 点击地区选择确定按钮

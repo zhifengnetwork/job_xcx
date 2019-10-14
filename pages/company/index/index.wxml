@@ -39,7 +39,8 @@
             <!-- -->
         </view>
         <!-- 所有城市三级联动列表 -->
-        <include src="../../template/address"/> 
+        <!-- <include src="../../template/address"/>  -->
+        <addressForm></addressForm>
         <!-- 地址选择接受 -->
 
 

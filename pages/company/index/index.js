@@ -70,12 +70,14 @@ Page({
           newArry.push({ cat_id: '', cat_name: "选择人才" })
           var recl = [...newArry, ...res.data.data]
           this.setData({ jobArray: recl })
-        } else if (res.data.status == -1) {
-          wx.redirectTo({
-            url: '../../login/login'
-          })
-        } else {
-          ServerData._wxTost(res.data.msg)
+        } 
+        else if (res.data.status == -1) {
+            wx.redirectTo({
+              url: '../../login/login'
+            })
+        } 
+        else {
+            ServerData._wxTost(res.data.msg)
         }
       })
   },

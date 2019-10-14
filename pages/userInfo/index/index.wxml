@@ -24,7 +24,7 @@
             </swiper>
         </view>
         <!-- 地址选择 -->
-        <view class='subtitle search-subtitle'>
+        <view class='subtitle'>
             <view class="newsite_button" bindtap="selectDistrict">
                 <view class="newsite_view" wx:if="{{showTST}}">选择地点</view>
                 <view class="newsite_city {{showTST? '':'user-color-' }}">

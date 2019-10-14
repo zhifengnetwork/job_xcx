@@ -27,6 +27,7 @@ Page({
         pBC1: util.loginIdentity().pBC1,
         pBgC: util.loginIdentity().pBgC
     })
+    this.searchInfp()
   },
 
   searchInfp(){
@@ -37,12 +38,17 @@ Page({
       page:that.data.page
     }
     ServerData.searchInfp(_opt).then((res) => {
-      console.log(res.data.data)
       if (res.data.status == 1) {
         var status = false
         if (res.data.data.recruit.length < 1 && res.data.data.person.length < 1) {
           status = true
         }
+
+        var total =new Number(res.data.data.recruit.length+res.data.data.person.length)
+        wx.setNavigationBarTitle({
+          title: '相关职位('+total+')'
+        })
+
         that.setData({ 
           list: res.data.data,
           isShowInfo: status
@@ -71,6 +77,7 @@ Page({
       })
       this.searchInfp()
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

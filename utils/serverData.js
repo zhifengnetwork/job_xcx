@@ -7,8 +7,6 @@ class ServerData {
 		if (wx.getStorageSync('token')) {
 			_data.token = wx.getStorageSync('token')
 		}
-		// console.log('_promise_get url: ' + JSON.stringify(url));
-		// console.log('_promise_get _data: ' + JSON.stringify(_data));
 
 		let promise = new Promise((resolve, reject) => {
 			wx.request({
@@ -36,7 +34,6 @@ class ServerData {
 		if (wx.getStorageSync('token')) {
 			_data.token = wx.getStorageSync('token')
 		}
-		// console.log(_data.token)
 		// console.log('_promise_post url: ' + JSON.stringify(url));
 		// console.log('_promise_post _data: ' + JSON.stringify(_data));
 		let promise = new Promise((resolve, reject) => {
@@ -49,6 +46,11 @@ class ServerData {
 				// },
 				success: function (res) {
 					resolve(res);
+					// if(res.data.status==-1){
+					// 	wx.redirectTo({
+					// 		url: '../../login/login'
+					// 	})
+					// }
 				},
 				fail: function (err) {
 					reject(err);
