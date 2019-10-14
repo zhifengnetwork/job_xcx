@@ -43,7 +43,8 @@
 					<text>{{areaInfo}}</text>
 					<image class='u-o-icon2' src='../../static/images/public/right_arrow_gray.png'/>
 					<!-- 所有城市三级联动列表 -->
-					<include src="../template/address"/> 
+					<!-- <include src="../template/address"/>  -->
+					<address-form id='address' bind:tabEvent="tabEvent"></address-form>
 					<!-- 地址选择接受 -->
 					</view>
 				</view>
@@ -56,7 +57,7 @@
 						</view>
 					</view>
 					<view class='tex-wrap' wx:if="{{isAchievement}}">
-						<textarea class="texa" placeholder='请输入成就' bindinput="saveAchievement"></textarea>
+						<textarea class="texa" wx:if="{{addressBoxShow}}" placeholder='请输入成就' bindinput="saveAchievement"></textarea>
 					</view>
 				</view>
 
@@ -69,7 +70,7 @@
 						</view>
 					</view>
 					<view class='tex-wrap' wx:if="{{isPerson}}">
-						<textarea class="texa" placeholder='请输入名人介绍' bindinput="savePerson"></textarea>
+						<textarea class="texa" wx:if="{{addressBoxShow}}" placeholder='请输入名人介绍' bindinput="savePerson"></textarea>
 					</view>
 				</view>
 
@@ -79,7 +80,7 @@
 	</view>
 
 	<view>
-		<textarea class="texa m-t20" placeholder='介绍说明' bindinput="getcompanyIntroduce" value='{{companyIntroduce}}'></textarea>		
+		<textarea class="texa m-t20" wx:if="{{addressBoxShow}}" placeholder='介绍说明' bindinput="getcompanyIntroduce" value='{{companyIntroduce}}'></textarea>		
 	</view>
 	
 

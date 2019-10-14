@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "基本信息",
   "usingComponents": {
+    "address-form": "../../components/address",
     "van-popup": "/vant-weapp/popup/index"
   }
 }

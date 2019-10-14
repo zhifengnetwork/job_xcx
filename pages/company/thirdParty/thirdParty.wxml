@@ -7,7 +7,6 @@
           <image class="search-icon" src='../../../static/images/public/search_icon.png'></image>
           输入所要查找的内容
       </view>
-     
     </navigator>
     <!-- <navigator url='../company/cUserInfo'><text class='search-r-text'></text></navigator> -->
   <!-- </view> -->
@@ -23,7 +22,7 @@
         </view>
       </view>
       <!-- 所有城市三级联动列表 -->
-      <include src="../../template/address"/> 
+      <address-form id='address' bind:tabEvent="tabEvent"></address-form>
       <!-- 地址选择接受 -->
     </view>
   </view> 
@@ -42,7 +41,6 @@
                 <text>最新推荐</text>
               </view>
           </navigator>
-
           <!-- recruit content start -->
           <import src ="../../template/companyList.wxml"/>
           <template is="companyList" data="{{recruit:recList,url:'../../cOrTInfo/cOrTInfoDetail?id='}}"/>

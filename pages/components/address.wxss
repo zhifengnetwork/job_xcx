@@ -1,1 +1,34 @@
 /* pages/template/address/address.wxss */
+
+/* 三级联动 */
+
+.picker-view {
+    width: 100%;
+    display: flex;
+    z-index: 102;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    height: 40vh;
+  }
+  .picker-item {
+    line-height: 70rpx;
+    margin-left: 5rpx;
+    margin-right: 5rpx;
+    text-align: center;
+  }
+  .zhezhao{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.4;
+    z-index: 100;
+  }
+  /* 所在地区 */

@@ -1,4 +1,6 @@
 {
-"usingComponents": {},
-"navigationBarTitleText": "服务商"
+    "usingComponents": {
+        "address-form": "../../components/address"
+    },
+    "navigationBarTitleText": "服务商"
 }

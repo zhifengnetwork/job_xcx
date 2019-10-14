@@ -40,7 +40,8 @@
         </view>
         <!-- 所有城市三级联动列表 -->
         <!-- <include src="../../template/address"/>  -->
-        <addressForm></addressForm>
+        <!-- <address-form id='address'></address-form> -->
+        <address-form id='address' bind:tabEvent="tabEvent"></address-form>
         <!-- 地址选择接受 -->
 
 

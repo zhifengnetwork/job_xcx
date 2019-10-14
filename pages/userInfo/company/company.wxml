@@ -15,9 +15,9 @@
           <view class="newsite_view" wx:if="{{showTST}}">选择地点</view>
           <view class="newsite_city {{showTST?'':'user-color-'}}">{{areaInfo}} <icon class="iconfont icon-zhcc_xiangxiajiantou"></icon></view>
         </view>
-      <!-- 所有城市三级联动列表 -->
-      <include src="../../template/address"/> 
-      <!-- 城市三级联动结束 -->
+        <!-- 所有城市三级联动列表 -->
+        <address-form id='address' bind:tabEvent="tabEvent"></address-form>
+        <!-- 地址选择接受 -->
     </view>
   </view> 
   <!-- 地址选择结束 -->
@@ -32,54 +32,13 @@
             <image src='../../../static/images/public/flame_icon.png' class='c-flame'/>
             <text>最新推荐</text>
           </view>
-          <navigator url="../../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_hot}}" wx:key>
-            <view class='c-l-info'>
-              <image src='{{item.logo}}'class="c-logo" />
-              <view class='c-info-text'>
-                <text class='c-info-title'>{{item.title}}</text>
-                <view class='c-info-msg'>
-                  <text class='c-msg'>月薪{{item.salary}}</text>
-                  <text class='c-msg2'>{{item.work_age}}年以上</text>
-                </view>
-              </view>
-              <!-- company info start -->
-              <view class='company-info'>
-                  <text>企业</text>
-                  <view class='company-status'>
-                      <text wx:if="{{item.require_cert==0}}">无需证书</text>
-                      <text wx:if="{{item.require_cert==1}}">需要证书</text>
-                  </view>
-              </view>
-            </view>
-          </navigator>
-          <navigator url="../../recruitHot/recruitHot?regtype=1" class='more-recommond'>更多推荐</navigator>
+          <!-- recruit content start -->
+          <import src ="../../template/companyList.wxml"/>
+          <template is="companyList" data="{{recruit:recList, pColor: pColor,pBgC:pBgC,url:'../../cOrTInfo/cOrTInfoDetail?id='}}"/>
+          <!-- recruit content end -->
+
+          <view class='more-recommond2' wx:if="{{isMore}}" bindtap='lookMore'>点击查看更多</view>
         </view>
-        <!-- <view class='content-list'>
-            <view class='c-title'>
-              <image src='../../../static/images/public/money.png' class='c-flame'/>
-              <text>待遇更好</text>
-            </view>
-            <navigator url="../../postionDetail/postionDetail?id={{item.id}}" wx:for="{{recList.recruit_better}}" wx:key>
-              <view class='c-l-info'>
-                  <image src='{{item.logo}}'class="c-logo" />
-                  <view class='c-info-text'>
-                    <text class='c-info-title'>{{item.title}}</text>
-                    <view class='c-info-msg'>
-                      <text class='c-msg'>月薪{{item.salary}}</text>
-                      <text class='c-msg2'>{{item.word_age}}</text>
-                    </view>
-                  </view>
-                  <view class='company-info'>
-                      <text>企业</text>
-                      <view class='company-status'>
-                          <text wx:if="{{item.require_cert==0}}">无需证书</text>
-                          <text wx:if="{{item.require_cert==1}}">需要证书</text>
-                      </view>
-                  </view>
-              </view>
-            </navigator>
-            <navigator url="../../recruitBetter/recruitBetter?regtype=1" class='more-recommond'>更多待遇</navigator>
-        </view> -->
     </view>
 </view>
 

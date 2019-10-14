@@ -1,13 +1,12 @@
 {
   "pages": [
-    "pages/company/index/index",
     "pages/login/login",
-
     "pages/register/register",
     "pages/postionDetail/postionDetail",
     "pages/jobList/jobList",
     "pages/jobList/editJobList",
-    "pages/cOrTInfo/cOrTInfo","pages/register/fillInInformation/fillInInformation",
+    "pages/cOrTInfo/cOrTInfo",
+    "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
     "pages/public/pay/payWay",
@@ -32,7 +31,7 @@
     "pages/recruitHot/recruitHot",
     "pages/recruitBetter/recruitBetter",
 
-
+    "pages/company/index/index",
     "pages/company/cUserInfo/cUserInfo",
     "pages/company/thirdParty/thirdParty",
     "pages/company/search/search",

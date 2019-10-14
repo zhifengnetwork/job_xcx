@@ -20,10 +20,8 @@
         </view>
     </view>
     <!-- 所有城市三级联动列表 -->
-    <include src="../../template/address"/> 
+    <address-form id='address' bind:tabEvent="tabEvent"></address-form>
     <!-- 地址选择接受 -->
-
-
   </view>
   <view class='header-heigh'></view>
   <!-- HEADER END -->
@@ -32,27 +30,6 @@
       <import src ="../../template/personal.wxml"/>
       <template is="personal" data="{{person:hiringData, pColor: pColor,pBgC:pBgC,url:'../../personalDetail/personalDetail?id='}}"/>
       <!-- personal content end -->
-    <!-- <navigator url="../personalDetail/personalDetail?id={{item.id}}" class='c-l-info' wx:for="{{hiringData}}" wx:key="key">
-        <view class='search-job-list'>
-          <view class='c-info-title'>
-              <text wx:if="{{item.cat_name!=null}}">{{item.cat_name}}</text>
-              <text wx:else></text>
-              
-          </view>
-          <view class='c-info-msg overH'>
-            <text class='c-msg2 fl'>{{item.work_age}}年</text>
-          </view>
-          <view class='s-portrait'>
-            <image src='{{item.avatar}}' class='portrait-icon'/>
-            <text>{{item.name}}</text>
-          </view>
-          <view class='overH'></view>
-        </view>
-        <view class='company-status third-bg- fr'>
-            <text wx:if="{{item.images==1}}">有证书</text>
-            <text wx:else>无证书</text>
-        </view>
-    </navigator> -->
     <!-- <view class='more-recommond'>更多推荐</view> -->
   </view>
   <!-- FOOTER TARBAR START -->

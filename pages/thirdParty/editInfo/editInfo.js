@@ -32,8 +32,8 @@ Page({
 		isAchievement:false, //是否显示成就
 		isPerson:false, //是否显示名人介绍
 		achiInfo:'', //公司成就
-  	personInfo:'', //名人介绍,
-    userList:[]
+		personInfo:'', //名人介绍,
+		userList:[]
 	},
 	/**
 	 * 生命周期函数--监听页面加载

@@ -24,7 +24,7 @@
 .c-l-info .c-logo{
   width:140rpx;
   height:140rpx;
-  border-radius: 4rpx;
+  border-radius: 50%;
 }
 .edit-info{
   width: 320rpx;

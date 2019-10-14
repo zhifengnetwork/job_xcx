@@ -61,17 +61,14 @@ Page({
       } else {
         ServerData._wxTost(res.data.msg)
       }
-      console.log(res)
     });
   },
   changStatus: function (e) {
-    console.log(e);
     this.setData({
       cStatus: e.currentTarget.dataset.status
     })
   },
   selecKeyWord(e){
-    console.log(e)
       this.setData({
         kw: e.detail.value
       })

@@ -20,11 +20,16 @@ Page({
 	/**
 	* 生命周期函数--监听页面加载
 	*/
+
+	onShow(){
+		// 
+	},
 	onLoad: function () {
+		// wx.hideHomeButton()
+		if (wx.hideHomeButton) wx.hideHomeButton()
 		this.reqIndex(); //请求数据
 		util.getStorageItem('savePostion', app)   //获取底部导航
 	},
-
 	/**
 	 * 请求数据
 	 */

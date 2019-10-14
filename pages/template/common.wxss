@@ -562,7 +562,7 @@ textarea{
 }
 /* 三级联动 */
 
-.picker-view {
+/* .picker-view {
   width: 100%;
   display: flex;
   z-index: 12;
@@ -590,7 +590,7 @@ textarea{
   background: #000;
   opacity: 0.4;
   z-index: 9;
-}
+} */
 /* 所在地区 */
 /* 客服按钮 */
 .wx-contact-button{
