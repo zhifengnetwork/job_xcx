@@ -7,23 +7,24 @@
     <view class='t-height'></view>
     <view class='c-l-info' wx:for="{{recruitData}}" wx:for-index="index" wx:key>
         <view class="group" wx:if="{{dStatus==1}}">
-            <icon wx:if="{{item.selected}}" type="success" color="#be4cff" bindtap="changItemStatus" data-index="{{index}}" class="dagou" size="22"/>
-            <icon wx:else type="circle" bindtap="changItemStatus" data-index="{{index}}" color="#be4cff" class="dagou" size="22" data-goodid="{{item.id}}"/>
+            <icon wx:if="{{item.selected}}" type="success" color="{{styleBg}}" bindtap="changItemStatus" data-index="{{index}}" class="dagou" size="22"/>
+            <icon wx:else type="circle" bindtap="changItemStatus" data-index="{{index}}" color="{{styleBg}}" class="dagou" size="22" data-goodid="{{item.id}}"/>
         </view>
-        <navigator url="editJobList?id={{item.id}}" class='c-info-text'>
-          <text class='c-info-title'>{{item.title}}</text>
-          <view class='c-info-msg'>
-            <text class='c-msg'>月薪{{item.salary}}</text>
-            <text class='c-msg2'>{{item.work_age}}年</text>
-          </view>
-        </navigator>
+        <view bindtap="linkToEdit" data-status="{{item.status}}" data-id="{{item.id}}" class='c-info-text'>
+            <text class='c-info-title'>{{item.title}}</text>
+            <view class='c-info-msg'>
+              <text class='c-msg'>月薪{{item.salary}}</text>
+              <text class='c-msg2'>{{item.work_age}}年</text>
+            </view>
+        </view>
         <!-- company info start -->
-        <navigator url="editJobList?id={{item.id}}" class='company-info {{pColor}}'>
+        <!-- <navigator url="item.status==1?editJobList?id={{item.id}}" class='company-info {{pColor}}'> -->
+        <view class='company-info {{pColor}}' bindtap="linkToEdit" data-status="{{item.status}}" data-id="{{item.id}}">
             <text class='' wx:if="{{item.status === 0}}">审核中</text>
             <text class='' wx:if="{{item.status === 1}}">审核通过</text>
             <text class='' wx:if="{{item.status === -1}}">审核失败</text>   
             <icon class='iconfont icon-bianji'></icon>
-        </navigator> 
+        </view>
     </view>
     <view wx:if="{{dStatus==1}}">
         <view class='line-heig'></view>

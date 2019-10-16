@@ -43,30 +43,6 @@
         <address-form id='address' bind:tabEvent="tabEvent"></address-form>
         <!-- 地址选择接受 -->
         <view class='container'>
-            <view class='content-list'>
-                <view class='c-title'>
-                    <image src='../../../static/images/public/h_blue.png' class='c-flame'/>
-                    <text>建筑企业</text>
-                </view>
-                <navigator url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}" wx:key>
-                    <image src='{{item.logo}}'class="c-logo" />
-                    <view class='c-info-text'>
-                      <text class='c-info-title'>{{item.title}}</text>
-                      <view class='c-info-msg'>
-                        <text class='c-msg'>月薪 {{item.salary}}</text>
-                        <text class='c-msg2'>{{item.work_age}}年</text>
-                      </view>
-                    </view>
-                    <!-- company info start -->
-                    <view class='company-info'>
-                        <text>企业</text>
-                        <view class='company-status third-bg-'>
-                            <text wx:if="{{item.require_cert==1}}">需要证书</text>
-                            <text wx:else>无需证书</text>
-                        </view>
-                    </view>
-                </navigator>
-            </view>
             <!-- Latest job search start -->
             <view class='content-list'>
                 <view class='c-title'>
@@ -91,6 +67,32 @@
                     </view>
                 </navigator>
             </view>
+           <!-- Latest job search end -->
+            <view class='content-list'>
+                <view class='c-title'>
+                    <image src='../../../static/images/public/h_blue.png' class='c-flame'/>
+                    <text>建筑企业</text>
+                </view>
+                <navigator url="../../postionDetail/postionDetail?id={{item.id}}" class='c-l-info' wx:for="{{list.recruit}}" wx:key>
+                    <image src='{{item.logo}}'class="c-logo" />
+                    <view class='c-info-text'>
+                      <text class='c-info-title'>{{item.title}}</text>
+                      <view class='c-info-msg'>
+                        <text class='c-msg'>月薪 {{item.salary}}</text>
+                        <text class='c-msg2'>{{item.work_age}}年</text>
+                      </view>
+                    </view>
+                    <!-- company info start -->
+                    <view class='company-info'>
+                        <text>企业</text>
+                        <view class='company-status third-bg-'>
+                            <text wx:if="{{item.require_cert==1}}">需要证书</text>
+                            <text wx:else>无需证书</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+
         </view>
       </view>
   </view>

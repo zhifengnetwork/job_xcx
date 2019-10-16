@@ -12,7 +12,8 @@ Page({
     noData:false,
     moreDataBtn:false,
     pColor: '',                            //动态获背景颜色  
-    pBgC: '',                            //动态获背景颜色    
+    pBgC: '',                              //动态获背景颜色  
+    styleBg:''                             //动态颜色 例如：#ffff
   },
 
   showDelectBox(e) {
@@ -30,13 +31,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.recruit()
+    
     this.setData({ 
         pColor: util.loginIdentity().pColor,
-        pBgC: util.loginIdentity().pBgC
+        pBgC: util.loginIdentity().pBgC,
+        styleBg:util.loginIdentity().styleBg
     })
   },
-
+  onShow:function(){
+      this.recruit()
+  },
+  linkToEdit(e){
+     console.log(e)
+     var status =e.currentTarget.dataset.status
+     var id =e.currentTarget.dataset.id
+     if(status !=0){
+        wx.navigateTo({
+           url:'editJobList?id='+id
+        })
+     }else{
+          ServerData._wxTost('审核中暂不可编辑')
+     }
+  },
   recruit() {
     var that =this,
         newArray=[],

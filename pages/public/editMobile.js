@@ -7,8 +7,10 @@ Page({
    */
   data: {
     codeIsCanClick: true,                //是否点击倒计时
-    mobile: '',
-    mcode: '',
+    mobile: '',                          //新手机号
+    mcode: '',                           //验证码
+    userName:'',                         //旧手机
+    password:'',                         //账号密码
     pColor: '',                          //动态获取字体颜色
     pBgC: '',                            //动态获背景颜色                 
     pBC1: ''                             //动态获边框颜色   
@@ -27,17 +29,28 @@ Page({
 
   saveInfo: function () {
       var that =this,
+          userName =that.data.userName,
           mobile =that.data.mobile,
-          code = that.data.mcode
+          code = that.data.mcode,
+          password = that.data.password
+      if(!ServerData._zzVerifyMobile(userName) || userName == "") {
+          return ServerData._wxTost('请正确输入旧手机号')
+      }
       if (!ServerData._zzVerifyMobile(mobile) || mobile == "") {
-          return ServerData._wxTost('请正确输入手机号')
+        return ServerData._wxTost('请正确输入新手机号')
       }
       if(code == "" || code.length!=6 || isNaN(code)){
           return ServerData._wxTost('请正确输入验证码')
       }
+     
+      if(password == ""){
+          return ServerData._wxTost('请正确输入账号密码')
+      }
       var _opt={
           'mobile': mobile,
-          'code': code
+          'code': code,
+          'userName':userName,
+          'password':password
       }
       ServerData.editMobile(_opt).then((res) => {
         if (res.data.status == 1) {
@@ -57,6 +70,16 @@ Page({
       // })
   },
 
+  getUserName: function (e) {
+    this.setData({
+      userName: e.detail.value
+    })
+  },
+  getUserPassword: function (e) {
+    this.setData({
+      password: e.detail.value
+    })
+  },
   getVale: function (e) {
     this.setData({
       mobile: e.detail.value
@@ -67,6 +90,7 @@ Page({
       mcode: e.detail.value
     })
   },
+
   clickCode: function () {     //发送验证码
     var that = this,
         mobile = that.data.mobile

@@ -8,7 +8,7 @@
     </view>
   </view>
   <view class='setting-list' bindtap='password'>
-    <text>设置密码</text>
+    <text>修改密码</text>
     <view class="body-view">
       <image class='-view-edit' src='../../static/images/public/edit_gray.png'/>
     </view>

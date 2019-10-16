@@ -49,8 +49,8 @@
           <view class='u-o-list m-b10'>
             <text>实名认证</text>
             <text class='u-o-text third-color-' wx:if="{{userData.status=== 0}}">未认证</text>
-            <text class='u-o-text third-color-' wx:if="{{userData.status=== 1}}">认证</text>
-            <text class='u-o-text third-color-' wx:if="{{userData.status=== -1}}">拒绝认证</text>
+            <text class='u-o-text third-color-' wx:if="{{userData.status=== 1}}">已认证</text>
+            <text class='u-o-text third-color-' wx:if="{{userData.status=== -1}}">认证失败</text>
           </view>
           <navigator url="../../public/help" class='u-o-list m-b10'>
             <text>帮助与反馈</text>

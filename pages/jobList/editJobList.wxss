@@ -11,8 +11,8 @@
   font-size: 28rpx;
 }
 .-list-msg{
-  margin-right:25rpx;
-  width:130rpx;
+  /* margin-right:25rpx; */
+  width:140rpx;
 }
 .separator{
   font-size: 24rpx;

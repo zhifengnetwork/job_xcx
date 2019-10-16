@@ -98,9 +98,10 @@ Page({
               } else {
                   newArray = [...that.data.recList, ...res.data.data]
               }
+              var tt = res.data.data.length >=that.data.rows? true :false
               this.setData({
                 recList: newArray,
-                isMore:true
+                isMore:tt
               })
           }else{
               this.setData({

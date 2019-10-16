@@ -140,13 +140,13 @@ page{
 /* MOBILE CODE START */
 .emailCode{
  width: 236rpx;
- height: 56rpx;
+ height: 63rpx;
  align-items: center;
  justify-content: center;
  display: flex;
  flex-direction: row;
  color:#ff54b5;
- font-size: 30rpx;
+ font-size: 28rpx;
  background-color: #fff;
 }
 .emailCodeSend{
@@ -154,7 +154,7 @@ width:275rpx;
 color:white;
 font-size:28rpx;
 background-color:#B9DAF7;
-line-height:48rpx;
+line-height:63rpx;
 box-sizing: border-box;
 }
 

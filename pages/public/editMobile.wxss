@@ -2,7 +2,7 @@
 @import "../template/common";
 .login_ear {
   position: relative;
-  margin: 100rpx 50rpx 0rpx 50rpx;
+  margin: 65rpx 50rpx 0rpx 50rpx;
   font-size: 36rpx;
   height: 50rpx;
   line-height: 50rpx;
@@ -132,23 +132,23 @@
 } */
 .emailCode{
  width: 236rpx;
- height: 56rpx;
+ height: 63rpx;
  align-items: center;
  justify-content: center;
  display: flex;
  flex-direction: row;
  color:#ff54b5;
- font-size: 30rpx;
+ font-size: 28rpx;
  background-color: #fff;
 }
 .emailCodeSend{
  width: 236rpx;
- height: 56rpx;
+ height: 63rpx;
  align-items: center;
  justify-content: center;
  display: flex;
  flex-direction: row;
  color:white;
- font-size: 30rpx;
+ font-size: 28rpx;
  background-color: #B9DAF7;
 }

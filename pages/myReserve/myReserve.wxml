@@ -10,7 +10,7 @@
   </view>
   <view class="loading-complete" wx:if="{{noMoreData}}">我有底线哦...</view> 
   <view class='wx-no-info' wx:if="{{isShowR}}">
-      <image class='wx-no-icon' src='../../../static/images/public/none.png'></image>
+      <!-- <image class='wx-no-icon' src='../../../static/images/public/none.png'></image> -->
       <view>暂无数据</view>
   </view>
 </view>

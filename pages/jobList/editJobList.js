@@ -233,7 +233,7 @@ Page({
 	 */
 	verifyData: function () {
 		if (!/^[\S\s]{2,50}$/.test(this.data.title)) {
-			ServerData._wxTost('公司名称2-50');
+			ServerData._wxTost('标题2-50');
 			return false
 		}
 		else if(this.data.workAge == "") {
