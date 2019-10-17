@@ -193,6 +193,16 @@ class ServerData {
 	registerVip(_data, complete) {
 		return this._promise_post(_data, api.userAPI.registerVip, complete);
 	}
+
+	//调起支付
+	rechargePay(_data, complete) {
+		return this._promise_post(_data, api.userAPI.rechargePay, complete);
+	}
+	
+	//充值
+	deposits(_data, complete) {
+		return this._promise_post(_data, api.userAPI.deposits, complete);
+	}
 	//提现
 	goWithdrawal(_data, complete) {
 		return this._promise_post(_data, api.userAPI.goWithdrawal, complete);

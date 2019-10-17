@@ -44,7 +44,7 @@ Page({
       }
      
       if(password == ""){
-          return ServerData._wxTost('请正确输入账号密码')
+          return ServerData._wxTost('请正确输入用户密码')
       }
       var _opt={
           'mobile': mobile,

@@ -44,6 +44,9 @@ const userAPI = {
 
   myPurse: `${proxys}/person/my_wallet`,              // 我的钱包
   registerVip: `${proxys}/person/buy_vip`,             // 开通会员
+  rechargePay: `${proxys}/pay/recharge_pay`,           // 调起支付
+  deposits: `${proxys}/person/recharge`,               // 充值
+  
   goWithdrawal: `${proxys}/person/go_withdrawal`,     // 提现
   withdrawal: `${proxys}/person/withdrawal`,          // 提现保存
 

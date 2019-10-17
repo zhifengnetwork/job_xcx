@@ -1,0 +1,38 @@
+
+<view class='inner'>
+
+	<view class='g-deposits-list'>
+		<view class='g-deposits-a {{pBgC}}'>
+			<view>我的金额</view>
+			<view class='g-deposits-money'>{{moneyData.balance}}</view>
+			<image class="d-gold-icon" src='../../static/images/public/gold_icon.png'/>
+		</view>
+		<view class='g-deposits-btn1'>
+			<navigator url='goldDeposits/goldDeposits'><button class='g-d-btn1 {{pBgC}} colorFFF'>充值</button></navigator>
+			<navigator url='withdrawal/withdrawal'><button class='g-d-btn2 {{pBC1}} {{pColor}}'>提现</button></navigator>
+		</view>
+	</view>
+
+	<view class='g-deposits-list'>
+		<view class='g-deposits-a g-deposits-b {{pBgC}}'>
+			<view>超级VIP</view>
+			<image class="d-gold-icon" src='../../static/images/public/vip.png' />
+		</view>
+		<view class='g-deposits-btn2'>
+			<button class='g-d-btn1 {{pBC1}} {{pColor}} {{savaStatus==1 ? pBgC: ""}}' bindtap='changSelect' data-status="1">月费</button>
+			<button class='g-d-btn2 {{pBC1}} {{pColor}} {{savaStatus==2 ? pBgC: ""}}' bindtap='changSelect' data-status="2">季费</button>
+			<button class='g-d-btn2 {{pBC1}} {{pColor}} {{savaStatus==3 ? pBgC: ""}}' bindtap='changSelect' data-status="3">年费</button>
+		</view>
+
+		<view class='kt-jh'>开通 <text class='bold'>{{selectMsg}}</text> 会员您将会获得<text class='bold'>{{num}}</text>次预订机会</view>
+	</view>
+
+	  <!-- <view class='set-option {{pBgC}}'>立即开通</view> -->
+    	<navigator url='../public/pay/payWay?vip_type={{vip_type}}' class='set-option {{pBgC}}'>立即开通</navigator>
+		<view class='foot-info'>
+		<text>￥{{saveMoney}}元</text>
+		<view class='line-heig'></view>
+		<!-- <view class='set-option {{pBgC}}'>确定付款</view> -->
+	</view>
+
+</view>

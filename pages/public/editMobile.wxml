@@ -15,7 +15,7 @@
 </view>
 
 <view class="mima_ear {{pBC1}}">
-  <input placeholder="请输入账号密码" class="phone_password" type='text' name="password" bindinput='getUserPassword'></input>
+  <input placeholder="请输入用户密码" class="phone_password" type='text' name="password" bindinput='getUserPassword'></input>
 </view>
 
 

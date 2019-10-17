@@ -29,7 +29,7 @@
       <text class='-list-msg'>薪资要求:</text>
       <view class='selcet-time'>
 
-        <view class='e-info-picker minimum-salary'>
+        <view class='e-info-picker minimum-salary' >
             <picker bindchange="salaryChange" value="{{salaryIndex}}" range="{{salaryArray}}">
               <view class="picker">
                 {{salaryArray[salaryIndex]}} <image class="down-arrow" src='../../static/images/public/right_arrow_gray.png'/>
@@ -37,7 +37,8 @@
             </picker>
         </view>
 		<!-- — -->
-		<view class="separator" wx:if="{{selectShow}}" >至</view>
+        
+		    <view class="separator" wx:if="{{selectShow}}" >至</view>
         <view class='e-info-picker maximum-salary' wx:if="{{selectShow}}">
             <picker bindchange="salaryChange2" value="{{salaryIndex2}}" range="{{salaryArray}}">
               <view class="picker" >

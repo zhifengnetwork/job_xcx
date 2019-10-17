@@ -115,7 +115,7 @@ Page({
           var type = res.data.data.regtype       //用户状态
           wx.setStorageSync('token', res.data.data.token);
           wx.setStorageSync('savePostion', type);
-          console.log(type)
+          // console.log(type)
           that.comeIndex(type)    //进入首页
       }
       else if (res.data.status == 3){            //注册账号但没有注册信息

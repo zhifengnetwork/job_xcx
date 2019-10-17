@@ -10,7 +10,7 @@
         <text class='e-info-msg'>性别：</text>
         <view class='e-info-radio'>
           <radio-group class="radio-group" bindchange="radioChange">
-              <label class="radio" wx:for="{{items}}">
+              <label class="radio" wx:for="{{items}}" wx:key>
                 <radio style="zoom:.6" color="#ff54b5" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
               </label>
           </radio-group>

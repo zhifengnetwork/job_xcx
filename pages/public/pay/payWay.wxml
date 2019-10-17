@@ -3,8 +3,8 @@
 <view class='pay-wrap'>
     <view class='inner'>
         <radio-group class="radio-group" bindchange="selectPay">
-            <label class="radio pay-list" wx:for="{{radioItems}}">
-              {{item.value}} <radio style="zoom:.9" color="{{styleBg}}" value="{{item.name}}" checked="{{item.checked}}"/>
+            <label class="radio pay-list" wx:for="{{radioItems}}" wx:key="index">
+                {{item.value}} <radio style="zoom:.9" color="{{styleBg}}" value="{{item.name}}" checked="{{item.checked}}"/>
             </label>
         </radio-group>
 

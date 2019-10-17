@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/login/login",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
@@ -12,6 +11,8 @@
     "pages/index/index",
     "pages/public/pay/payWay",
     "pages/headPortrait/headPortrait",
+
+    "pages/myPurse/cyPurse",
 
     "pages/public/password",
     "pages/public/setting",

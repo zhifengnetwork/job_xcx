@@ -1,4 +1,5 @@
 // pages/userInfo/goldDeposits.js
+const util = require('../../../utils/util.js');  //通用方法
 import ServerData from '../../../utils/serverData.js';
 Page({
   data: {
@@ -26,11 +27,10 @@ Page({
     ],
     saveStatus: 0,
     saveMoney: 10,
-    		// resType:'',
-		pColor: '',                          //动态获取字体颜色
+    pColor: '',                          //动态获取字体颜色
 		pBgC: '',                            //动态获背景颜色                 
-		pBC1: '',                             //动态获边框颜色   
-		imgSrc:''
+		pBC: '',                            //动态获边框   
+		imgSrc:'yes_green.png'                            //动态获边框图标 
   },
   changMoney: function (e) {
     var val = e.detail.value;
@@ -53,20 +53,33 @@ Page({
       var img =type=='company'? 'yes_pop.png' :(type=='userInfo'?'yes_green.png':'yes_blue.png')
       this.setData({
         pBgC: util.loginIdentity().pBgC,
-        pBC1: util.loginIdentity().pBC1,
+        pBC: util.loginIdentity().pBC,
         pColor: util.loginIdentity().pColor,
         // resType:util.loginIdentity().resType,
         imgSrc:img
       })
+  },
+  // toGoldDeposits(){
+  //   ServerData._showLoading('该功能正在建设中...')
+  //   setTimeout(()=>{
+  //     wx.redirectTo({
+  //       url: '../../cUserInfo/cUserInfo'
+  //     })
+  //   },1000)
+  // },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
 
   },
 
-  // toGoldDeposits(){
-  //   ServerData._showLoading('该功能正在建设中...')
-  //   setTimeout(() => {
-  //     wx.redirectTo({
-  //       url: '../userCenter/userCenter'
-  //     })
-  //   }, 1000)
-  // },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  }
+
 })

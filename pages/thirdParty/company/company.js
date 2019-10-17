@@ -6,15 +6,6 @@ Page({
   data: {
     recList:[],
     //地址三级开始
-    // animationAddressMenu: {},
-    // addressMenuIsShow: false,
-    // value: [0, 0, 0],
-    // provinces: [],                //获取所有省数组
-    // citys: [],                    //获取所有城市数组
-    // areas: [],                    //获取所有区数组
-    // province: '',                 //获取选中的省
-    // city: '',                     //获取选中的市
-    // area: '',                     //获取选中的区
     areaInfo:'',
     pCode: '',                    //获取选中的省ID
     cCode: '',                    //获取选中的市ID
@@ -23,7 +14,7 @@ Page({
     showTST:true,                 //是否选择地址
     page:1,
     rows:10,
-    isMore:true,
+    isMore:false,
 
     pColor:'',                            //动态获z字体颜色 
     pBgC: '',                            //动态获背景颜色                 
@@ -98,9 +89,10 @@ Page({
               } else {
                   newArray = [...that.data.recList, ...res.data.data]
               }
+              var tt = res.data.data.length >=that.data.rows? true :false
               this.setData({
                 recList: newArray,
-                isMore:true
+                isMore:tt
               })
           }else{
               this.setData({

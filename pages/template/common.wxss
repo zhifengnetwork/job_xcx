@@ -1,11 +1,13 @@
 @import "font";
 /* USER STYLE START */
-.user-bg-,.user-active-{
-  background:#ff54b5 !important;
-}
 .user-color-{
   color: #ff54b5 !important;
 }
+.user-bg-,.user-active-{
+  background:#ff54b5 !important;
+  color: #FFF !important;
+}
+
 .user-bColor-{
   border:2rpx solid #ff54b5 !important;
 }
@@ -16,12 +18,14 @@
   border-color:#ff54b5 !important;
 }
 /* COMPANY STYLE START */
-.company-bg-,.company-active-{
-  background:#be4cff !important;
-}
 .company-color-{
   color: #be4cff !important;
 }
+.company-bg-,.company-active-{
+  background:#be4cff !important;
+  color: #FFF !important;
+}
+
 .company-bColor-{
   border:2rpx solid #be4cff !important;
 }
@@ -32,12 +36,14 @@
   border-color:#be4cff !important;
 }
 /* THIRDPARTH SRTAR */
-.third-bg-,.third-active-{
-  background:#54b9ff !important;
-}
 .third-color-{
   color: #54b9ff !important;
 }
+.third-bg-,.third-active-{
+  background:#54b9ff !important;
+  color: #FFF !important;
+}
+
 .third-bColor-{
   border:2rpx solid #54b9ff !important;
 }

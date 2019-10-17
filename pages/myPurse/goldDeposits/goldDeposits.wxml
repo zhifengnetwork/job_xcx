@@ -1,0 +1,21 @@
+<view class="inner">
+  	<view class='gold-search'>
+		  <input type='number' placeholder-class="phcolor" placeholder='请输入充值金币' bindinput='changMoney'/>
+	</view>
+
+  	<view class='gold-content'>
+		<view class='gold-list {{pBC}}' bindtap="selectGoldNumber" wx:for="{{arr}}"  wx:for-index="index" data-index="{{index}}"  data-money="{{item.money}}" wx:key>
+			<view class='{{pColor}}'>{{item.money}}金币</view>
+			<view>{{item.money}}元</view>
+			<image class="gold-active-img {{saveStatus==index ? '-show-' :'-hide'}}" src='../../../static/images/public/{{imgSrc}}'/>
+		</view>
+	</view>
+	
+    <view class='foot-info'>
+        <text>￥{{saveMoney}}元</text>
+        <view class='line-heig'></view>
+		<!-- <view class='set-option company-bg-' bindtap="toGoldDeposits">确定付款</view> -->
+		<navigator url='../../public/pay/payWay?pType=1&money={{saveMoney}}' class='set-option {{pBgC}}'>去付款</navigator>
+    </view>
+    
+</view>

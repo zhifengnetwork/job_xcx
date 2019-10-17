@@ -73,12 +73,14 @@ Page({
 		ServerData.goEditRecruit({ 'id': that.data.id}).then((res) => {
 			if (res.data.status == 1) {
 				var info = res.data.data,
-					slay =info.salary.split("—"),
+					slay =info.salary.split("-"),
 					salary = ServerData.returnIndex(slay[0], that.data.salaryArray),
 					newSalary = 1,
+					isShow=false,
 					jobIndex = ServerData.returnIndex(info.type, that.data.jobArray,true)
-					if (salary>0){
-						newSalary = salary+1
+					if(salary>0){
+						newSalary =ServerData.returnIndex(slay[1], that.data.salaryArray)
+						isShow=true
 					}
 			this.setData({
 				title: info.title,
@@ -86,6 +88,7 @@ Page({
 				salaryIndex: salary,
 				salaryIndex2:newSalary,
 				jobIndex: jobIndex,
+				selectShow:isShow,
 				workAge: info.work_age,
 				details: info.detail
 			})
@@ -207,8 +210,28 @@ Page({
 				salaryIndex2:this.data.salaryArray.length -1
 			})
 		}
-		
 	},
+
+	salaryChange2: function (e) {
+		var val=e.detail.value
+		if(val== 0){
+			return this.setData({
+				selectShow:false,
+				salaryIndex: e.detail.value
+			})
+		}
+		// console.log(this.data.salaryIndex)
+		if(new Number(val)<=this.data.salaryIndex){
+			return ServerData._wxTost('薪水范围右边应大于左边');
+		}
+		this.setData({
+			salaryIndex2: e.detail.value,
+			selectShow:true
+		})
+	},
+
+
+
 
 	/**
 	 * 是否需要证书
@@ -253,14 +276,17 @@ Page({
 	 * 保存数据
 	 */
 	saveEditRecruit: function () {
-    var that=this
+    	var that=this
 		if (!that.verifyData()) {
 			return false
 		}
-		var salary = that.data.salaryArray[that.data.salaryIndex]+'—'+that.data.salaryArray[that.data.salaryIndex2]
+		var salary = that.data.salaryArray[that.data.salaryIndex]+'-'+that.data.salaryArray[that.data.salaryIndex2]
 		if(that.data.salaryIndex == 0){
 			salary = that.data.salaryArray[that.data.salaryIndex]
 		}
+
+		
+		// return
 		// 传参到后台
 		var _opt = {
       		id: that.data.id,
@@ -271,7 +297,6 @@ Page({
 			require_cert:that.data.isNeed,
 			detail:that.data.details,		
 		}
-    // return
 		ServerData.editRecruit(_opt).then((res) => {
 			if(res.data.status == 1){
 				ServerData._wxTost('保存成功,信息需管理员审核');

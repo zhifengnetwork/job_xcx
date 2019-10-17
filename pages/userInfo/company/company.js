@@ -23,7 +23,7 @@ Page({
     showTST:true,                 //是否选择地址
     page:1,
     rows:10,
-    isMore:true,
+    isMore:false,
 
     pColor:'',                            //动态获z字体颜色 
     pBgC: '',                            //动态获背景颜色                 

@@ -17,7 +17,7 @@
                     autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="#be4cff"> 
                   <block wx:for="{{indexData.ad}}" wx:key> 
                     <swiper-item style="border-radius: 10rpx;"> 
-                        <image src="../../../static/images/index/banner.jpg" class="slide-image"/> 
+                        <image src="{{item.picture}}" class="slide-image"/> 
                     </swiper-item> 
                   </block> 
             </swiper>

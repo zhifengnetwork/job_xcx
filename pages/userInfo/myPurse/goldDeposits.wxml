@@ -4,7 +4,7 @@
       <view class='gold-list user-bColor-' bindtap="selectGoldNumber" wx:for="{{arr}}"  wx:for-index="index" data-index="{{index}}"  data-money="{{item.money}}" wx:key>
         <view class='user-color-'>{{item.money}}金币</view>
         <view>{{item.money}}元</view>
-        <image class="gold-active-img {{saveStatus==index ? '-show-' :'-hide'}}" src='../../../static/images/public/yes_green.png'/>
+        <image class="gold-active-img {{saveStatus==index ? '-show-' :'-hide'}}" src='../../../../static/images/public/yes_pop.png'/>
       </view>
     </view>
     <view class='foot-info'>
