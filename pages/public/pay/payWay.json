@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "password-form": "../../components/password/password"
+  },
   "navigationBarTitleText": "选择支付方式"
 }

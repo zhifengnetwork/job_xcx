@@ -10,6 +10,7 @@ Page({
 	data: {
     Id: '',
     isCollect: 0,
+    personalData:{},
     pColor: '',                          //动态获取字体颜色
     pBgC: '',                            //动态获背景颜色                 
     pBC: ''                             //动态获边框颜色   
@@ -99,14 +100,42 @@ Page({
     ServerData.booking(_opt).then((res) => {
       if (res.data.status == 1) {
           wx.showToast({
-            title: '预订成功',
+            title: res.data.msg,
             icon: 'success',
             duration: 2000
           })
+          setTimeout(() =>{
+              wx.navigateBack({
+                  delta: 1,
+              })
+          },1500)
       } else if(res.data.status == 5){
-        wx.redirectTo({
-          url: '../public/pay/payWay?id=' + that.data.id
+        var id =res.data.data
+        wx.showModal({
+          title: '提示',
+          confirmText:'购买vip',
+          cancelText:'预订人才',
+          content: '您当前还不是vip用户或者vip预订次数用完,是否去购买vip？',
+          success (res) {
+            console.log(res)
+            if(res.confirm) {
+              // console.log('用户点击确定')
+              wx.redirectTo({
+                  url: '../myPurse/cyPurse'
+              })
+               
+            } else if (res.cancel) {
+                console.log('用户点击取消')
+                wx.redirectTo({
+                    url: '../public/pay/payWay?pType=2&money='+that.data.personalData.reserve_money+'&id=' + id
+                })
+
+            }
+          }
         })
+
+
+         
       }else{
           ServerData._wxTost(res.data.msg)
       }

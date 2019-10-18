@@ -1,5 +1,7 @@
 {
   "pages": [
+    
+    "pages/thirdParty/index/index",
     "pages/login/login",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
@@ -9,10 +11,15 @@
     "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
-    "pages/public/pay/payWay",
+
     "pages/headPortrait/headPortrait",
 
+    "pages/personalDetail/personalDetail",
+
     "pages/myPurse/cyPurse",
+    "pages/myPurse/myPurse",
+    "pages/myPurse/goldDeposits/goldDeposits",
+    "pages/myPurse/withdrawal/withdrawal",
 
     "pages/public/password",
     "pages/public/setting",
@@ -20,7 +27,8 @@
     "pages/public/help",
     "pages/public/explain",
     "pages/public/audit",
-
+    "pages/public/pay/payWay",
+    
     "pages/information/information",
     "pages/information/infoDetail",
     "pages/search/sCompany",
@@ -39,20 +47,14 @@
     "pages/company/search/search",
     "pages/company/editInfo/editInfo",
     "pages/company/jobApplicant/jobApplicant",
-    "pages/company/myPurse/withdrawal/withdrawal",
-    "pages/company/myPurse/myPurse",
-    "pages/company/myPurse/goldDeposits/goldDeposits",
     "pages/company/uCollect/uCollect",
     "pages/company/postJobPostings/postJobPostings",
 
-    "pages/thirdParty/index/index",
+
     "pages/thirdParty/company/company",
     "pages/thirdParty/thirdInfo/thirdInfo",
     "pages/thirdParty/jobApplicant/jobApplicant",
     "pages/thirdParty/search/search",
-    "pages/thirdParty/myPurse/goldDeposits",
-    "pages/thirdParty/myPurse/myPurse",
-    "pages/thirdParty/myPurse/withdrawal",
     "pages/thirdParty/uCollect/uCollect",
     "pages/thirdParty/postJobPostings/postJobPostings",
 
@@ -60,11 +62,8 @@
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/search/search",
-    "pages/userInfo/myPurse/myPurse",
     "pages/userInfo/company/company",
     "pages/userInfo/userCenter/userCenter",
-    "pages/userInfo/myPurse/withdrawal",
-    "pages/userInfo/myPurse/goldDeposits",
     "pages/userInfo/myCertificate/myCertificate",
     "pages/userInfo/privacySettings/privacySettings",
     "pages/userInfo/collect/collect",

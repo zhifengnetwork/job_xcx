@@ -28,7 +28,7 @@
             <text>设置</text>
             <icon class='iconfont icon-bianji user-color-'></icon>
           </navigator>
-          <navigator url="../myPurse/myPurse" class='u-o-list'>
+          <navigator url="../../myPurse/myPurse" class='u-o-list'>
             <text>我的钱包</text>
             <icon class='iconfont icon-youjiantou2 user-color-'></icon>
           </navigator>

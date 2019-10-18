@@ -73,7 +73,10 @@
 .line {
   margin: 0 0 25rpx;
 }
-
+.reserve_money{
+  font-size: 28rpx;
+  color: #888;
+}
 /* FOOTER START */
 .search2-inner{
   float: left;

@@ -8,4 +8,5 @@
     </view>
     <navigator url='../login/login' redirect><button class='set-option user-bg-'>完成</button></navigator>
   </view>
+
 </view>

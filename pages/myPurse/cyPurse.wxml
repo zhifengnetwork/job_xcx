@@ -28,7 +28,7 @@
 	</view>
 
 	  <!-- <view class='set-option {{pBgC}}'>立即开通</view> -->
-    	<navigator url='../public/pay/payWay?vip_type={{vip_type}}' class='set-option {{pBgC}}'>立即开通</navigator>
+    	<navigator url='../public/pay/payWay?money={{saveMoney}} &vip_type={{vip_type}}' class='set-option {{pBgC}}'>立即开通</navigator>
 		<view class='foot-info'>
 		<text>￥{{saveMoney}}元</text>
 		<view class='line-heig'></view>

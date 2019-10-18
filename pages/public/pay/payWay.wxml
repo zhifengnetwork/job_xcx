@@ -1,13 +1,38 @@
 <!--pages/public/pay/payWay.wxml-->
 
 <view class='pay-wrap'>
+    <!-- 支付密码输入 -->
+    <password-form id="password" bind:getPasswordEvent="getPasswordEvent"></password-form>
+    <!-- <view class="code-wrap" wx:if="{{isShow}}">
+        <div class="code-inner" bindtap="hidePassword"></div>
+        
+        <view class="invitation-code">
+            <text class="invitation-txt">请输入密码</text>
+            <view class="pasw-msg">
+                <input type="text" class="key-info" bindinput="getPawdVal" maxlength="6" />
+                <li class="pasw-list" v-for="(item,index) in paswAarry" :key="index">{{item}}</li>
+                <view class="pasw-list">{{paswAarry[0]}}</view>
+                <view class="pasw-list">{{paswAarry[1]}}</view>
+                <view class="pasw-list">{{paswAarry[2]}}</view>
+                <view class="pasw-list">{{paswAarry[3]}}</view>
+                <view class="pasw-list">{{paswAarry[4]}}</view>
+                <view class="pasw-list">{{paswAarry[5]}}</view>
+            </view>
+            <view class="faget-password"><navigator url="../../public/password">忘记密码</navigator></view>
+        </view>
+    </view> -->
+    <!-- 支付密码输入结束 -->
     <view class='inner'>
         <radio-group class="radio-group" bindchange="selectPay">
             <label class="radio pay-list" wx:for="{{radioItems}}" wx:key="index">
-                {{item.value}} <radio style="zoom:.9" color="{{styleBg}}" value="{{item.name}}" checked="{{item.checked}}"/>
+                {{item.value}} <radio style="zoom:.9" color="{{styleBg}}" value="{{item.name}}" checked="{{item.name ==way}}"/>
             </label>
         </radio-group>
-
-        <button class="set-option {{pBgC}}" bindtap='saveInfo'>支付</button>
+       
+        <view class="set-option-1">
+             <view class="payMoney">支付金额 ￥{{money}}</view>
+            <button class="s-1-option {{pBgC}}" bindtap='saveInfo'>支付</button>
+        </view>
+        
     </view>
 </view>

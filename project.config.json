@@ -4,15 +4,15 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"coverView": true,
 		"nodeModules": false,
 		"autoAudits": false,
 		"checkInvalidKey": true,
+		"coverView": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
 		"babelSetting": {
@@ -23,7 +23,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.1",
-	"appid": "wx0a96f71bda1a4bc4",
+	"appid": "wxb2321247535b62b6",
 	"projectname": "job_xcx",
 	"debugOptions": {
 		"hidedInDevtools": []

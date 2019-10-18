@@ -38,7 +38,7 @@
             <text>我的预订</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>
-          <navigator url='../myPurse/myPurse' class='u-o-list m-b10'>
+          <navigator url='../../myPurse/cyPurse' class='u-o-list m-b10'>
             <text>我的钱包</text>
             <icon class='iconfont icon-youjiantou2 third-color-'></icon>
           </navigator>

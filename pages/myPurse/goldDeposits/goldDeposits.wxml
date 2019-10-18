@@ -15,7 +15,7 @@
         <text>￥{{saveMoney}}元</text>
         <view class='line-heig'></view>
 		<!-- <view class='set-option company-bg-' bindtap="toGoldDeposits">确定付款</view> -->
-		<navigator url='../../public/pay/payWay?pType=1&money={{saveMoney}}' class='set-option {{pBgC}}'>去付款</navigator>
+		<navigator url='../../public/pay/payWay?pType=1&deposityp=1&money={{saveMoney}}' class='set-option {{pBgC}}'>去付款</navigator>
     </view>
     
 </view>

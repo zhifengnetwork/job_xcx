@@ -28,6 +28,7 @@
           </view>
           <!-- <image src='../../static/images/public/big_portrait.png' class='c-list-portrait'/> -->
         </view>
+        <view class="reserve_money" wx:if="{{personalData.reserve_money!=''}}">注意：预订人才费用为￥{{personalData.reserve_money}} 元/次</view>
     </view>
     <view class='footer'>
         <view class='search2-inner'>
@@ -35,7 +36,7 @@
             <text bindtap="onCollection" class='collect_tab'  data-stu="1" wx:else>已收藏</text>
         </view>
         <view class="footer-right">
-            <button class='f-btn-1 {{pBgC}}' bindtap="toReservation">马上预订</button>
+            <button class='f-btn-1 {{pBgC}}' bindtap="toReservation" wx:if="{{personalData.reserve==1 && personalData.reserve_c==0 }}">马上预订</button>
             <button class='f-btn-2 {{pBgC}}'>
               <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>
               <contact-button class='wx-contact-button' size='32' session-from="weapp"> </contact-button>

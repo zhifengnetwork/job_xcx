@@ -14,7 +14,8 @@ Page({
     sxf:0,                              // 手续费   
     txmoney:'',                         // 提现金额
     num: 2,                             // 支付宝账户框，
-		pBgC: ''                            //动态获背景颜色                 
+    pBgC: '',                           //动态获背景颜色      
+    isClick:false                       //是否点击了按钮
   },
 
   setInpuVal(e){
@@ -73,6 +74,7 @@ Page({
     var that = this,
        alipay_name = that.data.alipay_name,
        alipay = that.data.alipay
+
     if(that.data.saveStatus==4){
       if(alipay_name == "" || alipay==""){
           return ServerData._wxTost('请输入支付宝信息')
@@ -89,24 +91,29 @@ Page({
       'alipay_name': alipay_name,
 
     }
+    if(that.data.isClick){ return}
+    that.setData({
+        isClick:true
+    })
     ServerData.withdrawal(_opt).then((res) => {
       if (res.data.status == 1) {
           ServerData._wxTost(res.data.msg)
           setTimeout(()=>{
-            wx.redirectTo({
-              url: '../../cUserInfo/cUserInfo'
+            wx.navigateBack({
+                delta: 1,
             })
           },1000)
-         
       } else if (res.data.status == -1) {
-        wx.redirectTo({
-          url: '../../login/login'
-        })
+          wx.redirectTo({
+            url: '../../login/login'
+          })
       } else {
-        ServerData._wxTost(res.data.msg)
+          ServerData._wxTost(res.data.msg)
       }
-
-      console.log(res)
+      // console.log(res)
+      that.setData({
+          isClick:false
+      })
     })
   },
 

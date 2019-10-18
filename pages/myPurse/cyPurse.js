@@ -13,37 +13,26 @@ Page({
     	num:'',
 		moneyData:{},
 		vip_type:1,
-		// resType:'',
 		pColor: '',                          //动态获取字体颜色
 		pBgC: '',                            //动态获背景颜色                 
-		pBC1: '',                             //动态获边框颜色   
-		// imgSrc:''
+		pBC1: ''                             //动态获边框颜色   
 	},
 
   /**
    * 生命周期函数--监听页面加载
    */
 	onLoad: function (options) {
-		// if(util.loginIdentity().resType==)
-		// var type =util.loginIdentity().resType
-		// var img =type=='company'? 'yes_pop.png' :(type=='userInfo'?'yes_green.png':'yes_blue.png')
 		this.setData({
 			pBgC: util.loginIdentity().pBgC,
 			pBC1: util.loginIdentity().pBC1,
-			pColor: util.loginIdentity().pColor,
-			// resType:util.loginIdentity().resType,
-			// imgSrc:img
-		})
-
-
-
-		console.log('dddd',this.data.resType)
+			pColor: util.loginIdentity().pColor
+		})			
+	},
+	onShow(){
 		this.getMyPurse()
 	},
-
 	getMyPurse() {
 		ServerData.myPurse({}).then((res) => {
-			console.log(res)
 			this.setData({
 				moneyData: res.data.data,
 				saveMoney: res.data.data.month_money,
@@ -51,54 +40,49 @@ Page({
 			})
 		})
 	},
-
-	setInfo() {
-      
-	},
-
 	changSelect: function (e) {
     // console.log(this.data.moneyData)
 		var that = this,
 			status = e.currentTarget.dataset.status,
 			money = "",
 			msg = "",
-      num = '',
-      vip_type
+			num = '',
+			vip_type
 		if (status == 1) {
 			money = that.data.moneyData.month_money
 			msg = "月",
-      num = that.data.moneyData.month_num
-      vip_type=1
+			num = that.data.moneyData.month_num
+			vip_type=1
 		}
 		if (status == 2) {
 			money = that.data.moneyData.quarter_money
 			msg = "季"
-      num = that.data.moneyData.quarter_num
-      vip_type=2
+			num = that.data.moneyData.quarter_num
+			vip_type=2
 		}
 		if (status == 3) {
 			money = that.data.moneyData.year_money
-      num = that.data.moneyData.year_num
+      		num = that.data.moneyData.year_num
 			msg = "年"
-      vip_type=3
+      		vip_type=3
 		}
 		this.setData({
 			savaStatus: status,
 			saveMoney: money,
 			selectMsg: msg,
-      num: num,
-      vip_type: vip_type
+			num: num,
+			vip_type: vip_type
 		});
 	},
 	
-	toPays: function (e) {
-		wx.showLoading({
-			title: '跳转中...',
-		})
+	// toPays: function (e) {
+	// 	wx.showLoading({
+	// 		title: '跳转中...',
+	// 	})
 
-		setTimeout(function () {
-			wx.hideLoading()
-		}, 2000)
-	}
+	// 	setTimeout(function () {
+	// 		wx.hideLoading()
+	// 	}, 2000)
+	// }
 })
 
