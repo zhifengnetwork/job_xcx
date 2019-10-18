@@ -1,7 +1,5 @@
 {
   "pages": [
-    
-    "pages/thirdParty/index/index",
     "pages/login/login",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
@@ -11,7 +9,6 @@
     "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
-
     "pages/headPortrait/headPortrait",
 
     "pages/personalDetail/personalDetail",
@@ -50,7 +47,7 @@
     "pages/company/uCollect/uCollect",
     "pages/company/postJobPostings/postJobPostings",
 
-
+    "pages/thirdParty/index/index",
     "pages/thirdParty/company/company",
     "pages/thirdParty/thirdInfo/thirdInfo",
     "pages/thirdParty/jobApplicant/jobApplicant",
