@@ -117,7 +117,7 @@ Page({
           cancelText:'预订人才',
           content: '您当前还不是vip用户或者vip预订次数用完,是否去购买vip？',
           success (res) {
-            console.log(res)
+            // console.log(res)
             if(res.confirm) {
               // console.log('用户点击确定')
               wx.redirectTo({
@@ -125,7 +125,7 @@ Page({
               })
                
             } else if (res.cancel) {
-                console.log('用户点击取消')
+                // console.log('用户点击取消')
                 wx.redirectTo({
                     url: '../public/pay/payWay?pType=2&money='+that.data.personalData.reserve_money+'&id=' + id
                 })
