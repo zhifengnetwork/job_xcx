@@ -1,0 +1,22 @@
+/* pages/myPurse/transactionDetail .wxss */
+.transation-detail-wrap{
+    padding: 0 24rpx;
+    font-size: 26rpx;
+    color: #151515;
+}
+.-detail-cont{
+    padding: 20rpx 0;
+    border-bottom: 2rpx solid rgb(224, 224, 224);
+    /* margin-bottom: 18rpx; */
+}
+.-d-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14rpx;
+}
+.-d-list:last-child{
+    padding-bottom: 0;
+    font-size: 24rpx;
+    color: #999;
+}

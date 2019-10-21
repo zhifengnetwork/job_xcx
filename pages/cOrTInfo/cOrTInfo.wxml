@@ -14,7 +14,7 @@
               <icon class="iconfont icon-qiye-copy" />
               <text>{{cList.type}}</text>
           </view>
-          <view class="global-c-msg">
+          <view class="global-c-msg" wx:if="{{cList.open_time}}">
               <icon class="iconfont icon-shouye_sifangkuang_jingdiananli" />
               <text>{{cList.open_time}}</text>
           </view>
@@ -26,8 +26,6 @@
           </view>
       </view>
   </view>
-
-
 
 	<view class='cOrTInfo-cont global-cOrTInfo-'>
       <view class='cOrTInfo-option' bindtap='addAchievementBox'>

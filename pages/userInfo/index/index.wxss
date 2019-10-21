@@ -16,8 +16,8 @@
   border-radius:10rpx;
   overflow:hidden;
 }
-.swiper {
-  height: 360rpx;
+swiper {
+  height: 360rpx !important;
 }
 .login_tab{
   display: block;

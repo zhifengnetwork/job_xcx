@@ -1,0 +1,23 @@
+<!--pages/myPurse/transactionDetail .wxml-->
+<view class="transation-detail-wrap">
+    <view class="-detail-cont">
+        <view class="-d-list">
+            <text >支付宝提现</text>
+            <text>-100</text>
+        </view>
+        <view class="-d-list color-999">
+            <text>2019-10-21 14:20:30</text>
+            <text>余额1000</text>
+        </view>
+    </view>
+    <view class="-detail-cont">
+        <view class="-d-list">
+            <text >支付宝提现</text>
+            <text>-100</text>
+        </view>
+        <view class="-d-list color-999">
+            <text>2019-10-21 14:20:30</text>
+            <text>余额1000</text>
+        </view>
+    </view>
+</view>

@@ -10,6 +10,17 @@
   font-size: 26rpx;
   font-weight:600;
 }
+.transaction-btn{
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  color: #151515;
+  padding: 10rpx 14rpx 10rpx 18rpx;
+  background:#fff;
+  font-size: 24rpx;
+  border-top-left-radius:30rpx;
+  border-bottom-left-radius:30rpx;
+}
 .g-deposits-a .d-gold-icon{
   position: absolute;
   right: 0;

@@ -24,8 +24,8 @@
             </swiper>
         </view>
         <view class='subtitle overH'>
-            <text>选择地点</text>
-            <text>选择人才</text>
+            <view>选择地点<icon class="iconfont icon-zhcc_xiangxiajiantou"></icon></view>
+            <view>选择人才<icon class="iconfont icon-zhcc_xiangxiajiantou"></icon></view>
         </view>
         <view class='container'>
             <view class='content-list'>

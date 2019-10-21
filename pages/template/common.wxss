@@ -165,7 +165,7 @@
 .subtitle .icon-zhcc_xiangxiajiantou{
   font-size:25rpx;
   position: relative;
-  top:-11rpx;
+  top:-9rpx;
   vertical-align:top;
 }
 

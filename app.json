@@ -1,23 +1,22 @@
 {
   "pages": [
-
     "pages/login/login",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
     "pages/jobList/jobList",
     "pages/jobList/editJobList",
     "pages/cOrTInfo/cOrTInfo",
-    "pages/register/fillInInformation/fillInInformation",
+      "pages/register/fillInInformation/fillInInformation",
     "pages/forgetpassword/forgetpassword",
     "pages/index/index",
     "pages/headPortrait/headPortrait",
-
     "pages/personalDetail/personalDetail",
 
-    "pages/myPurse/cyPurse",
     "pages/myPurse/myPurse",
+    "pages/myPurse/cyPurse",
     "pages/myPurse/goldDeposits/goldDeposits",
     "pages/myPurse/withdrawal/withdrawal",
+    "pages/myPurse/transactionDetail",
 
     "pages/public/password",
     "pages/public/setting",
