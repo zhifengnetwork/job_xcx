@@ -46,19 +46,20 @@ Page({
   },
   getMoney(e){
     var t = e.detail.value
-    var sxf = new Number(this.data.info.percent/100) * new Number(e.detail.value).toFixed(2)
-    this.setData({ txmoney: e.detail.value, sxf: sxf })
+    var sxf = new Number(this.data.info.percent/100) * new Number(e.detail.value)
+    this.setData({ txmoney: e.detail.value, sxf: sxf.toFixed(4)})
   },
   getWithdrawal(){
       var that =this
       ServerData.goWithdrawal({}).then((res) => {
         if(res.data.status==1){
           that.setData({
-             info: res.data.data,
+              info: res.data.data,
               alipay: res.data.data.alipay,
               alipay_name: res.data.data.alipay_name
           })
-        } else if (res.data.status == -1){
+        } 
+        else if (res.data.status == -1){
             wx.redirectTo({
               url: '../../login/login'
             })
@@ -103,7 +104,14 @@ Page({
                 delta: 1,
             })
           },1000)
-      } else if (res.data.status == -1) {
+      } 
+      else if(res.data.status==8){
+        console.log(11)
+          wx.redirectTo({
+            url: '../../public/setting'
+          })
+      }
+      else if (res.data.status == -1) {
           wx.redirectTo({
             url: '../../login/login'
           })

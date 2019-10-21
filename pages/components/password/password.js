@@ -29,7 +29,11 @@ Component({
       },
       getPawdVal(e){
         // console.log(e)
-        var paswAarry=e.detail.value.split('')
+        var paswAarry=[]
+        var arry =e.detail.value.split('')
+        for(var i in arry){
+            paswAarry.push('*')
+        }
         this.setData({
           paswAarry:paswAarry,
           password:e.detail.value
