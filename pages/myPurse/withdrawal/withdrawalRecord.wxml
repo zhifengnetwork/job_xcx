@@ -1,0 +1,17 @@
+<!--pages/myPurse/withdrawal/withdrawalRecord.wxml-->
+<!--pages/myPurse/transactionDetail .wxml-->
+<view class="withd-detail-wrap">
+    <view class="-detail-cont" wx:for="{{withdrawalList}}">
+        <view class="-d-list">
+            <text >提现</text>
+            <text>-{{item.money}}</text>
+        </view>
+        <view class="-d-list color-999">
+            <text>{{item.createtime}}</text>
+            <text>{{item.status}}</text>
+        </view>
+    </view>
+    <view class="more" wx:if="{{isMore}}" bindtap="lookMore">查看更多∨</view>
+    <view class="no-data" wx:if="{{withdrawalList==''}}">暂无提现记录</view>
+</view>
+

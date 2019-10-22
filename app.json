@@ -1,5 +1,7 @@
 {
   "pages": [
+
+    "pages/userInfo/index/index",
     "pages/login/login",
     "pages/register/register",
     "pages/postionDetail/postionDetail",
@@ -16,6 +18,7 @@
     "pages/myPurse/cyPurse",
     "pages/myPurse/goldDeposits/goldDeposits",
     "pages/myPurse/withdrawal/withdrawal",
+    "pages/myPurse/withdrawal/withdrawalRecord",
     "pages/myPurse/transactionDetail",
 
     "pages/public/password",
@@ -55,7 +58,7 @@
     "pages/thirdParty/uCollect/uCollect",
     "pages/thirdParty/postJobPostings/postJobPostings",
 
-    "pages/userInfo/index/index",
+
     "pages/userInfo/editInfo/editInfo",
     "pages/userInfo/thirdParty/thirdParty",
     "pages/userInfo/search/search",

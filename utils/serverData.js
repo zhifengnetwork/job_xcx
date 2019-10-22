@@ -208,20 +208,25 @@ class ServerData {
 		return this._promise_post(_data, api.userAPI.goWithdrawal, complete);
 	}
 
-  //提现保存
-  withdrawal(_data, complete) {
-    return this._promise_post(_data, api.userAPI.withdrawal, complete);
-  }
+	//提现保存
+	withdrawal(_data, complete) {
+		return this._promise_post(_data, api.userAPI.withdrawal, complete);
+	}
 
-  //消息列表
-  messageList(_data, complete) {
-    return this._promise_post(_data, api.userAPI.messageList, complete);
-  }
+	//提现记录
+	withdrawalRecord(_data, complete) {
+		return this._promise_post(_data, api.userAPI.withdrawalRecord, complete);
+	}
 
-  //消息详情
-  messageDetail(_data, complete) {
-    return this._promise_post(_data, api.userAPI.messageDetail, complete);
-  }
+	//消息列表
+	messageList(_data, complete) {
+		return this._promise_post(_data, api.userAPI.messageList, complete);
+	}
+
+	//消息详情
+	messageDetail(_data, complete) {
+		return this._promise_post(_data, api.userAPI.messageDetail, complete);
+	}
   
 	//帮助与反馈
 	helpExp(_data, complete) {

@@ -49,6 +49,7 @@ const userAPI = {
   
   goWithdrawal: `${proxys}/person/go_withdrawal`,     // 提现
   withdrawal: `${proxys}/person/withdrawal`,          // 提现保存
+  withdrawalRecord: `${proxys}/person/withdrawal_list`,    // 提现明细
 
   messageList: `${proxys}/message/message_list`,      // 消息列表
   messageDetail: `${proxys}/message/message_detail`,  // 消息详情

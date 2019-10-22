@@ -2,6 +2,7 @@
 <view class='inner'>
 	<view class='g-withdrawal-list'>
 		<view class='g-withdrawal-a {{pBgC}}'>
+			<view class="transaction-btn"><navigator url="withdrawalRecord">提现记录</navigator></view>
 			<view class='g-withdrawal-money'>￥{{info.balance}}</view>
 			<text>可提现金额</text>
 			<image class="d-gold-icon" src='../../../static/images/public/gold_icon.png' />
