@@ -1,7 +1,7 @@
 <!--pages/userInfo/editInfo.wxml-->
 <view class='inner'>
     <view class='global-company-list'>
-        <navigator url='../../headPortrait/headPortrait'><image src='{{cList.logo}}' class="c-logo" /></navigator>
+        <view><image src='{{cList.logo}}' class="c-logo" /></view>
         <view class='c-info-text'>
           <text class='c-info-title'>{{cList.company_name}}</text>
         </view>

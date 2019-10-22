@@ -1,9 +1,9 @@
 <view class='inner'>
   <view class='g-deposits-list'>
       <view class='g-deposits-a user-bg-'>
-			    <view class="transaction-btn">
+			    <!-- <view class="transaction-btn">
               	<navigator url="transactionDetail" class="user-color-">账单明细</navigator>
-         	</view>
+         	</view> -->
           <view>我的金额</view>
           <view class='g-deposits-money'>{{list.balance}}</view>
           <image class="d-gold-icon" src='../../static/images/public/gold_icon.png'/>
