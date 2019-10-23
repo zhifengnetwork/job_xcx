@@ -42,12 +42,33 @@ Page({
     this.setData({
       pBgC: util.loginIdentity().pBgC
     })
-    this.getWithdrawal()
+
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+      this.getWithdrawal()
   },
   getMoney(e){
     var t = e.detail.value
     var sxf = new Number(this.data.info.percent/100) * new Number(e.detail.value)
     this.setData({ txmoney: e.detail.value, sxf: sxf.toFixed(4)})
+  },
+  getAllMoney(){
+     var  that =this,
+          money =that.data.info.balance,
+          max_money =that.data.info.max_money
+
+      if(money<=0){
+          return ServerData._wxTost('暂无可提现金额')
+      }
+      if(money>max_money){
+          money = max_money
+      }
+      var sxf = new Number(this.data.info.percent/100) * new Number( money)
+      this.setData({ txmoney:  money, sxf: sxf.toFixed(4)})
+      
   },
   getWithdrawal(){
       var that =this
@@ -80,6 +101,9 @@ Page({
       if(alipay_name == "" || alipay==""){
           return ServerData._wxTost('请输入支付宝信息')
       }
+    }
+    if(that.data.txmoney<=0){
+        return ServerData._wxTost('暂无可提现金额')
     }
     if (that.data.txmoney > that.data.info.max_money) {
       return ServerData._wxTost('单笔提现金额不能大于' + that.data.info.max_money)
@@ -132,12 +156,6 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
 
   /**
    * 生命周期函数--监听页面隐藏

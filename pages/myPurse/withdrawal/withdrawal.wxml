@@ -33,7 +33,7 @@
 			<view class='v-money-'>
 				<text class='w-money-msg'>￥</text>
 				<input class="v-money-inp" type="digit" placeholder-class="phcolor" bindinput='getMoney' value='{{txmoney}}' placeholder='请输入提现金额'/>
-				<text class='w-money-msg1'>全部提现</text>
+				<text class='w-money-msg1' bindtap="getAllMoney">全部提现</text>
 			</view>
 			<view class='v-money-2'>
 				<text class='w-money-msg'>手续费：{{sxf}}</text>
